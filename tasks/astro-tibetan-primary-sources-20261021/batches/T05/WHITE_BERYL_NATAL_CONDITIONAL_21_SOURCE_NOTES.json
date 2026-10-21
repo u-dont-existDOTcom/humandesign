@@ -1,0 +1,549 @@
+{
+  "schema": "ASTRO_TIBETAN_T05_NATAL_CONDITIONAL_SOURCE_NOTES_V1",
+  "source_id": "TIB-DORJE-2001",
+  "batch": "T05",
+  "state": "SOURCE_EXTRACTION_ONLY",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "reading": "White Beryl natal continuation, PDF pages 156–163 / printed 155–162; Gyurme Dorje English translation/commentary with excerpts from Moonbeams",
+  "source_notes": [
+    {
+      "id": "TIB-R0092",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 156,
+        "printed_page": 155,
+        "original_folios": "White Beryl ff. 169b–172b"
+      },
+      "kind": "thirty-body-types",
+      "paraphrase": "The section assigns a body-element category to each of thirty adjacent pairs of year signs; for Wood Mouse/Wood Ox it gives an iron-ore body type. Additional maternal element, natal trigram and mewa conditions modify purported physical outcomes.",
+      "required_inputs": [
+        "year_element",
+        "year_animal",
+        "maternal_element",
+        "maternal_trigram",
+        "natal_mewa"
+      ],
+      "output_classes": [
+        "body_type",
+        "health_omens"
+      ],
+      "dependency_family": "TIB-BODY-30",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0093",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 156,
+        "printed_page": 155,
+        "original_folios": "White Beryl ff. 172b–176b"
+      },
+      "kind": "five-destiny-vitality-relations",
+      "paraphrase": "Destiny-to-vitality relations are divided into five named classes (ha-yan, khong-nong, se-zhig, dun-khur and kha-ral). Their prognoses are elaborated for paternal relatives, spouse, children/wealth, in-laws and maternal relatives.",
+      "required_inputs": [
+        "natal_destiny_element",
+        "natal_vitality_element",
+        "year_element"
+      ],
+      "output_classes": [
+        "kinship",
+        "wealth",
+        "family"
+      ],
+      "dependency_family": "TIB-DESTINY-RELATION",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0094",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 156,
+        "printed_page": 155,
+        "original_folios": "White Beryl ff. 176b–177a"
+      },
+      "kind": "four-trine-groups",
+      "paraphrase": "Natal luck groups are Mouse-Dragon-Monkey, Tiger-Horse-Dog, Bird-Ox-Snake, and Pig-Sheep-Hare, with additional paternal kinship prognoses. These groupings resemble Chinese animal trines and are not an independent birth-sign calculation.",
+      "required_inputs": [
+        "birth_year_animal",
+        "natal_luck_element"
+      ],
+      "output_classes": [
+        "paternal_kinship",
+        "luck"
+      ],
+      "dependency_family": "TIB-CHINESE-ANIMAL-OVERLAP",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0095",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 157,
+        "printed_page": 156,
+        "original_folios": "White Beryl ff. 177a–178a"
+      },
+      "kind": "four-element-inhibition",
+      "paraphrase": "The natal vitality, body, destiny and luck elements may form directed enemy, friend or other elemental relations. A nine-pebble comparison is given; ordering matters and impairment or protection of one target aspect has differing interpretations.",
+      "required_inputs": [
+        "vitality_element",
+        "body_element",
+        "destiny_element",
+        "luck_element",
+        "directed_relation_order"
+      ],
+      "output_classes": [
+        "life",
+        "finance",
+        "descendants"
+      ],
+      "dependency_family": "TIB-DIRECTED-ELEMENT-COMPARISON",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0096",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 157,
+        "printed_page": 156,
+        "original_folios": "White Beryl ff. 177a–178a"
+      },
+      "kind": "four-pebble-omens",
+      "paraphrase": "Examples associate impaired destiny with eventual poverty despite prior wealth; impaired vitality with fatal violence; impaired luck with eventual loss of descendants; and protective friendship with obtaining descendants despite long childlessness. These are conditional traditional claims, not observed outcomes.",
+      "required_inputs": [
+        "target_element",
+        "contrasting_element",
+        "element_relation",
+        "time_horizon"
+      ],
+      "output_classes": [
+        "wealth_reversal",
+        "violent_death",
+        "descendant_continuity"
+      ],
+      "dependency_family": "TIB-FOUR-ELEMENT-OMENS",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0097",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 157,
+        "printed_page": 156,
+        "original_folios": "White Beryl ff. 178a–180b"
+      },
+      "kind": "three-birth-month-season-classes",
+      "paraphrase": "The natal months are split into first-season months Tiger/Monkey/Pig/Snake, middle Mouse/Horse/Bird/Hare, and last Ox/Sheep/Dog/Dragon. The text assigns family discord, divorce, resource timing and relocation possibilities to different classes.",
+      "required_inputs": [
+        "natal_month_animal",
+        "Tibetan_calendar_variant"
+      ],
+      "output_classes": [
+        "family_discord",
+        "marital_events",
+        "resources",
+        "relocation"
+      ],
+      "dependency_family": "TIB-BIRTH-MONTH-SEASONS",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0098",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Li-natal-trigram",
+      "paraphrase": "For a Li natal trigram the text alleges slander, property conflict with paternal relatives, head/sense-organ problems and subject-sex-dependent claims, including injured male ancestors or disabled offspring.",
+      "required_inputs": [
+        "natal_trigram",
+        "subject_sex",
+        "ancestral_context"
+      ],
+      "output_classes": [
+        "traits",
+        "ancestral_property",
+        "health_omens",
+        "offspring"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0099",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Khon-natal-trigram",
+      "paraphrase": "For a Khon natal trigram the text alleges family-line ailments, divorce/widowhood, difficulties raising children and a transition from greater resources in early life to poverty in later life.",
+      "required_inputs": [
+        "natal_trigram",
+        "ancestral_context"
+      ],
+      "output_classes": [
+        "family",
+        "marriage",
+        "resource_trajectory"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0100",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Dva-natal-trigram",
+      "paraphrase": "For Dva the text attributes courage and education but temper, comparatively limited wealth, ancestral feuds and possible residence abroad.",
+      "required_inputs": [
+        "natal_trigram",
+        "ancestral_context"
+      ],
+      "output_classes": [
+        "traits",
+        "wealth",
+        "relocation"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0101",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Khen-natal-trigram",
+      "paraphrase": "For Khen the text assigns pride, few joys, inherited-wealth depletion after generations, enemies and relocation undertaken to improve prosperity.",
+      "required_inputs": [
+        "natal_trigram",
+        "family_generations"
+      ],
+      "output_classes": [
+        "traits",
+        "inheritance",
+        "relocation"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0102",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Kham-natal-trigram",
+      "paraphrase": "For Kham the text assigns outward calm and inner disturbance, independence and sons, a family history of marital discord, and eventual family-line continuity across several generations.",
+      "required_inputs": [
+        "natal_trigram",
+        "ancestral_context"
+      ],
+      "output_classes": [
+        "traits",
+        "offspring",
+        "family_continuity"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0103",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Gin-natal-trigram",
+      "paraphrase": "For Gin the text attributes sturdy physique, taciturnity and steadfast speech; the paternal line is said alternatively to include disease/accidental death or educated religious practitioners.",
+      "required_inputs": [
+        "natal_trigram",
+        "paternal_ancestry",
+        "subject_sex"
+      ],
+      "output_classes": [
+        "traits",
+        "physical_build",
+        "ancestral_history"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0104",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Zin-natal-trigram",
+      "paraphrase": "For Zin the text combines coarse speech and domestic losses with eventual children and wealth, alongside allegations of interrupted paternal line and violent conflict.",
+      "required_inputs": [
+        "natal_trigram",
+        "paternal_ancestry"
+      ],
+      "output_classes": [
+        "traits",
+        "family",
+        "resources"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0105",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 158,
+        "printed_page": 157,
+        "original_folios": "White Beryl ff. 180b–182a"
+      },
+      "kind": "Zon-natal-trigram",
+      "paraphrase": "For Zon the text attributes competitive disposition and appreciation of mental/physical activity, ancestral religious conflict, family isolation and sudden disease risks.",
+      "required_inputs": [
+        "natal_trigram",
+        "ancestral_context"
+      ],
+      "output_classes": [
+        "traits",
+        "family_isolation",
+        "health_omens"
+      ],
+      "dependency_family": "TIB-EIGHT-TRIGRAM-PROFILES",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0106",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 159,
+        "printed_page": 158,
+        "original_folios": "White Beryl ff. 182a–186b"
+      },
+      "kind": "White-One-Mewa-example",
+      "paraphrase": "A detailed White-One natal numeric-square profile proposes four dangerous obstacles and a mean lifespan of seventy-one years, plus early-to-later fortune, material/offspring outcomes and conditions differing by subject sex. Its reincarnation and ritual claims require different evidentiary treatment from observable traits.",
+      "required_inputs": [
+        "natal_mewa",
+        "subject_sex"
+      ],
+      "output_classes": [
+        "alleged_mean_lifespan",
+        "obstacles",
+        "resource_trajectory",
+        "offspring"
+      ],
+      "dependency_family": "TIB-NATAL-MEWA",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0107",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 159,
+        "printed_page": 158,
+        "original_folios": "White Beryl ff. 186b–187b"
+      },
+      "kind": "five-maternal-grades",
+      "paraphrase": "A separate five-grade assessment, using child vitality/body/destiny/luck against the mother's natal trigram or numeric square, names divine parentage, glorious offspring, harmonious lifespan, potent spirit and impotent demon.",
+      "required_inputs": [
+        "mother_natal_trigram_or_mewa",
+        "child_vitality",
+        "child_body",
+        "child_destiny",
+        "child_luck"
+      ],
+      "output_classes": [
+        "lifespan",
+        "physique",
+        "resources",
+        "reputation"
+      ],
+      "dependency_family": "TIB-MATERNAL-FIVE-GRADE",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0108",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 160,
+        "printed_page": 159,
+        "original_folios": "White Beryl ff. 186b–187b"
+      },
+      "kind": "five-grade-conditional-numbers",
+      "paraphrase": "For the child vitality axis the text associates five grades with purported lifespan outcomes above 73 years, 61 years, above 46 years, not over 37 years and postnatal death. These are not exhaustive, mutually exclusive modern age bins; no calibrated probability is given.",
+      "required_inputs": [
+        "maternal_natal_trigram_or_mewa",
+        "child_vitality_element",
+        "five_grade"
+      ],
+      "output_classes": [
+        "claimed_lifespan_grade"
+      ],
+      "dependency_family": "TIB-MATERNAL-FIVE-GRADE",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0109",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 160,
+        "printed_page": 159,
+        "original_folios": "White Beryl ff. 186b–187b"
+      },
+      "kind": "four-domain-prognoses",
+      "paraphrase": "The same five grades applied respectively to the child's body, destiny and luck address physique/childhood health, family wealth/children and reputation. The poem maps mother, son, identity, friend and enemy elemental relations to the five classes; no human outcomes are documented in the table.",
+      "required_inputs": [
+        "maternal_natal_trigram_or_mewa",
+        "child_element_axis",
+        "element_relation"
+      ],
+      "output_classes": [
+        "physique",
+        "wealth",
+        "reputation"
+      ],
+      "dependency_family": "TIB-MATERNAL-FIVE-GRADE",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0110",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 161,
+        "printed_page": 160,
+        "original_folios": "White Beryl ff. 187b–188b"
+      },
+      "kind": "father-mother-element-prosperity",
+      "paraphrase": "Four contrasts use the child's vitality and luck against corresponding paternal aspects, and the child's body and destiny against maternal aspects. Relationship type determines five classes: mother=prosperity, enemy=misfortune, identity=status quo, son=loss of complexion, friend=lifespan extension.",
+      "required_inputs": [
+        "father_vitality",
+        "father_luck",
+        "mother_body",
+        "mother_destiny",
+        "child_four_elements"
+      ],
+      "output_classes": [
+        "prosperity",
+        "health",
+        "material_resources",
+        "rumors"
+      ],
+      "dependency_family": "TIB-FOUR-PARENT-CONTRAST",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0111",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 161,
+        "printed_page": 160,
+        "original_folios": "White Beryl ff. 188b–196a"
+      },
+      "kind": "three-paternal-year-sector-wheels",
+      "paraphrase": "The father's year cycle is projected onto twelve growth-and-decline sectors for the child: upward-mobile counterclockwise starting fetus, decadent clockwise from conception, and upward-aspiring clockwise from birth. Coincidences are read for illness, death and weak or adversarial tomb signs.",
+      "required_inputs": [
+        "father_natal_year_animal",
+        "child_natal_year_animal",
+        "twelve_sector_wheel",
+        "traversal_direction"
+      ],
+      "output_classes": [
+        "childhood_risk_sector",
+        "family_intervention"
+      ],
+      "dependency_family": "TIB-PARENTAL-12-SECTOR",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0112",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 163,
+        "printed_page": 162,
+        "original_folios": "White Beryl ff. 188b–196a"
+      },
+      "kind": "additional-omen-timing",
+      "paraphrase": "The same paternal-sector method asserts danger or strength at specified even/odd ages and describes counteracting rituals; the chart requires paternal birth information and is not simply a child's independent birth-only horoscope.",
+      "required_inputs": [
+        "father_birth_year",
+        "child_birth_year",
+        "current_child_age",
+        "ritual_context"
+      ],
+      "output_classes": [
+        "age_specific_obstacle",
+        "proposed_ritual"
+      ],
+      "dependency_family": "TIB-PARENTAL-12-SECTOR",
+      "source_status": "historical text translated/commented; not independently verified in Tibetan",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    }
+  ],
+  "note_count": 21,
+  "next_id": "TIB-R0113",
+  "scientific_status": "No predictive success measured; all comparisons to real people's outcomes withheld until frozen and blinded",
+  "integration_policy": "Keep 60-year natal, nine directed pebbles, eight trigrams, mother-specific grades, paternal-year sectors and query-time divination as distinct input-dependent hypothesis groups",
+  "known_gaps": [
+    "Exact elemental lookup tables and Tibetan-to-Gregorian boundary conversion not independently reconstructed",
+    "Mewa nine numbers: only White One detailed example audited here",
+    "All eight trigram descriptions covered as paraphrase but exact natal trigram algorithm not yet independently computed",
+    "Mother grades use different numerical lifespan criteria from 60-year year profiles; no prospective reconciliation protocol yet",
+    "Paternal twelve-sector diagrams are not digitized and independently checked",
+    "One chart page (PDF 162) is image-only; do not claim machine-read chart cells"
+  ],
+  "human_predictions_tested": 0
+}
