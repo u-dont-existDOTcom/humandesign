@@ -1,0 +1,144 @@
+{
+  "schema": "TIBETAN_T26_MEWA_CATEGORIES_AND_MINOR_PEBBLES_V1",
+  "batch": "T26",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_pages_pdf": "242–250",
+  "source_plates": [
+    "Plate 18 fig.8 PDF246",
+    "Plate 18 fig.9 PDF248",
+    "Plate 18 fig.10 PDF249",
+    "Plate 19 fig.2 PDF250"
+  ],
+  "historical_note_increment": 0,
+  "previous_source_note_ids": [
+    "TIB-R0240",
+    "TIB-R0244",
+    "TIB-R0245",
+    "TIB-R0251",
+    "TIB-R0255"
+  ],
+  "mewa_mirror_names": [
+    {
+      "mewa": "White One",
+      "class_name": "gods"
+    },
+    {
+      "mewa": "Black Two",
+      "class_name": "demons"
+    },
+    {
+      "mewa": "Blue Three",
+      "class_name": "attachment_spirits"
+    },
+    {
+      "mewa": "Green Four",
+      "class_name": "serpentine_spirits"
+    },
+    {
+      "mewa": "Yellow Five",
+      "class_name": "soil_lords"
+    },
+    {
+      "mewa": "White Six",
+      "class_name": "king_spirits"
+    },
+    {
+      "mewa": "Red Seven",
+      "class_name": "haunting_spirits"
+    },
+    {
+      "mewa": "White Eight",
+      "class_name": "countryside_deities"
+    },
+    {
+      "mewa": "Red Nine",
+      "class_name": "imprecatory_goddesses"
+    }
+  ],
+  "Black_Two_combination_target_rows": [
+    {
+      "other_mewa": "White One",
+      "subject_class": "small_boys"
+    },
+    {
+      "other_mewa": "Black Two",
+      "subject_class": "adult_males"
+    },
+    {
+      "other_mewa": "Blue Three",
+      "subject_class": "children_or_disabled_persons"
+    },
+    {
+      "other_mewa": "Green Four",
+      "subject_class": "widows"
+    },
+    {
+      "other_mewa": "Yellow Five",
+      "subject_class": "Buddhist_monks"
+    },
+    {
+      "other_mewa": "White Six",
+      "subject_class": "Bon_priests"
+    },
+    {
+      "other_mewa": "Red Seven",
+      "subject_class": "women"
+    },
+    {
+      "other_mewa": "White Eight",
+      "subject_class": "protector_Zhang_blom"
+    },
+    {
+      "other_mewa": "Red Nine",
+      "subject_class": "kings_or_aged"
+    }
+  ],
+  "four_minor_pebbles": [
+    {
+      "key": "khang_keg_building",
+      "input": "present_year_mewa"
+    },
+    {
+      "key": "mal_keg_bedding",
+      "input": "subject_natal_mewa"
+    },
+    {
+      "key": "yul_keg_environment",
+      "input": "coincidence_with_Black_Two"
+    },
+    {
+      "key": "elemental_kingly_gate",
+      "input": "enemy_of_subject_natal_mewa_element"
+    }
+  ],
+  "sex_gates": {
+    "general": {
+      "heaven": "Black Two",
+      "earth": "White Six"
+    },
+    "male": {
+      "heaven": "Black Two",
+      "earth": "White Six"
+    },
+    "female": {
+      "heaven": "White One",
+      "earth": "Green Four"
+    }
+  },
+  "vitality_tomb_trigrams": {
+    "wood": "Khon",
+    "fire": "Khen",
+    "iron": "Gin",
+    "earth": "Zon",
+    "water": "Zon"
+  },
+  "commentary": "Textual classification table, not evidence of actual outcomes. Labels describing human categories and ritual methods are recorded as ethnographic history, not diagnostic categories or treatment instructions.",
+  "unknowns": [
+    "Subject-sex category source conventions and modern identity generalization",
+    "Whether Black Two adjacency means same annual position or chart-side conjunction under all variants",
+    "Missing exact annual mewa and natal chart calculation parity"
+  ],
+  "empirical_human_validation": 0,
+  "model_runtime_promoted": false
+}
