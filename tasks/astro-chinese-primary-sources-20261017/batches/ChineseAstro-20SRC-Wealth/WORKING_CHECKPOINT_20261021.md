@@ -1,0 +1,9 @@
+# Zi Wei V20: Wealth Palace original source — isolated checkpoint (2026-10-21)
+
+Parent research mission OPEN: independently sourced Western/Chinese historical astrology, checked calendar/natal engines and preregistered forward/reverse blind human tests versus matched decoys and nonastrological baselines. Historical text counts are NOT observed prediction successes.
+
+This worktree owns only branch `research/astro-chinese-v20-ziwei-wealth-original-source-20261021` from accepted V19 exact remote SHA `f809a5d977a68da3350bef25f47f5a9b40cae157`. V19 Chinese index SHA256 `52c5d51a281d5e641d2e029af81929e7a327d04eb5e1b510534d45b78c27fcb2` records 210 BaZi+828 Zi Wei=1038 historic notes, next ZWD-R0829. Separate Western Lilly source writer, independent BaZi source and production integration remain untouched.
+
+Pinned original transmitted Wikitext `紫微斗數全書 卷二` oldid1963110 full SHA `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72`; Wealth section `===五财帛===` Unicode cp40563–41672, next Disease `===六疾厄===` cp41672. Source span has 30 nonblank nonmarkup original lines including heading, including at least SIX physical continuations belonging to earlier named star groups (indexes 2,6,9,14,17,19); do not record these as independent star rules. Exact section SHA256 `a7088436d0d098759c0417ebde5d09db32e3ef5473c67243713e0916c4780fab`. V19 Wealth heading was navigation only. First candidate ZWD-R0829, no accepted V20 yet. Historical source economic/wealth claims are NOT verified financial predictions or investment advice.
+
+Next: preserve all Wikitext original Unicode/UTF8 bytes and exact offsets, source-group dependencies, targeted and portable cold source tests, guarded immutable V20 index, owner archive and GitHub SHA. No real-person blind predictions or runtime model promotions.
