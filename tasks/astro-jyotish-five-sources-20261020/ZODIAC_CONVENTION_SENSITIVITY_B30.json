@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B30",
+  "status": "EXPLORATORY_SPARSE_ASTRONOMICAL_COMPARISON_NOT_FULL_DAILY_RESULTS",
+  "calendar": "Gregorian",
+  "geocentric": true,
+  "ephemeris": "pyswisseph 2.10.03 / explicit FLG_MOSEPH",
+  "source_text_reference": "Saravali 19.8 Sanskrit prayo (normally/often); conjoined 5 or 6 classical planets, source conjunction threshold unresolved",
+  "time_grid": "UTC midnight every five days starting 1800-01-01 to exclusive 2200-01-01",
+  "sampled_instants_per_convention": 29220,
+  "results": [
+    {
+      "convention": "tropical",
+      "exactly_five": 275,
+      "exactly_six": 16,
+      "exactly_seven": 0
+    },
+    {
+      "convention": "sidereal Lahiri",
+      "exactly_five": 258,
+      "exactly_six": 21,
+      "exactly_seven": 0
+    },
+    {
+      "convention": "sidereal Fagan Bradley",
+      "exactly_five": 268,
+      "exactly_six": 21,
+      "exactly_seven": 0
+    },
+    {
+      "convention": "sidereal Raman",
+      "exactly_five": 268,
+      "exactly_six": 17,
+      "exactly_seven": 0
+    }
+  ],
+  "source_code_approach": "For each 5-day sample JD, use swe.calc_ut(jd, body, swe.FLG_MOSEPH | (swe.FLG_SIDEREAL for sidereal mode)), set swe.set_sid_mode(mode), take int(ecliptic_longitude//30), count largest 30° sign group across Sun/Moon/Mars/Mercury/Jupiter/Venus/Saturn.",
+  "interpretation": [
+    "Results are sensitive to the choice of sidereal/tropical zodiac grid (not simply source-independent fixed trait prevalence).",
+    "Zero all-seven observations on this sparse five-day grid does NOT contradict known two-day all-seven episodes (1821 Apr02–03 and 1962 Feb04–05); the grid missed them.",
+    "The FULL every-day 400y Lahiri scan counts 4 seven-body day snapshots and is documented in SARAVALI_CONJUNCTION_SKY_SUPPORT_B30.json. DO NOT replace that with these sparse counts.",
+    "Even a daily sign group is not a degree-orb conjunction, nor does it imply same house under non-whole-sign house systems.",
+    "Selection of ayanamsa in an eventual human model must be fixed before interpreting outcomes; source/orb/strength may change rates further."
+  ],
+  "provenance": {
+    "source_code": "Standalone local 5-day-grid script executed successfully against mounted pyswisseph; this JSON specifies its exact arithmetic loop. No user birth data, participant answers or human predictions.",
+    "external_corroboration": "https://vedicmystics.com/2020/04/18/all-grahas-in-one-sign/ — non-primary community site independently reports the 1821 and 1962 examples, but does NOT validate predictive astrology."
+  },
+  "actual_human_successes": 0,
+  "source_annotations_added": 0,
+  "production_model_changes": 0
+}
