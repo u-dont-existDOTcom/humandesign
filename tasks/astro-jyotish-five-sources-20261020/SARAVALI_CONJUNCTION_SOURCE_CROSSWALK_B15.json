@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B15",
+  "scope": "SOURCE_CRITICAL_7_CLASSICAL_PLANET_COMBINATION_SET_CATALOGS",
+  "uploaded_source": {
+    "id": "JYOT-SARAVALI-EN",
+    "sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+    "pdf_pages": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "relevant_spans": "Ch15 vv2–22 (PDF31–33), Ch16 vv1–35 (PDF33–35), Ch17 vv1–35 (PDF35–38), Ch18 vv1–22 (PDF38–39), Ch19 vv1–7 (PDF39–40)",
+    "source_layer": "Modern English compilation, page images confirmed for Ch17 blanks and Ch18 duplicates"
+  },
+  "sanskrit_verification": {
+    "source": "Central Sanskrit University Lucknow electronic Saravali, chapters17 and18",
+    "chapter17_url": "https://www.csu-lucknow.edu.in/e-books/saravali/p18.html",
+    "chapter18_url": "https://www.csu-lucknow.edu.in/e-books/saravali/p19.html",
+    "version_class": "Electronic Sanskrit transcription with variants; independent critical manuscript stemma NOT established",
+    "page_images_of_uploaded_english_checked": [
+      36,
+      38
+    ]
+  },
+  "planet_universe": [
+    {
+      "code": "Sun",
+      "source_name": "Surya"
+    },
+    {
+      "code": "Moon",
+      "source_name": "Chandra"
+    },
+    {
+      "code": "Mars",
+      "source_name": "Mangala"
+    },
+    {
+      "code": "Mercury",
+      "source_name": "Budha"
+    },
+    {
+      "code": "Jupiter",
+      "source_name": "Guru"
+    },
+    {
+      "code": "Venus",
+      "source_name": "Sukra"
+    },
+    {
+      "code": "Saturn",
+      "source_name": "Sani"
+    }
+  ],
+  "historical_english_status": {
+    "two_planet": {
+      "rows": 21,
+      "unique_sets": 21,
+      "theoretical": 21,
+      "missing": 0,
+      "duplicate_sets": 0
+    },
+    "three_planet": {
+      "rows": 35,
+      "unique_sets": 35,
+      "theoretical": 35,
+      "missing": 0,
+      "duplicate_sets": 0
+    },
+    "four_planet_before_sanskrit": {
+      "rows": 35,
+      "fully_named": 33,
+      "unique_named_sets": 32,
+      "unknown_fourth_planet_rows": [
+        8,
+        17
+      ],
+      "repeated_rows": [
+        [
+          24,
+          25
+        ]
+      ],
+      "theoretical": 35,
+      "missing_named_sets": 3
+    },
+    "five_planet_before_sanskrit": {
+      "rows": 22,
+      "unique_sets": 20,
+      "repeated_rows": [
+        [
+          7,
+          8
+        ],
+        [
+          13,
+          20
+        ]
+      ],
+      "theoretical": 21,
+      "missing_named_sets": 1
+    },
+    "six_planet": {
+      "rows": 7,
+      "unique_sets": 7,
+      "theoretical": 7,
+      "missing": 0
+    }
+  },
+  "source_supported_repair_candidates": [
+    {
+      "chapter": 17,
+      "verse": 8,
+      "english": "Venus Jupiter Moon ?",
+      "sanskrit": "शुक्रार्कगुरुशशाङ्कै",
+      "corrected": "Venus Sun Jupiter Moon",
+      "effect": "English unidentified fourth planet resolved as Sun from Sanskrit wording"
+    },
+    {
+      "chapter": 17,
+      "verse": 17,
+      "english": "Sun Mercury Venus ?",
+      "sanskrit": "भानुबुधजीवशुक्रै",
+      "corrected": "Sun Mercury Jupiter Venus",
+      "effect": "English unidentified fourth planet resolved as Jupiter"
+    },
+    {
+      "chapter": 17,
+      "verse": 24,
+      "english": "Moon Mars Jupiter Saturn",
+      "sanskrit": "शशिकुजगुरुभार्गवै",
+      "corrected": "Moon Mars Jupiter Venus",
+      "effect": "English Saturn is Venus (Bhargava) in this Sanskrit text; this removes false duplication with verse 25"
+    },
+    {
+      "chapter": 18,
+      "verse": 7,
+      "english": "Mercury Moon Jupiter Sun Saturn",
+      "sanskrit": "बुधेन्दुरविजीवशुक्रै",
+      "corrected": "Mercury Moon Sun Jupiter Venus",
+      "effect": "English Saturn is Venus in Sanskrit text, removing false duplication with verse 8"
+    }
+  ],
+  "after_sanskrit_crosscheck": {
+    "four_planets": {
+      "verses": 35,
+      "distinct_sets": 35,
+      "all_35_possible_sets_covered": true,
+      "duplicate_sets": [],
+      "status": "MATCH_COMPLETE_AFTER_SANSKRIT_VERSE_NAMES"
+    },
+    "five_planets": {
+      "verses": 22,
+      "distinct_sets": 21,
+      "all_21_possible_sets_covered": true,
+      "duplicate_sets": [
+        {
+          "verses": [
+            13,
+            20
+          ],
+          "planet_codes": [
+            "Moon",
+            "Mars",
+            "Mercury",
+            "Venus",
+            "Saturn"
+          ],
+          "source_verse13": "कुजशशिबुधशुक्रमन्दैः",
+          "source_verse20": "बुधेन्दुकुजशुक्ररविपुत्रैः"
+        }
+      ],
+      "status": "ONE_REPEATED_SET_IN_SANSKRIT_TEXT_REMAINS"
+    },
+    "six_planets": {
+      "verses": 7,
+      "distinct_sets": 7,
+      "all_possible_sets_covered": true
+    }
+  },
+  "remaining_source_conflict": {
+    "source": "Saravali Ch18 vv13 and20, uploaded English PDF38–39 and Sanskrit Ch18 PDF-equivalent verses13,20",
+    "description": "Both verses have exactly same set Moon-Mars-Mercury-Venus-Saturn yet different predicted outcome bundles. The prose may express non-mutually-exclusive outcomes, but it cannot count as two independent horoscope discriminators or be resolved by picking whichever matches biography.",
+    "disposition": "ONE_PLANET_SET_WITH_MULTIPLE_TEXT_OUTCOME_CLAUSES; report possible tension; do not force combined categorical success or choose favorable one post hoc."
+  },
+  "epistemic_limits": [
+    "A source catalog consisting of 21/35/35/21/7 mathematical combinations does not mean the real sky permits each configuration at nonzero prevalence; solar elongation/geocentric constraints still apply.",
+    "No degree/orb cutoff inferred; 'together in one Bhava' must be specified separately.",
+    "Presence in an electronic Sanskrit text establishes transmitted verse wording, not independent factual truth or original autograph.",
+    "No person/chart data were used; no human forecasts tested or scored.",
+    "All existing B01–B14 documents remain unmodified; this adds textual repairs as separate layer."
+  ],
+  "predictive_human_successes": 0,
+  "production_promotions": 0
+}
