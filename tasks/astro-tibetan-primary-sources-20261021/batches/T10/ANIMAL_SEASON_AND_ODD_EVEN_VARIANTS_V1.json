@@ -1,0 +1,344 @@
+{
+  "schema": "TIBETAN_T10_QUALITATIVE_RULE_TABLES_V1",
+  "status": "source_tables_not_model_validated",
+  "batch": "T10",
+  "new_historical_notes": 0,
+  "source_id": "TIB-DORJE-2001",
+  "source_notes_reused": [
+    "TIB-R0008",
+    "TIB-R0129",
+    "TIB-R0130",
+    "TIB-R0133"
+  ],
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "original_source": "White Beryl ff.209b–212a; Plate 5 figs.5/10/13; Supplementary Plate 16 figs.2–5",
+  "tables": {
+    "father_child_year_animal_luck": [
+      {
+        "year_group": [
+          "tiger",
+          "hare"
+        ],
+        "positive_child": [
+          "horse",
+          "snake"
+        ],
+        "positive_label": "great_luminosity",
+        "negative_child": [
+          "bird",
+          "monkey"
+        ]
+      },
+      {
+        "year_group": [
+          "horse",
+          "snake"
+        ],
+        "positive_child": [
+          "ox",
+          "sheep",
+          "dog",
+          "dragon"
+        ],
+        "positive_label": "high_fortress_construction",
+        "negative_child": [
+          "mouse",
+          "pig"
+        ]
+      },
+      {
+        "year_group": [
+          "ox",
+          "sheep",
+          "dog",
+          "dragon"
+        ],
+        "positive_child": [
+          "bird",
+          "monkey"
+        ],
+        "positive_label": "spear_above_sister_below",
+        "negative_child": [
+          "tiger",
+          "hare"
+        ]
+      },
+      {
+        "year_group": [
+          "bird",
+          "monkey"
+        ],
+        "positive_child": [
+          "mouse",
+          "pig"
+        ],
+        "positive_label": "bottomless_ocean",
+        "negative_child": [
+          "horse",
+          "snake"
+        ]
+      },
+      {
+        "year_group": [
+          "mouse",
+          "pig"
+        ],
+        "positive_child": [
+          "tiger",
+          "hare"
+        ],
+        "positive_label": "flourishing_wish_granting_tree",
+        "negative_child": [
+          "ox",
+          "sheep",
+          "dog",
+          "dragon"
+        ]
+      }
+    ],
+    "child_animal_to_risk_month_sectors": [
+      {
+        "year_animals": [
+          "ox",
+          "sheep",
+          "dog",
+          "dragon"
+        ],
+        "ill_health_month_animal": "monkey",
+        "death_month_animal": "bird",
+        "tomb_month_animal": "dog"
+      },
+      {
+        "year_animals": [
+          "bird",
+          "monkey"
+        ],
+        "ill_health_month_animal": "tiger",
+        "death_month_animal": "hare",
+        "tomb_month_animal": "dragon"
+      },
+      {
+        "year_animals": [
+          "mouse",
+          "pig"
+        ],
+        "ill_health_month_animal": "pig",
+        "death_month_animal": "mouse",
+        "tomb_month_animal": "ox"
+      },
+      {
+        "year_animals": [
+          "horse",
+          "snake"
+        ],
+        "ill_health_month_animal": "snake",
+        "death_month_animal": "horse",
+        "tomb_month_animal": "sheep"
+      },
+      {
+        "year_animals": [
+          "tiger",
+          "hare"
+        ],
+        "ill_health_month_animal": "tiger",
+        "death_month_animal": "hare",
+        "tomb_month_animal": "dragon"
+      }
+    ],
+    "mutually_different_year_trigram_polarity_taxonomies": [
+      {
+        "name": "White_Beryl_f212a_contextual",
+        "pdf_page_1based": 173,
+        "even": {
+          "years": [
+            "tiger",
+            "hare",
+            "bird",
+            "monkey",
+            "horse",
+            "snake"
+          ],
+          "trigrams": [
+            "Dva",
+            "Zin",
+            "Zon"
+          ]
+        },
+        "odd": {
+          "years": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon",
+            "mouse",
+            "pig"
+          ],
+          "trigrams": [
+            "Khen",
+            "Khon",
+            "Kham",
+            "Gin"
+          ]
+        },
+        "note": "Year-to-trigram correspondences repeat Khon and Gin; Li not assigned here. Don't assume an exhaustive eight-trigram split."
+      },
+      {
+        "name": "Accurate_tradition_Plate16fig2",
+        "pdf_page_1based": 174,
+        "even": {
+          "trigrams": [
+            "Li",
+            "Dva",
+            "Zin",
+            "Zon"
+          ],
+          "years": [
+            "ox",
+            "tiger",
+            "dragon",
+            "snake",
+            "sheep",
+            "monkey",
+            "dog",
+            "pig"
+          ],
+          "elements": [
+            "fire",
+            "earth"
+          ]
+        },
+        "odd": {
+          "trigrams": [
+            "Khen",
+            "Khon",
+            "Gin",
+            "Kham"
+          ],
+          "years": [
+            "mouse",
+            "horse",
+            "bird",
+            "hare"
+          ],
+          "elements": [
+            "wood",
+            "water",
+            "iron"
+          ]
+        }
+      },
+      {
+        "name": "Mottled_Turtle_Plate16fig3",
+        "pdf_page_1based": 174,
+        "even": {
+          "trigrams": [
+            "Li",
+            "Zon",
+            "Dva",
+            "Khon"
+          ]
+        },
+        "odd": {
+          "trigrams": [
+            "Khen",
+            "Gin",
+            "Kham"
+          ]
+        },
+        "indefinite": {
+          "trigrams": [
+            "Zin"
+          ]
+        }
+      },
+      {
+        "name": "Gathering_of_All_Precious_Elements_Plate16fig4",
+        "pdf_page_1based": 174,
+        "even": {
+          "trigrams": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon",
+            "Li"
+          ]
+        },
+        "odd": {
+          "trigrams": [
+            "Dva",
+            "Kham",
+            "Zin"
+          ]
+        },
+        "indefinite": {
+          "trigrams": [
+            "Zin"
+          ]
+        },
+        "note": "Source assigns Zin also to irregular category; this is a recorded overlap, not a silently corrected partition."
+      },
+      {
+        "name": "Store_of_Precious_Treasure_Plate16fig5",
+        "pdf_page_1based": 175,
+        "even": {
+          "trigrams": [
+            "Khon",
+            "Gin",
+            "Li",
+            "Zon"
+          ],
+          "years": [
+            "ox",
+            "sheep",
+            "horse",
+            "snake",
+            "dragon"
+          ],
+          "elements": [
+            "fire",
+            "earth"
+          ]
+        },
+        "odd": {
+          "trigrams": [
+            "Dva",
+            "Zin",
+            "Kham"
+          ],
+          "years": [
+            "tiger",
+            "hare",
+            "bird",
+            "monkey",
+            "mouse",
+            "pig"
+          ],
+          "elements": [
+            "wood",
+            "iron"
+          ]
+        },
+        "indefinite": {
+          "trigrams": [
+            "Khen"
+          ],
+          "years": [
+            "dog"
+          ],
+          "elements": [
+            "water"
+          ]
+        }
+      }
+    ]
+  },
+  "known_limits": [
+    "Source includes multiple contradictory parity traditions; preserve each with exact tradition label and original exceptions.",
+    "Five maternal/father-child animal groupings are tables of symbolic classes rather than verified life outcomes.",
+    "Risk-month sector titles are classical omens, not modern health or mortality risk estimates.",
+    "Some parity variants list only selected trigrams, while others have intentional indefinite or overlap cases.",
+    "Maternal year age and symbolic planetary conjunctions are stored in T08 separately."
+  ],
+  "empirical_validation": false,
+  "runtime_promoted": false
+}
