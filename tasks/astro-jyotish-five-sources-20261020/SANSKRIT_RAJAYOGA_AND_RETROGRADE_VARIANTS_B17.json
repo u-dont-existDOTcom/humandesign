@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B17",
+  "source_critical_only": true,
+  "witnesses": [
+    {
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Uploaded English PDF95 Chapter35 sloka6; physical page image reviewed",
+      "reading": "Vargottama rising or lunar sign aspected by 5 or 6 planets apart from Moon."
+    },
+    {
+      "source": "Central Sanskrit University Lucknow Sārāvalī Chapter35 verse6",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "location": "Chapter35 verse6, site lines36-38",
+      "short_sanskrit": "चतुर्ग्रहैश्चन्द्रविवर्जितैस्तदा निरीक्षितः",
+      "reading": "Four planets excluding the Moon, not five/six."
+    },
+    {
+      "source": "Same Sanskrit site Chapter35 verse11",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "location": "Verse11, lines70–72",
+      "short_sanskrit": "चतुराद्यैर्ग्रहैर्दृष्टे",
+      "reading": "A separate formulation says viewed by four or more planets, reinforcing an initial threshold of four."
+    },
+    {
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Uploaded English PDF13–14 Chapter5 vv14,39, physical pages visually reviewed",
+      "reading": "A minority exalted-retrograde zero-effect view and a broad retrograde benefic strength view are both transmitted."
+    },
+    {
+      "source": "Central Sanskrit University Lucknow Sārāvalī Chapter5 verses14,39",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p6.html",
+      "location": "Verse14 lines55-57, Verse39 lines162-164",
+      "short_sanskrit": "उच्चराशौ विलोमे च फलं(बलं) ... वक्रिणस्तु महावीर्याः",
+      "reading": "Sanskrit text itself flags phala/bala variants in verse14, while verse39 asserts retrograde high strength."
+    },
+    {
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "User-uploaded Sarvarth Chintamani PDF222 Chapter9 verse3, physical image checked",
+      "reading": "Six exalted planets and exalted Moon Lagna separately from ALL exalted rule."
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "B17-D01",
+      "problem": "Five or six aspecting planets in uploaded English Saravali Ch35.6 vs Sanskrit four (Moon excluded).",
+      "source_english": "5 or 6",
+      "source_sanskrit": "चार/chatur four",
+      "status": "HIGH_CONFIDENCE_LOCAL_TRANSLATION_DISCREPANCY",
+      "consequence": "Different predicate prevalence. Freeze translated and Sanskrit alternatives as separate methods; do not retroactively revise prediction case studies."
+    },
+    {
+      "id": "B17-D02",
+      "problem": "Retrograde in exaltation positive effect lost attributed to some versus retrograde benefics strong elsewhere in same source, with Sanskrit phala/bala variant.",
+      "status": "GENUINE_TEXTUAL_SCHOOL_POLARITY_AND_VARIANT",
+      "consequence": "No blanket rule of retrograde invariably strong or weak; require explicit authority/version and relational conditions."
+    },
+    {
+      "id": "B17-D03",
+      "problem": "Sarvarth Chintamani extreme seven-exalted versus six-exalted conditions erroneously treated as equally physically impossible in an intermediate progress comment.",
+      "status": "CORRECTION_OF_ANALYST_INFERENCE",
+      "consequence": "All seven impossible from Sun Aries and Mercury Virgo. Six is NOT categorically impossible because the missing seventh may be Mercury; individual six-planet feasibility requires sky calculations. Do not classify untested six as empty."
+    }
+  ],
+  "project_rules": {
+    "not_trust_retrograde_unconditional_translator_note": "Bhasin Ch9 PDF223 generalizes to 'always', but original verse4 gives conjunction of friendly and retrograde sign strength with other dignities. Keep commentator-only.",
+    "no_person_level_testing": "No real human examples/participants selected or outcomes checked. These errors are independent textual/astronomical critiques.",
+    "release_status": "Source-critical variant memo, not a new accepted human-forecast candidate or runnable model feature"
+  },
+  "new_source_claim_records": 0,
+  "human_predictions_validated": 0,
+  "runtime_promotions": 0
+}
