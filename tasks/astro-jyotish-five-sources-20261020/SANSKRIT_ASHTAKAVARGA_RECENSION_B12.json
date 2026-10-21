@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B12",
+  "scope": "EXTERNAL_SANSKRIT_SOURCE_CRITICAL_COLLATION_0_NEW_HUMAN_PREDICTIONS",
+  "status": "SANSKRIT_CROSSCHECK_SUFFICIENT_TO_FLAG_ENGLISH_OMISSION_OR_MISTRANSLATION_NOT_RUNTIME_RULE_PROMOTION",
+  "independent_witnesses": [
+    {
+      "id": "JAIN_SARAVALI_SANSKRIT",
+      "work": "Kalyanavarman Saravali",
+      "source": "https://jainqq.org/booktext/Saravali/009887",
+      "index": "https://jainqq.org/explore/009887/223",
+      "edition": "Pandurang Javji printed 1928; 2012 scanning/reprinting prefatory material in composite file",
+      "location": "Digital scan page 223, Chapter 52 Sloka 8 and colophon; pp228-229 Chapters53-54",
+      "kind": "Scanned older Sanskrit printed witness with page-indexed searchable OCR",
+      "limits": "Printed image raster not directly downloaded into analysis runtime; Sanskrit OCR is unproofread. University electronic text provides orthographic cross-check."
+    },
+    {
+      "id": "CSU_SARAVALI_SANSKRIT",
+      "work": "Central Sanskrit University Lucknow e-book Saravali",
+      "source": "https://www.csu-lucknow.edu.in/e-books/saravali/p53.html",
+      "index": "https://www.csu-lucknow.edu.in/e-books/saravali/index.html",
+      "edition": "Unspecified Sanskrit digital text; text reproduces and marks variants",
+      "location": "Chapter 52 Verse 8 lines55-61; Chapter52 colophon; Chapter54 p55.html",
+      "kind": "Independent hosted electronic Sanskrit text (not proven manuscript-independent)",
+      "limits": "No manuscript/edition stemma; may derive from similar printed recension as Jain digitization."
+    },
+    {
+      "id": "CSU_SARAVALI_RESULTS",
+      "source": "https://www.csu-lucknow.edu.in/e-books/saravali/p55.html",
+      "location": "Chapter 54 slokas 1-12, specifically Sun bin 4 at verse3",
+      "kind": "Digital Sanskrit text of effects chapter"
+    },
+    {
+      "id": "UPLOADED_SARAVALI_EN",
+      "source_id": "JYOT-SARAVALI-EN",
+      "location": "Uploaded English PDF142-147, Chapter53 Ashtakavarga v8, Chapter54 Effects, Chapter55 Manifold Births"
+    },
+    {
+      "id": "UPLOADED_BPHS_PT",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "location": "CP1252 text line5299, Saturn Sthan/Rekha favorable contributors by relative sign"
+    }
+  ],
+  "saturn_sanskrit_exact_minimal": "भानोः केन्द्रधनायमृत्युषु तनोस्त्र्यायारिखाद्याम्बुगः",
+  "saturn_sanskrit_translation_method": "Within Saturn's Ashtakavarga verse the phrase after tanoḥ (from Lagna) contains tri (3), āya (11), ari (6), kha (10), ādya (1), ambu (4). Sanskrit house synonym ari means the sixth (enemies); the position sequence is not in ascending order.",
+  "saturn_from_lagna_1928_and_csu": [
+    1,
+    3,
+    4,
+    6,
+    10,
+    11
+  ],
+  "saturn_from_lagna_uploaded_english": [
+    1,
+    3,
+    4,
+    10,
+    11
+  ],
+  "saturn_from_lagna_portuguese_bphs": [
+    1,
+    3,
+    4,
+    6,
+    10,
+    11
+  ],
+  "confidence": "HIGH for English omission candidate relative Lagna sixth; TWO accessible digitizations with matching Sanskrit house term, plus separate Portuguese transmission; edition/manuscript independence NOT established and no direct critical edit permitted.",
+  "implications": {
+    "previous_uploaded_saravali_sums": {
+      "Sun": 48,
+      "Moon": 49,
+      "Mars": 39,
+      "Mercury": 54,
+      "Jupiter": 56,
+      "Venus": 52,
+      "Saturn": 38,
+      "total": 336
+    },
+    "reference_sanskrit_lagna_sixth_added": {
+      "Saturn": 39,
+      "total": 337
+    },
+    "operation": "Record source variants; leave B10 literal English transcript unchanged. New engine from Sanskrit variant requires separate method version and validation.",
+    "empirical_evidence": "none"
+  },
+  "edition_chapter_crosswalk": [
+    {
+      "topic": "Ashtakavarga contribution tables",
+      "jain_printing": "Chapter52 slokas1-10, scan pages222–223",
+      "csu_e_book": "Chapter52 slokas1-10, p53.html",
+      "uploaded_english": "Chapter53 slokas1-10, PDF142-143",
+      "type": "NUMBER_SHIFT"
+    },
+    {
+      "topic": "Non-human births",
+      "jain_printing": "Chapter53 slokas1-56, scan pages223–228",
+      "csu_e_book": "Chapter53 (वियोनिजन्माध्याय) p54.html",
+      "uploaded_english": "Chapter55 slokas1-56, PDF144-147",
+      "type": "CHAPTER_TRANSPOSITION"
+    },
+    {
+      "topic": "Effects of Ashtakavarga",
+      "jain_printing": "Chapter54 slokas1–12, scan pages228-229",
+      "csu_e_book": "Chapter54 (अष्टकवर्गफलाध्याय) p55.html",
+      "uploaded_english": "Chapter54 slokas1–12, PDF143-144",
+      "type": "CHAPTER_ORDER_ALTERED"
+    }
+  ],
+  "correction_to_earlier_provisional_interpretation": "English Chapter54 Effects was NOT omitted from the Sanskrit printing: it appears as Sanskrit Chapter54 AFTER nonhuman births Chapter53. No inference of interpolation from simple scan adjacency is admissible. The English edition has a different final-chapter sequence.",
+  "results_verse_original_sanskrit": {
+    "location": "CSU Chapter54 verse3 p55.html lines21-27",
+    "short_phrase": "सदसतोः साम्यं चतुष्के",
+    "meaning": "In the Sun's Ashtakavarga four favorable bindus produce parity/equivalence of good and bad effects in this verse.",
+    "implication": "Specific favorable mark count four as balanced has original-language source support here, not solely modern Sastri commentary. Do not universalize without checking other target planets."
+  },
+  "risks": [
+    "Sanskrit source witness not a modern critical edition.",
+    "The two Sanskrit digital copies might share a common printed ancestor; textual concordance is not independent case validation.",
+    "Original printed scan/image OCR needs human proof where verse glyphs differ.",
+    "Glyph conventions Bindu/Rekha differ across book traditions; normalize polarity, not literal marker.",
+    "No genuine human chart tested."
+  ],
+  "source_annotations_added": 0,
+  "human_test_results": 0,
+  "runtime_model_promotions": 0,
+  "next": "Independent Sanskrit source check of Pinda Sadhana multipliers and remaining unregistered chapters; optional engineering fixture that verifies Sanskrit-variant Saturn sum337 and English sum336 without choosing among them."
+}
