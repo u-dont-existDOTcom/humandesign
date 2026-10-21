@@ -1,0 +1,48 @@
+{
+  "schema": "TIBETAN_T15_INTERNAL_SOURCE_CONFLICTS_V1",
+  "source_id": "TIB-DORJE-2001",
+  "batch": "T15",
+  "extra_historical_note_count": 0,
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "conflicts": [
+    {
+      "id": "TIB-CONFLICT-001",
+      "pdf_page_1based": 179,
+      "printed_page": 178,
+      "passage": "Prognostications concerning five coincidences of inauspicious luck",
+      "anchor": "White Beryl f214a / Plate 5 fig19",
+      "prose_english": "Red Seven or Blue Three",
+      "published_table_english": "Red 2; Blue 3",
+      "subject_trigrams": [
+        "Dva",
+        "Zin"
+      ],
+      "verification": "Direct visual inspection of two rendered regions, not OCR inference",
+      "status": "ENGLISH_EDITION_INTERNAL_DISAGREEMENT",
+      "historical_note": "TIB-R0144",
+      "rule_promotion": "BLOCKED_FOR_THIS_CELL",
+      "resolution_needed": "Inspect original Tibetan/alternate edition or specialist commentary; never choose a branch using known birth/answer fit."
+    },
+    {
+      "id": "TIB-CONFLICT-002",
+      "pdf_page_1based": 201,
+      "printed_page": 200,
+      "passage": "Auspicious marriage trigram configurations",
+      "anchor": "White Beryl ff235a–236b / Plate 17 fig4",
+      "published_prose_and_table": [
+        "Li/Zin",
+        "Khon/Gin",
+        "Dva/Khen",
+        "Kham/Zin"
+      ],
+      "problem": "Zin appears twice, Zon missing from apparent four-pair row",
+      "verification": "Direct visual inspection of Plate17 fig4 printed table and surrounding published prose",
+      "status": "VERIFIED_PUBLISHED_DUPLICATION_MEANING_UNRESOLVED",
+      "historical_note": "TIB-R0174",
+      "rule_promotion": "BLOCKED_FOR_THIS_CATEGORY",
+      "resolution_needed": "Compare original Tibetan/alternate printed witness; don't silently substitute 'Kham/Zon'."
+    }
+  ],
+  "human_predictive_validation": 0,
+  "noteworthy": "Two separate discrepancies in the published English source represent source-data uncertainty rather than scientific predictive misses. They cannot be retroactively resolved by optimizing outcomes."
+}
