@@ -1,0 +1,266 @@
+{
+  "schema": "TIBETAN_T21_OBSTACLE_YEAR_12_SOURCE_NOTES_V1",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "batch": "T21",
+  "note_count": 12,
+  "source_notes": [
+    {
+      "id": "TIB-R0209",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 227,
+        "printed_page": 226,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "forty-seven-pebble-obstacle-divination",
+      "paraphrase": "Obstacle-year prognostication uses 47 pebbles: six basic, 24 conclusive analysis, four predictive, seven harshness, four numeric-square obstacles and two for multiples of nine and tomb signs.",
+      "required_inputs": [
+        "current_year",
+        "natal_chart",
+        "trigram",
+        "mewa",
+        "growth_sector",
+        "divination_time"
+      ],
+      "dependency_family": "TIB-OBSTACLE-47-PEBBLE",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0210",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 227,
+        "printed_page": 226,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "six-basic-pebbles",
+      "paraphrase": "Six basic pebbles correspond to current year, log-men year, current trigram, numeric square, growth/decline sector and divination hour in relation to destiny. They combine birth- and query-dependent inputs.",
+      "required_inputs": [
+        "year",
+        "logmen_year",
+        "trigram",
+        "mewa",
+        "growth_sector",
+        "divination_hour"
+      ],
+      "dependency_family": "TIB-OBSTACLE-BASE-PEBBLES",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0211",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 227,
+        "printed_page": 226,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "twenty-four-element-comparisons",
+      "paraphrase": "Each of six basic pebble aspects is compared against the four natal personal elements vitality, body, destiny and luck; the 24 relationships are encoded as graded white/black pebbles.",
+      "required_inputs": [
+        "six_reference_elements",
+        "natal_four_forces",
+        "directed_elemental_relations"
+      ],
+      "dependency_family": "TIB-OBSTACLE-24-CONTRAST",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0212",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 229,
+        "printed_page": 228,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "four-predictive-pebbles",
+      "paraphrase": "After tallying the conclusive-analysis pebbles, four additional predictive markers correspond to the four natal forces and are placed with the larger auspicious or inauspicious total. The worked example is Fire Dragon birth assessed for Earth Tiger year.",
+      "required_inputs": [
+        "pebble_24_tallies",
+        "natal_four_forces",
+        "birth_year",
+        "current_year"
+      ],
+      "dependency_family": "TIB-OBSTACLE-FOUR-OUTCOMES",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0213",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 229,
+        "printed_page": 228,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "male-female-logmen-traversal",
+      "paraphrase": "The male log-men cycle counts forward from Tiger using a son-relation element relative to destiny, whereas the female cycle counts backward from Monkey using a mother-relation element. This uses the subject's sex, distinct from year sign polarity.",
+      "required_inputs": [
+        "subject_sex",
+        "natal_destiny_element",
+        "cycle_year"
+      ],
+      "dependency_family": "TIB-OBSTACLE-LOGMEN",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0214",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 229,
+        "printed_page": 228,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "sex-dependent-heaven-earth-gates",
+      "paraphrase": "The heavenly gate is log-men Dog for males and Dragon for females; earthly gate Pig for males and Snake for females. These are symbolic sector classifications, not observed hazards.",
+      "required_inputs": [
+        "subject_sex",
+        "logmen_year_sign"
+      ],
+      "dependency_family": "TIB-OBSTACLE-GATES",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0215",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 229,
+        "printed_page": 228,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "logmen-four-directional-protections",
+      "paraphrase": "Four derivative log-men aspects are computed by offsets five backward, five forward, eight backward and eight forward around the year-sign cycle for heavenly lifeline, earthly peg, heavenly extension and earthly extension.",
+      "required_inputs": [
+        "logmen_reference_index",
+        "four_offset_rules",
+        "luck_element"
+      ],
+      "dependency_family": "TIB-OBSTACLE-LOGMEN-OFFSETS",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0216",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 230,
+        "printed_page": 229,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "harshness-seven-categories",
+      "paraphrase": "Seven auxiliary 'harsh' factors are defined: own-year return, seventh-removed enemies, neighboring signs with shared destiny, trine signs with shared luck, paternal-tomb obstacles, spouses sharing current trigram, and natal trigram coinciding with current year.",
+      "required_inputs": [
+        "natal_year",
+        "current_year",
+        "trigrams",
+        "mewa",
+        "ancestors",
+        "spouse_trigram"
+      ],
+      "dependency_family": "TIB-OBSTACLE-SEVEN-HARSH",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0217",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 232,
+        "printed_page": 231,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "natural-obstacle-age-series",
+      "paraphrase": "The twelve-year recurrence of the natal year generates age-specific obstacle descriptions, including ages 13,25,37,49,61,73, with elemental relation conditions. A twelve-year repetition is not a predictive hit by itself.",
+      "required_inputs": [
+        "natal_year",
+        "attained_or_inclusive_age",
+        "year_return",
+        "relation"
+      ],
+      "dependency_family": "TIB-OBSTACLE-12-YEAR",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0218",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 232,
+        "printed_page": 231,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "seven-removed-age-series",
+      "paraphrase": "A seventh-removed/adversarial-year series includes ages 7,19,31,43,55 with distinct fortune categories. The alternating social/economic claims depend on elemental relationship and context.",
+      "required_inputs": [
+        "natal_year",
+        "annual_sign",
+        "age",
+        "seven_removed"
+      ],
+      "dependency_family": "TIB-OBSTACLE-SEVENTH",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0219",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 233,
+        "printed_page": 232,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "twenty-seven-trigram-general-obstacles",
+      "paraphrase": "The inner obstacle-year method evaluates 27 general trigram obstacle configurations, often using the trigrams shared by most members of a household, rather than only an individual's natal trigram.",
+      "required_inputs": [
+        "family_members_current_trigrams",
+        "natal_trigrams",
+        "household_composition"
+      ],
+      "dependency_family": "TIB-OBSTACLE-27-TRIGRAM",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0220",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 234,
+        "printed_page": 233,
+        "reference": "White Beryl obstacle years original ff248b–263b / Moonbeams ff27b–29a"
+      },
+      "key": "four-gates-of-mara",
+      "paraphrase": "A subset of the trigram obstacles comprises four ordered configurations: Li upon Kham, Dva upon Zin, Khen upon Zon, Gin upon Khon. Outcomes refer to males, females, corpses and graves respectively; source labels are historical symbolism.",
+      "required_inputs": [
+        "source_trigram",
+        "target_trigram",
+        "current_year"
+      ],
+      "dependency_family": "TIB-OBSTACLE-FOUR-MARA-GATES",
+      "status": "source_claim_only",
+      "human_prediction_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "first": "TIB-R0209",
+  "last": "TIB-R0220",
+  "reading_scope": "Gyurme Dorje PDF227–234/printed226–233; White Beryl chapters on obstacle-year divination",
+  "warning": "47 pebbles are elements of one mathematical system; number of described classes is not observed empirical cases.",
+  "status": "source_only",
+  "actual_human_outcomes_verified": 0,
+  "algorithm_promotions": 0
+}
