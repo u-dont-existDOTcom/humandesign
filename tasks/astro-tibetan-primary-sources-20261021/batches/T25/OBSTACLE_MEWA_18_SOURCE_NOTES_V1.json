@@ -1,0 +1,396 @@
+{
+  "schema": "TIBETAN_T25_OBSTACLE_MEWA_SOURCE_NOTES_V1",
+  "batch": "T25",
+  "source_id": "TIB-DORJE-2001",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "reading_pdf_pages": "242–250",
+  "note_count": 18,
+  "first_id": "TIB-R0240",
+  "last_id": "TIB-R0257",
+  "notes": [
+    {
+      "id": "TIB-R0240",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 242,
+        "printed_page": 241,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "nine numeric-square mirrors",
+      "paraphrase": "The intermediate annual obstacle system gives each of nine mewa a named mirror and category of purported misfortunes; White One is gods, Black Two demons, Blue Three attachment spirits, Green Four serpentine spirits, Yellow Five soil spirits, White Six king spirits, Red Seven haunting spirits, White Eight countryside deities, and Red Nine imprecatory goddesses.",
+      "required_inputs": [
+        "current_mewa"
+      ],
+      "output_class": "nine_category_symbolic_mirror",
+      "dependency_family": "MEWA-MIRRORS",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0241",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 242,
+        "printed_page": 241,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "current natal numeric combination",
+      "paraphrase": "Besides the current-year mewa mirror's general reading, the text contrasts current and natal mewa, giving different purported ailments and ritual recommendations for color/element matches and mismatches.",
+      "required_inputs": [
+        "subject_natal_mewa",
+        "current_year_mewa"
+      ],
+      "output_class": "mewa_pair_outcome_class",
+      "dependency_family": "MEWA-NATAL-ANNUAL",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0242",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 243,
+        "printed_page": 242,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "household mewa majority groupings",
+      "paraphrase": "General numeric-square obstacles include a household-majority classification by numeric-square subsets, particularly White 1/6/8, Black 2/Blue 3, Green 4, Yellow 5, Red 7/9; group membership is necessary before its prediction.",
+      "required_inputs": [
+        "all_household_member_mewa",
+        "current_year_mewa"
+      ],
+      "output_class": "household_numeric_omens",
+      "dependency_family": "HOUSEHOLD-MEWA",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0243",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 243,
+        "printed_page": 242,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "majority and minority different mewa",
+      "paraphrase": "Supplementary Plate 18 fig.6 distinguishes household majority mewa from a minority member's anomalous square, e.g. majority White 1/6/8 with one Black Two, and majority Black Two with one White One, assigning distinct target outcomes.",
+      "required_inputs": [
+        "household_majority_mewa",
+        "minority_mewa",
+        "family_size"
+      ],
+      "output_class": "majority_minority_interaction",
+      "dependency_family": "HOUSEHOLD-MEWA",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0244",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 246,
+        "printed_page": 245,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "Black Two counterpart human category",
+      "paraphrase": "Plate18 fig.8 assigns a different type of affected person for Black Two conjoined with each of nine mewa, including children, adult men, widows, monks, women, a protector figure and elders; historical symbolic labels, not disease risk estimates.",
+      "required_inputs": [
+        "current_Black_Two",
+        "other_mewa",
+        "social_role"
+      ],
+      "output_class": "nine_target_categories",
+      "dependency_family": "MEWA-ROLE-SPECIFIC",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0245",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 247,
+        "printed_page": 246,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "four minor mewa obstacles",
+      "paraphrase": "Four supplementary pebbles represent obstacles to construction, bedding, surroundings, and the elemental kingly gate, each with a different numeric-square selection rule.",
+      "required_inputs": [
+        "current_mewa",
+        "natal_mewa",
+        "Black_Two",
+        "mewa_enemy_relation"
+      ],
+      "output_class": "four_minor_obstacle_pebbles",
+      "dependency_family": "MEWA-FOUR-OBSTACLES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0246",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 247,
+        "printed_page": 246,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "building obstacle current square",
+      "paraphrase": "The construction/building obstacle (khang-keg) is selected on the basis of the present year's numeric square and historically concerns building work and repairs.",
+      "required_inputs": [
+        "current_year_mewa",
+        "building_context"
+      ],
+      "output_class": "building_omen",
+      "dependency_family": "MEWA-FOUR-OBSTACLES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0247",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 247,
+        "printed_page": 246,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "bedding obstacle natal color coincidence",
+      "paraphrase": "The bedding obstacle (mal-keg) is based on natal mewa, contrasting color groups between natal and current mewa and introducing subject-sex-specific omen qualifications.",
+      "required_inputs": [
+        "subject_natal_mewa",
+        "current_year_mewa",
+        "subject_sex"
+      ],
+      "output_class": "bedding_omen",
+      "dependency_family": "MEWA-FOUR-OBSTACLES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0248",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 247,
+        "printed_page": 246,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "environment Black Two and spouses",
+      "paraphrase": "Environmental obstacles (yul-keg) are derived from the mewa Black Two, with explicitly different purported severity depending on whether one spouse or both spouses share that square.",
+      "required_inputs": [
+        "partner1_mewa",
+        "partner2_mewa",
+        "Black_Two_status"
+      ],
+      "output_class": "environmental_omen",
+      "dependency_family": "MEWA-FOUR-OBSTACLES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0249",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 247,
+        "printed_page": 246,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "kingly elemental gate enemy mewa",
+      "paraphrase": "The fourth minor pebble represents a 'kingly gate of the elements' evaluated by the enemy relation to the subject's natal mewa element, rather than direct equality with current mewa.",
+      "required_inputs": [
+        "natal_mewa_element",
+        "current_element",
+        "directional_enemy_relation"
+      ],
+      "output_class": "kingly_gate_omen",
+      "dependency_family": "MEWA-FOUR-OBSTACLES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0250",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 248,
+        "printed_page": 247,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "red black asymmetry",
+      "paraphrase": "Two exceptional adverse numeric transitions are distinguished: red natal square encountering black current square, and black natal encountering red current square; distinct elemental similes are given.",
+      "required_inputs": [
+        "natal_mewa_color",
+        "current_mewa_color"
+      ],
+      "output_class": "directed_color_transition",
+      "dependency_family": "MEWA-NATAL-ANNUAL",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0251",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 248,
+        "printed_page": 247,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "sex-specific mewa heavenly earthly gates",
+      "paraphrase": "For the general/male mewa convention, the heavenly and earthly gates are Black Two and White Six, respectively; for female subjects they are White One and Green Four, respectively.",
+      "required_inputs": [
+        "subject_sex",
+        "current_mewa"
+      ],
+      "output_class": "two_gate_numeric_category",
+      "dependency_family": "MEWA-SEX-GATES",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0252",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 249,
+        "printed_page": 248,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "four-axis seasonal decline",
+      "paraphrase": "The secret growth/decline scheme combines vitality, body, destiny and luck axes with a current trigram, mewa, hostile element and sex, assigning distinct fortune and hazard classes by axis.",
+      "required_inputs": [
+        "subject_four_forces",
+        "current_year_trigram",
+        "current_mewa",
+        "sex",
+        "decline_sectors"
+      ],
+      "output_class": "multi_axis_annual_omen",
+      "dependency_family": "ANNUAL-DECLINE",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0253",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 249,
+        "printed_page": 248,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "consultation-hour crosslink",
+      "paraphrase": "White Beryl explicitly defers most-secret hour calculation to Chapter Thirty on time of divination, not to an ordinary natal birth-hour calculation.",
+      "required_inputs": [
+        "consultation_hour",
+        "current_year_context"
+      ],
+      "output_class": "question_time_calculation",
+      "dependency_family": "QUERY-TIME",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0254",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 249,
+        "printed_page": 248,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "two pebbles nine-and-tomb",
+      "paraphrase": "The final two of the 47 annual pebbles test (a) coincidence with an appropriate multiples-of-nine sign/year/trigram/mewa and (b) occurrence of tomb-sign trigram, with black markers for adverse coincidence.",
+      "required_inputs": [
+        "current_year",
+        "subject_age",
+        "trigram",
+        "mewa",
+        "tomb_sign"
+      ],
+      "output_class": "nine_and_tomb_boolean_flags",
+      "dependency_family": "MEWA-47-PEBBLE",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0255",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 250,
+        "printed_page": 249,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "vitality-to-tomb-trigram",
+      "paraphrase": "Supplementary Plate19 fig.2 maps vitality Wood→Khon, Fire→Khen, Iron→Gin and Earth/Water→Zon for the tomb-sign trigram; do not substitute another family's destiny element.",
+      "required_inputs": [
+        "natal_vitality_element",
+        "current_trigram"
+      ],
+      "output_class": "tomb_trigram_match",
+      "dependency_family": "ANNUAL-TOMB",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0256",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 250,
+        "printed_page": 249,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "five modes nine cycles",
+      "paraphrase": "The text specifies five different ways of calculating multiples of nine (dgu-mig): isolated animal sign, combined signs, natal/current trigrams, numeric squares, and constitutional type. They cannot be counted as one uniquely defined age algorithm.",
+      "required_inputs": [
+        "method_variant",
+        "sex",
+        "natal_chart",
+        "current_year"
+      ],
+      "output_class": "five_distinct_nine_methods",
+      "dependency_family": "ANNUAL-NINE",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0257",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 246,
+        "printed_page": 245,
+        "source": "White Beryl chapter 24 ff.263b–273b; corresponding plates 9 and 18–19"
+      },
+      "key": "source role targeting Black Two",
+      "paraphrase": "The Black Two target-person matrix distinguishes one Black Two case for adult males from paired Black Two with other squares, including Blue Three targeting disabled persons or children; household-role information is mandatory.",
+      "required_inputs": [
+        "Black_Two_coincidence",
+        "other_mewa",
+        "family_role"
+      ],
+      "output_class": "target_person_category",
+      "dependency_family": "MEWA-ROLE-SPECIFIC",
+      "source_status": "English translated/calculation summary; original Tibetan not collated",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    }
+  ],
+  "known_limitations": [
+    "Question-time input explicitly required for consultation-hour segment, cannot be inferred from birth time",
+    "Black Two with other mewa and repeated natal/current colors are symbolic claims only",
+    "Medical/disease/mortality statements are not scientifically validated clinical prognosis",
+    "Minor pebble statuses not independently reproduced using a complete traditional calendar engine",
+    "Different age-nine modes must be preserved as variants"
+  ],
+  "validated_human_cases": 0,
+  "model_promotions": 0
+}
