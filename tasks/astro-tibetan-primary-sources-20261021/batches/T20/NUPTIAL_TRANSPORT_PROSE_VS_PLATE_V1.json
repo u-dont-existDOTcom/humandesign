@@ -1,0 +1,28 @@
+{
+  "schema": "TIBETAN_T20_MARRIAGE_TRANSPORT_VARIANT_V1",
+  "batch": "T20",
+  "historical_source_note_increment": 0,
+  "reuses_note": "TIB-R0208",
+  "source": "Gyurme Dorje (2001), White Beryl, printed p223 / PDF224 Plate8 fig13",
+  "documentary_issue": "Printed explanatory prose repeats Khon twice for sheep and dog transports, leaving Khen absent; adjacent plate's 8-column table explicitly labels dog transport Khen. This is an internal text/figure conflict in same edition, confirmed from rendered page.",
+  "prose_view": {
+    "Khon": [
+      "sheep",
+      "dog"
+    ],
+    "Khen": null
+  },
+  "illustrated_table_view": {
+    "Li": "horse",
+    "Khon": "sheep",
+    "Dva": "goat",
+    "Khen": "dog",
+    "Kham": "pig",
+    "Gin": "ox",
+    "Zin": "donkey",
+    "Zon": "hybrid_yak"
+  },
+  "resolution_status": "ENGLISH_PROSE_AND_TABLE_DISAGREE_ON_FOURTH_TRIGRAM",
+  "implementation_note": "Retain both witnesses. Use neither unmarked Khen/dog rule nor a silently corrected prose quotation. Check original Tibetan if this ever becomes an operational rule.",
+  "human_validation_count": 0
+}
