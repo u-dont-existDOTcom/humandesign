@@ -1,0 +1,29 @@
+# Original Lilly 1647 and 1659 merchant Friends — historical documentary evidence
+
+# William Lilly's merchant-nativity Friends chapter — original 1647 and 1659 editions
+
+2026-10-21 Africa/Dakar UTC+0. Documentary historical source, not validated predictions of the known merchant's friends, business partners or wealth.
+
+## Original printed texts and physical numbering
+
+In Lilly's original first *Christian Astrology* (1647, Wellcome b30338724), printed p762, source PDF frame796, a ruled divider ends the **tenth-house Honours** example (literally **CHAP CLXXXIIII**) and begins a separately headed **eleventh-house CHAP CLXXXIII, `Of Friends`**. This printed numeral goes backwards and repeats the numeral earlier associated with a travel chapter; the editorial source-sequence ordinal is **185**, with printed heading still the actual literal **CLXXXIII**. The separately typeset original second edition (1659) confirms this same heading on printed p762. The source passage continues onto original p763/PDF797 (1659 DjVu p763), ending ABOVE another divider. The next printed source is a **twelfth-house CHAP CLXXXIV `Of Imprisonment`** in the middle of p763, followed by an independently headed **eighth-house CHAP CLXXXV `Of Death its quality`** in its lower portion. Do not merge these distinct chapters or silently normalize repeated Roman numerals.
+
+Five original photographic witnesses are archived with per-file SHA256 and byte counts: independent first-1647 p762/p763 and context p764, and second-1659 p762/p763. The full first edition's accepted source SHA is preserved; no verified entire-second-edition binary SHA is claimed. The two images agree visually on the relevant Friends passage and headings, but this is not a new independent expert, complete diplomatic glyph-by-glyph collation.
+
+## Original first-person known merchant source, not blinded forecasts
+
+Lilly gives specific conditions for an **already-described merchant**: a bicorporeal **Sagittarius** at the cusp of the eleventh, the **Moon** allegedly opposing that cusp and also governing the **seventh**. He therefore asserts sailors and people derogatorily classed as `vulgar fellowes` should not be admitted as friends, and that a seventh-house business partner of this Moon type would harm rather than benefit the merchant's commerce. The wider Moon-person list is referred to **printed p81** and not reproduced in this passage. These are historical prejudicial recommendations, not supported observations of real people, untrustworthy partners, financial losses or unsafe associates.
+
+Lilly then says **Jupiter in Sagittarius** and the sign itself support association with people of `Jovial` nature. He also favors so-called `Venetians` in contrast to `Mercurians`; in context it may mean those classified under Venus, but the old word is not independently confirmed as such and should not be mistaken for a documented national/geographic rule about residents of Venice. The author dismisses Mercury-associated people under claimed **peregrine** and **combust** conditions. No independent birth record, validated historical merchant chart/clock, dignity, or original-versus-modern ephemeris identity has established these conditions on a real person.
+
+**Mars** is said to trine the eleventh cusp; Lilly extends eligible associates to commanders, town officials, governors and principal magistrates provided they fit **Mars's Leo sign characterization**, referred back to source planetary/sign properties elsewhere. He also offers surgeons, physicians, druggists, apothecaries, masters of mints and broadly **any work involving iron instruments**. This is a large set of alternate occupational categories, not a precise, prospectively calibrated prediction about who genuinely befriends and helps the merchant.
+
+## Documentary acceptance and safeguards
+
+**35 original historical annotations R13237–R13271**, including **32 substantive source-boundary/condition interpretations plus 3 next-chapter navigation** in six reversible original text groups. The first and second 1647/1659 edition page images and each source/photo/record map were checked by **18 focused historical source integrity tests**. A cold-extracted portable source ZIP also verifies member CRC, bytes, SHA256 and independently replays the same tests. These are archival reproducibility checks, not evidence of real-world astrology accuracy. No merchant's associates, partner-profit/loss data, or alternative partners were independently investigated or scored.
+
+After authenticated GitHub publication the accepted original Western source registry becomes **13,271 Lilly +1,066 Ptolemy =14,337 historical annotations**, first-edition physical position **PDF797/894 (~89.2% scanned-page order only)**. The newer independent Chinese source branch V14 holds **210 BaZi +586 Zi Wei Dou Shu =796** source annotations and is not merged with this Western branch. Combined cross-branch documentary count would be 15,133; neither count establishes human predictive success. **Zero** validated independent human predictions and **zero** executable astrology runtime promotions.
+
+Next is original twelfth-house printed **CLXXXIV `Of Imprisonment`** starting **p763/PDF797 middle** and ending before separately printed **CLXXXV `Of Death its quality`** lower same page. The imprisonment source's claims about confinement, unnamed adversaries and accidents are not real-person legal/criminality or safety forecasts. Source-order priority is to preserve its separate physical boundary and old numerical assumptions.
+
+**Accepted only after remote verification:** 13,271 Lilly + 1,066 Ptolemy =14,337 Western original source annotations, 18 photo/ZIP source tests pass, no actual verified merchant friendships or real human predictions and zero runtime model promotions.

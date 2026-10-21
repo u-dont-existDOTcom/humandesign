@@ -1,0 +1,39 @@
+.......................................s................................ [ 17%]
+........................................................................ [ 35%]
+..............................................ss........................ [ 53%]
+............................................................s........... [ 71%]
+...............................................................F........ [ 89%]
+..........................................                               [100%]
+=================================== FAILURES ===================================
+_____ test_prediction_freeze_binds_models_but_stays_locked_without_engines _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76a2a54b0cb0>
+
+    def test_prediction_freeze_binds_models_but_stays_locked_without_engines(
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        monkeypatch.delenv("HDMATCH_EPHEMERIS_PATH", raising=False)
+        root = Path.cwd()
+        intake = _intake(partner_hour=10)
+        freeze = build_prediction_freeze(
+            session_id="RR-TEST",
+            intake=intake,
+            repo_root=root,
+            questionnaire_path=Path("reference/relationship/relationship_dynamic_questionnaire_v1.json"),
+            noise_policy=bind_noise_policy(None),
+            code_commit="test-commit",
+        )
+        statuses = {layer.layer_id: layer.status for layer in freeze.layers}
+        assert statuses["human_design_connection_v1"] is PredictionLayerStatus.PENDING_ENGINE
+>       assert statuses["astro_rrf_directional_v0_4"] is PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA
+E       AssertionError: assert <PredictionLayerStatus.UNAVAILABLE: 'unavailable'> is <PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA: 'insufficient_birth_data'>
+E        +  where <PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA: 'insufficient_birth_data'> = PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA
+
+tests/unit/test_relationship_study.py:109: AssertionError
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_mundane_outer_saturn_transfer_20261011.py:62: Original licensed/copyrighted snapshots are not tracked in public Git; run --fetch.
+SKIPPED [1] tests/unit/test_chart_design_ephemeris.py:156: official Swiss Ephemeris smoke-test files are not installed
+SKIPPED [1] tests/unit/test_chart_design_ephemeris.py:180: official Swiss Ephemeris smoke-test files are not installed
+SKIPPED [1] tests/unit/test_natal_pilot_app.py:570: official Swiss Ephemeris files are not installed
+FAILED tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines
+1 failed, 397 passed, 4 skipped in 16.34s

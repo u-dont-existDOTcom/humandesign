@@ -1,3 +1,9 @@
+# Parallel research reconciled; Lilly merchant Friends original source — 2026-10-21
+
+After authenticated remote publication **14,337 Western historical source annotations** (13,271 Lilly +1,066 Ptolemy) at original first-edition PDF797/894 (~89.2% PHYSICAL scan-page position ONLY, not completed research or predictive truth). B07bh 35 historical source notes on a known merchant's supposed friends, Moon-partner risks, Jupiter/Venus and Mars source alternatives from both 1647/1659. Old literal friends CLXXXIII repeated after Honours CLXXXIIII; editorial ordinal185. No actual association, economic result, human behavioral prediction or runtime source promotion. Other accepted Chinese V14 source has 796 source records (BaZi210+ZiWei586) on an INDEPENDENT branch, not merged; existing independent computational and literature study branches also not merged. NEXT original p763 CHAP CLXXXIV Imprisonment, then CHAP CLXXXV Death.
+
+---
+
 # Original Lilly 1647 printed CLXV Part Fortune source accepted
 
 **204 historical source annotations R12269–R12472** (201 substantive plus three next CLXVI navigation) in 35 reversible original photo groups across PDF737–742. Original ecliptic longitudes for the three fixed-star headings were not printed and remain null. **12,472 Lilly +1,066 Ptolemy=13,538 Western historic notes**, separate **97 Chinese BaZi/Zi Wei historical source notes**. Next **R12473 original printed CLXVI Of the measure of time in DIRECTIONS** begins PDF742/printed708, with competing methods and an annual-direction numerical table. 62 ZIP-extracted photo/source CRC/sha tests passed; this proves documentary mapping, not event-time accuracy or personally valid health, money, moral, crime or mortality predictions. No runtime promotions.

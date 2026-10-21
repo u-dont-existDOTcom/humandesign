@@ -1,0 +1,69 @@
+{
+  "checkpoint_date_utc": "2026-10-21T15:34:00Z",
+  "batch": "B07bh",
+  "repository_declared_test_command": ".venv/bin/python -m pytest",
+  "actual_test_runner": "/home/joel/humandesign/.venv/bin/python -m pytest -q (isolated worktree had no .venv)",
+  "full_pytest": {
+    "passed": 397,
+    "skipped": 4,
+    "failed": 1,
+    "exit_code": 1,
+    "failure": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "observed": "PredictionLayerStatus.UNAVAILABLE",
+    "expected": "PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA",
+    "same_failure_reproduced_on_accepted_unmodified_B07bg_parent": true
+  },
+  "repository_lint": {
+    "declared": ".venv/bin/ruff check src tests scripts",
+    "actual": "/home/joel/humandesign/.venv/bin/ruff check src tests scripts",
+    "exit_code": 1,
+    "count_errors": 2423,
+    "same_count_on_unmodified_accepted_B07bg_parent": true,
+    "new_batch_own_python_ruff_errors": 0
+  },
+  "canonical_uda_audit": {
+    "exit_code": 1,
+    "errors": 90,
+    "warnings": 73,
+    "old_20261018_B07c_documented_errors": 90,
+    "old_20261018_B07c_documented_warnings": 73,
+    "most_recent_declared_project_local_audit_script_present": false
+  },
+  "full_source_batches": {
+    "B07bh_documentary_tests_passed": 18,
+    "B07bh_index_append_tests_passed": 13,
+    "independent_cold_zip_replays_passed": 18,
+    "root_project_global_completion_gates_green": false,
+    "production_src_or_existing_behavior_test_files_changed": false,
+    "new_runtime_promotions": 0,
+    "new_real_human_accuracies": 0
+  },
+  "log_files": {
+    "REPOSITORY_PYTEST_PRECOMMIT_LOG_20261021.txt": {
+      "sha256": "acf424083676ee7b415be63239551ecacee7594f6aa756fb869e3b8dbe61cbc7",
+      "bytes": 2687,
+      "lines": 39
+    },
+    "BASELINE_PARENT_RELATIONSHIP_FAILURE_20261021.txt": {
+      "sha256": "137efd69bcecac73fc086e6e63757e8cc91233cd44ce6d9dfdd81959cafe98de",
+      "bytes": 1771,
+      "lines": 30
+    },
+    "REPOSITORY_LINT_PRECOMMIT_20261021.txt": {
+      "sha256": "f897fe488a55eb5935df1c309222270d8bbcfdcbbf3c781b86fc4428d25d78e4",
+      "bytes": 1370001,
+      "lines": 28430
+    },
+    "PARENT_BASELINE_LINT_20261021.txt": {
+      "sha256": "f897fe488a55eb5935df1c309222270d8bbcfdcbbf3c781b86fc4428d25d78e4",
+      "bytes": 1370001,
+      "lines": 28430
+    },
+    "REPOSITORY_UDA_AUDIT_PRECOMMIT_20261021.txt": {
+      "sha256": "896f542c3027c30f9b15fb55b7af3dbf99ab73cf455becf15f9b28862a644a79",
+      "bytes": 43641,
+      "lines": 277
+    }
+  },
+  "followup": "Unrelated relationship-study expectation and inherited repo-wide lint/governance failures require separate owners; do not reset runtime status in this source-only branch or treat archival integrity as predictive validation."
+}

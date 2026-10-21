@@ -1,3 +1,9 @@
+# Lilly Friends merchant source documented after cross-chat reconciliation
+
+2026-10-21 Africa/Dakar UTC+0. B07bh source R13237–R13271 prepared for remote acceptance. After verified push 13,271 Lilly+1,066 Ptolemy =14,337 source annotations. First 1647 and second 1659 independent original photos agree on old numbered source seam p762–763; original printed CLXXXIII Friends is editorial185 and must not be normalized. 18 photo/ZIP extracted source tests, zero independent real-person friendship or commerce outcome accuracy and no scoring rule promotions. Chinese V14 796 historical notes remain in parallel accepted original source branch, not combined at file level. NEXT source printed CLXXXIV Imprisonment p763, then CLXXXV death.
+
+---
+
 # Original Lilly CLXXXIIII Honours — physical original source covered B07bg
 
 **44 source-only historical R13193–R13236** cover first1647 and separate1659 printed p760–762/PDF794–796 Honours, with 8 original folio760–763 page-photo SHA/byte witnesses. Career/commerce, metals, jewels, accounts, fame, possible public office, fixed stars and qualifying class/effort/directions are historic claims about an already-known merchant, no verified actual job or honours. Venus Cazimi reused from Marriage's unverified natal premise (printed Sun/Venus17' vs modern ~75' under hypothetical historical UT); it is NOT independent chart evidence. Original printed numeral changes backwards from Honours **CLXXXIIII** to next **CLXXXIII** Friends on p762/PDF796, despite editorial ordinal185. **13,236 Lilly +1,066 Ptolemy=14,302 Western** historic annotations; independent Chinese accepted V9 **430** in separate lane (aggregate **14,732** source docs), not verified predictions. Next **R13237 Of Friends**, printed p762/PDF796. Human predictive validations **0**, runtime promotions **0**.

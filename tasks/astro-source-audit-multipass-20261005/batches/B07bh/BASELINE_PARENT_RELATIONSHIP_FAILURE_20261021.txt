@@ -1,0 +1,30 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_prediction_freeze_binds_models_but_stays_locked_without_engines _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7788a5115640>
+
+    def test_prediction_freeze_binds_models_but_stays_locked_without_engines(
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        monkeypatch.delenv("HDMATCH_EPHEMERIS_PATH", raising=False)
+        root = Path.cwd()
+        intake = _intake(partner_hour=10)
+        freeze = build_prediction_freeze(
+            session_id="RR-TEST",
+            intake=intake,
+            repo_root=root,
+            questionnaire_path=Path("reference/relationship/relationship_dynamic_questionnaire_v1.json"),
+            noise_policy=bind_noise_policy(None),
+            code_commit="test-commit",
+        )
+        statuses = {layer.layer_id: layer.status for layer in freeze.layers}
+        assert statuses["human_design_connection_v1"] is PredictionLayerStatus.PENDING_ENGINE
+>       assert statuses["astro_rrf_directional_v0_4"] is PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA
+E       AssertionError: assert <PredictionLayerStatus.UNAVAILABLE: 'unavailable'> is <PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA: 'insufficient_birth_data'>
+E        +  where <PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA: 'insufficient_birth_data'> = PredictionLayerStatus.INSUFFICIENT_BIRTH_DATA
+
+tests/unit/test_relationship_study.py:109: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines
+1 failed in 0.23s
