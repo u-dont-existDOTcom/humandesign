@@ -1,0 +1,419 @@
+{
+  "schema": "TIBETAN_T07_NATAL_OMENS_CONJUNCTIONS_SOURCE_NOTES_V1",
+  "batch": "T07",
+  "parent": "T06",
+  "note_count": 16,
+  "ids": "TIB-R0113–TIB-R0128",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_coverage": "PDF pages 164–168 / printed 163–167; primary White Beryl ff.196a–205b; embedded Moonbeams f.24a–24b",
+  "study_boundaries": [
+    "No real human predictive validation",
+    "Father's CURRENT trigram and contemporaneous birth incident are extra-natal inputs",
+    "Planetary conjunction names are a formal traditional algorithm, not observed sky conjunctions",
+    "All birth and sex conditions require independent pre-score input freeze",
+    "Historical danger/ritual claims must not be interpreted as medical or safety guidance",
+    "Retain existing 112 source notes unchanged"
+  ],
+  "source_notes": [
+    {
+      "id": "TIB-R0113",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 164,
+        "printed_page": 163
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-current-trigram-childbirth-omen",
+      "paraphrase": "This prognostic method combines the father's trigram current at delivery with incidental events happening at the birth. It is not a pure natal chart and requires independently witnessed context.",
+      "required_inputs": [
+        "father_current_trigram",
+        "events_at_birth"
+      ],
+      "claimed_output_classes": [
+        "birth_omen"
+      ],
+      "dependency_family": "TIB-QUERY-TIME-BIRTH-EVENT",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0114",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 164,
+        "printed_page": 163
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Li-twin-girls",
+      "paraphrase": "A case combining the father's current Li trigram, twin daughters, an animal-year condition and a gathering of paternal relatives is assigned an adverse twin-survival prognosis and ritual prescription.",
+      "required_inputs": [
+        "father_current_trigram",
+        "twins_sex",
+        "child_year_animal",
+        "paternal_relatives_presence"
+      ],
+      "claimed_output_classes": [
+        "historical_twin_outcome",
+        "ritual"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0115",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 164,
+        "printed_page": 163
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Khon-birth-quarrel",
+      "paraphrase": "Father's current Khon trigram combined with birth in a sheep year, quarrelling and father-in-law presence is assigned an adverse birth omen, together with a proposed stupa/ritual remedy.",
+      "required_inputs": [
+        "father_current_trigram",
+        "child_year_animal",
+        "quarrel_at_birth",
+        "father_in_law_present"
+      ],
+      "claimed_output_classes": [
+        "birth_omen",
+        "ritual"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0116",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 164,
+        "printed_page": 163
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Dva-blood-feud",
+      "paraphrase": "Father's current Dva trigram, child's bird/monkey year and a contemporaneous blood feud or gathering of weapons are associated with an unfavorable health-and-conflict omen.",
+      "required_inputs": [
+        "father_current_trigram",
+        "child_year_animal",
+        "feud_or_weapons_at_birth"
+      ],
+      "claimed_output_classes": [
+        "historical_illness_omen",
+        "conflict"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0117",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Khen-false-oath",
+      "paraphrase": "Father's current Khen trigram with a sworn oath (especially involving an iron-dog-year person) is assigned an omen of impaired family continuity or decline.",
+      "required_inputs": [
+        "father_current_trigram",
+        "oath_at_birth",
+        "oath_speaker_year"
+      ],
+      "claimed_output_classes": [
+        "family_trajectory"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0118",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Kham-nonmarital-birth",
+      "paraphrase": "Father's current Kham trigram with birth outside marriage or incest, especially another household member's mother-relationship year, is linked to hostility within the household; a ritual remedy is proposed.",
+      "required_inputs": [
+        "father_current_trigram",
+        "parents_relationship_context",
+        "other_household_member_mother_year"
+      ],
+      "claimed_output_classes": [
+        "family_conflict_omen",
+        "ritual"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0119",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Gin-bone-scattering",
+      "paraphrase": "Father's current Gin trigram plus a birth coinciding with scattered bones (especially those of an ox-year monk) is interpreted as an obstacle concerning resources and ancestral relations.",
+      "required_inputs": [
+        "father_current_trigram",
+        "bone_scattering_at_birth",
+        "deceased_status"
+      ],
+      "claimed_output_classes": [
+        "resource_omen"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0120",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Zin-daughter",
+      "paraphrase": "Father's current Zin trigram with birth of a daughter is associated with an omen concerning the continuity of the paternal family line; no independent evidence of the claim is supplied.",
+      "required_inputs": [
+        "father_current_trigram",
+        "child_sex"
+      ],
+      "claimed_output_classes": [
+        "patrilineal_continuity"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0121",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "196a–197b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "father-Zon-cooking-omen",
+      "paraphrase": "Father's current Zon trigram with burning or overflowing cooking vessels at birth is associated with a transfer of distinction from brother to sister and unfavorable household omens.",
+      "required_inputs": [
+        "father_current_trigram",
+        "cooking_event_at_birth"
+      ],
+      "claimed_output_classes": [
+        "sibling_status_omen",
+        "historical_health_omen"
+      ],
+      "dependency_family": "TIB-FATHER-TRIGRAM-OMEN",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0122",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 165,
+        "printed_page": 164
+      },
+      "white_beryl_folio": "203b–205b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "major-vs-minor-triple-conjunction",
+      "paraphrase": "The text's so-called major triple planetary conjunction uses combined destiny element, year-sign and trigram, differentiated by subject sex. Its lesser variant has only year-sign/trigram concordance without matching destiny element. This is a symbolic classification, not an observed ephemeris event.",
+      "required_inputs": [
+        "destiny_element",
+        "sexagenary_year_sign",
+        "natal_trigram",
+        "subject_sex"
+      ],
+      "claimed_output_classes": [
+        "symbolic_planetary_class"
+      ],
+      "dependency_family": "TIB-SYMBOLIC-PLANETARY-TRIPLE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0123",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 166,
+        "printed_page": 165
+      },
+      "white_beryl_folio": "203b–205b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "four-sex-dependent-planetary-triples",
+      "paraphrase": "Moonbeams f.24a presents male/female conditional combinations for Saturn, Mars, Jupiter and Mercury named conjunctions (fully transcribed as a separate T08 lookup). Planet labels do not imply the indicated planets share astronomical longitude.",
+      "required_inputs": [
+        "source_year_element_group",
+        "year_animal",
+        "natal_trigram",
+        "subject_sex"
+      ],
+      "claimed_output_classes": [
+        "symbolic_planetary_class"
+      ],
+      "dependency_family": "TIB-SYMBOLIC-PLANETARY-TRIPLE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0124",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 166,
+        "printed_page": 165
+      },
+      "white_beryl_folio": "203b–205b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "symbolic-triple-prognoses",
+      "paraphrase": "The text attaches differentiated life-course assertions to Mars, Jupiter, Saturn and Mercury triple configurations, including combinations of resource loss, later recovery, hazards and social consequences. These assertions are textual, not observationally demonstrated.",
+      "required_inputs": [
+        "symbolic_planetary_class",
+        "additional_context"
+      ],
+      "claimed_output_classes": [
+        "resource_trajectory",
+        "social_conflict",
+        "historical_health_risk"
+      ],
+      "dependency_family": "TIB-SYMBOLIC-PLANETARY-TRIPLE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0125",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 166,
+        "printed_page": 165
+      },
+      "white_beryl_folio": "203b–205b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "nine-pebble-symbolic-contrast",
+      "paraphrase": "This planetary-luck chart has nine pebbles: outer destiny, intermediate vitality, inner constitutional type, plus all six ordered positive/negative comparisons across the three positions. Each direction is distinct.",
+      "required_inputs": [
+        "outer_planetary_aspect",
+        "intermediate_planetary_aspect",
+        "inner_planetary_aspect",
+        "ordered_elemental_relations"
+      ],
+      "claimed_output_classes": [
+        "nine_pebble_profile"
+      ],
+      "dependency_family": "TIB-DIRECTED-TRIPLE-PEBBLE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0126",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 167,
+        "printed_page": 166
+      },
+      "white_beryl_folio": "197b–203b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "maternal-age-planetary-luck",
+      "paraphrase": "An independent scheme determines a child's planetary luck from the mother's natal year-sign, trigram and attained age at birth (15–50 in the presented table), then the child's year animal. A compatible grouping is named a triple planetary alliance; other child groups receive different classes.",
+      "required_inputs": [
+        "mother_natal_year",
+        "mother_trigram",
+        "mother_age_at_birth",
+        "child_year_animal"
+      ],
+      "claimed_output_classes": [
+        "symbolic_alliance",
+        "life_course"
+      ],
+      "dependency_family": "TIB-MATERNAL-AGE-ALLIANCE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0127",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 167,
+        "printed_page": 166
+      },
+      "white_beryl_folio": "197b–203b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "maternal-Zin-five-ages",
+      "paraphrase": "For mothers of five enumerated year-elements/signs with maternal trigram Zin, maternal ages 15,23,31,39,47 paired with a child in tiger/horse/dog year form a Triple Saturn Alliance with asserted family continuity and long-life prognosis.",
+      "required_inputs": [
+        "mother_natal_year_group",
+        "mother_trigram",
+        "mother_age_at_birth",
+        "child_year_animal"
+      ],
+      "claimed_output_classes": [
+        "Saturn_alliance",
+        "family_continuity",
+        "longevity_claim"
+      ],
+      "dependency_family": "TIB-MATERNAL-AGE-ALLIANCE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0128",
+      "source_id": "TIB-DORJE-2001",
+      "page": {
+        "pdf_page_1based": 168,
+        "printed_page": 167
+      },
+      "white_beryl_folio": "197b–203b",
+      "moonbeams_when_relevant": "f.24a–24b",
+      "rule_key": "maternal-eight-table-columns",
+      "paraphrase": "Plate 4 fig.7 provides eight maternal-trigram columns for every mother age from 15 through 50, each identifying eligible maternal natal year-signs, child's compatible animal trine and resulting symbolic Saturn/Jupiter/Mars/Mercury alliance; other trines produce distinct pair labels.",
+      "required_inputs": [
+        "mother_natal_year",
+        "mother_trigram",
+        "mother_age_at_birth",
+        "child_year_animal"
+      ],
+      "claimed_output_classes": [
+        "symbolic_alliance_matrix"
+      ],
+      "dependency_family": "TIB-MATERNAL-AGE-ALLIANCE",
+      "source_kind": "Gyurme Dorje 2001 English rendering/analysis of White Beryl and Moonbeams; Tibetan original not independently collated",
+      "empirical_human_validation": false,
+      "runtime_promoted": false
+    }
+  ],
+  "actual_blind_human_tests": 0,
+  "model_promotions": 0
+}
