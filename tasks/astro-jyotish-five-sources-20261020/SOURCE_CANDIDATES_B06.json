@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B06",
+  "date": "2026-10-21 UTC",
+  "status": "SOURCE_ONLY_AFTER_PAGE_IMAGE_REVIEW",
+  "source_sha256_registry": "SOURCE_MANIFEST.json",
+  "count": 16,
+  "records": [
+    {
+      "id": "B06-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch38 sloka5, PDF109",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "temperament_strength_selector",
+      "source_paraphrase": "Relative strengths of Jupiter, Venus, Saturn, Mars and Mercury are used to assign one of five elements and corresponding temperaments; multiple strong planets allow a mixed assignment.",
+      "target_type": "computational_selector",
+      "critical_limit": "The excerpt does not fully specify how to resolve all strength ties or score mixed temperament. No dreams inferred without later slokas.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch38 slokas16-17, PDF110",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "dream_flight_under_windy_temperament",
+      "source_paraphrase": "A predominantly windy temperament is associated with flying through the sky in dreams, alongside numerous waking physical and temperament claims.",
+      "target_type": "reported_dream_content",
+      "critical_limit": "Predominant temperament must be computed independently; self-selected type after dream report would leak outcome.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-003",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch38 slokas18-19, PDF110",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "dream_fire_gold_lightning_under_bilious_temperament",
+      "source_paraphrase": "The bilious temperament is associated with dreams involving gold, the Sun, light, forest fire, red flowers, blood or lightning.",
+      "target_type": "reported_dream_content",
+      "critical_limit": "Multiple listed motifs are correlated and broad; need predetermined item-level frequency and explicit negative predictions.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-004",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch38 slokas20-21, PDF110",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "dream_water_under_phlegmatic_temperament",
+      "source_paraphrase": "The phlegmatic temperament is associated with dreams of seas, rivers, lakes, aquatic objects, swans and snow.",
+      "target_type": "reported_dream_content",
+      "critical_limit": "Opportunity-independent self-report possible, but recall and motif base rates need controls; no personally inferred temperament.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch41 sloka74, PDF118",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "weak_graha_effects_in_dreams_thoughts",
+      "source_paraphrase": "This verse says favorable results of a weak planet's daśā can appear in dreams and thoughts, contrasting subjective experience with external fruition.",
+      "target_type": "dasha_phenomenology",
+      "critical_limit": "The text does not describe particular dream contents here; identify which outcome and interval before measuring.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-006",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch41 sloka75, PDF118",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "dasha_beginning_middle_end_by_rising_character",
+      "source_paraphrase": "The next verse distinguishes beginning, middle and end of planetary periods according to rising type of a planet's sign.",
+      "target_type": "event_timing",
+      "critical_limit": "This is an approximate phase claim, not a date or exact timing error margin.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-007",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch26 slokas17-18, PDF60",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "mercury_sagittarius_abstract_meditation",
+      "source_paraphrase": "Mercury in Sagittarius is associated with engaging in abstract meditation, along with education, teaching, charity and other qualities.",
+      "target_type": "observable_practice",
+      "critical_limit": "This broad signature is not equivalent to formal religious initiation or alleged enlightenment.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch26 slokas19-20, PDF60",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "mercury_capricorn_unspecified_dreaming",
+      "source_paraphrase": "Mercury in Capricorn is associated among many negative traits with dreaming and wandering.",
+      "target_type": "reported_sleep_experience",
+      "critical_limit": "It does not say frequency/vividness or whether the dreams are extraordinary; literal dream mention alone is weakly testable.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-009",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch39 sloka11, PDF111",
+      "source_layer": "SOURCE_TRANSLATION",
+      "domain": "meteor_earthquake_birthday_yoga_cancellation",
+      "source_paraphrase": "A meteor, strong aerial disturbance, earthquake/thunder or specified omen at birth is claimed to cancel beneficial rulership yogas.",
+      "target_type": "extra_birth_environment_input",
+      "critical_limit": "Cannot compute observed meteor/weather/earthquake from natal planetary positions alone; omit from chart-only scoring unless independently recorded.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-010",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch2 tenth-house subsection v33, PDF59 printed56",
+      "source_layer": "SANSKRIT_WITH_BHASIN_TRANSLATION",
+      "domain": "bad_dreams_tenth_lord_malefic_subperiod",
+      "source_paraphrase": "The main daśā of the tenth lord combined with a malefic subperiod is linked to nightmares, mental worry, imprisonment and disrepute.",
+      "target_type": "conditional_timing",
+      "critical_limit": "The printed page has Sanskrit+English; language/edition collation and a specific dasha algorithm remain unverified.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-011",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch16 Venus trinal main period, subperiod v8, PDF368 printed365",
+      "source_layer": "SANSKRIT_WITH_BHASIN_TRANSLATION",
+      "domain": "bad_dreams_during_venus_trinal_malefic_bhukti",
+      "source_paraphrase": "Venus located in a trinal house with a malefic subperiod is associated with disturbing dreams and a fall in reputation.",
+      "target_type": "conditional_timing",
+      "critical_limit": "The paragraph spans translator English and neighboring Sanskrit verses; printed verse grouping must be critically collated.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-012",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Saturn subperiod adverse outcomes, cp1252 TXT line4499",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "bad_dreams_saturn_eighth_twelfth_from_dasha_lord",
+      "source_paraphrase": "Saturn eight or twelve houses from the dasha lord is claimed to generate bad dreams along with distress and losses.",
+      "target_type": "conditional_timing",
+      "critical_limit": "The exact dasha and subperiod chain, special aspects and edition remain unverified.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-013",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Gulika tenth-house effects, cp1252 TXT line2264",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "gulika_tenth_meditation",
+      "source_paraphrase": "Gulika in the tenth house is said to indicate meditation and religious practice as well as worship, family happiness and comforts.",
+      "target_type": "observable_practice",
+      "critical_limit": "Gulika's calculation and sunrise method are school-dependent; not a prediction of meditative attainment.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-014",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Avasthas de Mercúrio, cp1252 TXT line3612",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "exalted_mercury_sabha_enlightenment",
+      "source_paraphrase": "Mercury in Sabha avastha while exalted is among other effects said to bring complete enlightenment, in a passage that also mentions wealth, rulership and Vishnu/Shiva devotion.",
+      "target_type": "metaphysical_endpoint",
+      "critical_limit": "No externally verifiable claim about an individual's enlightenment; avastha computation and textual legitimacy need validation.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-015",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya V-A sloka11, PDF714 printed916 (volume II)",
+      "source_layer": "SANSKRIT_WITH_SASTRI_TRANSLATION",
+      "domain": "past_life_realm_from_decanate",
+      "source_paraphrase": "Stronger of Sun/Moon plus decanate lord is used to assign a supposed prior-birth realm (divine, ancestral, human, infernal) with gradation by planetary dignity.",
+      "target_type": "past_life_metaphysics",
+      "critical_limit": "Not an observable historical birth record; cannot score as independently known in present natal questionnaire.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    },
+    {
+      "id": "B06-016",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya V-A sloka15, PDF715-716 printed917-918 (volume II)",
+      "source_layer": "SANSKRIT_WITH_SASTRI_TRANSLATION_AND_NOTES",
+      "domain": "afterlife_realm_or_emancipation",
+      "source_paraphrase": "The chapter assigns supposed postmortem realms through designated decanate lords and describes Jupiter/Pisces configurations as granting emancipation; Sastri's separate PDF716 note explicitly distinguishes moksha from heavenly realms.",
+      "target_type": "postmortem_metaphysics",
+      "critical_limit": "Original verse vs modern translator note must not be merged. The claims are neither prospective nor independently verifiable for a living participant.",
+      "status": "DOCUMENTED_NOT_CRITICALLY_COLLATED_OR_HUMAN_VALIDATED"
+    }
+  ],
+  "rendered_page_witnesses": [
+    "SAR PDF60,110,118",
+    "SC PDF59,368",
+    "JP PDF716",
+    "Rath PDF379,453 (prior computational audit confirmation)"
+  ],
+  "independent_human_predictive_successes": 0,
+  "model_promotions": 0,
+  "book_binary_publication": false
+}
