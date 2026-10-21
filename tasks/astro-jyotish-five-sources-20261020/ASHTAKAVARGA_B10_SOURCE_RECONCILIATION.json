@@ -1,0 +1,675 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B10",
+  "research_id": "ASTRO-JYOTISH-5-TEXT-READER",
+  "status": "REPRODUCIBLE_TRANSLATION_COMPARISON_NOT_CLASSICAL_RULE_APPROVAL",
+  "source_refs": [
+    {
+      "id": "JYOT-SARAVALI-EN",
+      "locator": "Physical PDF page 142, Chapter 53, slokas 2–8, printed figures visually checked."
+    },
+    {
+      "id": "JYOT-BPHS-KERR-PT",
+      "locator": "CP1252 text 5285 (Karan negatives) and 5299 (Rekha positives), particularly 6th position: todos exceto Sol."
+    }
+  ],
+  "notation": {
+    "saravali_english_pdf": "Dots/bindus denote favorable contributions; pages 142–143.",
+    "bphs_portuguese": "Bindu/ponto (0) denotes unfavorable Karan; Rekha/linha (1) favorable Sthan, at lines 5267 and 5305. Semantic code favorable=1 must not inherit the same raw symbol across translations.",
+    "interpretation": "A notational polarity difference is not automatically a substantive disagreement of good-versus-bad planetary positions."
+  },
+  "transcription_method": "Literal favorable contributor-to-relative-sign-offset arrays; whole-sign counting inclusive with 1 as contributor's own sign. Seven target ashtakavargas, eight contributors each, no participant charts.",
+  "contributor_order": [
+    "Sun",
+    "Moon",
+    "Mars",
+    "Mercury",
+    "Jupiter",
+    "Venus",
+    "Saturn",
+    "Lagna"
+  ],
+  "saravali_ch53_favorable_offsets": {
+    "Sun": {
+      "Sun": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Moon": [
+        3,
+        6,
+        10,
+        11
+      ],
+      "Mars": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Mercury": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "Jupiter": [
+        5,
+        6,
+        9,
+        11
+      ],
+      "Venus": [
+        6,
+        7,
+        12
+      ],
+      "Saturn": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Lagna": [
+        3,
+        4,
+        6,
+        10,
+        11,
+        12
+      ]
+    },
+    "Moon": {
+      "Sun": [
+        3,
+        6,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Moon": [
+        1,
+        3,
+        6,
+        7,
+        10,
+        11
+      ],
+      "Mars": [
+        2,
+        3,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "Mercury": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Jupiter": [
+        1,
+        4,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "Venus": [
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11
+      ],
+      "Saturn": [
+        3,
+        5,
+        6,
+        11
+      ],
+      "Lagna": [
+        3,
+        6,
+        10,
+        11
+      ]
+    },
+    "Mars": {
+      "Sun": [
+        3,
+        5,
+        6,
+        10,
+        11
+      ],
+      "Moon": [
+        3,
+        6,
+        11
+      ],
+      "Mars": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Mercury": [
+        3,
+        5,
+        6,
+        11
+      ],
+      "Jupiter": [
+        6,
+        10,
+        11,
+        12
+      ],
+      "Venus": [
+        6,
+        8,
+        11,
+        12
+      ],
+      "Saturn": [
+        1,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Lagna": [
+        1,
+        3,
+        6,
+        10,
+        11
+      ]
+    },
+    "Mercury": {
+      "Sun": [
+        5,
+        6,
+        9,
+        11,
+        12
+      ],
+      "Moon": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        11
+      ],
+      "Mars": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "Mercury": [
+        1,
+        3,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "Jupiter": [
+        6,
+        8,
+        11,
+        12
+      ],
+      "Venus": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        11
+      ],
+      "Saturn": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "Lagna": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        11
+      ]
+    },
+    "Jupiter": {
+      "Sun": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Moon": [
+        2,
+        5,
+        7,
+        9,
+        11
+      ],
+      "Mars": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Mercury": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "Jupiter": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Venus": [
+        2,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "Saturn": [
+        3,
+        5,
+        6,
+        12
+      ],
+      "Lagna": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11
+      ]
+    },
+    "Venus": {
+      "Sun": [
+        8,
+        11,
+        12
+      ],
+      "Moon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        11,
+        12
+      ],
+      "Mars": [
+        3,
+        4,
+        6,
+        9,
+        11,
+        12
+      ],
+      "Mercury": [
+        3,
+        5,
+        6,
+        9,
+        11
+      ],
+      "Jupiter": [
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Venus": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Saturn": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "Lagna": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        11
+      ]
+    },
+    "Saturn": {
+      "Sun": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        10,
+        11
+      ],
+      "Moon": [
+        3,
+        6,
+        11
+      ],
+      "Mars": [
+        3,
+        5,
+        6,
+        10,
+        11,
+        12
+      ],
+      "Mercury": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "Jupiter": [
+        5,
+        6,
+        11,
+        12
+      ],
+      "Venus": [
+        6,
+        11,
+        12
+      ],
+      "Saturn": [
+        3,
+        5,
+        6,
+        11
+      ],
+      "Lagna": [
+        1,
+        3,
+        4,
+        10,
+        11
+      ]
+    }
+  },
+  "saravali_ch53_favorable_totals": {
+    "Sun": 48,
+    "Moon": 49,
+    "Mars": 39,
+    "Mercury": 54,
+    "Jupiter": 56,
+    "Venus": 52,
+    "Saturn": 38
+  },
+  "reference_totals_as_compared_with_bphs_convention": {
+    "Sun": 48,
+    "Moon": 49,
+    "Mars": 39,
+    "Mercury": 54,
+    "Jupiter": 56,
+    "Venus": 52,
+    "Saturn": 39
+  },
+  "computed_sum_all_seven": 336,
+  "computed_saravali_favorable_sign_count_by_target": {
+    "Sun": 48,
+    "Moon": 49,
+    "Mars": 39,
+    "Mercury": 54,
+    "Jupiter": 56,
+    "Venus": 52,
+    "Saturn": 38
+  },
+  "bphs_saturn_rekha_by_relative_sign": {
+    "1": [
+      "Sun",
+      "Lagna"
+    ],
+    "2": [
+      "Sun"
+    ],
+    "3": [
+      "Lagna",
+      "Moon",
+      "Mars",
+      "Saturn"
+    ],
+    "4": [
+      "Lagna",
+      "Sun"
+    ],
+    "5": [
+      "Jupiter",
+      "Saturn",
+      "Mars"
+    ],
+    "6": [
+      "Moon",
+      "Mars",
+      "Mercury",
+      "Jupiter",
+      "Venus",
+      "Saturn",
+      "Lagna"
+    ],
+    "7": [
+      "Sun"
+    ],
+    "8": [
+      "Sun",
+      "Mercury"
+    ],
+    "9": [
+      "Mercury"
+    ],
+    "10": [
+      "Sun",
+      "Mars",
+      "Lagna",
+      "Mercury"
+    ],
+    "11": [
+      "Sun",
+      "Moon",
+      "Mars",
+      "Mercury",
+      "Jupiter",
+      "Venus",
+      "Saturn",
+      "Lagna"
+    ],
+    "12": [
+      "Mars",
+      "Mercury",
+      "Jupiter",
+      "Venus"
+    ]
+  },
+  "bphs_saturn_reconstructed_contributions": {
+    "Sun": [
+      1,
+      2,
+      4,
+      7,
+      8,
+      10,
+      11
+    ],
+    "Moon": [
+      3,
+      6,
+      11
+    ],
+    "Mars": [
+      3,
+      5,
+      6,
+      10,
+      11,
+      12
+    ],
+    "Mercury": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "Jupiter": [
+      5,
+      6,
+      11,
+      12
+    ],
+    "Venus": [
+      6,
+      11,
+      12
+    ],
+    "Saturn": [
+      3,
+      5,
+      6,
+      11
+    ],
+    "Lagna": [
+      1,
+      3,
+      4,
+      6,
+      10,
+      11
+    ]
+  },
+  "bphs_saturn_total": 39,
+  "isolated_discrepancies": [
+    {
+      "target": "Saturn",
+      "contributor": "Lagna",
+      "relative_house": 6,
+      "uploaded_saravali_includes": false,
+      "portuguese_bphs_rekha_includes": true
+    }
+  ],
+  "possible_correction_only_not_applied": {
+    "target": "Saturn",
+    "contributor": "Lagna",
+    "add_relative_house": 6,
+    "result_total_for_saturn": 39,
+    "result_seven_planets_sum": 337,
+    "status": "BPHS Portuguese explicit positive list suggests Saravali English PDF omission; independent Sanskrit critical edition is needed before resolving original text."
+  },
+  "additional_editorial_problem": {
+    "source": "Saravali 54.1, PDF143",
+    "problem": "Instructions say both sets of chart lines are horizontal although grid with 96 cells requires two perpendicular directions.",
+    "status": "likely layout/English editorial glitch; geometry inferable but original Sanskrit not checked"
+  },
+  "evidence_classification": {
+    "prediction_success": 0,
+    "participant_charts_used": 0,
+    "source_transcription_validation_only": true,
+    "astrology_model_promotions": 0
+  }
+}
