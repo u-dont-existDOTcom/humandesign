@@ -1,0 +1,23 @@
+# Tibetan source-study continuation T23–T35 — 21 October 2026
+
+Original owner purpose: “ok then start reading everything you need that's free plus these, in turns, to merge into the other readings we are doing for astro system”; subsequent instructions: “continue.” Parent outcome remains OPEN: complete all important Tibetan sources and cross-lane Western Lilly/Ptolemy, Jyotish, BaZi/Zi Wei source research, independently calculate traditional charts and timings, then freeze and evaluate blinded real-human forward/reverse predictions against matched decoys and non-astrology baselines. Documentary source counts cannot close that owner task.
+
+**Current isolated research branch:** research/astro-tibetan-t23-obstacle-20261021; predecessor branch research/astro-tibetan-t07-natal-20261021 at accepted c794b087b3e0841592a2bc6f8709ccb1aba6a838. Exact remote HEAD MUST be checked on resumption; do not trust an older SHA. Readback laptop worktree: /mnt/hdd/storage/joel/development-worktrees/humandesign/astro-tibetan-t23-readback-20261021. No earlier Western, Chinese or Jyotish source ledger files modified. Project/source PDFs remain private, not committed.
+
+Current Tibetan historic-source note count **324**, through **TIB-R0324**: previous T01–T22 220, then T23 R0221–0239 (19), T25 R0240–0257 (18), T27 R0258–0281 (24), T30 Cornu R0282–0297 (16), T32 Henning R0298–0312 (15), T34 consultation-hour R0313–0324 (12). Other T24,T26,T28,T29,T31,T33,T35 contain no additional historic-source note count, only documentary tables, source discrepancy cases and deterministic calculations. Zero real-human blinded predictive validations and zero runtime promotions.
+
+**Covered now:** Dorje White Beryl obstacle-year chapter complete PDF235–260/printed234–259; consultation-hour Part VII PDF263–281/printed262–280 partially read. Cornu Tibetan Astrology printed102–119/PDF58–66 mewa/parkha/Papme worked examples. Henning Kalacakra and the Tibetan Calendar selected Chapter VI pp296–343/PDF316–363. Erlewine author-hosted free Tibetan Astrology PDF pp308–310 for source-policy comparison.
+
+**New meaningful boundaries:** obstacle year 47,31,37,360,600-pebble variants and separate ages 9/18/27/... vs ages 9/21/33/...; family-wide household majority/minority, parent and consultation-hour additional inputs. Cornu Papme rotation depends natal YEAR masculine/feminine polarity; Erlewine explicitly describes rotation by the PERSON'S sex. Cornu annual Parkha is person-sex-based. Tests cover both Papme policies with worked 1956/1957 fixtures, not merged. Henning p336 printed 175682 weeks is an arithmetic error: his exact constants give 167025 weeks from 39592 lunar months; preserved literal and correction. Tsurphu zero intercalation index corresponds ≈6.573798 decimal degrees Aries unlike Phugpa/E.C. zero-degree zodiac sign boundary. White Beryl 9-sector query chart index8 North/index9 NE in intro versus index8 NE/index9 North in table; both retained as source conflict 007, not repaired.
+
+Source issue ledger contains TIB-CONFLICT-001 through 007: #001 natal Red7 vs Red2, #002 repeated Zin marriage trigram, #003 Khon vs Khen transport, #004 five-confusions source year list, #005 nine-year Hare/Pig vs Mouse/Pig, #006 Henning numeric 175682 vs167025, #007 North/Northeast. Conflicts are not scientific predictive misses; only independent original-witness checks can resolve ambiguous source identity. All prior participant evidence remains untouched.
+
+**Verification** from tasks/astro-tibetan-primary-sources-20261021:
+- python3 verify_t23_t29_obstacles.py (chains eight prior suites).
+- python3 verify_t31_papme.py (Cornu/Erlewine worked example policy difference).
+- python3 verify_t30_t33_sources.py (chains above, verifies exact rational calculations and 31 new annotations).
+- python3 verify_t34_t35_query.py (12 new consultation-hour notes and 9 chart rows with 8/9 contradictory ordering).
+
+**Next safe action without repetition:** Start Dorje PDF282/printed281 Part VII remainder through PDF294/printed293, then ill-health PDF295+/printed294+, then death PDF307+/printed306+ and final computations. New historical source ID **TIB-R0325**. Complete Cornu remaining chapters, Henning I–V, the remainder of Erlewine and Janson; seek original Tibetan texts for seven discrepancies. Maintain different source policies, exact birth-calendar/parent/household/consultation input requirements and out-of-sample test separation. Never treat astrological clinical, mortality, psychological, ritual or relationship claims as practical high-stakes guidance. Parent owner outcome OPEN.
+
+Full cross-family source synthesis: CROSS_LANE_INTEGRATION_T23_T35.md in this same folder.
