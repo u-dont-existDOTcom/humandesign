@@ -1,0 +1,458 @@
+{
+  "schema": "ASTRO_TIBETAN_T01_SOURCE_NOTES_V1",
+  "project_parent": "OPEN",
+  "batch": "T01",
+  "note_count": 20,
+  "note_ids_begin": "TIB-R0001",
+  "note_ids_end": "TIB-R0020",
+  "source_tiers": "source-grounded English translation/secondary or astronomical reproduction, not directly checked against full original Tibetan for these 20 records",
+  "full_book_review_complete": false,
+  "article_or_model_derived_predictions_made": 0,
+  "real_human_blind_tests": 0,
+  "source_notes": [
+    {
+      "id": "TIB-R0001",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 141,
+        "printed_page": 140,
+        "source_detail": "White Beryl ff.161bff; Moonbeams ff.20a-23a; 4+1+2+5+100+24=136."
+      },
+      "claim_kind": "fixed-natal-procedure",
+      "paraphrase": "Mar-ston's fixed natal divination uses 136 pebbles: 4 precious, 1 special, 2 indispensable, 5 unchanging-luck, 100 demon-relational and 24 conclusive-analysis.",
+      "required_inputs": [
+        "year",
+        "month",
+        "day",
+        "hour",
+        "divination context",
+        "parents"
+      ],
+      "output_class": "method",
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0002",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 141,
+        "printed_page": 140,
+        "source_detail": "Source p140-141; worked example p141."
+      },
+      "claim_kind": "birth-input-mechanics",
+      "paraphrase": "The four precious pebble positions correspond to birth year (king), month (minister), day (soldier), hour (weapon). Their meaning is conditional on subject and contrasting elements, not isolated animal sign alone.",
+      "required_inputs": [
+        "birth_year",
+        "birth_month",
+        "birth_day",
+        "birth_hour",
+        "sex convention"
+      ],
+      "output_class": "method",
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0003",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 142,
+        "printed_page": 141,
+        "source_detail": "Chart 4.1; visual row/O/X mapping should be checked before coding."
+      },
+      "claim_kind": "worked-calculation",
+      "paraphrase": "The printed model iron-sheep birth uses the rows year iron-sheep vs vitality earth, month fire-sheep vs body water, day wood-bird vs destiny iron, hour water-hare vs luck fire; chart displays white/black pebble outcomes.",
+      "required_inputs": [
+        "birth_sexagenary_year",
+        "birth_month",
+        "birth_day",
+        "birth_hour",
+        "person_elemental_aspects"
+      ],
+      "output_class": "worked_example",
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0004",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 142,
+        "printed_page": 141,
+        "source_detail": "Chart 4.2; relation categories require definitions and precedence from the full chapter."
+      },
+      "claim_kind": "conditional-calculation",
+      "paraphrase": "The special pebble is chosen according to penalty/friend/enemy/identity/mother/son relationship to a constitutional-year category; distinct categories yield different numbers and colors of pebbles.",
+      "required_inputs": [
+        "natal_year",
+        "constitutional_type",
+        "relation_category"
+      ],
+      "output_class": "method",
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0005",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 142,
+        "printed_page": 141,
+        "source_detail": "Book p141; separate query-time forecast from birth-only forecast."
+      },
+      "claim_kind": "query-time-input",
+      "paraphrase": "At least one of the two indispensable pebbles depends on the hour at which the divination is performed, rather than solely on the birth chart.",
+      "required_inputs": [
+        "divination_hour",
+        "vitality_element",
+        "destiny_element"
+      ],
+      "output_class": "input_dependency",
+      "dependency_family": "TIB-QUERY",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0006",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 143,
+        "printed_page": 142,
+        "source_detail": "Book p142, chart 4.4; parent inputs must be frozen independently, not inferred from subject responses."
+      },
+      "claim_kind": "parent-input",
+      "paraphrase": "The unchanging-luck section explicitly uses paternal and maternal information, mother's current trigram and numeric square, and natal month; the father's choice differs for a boy versus a girl.",
+      "required_inputs": [
+        "parent_year_or_age",
+        "maternal_trigram",
+        "maternal_numeric_square",
+        "natal_month",
+        "subject_sex"
+      ],
+      "output_class": "input_dependency",
+      "dependency_family": "TIB-PARENTS",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0007",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 143,
+        "printed_page": 142,
+        "source_detail": "Book p142, parallel Moonbeams verses p143."
+      },
+      "claim_kind": "conditional-polarity",
+      "paraphrase": "In the hundred-demon relational-contrast rule, a female subject reverses the friend/enemy distinction specifically for the body element; no universal reversal for every element is stated.",
+      "required_inputs": [
+        "subject_sex",
+        "body_element",
+        "relationship_category"
+      ],
+      "output_class": "algorithmic_variant",
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0008",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 175,
+        "printed_page": 174,
+        "source_detail": "Book printed pp172-174; do not blend mutually inconsistent lookup tables or choose retrospectively."
+      },
+      "claim_kind": "tradition-disagreement",
+      "paraphrase": "Several historical even/odd classifications of trigrams and animal years differ across the accurately numbered tradition, Mottled Turtle, Gathering of All Precious Elements, and Store of Precious Treasure.",
+      "required_inputs": [
+        "chosen_tradition",
+        "trigram",
+        "year_animal",
+        "destiny_element"
+      ],
+      "output_class": "variant_choice",
+      "dependency_family": "TIB-POLARITY",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0009",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 177,
+        "printed_page": 176,
+        "source_detail": "White Beryl ff.224b-225a; printed p176. Alternatives and value judgment 'useful' make the output nonunique; don't count as single exact-number hit."
+      },
+      "claim_kind": "family-size-prediction",
+      "paraphrase": "For parents with destiny elements wood+fire, the work gives alternative predictions of five or ten children; with both parents wood, it gives two children, with a further distinction of one useful child.",
+      "required_inputs": [
+        "mother_destiny_element",
+        "father_destiny_element"
+      ],
+      "output_class": "family_children_count",
+      "dependency_family": "TIB-FAMILY",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0010",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 117,
+        "printed_page": 216,
+        "source_detail": "Printed pp216-217 two-up PDF page117. Timezone and old ephemeris need independent recomputation before using as reference golden."
+      },
+      "claim_kind": "worked-natal-input",
+      "paraphrase": "For the example Paris 15 November 1950 at local 5pm, after a local-solar-time correction the worked chart identifies a Metal Tiger year, Water Cow month, Wood Cow day, Fire Monkey hour.",
+      "required_inputs": [
+        "civil_birth_datetime",
+        "birth_place",
+        "local_solar_adjustment",
+        "Tibetan_calendar_convention"
+      ],
+      "output_class": "worked_example",
+      "dependency_family": "TIB-CORNU",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0011",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 118,
+        "printed_page": 218,
+        "source_detail": "Printed pp218-219, PDF118; verify OCR/table visually before treating as golden."
+      },
+      "claim_kind": "worked-five-energies",
+      "paraphrase": "The same example gives five personal natal-year elements: vitality Wood, health Wood, power Metal, luck Metal and La Water; and natal-year Mewa Yellow Five.",
+      "required_inputs": [
+        "natal_year",
+        "natal_sex",
+        "tabulated_correspondences"
+      ],
+      "output_class": "worked_example",
+      "dependency_family": "TIB-FIVE-FORCES",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0012",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 120,
+        "printed_page": 222,
+        "source_detail": "Printed pp222-223, PDF120. General secondary-source narrative, not an observed outcome; not independent of Chinese animal/element lore."
+      },
+      "claim_kind": "character-interpretation",
+      "paraphrase": "Cornu's example interprets Metal Tiger as independent, energetic and idealistic with low adaptability and treats Monkey-hour tension as a conflict of idealism and calculating behavior.",
+      "required_inputs": [
+        "year_element",
+        "birth_year_animal",
+        "birth_hour_animal"
+      ],
+      "output_class": "trait_interpretation",
+      "dependency_family": "CHINESE-ANIMAL-OVERLAP",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0013",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 27,
+        "printed_page": 7,
+        "source_detail": "Henning ch.I printed p7, PDF27."
+      },
+      "claim_kind": "calendar-structure",
+      "paraphrase": "Tibetan lunisolar dates can include repeated lunar months, skipped dates and duplicated numbered days because of astronomical cycle matching, not because bad dates are arbitrarily deleted.",
+      "required_inputs": [
+        "calendar_version",
+        "new_moon_epoch"
+      ],
+      "output_class": "calendar_mechanics",
+      "dependency_family": "TIB-CALENDAR",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0014",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 31,
+        "printed_page": 11,
+        "source_detail": "Henning ch.I printed p11, PDF31; this is not a universal claim about local civil day starts."
+      },
+      "claim_kind": "day-boundary",
+      "paraphrase": "Henning explains the traditional solar-day reference as a mean daybreak equivalent to roughly 05:00 local mean solar time, rather than modern midnight.",
+      "required_inputs": [
+        "longitude",
+        "local_mean_solar_time",
+        "calendar_method"
+      ],
+      "output_class": "calendar_boundary",
+      "dependency_family": "TIB-CALENDAR",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0015",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 34,
+        "printed_page": 14,
+        "source_detail": "Henning ch.I printed p14, PDF34. Whether zero point is tropical/sidereal needs convention check."
+      },
+      "claim_kind": "angular-unit",
+      "paraphrase": "One traditional astronomical representation partitions the ecliptic into 27 equal lunar mansions (13 1/3 degrees each), with sexagesimal-type subdivisions.",
+      "required_inputs": [
+        "longitude",
+        "zero_point_convention",
+        "system_epoch"
+      ],
+      "output_class": "angular_calculation",
+      "dependency_family": "TIB-KALACAKRA",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0016",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 40,
+        "printed_page": 20,
+        "source_detail": "Henning ch.I printed p20, PDF40. Algorithmic identity, not life-event prediction."
+      },
+      "claim_kind": "calendar-cycle",
+      "paraphrase": "In Henning's stated calendrical constants, 65 solar years map to 804 lunar months, with 780 standard plus 24 intercalary lunar months.",
+      "required_inputs": [
+        "Phugpa_model_constants"
+      ],
+      "output_class": "mathematical_identity",
+      "dependency_family": "TIB-KALACAKRA",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0017",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 40,
+        "printed_page": 20,
+        "source_detail": "Henning ch.I printed p20, PDF40."
+      },
+      "claim_kind": "synodic-length",
+      "paraphrase": "Henning calculates a model mean synodic month of approximately 29.5305870 solar days, emphasizing that good mean rate does not validate epoch accuracy.",
+      "required_inputs": [
+        "historical_mean_month_constant"
+      ],
+      "output_class": "mathematical_identity",
+      "dependency_family": "TIB-KALACAKRA",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0018",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 43,
+        "printed_page": 23,
+        "source_detail": "Henning ch.I printed p23, PDF43."
+      },
+      "claim_kind": "lunar-day-mechanics",
+      "paraphrase": "The model 30 lunar days are determined by consecutive approximately 12-degree increments in the Moon-Sun elongation; the civil days on which their endpoints fall may vary.",
+      "required_inputs": [
+        "solar_longitude",
+        "lunar_longitude",
+        "calendar_model"
+      ],
+      "output_class": "tithi",
+      "dependency_family": "TIB-KALACAKRA",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0019",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 29,
+        "printed_page": 9,
+        "source_detail": "Henning ch.I printed p9, PDF29 and Introduction p2-3; Janson 2014 introduction independently clarifies systematic differences."
+      },
+      "claim_kind": "variant-choice",
+      "paraphrase": "Phugpa and Tsurphu are distinct major surviving Tibetan calendrical traditions, with potentially different date outputs; Phugpa is the common default, not necessarily the uniquely true interpretation.",
+      "required_inputs": [
+        "calendar_tradition",
+        "epoch",
+        "location"
+      ],
+      "output_class": "variant_choice",
+      "dependency_family": "TIB-CALENDAR",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    },
+    {
+      "id": "TIB-R0020",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": {
+        "pdf_page_1based": null,
+        "printed_page": null,
+        "source_detail": "Janson 2014 Introduction Table 1; original arXiv HTML full text. No birth-person case is used."
+      },
+      "claim_kind": "published-calendar-benchmark",
+      "paraphrase": "Janson's Phugpa Losar table assigns Gregorian 20 February 1985 as start of the Wood Ox year and 3 March 1984 as start of the Wood Mouse year.",
+      "required_inputs": [
+        "Gregorian_civil_date",
+        "Phugpa_variant"
+      ],
+      "output_class": "boundary_benchmark",
+      "dependency_family": "TIB-CALENDAR",
+      "source_status": "ANNOTATED_SOURCE_CLAIM_ONLY_NOT_PREDICTIVELY_VALIDATED",
+      "verified_against": "source text PDF or arXiv HTML on 2026-10-21",
+      "human_outcome_validated": false,
+      "promoted_to_runtime": false
+    }
+  ]
+}
