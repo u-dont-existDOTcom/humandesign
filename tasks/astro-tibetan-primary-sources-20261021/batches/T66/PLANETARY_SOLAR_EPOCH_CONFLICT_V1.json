@@ -1,0 +1,45 @@
+{
+  "schema": "TIBETAN_T66_PLANETARY_EPOCH_ARITHMETIC_ERRATUM_V1",
+  "batch": "T66",
+  "source_provenance": {
+    "Janson": "https://arxiv.org/html/1401.6285v1 Appendix D.3 equation D.9",
+    "Henning": "Edward Henning (2007), Ch II printed page 63 (user PDF one-based 83), downloaded user witness SHA256 3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5"
+  },
+  "new_source_notes": [
+    {
+      "id": "TIB-R0591",
+      "source_id": "TIB-JANSON-2014",
+      "source_voice": "MODERN_SOURCE_NUMERIC_SELF_CONTRADICTION",
+      "anchor": "Appendix D.3 eq D.9 mixed radix vs published rational fraction, compared with Henning Ch II printed p63",
+      "claim": "Janson prints s0'=25;9,20,0,97440 (radices27,60,60,6,149209) and also s0'=1−458772/6714405. Exact conversion of the first equals 1−458672/6714405, matching Henning p63. The published rational fraction differs by 100/6714405 full circle (~19.3 arcseconds), so the two values cannot both denote the same epoch longitude.",
+      "status": "DOCUMENTED_SOURCE_ARITHMETIC_DISAGREEMENT",
+      "human_validation": false
+    }
+  ],
+  "note_count": 1,
+  "issue_id": "TIB-CONFLICT-012",
+  "source_values": {
+    "Janson_D9_literal_numerator": 458772,
+    "Henning_p63_numerator": 458672,
+    "radix_units": [
+      27,
+      60,
+      60,
+      6,
+      149209
+    ],
+    "mixed_radix_digits": [
+      25,
+      9,
+      20,
+      0,
+      97440
+    ],
+    "circle_divisor": 6714405,
+    "difference_numerator": 100,
+    "expected_angular_arcseconds_approx": 19.30178474488804
+  },
+  "correction_policy": "Do not silently modify author literal text; computation supports an explicit author-literal variant and a separate manuscript/mixed-radix/Henning-supported variant. Prefer source agreement as *working* code hypothesis, not declared provenance-resolved Sanskrit original.",
+  "scientific_evidence": "Pure source arithmetic only, no empirical life-event or planetary sky validation.",
+  "production_runtime_promotions": 0
+}
