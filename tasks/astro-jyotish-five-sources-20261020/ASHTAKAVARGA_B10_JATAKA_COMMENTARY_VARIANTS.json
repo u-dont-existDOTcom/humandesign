@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B10",
+  "phase": "SUPPLEMENT_THIRD_BOOK",
+  "status": "SOURCE_VARIANT_DISCOVERY_NO_MODEL_PROMOTION",
+  "sources": [
+    {
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p391, Adhyaya X opening, printed p649",
+      "layer": "Sastri editor's inserted Horamakaranda source material",
+      "finding": "Editor states he inserted eleven slokas from Horamakaranda into opening of the chapter. Thus not every sloka shown here can be attributed to original Vaidyanatha."
+    },
+    {
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p395, printed p653, below first Sanskrit transit-mark passage",
+      "layer": "Translator/editor footnote (physically visually checked)",
+      "finding": "Editor explicitly warns that some works use Rekha for a favorable dot where his current text uses Bindu; other books use Bindu for an unfavorable dot."
+    },
+    {
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p396, printed p654, diagram explanation",
+      "layer": "Editor explanatory interpretation",
+      "finding": "Transit effects are classified as more than four favorable dots (good), exactly four (neutral), fewer than four (adverse); the explanation contrasts beneficial and adverse counts."
+    },
+    {
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p397, printed p655, Mars example",
+      "layer": "Editor explanatory interpretation, page image checked",
+      "finding": "The text says the tenth place from the natal Moon has no benefic or malefic weight in the Mars Ashtakavarga example; its affected sign has three favorable dots and four unfavorable strokes rather than three and five."
+    },
+    {
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p397, printed p655, N.B. note",
+      "layer": "Explicit editor note",
+      "finding": "Upachaya/Apachaya modifiers are counted from natal Ascendant or natal Moon, NOT positions reached by planets in transit."
+    }
+  ],
+  "conflict_scope": {
+    "model_notation": [
+      "Printed symbol \"Bindu\" can be positive or negative depending on textual convention.",
+      "Normalized positive/negative coordinates should be preserved independent of glyph/mark type."
+    ],
+    "neutral_state": [
+      "Only the Jataka commentary's stated Mars-from-Moon-tenth treatment is considered neutral; no blanket extension to other source schools without textual evidence.",
+      "This exception modifies complement arithmetic, but not the positive counts transcribed from the uploaded Saravali or Portuguese BPHS until original source review."
+    ],
+    "zero_worth_of_claim": "Mathematical and editorial detail; zero independently observed human outcome results."
+  },
+  "relationship_to_existing": "B10 transcription in ASHTAKAVARGA_B10_SOURCE_RECONCILIATION.json retains the literal Saravali table and one possible sixth-Lagna omission. This addendum documents nonbinary semantics without rewriting the earlier transcriptions.",
+  "outcome_data_used": false,
+  "model_rules_promoted": false
+}
