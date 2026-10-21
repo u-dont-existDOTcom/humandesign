@@ -1,0 +1,375 @@
+{
+  "schema": "TIBETAN_T42_DEATH_LIVING_FUNERAL_AND_TIMELINESS_V1",
+  "batch": "T42",
+  "witness_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_id": "TIB-DORJE-2001",
+  "scope": "Gyurme Dorje 2001, printed pp308–316 (PDF309–317), historical divination of death",
+  "source_notes": [
+    {
+      "id": "TIB-R0372",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 309,
+        "printed_page": 308,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "death-divination-three-classes",
+      "paraphrase": "The source distinguishes prognostications about death grounded in living relatives, about the deceased, and a separate class of funeral-ceremony divination. These require different subjects and different observations.",
+      "required_inputs": [
+        "source_method_category",
+        "living_family",
+        "deceased_person"
+      ],
+      "source_claimed_output_class": "three_methods",
+      "dependency_family": "DEATH-METHOD-TAXONOMY",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0373",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 309,
+        "printed_page": 308,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "twenty-fixed-pebbles-living",
+      "paraphrase": "For the living-relative calculation, a grid to the right on white felt represents living family members by sex and seniority. One year-animal pebble, four personal-force contrasts, one annual mewa, one annual trigram, five growth/decline, seven harshness and one natal mewa make 20 fixed pebbles per designated reading.",
+      "required_inputs": [
+        "living_family_year_signs",
+        "individual_four_forces",
+        "current_annual_mewa_trigram",
+        "growth_decline",
+        "seven_harsh",
+        "natal_mewa"
+      ],
+      "source_claimed_output_class": "20_marker_configuration",
+      "dependency_family": "DEATH-LIVING-FAMILY",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0374",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 309,
+        "printed_page": 308,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "living-ordinal-and-color-marks",
+      "paraphrase": "The described grid assigns colored/numbered pebbles to twelve year animals and the five elemental constitutions; marker identity and cardinality are part of the method, not observed frequencies of death.",
+      "required_inputs": [
+        "year_animal",
+        "year_constitution",
+        "sex_and_seniority"
+      ],
+      "source_claimed_output_class": "symbolic_encoding",
+      "dependency_family": "DEATH-LIVING-FAMILY",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0375",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 310,
+        "printed_page": 309,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "fourth-and-seventh-removed-family",
+      "paraphrase": "A death-omen table compares the majority year signs of paternal relatives or other household members with each subject's fourth-removed and seventh-removed animal-sign aspects, attributing a classical conflict omen.",
+      "required_inputs": [
+        "family_member_year_signs",
+        "majority_relation",
+        "subject_year_sign"
+      ],
+      "source_claimed_output_class": "fourth_seventh_relation_omen",
+      "dependency_family": "DEATH-RELATIVE-ANIMAL",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0376",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 310,
+        "printed_page": 309,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "majority-constitution-minority-animal",
+      "paraphrase": "The source combines dominant elemental constitution/animal-year of paternal relatives with one or two minority animal-year relatives, producing conditional narratives about household and ancestral graves.",
+      "required_inputs": [
+        "relative_constitution_distribution",
+        "relative_year_animal_distribution",
+        "minority_member_count"
+      ],
+      "source_claimed_output_class": "majority_minority_symbolic_omen",
+      "dependency_family": "DEATH-HOUSEHOLD",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0377",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 311,
+        "printed_page": 310,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "paternal-numeric-square-majority",
+      "paraphrase": "Plate11 fig4 distinguishes six majority groupings of natal mewa among paternal relatives (White1/6/8, Black2, Green4, Yellow5, Red7/9, Blue3), with different alleged causes and religious responses.",
+      "required_inputs": [
+        "paternal_relatives_natal_mewa",
+        "majority_threshold"
+      ],
+      "source_claimed_output_class": "paternal_numeric_omen",
+      "dependency_family": "DEATH-HOUSEHOLD-MEWA",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0378",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 311,
+        "printed_page": 310,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "living-family-four-axes",
+      "paraphrase": "For paternal relatives the source treats a black vitality marker as a life-spirit issue, black body as illness, black destiny as resource loss and black luck as reputation-related conflict. Targets and outcome domains are distinct.",
+      "required_inputs": [
+        "relative_four_force_pebble_colors"
+      ],
+      "source_claimed_output_class": "four_specific_claim_targets",
+      "dependency_family": "DEATH-RELATIVE-FOUR-AXES",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0379",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 312,
+        "printed_page": 311,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "twelve-life-spirit-year-relations",
+      "paraphrase": "Plate11 fig5 classifies twelve pebbles of the life-spirit by five constitutional forms plus greater/lesser penalty and directional destiny/mother/son/friend/enemy year relations. These are symbolic relationships, not 12 independent mortality cases.",
+      "required_inputs": [
+        "constitution",
+        "current_year_relation",
+        "greater_or_lesser_qualifier"
+      ],
+      "source_claimed_output_class": "life_spirit_categories",
+      "dependency_family": "DEATH-12-YEAR-RELATIONS",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0380",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 313,
+        "printed_page": 312,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "funeral-199-pebbles-twelve-categories",
+      "paraphrase": "Moonbeams presents funeral divination using 199 pebbles and twelve classes including deceased vitality/body/destiny/luck/year element, trigram, numeric-square polarity, funeral type, corpse type, direction, rebirth-place and ritual closing. These are a post-death classification, not birth-only prediction.",
+      "required_inputs": [
+        "deceased_natal_and_death_chart",
+        "funeral_intent",
+        "religious_tradition"
+      ],
+      "source_claimed_output_class": "funeral_category_system",
+      "dependency_family": "DEATH-FUNERAL-199",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0381",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 313,
+        "printed_page": 312,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "eight-timely-untimely-inputs",
+      "paraphrase": "The section on timely vs untimely death enumerates eight classifying aspects: vitality, body, destiny, luck, constitutional type, trigram, numeric square and animal year; they require a known deceased case and contextual data.",
+      "required_inputs": [
+        "deceased_four_forces",
+        "constitutional_type",
+        "current_trigram",
+        "mewa",
+        "death_year_animal"
+      ],
+      "source_claimed_output_class": "timely_untimely_source_class",
+      "dependency_family": "DEATH-TIMELY",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0382",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 313,
+        "printed_page": 312,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "fifty-eight-pebble-source-example",
+      "paraphrase": "The White Beryl method describes 58 basic pebbles alongside recognition markers for a Fire Horse-year deceased, with its own exemplar chart. The exact complete marker count is not equivalent to the 20 living-family or 199 funeral pebbles.",
+      "required_inputs": [
+        "deceased_fire_horse_chart",
+        "annual_death_chart",
+        "recognized_symbolic_markers"
+      ],
+      "source_claimed_output_class": "58_marker_source_example",
+      "dependency_family": "DEATH-TIMELY",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0383",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 315,
+        "printed_page": 314,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "four-pebble-inverted-timeliness",
+      "paraphrase": "For each of vitality, body, destiny and luck in the death context, the narrative largely treats a black conclusive pebble as timely/exhausted circumstances and a white one as untimely/disruption, reversing any simplistic good-white/bad-black rule.",
+      "required_inputs": [
+        "deceased_four_force_conclusive_colors",
+        "death_chart"
+      ],
+      "source_claimed_output_class": "timeliness_by_axis",
+      "dependency_family": "DEATH-TIMELY-COLOR",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0384",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 316,
+        "printed_page": 315,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "trigram-timely-and-untimely",
+      "paraphrase": "Supplementary Plate19 fig3 has an eight-trigram table of animal-year categories associated with timely death (enemy trigram relations) versus untimely death (identity trigram relations); direct date/trigram convention is required.",
+      "required_inputs": [
+        "trigram_at_death",
+        "animal_year",
+        "enemy_or_identity_relation"
+      ],
+      "source_claimed_output_class": "trigram_timeliness_class",
+      "dependency_family": "DEATH-TIMELY-TRIGRAM",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0385",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 317,
+        "printed_page": 316,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "four-minor-obstacle-mewa",
+      "paraphrase": "Supplementary Plate19 fig4 uses concurrence of the four minor obstacle numeric squares with Black Two combinations as one condition in classifying timely death; absence of the precise mewa method cannot be treated as negative.",
+      "required_inputs": [
+        "four_minor_mewa_obstacles",
+        "Black_Two_positions"
+      ],
+      "source_claimed_output_class": "numeric_timeliness_class",
+      "dependency_family": "DEATH-TIMELY-MEWA",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0386",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 317,
+        "printed_page": 316,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "seven-harsh-nine-and-tomb",
+      "paraphrase": "Supplementary Plate19 fig5 combines seven harsh aspects, natal-year return, fourth/seventh removed relations, multiple-of-nine and tomb signs along with year/month/day/hour; the conjunction is multi-input and not reducible to one birthday.",
+      "required_inputs": [
+        "natal_year",
+        "current_year",
+        "seven_harsh_aspects",
+        "nine_cycles",
+        "tomb_sign",
+        "day_hour_obstacles"
+      ],
+      "source_claimed_output_class": "cycle_timeliness_class",
+      "dependency_family": "DEATH-TIMELY-ANNUAL",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0387",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 317,
+        "printed_page": 316,
+        "original_text_reference": "White Beryl ff.343b–354a; Moonbeams ff.34a–36a; plates 11 and 19"
+      },
+      "rule_key": "majority-color-reverse-rule",
+      "paraphrase": "Supplementary Plate19 fig6 final tally describes a majority of black pebbles as timely death and majority white as untimely death. This is a post-event theological or historical judgment, not evidence of when a living person will die.",
+      "required_inputs": [
+        "deceased_timedness_pebble_tally"
+      ],
+      "source_claimed_output_class": "majority_classification",
+      "dependency_family": "DEATH-TIMELY-FINAL",
+      "source_status": "ENGLISH_SOURCE_CLAIM_ONLY",
+      "human_empirically_validated": false,
+      "clinical_use_permitted": false,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 16,
+  "first_note_id": "TIB-R0372",
+  "last_note_id": "TIB-R0387",
+  "methodology": "Distinguish living relatives vs deceased and funerary/cultural classification; no prognostic accuracy. Keep religious and symbolic rationale separate from scientific study.",
+  "ethical_boundary": [
+    "Not medical, survival or funeral advice",
+    "No individual death forecasts",
+    "No verified cases or untreated deaths known from these passages",
+    "Distinct base counts 20,58,199 and multiple families cannot be merged"
+  ],
+  "human_prediction_validation": 0,
+  "model_promotions": 0,
+  "next_note": "TIB-R0388"
+}
