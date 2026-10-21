@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B36_SOURCE_ASPECT_GEOMETRY_AND_MILLENNIA_SKY_SUPPORT",
+  "status": "OPEN_B37_SANSKRIT_ASPECT_CORRECTION_AND_EXTENDED_SKY_SCAN",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B36_20261021.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B37_20261021.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -112,14 +112,18 @@
     "solar_graha_aspect_B36.py",
     "test_solar_graha_aspect_B36.py",
     "READING_NOTES_B36.md",
-    "CONTINUATION_HANDOFF_B36_20261021.md"
+    "CONTINUATION_HANDOFF_B36_20261021.md",
+    "SOURCE_CANDIDATES_B37.json",
+    "ASPECT_STRENGTH_TRANSLATION_AUDIT_B37.json",
+    "READING_NOTES_B37.md",
+    "CONTINUATION_HANDOFF_B37_20261021.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
     "verified_pdf_pages": 2138,
     "pdf_files": 4,
     "plain_text_files": 1,
-    "bibliographic_candidate_annotations": 409,
+    "bibliographic_candidate_annotations": 412,
     "saravali_ch20_conjunction_clauses": 47,
     "saravali_ch20_unique_planet_sets": 37,
     "saravali_ch20_duplicate_distinct_sets": 9,
@@ -275,16 +279,26 @@
     "b36_candidate_solar_days": 77,
     "b36_all_six_exaltation_midnights_found": 0,
     "b36_solar_aspect_standalone_tests_passed": 5,
-    "b36_moshier_400y_baseline_crosscheck": true
+    "b36_moshier_400y_baseline_crosscheck": true,
+    "b37_new_source_annotations": 3,
+    "b37_saravali_english_aspect_fraction_inversion": true,
+    "b37_changed_relative_houses": [
+      4,
+      5,
+      8,
+      9
+    ],
+    "b37_versioned_aspect_tests_passed": 6
   },
   "pending_actions": [
-    "Do not repeat B01–B36; 409 source-only annotations and no human empirical validation.",
-    "Original-language Saravali 35.80 denotes Venus not English Saturn and 35.169 Sun third from Mercury; preserve translation/source astronomy separately.",
-    "Source-specific graha drsti signs at third and beyond cannot link Sun and Mercury (<28°). Other possible aspect conventions remain source-versioned.",
-    "Extended Moshier 2,191,090 midnight scan found no six-exalted omitting Mercury, not proof universal impossibility; no canonical pinned SWIEPH or continuous roots.",
-    "Continue comparably across other ancient books, exclude copyrighted raw files, maintain parallel reader isolation, and freeze algorithms/outcome mappings before humans."
+    "412 SOURCE_ONLY records (B36+2 and B37+3), zero human predictions tested and zero production rules.",
+    "Saravali English Ch4.32–33 reverses 4th/8th vs5th/9th Sanskrit fractions; B36 arithmetic now requires named English or Sanskrit version, six tests pass.",
+    "Do not generalize whole-sign impossible source yoga to every house/aspect system.",
+    "Extended exploratory Moshier 2.19m-midnight interval gave no six exaltations; not universal impossibility or production ephemeris parity.",
+    "Keep copyrighted modern book bytes, other astrology reader branches, survey, participants and live model untouched.",
+    "Source original Sanskrit, user-translated English/Portuguese, and modern commentary remain distinct. Continue only nonduplicate work."
   ],
-  "next_exact_source_frontier": "Read new compact B36 handoff, then source-compare solar/Mercury graha aspects and Bhava convention across Parashara, Jataka and Saravali before another version-specific feasibility audit. Keep 409 source-only notes, no participant or model edits.",
+  "next_exact_source_frontier": "Read compact B37 handoff; compare Portuguese BPHS degree-interpolated Drigbala lines2319–2343 against Saravali Sanskrit graha drsti, Jataka printed aspects and Rath Jaimini Rasi Drsti. Maintain explicit source variants and continue source-critical research.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -295,7 +309,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B36 files and 5 geometry tests verified, full PR changed paths and per-batch IDs to be checked after status update.",
+    "note": "B36 and B37 commits saved; remote readback of all changed-file paths and unique candidate IDs next.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
