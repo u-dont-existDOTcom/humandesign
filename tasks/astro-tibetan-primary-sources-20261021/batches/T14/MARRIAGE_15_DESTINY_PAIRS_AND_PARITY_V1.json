@@ -1,0 +1,223 @@
+{
+  "schema": "TIBETAN_T14_MARRIAGE_DESTINY_PAIR_TABLE_V1",
+  "batch": "T14",
+  "new_source_notes": 0,
+  "source_id": "TIB-DORJE-2001",
+  "source_note_reused": "TIB-R0170",
+  "source_anchor": {
+    "pdf_page_1based": 199,
+    "printed_page": 198,
+    "white_beryl_folio": "233b–234a",
+    "chart": "Plate 7 fig 19"
+  },
+  "source_provenance": "English paraphrase/transliteration in Gyurme Dorje, original Tibetan and exact symmetric-pair interpretation not yet collated",
+  "unordered_pair_working_assumption": true,
+  "five_element_pairs": [
+    {
+      "elements": [
+        "fire",
+        "wood"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 2,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "positive"
+    },
+    {
+      "elements": [
+        "earth",
+        "fire"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 3,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "approximate"
+    },
+    {
+      "elements": [
+        "earth",
+        "iron"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 3,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "approximate"
+    },
+    {
+      "elements": [
+        "iron",
+        "water"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 3,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "approximate_positive"
+    },
+    {
+      "elements": [
+        "water",
+        "wood"
+      ],
+      "sons_mentioned": 1,
+      "daughters_mentioned": 1,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "preferential_not_exact_forecast"
+    },
+    {
+      "elements": [
+        "wood",
+        "wood"
+      ],
+      "sons_mentioned": 1,
+      "daughters_mentioned": 1,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "qualitative_additional_claim"
+    },
+    {
+      "elements": [
+        "fire",
+        "fire"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": null,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "daughters_not_stated"
+    },
+    {
+      "elements": [
+        "earth",
+        "earth"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 3,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "positive"
+    },
+    {
+      "elements": [
+        "iron",
+        "iron"
+      ],
+      "sons_mentioned": 1,
+      "daughters_mentioned": 1,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "qualitative_additional_claim"
+    },
+    {
+      "elements": [
+        "water",
+        "water"
+      ],
+      "sons_mentioned": 1,
+      "daughters_mentioned": 1,
+      "sons_claimed_not_surviving": null,
+      "qualifier": "brother_and_sister_wording"
+    },
+    {
+      "elements": [
+        "fire",
+        "iron"
+      ],
+      "sons_mentioned": 5,
+      "daughters_mentioned": null,
+      "sons_claimed_not_surviving": 4,
+      "qualifier": "adverse"
+    },
+    {
+      "elements": [
+        "iron",
+        "wood"
+      ],
+      "sons_mentioned": 3,
+      "daughters_mentioned": 2,
+      "sons_claimed_not_surviving": 2,
+      "qualifier": "adverse"
+    },
+    {
+      "elements": [
+        "earth",
+        "water"
+      ],
+      "sons_mentioned": 5,
+      "daughters_mentioned": null,
+      "sons_claimed_not_surviving": 3,
+      "qualifier": "adverse"
+    },
+    {
+      "elements": [
+        "earth",
+        "wood"
+      ],
+      "sons_mentioned": 6,
+      "daughters_mentioned": null,
+      "sons_claimed_not_surviving": 4,
+      "qualifier": "adverse"
+    },
+    {
+      "elements": [
+        "fire",
+        "water"
+      ],
+      "sons_mentioned": 1,
+      "daughters_mentioned": 3,
+      "sons_claimed_not_surviving": 1,
+      "qualifier": "adverse"
+    }
+  ],
+  "parity_weight_table": {
+    "wood": 1,
+    "earth": 2,
+    "water": 3,
+    "fire": 4,
+    "iron": 5
+  },
+  "parity_rule": {
+    "even": "historical_compatible_claim",
+    "odd": "historical_incompatible_claim"
+  },
+  "synthetic_parity_examples": [
+    {
+      "bride": [
+        "wood",
+        "wood",
+        "wood",
+        "wood"
+      ],
+      "groom": [
+        "iron",
+        "iron",
+        "iron",
+        "iron"
+      ],
+      "sum": 24,
+      "claim": "historical_compatible_claim"
+    },
+    {
+      "bride": [
+        "wood",
+        "earth",
+        "water",
+        "fire"
+      ],
+      "groom": [
+        "wood",
+        "earth",
+        "water",
+        "iron"
+      ],
+      "sum": 21,
+      "claim": "historical_incompatible_claim"
+    }
+  ],
+  "cautions": [
+    "Numerical offspring claims are historical propositions, not observations.",
+    "A null daughters count means no daughter count specified, not zero daughters.",
+    "One row describes a desirable composition rather than an exact forecast.",
+    "All unverified loss counts are reproduced as historical source values and have no clinical or personal predictive status.",
+    "These are 15 distinct pairs, not 15 observed couples.",
+    "The five elemental weights apply to a collective tally of personal elements; whether all eight are summed is an implementation hypothesis to verify against the source's worked example.",
+    "No actual person outcomes are accessed or scored."
+  ],
+  "human_predictions_validated": 0,
+  "production_model_promoted": false
+}
