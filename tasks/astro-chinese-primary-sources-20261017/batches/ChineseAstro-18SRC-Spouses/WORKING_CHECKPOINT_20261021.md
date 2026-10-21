@@ -1,0 +1,11 @@
+# Chinese Zi Wei V18 — Spouses original transmitted text checkpoint
+
+2026-10-21. Parent scientific mission OPEN: independently sourced Western/Chinese astrology, verified natal/calendar/chart construction, then frozen untouched human predictive tests against decoys and nonastrology. Source annotations are not predictions.
+
+Accepted Chinese V17 parent branch remote SHA `ac02068d6600f6a80f10a1ce335fd6da44e6d680`, current Chinese source-only index V17 SHA256 `75eacfa21a9d44b3396089c0c2f19432be5a527c3cee20daeea43f33932a1989`, 210 BaZi +769 Zi Wei =979 historical records. Branch writer isolation: this V18 branch only; Western Lilly/Ptolemy and BaZi research remain separate.
+
+Pinned transmitted original Wikitext source `紫微斗數全書 卷二`, oldid1963110 full SHA256 `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72`. Next **Spouses/Wife** text section exact heading `===三妻妾===` begins cp38238; following Children heading `===四子女===` begins cp39218. Between are 24 nonempty source lines including heading, with 23 historical text body lines; at least one body line continues the preceding textual group, so do not count 23 independent stellar profile units without semantic qualification. Previous V17 last record ZWD-R0769 was merely Spouses navigation. First new candidate source **ZWD-R0770**, next post-section Children heading navigation; not yet accepted.
+
+Transmission warnings from V17: online source may contain modern interpolation; 2017 older facsimile publisher asserts chart-relevant text variants in later editions. No separately authenticated Ming woodblock or independent specialist translation yet. Historical marriage/sex/gender/family relationships and mortality assertions are NOT personal guidance or real-world observations.
+
+Next safe action: source-first exact line/byte-offset extraction for cp38238–39218, preserve original line-wrapping, specific conditional star pairings and source questions; add per-line SHA+CP+UTF8 witnesses and a guarded new Chinese source index on this isolated branch only after source validation. No real-human blinded predictive success and no runtime promotions.
