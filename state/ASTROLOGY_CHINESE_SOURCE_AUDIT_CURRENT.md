@@ -1,3 +1,9 @@
+# Chinese BaZi V25 — transmitted Di Tian Sui section19 Source and Flow
+
+**6 new original historical source documentary annotations BZI-R0211–BZI-R0216** from pinned Wikisource oldid844368, 1 exact verse, 3 full commentary paragraphs, 2 four-pillar example rows with time/day/month/year columns. Short text and expanded Chan Wei transmit incompatible glyphs (流向可方住 vs 流到何方住; 無從引助 vs 得從引助; 僧 vs 憎); keep separate until older printed critical edition verified. **216 BaZi +1059 Zi Wei =1275 Chinese historical text annotations**, not real people. Next **BZI-R0217 Di Tian Sui section20 通隔論**; Zi Wei next potential ZWD-R1060 requires separate Volume III source. No independent natal calendar/birth-engine validation or human forecast data; genuine blinded human validations **0**, runtime promotions **0**.
+
+## Prior accepted Chinese V24 source checkpoint
+
 # Chinese V24 — transmitted online Zi Wei Volume II twelve-house source lines documented
 
 **123 new historical Wikitext line records ZWD-R0937–ZWD-R1059** covering Career38, Property24, Fortune28 and Parents33 original source lines to the exact end of Volume II cp48890. Two Wikitext-only terminal footer wrappers retained in witness but NOT counted as historical astrological content. Prior Life/other house documentation preserved. **BaZi210 + ZiWei1059 =1269 historical source annotations**, not people. Four sections' exact Unicode/UTF8 and SHA references independently tested; 14 source and 14 cold-extracted source tests passed. Next original Zi Wei Volume III requires a separately pinned full source, first possible ZWD-R1060; BaZi next BZI-R0211 Di Tian Sui section19. No authenticated classical printed original, verified comprehensive calendar/natal chart engine, clinical/parental/financial recommendation, real human blind predictions or runtime astrology promotions.
