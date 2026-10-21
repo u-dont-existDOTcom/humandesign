@@ -1,0 +1,115 @@
+# Chinese V19 — online Zi Wei original Children-palace documentary source
+
+**34 additional historical text records ZWD-R0795–ZWD-R0828** from pinned Wikitext oldid1963110 Children cp39218–40563; one heading, four method lines, four actual source continuations, 24 other historical conditional lines and one next Wealth navigation marker. Exact CP/UTF8/hash witnesses and independent cold source checks passed. **BaZi210 + Zi Wei828 =1038 Chinese text annotations**, not humans. Original early printed editions, historical reproductive/gender/health truth and birth chart engine remain unverified. Next **ZWD-R0829 Wealth cp40563** and **BZI-R0211 Di Tian Sui section19**. Actual human predictive validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese source checkpoint
+
+# Chinese V18 — transmitted Zi Wei Spouses palace historical source
+
+**25 source-only annotations ZWD-R0770–ZWD-R0794**, from original online Wikitext oldid1963110 cp38238–39218. Preserved a physical line continuing a previous star description rather than inventing a separate rule. Heading +23 body lines + next Children source navigation only. **BaZi 210 + Zi Wei 794 = 1,004 historical source annotations**, on isolated `research/astro-chinese-v18-ziwei-spouses-original-source-20261021`; inherited previous index V17 unaltered. Next **ZWD-R0795 四子女 cp39218** and **BZI-R0211 Di Tian Sui section19**. Early printed Zi Wei woodblock collation remains unverified; publisher reports important older-edition variants potentially affecting chart computation. Independently blinded real-person validations **0**, runtime model promotions **0**. Source-level direct GitHub SHA/CP/UTF8 assertions passed; **no Python/cold-ZIP test** executed this continuation.
+
+## Earlier Chinese V17 checkpoint (retained)
+
+# Chinese V17 — Brothers/Siblings original text source-only
+
+**24 accepted documentary annotations ZWD-R0746–ZWD-R0769**: section heading +22 original star-group lines from transmitted oldid1963110 codepoints 37269–38238, then next Spouses navigation marker. The original includes one likely later modern-style sentence and two ambiguous classical-text readings, preserved verbatim with warnings; no early Ming woodblock authenticated. **210 BaZi + 769 Zi Wei = 979 historical Chinese source records** on this isolated branch. Earlier Chinese V16 and inherited old Western B07bc are unchanged; latest separate Western B07bh still requires parallel-branch reconciliation. Next **ZWD-R0770 三妻妾 cp38238**, **BZI-R0211 Di Tian Sui section19**. Real blinded human predictive validations **0**, runtime astrology promotions **0**.
+
+## Previous accepted Chinese source checkpoints
+
+# Chinese V16 — transmitted online original Zi Wei Life-palace text through Brothers
+
+**105 new source-only historical annotations ZWD-R0641–ZWD-R0745**, 104 literal source lines across 15 groups from Huo Xing to Dou Jun cp33783–37269 plus **one original Brothers heading navigation-only marker**. Original combined Huo/Ling and DiJie/TianKong passages kept together; mixed traditional/simplified Hua Lu glyphs preserved. Online Life-palace Wikitext section annotated to Brothers; other eleven houses and authentic Ming edition still unstudied. **BaZi210 + ZiWei745 =955 Chinese historical text records**; latest separately accepted Western B07bh Lilly13271+Ptolemy1066 is on another branch. Next **ZWD-R0746 兄弟 cp37269** and **BZI-R0211 Di Tian Sui section19**. Actual human blind validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese V15 checkpoint
+
+# Chinese V15 — next four Zi Wei Life-palace auxiliary source profiles
+
+**54 new historical source-only annotations ZWD-R0587–ZWD-R0640**, covering Lu Cun 14, Kui Yue 6, Qing Yang 17 and Tuo Luo 16 literal Wikitext lines plus a single following Huo Xing navigation marker. Original Qing Yang duplicates a male-life heading; Tuo Luo female verse lacks opening poem markup; Kui Yue has combined source verse. No fabricated corrections. **BaZi210 + Zi Wei640 =850** Chinese source-only annotations; source Life-palace remains PARTIAL. The separate accepted Western B07bh Lilly13271 + Ptolemy1066=14337 belongs to a different branch, not this V15 index. Next **ZWD-R0641 火星 cp33783** and **BZI-R0211 Di Tian Sui section19**. Human blind validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese V14 original-source checkpoint
+
+# Chinese V14 — first four auxiliary Zi Wei Life-palace star profiles
+
+**58 source-only historical notes ZWD-R0529–ZWD-R0586**: WenChang16 WenQu18 ZuoFu13 YouBi10 exact original text lines plus one LuCun next-source prefix only. Source Wikitext oldid1963110 has exact UTF8 quote codepoint/byte offsets and hashes, but lacks separate palace-grade rows for ZuoFu/YouBi and dedicated YouBi female poem heading. Never fabricate. The source's other auxiliary profiles remain open to original Brothers heading cp37269, old Ming printing unverified. **Chinese BaZi210 +ZiWei586 =796** historical source notes. Separate Western B07bg Lilly13236 + Ptolemy1066 gives aggregate **15,098** documentary annotations across independent branches; **not** real-person prediction hits. Next **ZWD-R0587 LuCun**, **BZI-R0211 Di Tian Sui**. Independent human blind tests **0**, runtime promotions **0**.
+
+## Prior accepted Chinese original-source checkpoint retained
+
+# Chinese V13 — all fourteen principal star Life-profile prose source covered
+
+**46 historical source-only annotations ZWD-R0483–ZWD-R0528**, QiSha22 and PoJun23 exact source lines plus one next WenChang auxiliary-source navigation. All 14 main star descriptive profiles in this transmitted oldid1963110 Life-palace source now historically annotated, with full exact UTF8 byte offsets and SHA; NOT the complete Life-palace (auxiliary passages after cp30135 remain) or an ancient authenticated Ming imprint, accurate complete natal chart or real human prediction. **Chinese BaZi210 + ZiWei528=738** text annotations. Latest independent Western B07bg Lilly13236+Ptolemy1066 produces aggregate **15,040** historical source notes on DIFFERENT source branches; not 15,040 people. Next **ZWD-R0529 WenChang**, original cp30135, BaZi **BZI-R0211** Di Tian Sui section19. Actual human blind predictive validations **0**, runtime astrology promotions **0**.
+
+## Prior original Chinese source checkpoint retained
+
+# Chinese V12 — original Zi Wei Life-palace third four star profiles
+
+**83 source-only historical annotations ZWD-R0400–ZWD-R0482**: TanLang21, JuMen22, TianXiang21, TianLiang18 verbatim source lines plus next QiSha navigation marker. Exact oldid1963110 original UTF8 byte offsets, quote SHA and segments preserved, with missing dedicated TianLiang female poem heading explicitly documented, NOT fabricated. Full original Life-palace source is still PARTIAL, original Ming-era printed imprint unverified; old sex/medical/mortality claims unvalidated and not advice. **Chinese BaZi210 + ZiWei482 =692** historical source notes. Separate Western B07bg Lilly13236+Ptolemy1066 on independent branch means aggregate **14,994** text notes, not subjects or predictive hits. Next **ZWD-R0483 QiSha** cp28621, BaZi **BZI-R0211**. Genuine human blind validations **0**, runtime astrology promotions **0**.
+
+## Previous Chinese accepted source checkpoint retained
+
+# Chinese V11 — original Zi Wei Life-palace next four source stars
+
+**90 historical source-only notes ZWD-R0310–ZWD-R0399**, TianTong20, LianZhen26, TianFu20, TaiYin23 original lines, plus one TanLang next-star navigation. Exact oldid1963110 original codepoint+UTF8 byte-offset SHA for every line and full source witness; earlier V10 TianTong prefix was navigation only. Source Life-palace section still PARTIAL, original Ming woodblock imprint and independent specialist translation not authenticated. Historic medical/sex/moral/fate claims not empirical truth or real personal predictions. **Chinese BaZi210 unchanged + ZiWei399 =609** historic annotations; separately latest accepted Western B07bg **Lilly13236+Ptolemy1066** lives on another research branch, aggregate **14,911 source documents** (not people/test successes). Next **ZWD-R0400 TanLang** cp25795 and **BZI-R0211**. Human blind predictive studies **0**, runtime promotions **0**.
+
+## Previous Chinese accepted source checkpoint retained
+
+# Chinese source V10 — first four Zi Wei Life-palace original profiles
+
+**89 historical source-only annotations ZWD-R0221–ZWD-R0309** (88 original lines for ZiWei/TianJi/TaiYang/WuQu and 1 next TianTong navigation marker) each original exact Unicode codepoint and UTF8 source byte offset/SHA independently verified against Wikitext oldid1963110. This is PARTIAL Life-palace text, not authentic Ming woodblock or real-person predictive evidence. Old fortune/body/sex/mortality claims have no human validations. **Chinese BaZi210 unchanged + ZiWei309 =519** source notes; Western accepted B07bg Lilly13236+Ptolemy1066 lives on separate branch (aggregate source counts **14,821**, not merged). Inherited Western B07bc historical snapshot remains unmodified. Next **ZWD-R0310 TianTong**, original codepoint22909, **BZI-R0211** Di Tian Sui section19. Human real prospective/reverse blind tests **0**, runtime astro rules promoted **0**.
+
+## Previous accepted historical source retained
+
+# Chinese source V9: pinned BaZi Di Tian Sui chapters 13–18
+
+**56 source-only annotations BZI-R0155–BZI-R0210** from six pinned exact original transmitted Chinese oldids, seven original verses and 49 commentary spans. Important methodological limitations: calendar timing rules unverified, sex/morality stereotypes unendorsed, `十有九驗` apparent high-accuracy claim **not supported by any independently tested cases**. **Chinese 210 BaZi + 220 Zi Wei = 430 historical original-text annotations** (V1–V8 unchanged). Western **13,044 Lilly + 1,066 Ptolemy = 14,110** unchanged. Next **BZI-R0211**, **ZWD-R0221**. **Verified real-human forecasts 0; runtime promotions 0**.
+
+## Previously accepted source checkpoints retained
+
+# Zi Wei original Volume II further diagrams, Chinese source V8
+
+**19 exact source-only notes ZWD-R0202–ZWD-R0220** freeze original post-bureau Tian Fu, life/year-limit risk, four-transformations and 12-branch seven-grade star-conditions diagrams with exact Chinese text and individual byte offsets in oldid1963110. No calendar/chart decoder parity, mortality forecast or personal prediction established. **Chinese historical 154 BaZi + 220 Zi Wei = 374**. Independently already accepted Western **13,044 Lilly + 1,066 Ptolemy = 14,110** retained. V1–V7 immutable. Next **ZWD-R0221 Life palace** and **BZI-R0155**. **Actual human validations 0; runtime astrology promotions 0.**
+
+## Previous accepted historical checkpoint retained
+
+# Chinese original-source progress V7: auxiliary Zi Wei stars and five original bureau diagrams
+
+**40 new exact Chinese source annotations ZWD-R0162–ZWD-R0201** from transmitted Zi Wei Quan Shu Volume II oldid1963110: 29 auxiliary star lines, the distinction from the eighteen regular stars, five original elemental-bureau verses and five exact preserved source palace/day diagrams. Pinned full raw document, original text excerpt, 40 SHA/offset witnesses and five diagram hashes retained with **58 independent ZIP replay source tests**. **Chinese historical annotations: 154 BaZi +201 Zi Wei =355**, old versions V1–V6 byte-preserved. Independent Western source branch at B07al **12611 Lilly+1066 Ptolemy=13677** unchanged; parallel later B07am must be reconciled separately. Actual bureau day-to-palace decodings, old print author authenticity, lunar calendar/time-zone engine and real-human forecast validity unverified. **Zero human predictive validations; no runtime promotions.** Next **ZWD-R0202** and **BZI-R0155**.
+
+## Earlier accepted historical checkpoint retained
+
+# Chinese source-first V6: six pinned Di Tian Sui chapters with 53 original Chinese anchors
+
+**53 new historical BaZi source annotations BZI-R0102–BZI-R0154** are each verified against exact raw Chinese Wikitext and SHA/offset from six pinned transmitted Di Tian Sui pages: 15 old verses and 38 undated commentary excerpts. The source distinguishes eastern wood direction vs wood triad, actual vs apparent following or transformation, and explicitly requires exceptions to simple strong/weak rules. Moralizing historic predictions are NOT verified real-person evidence. Chinese historical records **154 BaZi +161 Zi Wei=315**, previous V1–V5 retained byte-identical. **69 focused tests replayed from source-carrying independently extracted ZIP with CRC/SHA/exact-byte verification**; earlier unchanged suites not needlessly rerun on a different West-era fixture. Separate Western source branch pinned **12,611 Lilly +1,066 Ptolemy=13,677**, while other Western CLXVII work is continuing independently. Next **BZI-R0155**, **ZWD-R0162**. No completed BaZi birth calendar/actual chart engine, no independently blinded human outcome validations and no live model promotions.
+
+## Earlier accepted checkpoint retained verbatim
+
+# Chinese source-first progress: Di Tian Sui six original chapters (V5)
+
+Added **55 pinned exact original Chinese source excerpts BZI-R0047–BZI-R0101**, 44 historical verses and 11 transmitted commentary excerpts from six separately SHA-pinned Wikisource raw chapters. Conditional chart interpretation and the original warning against rigid stage-of-death forecasts are documented; author and physical early edition are not independently verified. Chinese accepted **101 BaZi +161 Zi Wei =262 historical annotations**, prior Chinese V1–V4 byte-preserved. **321 source/mechanics regression tests replayed from independently extracted CRC/SHA-verified archive.** Western historical index unchanged **12,472 Lilly +1,066 Ptolemy=13,538**; original printed CLXVI numerical Lilly notes R12473 unaccepted. Next **BZI-R0102, ZWD-R0162**. No authenticated full Chinese/Western chart engine, no independent real people predictions and no runtime model promotions.
+
+## Earlier accepted checkpoint preserved verbatim
+
+# Zi Wei source-only Volume II Life/Body Lords and original elemental taxonomy (V4)
+
+**65 historically documented source notes ZWD-R0097–ZWD-R0161**, each of 65 phrases and original section names exact SHA/offset pinned to the same Wikisource Volume II revision oldid1963110, raw SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72. Chinese accepted **46 BaZi +161 Zi Wei =207 historical notes**, former V1 72, V2 97, V3 142 retained byte-exact. **249 source/placement and previous Chinese regression tests** replayed in independently extracted archive, CRC/hash/bytes verified. Separate **12,472 Lilly +1,066 Ptolemy=13,538 Western** unchanged; next original Lilly CLXVI source R12473 still provisional. Next Zi Wei **ZWD-R0162**, BaZi **BZI-R0047**. The transmitted Chinese has textual star labels and old period illness/gender/morality categories with no independent original Ming imprint, birth calendar, 14-main-star chart or verified actual people. **Zero empirical human predictive tests passed; no live model promotions.**
+
+## Earlier accepted progress retained verbatim
+
+# Zi Wei original Volume II Chinese source-only progress (V3)
+
+**45 newly anchored historical Zi Wei records ZWD-R0052–ZWD-R0096**, 45/45 exact original Simplified Chinese section/quote matches against Wikisource pinned revision 1963110, raw SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72. **46 BaZi +96 Zi Wei =142 Chinese documentary annotations**; original Chinese V1 72 and V2 97 preserved unchanged. 160 source/placement/prior-Chinese tests replayed after standalone archive extraction with CRC and SHA/bytes proof. **12,472 Lilly +1,066 Ptolemy =13,538 Western history notes unchanged**; printed Lilly CLXVI numerical methods remain PROVISIONAL. Next Chinese Zi Wei **ZWD-R0097**, BaZi **BZI-R0047**. No independently established classical edition provenance, full birth calendar/14-main-star engine or blind human accuracy; zero model runtime promotions.
+
+## Earlier accepted checkpoint retained verbatim
+
+# Chinese astrology source study: Zi Wei Volume II source-verified expansion
+
+2026-10-18 UTC. The current canonical source-only Chinese index is `CHINESE_SOURCE_AUDIT_INDEX_V2.json`: **46 BaZi +51 Zi Wei=97 historical documentary annotations**, including **25 new Chinese source-anchored records ZWD-R0027–ZWD-R0051** against pinned Wikisource Volume II oldid 1963110/raw SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72. Original retained index V1 remains unchanged at 72. Source glyph fidelity verified for short raw anchor strings; independent sinological translation/full-chart parity not established.
+
+**No full BaZi or Zi Wei chart engine, no blind actual-person predictive validation, no runtime prediction/claim promotion.** Bounded auxiliary-star arithmetic is testable but not calendar-correct across leap months and historical local clocks without further work. Lilly B07q remains separate at 11,325 and Ptolemy 1,066. Next Zi Wei ZWD-R0052, BaZi BZI-R0047.
+
+## Earlier Chinese checkpoint (retained verbatim)
+
+# Chinese astrology initial source study — BaZi and Zi Wei Dou Shu
+
+2026-10-17 Africa/Dakar UTC+0. Source-only initial intake archived under `tasks/astro-chinese-primary-sources-20261017/`. Two owner-provided modern authored BaZi books (Book 1 original 2005 and Book 2 original 2006, EPUB 2018 metadata; source hashes in manifest) and transmitted Chinese Zi Wei three-volume Quan Shu on Wikisource. Source index `CHINESE_SOURCE_AUDIT_INDEX_V1.json`: **46 BaZi + 26 Zi Wei = 72 qualified source-only annotations**, next BZI-R0047 and ZWD-R0027. Bounded partial clock/season and palace mechanics and **38 original example/documentary tests passed**. ZIP extraction/CRC/SHA/replayed tests passed; archive receipt in task folder. This does not compute entire actual natal charts: birth-calendar conversions and Zi Wei 14 principal star/Four Transformations missing. **Human predictive validations 0, runtime model promotions 0**. Separate Lilly source state in `state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md` unchanged. Work branch `research/astro-chinese-bazi-ziwei-primary-20261017`, after verified GitHub publication remote branch will hold durable research plan/review/handoff.
+
+Next: full line-by-line original classical source collation, two Chinese chart engines and counterexamples, then preregistered blinded human comparison with western sources. Book upload bytes stay outside GitHub.
