@@ -1,3 +1,9 @@
+# Chinese BaZi V28 — Di Tian Sui 22 source original text
+
+**Four new source-only historical notes BZI-R0223–R0226**, short online Wikitext oldid844372 真假論 (two full verses and two commentaries); original wording and UTF8/codepoint SHA frozen with 9/9 cold tests. **BaZi226 + ZiWei1059 =1285 Chinese documentary annotations**, not humans. Next **BZI-R0227 chapter23** (pin new source), Zi Wei next ZWD-R1060 requires new Volume III. Old printed original, verified calendar/astrology chart engine and real human predictive validity remain OPEN; 0 human validations and 0 runtime promotions.
+
+## Previous accepted Chinese V27 checkpoint
+
 # Chinese BaZi V27 — Di Tian Sui chapter21 source-first checkpoint
 
 **Four new historical source annotations BZI-R0219–R0222** from pinned oldid844371 (two whole verses, two whole commentaries), SHA/CP/UTF8 proof and 10/10 independent cold source tests. Expanded Chan Wei variants remain unresolved, particularly 無去取 versus 猶是可. **BaZi222 + Zi Wei1059 = 1281 historical source records**, not humans. Next **BZI-R0223 chapter22**, Zi Wei next possible **ZWD-R1060** only with an independently pinned next source. Ancient printing, chart engine and human predictive validity remain unverified; genuine human blinded validations **0**, runtime promotions **0**.
