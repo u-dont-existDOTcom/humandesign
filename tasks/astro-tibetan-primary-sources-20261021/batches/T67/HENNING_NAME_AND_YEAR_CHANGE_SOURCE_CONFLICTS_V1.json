@@ -1,0 +1,111 @@
+{
+  "schema": "TIBETAN_T67_NAME_YEAR_CHANGE_CONFLICTS_V1",
+  "batch": "T67",
+  "source_id": "TIB-HENNING-2007",
+  "source_witness_sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+  "source_title": "Edward Henning 2007, Kālacakra and the Tibetan Calendar, Chapter V printed pp246–251 / one-based PDF pp266–271",
+  "source_voices": "Ancient Vimalaprabhā excerpt and Henning modern translation/commentary distinguished; neither original Sanskrit nor Tibetan critically collated here",
+  "notes": [
+    {
+      "id": "TIB-R0592",
+      "source_id": "TIB-HENNING-2007",
+      "source_voice": "AUTHOR_DISCUSSION_OF_SOURCE_INTERNAL_CONTRADICTION",
+      "anchor": "Henning printed p248 / one-based PDF268",
+      "paraphrase": "The discussion points out that four syllables for each of 28 lunar mansions imply 112 quadrants, while a twelve-sign zodiac using nine quadrants per sign has 108 quadrants and therefore uses a 27-mansion scheme. This source-level 112-versus-108 conflict is left unresolved by the two named Tibetan commentators.",
+      "relevant_counts": {
+        "mansions_in_syllable_source": 28,
+        "letters_each": 4,
+        "labeled_quadrants": 112,
+        "zodiac_signs": 12,
+        "quadrants_per_sign": 9,
+        "zodiac_quadrants": 108
+      },
+      "needed_inputs": [
+        "choice_of_27_or_28_mansion_scheme",
+        "Sanskrit_name_syllables",
+        "source_witness"
+      ],
+      "status": "UNRESOLVED_TEXTUAL_STRUCTURE_NOT_PREDICTIVE_SUCCESS",
+      "human_validated": false
+    },
+    {
+      "id": "TIB-R0593",
+      "source_id": "TIB-HENNING-2007",
+      "source_voice": "PUBLISHED_TRANSLATION_TABLE_COVERAGE",
+      "anchor": "Henning printed p248 / one-based PDF268",
+      "paraphrase": "The printed translation in this excerpt visibly enumerates only 24 four-syllable mansion groups, starting Kṛttikā and ending Aśvinī, despite discussing a nominal 28-mansion/112-letter array. The missing printed groups when compared with the 28-member index include Bharaṇī, Svātī, Viśākhā, and Anurādhā. The excerpt cannot supply a complete 28×4 lookup.",
+      "source_visible_named_groups": [
+        "Krittika",
+        "Rohini",
+        "Mrigasira",
+        "Ardra",
+        "Punarvasu",
+        "Pusya",
+        "Aslesa",
+        "Magha",
+        "Purvaphalguni",
+        "Uttaraphalguni",
+        "Hasta",
+        "Citra",
+        "Jyestha",
+        "Mula",
+        "Purvasadha",
+        "Uttarasadha",
+        "Sravana",
+        "Abhijit",
+        "Dhanistha",
+        "Satabhisa",
+        "Purvabhadrapada",
+        "Uttarabhadrapada",
+        "Revati",
+        "Asvini"
+      ],
+      "printed_group_count": 24,
+      "source_claimed_group_count": 28,
+      "needed_inputs": [
+        "complete_name_syllable_witness"
+      ],
+      "status": "PUBLISHED_ENGLISH_SCOPE_INCOMPLETE_NOT_RESOLVED_BY_GUESSING",
+      "human_validated": false
+    },
+    {
+      "id": "TIB-R0594",
+      "source_id": "TIB-HENNING-2007",
+      "source_voice": "AUTHOR_EDITORIAL_WITNESS_COMPARISON",
+      "anchor": "Henning printed p248 / one-based PDF268",
+      "paraphrase": "Henning reports differences in letter groups between a standard Tibetan Vimalaprabhā translation and his Sanskrit edition, and says the White Beryl agrees closely with the Sanskrit edition. He selected the Sanskrit reading for the English transcription and conjectured manuscript variability as a cause. The project has not compared those originals directly.",
+      "needed_inputs": [
+        "Sanskrit_Vimalaprabha_edition",
+        "Tibetan_Vimalaprabha_edition",
+        "White_Beryl_original"
+      ],
+      "status": "HENNING_COMPARISON_NOT_THREE_DIRECT_INDEPENDENT_WITNESSES",
+      "human_validated": false
+    },
+    {
+      "id": "TIB-R0595",
+      "source_id": "TIB-HENNING-2007",
+      "source_voice": "AUTHOR_ANALYSIS_OF_COMMENTATOR_DISAGREEMENT",
+      "anchor": "Henning printed pp250–251 / one-based PDF270–271",
+      "paraphrase": "The karaṇa year-change adjustment of 2 weekdays and 30 nāḍī is interpreted differently by Bu-ston, Lochen Dharmaśrī and Khedrupje. Henning concludes their explanations are unsatisfactory; Lochen's calculation of accumulated model drift over 221 years gives approximately 2;38,43,3, not the stated 2;30. The mathematical meaning cannot safely be fixed from this commentary alone.",
+      "required_inputs": [
+        "calendar_year_epoch",
+        "karaṇa_or_siddhānta_rate",
+        "commentator_variant"
+      ],
+      "status": "COMPETING_SOURCE_INTERPRETATIONS_NO_RECONCILED_FORMULA",
+      "human_validated": false
+    }
+  ],
+  "note_count": 4,
+  "first_id": "TIB-R0592",
+  "last_id": "TIB-R0595",
+  "source_issue_ids": [
+    "TIB-CONFLICT-013_28_VS_27_MANSION_QUADRANTS",
+    "TIB-CONFLICT-014_INCOMPLETE_24_FOUR_SYLLABLE_GROUPS",
+    "TIB-CONFLICT-015_UNRESOLVED_YEAR_CHANGE_2_30_EXPLANATION"
+  ],
+  "source_note_policy": "Each source-note records a distinct literal/editorial finding; these are NOT extra human predictions or independent proof from new original-language witnesses.",
+  "model_promotions": 0,
+  "validated_human_results": 0
+}
