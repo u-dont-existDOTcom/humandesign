@@ -1,3 +1,9 @@
+# Chinese V23 — original Zi Wei Servants historical source
+
+**26 new source-only notes ZWD-R0911–R0936**, from online transmitted Wikitext Servants section cp43499–44429; original class/trustworthiness stereotypes documented without modern personnel advice. **BaZi210 + ZiWei936 =1146 historical text annotations**, not humans. Seven focused original-source tests and seven independent ZIP replay tests were verified. Next **ZWD-R0937 Career/Officials cp44429** and **BZI-R0211 Di Tian Sui section19**. Historical printed edition authenticity, natal-chart engine and genuine blinded human validation all OPEN. Human predictive validations **0**; runtime promotions **0**.
+
+## Previous accepted Chinese V22 source checkpoint
+
 # Chinese original astrology source audit — current V22 (2026-10-21)
 
 **ROOT EMPIRICAL TASK OPEN.** Historical Chinese source collation, deterministic independently checked natal/calendar mechanics, preregistered chart-to-answer mapping and real blinded untouched consenting humans versus decoys/nonastrology baselines remain unfinished. No historical text line count is predictive accuracy.
