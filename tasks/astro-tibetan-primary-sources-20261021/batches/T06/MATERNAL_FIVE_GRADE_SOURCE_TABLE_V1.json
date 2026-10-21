@@ -1,0 +1,434 @@
+{
+  "schema": "TIBETAN_T06_WHITE_BERYL_MATERNAL_GRADE_TABLE_V1",
+  "status": "EXPLICIT_SOURCE_TABLE_DIGITIZATION_NOT_VALIDATED_ASTROLOGY",
+  "source_id": "TIB-DORJE-2001",
+  "provenance": {
+    "work": "White Beryl, English presentation by Gyurme Dorje 2001",
+    "pdf_page_1based": 160,
+    "printed_page": 159,
+    "plate": "Plate 3, fig. 5 (Ms I ff.13–15)",
+    "original_white_beryl": "ff. 186b–187b",
+    "comparison_commentary": "Moonbeams f. 23a/b",
+    "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+    "reading_method": "visually checked original page image against extracted text; matrix digitization is an interpretive data transformation, not a checked Tibetan original"
+  },
+  "previous_covered_source_note_ids": [
+    "TIB-R0107",
+    "TIB-R0108",
+    "TIB-R0109"
+  ],
+  "new_historical_source_note_count": 0,
+  "graded_relations": {
+    "mother": "divine_parentage",
+    "son": "glorious_offspring",
+    "identity": "harmonious_lifespan",
+    "friend": "potent_spirit",
+    "enemy": "impotent_demon"
+  },
+  "grade_order": [
+    "divine_parentage",
+    "glorious_offspring",
+    "harmonious_lifespan",
+    "potent_spirit",
+    "impotent_demon"
+  ],
+  "mother_columns": [
+    {
+      "index": 0,
+      "representative_maternal_trigram": "Zin",
+      "mewa_groups": [
+        {
+          "number": 4,
+          "color": "green"
+        }
+      ],
+      "element_group": "wood"
+    },
+    {
+      "index": 1,
+      "representative_maternal_trigram": "Li",
+      "mewa_groups": [
+        {
+          "number": 9,
+          "color": "red"
+        },
+        {
+          "number": 7,
+          "color": "red"
+        }
+      ],
+      "element_group": "fire"
+    },
+    {
+      "index": 2,
+      "representative_maternal_trigram": "Khon",
+      "mewa_groups": [
+        {
+          "number": 5,
+          "color": "yellow"
+        }
+      ],
+      "element_group": "earth"
+    },
+    {
+      "index": 3,
+      "representative_maternal_trigram": "Dva",
+      "mewa_groups": [
+        {
+          "number": 1,
+          "color": "white"
+        },
+        {
+          "number": 6,
+          "color": "white"
+        },
+        {
+          "number": 8,
+          "color": "white"
+        }
+      ],
+      "element_group": "iron"
+    },
+    {
+      "index": 4,
+      "representative_maternal_trigram": "Kham",
+      "mewa_groups": [
+        {
+          "number": 2,
+          "color": "black"
+        },
+        {
+          "number": 3,
+          "color": "blue"
+        }
+      ],
+      "element_group": "water"
+    }
+  ],
+  "axis_matrices": {
+    "child_year_animal_vitality": {
+      "grades_to_columns": [
+        [
+          [
+            "horse",
+            "snake"
+          ],
+          [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ],
+          [
+            "bird",
+            "monkey"
+          ],
+          [
+            "mouse",
+            "pig"
+          ],
+          [
+            "tiger",
+            "hare"
+          ]
+        ],
+        [
+          [
+            "mouse",
+            "pig"
+          ],
+          [
+            "tiger",
+            "hare"
+          ],
+          [
+            "horse",
+            "snake"
+          ],
+          [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ],
+          [
+            "bird",
+            "monkey"
+          ]
+        ],
+        [
+          [
+            "tiger",
+            "hare"
+          ],
+          [
+            "horse",
+            "snake"
+          ],
+          [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ],
+          [
+            "bird",
+            "monkey"
+          ],
+          [
+            "mouse",
+            "pig"
+          ]
+        ],
+        [
+          [
+            "bird",
+            "monkey"
+          ],
+          [
+            "mouse",
+            "pig"
+          ],
+          [
+            "tiger",
+            "hare"
+          ],
+          [
+            "horse",
+            "snake"
+          ],
+          [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ]
+        ],
+        [
+          [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ],
+          [
+            "bird",
+            "monkey"
+          ],
+          [
+            "mouse",
+            "pig"
+          ],
+          [
+            "tiger",
+            "hare"
+          ],
+          [
+            "horse",
+            "snake"
+          ]
+        ]
+      ]
+    },
+    "child_body_element": {
+      "grades_to_columns": [
+        [
+          "fire",
+          "earth",
+          "iron",
+          "water",
+          "wood"
+        ],
+        [
+          "water",
+          "wood",
+          "fire",
+          "earth",
+          "iron"
+        ],
+        [
+          "wood",
+          "fire",
+          "earth",
+          "iron",
+          "water"
+        ],
+        [
+          "iron",
+          "water",
+          "wood",
+          "fire",
+          "earth"
+        ],
+        [
+          "earth",
+          "iron",
+          "water",
+          "wood",
+          "fire"
+        ]
+      ]
+    },
+    "child_destiny_element": {
+      "grades_to_columns": [
+        [
+          "fire",
+          "earth",
+          "iron",
+          "water",
+          "wood"
+        ],
+        [
+          "water",
+          "wood",
+          "fire",
+          "earth",
+          "iron"
+        ],
+        [
+          "wood",
+          "fire",
+          "earth",
+          "iron",
+          "water"
+        ],
+        [
+          "iron",
+          "water",
+          "wood",
+          "fire",
+          "earth"
+        ],
+        [
+          "earth",
+          "iron",
+          "water",
+          "wood",
+          "fire"
+        ]
+      ]
+    },
+    "child_luck_element": {
+      "grades_to_columns": [
+        [
+          "fire",
+          "earth",
+          "iron",
+          "water",
+          "wood"
+        ],
+        [
+          "water",
+          "wood",
+          "fire",
+          "earth",
+          "iron"
+        ],
+        [
+          "wood",
+          "fire",
+          "earth",
+          "iron",
+          "water"
+        ],
+        [
+          "iron",
+          "water",
+          "wood",
+          "fire",
+          "earth"
+        ],
+        [
+          "earth",
+          "iron",
+          "water",
+          "wood",
+          "fire"
+        ]
+      ]
+    }
+  },
+  "vitality_outcome_by_grade": [
+    {
+      "grade": "divine_parentage",
+      "kind": "relative_lifespan",
+      "source_table_description": "lifespan exceeding 73 years",
+      "numerical_threshold": {
+        "operator": ">",
+        "years": 73
+      }
+    },
+    {
+      "grade": "glorious_offspring",
+      "kind": "relative_lifespan",
+      "source_table_description": "lifespan of 61 years",
+      "numerical_threshold": {
+        "operator": "=",
+        "years": 61
+      }
+    },
+    {
+      "grade": "harmonious_lifespan",
+      "kind": "relative_lifespan",
+      "source_table_description": "average lifespan exceeding 46 years",
+      "numerical_threshold": {
+        "operator": ">",
+        "years": 46
+      }
+    },
+    {
+      "grade": "potent_spirit",
+      "kind": "relative_lifespan",
+      "source_table_description": "lifespan not exceeding 37 years",
+      "numerical_threshold": {
+        "operator": "<=",
+        "years": 37
+      }
+    },
+    {
+      "grade": "impotent_demon",
+      "kind": "neonatal_mortality",
+      "source_table_description": "post-natal death in a newborn, with no numerical cutoff stated",
+      "numerical_threshold": null
+    }
+  ],
+  "other_axes_output_order": {
+    "body": [
+      "best physique",
+      "fine physique easy to raise",
+      "average attractive physique",
+      "frail physique difficult childhood",
+      "severe chronic affliction"
+    ],
+    "destiny": [
+      "abundant wealth and descendants",
+      "prosperity",
+      "moderate resources",
+      "scarcity",
+      "destitution and threatened family line"
+    ],
+    "luck": [
+      "highest status",
+      "good reputation",
+      "earned reputation",
+      "poor reputation and quarrels",
+      "scandal or severe gossip"
+    ]
+  },
+  "calculation_scope": [
+    "mother's natal trigram OR natal mewa independent externally supplied",
+    "child's natal vitality animal, body/destiny/luck element",
+    "requires canonical Tibetan calendar and natal trigram/number algorithms for an actual birth",
+    "source table lists only five representative maternal trigrams Zin Li Khon Dva Kham; other three trigrams are not inferred or assigned here",
+    "source maternal mewa color groups 9/7 and 1/6/8 are explicit table cells; row and column alignments visually checked"
+  ],
+  "warnings": [
+    "The five lifespan descriptions are overlapping/non-exhaustive by modern numerical interval logic and cannot be modeled as a valid mutually exclusive age partition without extra source rules.",
+    "The table's projected longevity assertions are historical claims, not medical prognoses or evidence.",
+    "Unstated mapping for other three trigrams remains UNKNOWN.",
+    "The same elemental grid is printed separately for body, destiny and luck, retaining three domain-specific outputs.",
+    "The 'five-grade' mapping differs from simple good/bad element relations; do not use a generic Chinese elemental ranking as replacement."
+  ],
+  "human_validated": 0,
+  "promoted_to_runtime": false
+}
