@@ -1,0 +1,108 @@
+{
+  "schema": "TIBETAN_T40_ILLNESS_NINETEEN_PEBBLE_SOURCE_FIXTURE_V1",
+  "batch": "T40",
+  "source_id": "TIB-DORJE-2001",
+  "witness_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_page_pdf_1based": 297,
+  "source_White_Beryl_folios": "295b–299a",
+  "source_Moonbeams_folios": "31b–32a",
+  "associated_notes": [
+    "TIB-R0346",
+    "TIB-R0347",
+    "TIB-R0348"
+  ],
+  "source_record_increment": 0,
+  "pebble_structure": {
+    "vitality": {
+      "ordered_time_axes": [
+        "year",
+        "month",
+        "day",
+        "hour"
+      ],
+      "direct_element_relation_pebbles": 4,
+      "growth_decline_pebbles": 4
+    },
+    "body": {
+      "ordered_time_axes": [
+        "year",
+        "month",
+        "day",
+        "hour"
+      ],
+      "direct_element_relation_pebbles": 4,
+      "growth_decline_pebbles": 4
+    },
+    "additional": [
+      {
+        "name": "lunar_calendar_date",
+        "count": 1
+      },
+      {
+        "name": "weekday_or_planet",
+        "count": 1
+      },
+      {
+        "name": "lunar_mansion",
+        "count": 1
+      }
+    ]
+  },
+  "historical_color_policy": {
+    "mother": "white",
+    "friend": "white",
+    "enemy": "black",
+    "son": "one_white_one_black",
+    "identity_water_or_earth": "white",
+    "identity_wood_fire_or_iron": "black"
+  },
+  "exemplary_chart_8_1": {
+    "natal_year": "Fire Dragon",
+    "present_year": "Earth Tiger",
+    "present_month": "3rd Wood Horse",
+    "present_day": "15th Wood Dragon",
+    "present_hour": "Earth Bird",
+    "natal_vitality_element": "earth",
+    "natal_body_element": "earth",
+    "weekday": "Monday",
+    "lunar_mansion": "Svati",
+    "calendar_day_goddess": "Od-ljang-ma",
+    "colored_pebble_cell_states": "NOT_FULLY_MACHINE_TRANSCRIBED_DUE_SMALL_CHART"
+  },
+  "eight_goddess_day_schedule": {
+    "names_in_source_order": [
+      "Od-bar",
+      "brTan-ma",
+      "rNo-dbal-ma",
+      "mDangs-ldan",
+      "Char-bebs",
+      "gYo-med",
+      "Od-ljang",
+      "sKyed-byed"
+    ],
+    "durations": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      3,
+      3
+    ],
+    "total_lunar_dates": 30,
+    "exact_natal_month_day_boundary_status": "PENDING_INDEPENDENT_CALENDAR"
+  },
+  "seven_great_pine_tree_variants": [
+    "four_pine_trees",
+    "fifteen_golden_bridges",
+    "turquoise_colored_juniper_branches",
+    "wish_granting_tree_fruit",
+    "fortunate_unfortunate_households",
+    "living_dying_eyes",
+    "overstepping_divinatory_grid"
+  ],
+  "provenance_caution": "Source text is 2001 English translation/commentary; original Tibetan and standalone Moonbeams not independently checked; no prognostic truth supported.",
+  "medical_guidance_allowed": false,
+  "actual_human_predictions_validated": 0
+}
