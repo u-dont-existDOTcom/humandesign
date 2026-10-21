@@ -1,3 +1,9 @@
+# Chinese BaZi V29 — original Di Tian Sui 隱顯論 source-only
+
+**Two additional original historical source notes BZI-R0227–BZI-R0228** from pinned Wikitext oldid844373 (one verse and one whole commentary). CRC/source SHA and 9/9 fresh cold-extracted original tests passed. **BaZi228 + ZiWei1059 =1287 documentary Chinese annotations**, NOT verified humans. Next **BZI-R0229 section24**, Zi Wei next possible ZWD-R1060 only with new Volume III. No authenticated original early printing, full natal chart calculation or genuine blind human prediction validation; human wins **0**, runtime promotions **0**.
+
+## Previous accepted V28 source checkpoint
+
 # Chinese BaZi V28 — Di Tian Sui 22 source original text
 
 **Four new source-only historical notes BZI-R0223–R0226**, short online Wikitext oldid844372 真假論 (two full verses and two commentaries); original wording and UTF8/codepoint SHA frozen with 9/9 cold tests. **BaZi226 + ZiWei1059 =1285 Chinese documentary annotations**, not humans. Next **BZI-R0227 chapter23** (pin new source), Zi Wei next ZWD-R1060 requires new Volume III. Old printed original, verified calendar/astrology chart engine and real human predictive validity remain OPEN; 0 human validations and 0 runtime promotions.
