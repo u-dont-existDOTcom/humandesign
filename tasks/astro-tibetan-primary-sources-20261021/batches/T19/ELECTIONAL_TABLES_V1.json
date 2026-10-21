@@ -1,0 +1,155 @@
+{
+  "schema": "TIBETAN_T19_ELECTIONAL_LOOKUPS_V1",
+  "batch": "T19",
+  "historical_note_increment": 0,
+  "source": "Dorje 2001 White Beryl PDF pp211–212, Plate8 figs6–8",
+  "reuses": [
+    "TIB-R0192",
+    "TIB-R0193",
+    "TIB-R0194"
+  ],
+  "year_month_animal_rows": [
+    {
+      "natal_animals": [
+        "mouse",
+        "pig"
+      ],
+      "preferred_wedding_animals": [
+        "ox",
+        "sheep"
+      ]
+    },
+    {
+      "natal_animals": [
+        "tiger",
+        "hare"
+      ],
+      "preferred_wedding_animals": [
+        "bird",
+        "monkey"
+      ]
+    },
+    {
+      "natal_animals": [
+        "horse",
+        "snake"
+      ],
+      "preferred_wedding_animals": [
+        "mouse",
+        "pig"
+      ]
+    },
+    {
+      "natal_animals": [
+        "bird",
+        "monkey"
+      ],
+      "preferred_wedding_animals": [
+        "horse",
+        "snake"
+      ]
+    },
+    {
+      "natal_animals": [
+        "ox",
+        "sheep",
+        "dog",
+        "dragon"
+      ],
+      "preferred_wedding_animals": [
+        "tiger",
+        "hare"
+      ]
+    }
+  ],
+  "natal_month_to_day_rows": [
+    {
+      "natal_month": "tiger",
+      "wedding_day": "monkey"
+    },
+    {
+      "natal_month": "hare",
+      "wedding_day": "bird"
+    },
+    {
+      "natal_month": "dragon",
+      "wedding_day": "dog"
+    },
+    {
+      "natal_month": "snake",
+      "wedding_day": "pig"
+    },
+    {
+      "natal_month": "horse",
+      "wedding_day": "mouse"
+    },
+    {
+      "natal_month": "sheep",
+      "wedding_day": "ox"
+    },
+    {
+      "natal_month": "monkey",
+      "wedding_day": "tiger"
+    },
+    {
+      "natal_month": "bird",
+      "wedding_day": "hare"
+    },
+    {
+      "natal_month": "dog",
+      "wedding_day": "dragon"
+    },
+    {
+      "natal_month": "pig",
+      "wedding_day": "snake"
+    },
+    {
+      "natal_month": "mouse",
+      "wedding_day": "horse"
+    },
+    {
+      "natal_month": "ox",
+      "wedding_day": "sheep"
+    }
+  ],
+  "natal_trigram_to_weekday_rows": [
+    {
+      "natal_trigrams": [
+        "Dva",
+        "Zin"
+      ],
+      "planet": "Saturn",
+      "weekday": "Saturday",
+      "current_trigram": "Zin"
+    },
+    {
+      "natal_trigrams": [
+        "Khon",
+        "Gin"
+      ],
+      "planet": "Jupiter",
+      "weekday": "Thursday",
+      "current_trigram": "Dva"
+    },
+    {
+      "natal_trigrams": [
+        "Li",
+        "Kham"
+      ],
+      "planet": "Mars",
+      "weekday": "Tuesday",
+      "current_trigram": "Kham"
+    },
+    {
+      "natal_trigrams": [
+        "Khen",
+        "Zon"
+      ],
+      "planet": "Mercury",
+      "weekday": "Wednesday",
+      "current_trigram": "Khon"
+    }
+  ],
+  "status": "documentary_lookup_not_predictively_validated",
+  "actual_human_cases_tested": 0
+}
