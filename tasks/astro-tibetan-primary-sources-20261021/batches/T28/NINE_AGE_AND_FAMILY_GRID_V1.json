@@ -1,0 +1,386 @@
+{
+  "schema": "TIBETAN_T28_SOURCE_TIMING_AND_FAMILY_GRID_V1",
+  "batch": "T28",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_id": "TIB-DORJE-2001",
+  "source_note_increment": 0,
+  "existing_ids": [
+    "TIB-R0258",
+    "TIB-R0259",
+    "TIB-R0261",
+    "TIB-R0264",
+    "TIB-R0266",
+    "TIB-R0272",
+    "TIB-R0274",
+    "TIB-R0276"
+  ],
+  "source_pages_pdf": "250–260",
+  "series": {
+    "nine_age_solitary": {
+      "pdf_page": 251,
+      "male": [
+        {
+          "age": 9,
+          "animal": "dragon",
+          "trigram": "Li"
+        },
+        {
+          "age": 18,
+          "animal": "sheep",
+          "trigram": "Khon"
+        },
+        {
+          "age": 27,
+          "animal": "dog",
+          "trigram": "Dva"
+        },
+        {
+          "age": 36,
+          "animal": "ox",
+          "trigram": "Khen"
+        },
+        {
+          "age": 45,
+          "animal": "dragon",
+          "trigram": "Kham"
+        },
+        {
+          "age": 54,
+          "animal": "sheep",
+          "trigram": "Gin"
+        },
+        {
+          "age": 63,
+          "animal": "dog",
+          "trigram": "Zin"
+        },
+        {
+          "age": 72,
+          "animal": "ox",
+          "trigram": "Zon"
+        },
+        {
+          "age": 81,
+          "animal": "dragon",
+          "trigram": "Li"
+        }
+      ],
+      "female": [
+        {
+          "age": 9,
+          "animal": "ox",
+          "trigram": "Kham"
+        },
+        {
+          "age": 18,
+          "animal": "dragon",
+          "trigram": "Khen"
+        },
+        {
+          "age": 27,
+          "animal": "sheep",
+          "trigram": "Dva"
+        },
+        {
+          "age": 36,
+          "animal": "dog",
+          "trigram": "Khon"
+        },
+        {
+          "age": 45,
+          "animal": "ox",
+          "trigram": "Li"
+        },
+        {
+          "age": 54,
+          "animal": "dragon",
+          "trigram": "Zon"
+        },
+        {
+          "age": 63,
+          "animal": "sheep",
+          "trigram": "Zin"
+        },
+        {
+          "age": 72,
+          "animal": "dog",
+          "trigram": "Gin"
+        },
+        {
+          "age": 81,
+          "animal": "ox",
+          "trigram": "Kham"
+        }
+      ]
+    },
+    "tomb_convergence": {
+      "pdf_page": 252,
+      "male": [
+        {
+          "natal": [
+            "bird",
+            "monkey"
+          ],
+          "age": 54,
+          "sign_trigram": "Gin"
+        },
+        {
+          "natal": [
+            "mouse",
+            "pig",
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "age": 72,
+          "sign_trigram": "Zon"
+        },
+        {
+          "natal": [
+            "tiger",
+            "hare"
+          ],
+          "age": 18,
+          "sign_trigram": "Khon"
+        },
+        {
+          "natal": [
+            "horse",
+            "snake"
+          ],
+          "age": 36,
+          "sign_trigram": "Khen"
+        }
+      ],
+      "female": [
+        {
+          "natal": [
+            "horse",
+            "snake"
+          ],
+          "age": 18,
+          "sign_trigram": "Khen"
+        },
+        {
+          "natal": [
+            "tiger",
+            "hare"
+          ],
+          "age": 36,
+          "sign_trigram": "Khon"
+        },
+        {
+          "natal": [
+            "mouse",
+            "pig",
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "age": 54,
+          "sign_trigram": "Zon"
+        },
+        {
+          "natal": [
+            "bird",
+            "monkey"
+          ],
+          "age": 72,
+          "sign_trigram": "Gin"
+        }
+      ]
+    },
+    "combined_sign_tomb_ages": {
+      "pdf_page": 253,
+      "ages": [
+        9,
+        21,
+        33,
+        45,
+        57,
+        69,
+        81
+      ]
+    },
+    "constitutional_start_keys": {
+      "pdf_pages": [
+        253,
+        255
+      ],
+      "rows": [
+        {
+          "constitution": "earth_or_water",
+          "start": "wood_mouse"
+        },
+        {
+          "constitution": "wood",
+          "start": "fire_hare"
+        },
+        {
+          "constitution": "fire",
+          "start": "iron_horse"
+        },
+        {
+          "constitution": "iron",
+          "start": "water_bird"
+        }
+      ]
+    },
+    "constitutional_year_danger_labels": {
+      "pdf_page": 253,
+      "rows": [
+        {
+          "constitution": "wood",
+          "claimed_life_reducing_year": "wood_sheep",
+          "claimed_potentially_fatal_year": "wood_dog"
+        },
+        {
+          "constitution": "fire",
+          "claimed_life_reducing_year": "fire_dog",
+          "claimed_potentially_fatal_year": "fire_ox"
+        },
+        {
+          "constitution": "earth",
+          "claimed_life_reducing_year": "earth_dragon",
+          "claimed_potentially_fatal_year": "earth_sheep"
+        },
+        {
+          "constitution": "iron",
+          "claimed_life_reducing_year": "iron_ox",
+          "claimed_potentially_fatal_year": "iron_dragon"
+        },
+        {
+          "constitution": "water",
+          "claimed_life_reducing_year": "water_dragon",
+          "claimed_potentially_fatal_year": "water_sheep"
+        }
+      ]
+    }
+  },
+  "six_member_household_grid": {
+    "pdf_page": 258,
+    "five_six_member_rows": {
+      "body": [
+        1,
+        11,
+        21,
+        30,
+        20,
+        10
+      ],
+      "vitality": [
+        3,
+        13,
+        23,
+        28,
+        18,
+        8
+      ],
+      "destiny": [
+        5,
+        15,
+        25,
+        26,
+        16,
+        6
+      ],
+      "luck": [
+        7,
+        17,
+        27,
+        24,
+        14,
+        4
+      ],
+      "mewa": [
+        9,
+        19,
+        29,
+        22,
+        12,
+        2
+      ]
+    },
+    "first_three_divine": [
+      1,
+      2,
+      3
+    ],
+    "first_three_human": [
+      30,
+      29,
+      28
+    ],
+    "first_three_household": [
+      17,
+      18,
+      19
+    ],
+    "sectors": {
+      "divine": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "human": [
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24
+      ],
+      "household": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "enemy": [
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ]
+    },
+    "residual": [
+      15,
+      16
+    ]
+  },
+  "pebble_count_variants": {
+    "main": 47,
+    "alternate_31": 31,
+    "alternate_37": 37,
+    "three_chinese_modes_360": {
+      "gSer_lo_can": 120,
+      "gYu_lo_can": 120,
+      "Dung_lo_can": 120
+    },
+    "extended_600_extra_day": 120,
+    "extended_600_extra_hour": 120
+  },
+  "warnings": [
+    "No table value constitutes human predictive validation.",
+    "Age nine and age twelve-interval series are distinct algorithms despite shared translated umbrella name.",
+    "Constitutional life-reducing or fatal labels are historical categories, not evidence or advice about death.",
+    "Family arrangement selects at least four members; the six-person grid is one source example.",
+    "The 360 and 600 pebble modes are alternative systems, not 47-pebble optional extras.",
+    "No calendar parity or historic dates certified by these table checks."
+  ],
+  "human_validation_count": 0,
+  "runtime_promotion": false
+}
