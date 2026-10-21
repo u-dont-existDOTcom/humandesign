@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B27",
+  "date": "2026-10-21",
+  "status": "SOURCE_ONLY_PORTUGUESE_STRUCTURAL_AND_NEW_TOPIC_READING",
+  "source_id": "JYOT-BPHS-KERR-PT",
+  "source_sha256": "d271b96457dade884ae4fd0c268d09e88696beeca707fce2b1d2159aa6084b62",
+  "encoding": "CP1252",
+  "count": 20,
+  "records": [
+    {
+      "id": "B27-001",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "743–745, numbered body chapter 9, absent TOC",
+      "domain": "pre_24_longevity_uncertainty",
+      "source_paraphrase": "A body chapter titled Males de Nascença says definitive life-length determination should not be made until age 24; contrasts Bhasin/Jātaka source caution under age 12.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Not a medical or actuarial guideline; conflicting 12/24 boundaries are separate transmitted versions, not performance estimates.",
+      "measurement_class": "HISTORICAL_HIGH_STAKES",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-002",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "2528–2534, body-only chapter 28",
+      "domain": "ishta_kashta_period_predicate",
+      "source_paraphrase": "The text introduces planetary Ishta and Kashta benefic/malefic strength as modifiers for Daśā effects, a source section absent from the translator's TOC.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Determining quantitative strengths requires exact algorithm, not simply retrograde/dignity labels.",
+      "measurement_class": "COMPUTABLE_CANDIDATE_UNVERIFIED",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-003",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "2562–2568, body-only chapter 29",
+      "domain": "all_house_pada_calculation",
+      "source_paraphrase": "A body-only chapter on Padas das casas specifies computing Arudha Padas by counting a house to its lord and repeating from lord, not limited to Upapada.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Cannot equate with Rath's competing Arudha longitude conventions; sign counting and exceptions need freeze.",
+      "measurement_class": "COMPUTABLE_CANDIDATE_UNVERIFIED",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-004",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "2653–2660, body-only chapter 31",
+      "domain": "argala_intervention_calculation",
+      "source_paraphrase": "The text contains a separate numbered Argala/planetary intervention chapter omitted from the TOC between Upapada and Karakatwa.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Overlaps Jaimini translated sutras but not independent forecast evidence.",
+      "measurement_class": "COMPUTABLE_CANDIDATE_UNVERIFIED",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-005",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "3142–3148, body-only chapter 37",
+      "domain": "moon_relative_sun_house_outcome",
+      "source_paraphrase": "The missing Yoga da Lua section differentiates Moon in angular, succedent or cadent relation to Sun and modifies day/night cases with D9 aspects.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Moon relation to Sun is correlated with lunar phase; separate local house/D9 and actual outcome target definitions.",
+      "measurement_class": "CHART_RULE_UNVALIDATED",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-006",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5404–5432, body-only chapter 74",
+      "domain": "sudarshana_body_section_omitted",
+      "source_paraphrase": "Sudarshana Chakra appears as its own numbered chapter yet is not included in the TOC. It explicitly restricts its three-ring method when two reference signs coincide, and compares Ashtakavarga results.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Prior B20 already recorded this actual method; B27 records the new omission/structural provenance, not an independent duplicate success.",
+      "measurement_class": "SOURCE_CRITICISM",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-007",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5533–5537, body-only chapter 80",
+      "domain": "female_natal_outcome_target_switch",
+      "source_paraphrase": "Women’s horoscope chapter is present in the body but absent from TOC; source directs some natal results to woman, some to husband and certain topics to seventh/eighth house.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Do not switch person predicted post hoc or infer partner death/sexual health. Historical androcentric premises remain source history.",
+      "measurement_class": "HISTORICAL_SENSITIVE",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-008",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5539–5551, explicitly 'Notas de Outros Livros'",
+      "domain": "three_other_books_inserted_in_female_chapter",
+      "source_paraphrase": "Between opening female-horoscope verses and subsequent clauses, the Portuguese compilation explicitly inserts quotations labeled Brihat Jatak, Phaldeepika de Mantreswara, and Jatakpari Jata.",
+      "source_layer": "TRANSLATOR_COMPILATION_ATTRIBUTION",
+      "critical_limit": "These paragraphs are imported quotations, not independent original Parashara verse nor three empirical predictions.",
+      "measurement_class": "SOURCE_DEPENDENCY",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-009",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5579, near end of body chapter 80",
+      "domain": "women_asceticism_natal_configuration",
+      "source_paraphrase": "One translated line associates a malefic in seventh and another in eighth with a woman entering an ascetic life, besides sensitive partner-mortality assertions.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Even observable initiation needs cultural/consent safeguards; do not infer personal partner mortality or moral status.",
+      "measurement_class": "HISTORICAL_SENSITIVE",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-010",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5581–5587, body-only chapter 81",
+      "domain": "physiognomy_mark_to_status",
+      "source_paraphrase": "A numbered women’s physical-characteristics chapter cites Shiva-to-Parvati teaching and links marks on feet/body to royal standing or poverty.",
+      "source_layer": "HISTORICAL_REPORTED_SHIVA_PARVATI_TRANSMISSION",
+      "critical_limit": "Uses sensory examination of physical marks outside natal sky; gender/social discrimination and no causal evidence.",
+      "measurement_class": "NON_NATAL_EXTRA_INPUT",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-011",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5682–5700, TOC body-mark chapter",
+      "domain": "body_mole_sex_lateral_prognosis",
+      "source_paraphrase": "A mark/mole/whorl on one side of the body is interpreted differently for men and women and linked to supposed material or marital fortune.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Requires intimate visual inputs, not DOB/time; do not solicit sensitive body pictures or profile absent people.",
+      "measurement_class": "NON_NATAL_PRIVACY_SENSITIVE",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-012",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5703–5739, curses previous births chapter",
+      "domain": "past_life_curse_as_infertiIity_cause",
+      "source_paraphrase": "A chapter explicitly invokes alleged curses from serpent, father, mother, brother or priest from past lives to explain fertility/offspring setbacks.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_RELIGIOUS_ATTRIBUTION",
+      "critical_limit": "Religious explanatory claim is not a causal medical diagnosis; avoid blaming infertile people and avoid promising rituals change pregnancy outcomes.",
+      "measurement_class": "METAPHYSICAL_AND_HIGH_STAKES",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-013",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5743–5778, body-only chapter 84",
+      "domain": "planetary_ritual_remedy_symbols",
+      "source_paraphrase": "A numbered chapter absent from TOC assigns colors/materials and ritual representations to nine planets and claims improved peace, health and prosperity from propitiation.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_RELIGIOUS_ATTRIBUTION",
+      "critical_limit": "Intervention/ritual instructions are not chart prediction or proven medical treatment; no efficacy evidence in source.",
+      "measurement_class": "PRESCRIPTIVE_UNVALIDATED",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-014",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5780–5783, birth-omen chapter",
+      "domain": "strong_natal_chart_overridden_by_calendar_omens",
+      "source_paraphrase": "Text explicitly says births can be judged unfavorable despite well-placed planets when tithi, sibling/parent nakshatra, ingress, eclipses or Gandanta conditions occur.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Source-specified override introduces historical lunisolar calendar, event timing and family-nakshatra inputs; no validated harm implication.",
+      "measurement_class": "CALENDAR_EXTRA_INPUT",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-015",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5792–5795, Krishna Chaturdashi chapter",
+      "domain": "six_segments_of_lunar_day_with_family_outcomes",
+      "source_paraphrase": "The text partitions Krishna Chaturdashi into six intervals with different allegedly adverse outcomes assigned to relatives, losses or native.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Astronomical interval calculation and verified exact time needed; morally and medically unsafe personal-family danger claims.",
+      "measurement_class": "HISTORICAL_HIGH_STAKES",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-016",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5849–5859, Gandanta birth chapter",
+      "domain": "three_disjoint_gandanta_types",
+      "source_paraphrase": "The text distinguishes Tithi Gandanta, Nakshatra Gandanta and Ascendant Gandanta with particular boundary intervals and a special Abhukta Mula subset.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_CLASSICAL_ATTRIBUTION",
+      "critical_limit": "Different astronomical variables and ghatika units; none is evidence of medical mortality or inherited evil. Do not equate with D9 uncertainty.",
+      "measurement_class": "CALENDAR_BOUNDARY_CANDIDATE",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-017",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5869, explicitly 'Nota:' in Gandanta discussion",
+      "domain": "ritual_source_note_priest_expertise",
+      "source_paraphrase": "The compiler includes a marked Note recommending a specialist priest for the efficacy of rituals, separate from attributed original wording.",
+      "source_layer": "TRANSLATOR_OR_EDITOR_NOTE",
+      "critical_limit": "The note's claim that specialized ritual eliminates harms is untested and not an ancient astronomical algorithm.",
+      "measurement_class": "EDITORIAL_NOTE",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-018",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5872–5906, Abhukta Mula/Jyeshtha sections",
+      "domain": "inherited_birth_omens_child_abandonment",
+      "source_paraphrase": "The text asserts severe misfortune for certain birth-nakshatra boundaries and reports a practice of abandoning or avoiding a child; also gives a conditional exception if a predicted affected in-law does not exist.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_HISTORICAL_ATTRIBUTION",
+      "critical_limit": "Child abandonment is harmful; this is documentation, NOT an endorsement or personal forecast. Source exception should be preserved only to analyze internal logic.",
+      "measurement_class": "HARMFUL_HISTORICAL_SOCIAL",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-019",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5909–5915, birth-order 'remedy' chapter",
+      "domain": "daughter_after_three_sons_as_curse",
+      "source_paraphrase": "A separate chapter calls a daughter after three sons or a son after three daughters a family curse requiring ritual mitigation.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_DISCRIMINATORY_BELIEF",
+      "critical_limit": "Sex-based stigmatization is not fact or medical advice. Family birth order is external factual input rather than natal planetary features.",
+      "measurement_class": "HARMFUL_HISTORICAL_DISCRIMINATORY",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    },
+    {
+      "id": "B27-020",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "5918–5926, unusual births chapter",
+      "domain": "congenital_disability_as_bad_omen",
+      "source_paraphrase": "A chapter labels congenital differences, prematurity and certain animal births as inauspicious and instructs ostracism of mothers/animals.",
+      "source_layer": "PORTUGUESE_SECOND_HAND_DISCRIMINATORY_BELIEF",
+      "critical_limit": "Harmful stigma and abandonment must never be recommended; no validated prognostic/medical content.",
+      "measurement_class": "HARMFUL_HISTORICAL_DISCRIMINATORY",
+      "status": "SOURCE_ONLY_NOT_VALIDATED"
+    }
+  ],
+  "separate_structural_audit": "BPHS_PORTUGUESE_TOC_AND_OMISSIONS_B27.json",
+  "caveats": [
+    "These 20 entries are historical documentary claims, not 20 independent real-world prediction successes.",
+    "Ritual and gender/disability/family-status assertions have serious stigma potential; do not use as advice or person-specific profiling.",
+    "Translator's embedded imports are not Parashara's original ancient Sanskrit; original recension not established.",
+    "Some computational source variants are beyond birth-only sky data and remain unimplemented."
+  ],
+  "human_predictions_evaluated": 0,
+  "model_rules_promoted": 0
+}
