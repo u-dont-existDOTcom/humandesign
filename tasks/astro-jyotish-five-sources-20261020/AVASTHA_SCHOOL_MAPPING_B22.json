@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "B22",
+  "artifact_class": "SOURCE_CRITICAL_NINE_STATE_PLANETARY_AVASTHA_COMPARISON",
+  "source_witnesses": [
+    {
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Bhasin English Sarvartha Chintamani Chapter13 vv2-4, PDF273",
+      "layer": "Sanskrit verses plus Bhasin English rendering, physically readable but not critically collated"
+    },
+    {
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Modern English Saravali Chapter5 vv2-4, PDF11; effects vv5-13 PDF12-13",
+      "layer": "English summary of Kalyana Varma; underlying Sanskrit recension unverified"
+    }
+  ],
+  "rival_definitions": [
+    {
+      "predicate": "planet exalted",
+      "bhasin_name": "Deepta",
+      "saravali_name": "Dipta",
+      "relation": "SAME_GENERAL_DIGNITY"
+    },
+    {
+      "predicate": "planet in own sign",
+      "bhasin_name": "Svastha",
+      "saravali_name": "Svastha",
+      "relation": "SAME_GENERAL_DIGNITY"
+    },
+    {
+      "predicate": "planet in friendly sign",
+      "bhasin_name": "Mudita",
+      "saravali_name": "Mudita",
+      "relation": "SAME_GENERAL_DIGNITY"
+    },
+    {
+      "predicate": "planet in benefic varga/sign",
+      "bhasin_name": "Shanta",
+      "saravali_name": "Shanta",
+      "relation": "SAME_GENERAL_BUT_SCOPE_MAY_DIFFER"
+    },
+    {
+      "predicate": "planet in debilitation",
+      "bhasin_name": "Heena",
+      "saravali_name": "Bhita",
+      "relation": "DIFFERENT_LABEL_AND_EFFECT_CLASS"
+    },
+    {
+      "predicate": "planet in enemy sign",
+      "bhasin_name": "Dukhita",
+      "saravali_name": null,
+      "relation": "SARAVALI_NINE_STATES_DO_NOT_EXPLICITLY_MAP_ENEMY_SIGN_TO_DISTINCT_NAMED_STATE"
+    },
+    {
+      "predicate": "planet conjoined malefic",
+      "bhasin_name": "Vikala",
+      "saravali_name": null,
+      "relation": "SARAVALI_NINE_STATES_USE_VIKALA_DIFFERENTLY"
+    },
+    {
+      "predicate": "planet defeated in war",
+      "bhasin_name": "Khala",
+      "saravali_name": "Nipidita",
+      "relation": "SAME_CAUSE_DIFFERENT_LABEL"
+    },
+    {
+      "predicate": "planet with/obscured by Sun",
+      "bhasin_name": "Kopi",
+      "saravali_name": "Vikala",
+      "relation": "SARAVALI_VIKALA_IS_COMBUSTION_OR_SOLAR_COVERING"
+    },
+    {
+      "predicate": "planet in malefic division",
+      "bhasin_name": null,
+      "saravali_name": "Khala",
+      "relation": "SARAVALI_KHALA_IS_NOT_BHASIN_KHALA"
+    },
+    {
+      "predicate": "bright planetary rays",
+      "bhasin_name": null,
+      "saravali_name": "Sakta",
+      "relation": "SARAVALI_ADDS_STATE_NOT_IN_BHASIN_LIST"
+    }
+  ],
+  "source_state_vocabularies": {
+    "Bhasin": [
+      "Deepta",
+      "Svastha",
+      "Mudita",
+      "Shanta",
+      "Heena",
+      "Dukhita",
+      "Vikala",
+      "Khala",
+      "Kopi"
+    ],
+    "Saravali": [
+      "Dipta",
+      "Svastha",
+      "Mudita",
+      "Shanta",
+      "Sakta",
+      "Nipidita",
+      "Bhita",
+      "Vikala",
+      "Khala"
+    ]
+  },
+  "critical_errors_to_prevent": [
+    "Even when two ancient authors use the same term Vikala, its physical predicates differ: Bhasin joins malefic; Saravali solar combustion. A universal enum silently swaps causes.",
+    "Khala in Bhasin denotes planetary-war defeat; in Saravali it denotes harmful divisional status. Equivalent strings are not equivalent models.",
+    "Debilitation in Bhasin is Heena and in Saravali is Bhita. One-to-one ordinal mapping fails.",
+    "Enemy sign in Bhasin is explicit Dukhita but Saravali instead includes bright rays Sakta; the sets are not permutations of the same nine antecedents.",
+    "Bhasin's chapter 13 applies nine states explicitly during each main ruling period; Saravali includes natal status and time effect distinctions. A full test requires different timing models.",
+    "Having nine named categories does not create nine independent predictions or imply modern medicine validity."
+  ],
+  "possible_variant_test_design": "Use two source-specific named nine-state enumerations, each with independent, deterministic definition precedence and a single predeclared outcome mapping; do not merge, choose by person biography, or interpret source-silent states as contradiction.",
+  "human_prediction_validations": 0,
+  "production_model_promotions": 0,
+  "source_only": true
+}
