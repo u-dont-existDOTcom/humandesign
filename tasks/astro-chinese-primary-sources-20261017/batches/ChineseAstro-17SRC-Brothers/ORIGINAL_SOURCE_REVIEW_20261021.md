@@ -1,0 +1,9 @@
+# Zi Wei V17 — Brothers section source review (2026-10-21)
+
+Historical text audit, not predictive evidence. The pinned transmitted online Wikitext `紫微斗數全書 卷二`, revision oldid1963110, places the Brothers heading at codepoint 37269 and the next Spouses heading at 38238. Between those markers are the section heading and 22 original star-group lines. The V16 Brothers heading was navigation only. V17 adds 24 documentary records (23 lines and one next-section navigation), IDs ZWD-R0746–ZWD-R0769, next ZWD-R0770.
+
+The historical assertions mainly concern conditional numerical sibling counts and relationship descriptions, with combinations and exceptions. They are not verified facts about people. Any later empirical model must specify literal count categories, definitions of siblings, explicit conditional rules, and relevant demographic baselines before outcomes are known. A numerical mismatch must not be rescued as an unrelated symbolic claim.
+
+Three textual limitations must remain visible: (1) `兄弟感情融洽，但兄弟不多。` uses notably modern wording and may be later editorial interpolation; (2) `羊玲` appears where a common astrological compound may instead have been intended; (3) `贪狼同招怨天相同二人` has ambiguous segmentation. Preserve all three literally. Online reproductions agreeing is not equivalent to independent historic editions; no authentic early imprint has been authenticated.
+
+Source files: `ZIWEI_BROTHERS_24_SOURCE_NOTES_V1.json`, `SOURCE_BROTHERS_24_EXACT_OFFSET_WITNESS_V1.json`, `SOURCE_1963110_BROTHERS_EXACT_EXCERPT.txt`. Next substantive section at cp38238. This source audit establishes neither accurate natal charts nor independently validated human predictions, and promotes no runtime rules.
