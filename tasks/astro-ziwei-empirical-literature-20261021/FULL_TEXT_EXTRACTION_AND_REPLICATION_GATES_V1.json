@@ -1,0 +1,60 @@
+{
+  "schema": "HUMANDESIGN_ZIWEI_TWO_TAIWAN_THESES_FULL_TEXT_METHOD_EXTRACTION_QUEUE_V1",
+  "status": "UNRESOLVED_ORIGINAL_FULL_TEXT_ACCESS_AND_THEN_PREREG_DEVELOPMENT_ONLY",
+  "primary_missing_sources": [
+    {
+      "study_id": "ZWDS-2018-TEO",
+      "priority": 1,
+      "needed_source": "Complete institutional master's thesis original file, plus any consented de-identified scoring metadata",
+      "access_action": "Use authorized university copy-request or lawful library access; do not invent text or bypass university authentication.",
+      "required_extractions": [
+        "Seven exact original astrologers' questions, scale, coding, inter-rater reliability and treatment of discordant judgments",
+        "Exact birth year/month/day/HOUR, evidence quality and local/time-zone/leap conventions actually used",
+        "Per-domain n, coefficients, standard errors, confidence intervals, exact p-values and zero-result count",
+        "Pre-stated primary hypothesis and number of combinations/subgroups compared",
+        "All subgroup friendliness results and whether significance survives multiplicity adjustment",
+        "Missing cases, exclusion criteria, chart calculation software/interpretation school",
+        "Whether astrologers were truly blinded to subjects and outcome data"
+      ],
+      "full_text_available_to_current_research": false,
+      "confirmed_n_from_original_abstract": 243,
+      "full_text_methodology_verified": false
+    },
+    {
+      "study_id": "ZWDS-2020-CHEN",
+      "priority": 2,
+      "needed_source": "Complete 78-page university thesis with original Tables 4.1,4.2,4.10,4.11,5.1–5.11, equations and appendices",
+      "access_action": "Use legitimate university off-campus/public library SSO/ezproxy download; do not assume summary page gives full-text access.",
+      "required_extractions": [
+        "Full quantitative sample N, inclusion/exclusion and source of birth date, time, place/time zone",
+        "Exact 14 main-star and four category mapping, paired/co-star status and original Zi Wei rule source",
+        "Definition of smoking outcomes and independently validated observation quality",
+        "Model covariates age/sex/cohort/education/socioeconomic/family or peer smoking, baseline and cluster dependence",
+        "Tables 5.1–5.9 full coefficients, SEs, p-values, CIs and star subgroup/selective reporting",
+        "All comparisons and multiple-testing controls, exact pre-data model lock if any",
+        "Out-of-sample tests or lack thereof, exploratory/confirmatory delineation",
+        "No confusion of cigarette warning-image DID results with astrological predictive validity"
+      ],
+      "full_text_available_to_current_research": false,
+      "confirmed_n_from_original_abstract": null,
+      "full_text_methodology_verified": false
+    }
+  ],
+  "pre_registration_only_after_missing_method_inputs": {
+    "status": "NOT_READY",
+    "choose_single_primary_human_endpoint_before_recruitment": true,
+    "no_generated_probabilities_from_ancient_source_grade_text": true,
+    "do_not_choose_between_TEO_personality_and_CHEN_smoking_after_looking_at_any_new_answers": true,
+    "chart_birth_input_timezone_leap_convention_and_unverified_auxiliary_fail_closed": true,
+    "required_controls": [
+      "Matched birth-chart decoys with nuisance date/age/season/cohort conditioning",
+      "Independent nonastrological calibrated response baseline",
+      "Chart-label permutation null independent of test cohort answers",
+      "Outcome-blinded source-rule pre-response cryptographic package",
+      "Single primary score and multiple comparison adjustment",
+      "Independent untouched human participant consent, privacy and sample size power plan"
+    ],
+    "project_real_human_predictive_trials_completed": 0,
+    "human_study_frozen_and_authorized": false
+  }
+}
