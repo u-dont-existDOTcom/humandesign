@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B39_SPECIAL_EXACT_GRAHA_ASPECT_SANSKRIT_CHECKPOINT",
+  "status": "OPEN_B40_JUPITER_SOURCE_VS_MODERN_EMENDATION_CHECKPOINT",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B39.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B40_20261021.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -126,7 +126,12 @@
     "SPECIAL_ASPECT_SOURCE_AUDIT_B39.json",
     "READING_NOTES_B39.md",
     "bphs_special_aspect_B39.py",
-    "test_bphs_special_aspect_B39.py"
+    "test_bphs_special_aspect_B39.py",
+    "JUPITER_ASPECT_CRITICAL_VARIANTS_B40.json",
+    "jupiter_eighth_variant_B40.py",
+    "test_jupiter_eighth_variant_B40.py",
+    "READING_NOTES_B40.md",
+    "CONTINUATION_HANDOFF_B40_20261021.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -309,16 +314,21 @@
     "b39_saturn_mars_jupiter_special_tests_passed": 7,
     "b38_general_aspect_tests_passed": 7,
     "b39_jupiter_270_boundary_discontinuity_virupas": 15,
-    "independent_human_predictive_successes": 0
+    "independent_human_predictive_successes": 0,
+    "b40_primary_source_annotations_added": 0,
+    "b40_modern_ernst_wilhelm_variants": 1,
+    "b40_literal_jupiter_270_jump_virupas": 15,
+    "b40_three_test_modules_passed": 19,
+    "b40_secondary_software_formula_errors": 2
   },
   "pending_actions": [
-    "417 source-only annotations, zero measured independent human prediction successes and zero live model changes.",
-    "BPHS 26.10–12 literal special Saturn/Mars/Jupiter aspect arithmetic B39 has seven passing tests; literal Jupiter B39 has 270-degree jump, not silently smoothed.",
-    "Record modern source emendation as distinct source layer with independent version-gated test, rather than overwriting transmitted Sanskrit.",
-    "Original uploads and parallel reader/canonical model remain untouched, copyright-protected book binaries never published.",
-    "Retain source-type distinctions, contextual house/longitude and ordinal indexing, decoy/blinding rules before human testing."
+    "Maintain 417 primary SOURCE_ONLY annotations, no demonstrated predictive successes.",
+    "B38/B39 general and special BPHS aspect arithmetic have 14 tests; B40 literal-vs-Ernst Jupiter interval 5 tests, all passed and locally Git-hash checked.",
+    "B40 modern Ernst Wilhelm smoothing at 240–270 removes discontinuity but is NOT source manuscript evidence nor demonstrated empirical improvement.",
+    "Two source-level errors in secondary public software Drishti table fail its own 0–60 range/full-240 declarations; do not transplant table.",
+    "Continue deep chapter/verse study and test future frozen models only on held-out humans; other parallel reader/participants/survey/model unchanged; copyrighted books excluded from public GitHub."
   ],
-  "next_exact_source_frontier": "Compare Ernst Wilhelm Graha Sutras modern Jupiter 240–270 interpretation against literal Sanskrit BPHS Ch26.12 and B39; freeze variants separately, test both, then continue unreviewed verses. No known-person astrology matching.",
+  "next_exact_source_frontier": "Resume after B40: deepen another substantive unreviewed source family from the five books, or independent Sanskrit critical source/ephemeris comparison. Preserve modern Jupiter 240–270 conjecture as a version not a canonical repair. Never use seen respondents to choose.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -329,7 +339,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B39 3 documentary source claims and source audit committed; another versioned B40 modern commentary test is in progress.",
+    "note": "B40 code/source and 19 tests locally verified; remote all-path isolation and PR title refresh pending.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
