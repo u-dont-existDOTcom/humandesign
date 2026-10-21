@@ -1,0 +1,344 @@
+{
+  "schema": "ASTRO_TIBETAN_T52_JANSON_CALENDAR_FIVE_FORCES_SOURCE_NOTES_V1",
+  "batch": "T52",
+  "source_id": "TIB-JANSON-2014",
+  "title": "Svante Janson, Tibetan Calendar Mathematics, 2007 revised 2014",
+  "source_public_html": "https://arxiv.org/html/1401.6285v1",
+  "source_reading_windows": [
+    "§1–7 and Appendix A.2",
+    "Appendix E.1–E.4"
+  ],
+  "source_notes": [
+    {
+      "id": "TIB-R0472",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "5.1; Remark 2"
+      },
+      "paraphrase": "67 lunar months equal 65 mean solar months; 24 leap months every 65 years.",
+      "required_inputs": [
+        "solar_month_count"
+      ],
+      "output_class": "cycle_frequency",
+      "dependency_family": "JANS_MONTH",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0473",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "§3"
+      },
+      "paraphrase": "Civil calendar days begin at dawn; tithi spans twelve degrees of lunar-solar elongation.",
+      "required_inputs": [
+        "traditional_mean_dawn",
+        "lunar_solar_elongation"
+      ],
+      "output_class": "tithi_vs_civil_day",
+      "dependency_family": "JANS_DAY",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0474",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "5.2–5.3"
+      },
+      "paraphrase": "Solar-month offset M*=12(Y−Y0)+M−3; fractional true-month argument is (67M*+β*)/65.",
+      "required_inputs": [
+        "Y",
+        "M",
+        "epoch"
+      ],
+      "output_class": "preliminary_true_month",
+      "dependency_family": "JANS_MONTH",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0475",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "5.4–5.7"
+      },
+      "paraphrase": "Epoch β*: 61 (806), 55 (1927), 0 (1987); index=(2M*+β*) modulo 65.",
+      "required_inputs": [
+        "epoch",
+        "Mstar"
+      ],
+      "output_class": "intercalation_index",
+      "dependency_family": "JANS_MONTH",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0476",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "5.8"
+      },
+      "paraphrase": "Phugpa leap months occur at preliminary intercalation index 48 or 49.",
+      "required_inputs": [
+        "Phugpa_index"
+      ],
+      "output_class": "leap_month_flag",
+      "dependency_family": "JANS_PHUGPA",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0477",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "5.9"
+      },
+      "paraphrase": "Phugpa regular-month count uses threshold 48; leap month count floors the fraction.",
+      "required_inputs": [
+        "preliminary_true_month",
+        "leap_flag"
+      ],
+      "output_class": "integer_true_month",
+      "dependency_family": "JANS_PHUGPA",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0478",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "Appendix A.2"
+      },
+      "paraphrase": "Tsurphu example epochs 1732/1852 have β*=59/14 respectively.",
+      "required_inputs": [
+        "Tsurphu_epoch"
+      ],
+      "output_class": "epoch_constant",
+      "dependency_family": "JANS_TSURPHU",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0479",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "A.9"
+      },
+      "paraphrase": "Tsurphu leap months have index 0 or 1 and use a distinct integer-count rule.",
+      "required_inputs": [
+        "Tsurphu_index"
+      ],
+      "output_class": "leap_and_month_count",
+      "dependency_family": "JANS_TSURPHU",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0480",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "Table 24"
+      },
+      "paraphrase": "Animal month 1 is Dragon in Phugpa but Tiger in Tsurphu.",
+      "required_inputs": [
+        "calendar_variant",
+        "lunar_month_number"
+      ],
+      "output_class": "animal_month",
+      "dependency_family": "JANS_MONTH_ANIMAL",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0481",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "E.6–E.7"
+      },
+      "paraphrase": "Phugpa and Tsurphu compute month elements with different formulas and cycle origins.",
+      "required_inputs": [
+        "year",
+        "month",
+        "calendar_variant"
+      ],
+      "output_class": "element_month",
+      "dependency_family": "JANS_MONTH_ELEMENT",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0482",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "E.1–E.2"
+      },
+      "paraphrase": "Year power element cycles Wood,Fire,Earth,Iron,Water, each twice, with sexagenary animal.",
+      "required_inputs": [
+        "Tibetan_year_label"
+      ],
+      "output_class": "year_power_and_animal",
+      "dependency_family": "JANS_YEAR",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0483",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "E.3–E.5"
+      },
+      "paraphrase": "Central, life and power mewa numbers derive from (2−Y),(8−Y),(5−Y) amod9.",
+      "required_inputs": [
+        "Tibetan_year_label"
+      ],
+      "output_class": "three_natal_mewa",
+      "dependency_family": "JANS_MEWA",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0484",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "Tables 18–23"
+      },
+      "paraphrase": "Life, body, fortune and spirit elements follow animal/trine and thirty/sixty-year rules.",
+      "required_inputs": [
+        "sexagenary_year"
+      ],
+      "output_class": "five_year_forces",
+      "dependency_family": "JANS_FIVE_FORCES",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0485",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "E.9–E.11"
+      },
+      "paraphrase": "Lunar-day animal, trigram and number use separate modular formulas tied to month.",
+      "required_inputs": [
+        "lunar_month",
+        "lunar_day"
+      ],
+      "output_class": "lunar_day_attributes",
+      "dependency_family": "JANS_LUNAR_DAY",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0486",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "E.12–E.16"
+      },
+      "paraphrase": "Calendar-day elements, animals, trigrams and squares use Julian day, not lunar-day indices.",
+      "required_inputs": [
+        "Julian_day_number"
+      ],
+      "output_class": "calendar_day_attributes",
+      "dependency_family": "JANS_CIVIL_DAY",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0487",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "Remark 37"
+      },
+      "paraphrase": "Tsurphu day mewa changes count direction at solstices; not Phugpa's simple day cycle.",
+      "required_inputs": [
+        "Tsurphu_epoch",
+        "true_solstice"
+      ],
+      "output_class": "calendar_day_mewa",
+      "dependency_family": "JANS_DAY_VARIANTS",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0488",
+      "source_id": "TIB-JANSON-2014",
+      "source_ref": "https://arxiv.org/html/1401.6285v1",
+      "anchor": {
+        "section_or_equation": "7.1–7.23; Remark 6"
+      },
+      "paraphrase": "Mean and computed 'true' longitudes are model positions, not exact modern sky coordinates.",
+      "required_inputs": [
+        "calendar_epoch",
+        "mean_solar_lunar_anomalies"
+      ],
+      "output_class": "theoretical_date",
+      "dependency_family": "JANS_ASTRONOMY",
+      "source_kind": "modern mathematical derivation, not an original Tibetan manuscript",
+      "human_blind_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 17,
+  "first_id": "TIB-R0472",
+  "last_id": "TIB-R0488",
+  "source_status": "MATHEMATICS_OF_HISTORICAL_CALENDARS_ONLY",
+  "calendar_examples_not_new_notes": [
+    {
+      "calendar": "Phugpa",
+      "gregorian_year": 1984,
+      "losar": "1984-03-03",
+      "year": "Wood Mouse",
+      "original_note": "TIB-R0020"
+    },
+    {
+      "calendar": "Phugpa",
+      "gregorian_year": 1985,
+      "losar": "1985-02-20",
+      "year": "Wood Ox",
+      "original_note": "TIB-R0020"
+    }
+  ],
+  "notable_inference": "Paper's formulas and existence of independent OSS reference libraries make a bounded deterministic year/month/day calculator preferable to inventing one from scratch.",
+  "precision_warning": [
+    "The paper's computed 'true' longitudes represent a traditional model, not precise physical ephemeris positions.",
+    "Do not substitute Gregorian civil year for actual Tibetan calendar year before Losar.",
+    "Janson month animal labels differ materially between Phugpa and Tsurphu: month1 Dragon versus Tiger.",
+    "Only Tsurphu calendar-day mewa undergoes the solstice reversal described in Remark37.",
+    "A correctly reproduced traditional calendar is NOT human personality/outcome predictive validation."
+  ],
+  "actual_human_blind_successes": 0,
+  "model_promotions": 0,
+  "next_id": "TIB-R0489"
+}
