@@ -1,0 +1,219 @@
+{
+  "schema": "TIBETAN_T39_PINE_TREE_STARTS_AND_COUNTING_VARIANTS_V1",
+  "batch": "T39",
+  "source_id": "TIB-DORJE-2001",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_anchor": {
+    "pdf_pages": [
+      298,
+      299,
+      300
+    ],
+    "printed_pages": [
+      297,
+      298,
+      299
+    ],
+    "plates": [
+      "Plate10 fig2"
+    ],
+    "source_texts": [
+      "White Beryl ff.274b–277b",
+      "Moonbeams ff.32a–33a"
+    ]
+  },
+  "new_historical_note_count": 0,
+  "links_to_source_annotations": [
+    "TIB-R0349",
+    "TIB-R0350",
+    "TIB-R0365"
+  ],
+  "chart_definitions": [
+    {
+      "number": 1,
+      "kind": "CANONICAL_15",
+      "key": "life_spirit",
+      "start_reference": "present_year",
+      "direction_policy": "forward",
+      "required_basis": "subject_personal_elements",
+      "qualification": "self_or_family_substitution"
+    },
+    {
+      "number": 2,
+      "kind": "CANONICAL_15",
+      "key": "king_throne",
+      "start_reference": "enemy_element_tiger_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_iron_tiger"
+    },
+    {
+      "number": 3,
+      "kind": "CANONICAL_15",
+      "key": "felt_hat",
+      "start_reference": "water_or_fire_tiger_year",
+      "direction_policy": "PROSE_DOWN_MOONBEAMS_FORWARD",
+      "required_basis": "ancestral_context",
+      "qualification": "translation_direction_conflict"
+    },
+    {
+      "number": 4,
+      "kind": "CANONICAL_15",
+      "key": "minister_ranks",
+      "start_reference": "identity_element_tiger_year",
+      "direction_policy": "forward",
+      "required_basis": "destiny_element",
+      "qualification": "wood_example_wood_tiger"
+    },
+    {
+      "number": 5,
+      "kind": "CANONICAL_15",
+      "key": "lynx_wolf_pelts",
+      "start_reference": "friend_element_tiger_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_earth_tiger"
+    },
+    {
+      "number": 6,
+      "kind": "CANONICAL_15",
+      "key": "sought_by_demons",
+      "start_reference": "enemy_element_hare_year",
+      "direction_policy": "backward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_iron_hare"
+    },
+    {
+      "number": 7,
+      "kind": "CANONICAL_15",
+      "key": "led_by_ogres",
+      "start_reference": "friend_element_hare_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_earth_hare"
+    },
+    {
+      "number": 8,
+      "kind": "CANONICAL_15",
+      "key": "wish_tree",
+      "start_reference": "identity_element_hare_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_wood_hare"
+    },
+    {
+      "number": 9,
+      "kind": "CANONICAL_15",
+      "key": "treasury",
+      "start_reference": "mother_or_son_element_hare_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_fire_hare"
+    },
+    {
+      "number": 10,
+      "kind": "CANONICAL_15",
+      "key": "heavenly_lifeline",
+      "start_reference": "thirteen_years_before_present",
+      "direction_policy": "forward",
+      "required_basis": "present_year",
+      "qualification": "fixed_offset_minus_13"
+    },
+    {
+      "number": 11,
+      "kind": "CANONICAL_15",
+      "key": "suspended_lifeline",
+      "start_reference": "thirteen_years_after_present",
+      "direction_policy": "backward",
+      "required_basis": "present_year",
+      "qualification": "fixed_offset_plus_13"
+    },
+    {
+      "number": 12,
+      "kind": "CANONICAL_15",
+      "key": "hurricane",
+      "start_reference": "son_element_tiger_year",
+      "direction_policy": "forward",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_fire_tiger"
+    },
+    {
+      "number": 13,
+      "kind": "CANONICAL_15",
+      "key": "gatehouse",
+      "start_reference": "mother_element_monkey_year",
+      "direction_policy": "PROSE_BACK_MOONBEAMS_FORWARD",
+      "required_basis": "constitution_element",
+      "qualification": "wood_example_water_monkey_conflicting_direction"
+    },
+    {
+      "number": 14,
+      "kind": "CANONICAL_15",
+      "key": "invalid_pillow",
+      "start_reference": "five_years_before_present",
+      "direction_policy": "forward",
+      "required_basis": "present_year",
+      "qualification": "fixed_offset_minus_5"
+    },
+    {
+      "number": 15,
+      "kind": "CANONICAL_15",
+      "key": "earthly_peg",
+      "start_reference": "five_years_after_present",
+      "direction_policy": "backward",
+      "required_basis": "present_year",
+      "qualification": "fixed_offset_plus_5"
+    },
+    {
+      "number": 16,
+      "kind": "SUPPLEMENTAL_SCHOOL_POLICY",
+      "key": "starting_points_impeded_Narapa",
+      "start_reference": "subject_four_numeric_squares",
+      "direction_policy": "DIFFERENT_NUMERIC_METHOD",
+      "required_basis": "subject_four_numeric_squares",
+      "qualification": "natal_annual_relation_unspecified"
+    },
+    {
+      "number": 17,
+      "kind": "SUPPLEMENTAL_SCHOOL_POLICY",
+      "key": "starting_points_impeded_Dungpa",
+      "start_reference": "present_year_four_numeric_squares",
+      "direction_policy": "DIFFERENT_NUMERIC_METHOD",
+      "required_basis": "annual_four_numeric_squares",
+      "qualification": "natal_annual_relation_unspecified"
+    }
+  ],
+  "source_discrepancies": [
+    {
+      "id": "TIB-CONFLICT-008",
+      "kind": "DIRECTIONAL_SOURCE_VARIANT",
+      "pdf_pages": [
+        298,
+        300
+      ],
+      "number": 3,
+      "prose": "count downwards from water or fire Tiger for wood subject",
+      "embedded_Moonbeams_verse": "count forwards from water Tiger",
+      "status": "both editions/readings kept; cannot implement unique direction without more witness verification"
+    },
+    {
+      "id": "TIB-CONFLICT-009",
+      "kind": "DIRECTIONAL_SOURCE_VARIANT",
+      "pdf_pages": [
+        298,
+        300
+      ],
+      "number": 13,
+      "prose": "count backwards from mother-element Monkey; wood type Water Monkey",
+      "embedded_Moonbeams_verse": "count forwards from Water Monkey",
+      "status": "both readings kept"
+    }
+  ],
+  "other_risks": [
+    "Sex, age, constitutional-substitution rules in first topic require source-specific input fields.",
+    "Counting from a start animal/year relative to age may use inclusive Tibetan age, not modern chronological years; do not derive explicit Gregorian dates yet.",
+    "Source lists 15 core entries and separately two additional school variants, not 17 independent clinical cases.",
+    "Contrasting calendars and linked relations must be frozen before actual people are examined."
+  ],
+  "human_validation": 0
+}
