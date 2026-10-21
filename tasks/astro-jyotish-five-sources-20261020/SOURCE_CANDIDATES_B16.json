@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B16",
+  "source_critical_status": "FIRST_PASS_TRANSLATED_SOURCE_AUDIT_NOT_HUMAN_VALIDATION",
+  "count": 24,
+  "source_ids": [
+    "JYOT-SARAVALI-EN",
+    "JYOT-SC-BHASIN",
+    "JYOT-JP-SASTRI"
+  ],
+  "records": [
+    {
+      "id": "B16-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 vv2-4; PDF11",
+      "domain": "nine_planet_states",
+      "paraphrase": "Verse text enumerates nine avasthas determined by exaltation, own/friendly sign, combustion, defeat and adverse subdivisions.",
+      "layer": "translated_verse",
+      "limits": "States include overlapping dignities and war/combustion criteria; freeze precedence.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 NOTES after v4; PDF12",
+      "domain": "27_graha_samaya_editor_note",
+      "paraphrase": "A NOTES paragraph (not the preceding ancient verse) computes one of 27 planetary Samayas from Lagna and planet-sign numbers multiplied by Vimshottari period length modulo 27.",
+      "layer": "modern_editorial_note",
+      "limits": "Source layer crucial; do not assert all 27 samayas are Kalyanavarman's verse text.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-003",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 v14; PDF13",
+      "domain": "retrograde_exalted_negative_view",
+      "paraphrase": "A retrograde exalted planet is said by some named/unnamed authorities to have its good effect neutralized.",
+      "layer": "explicit_attributed_minority_view",
+      "limits": "Cannot be generalized to all retrograde planets without conflict with 5.39.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-004",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 v39; PDF14",
+      "domain": "retrograde_benefic_strength",
+      "paraphrase": "A retrograde benefic planet is associated with enhanced authority whereas a retrograde malefic is linked to unfavorable wandering.",
+      "layer": "translated_verse",
+      "limits": "Material tension with 5.14 only for retrograde exalted benefics; neither is an empirical rule.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 vv19-20; PDF13",
+      "domain": "planetary_strength_tiebreak",
+      "paraphrase": "If two planetary significators have equal assessed strength, the one with stronger natural Naisargika Bala takes priority.",
+      "layer": "translated_verse_plus_named_school",
+      "limits": "Named Chudamani variation on Lagna strength is separate, not automatic.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-006",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch5 v42; PDF14",
+      "domain": "hour_day_month_year_result_scaling",
+      "paraphrase": "Text allocates increasing relative magnitudes of results to rulers of year, month, weekday and hour during their planetary periods.",
+      "layer": "translated_verse",
+      "limits": "Double-strength language is not empirically calibrated probability.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-007",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch6 vv1-4; PDF15",
+      "domain": "three_schools_yogakaraka_definition",
+      "paraphrase": "Hari restricts mutually significant planets to own/exaltation sign in angles, Chanakya broadens criteria, and a third 11th-house inclusion is explicitly rejected.",
+      "layer": "explicit_school_disagreement",
+      "limits": "Alternative source schools—not one universally accepted frozen algorithm.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch7 vv5-6; PDF16",
+      "domain": "starting_enterprises_planetary_hour",
+      "paraphrase": "The text proposes beginning a house-related activity during the sign, weekday, month, year or hora of that house lord, attributing increasing result fractions.",
+      "layer": "translated_verse",
+      "limits": "25/50/75/100 represent source-prescribed effect portions, not measured success percentages; distinct from static natal personality forecasts.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-009",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch8 vv1-12; PDF16-17",
+      "domain": "conception_moment_extra_input",
+      "paraphrase": "The conception and intercourse rules explicitly require planetary transits and ascendant at the time of union, sometimes in relation to both parents' charts.",
+      "layer": "translated_verse_sensitive",
+      "limits": "Non-natal input, often unknowable; no reproductive/sexuality medical advice.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-010",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch8 vv14-26; PDF17",
+      "domain": "conception_twins_triplets_outcomes",
+      "paraphrase": "Multiple alternative conception configurations are said to specify number and historical sex categorization of twins/triplets.",
+      "layer": "translated_verse_sensitive",
+      "limits": "Not a reliable clinical test; lacks safe or observable inputs in many cases.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-011",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch8 vv44-49; PDF18",
+      "domain": "conception_delivery_timing_variants",
+      "paraphrase": "Three different modalities of conception sign yield ten, eleven or twelve months to delivery, while two much longer exceptions are given, and competing authorities disagree over Moon/Lagna geometry.",
+      "layer": "translated_verse_conflicting_schools",
+      "limits": "Some literal durations conflict with human physiology; source-asserted not medical forecast.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-012",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch35 v2; PDF95",
+      "domain": "royal_yoga_birth_class_interaction",
+      "paraphrase": "The scale of claimed political leadership is conditioned both on how many strong planets occupy exaltation/moolatrikona and the person's inherited social/royal background.",
+      "layer": "translated_verse",
+      "limits": "Source directly includes unequal social opportunity; do not treat rulers' family privilege as a chart-derived success.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-013",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch35 v3; PDF95",
+      "domain": "royal_yoga_competing_authorities",
+      "paraphrase": "The same strong/exalted natural-malefic premise is described by Yavanas as kingship with severe conduct, by Jeevasarma as valor without kingship, and by Kalyanavarman as regional headship.",
+      "layer": "explicit_three_way_source_disagreement",
+      "limits": "Cannot choose the best-fitting social-rank category after seeing biography.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-014",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch35 vv20-21; PDF96",
+      "domain": "chandradhi_exclusions",
+      "paraphrase": "Benefics in the lunar sixth-seventh-eighth are claimed to imply rulership under additional absence-of-malefics and aspect exclusion conditions.",
+      "layer": "translated_verse",
+      "limits": "Must retain negative conditions; broad unqualified lunar-Adhi detector would not match this text.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-015",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch46 v30; PDF126",
+      "domain": "female_religious_initiation",
+      "paraphrase": "A seventh-house malefic and any ninth-house planetary occupant are linked with a woman's religious initiation and the tradition of the seventh-house planet.",
+      "layer": "translated_verse_historical_gender_scope",
+      "limits": "Observable membership may be studied voluntarily; not an assertion about a real woman.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-016",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch46 v31; PDF126",
+      "domain": "female_scholar_religious_teacher",
+      "paraphrase": "Strong Mercury/Jupiter/Venus/Moon in an even-sign ascendant are said to describe a female teacher or exponent of Vedas/Vedanta.",
+      "layer": "translated_verse_historical_gender_scope",
+      "limits": "This contradicts any assumption that traditional texts describe spiritual authority only in men; no success evidence.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-017",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch46 v32; PDF126",
+      "domain": "female_chapter_spouse_application",
+      "paraphrase": "The chapter's conclusion extends portions of these female-centered horoscope predictions to the woman's husband.",
+      "layer": "translated_verse",
+      "limits": "Danger of reassigning failed natal targets post hoc; must preregister whose outcome is predicted.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-018",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch9 v3; PDF222",
+      "domain": "all_planets_exalted_political_predicate",
+      "paraphrase": "A Sarvarth Chintamani ruling/status verse repeats the special case of all planets simultaneously exalted.",
+      "layer": "sanskrit_verse_with_bhasin_english",
+      "limits": "Under seven classical planet scheme this is astronomically empty because Sun Aries and Mercury Virgo are incompatible. Source claim not human success.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-019",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch9 v3; PDF222",
+      "domain": "six_planets_exalted_moon_lagna",
+      "paraphrase": "A separate conditional predicts kingship with Moon exalted at Lagna alongside six exalted planets.",
+      "layer": "sanskrit_verse_with_bhasin_english",
+      "limits": "Not automatically physically impossible: six could omit Mercury. Needs independent ephemeris feasibility enumeration, not a guessed exclusion.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-020",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch9 v4 and translator note; PDF222-223",
+      "domain": "retrograde_friendship_strength_and_editor_generalization",
+      "paraphrase": "Verse ties retrograde planets in friendly signs to high status under compound dignity conditions; Bhasin's note generalizes retrogression as always strengthening.",
+      "layer": "verse_plus_separate_translator_commentary",
+      "limits": "The blanket generalization is COMMENTATOR inference, distinct from compound verse; conflicts with Saravali 5.14 minority rule.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-021",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch9 v13 and translator note; PDF224-225",
+      "domain": "debilitation_cancellation_editor_reinterpretation",
+      "paraphrase": "Verse proposes leadership after a debilitation-lord or exaltation-lord attains angular strength; translator explicitly finds the rationale uncertain and proposes a narrower Lagna interpretation.",
+      "layer": "verse_plus_separate_editorial_hypothesis",
+      "limits": "Do not rewrite Sanskrit rule using Bhasin's speculative narrowing without version label.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-022",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch1 opening v5 near PDF7",
+      "domain": "natal_horary_shared_hermeneutics",
+      "paraphrase": "The author's translated opening discusses transferring principles of natal judgments to Prashna questions.",
+      "layer": "sanskrit_verse_translation_scope_unverified",
+      "limits": "Traditional textual claim of shared technique is not evidence natal-forward and query-time-reverse tests may be pooled.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-023",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XVI sloka5, PDF947 printed937",
+      "domain": "female_chart_lagna_moon_priority",
+      "paraphrase": "The Vaidyanatha verse advises choosing stronger of ascendant/Moon to read female fortune, children, and spouse-related outcomes through distinct houses.",
+      "layer": "original_sanskrit_verse_with_sastri_translation",
+      "limits": "Historical gender- and family-centered results should not be imposed on individuals as facts.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    },
+    {
+      "id": "B16-024",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XVI NOTES above sloka5, PDF947 printed937",
+      "domain": "editorial_male_effect_redirect_to_husband",
+      "paraphrase": "Sastri's NOTES (which quote another Sanskrit authority) redirect female-chart outcomes considered male-only to her husband's life.",
+      "layer": "editorial_note_quotation_not_author_main_verse",
+      "limits": "Source layer and target person must remain explicit; cannot rescue chart misses by relabeling to spouse after the fact.",
+      "status": "DOCUMENTARY_NOT_VALIDATED_OR_PROMOTED"
+    }
+  ],
+  "selected_physical_page_witnesses": [
+    "Saravali PDF12,13,14,15,16,95,126",
+    "Sarvartha Chintamani PDF222,223,225",
+    "Jataka Parijata PDF947"
+  ],
+  "methodology": {
+    "distinctions": [
+      "Author's Sanskrit verse versus translator notes",
+      "Ruler prediction versus inherited social position",
+      "Conception moment chart versus natal chart",
+      "Person versus spouse as target",
+      "Five-six-seven exaltation groups must be separately checked for physical feasibility"
+    ],
+    "model_changes": 0,
+    "people_scored": 0,
+    "human_results": 0
+  },
+  "next": "Source critical comparison of contradictory retrograde dignities against Sanskrit and systematic coverage of remaining unregistered chapters."
+}
