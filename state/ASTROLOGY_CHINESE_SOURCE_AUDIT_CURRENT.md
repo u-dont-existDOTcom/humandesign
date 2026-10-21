@@ -1,3 +1,9 @@
+# Chinese V24 — transmitted online Zi Wei Volume II twelve-house source lines documented
+
+**123 new historical Wikitext line records ZWD-R0937–ZWD-R1059** covering Career38, Property24, Fortune28 and Parents33 original source lines to the exact end of Volume II cp48890. Two Wikitext-only terminal footer wrappers retained in witness but NOT counted as historical astrological content. Prior Life/other house documentation preserved. **BaZi210 + ZiWei1059 =1269 historical source annotations**, not people. Four sections' exact Unicode/UTF8 and SHA references independently tested; 14 source and 14 cold-extracted source tests passed. Next original Zi Wei Volume III requires a separately pinned full source, first possible ZWD-R1060; BaZi next BZI-R0211 Di Tian Sui section19. No authenticated classical printed original, verified comprehensive calendar/natal chart engine, clinical/parental/financial recommendation, real human blind predictions or runtime astrology promotions.
+
+## Previous accepted Chinese V23 original source checkpoint
+
 # Chinese V23 — original Zi Wei Servants historical source
 
 **26 new source-only notes ZWD-R0911–R0936**, from online transmitted Wikitext Servants section cp43499–44429; original class/trustworthiness stereotypes documented without modern personnel advice. **BaZi210 + ZiWei936 =1146 historical text annotations**, not humans. Seven focused original-source tests and seven independent ZIP replay tests were verified. Next **ZWD-R0937 Career/Officials cp44429** and **BZI-R0211 Di Tian Sui section19**. Historical printed edition authenticity, natal-chart engine and genuine blinded human validation all OPEN. Human predictive validations **0**; runtime promotions **0**.
