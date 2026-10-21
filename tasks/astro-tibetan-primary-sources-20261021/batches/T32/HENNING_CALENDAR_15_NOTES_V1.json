@@ -91,8 +91,8 @@
         "pdf_page_1based": 356,
         "printed_page": 336
       },
-      "key": "39592-lunar-month-175682-weeks",
-      "paraphrase": "Henning demonstrates the Phugpa mean-weekday relation that 39,592 lunar months equal 175,682 weeks; equivalently, their weekday advance of 60,599 days corresponds to 8,657 complete seven-day cycles after removing four-week components.",
+      "key": "39592-lunar-month-week-identity-source-typo",
+      "paraphrase": "Henning's printed sentence states 39,592 lunar months = 175,682 weeks, but the same page's exact monthly radix constant 29;31,50,0,480 multiplied by 39,592 equals 1,169,175 solar days = 167,025 weeks, not 175,682. His own subsequent expression 39,592×1;31,50,0,480 = 60,599 days = 8,657 weeks (after discarding 28 days per lunar month) proves the same corrected total: 4×39,592 + 8,657 = 167,025. Preserve printed literal and arithmetic correction separately.",
       "required_inputs": [
         "Phugpa_siddhanta_constant"
       ],
@@ -100,7 +100,8 @@
       "dependency_family": "HENNING-PHUGPA-IDENTITY",
       "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
       "blinded_human_predictive_validation": false,
-      "model_promotion": false
+      "model_promotion": false,
+      "source_issue": "TIB-CONFLICT-006: verified printed numeric typo 175682 versus exact 167025 from own constants; no source interpolation"
     },
     {
       "id": "TIB-R0303",
@@ -298,7 +299,8 @@
     "Henning's 84 Venus correction is explicitly conjectural, not an established literal source reading.",
     "Historical Tsurphu solstice observations are reconstructed without direct surviving records.",
     "6.574 in intercalation description means decimal degrees; source sexagesimal mansion coordinates are the primary precise datum.",
-    "Numerical agreement with astronomical rates is not evidence of astrological life-event prediction."
+    "Numerical agreement with astronomical rates is not evidence of astrological life-event prediction.",
+    "Henning PDF356/printed336 contains an internally contradicted numerical total of 175682 weeks; exact arithmetic establishes 167025. Keep literal source and correction side-by-side."
   ],
   "root_status": "OPEN",
   "human_predictive_cases_validated": 0,
