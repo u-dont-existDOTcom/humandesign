@@ -1,0 +1,80 @@
+{
+  "schema": "TIBETAN_T35_NINE_SECTOR_QUERY_TIME_PARTIAL_TABLE_V1",
+  "batch": "T35",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Gyurme Dorje 2001, White Beryl f435a/b, Plate21 fig6, PDF pp279–280",
+  "additional_historical_source_notes": 0,
+  "reuses": [
+    "TIB-R0321",
+    "TIB-R0322",
+    "TIB-R0323"
+  ],
+  "chart_definition": {
+    "center_is": "mewa_of_day_of_consultation",
+    "remaining_numerals": "remaining eight mewa values sequentially placed around compass",
+    "directions": [
+      "center",
+      "east",
+      "southeast",
+      "south",
+      "southwest",
+      "west",
+      "northwest",
+      "north",
+      "northeast"
+    ]
+  },
+  "verified_sector_rows": [
+    {
+      "ordinal": 1,
+      "direction": "center",
+      "outcome_target": "presence_of_good_deities",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "mother favourable, friend interpreted as harmful spirits, other relations neutral"
+    },
+    {
+      "ordinal": 2,
+      "direction": "east",
+      "outcome_target": "father_grandfather_great_grandfather",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse; reverse direction not same claim"
+    },
+    {
+      "ordinal": 3,
+      "direction": "southeast",
+      "outcome_target": "mother_grandmother_great_grandmother",
+      "relative_comparison": "sector_mewa_v_day_mewa",
+      "source_relation": "sector inhibits day adverse; reverse not same"
+    },
+    {
+      "ordinal": 4,
+      "direction": "south",
+      "outcome_target": "children_grandchildren_great_grandchildren",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse; reverse not same"
+    },
+    {
+      "ordinal": 5,
+      "direction": "southwest",
+      "outcome_target": "house_land_tombs",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse; reverse not same"
+    }
+  ],
+  "unextracted_sectors": [
+    "west",
+    "northwest",
+    "north",
+    "northeast"
+  ],
+  "warnings": [
+    "Only five of nine sectors are reconstructed here; do not invent remaining four.",
+    "Source comparisons differ between day and year; no global year-only simplification.",
+    "The chart requires consultation-day and consultation-year mewa and an independently defined day-start/calendar convention.",
+    "The direction of element inhibition changes interpretation; not symmetric.",
+    "The chart is a culturally contingent divination, no demonstrated human predictive value."
+  ],
+  "human_prediction_validation": 0,
+  "source_reading_status": "PARTIAL_NINE_SECTOR_MATERIAL"
+}
