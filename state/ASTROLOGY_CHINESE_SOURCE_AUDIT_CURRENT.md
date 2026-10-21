@@ -1,3 +1,9 @@
+# Chinese V19 — online Zi Wei original Children-palace documentary source
+
+**34 additional historical text records ZWD-R0795–ZWD-R0828** from pinned Wikitext oldid1963110 Children cp39218–40563; one heading, four method lines, four actual source continuations, 24 other historical conditional lines and one next Wealth navigation marker. Exact CP/UTF8/hash witnesses and independent cold source checks passed. **BaZi210 + Zi Wei828 =1038 Chinese text annotations**, not humans. Original early printed editions, historical reproductive/gender/health truth and birth chart engine remain unverified. Next **ZWD-R0829 Wealth cp40563** and **BZI-R0211 Di Tian Sui section19**. Actual human predictive validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese source checkpoint
+
 # Chinese V18 — transmitted Zi Wei Spouses palace historical source
 
 **25 source-only annotations ZWD-R0770–ZWD-R0794**, from original online Wikitext oldid1963110 cp38238–39218. Preserved a physical line continuing a previous star description rather than inventing a separate rule. Heading +23 body lines + next Children source navigation only. **BaZi 210 + Zi Wei 794 = 1,004 historical source annotations**, on isolated `research/astro-chinese-v18-ziwei-spouses-original-source-20261021`; inherited previous index V17 unaltered. Next **ZWD-R0795 四子女 cp39218** and **BZI-R0211 Di Tian Sui section19**. Early printed Zi Wei woodblock collation remains unverified; publisher reports important older-edition variants potentially affecting chart computation. Independently blinded real-person validations **0**, runtime model promotions **0**. Source-level direct GitHub SHA/CP/UTF8 assertions passed; **no Python/cold-ZIP test** executed this continuation.
