@@ -1,3 +1,9 @@
+# Chinese V16 — transmitted online original Zi Wei Life-palace text through Brothers
+
+**105 new source-only historical annotations ZWD-R0641–ZWD-R0745**, 104 literal source lines across 15 groups from Huo Xing to Dou Jun cp33783–37269 plus **one original Brothers heading navigation-only marker**. Original combined Huo/Ling and DiJie/TianKong passages kept together; mixed traditional/simplified Hua Lu glyphs preserved. Online Life-palace Wikitext section annotated to Brothers; other eleven houses and authentic Ming edition still unstudied. **BaZi210 + ZiWei745 =955 Chinese historical text records**; latest separately accepted Western B07bh Lilly13271+Ptolemy1066 is on another branch. Next **ZWD-R0746 兄弟 cp37269** and **BZI-R0211 Di Tian Sui section19**. Actual human blind validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese V15 checkpoint
+
 # Chinese V15 — next four Zi Wei Life-palace auxiliary source profiles
 
 **54 new historical source-only annotations ZWD-R0587–ZWD-R0640**, covering Lu Cun 14, Kui Yue 6, Qing Yang 17 and Tuo Luo 16 literal Wikitext lines plus a single following Huo Xing navigation marker. Original Qing Yang duplicates a male-life heading; Tuo Luo female verse lacks opening poem markup; Kui Yue has combined source verse. No fabricated corrections. **BaZi210 + Zi Wei640 =850** Chinese source-only annotations; source Life-palace remains PARTIAL. The separate accepted Western B07bh Lilly13271 + Ptolemy1066=14337 belongs to a different branch, not this V15 index. Next **ZWD-R0641 火星 cp33783** and **BZI-R0211 Di Tian Sui section19**. Human blind validations **0**, runtime promotions **0**.
