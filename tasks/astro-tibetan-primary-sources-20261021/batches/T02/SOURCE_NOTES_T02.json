@@ -1,0 +1,145 @@
+{
+  "schema": "ASTRO_TIBETAN_T02_SOURCE_NOTES_V1",
+  "batch": "T02",
+  "parent_source_notes_batch": "T01",
+  "status": "FIRST_PASS",
+  "note_count": 6,
+  "note_ids_begin": "TIB-R0021",
+  "note_ids_end": "TIB-R0026",
+  "notes": [
+    {
+      "id": "TIB-R0021",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 309,
+        "printed_page": 309,
+        "online_lines": "L6052–L6070"
+      },
+      "claim_kind": "tabular-calculation",
+      "paraphrase": "For natal Mewa numbered 1–9, the corresponding vitality Mewa is the natal index plus six modulo nine (with 9 representing zero), and power Mewa is plus three modulo nine; for natal 5 these are 2 and 8; body Mewa equals natal-year Mewa.",
+      "required_inputs": [
+        "natal_mewa"
+      ],
+      "output_class": "numerical_lookup",
+      "dependency_family": "TIB-MEWA-CHINESE-OVERLAP",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Compare independently with Cornu's natal Mewa tables and the White Beryl primary translation before claiming genuine traditional equivalence."
+    },
+    {
+      "id": "TIB-R0022",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 309,
+        "printed_page": 309,
+        "online_lines": "L6071–L6081"
+      },
+      "claim_kind": "relation-strength",
+      "paraphrase": "For current-year versus natal elemental power Mewa, maternal element is given best classification (three zero marks), friend two, son one zero/one cross, enemy two crosses; identity Earth/Water one zero, Fire/Iron/Wood one cross.",
+      "required_inputs": [
+        "natal_power_mewa",
+        "current_power_mewa",
+        "five_element_relationships"
+      ],
+      "output_class": "ordinal_auspiciousness",
+      "dependency_family": "TIB-MEWA-CHINESE-OVERLAP",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Same pebble ordering appears in Dorje's translation commentary, so repeated books do not count as independent evidence."
+    },
+    {
+      "id": "TIB-R0023",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 310,
+        "printed_page": 310,
+        "online_lines": "L6083–L6099"
+      },
+      "claim_kind": "annual-progression-rule",
+      "paraphrase": "For men Papme Mewa begins with natal Mewa as first Tibetan age year and follows magic-square arrows counterclockwise through current Tibetan age.",
+      "required_inputs": [
+        "natal_mewa",
+        "Tibetan_inclusive_age",
+        "male_table_convention"
+      ],
+      "output_class": "annual_mewa",
+      "dependency_family": "TIB-PAPME-TRIGRAM",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Age convention and traversal directions must be explicit, not silently substituted by Western attained age."
+    },
+    {
+      "id": "TIB-R0024",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 311,
+        "printed_page": 311,
+        "online_lines": "L6100–L6106"
+      },
+      "claim_kind": "annual-progression-rule",
+      "paraphrase": "For women Papme Mewa traverses the same style of magic square clockwise starting from the natal Mewa in the center.",
+      "required_inputs": [
+        "natal_mewa",
+        "Tibetan_inclusive_age",
+        "female_table_convention"
+      ],
+      "output_class": "annual_mewa",
+      "dependency_family": "TIB-PAPME-TRIGRAM",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Gendered variants separately preregistered; avoid using identity as a fitted correction."
+    },
+    {
+      "id": "TIB-R0025",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 324,
+        "printed_page": 324,
+        "online_lines": "L6204–L6223"
+      },
+      "claim_kind": "solar-year-boundary",
+      "paraphrase": "The Gua Annual Number in Erlewine uses an exact astronomical transition around February 4, with UTC/GMT threshold and distinct male and female personal-Gua lookup numbers; this need not match variable Tibetan lunisolar New Year.",
+      "required_inputs": [
+        "Gregorian birth datetime",
+        "UTC offset",
+        "solar-term time",
+        "sex-specific gua table"
+      ],
+      "output_class": "gua_lookup",
+      "dependency_family": "CHINESE-FENGSHUI-GUA-NOT-TIBETAN-LOSAR",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Author's presentation blends Tibetan astrology with Chinese feng-shui solar-sector number conventions; do not mistake Feb 4 cutoff for canonical Phugpa Losar."
+    },
+    {
+      "id": "TIB-R0026",
+      "source_id": "TIB-ERLEWINE-2007",
+      "anchor": {
+        "pdf_page_1based": 327,
+        "printed_page": 327,
+        "online_lines": "L6251–L6297"
+      },
+      "claim_kind": "solar-sector-month",
+      "paraphrase": "Personal Gua natal month uses the Sun in tropical zodiac sectors from degree 15 of one sign to degree 15 of the next; this is not by default the Tibetan Kālacakra month or the Tibetan lunar birth month.",
+      "required_inputs": [
+        "tropical_sun_longitude",
+        "natal_year_gua",
+        "sex-specific table"
+      ],
+      "output_class": "gua_month_number",
+      "dependency_family": "CHINESE-FENGSHUI-GUA-NOT-KALACAKRA",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "verified_against": "author-hosted English PDF 2026-10-21",
+      "human_outcome_validated": false,
+      "provenance_note": "Modern author/Chinese-derived variant; keep distinct from the original White Beryl lunar/zodiac/planet conventions."
+    }
+  ],
+  "root_outcome": "OPEN",
+  "model_promotions": 0,
+  "actual_blind_human_predictions": 0
+}
