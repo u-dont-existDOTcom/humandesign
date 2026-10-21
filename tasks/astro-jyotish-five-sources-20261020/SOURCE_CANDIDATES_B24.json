@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B24",
+  "date": "2026-10-21",
+  "status": "FIRST_PASS_TRANSLATED_SOURCE_CANDIDATES_ONLY",
+  "sources": [
+    "JYOT-JP-SASTRI",
+    "JYOT-JAIMINI-RATH-V1"
+  ],
+  "record_count": 21,
+  "records": [
+    {
+      "id": "B24-001",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII verse 19, PDF 762, printed 752",
+      "domain": "sibling_count_strength_modifier",
+      "paraphrase": "Among four sibling indicators (third-house lord, brother significator, occupant and aspecting planet), two or three strong ones are said to modify siblings' numbers; a navamsa fraction gives a further younger-sibling count.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "It distinguishes strong/weak and gendered planets. The exact counting algorithm and observed births are unverified.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-002",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII verse 20, PDF 762, printed 752; rendered source image inspected",
+      "domain": "sibling_count_from_mars_ashtakavarga",
+      "paraphrase": "Counts planets supplying benefic dots in third from Mars in Mars's Aṣṭakavarga, then subtracts contributors in inimical or depressed signs to forecast total siblings.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "A source-specific list/defect; do not simply score third-house sign or raw mark count. Births vs survivors must be frozen.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-003",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII around verse 24, PDF 764, printed 754",
+      "domain": "alternative_three_navamsa_sibling_count",
+      "paraphrase": "A separate procedure averages navamsa numbers of third-house lord, Mars and third-house lord measured from Mars to estimate younger siblings.",
+      "source_layer": "TRANSLATED_PASSAGE_BOUNDARY_PARTLY_CUT_AT_PDF_PAGE",
+      "limitations": "Alternative to XII.20, not a complementary independent prediction; verify precise sloka number across page break.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-004",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII verse 26, PDF 764, printed 754",
+      "domain": "siblings_affection_vs_property_partition",
+      "paraphrase": "Third-house and ascendant lords together are said to indicate fraternal affection; when strong/friendly in first or third it further predicts no division of siblings' property during life.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE_WITH_SASTRI_NOTE",
+      "limitations": "Observable relationship is separate from legal partition. Sastri's note says related verses appear in another work, title not reliably OCR read.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-005",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII verse 141, PDF 802, printed 792",
+      "domain": "housing_lodging_three_discriminators",
+      "paraphrase": "The fourth-house lord in eleventh, eighth or sixth respectively allegedly indicates lodging abroad, lack of owned or rented home, or accommodation with paternal relatives.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "Location, homeownership, tenancy and kin assistance are distinct outcomes, affected by economic opportunity.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-006",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XII verses 142–145, PDF 802–803, printed 792–793; inspected printed PDF803",
+      "domain": "house_acquisition_and_condition_positive_negative",
+      "paraphrase": "A strong fourth lord is said to favor acquisition; adverse configurations predict loss or dilapidated property, versus a strong angular/trinal fourth lord predicting a colorful or comfortable house.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "limitations": "Keep positive, negative and condition/deterioration outcomes together rather than picking an easy fit.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-007",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIII verse 43, PDF 828, printed 818; rendered page inspected",
+      "domain": "family_line_continues_through_adopted_son",
+      "paraphrase": "The translated text associates fifth-house Jupiter and specific Saturn divisional conditions with lineage continuing through an adopted son.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "Adoption is culturally and legally contextual and requires voluntary independent reporting. Do not profile private kinship as factual.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-008",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIII verse 44, PDF 828, printed 818; rendered page inspected",
+      "domain": "late_life_childbirth_separate_yoga",
+      "paraphrase": "Mars rising with Sun in eighth/fourth under benefic aspect is said to indicate a son arriving later in life.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "Neither 'late' nor pregnancy outcome has calibrated timing; historical sex/gender assumptions and medical implications unsuitable for advice.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-009",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIII verse 49, PDF 832, printed 822",
+      "domain": "multiple_competing_childbirth_timing_techniques",
+      "paraphrase": "Fifth/ninth from Jupiter, Moon and Lagna plus lord-of-house daśā/bhukti and Jupiter transit/asterism counting are presented as alternative periods when a child may arrive.",
+      "source_layer": "TRANSLATED_SOURCE_PLUS_ADJACENT_EDITORIAL_ALTERNATIVES",
+      "limitations": "Different formulas and their output windows must be frozen independently; no improvement claims based on known childbirth dates.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-010",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIV verse 66, PDF 889, printed 879",
+      "domain": "ninth_house_malefic_dignity_exception",
+      "paraphrase": "Ninth-house debilitated/enemy/combust bodies are associated with adversity, yet the same verse says a malefic in exaltation, own or friendly sign can instead produce good results.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "limitations": "Qualified source itself resists blanket positive/negative sign rule; historically moralized labels not person-level judgments.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-011",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIV note preceding verse 66, PDF 889, printed 879",
+      "domain": "verses_65_to_87_shared_source_uncertain_name",
+      "paraphrase": "The editor explicitly states that verses 65–87 also occur in an earlier treatise, but the printed Devanagari title is not yet confidently read.",
+      "source_layer": "SASTRI_EDITORIAL_SOURCE_DEPENDENCY_NOTE",
+      "limitations": "Do not invent work title from OCR and do not multiply cross-book passages as independent witnesses.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-012",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XIV verses 86–88, PDF 899–900, printed 889–890",
+      "domain": "ninth_house_jupiter_mercury_positive_and_absence",
+      "paraphrase": "Planetary conditions on ninth house distinguish worldly power and learned pursuits from adverse configurations when Mercury/Jupiter are absent, with translator source notes.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "limitations": "The absence is part of source predicate; extremely bundled outcome lists and some sensitive claims excluded.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-013",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 2 'Kalachakra: Ten Karmic Directions', PDF 41 and 44",
+      "domain": "kalachakra_ten_directions_commentary",
+      "paraphrase": "Rath describes eight compass-plane directions plus vertical up/down, assigning planetary influences and mythic guardians, citing BPHS 2.3 and Shiva-related literature.",
+      "source_layer": "MODERN_RATH_SYNTHESIS_WITH_DISTINCT_CLASSICAL_QUOTATION",
+      "limitations": "Rath conceptual frame is not a literal Jaimini sutra, and mythic claims are not measurable physical causation.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-014",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 2 PDF 45; inspected printed text",
+      "domain": "digbala_from_lagna_and_arudha",
+      "paraphrase": "Rath assigns directional strength from either Lagna or Arudha Lagna; Mercury/Jupiter first, Moon/Venus fourth, Saturn seventh, Sun/Mars tenth, with node analogues.",
+      "source_layer": "MODERN_RATH_COMPUTATIONAL_SYNTHESIS",
+      "limitations": "The Arudha extension is separately Rath's research, not unambiguous original BPHS. Define directional strength and house model before code.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-015",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 2 PDF 46; source page rendered",
+      "domain": "profession_vs_geographic_direction_double_reading",
+      "paraphrase": "For two already known charts, Rath interprets Lagna-relative digbala for profession and Arudha-relative digbala for physical direction of relocation; a Singapore account is described as having been predicted.",
+      "source_layer": "RATH_RETROSPECTIVE_EXAMPLES_AND_UNVERIFIED_PRIOR_CLAIM",
+      "limitations": "No retained prediction timestamp, neutral cases or prospective scoring in source. Do not count named Singapore story as independently successful forecast.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-016",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 2 PDF 47–48",
+      "domain": "graha_kala_timing_elective_caution",
+      "paraphrase": "Rath recommends avoiding certain daily planetary periods for work in directions associated with their obstructing planets, and provides profession labels.",
+      "source_layer": "MODERN_RATH_ELECTIVE_GUIDANCE",
+      "limitations": "Electing time for an action is distinct from birth-derived prediction; no controlled evidence of efficacy.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-017",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 6 'Sri Achyutananda', PDF 97–98",
+      "domain": "miracle_story_and_undated_prediction",
+      "paraphrase": "Rath retells a spiritual teacher's father having a dream before conception and an alleged precise forecast of a temple stone falling, received through a loose Oriya translation.",
+      "source_layer": "HAGIOGRAPHY_AND_SECOND_HAND_RETROSPECTIVE_REPORT",
+      "limitations": "No contemporaneous time-stamped original prediction, independent event certificate or held-out test is supplied in these pages. Not measured predictive accuracy.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-018",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 10 'Upasana', PDF 205–208",
+      "domain": "religious_practice_not_natally_predicted_outcome",
+      "paraphrase": "Rath describes mantra recitations, nyasa and named ritual steps and quotes religious Sanskrit texts.",
+      "source_layer": "RATH_MODERN_RELIGIOUS_INSTRUCTION_WITH_UPANISHAD_CITATIONS",
+      "limitations": "Practical prescription or religious practice is not evidence of chart-derived behavior or a literal Jaimini sutra.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-019",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 10 PDF 208–210",
+      "domain": "lagna_lord_based_jyotirmantra_choice",
+      "paraphrase": "Rath presents mantra selection tied to planet ruling the ascendant, alongside a quotation of the Surya Upanishad, and claims benefits from sunrise recitation.",
+      "source_layer": "RATH_INTERPRETIVE_RITUAL_SYSTEM",
+      "limitations": "Requires precise natal lagna and selected school; causal/effectiveness claims about mantra not independently tested.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-020",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 10 PDF 224–225",
+      "domain": "title_vs_birth_name_hamsa_numerology",
+      "paraphrase": "Rath distinguishes name at birth from occupational title and gives Sanskrit phoneme examples for computing a Hamsa seed, with special handling of compound initial syllables.",
+      "source_layer": "RATH_MODERN_NAME_BASED_PHONETIC_FORMULA",
+      "limitations": "Inputs include native-language pronunciation, birth name, and title status—not birth chart alone; no proof names alter soul or external events.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    },
+    {
+      "id": "B24-021",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Lesson 10 PDF 224–225",
+      "domain": "varahamihira_boar_forecast_legend",
+      "paraphrase": "Rath recounts a dramatic prediction that a royal prince would die when struck by a boar, allegedly fulfilled by a mounted boar's head falling.",
+      "source_layer": "TRADITIONAL_ANECDOTE_PRESENTED_BY_RATH",
+      "limitations": "Legend is not independent historical forecast validation: no dated pre-event prediction document, adversarial countercases, or original chronicle verified in this packet.",
+      "record_class": "SOURCE_ONLY",
+      "actual_human_prediction_tested": false
+    }
+  ],
+  "method": "Selected underindexed Jataka XII–XIV passages and Rath lessons 2,6,10 from exact SHA-256 matched upload PDFs. Text extracted via PyMuPDF, source-critical claims checked against selected rendered page images; no original Sanskrit manuscript collation. Data are historical source paraphrases, not independent observations.",
+  "rendered_pages": [
+    "Jataka PDF 762,764,803,828,889",
+    "Rath PDF45,46,98,224"
+  ],
+  "assurance": [
+    "Do not merge differing sibling count procedures",
+    "Do not treat unverified historical anecdote as forecast success",
+    "Keep commentary and ancient verse authorship separate",
+    "Do not extrapolate medical/relationship-sensitive claims to named real people"
+  ],
+  "new_prospective_human_results": 0,
+  "model_rules_promoted": 0,
+  "next_frontier": "Continue unindexed Jataka III–IX + Rath lessons 1,3–5 + remaining XII–XIV, with exact page-boundary/index citations. Source-critical examination of repeated text without inferring borrowings beyond editor notes."
+}
