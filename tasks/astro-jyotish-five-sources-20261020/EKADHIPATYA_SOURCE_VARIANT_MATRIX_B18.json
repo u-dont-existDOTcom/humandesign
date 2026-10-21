@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B18",
+  "record_class": "SOURCE_COMPARISON_REPRODUCIBLE_ARITHMETIC_NOT_HUMAN_PREDICTION",
+  "date": "2026-10-21",
+  "question": "BPHS Chapter68 Ekadhipatya (same-lord sign) reduction after Trikona: when one sign has fewer dots and one is planet-free with more dots, set planet-free equal to smaller vs subtract smaller from larger? For both empty unequal, equalize vs subtract?",
+  "source_witnesses": [
+    {
+      "id": "BPHS_SANSKRIT_CH68",
+      "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-68/",
+      "verse": "68.1–6, especially 68.3–5",
+      "layer": "digitized Sanskrit with a later English explanatory gloss",
+      "selected_phrase": "ऊनेन सममन्यस्मिन् शोधयेद् ग्रहवर्जिते",
+      "interpretation": "The phrase ūnena samam, equal to the lower, favors equalization for an unoccupied higher sign. But no critical manuscript edition established."
+    },
+    {
+      "id": "HORASARA_SANSKRIT",
+      "url": "https://www.csu-lucknow.edu.in/e-books/horasar/p8.html",
+      "verse": "shared-rulership reduction, slokas33–37",
+      "layer": "independently catalogued Sanskrit work; textual dependency not ruled out",
+      "interpretation": "Preserves equal-to-smaller phrase along with two-sign occupancy exceptions."
+    },
+    {
+      "id": "PHALADEEPIKA_SANSKRIT",
+      "url": "https://www.csu-lucknow.edu.in/e-books/phaldipika/p25.html",
+      "verse": "24.18–22",
+      "layer": "Mantreśvara text under heading होरासारोक्तमष्टकवर्गफलम् explicitly citing Hora Sara tradition",
+      "interpretation": "24.19 gives occupied-lower/unoccupied-higher equal to smaller, 24.22 both empty unequal bring both to smaller; these parallel Hora Sara and are NOT independent empirical witnesses."
+    },
+    {
+      "id": "PORTUGUESE_USER_UPLOAD",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "location": "cp1252 plaintext line5319, especially 'deduzir o menor número do maior número'",
+      "layer": "second-hand Portuguese translation via modern English",
+      "interpretation": "Says subtract smaller from greater when occupied sign lower, while also describing equality-based treatment for two unoccupied signs."
+    },
+    {
+      "id": "R_SANTHANAM_ENGLISH",
+      "url": "https://www.astroneemo.net/index.php/2016-08-07-05-21-50/2016-09-26-02-29-18/52-english/717-brihat-parasara-hora-sastra.html?start=65",
+      "location": "BPHS Chapter68 verses1–5",
+      "layer": "modern English Parashara rendering, shared text path with Portuguese plausible",
+      "interpretation": "Appears to prescribe difference for one-occupied-lower case, equalize for both-empty unequal."
+    },
+    {
+      "id": "ALTERNATE_BPHS_COMMENTARY",
+      "url": "https://vyaspanchang.com/wp-content/uploads/2025/08/%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%B9%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%B6%E0%A4%B0-%E0%A4%B9%E0%A5%8B%E0%A4%B0%E0%A4%BE-%E0%A4%B6%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0-in-english.pdf",
+      "location": "reported printed page877, Chapter68 worked example, available as web search excerpt, full source not downloaded/visually checked",
+      "layer": "secondary illustrated English commentary",
+      "interpretation": "The searchable excerpt says Aries occupied1 / Scorpio unoccupied3 becomes 1/2 (difference), and Sagittarius empty1/Pisces empty2 becomes 0/1. Explicitly mark this as secondary snippet, not independently checked page scan."
+    },
+    {
+      "id": "LATER_RAMAN_ASHTAKAVARGA_BOOK",
+      "url": "https://www.scribd.com/document/478806521/ashtakavarga-B-V-Raman-pdf",
+      "location": "Ekadhipatya Reduction subsection",
+      "layer": "modern interpretive reference; not ancient original",
+      "interpretation": "Favors equalization for occupied-lower and both-empty-unequal."
+    }
+  ],
+  "source_lineage_warning": "Phaladipika Chapter24 heading explicitly says Horasara-based; multiple translated sites repeat a common modern English source. Matching wording is NOT multiple independent astrological successes or independently established manuscripts.",
+  "assumed_inputs": {
+    "reference_sign_sequence": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
+    ],
+    "dual_lord_sign_pairs": [
+      [
+        "Aries",
+        "Scorpio"
+      ],
+      [
+        "Taurus",
+        "Libra"
+      ],
+      [
+        "Gemini",
+        "Virgo"
+      ],
+      [
+        "Sagittarius",
+        "Pisces"
+      ],
+      [
+        "Capricorn",
+        "Aquarius"
+      ]
+    ],
+    "single_lord_exempt": [
+      "Cancer",
+      "Leo"
+    ],
+    "phase": "After Trikona reduction, where both input sign counts are nonzero",
+    "source_occupancy": "natal occupants seven classical planets; nodes excluded for these test variants only"
+  },
+  "source_variants": {
+    "equalize": {
+      "label": "SANSKRIT_AND_HORASARA_FAVORED",
+      "rule": "Both unoccupied unequal -> both become the smaller value. One occupied lower and one unoccupied higher -> unoccupied becomes same value as occupied. In equal/occupied-higher scenarios empty becomes zero.",
+      "evidence": "Source-language ūnena samam and Phaladipika24.19+24.22."
+    },
+    "difference": {
+      "label": "SECONDARY_DIFFERENCE_INTERPRETATION",
+      "rule": "Both unoccupied unequal -> subtract smaller from both. One occupied lower -> keep occupied, unoccupied becomes (unoccupied − occupied). Other cases same as equalize.",
+      "evidence": "Some modern Portuguese/English interpretations and reported worked example, differing from Sanskrit literal normalization."
+    }
+  },
+  "cases": [
+    {
+      "case_id": "one_zero",
+      "input": [
+        0,
+        4
+      ],
+      "occupied": [
+        false,
+        true
+      ],
+      "equalize": [
+        0,
+        4
+      ],
+      "difference": [
+        0,
+        4
+      ]
+    },
+    {
+      "case_id": "both_occupied",
+      "input": [
+        3,
+        6
+      ],
+      "occupied": [
+        true,
+        true
+      ],
+      "equalize": [
+        3,
+        6
+      ],
+      "difference": [
+        3,
+        6
+      ]
+    },
+    {
+      "case_id": "both_empty_equal",
+      "input": [
+        3,
+        3
+      ],
+      "occupied": [
+        false,
+        false
+      ],
+      "equalize": [
+        0,
+        0
+      ],
+      "difference": [
+        0,
+        0
+      ]
+    },
+    {
+      "case_id": "both_empty_unequal",
+      "input": [
+        2,
+        5
+      ],
+      "occupied": [
+        false,
+        false
+      ],
+      "equalize": [
+        2,
+        2
+      ],
+      "difference": [
+        0,
+        3
+      ]
+    },
+    {
+      "case_id": "one_occupied_equal",
+      "input": [
+        4,
+        4
+      ],
+      "occupied": [
+        true,
+        false
+      ],
+      "equalize": [
+        4,
+        0
+      ],
+      "difference": [
+        4,
+        0
+      ]
+    },
+    {
+      "case_id": "occupied_high",
+      "input": [
+        6,
+        2
+      ],
+      "occupied": [
+        true,
+        false
+      ],
+      "equalize": [
+        6,
+        0
+      ],
+      "difference": [
+        6,
+        0
+      ]
+    },
+    {
+      "case_id": "occupied_low",
+      "input": [
+        2,
+        5
+      ],
+      "occupied": [
+        true,
+        false
+      ],
+      "equalize": [
+        2,
+        2
+      ],
+      "difference": [
+        2,
+        3
+      ]
+    },
+    {
+      "case_id": "occupied_low_reversed",
+      "input": [
+        5,
+        2
+      ],
+      "occupied": [
+        false,
+        true
+      ],
+      "equalize": [
+        2,
+        2
+      ],
+      "difference": [
+        3,
+        2
+      ]
+    },
+    {
+      "case_id": "both_zeros",
+      "input": [
+        0,
+        0
+      ],
+      "occupied": [
+        false,
+        false
+      ],
+      "equalize": [
+        0,
+        0
+      ],
+      "difference": [
+        0,
+        0
+      ]
+    }
+  ],
+  "validated_test_structure": {
+    "separate_module": "reduction_source_variants_B18.py",
+    "separate_tests": "test_reduction_source_variants_B18.py",
+    "local_tests_run": 8,
+    "local_python_command": "python -m unittest -v test_reduction_source_variants_B18.py",
+    "symmetry_property_tested": true,
+    "non_increase_property_tested": true,
+    "all_cases_have_unchanged_user_source_values": true
+  },
+  "caution": "Neither algorithm was run on real-person natal data, and outcomes were not seen. This matrix helps future critical comparison, not an implemented canonical chart engine or proof of prediction.",
+  "non_production": true,
+  "human_predicted_successes": 0,
+  "source_note_id_added": 0,
+  "production_rules_promoted": 0,
+  "next": "Recheck worked example pages against actual scan; choose a version explicitly only for method-comparison trial; carry all competing outputs, including misses. Continue underindexed non-spiritual domains."
+}
