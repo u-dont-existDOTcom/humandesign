@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B25",
+  "status": "SOURCE_ONLY_NEW_UNDERINDEXED_JATAKA_CHAPTERS",
+  "record_count": 20,
+  "records": [
+    {
+      "id": "B25-001",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya III opening editorial note, physical PDF494 / printed96",
+      "domain": "chapter_III_brihat_jataka_dependency",
+      "source_paraphrase": "Sastri states that 46 of the 80 slokas in Jātaka's third chapter are taken from Bṛhat Jātaka; he lists the individual ranges.",
+      "source_layer": "SASTRI_EDITORIAL_BORROWING_ATTRIBUTION",
+      "caveat": "Reported source lineage, not independently collated Sanskrit or evidence of 46 forecasts.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-002",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya III introduction and verse1, PDF494–495 / printed96–97",
+      "domain": "D12_nonhuman_birth_and_horary_extension",
+      "source_paraphrase": "The source gives Moon's dvādaśāṃśa with malefic/benefic strength and angular conditions in proposed animal/plant birth predictions; Sastri explicitly notes that amśa here is D12 rather than ordinary D9.",
+      "source_layer": "AUTHOR_VERSE_PLUS_SASTRI_EDITOR_NOTE",
+      "caveat": "Do not silently code Navāṃśa/D9; the extension to lost animals/cultivation is an editor's stated application and requires extra horary input.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-003",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya III verse66, PDF550 / printed162",
+      "domain": "birth_place_strength_from_lagna_vs_D9",
+      "source_paraphrase": "Stronger of Lagna sign versus rising Navāṃśa is said to distinguish birth at paternal home, at distant building, in outbuilding or at maternal grandfather's house under vargottama.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Family birth setting must be documented and time uncertain; note close alternative conditions instead of choosing favorable site.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-004",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IV opening editor note, PDF571 / printed173",
+      "domain": "childhood_chapter_brihat_jataka_dependency",
+      "source_paraphrase": "Sastri identifies IV.17–18, IV.32–39 and IV.99 as taken from Bṛhat Jātaka.",
+      "source_layer": "SASTRI_EDITORIAL_BORROWING_ATTRIBUTION",
+      "caveat": "Textual borrowing claims require independent author/edition verification; not independent evidence of infant prediction.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-005",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IV verse1, PDF571 / printed173",
+      "domain": "childhood_lifespan_stated_nonpredictability",
+      "source_paraphrase": "The source states lifespan cannot be determined reliably in the first twelve years, even while the chapter lists claimed childhood-death rules.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Historical/source-internal self-limitation; no personal child-health or mortality forecasting.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-006",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IV verse17, PDF578–579 / printed180–181",
+      "domain": "conception_month_fetus_planet_lords",
+      "source_paraphrase": "The text assigns planetary rulers to successive gestational months and proposes outcomes from their dignity, introducing an additional conception-time chart and medical-development assumptions.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE_WITH_EDITOR_NOTES",
+      "caveat": "Historical embryology is not modern medical fact. Miscarriage/birth prediction is not actionable health guidance.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-007",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya V opening and verse1, PDF631 / printed233",
+      "domain": "eight_longevity_calculation_schools",
+      "source_paraphrase": "Jātaka explicitly lists eight named ways of calculating lifespan, including Naisargika, Pinda, Amśa, Chakra, Nakshatra, Dāya and Ashtakavarga variants.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Multiple non-equivalent calculation branches; no universally applicable answer or valid medical lifespan estimation.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-008",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya V verse2, PDF631 / printed233",
+      "domain": "naishargika_seven_lord_duration_table",
+      "source_paraphrase": "The source assigns seven fixed natural periods 20, 1, 2, 9, 18, 20 and 50 years to Sun through Saturn, summing to 120 years.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Numeric recipe is a source assertion and not human lifespan evidence; astronomical start point and subtraction phases require further source reading.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-009",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya V opening editor note, PDF631 / printed233",
+      "domain": "longevity_verses_brihat_jataka_borrowed",
+      "source_paraphrase": "Sastri singles out Adhyaya V verses 7,9,11 and 17–21 as taken from Bṛhat Jātaka.",
+      "source_layer": "SASTRI_EDITORIAL_BORROWING_ATTRIBUTION",
+      "caveat": "Don't count two copies of a transmitted algorithm as two independent predictive validations.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-010",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VI opening and verse1, PDF61 / printed319",
+      "domain": "opposing_royal_yogas_four_classes",
+      "source_paraphrase": "The source names four categories that undermine royal-status yogas: Bhañga, Reka (poverty), Preṣya (dependence/service) and Kemadruma.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Opposing antecedents must be included with royal yogas before testing; socially prejudicial interpretations cannot be asserted about named people.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-011",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VI editor introduction, PDF61 / printed319",
+      "domain": "six_brihat_jataka_borrowed_verses",
+      "source_paraphrase": "Sastri identifies verses 48,49,50,52,99,100 as taken from Bṛhat Jātaka.",
+      "source_layer": "SASTRI_EDITORIAL_BORROWING_ATTRIBUTION",
+      "caveat": "Historical text dependence, not independently successful observed cases.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-012",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VII verse1 and subsequent NOTES, PDF114 / printed372",
+      "domain": "rajayoga_source_condensed_and_editor_additions",
+      "source_paraphrase": "The author lists extreme sign-arrangement political fortunes; Sastri's NOTES say the author condensed named yogas and attach additional verses from other treatises to expand it.",
+      "source_layer": "AUTHOR_VERSE_WITH_SEPARATE_EDITOR_EXPANSION",
+      "caveat": "Only the original verse's exact planet/sign configuration belongs to Vaidyanātha without further attribution; physical feasibility not yet checked.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-013",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VII verses137–138, PDF200 / printed468",
+      "domain": "chamara_yoga_philosopher_or_ruler",
+      "source_paraphrase": "Chāmara Yoga is said to indicate either a respected learned philosopher or a king with sacred learning; the next Saṅkha Yoga gets a different two-configuration definition.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "caveat": "Alternative statuses are not independent accurate predictions; political opportunity and 'or' logic lower specificity.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-014",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VIII verse9, PDF245 / printed603",
+      "domain": "multiple_three_graha_traditions",
+      "source_paraphrase": "Several three-classical-planet conjunction sets are assigned distinct family, learned, royal, temperamental and bodily results.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Planet set must be unique and physically feasible; multiple broadly related consequences not separate independent witnesses.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-015",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VIII around verses11–13, PDF248 / printed606",
+      "domain": "conjunction_arts_music_drama_vs_gendered_service",
+      "source_paraphrase": "A three-planet combination is associated with devotion to music, poetry and drama, while different triplets are described in contrasting social/physical terms.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "caveat": "Avoid moralized, disability-related and status stereotypes as present-day personality assessments.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-016",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya VIII verse115, PDF323 / printed681",
+      "domain": "dignity_aspects_change_conjunction_results",
+      "source_paraphrase": "Original verse equates source-predicted magnitude in exalted, own Navāṃśa, mūlatrikoṇa, friendly Navāṃśa and adverse conditions, with an additional Sastri note citing another reading.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE_PLUS_EDITOR_VARIANT",
+      "caveat": "Do not apply one unqualified conjunction-outcome list to all D9 conditions or silently select alternate variant.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-017",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IX verse1, PDF325 / printed583",
+      "domain": "gulika_upagraha_and_birth_calendar_features",
+      "source_paraphrase": "The author says he will assess Gulika plus year, month, weekday and birth hour, introducing multiple astronomical/calendar inputs beyond seven natal Grahas.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSE",
+      "caveat": "Gulika computation must be precisely declared, lunar calendar boundaries/timezone/source version fixed.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-018",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IX verse10 and related year catalog, PDF331–341 / printed589–599",
+      "domain": "sixty_jovian_year_birth_qualities",
+      "source_paraphrase": "Each of the traditional sixty-year saṃvatsara cycle receives distinct character/status predictions rather than modern Gregorian birth-year predictions.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "caveat": "Requires a historically accurate calendrical year-cycle engine and culture baseline, not human result evidence.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-019",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IX verses31–39, PDF346–350 / printed604–608",
+      "domain": "month_paksha_tithi_weekday_target_overlaps",
+      "source_paraphrase": "The source assigns separate birth-month, lunar-fortnight, tithi and weekday qualities with partially overlapping consequences.",
+      "source_layer": "TRANSLATED_VAIDYANATHA_VERSES",
+      "caveat": "Same respondent answers cannot independently confirm each calendar label; multiplicity and base rates must be controlled.",
+      "validated_human_predicate": false
+    },
+    {
+      "id": "B25-020",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya IX closing Sastri NOTES, PDF390 / printed648",
+      "domain": "editorial_time_mapping_karakabharana",
+      "source_paraphrase": "After the author closes Adhyaya IX, Sastri appends verses from Kara(k)abharaṇa to time results of birth year, season, month, pakṣa, tithi and weekday via different daśā rulers.",
+      "source_layer": "SASTRI_POST_CHAPTER_EDITORIAL_BORROWING",
+      "caveat": "The added timing algorithm is external to Vaidyanātha's original chapter, and sharing text with another book is not independent validation.",
+      "validated_human_predicate": false
+    }
+  ],
+  "source_sha256": "fc6c5eed810847d14c82004746cedaac077acb971bb6140f613168ded0a21250",
+  "chapters_covered": [
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX"
+  ],
+  "physical_page_witnesses": [
+    494,
+    550,
+    571,
+    631,
+    61,
+    114,
+    325,
+    390
+  ],
+  "source_critical_warning": "Actual physical order in uploaded combined scan places volume II early (PDF59–450) while late volume I continues PDF451–716. Printed pagination not monotonically identical to physical PDF page number.",
+  "method_prohibitions": [
+    "No medical fertility or mortality advice",
+    "Do not treat Sastri editor notes as verses of Vaidyanatha",
+    "Do not count borrowed Brihat Jataka sentences as independent predictive confirmation",
+    "No trial participant data accessed",
+    "No natal model or questionnaire changed"
+  ],
+  "new_independent_human_tests": 0,
+  "production_model_changes": 0
+}
