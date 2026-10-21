@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B38",
+  "status": "REPRODUCIBLE_SOURCE_METHOD_COMPARISON_NOT_NATAL_EMPIRICAL_VALIDATION",
+  "classical_source_layers": [
+    {
+      "id": "BPHSSPHUTA",
+      "basis": "User Portuguese Parashara CP1252 lines2305-2321 and digitized Sanskrit BPHS 26.5–9",
+      "sanskrit_urls": [
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-5",
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-6",
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-7",
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-8",
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-9"
+      ],
+      "interpretation": "Directed exact graha ecliptic longitude difference and ordinary aspect magnitude in virupas (0..60). Separate from special Saturn/Mars/Jupiter aspects and Drigbala aggregation of benefic/malefic aspects.",
+      "input": "(longitude_aspected-longitude_aspecting)%360",
+      "zero_aspect_for_gap": "0–30° and 300–360°",
+      "method": "piecewise defined in accompanying source code"
+    },
+    {
+      "id": "SARAVALI_DISCRETE",
+      "basis": "Original Sanskrit Saravali Ch4 verses32-33 (see B37), separately translated and corrected",
+      "interpretation": "Whole-sign-house aspects with fractional strengths 1/4 houses3,10; 1/2 houses5,9; 3/4 houses4,8; full seventh",
+      "input": "(sign_aspected-sign_aspecting)%12+1",
+      "zero_aspect_for_gap": "Same or adjacent whole-sign positions"
+    },
+    {
+      "id": "JAIMINI_RASI_RATH",
+      "basis": "Uploaded Sanjay Rath Lesson13 PDF257–258, original short Jaimini Sutra1.1.2 plus separate Rath commentary",
+      "interpretation": "Movable signs aspect fixed except adjacent; fixed aspect movable except adjacent; dual signs mutually aspect other dual (distinct) signs; same/adjacent sign pairs do not aspect.",
+      "input": "Signs (source,target) only",
+      "zero_aspect_for_gap": "Same or adjacent signs",
+      "source_layer": "Commentarial operationalization; do not attribute all four criteria literally to the single Sanskrit sutra"
+    }
+  ],
+  "bphs_piecewise": [
+    {
+      "from": 0,
+      "to": 30,
+      "formula": "0"
+    },
+    {
+      "from": 30,
+      "to": 60,
+      "formula": "(d-30)/2"
+    },
+    {
+      "from": 60,
+      "to": 90,
+      "formula": "d-45"
+    },
+    {
+      "from": 90,
+      "to": 120,
+      "formula": "30+(120-d)/2"
+    },
+    {
+      "from": 120,
+      "to": 150,
+      "formula": "150-d"
+    },
+    {
+      "from": 150,
+      "to": 180,
+      "formula": "2*(d-150)"
+    },
+    {
+      "from": 180,
+      "to": 300,
+      "formula": "(300-d)/2"
+    },
+    {
+      "from": 300,
+      "to": 360,
+      "formula": "0"
+    }
+  ],
+  "bphs_expected_boundary_values": [
+    {
+      "d": 0,
+      "v": 0
+    },
+    {
+      "d": 30,
+      "v": 0
+    },
+    {
+      "d": 45,
+      "v": 7.5
+    },
+    {
+      "d": 60,
+      "v": 15
+    },
+    {
+      "d": 90,
+      "v": 45
+    },
+    {
+      "d": 120,
+      "v": 30
+    },
+    {
+      "d": 150,
+      "v": 0
+    },
+    {
+      "d": 165,
+      "v": 30
+    },
+    {
+      "d": 180,
+      "v": 60
+    },
+    {
+      "d": 240,
+      "v": 30
+    },
+    {
+      "d": 300,
+      "v": 0
+    },
+    {
+      "d": 330,
+      "v": 0
+    }
+  ],
+  "astronomical_input": {
+    "Mercury_max_elongation_approx_deg": 28,
+    "conservative_ecliptic_longitude_gap_for_tests_deg": 29,
+    "source_url": "https://astro.unl.edu/naap/ssm/elongation.html",
+    "qualification": "Approximately 28° angular maximum is rounded; 29° test is a conservative declared bound below the 30° source threshold. The raw angular-to-ecliptic longitude condition should be independently verified when proof-grade astronomical precision required."
+  },
+  "sun_mercury_result": {
+    "bphs_general_sphuta": 0,
+    "saravali_restored_graha": 0,
+    "rath_jaimini_rasi": false,
+    "why": "With separation restricted below 30°, BPHS ordinary degree aspect is zero and Sun/Mercury signs must be same or neighboring, which neither other source method aspects.",
+    "importance": "This is a conditional mathematical source result, not a universal statement about every astrology tradition or about the validity of predictions."
+  },
+  "modern_software_reference_quality": {
+    "url": "https://saravali.github.io/astrology/drishti_sputa.html",
+    "class": "Independent modern astrology-software documentation, NOT Kalyanavarman's Saravali original Sanskrit text",
+    "errors": [
+      {
+        "range": "150–180",
+        "published_formula": "2*(150-d)",
+        "problem": "For d=165 it gives -30 virupas, contradicting the stated [0,60] range and original source progression; source-supported mathematical formula is 2*(d-150)."
+      },
+      {
+        "range": "270–330",
+        "published_formula": "(300-d)/2",
+        "problem": "For d>300 returns negative, whereas general aspect source is zero in 300–360. The table's 270–330 row overextends an otherwise valid range."
+      }
+    ],
+    "disposition": "Document as derivative implementation error; do not modify classical sources or adopt negative aspect values."
+  },
+  "source_version_behavior": {
+    "ordinary_bp_full": "Sphuta Drishti continuous; Mars/Jupiter/Saturn special drishti not implemented",
+    "sanskrit_saravali": "Discrete restored sign fractions; English uploaded variant kept separately in B37",
+    "rath_jaimini": "Commentarial sign-to-sign theory rather than graha aspect",
+    "explicit_no_default_model": "Three methods selected by separate functions, never merged"
+  },
+  "verification": {
+    "code": "comparative_aspect_methods_B38.py",
+    "tests": "test_comparative_aspect_methods_B38.py",
+    "local_tests": 7,
+    "local_test_result": "PASS",
+    "code_git_blob_expected": "39926d2f69e4ceb16af8eac3447b1e2821395470",
+    "test_git_blob_expected": "3c1af50818c3310bf9405d88341b552c923f97ad",
+    "test_360_degree_sweep_step": "0.01° checked source-fidelity 0≤value≤60 and continuity at boundaries"
+  },
+  "source_annotations_added": 2,
+  "human_predictive_results": 0,
+  "production_rule_changes": 0
+}
