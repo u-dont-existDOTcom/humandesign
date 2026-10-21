@@ -1,0 +1,32 @@
+{
+  "schema": "CHINESE_V17_GUARDED_GITHUB_INDEX_ADMISSION_V1",
+  "batch": "ChineseAstro-17SRC-Brothers",
+  "state": "REMOTE_SOURCE_ONLY_INDEX_WRITTEN_WITH_DIRECT_SOURCE_ASSERTIONS",
+  "old_index_sha256": "e3e0aea4074ddf0837a4a6d3d5f785f6fc70f5e4e7f16c1734cbb76a78781a28",
+  "new_index_sha256": "75eacfa21a9d44b3396089c0c2f19432be5a527c3cee20daeea43f33932a1989",
+  "historical_source_records_before": 955,
+  "new_historical_source_annotations": 24,
+  "historical_source_records_after": 979,
+  "retained_BaZi_source_annotations": 210,
+  "ZiWei_after": 769,
+  "first_id": "ZWD-R0746",
+  "last_id": "ZWD-R0769",
+  "next_id": "ZWD-R0770",
+  "source_integrity_receipt_sha256": "982e5fe9fa8a0bfdf77b9560df7e9a2532e9f349d53dcd239d5607b48bacc08a",
+  "source_integrity_checked_original_quotes": 24,
+  "independent_real_human_forecasts_tested": 0,
+  "runtime_astrological_promotions": 0,
+  "guarded_index_checks": {
+    "previous_index_SHA256": true,
+    "old_registry_counts_preserved": true,
+    "old_batches_byte_semantics_preserved": true,
+    "BaZi_unchanged": true,
+    "new_Chinese_source_sum": true,
+    "new_source_ids_and_counts": true,
+    "new_ziwei_count_next_frontier": true,
+    "record_witness_hashes_frozen": true,
+    "source_boundaries_preserved": true,
+    "online_phrases_not_promoted": true
+  },
+  "scope_note": "Executable pure JavaScript assertions run on fetched GitHub source and indexes; not Python test-suite execution, ZIP extraction, original Ming printing authentication or independent human accuracy."
+}
