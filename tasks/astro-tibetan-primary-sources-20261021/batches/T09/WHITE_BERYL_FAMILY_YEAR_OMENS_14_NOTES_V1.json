@@ -1,0 +1,357 @@
+{
+  "schema": "TIBETAN_T09_FAMILY_YEARS_ILL_OMENS_SOURCE_NOTES_V1",
+  "status": "DOCUMENTARY_SOURCE_ONLY",
+  "batch": "T09",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "coverage": "White Beryl natal printed pp168–177, PDF pp169–178; 14 notes",
+  "note_count": 14,
+  "source_notes": [
+    {
+      "id": "TIB-R0129",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 169,
+        "printed_page": 168,
+        "white_beryl_folio": "209b–210a"
+      },
+      "key": "father-child-favorable-groups",
+      "paraphrase": "The child's year animal relative to the father's year animal is classified into five auspicious group-to-group pairings with distinct named imagery (e.g. Tiger/Hare father with Horse/Snake child = Great Luminosity).",
+      "required_inputs": [
+        "father_natal_animal",
+        "child_natal_animal"
+      ],
+      "source_output_classes": [
+        "favorable_birth_class"
+      ],
+      "dependency_family": "TIB-FATHER-CHILD-ANIMAL",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0130",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 169,
+        "printed_page": 168,
+        "white_beryl_folio": "209b–210a"
+      },
+      "key": "father-child-unfavorable-groups",
+      "paraphrase": "A second five-cell parent-child animal pairing table is deemed inauspicious in both near and remote terms; do not infer measured longevity from its translated symbolic labels.",
+      "required_inputs": [
+        "father_natal_animal",
+        "child_natal_animal"
+      ],
+      "source_output_classes": [
+        "inauspicious_birth_class"
+      ],
+      "dependency_family": "TIB-FATHER-CHILD-ANIMAL",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0131",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 169,
+        "printed_page": 168,
+        "white_beryl_folio": "209b–210a"
+      },
+      "key": "four-paternal-generations",
+      "paraphrase": "An especially unfavorable category is defined by a child whose birth-year animal is in an enemy-relation to the vitality elements of four successive paternal ancestors. Example: mouse/pig child vs four horse/snake paternal generations.",
+      "required_inputs": [
+        "child_year_animal",
+        "four_paternal_ancestor_birth_years",
+        "vitality_relation"
+      ],
+      "source_output_classes": [
+        "four_generation_omen"
+      ],
+      "dependency_family": "TIB-MULTIGENERATIONAL-ANCESTRY",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0132",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 169,
+        "printed_page": 168,
+        "white_beryl_folio": "209b–210a"
+      },
+      "key": "trigram-childcare-burden",
+      "paraphrase": "A natal-year/trigram compatibility table classifies some combinations as difficult for a mother raising the child, including a Tiger/Hare-year child with natal Dva trigram.",
+      "required_inputs": [
+        "child_year_animal",
+        "child_natal_trigram",
+        "maternal_luck_context"
+      ],
+      "source_output_classes": [
+        "mother_childcare_omen"
+      ],
+      "dependency_family": "TIB-YEAR-TRIGRAM-CHILDCARE",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0133",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 170,
+        "printed_page": 169,
+        "white_beryl_folio": "209b–210a"
+      },
+      "key": "natal-month-three-season-sector",
+      "paraphrase": "A five-column natal-year-class lookup assigns three successive natal animal-months to ill-health, death and tomb sectors, respectively. For ox/sheep/dog/dragon children it names monkey, bird, and dog months.",
+      "required_inputs": [
+        "child_year_animal",
+        "child_natal_month_animal"
+      ],
+      "source_output_classes": [
+        "source_sector_class"
+      ],
+      "dependency_family": "TIB-NATAL-SEASON-TABLE",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0134",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 170,
+        "printed_page": 169,
+        "white_beryl_folio": "210a"
+      },
+      "key": "destiny-earth-trigram-Li",
+      "paraphrase": "An Earth destiny element with natal Li trigram is used as an example of a favorable prediction involving kindness toward maternal relatives.",
+      "required_inputs": [
+        "natal_destiny_element",
+        "natal_trigram"
+      ],
+      "source_output_classes": [
+        "maternal_relative_relations"
+      ],
+      "dependency_family": "TIB-TRIGRAM-DESTINY",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0135",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 170,
+        "printed_page": 169,
+        "white_beryl_folio": "210a"
+      },
+      "key": "trigram-Khon-tiger",
+      "paraphrase": "A Tiger-year natal subject with Khon trigram is assigned an unfavorable local-spirit classification, distinct from the favorable Li/Earth example.",
+      "required_inputs": [
+        "child_natal_year_animal",
+        "child_natal_trigram"
+      ],
+      "source_output_classes": [
+        "auspiciousness_omen"
+      ],
+      "dependency_family": "TIB-TRIGRAM-YEAR",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0136",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 171,
+        "printed_page": 170,
+        "white_beryl_folio": "210b"
+      },
+      "key": "parent-child-sibling-trigram",
+      "paraphrase": "The text compares child's year-sign or trigram to that of mother, father or elder sibling. It gives father-son Khen versus Li and elder-son Khon versus younger Kham as inauspicious example pairs.",
+      "required_inputs": [
+        "mother_trigram_or_year",
+        "father_trigram",
+        "elder_sibling_trigram",
+        "child_trigram",
+        "child_year_animal"
+      ],
+      "source_output_classes": [
+        "relative_specific_omen"
+      ],
+      "dependency_family": "TIB-FAMILY-TRIGRAM-COMPATIBILITY",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0137",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 171,
+        "printed_page": 170,
+        "white_beryl_folio": "210b"
+      },
+      "key": "parent-offspring-family-target",
+      "paraphrase": "Further charts select whether a proposed risk is for mother, sister, brother or grandfather depending on maternal year/trigram, child's animal-year and sex, rather than implying the child is the sole target.",
+      "required_inputs": [
+        "mother_natal_year",
+        "mother_current_trigram",
+        "child_natal_year",
+        "child_sex"
+      ],
+      "source_output_classes": [
+        "affected_relative_class"
+      ],
+      "dependency_family": "TIB-FAMILY-TRIGRAM-COMPATIBILITY",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0138",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 171,
+        "printed_page": 170,
+        "white_beryl_folio": "211b"
+      },
+      "key": "year-luck-kill-save-directed",
+      "paraphrase": "Year-sign pairs may be classified as destroying or protecting another's luck: Fire Tiger is cited as detrimental to Iron Dragon, while Earth Tiger is cited as protective for Iron Snake. Direction of effect matters.",
+      "required_inputs": [
+        "source_sexagenary_year",
+        "target_sexagenary_year",
+        "affected_personal_force"
+      ],
+      "source_output_classes": [
+        "directed_luck_relation"
+      ],
+      "dependency_family": "TIB-SEXAGENARY-KILL-SAVE",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0139",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 173,
+        "printed_page": 172,
+        "white_beryl_folio": "211b–212a"
+      },
+      "key": "three-grade-defective-years",
+      "paraphrase": "Great, middling, and lesser parental year relationships are distinguished; example mother Snake with child Sheep is called great defect; mother Mouse/Pig with child Ox/Sheep/Dog/Dragon is lesser defect. These are category labels, not observed family outcomes.",
+      "required_inputs": [
+        "maternal_birth_year_animal",
+        "child_birth_year_animal",
+        "body_luck_relation"
+      ],
+      "source_output_classes": [
+        "graded_ill_omen"
+      ],
+      "dependency_family": "TIB-THREE-DEFECT-LEVELS",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0140",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 175,
+        "printed_page": 174,
+        "white_beryl_folio": "212a–212b"
+      },
+      "key": "special-inauspicious-year-lists",
+      "paraphrase": "Distinct traditional tables enumerate seven bad-omen years, seven drought years, two sentinel years, twelve years promoting drought, black undertaker years and other symbolic classes. These are taxonomic lists, not independent observed events.",
+      "required_inputs": [
+        "sexagenary_year",
+        "tradition_table",
+        "sometimes_natal_numeric_square"
+      ],
+      "source_output_classes": [
+        "year_category"
+      ],
+      "dependency_family": "TIB-YEAR-CLASS-CATALOG",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0141",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 177,
+        "printed_page": 176,
+        "white_beryl_folio": "212b"
+      },
+      "key": "widowhood-orphan-year-groups",
+      "paraphrase": "The supplementary chart lists eight year signs under widowhood and eight under orphanhood, some overlapping other unfavorable-year lists; the age and parent-child situation determine the attributed omen.",
+      "required_inputs": [
+        "sexagenary_year",
+        "parent_child_year_combination",
+        "relation_context"
+      ],
+      "source_output_classes": [
+        "widow_or_orphan_symbolic_category"
+      ],
+      "dependency_family": "TIB-YEAR-CLASS-CATALOG",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0142",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 178,
+        "printed_page": 177,
+        "white_beryl_folio": "212b–213a"
+      },
+      "key": "parental-age-outer-numbers-child",
+      "paraphrase": "For alleged disruption of family continuity, the text evaluates father and mother age, outer log-men and inner trigram against the child's sex, with examples for a boy (father age 24, mother 19) and a girl (father 18, mother 15).",
+      "required_inputs": [
+        "father_age",
+        "mother_age",
+        "father_outer_logmen",
+        "mother_outer_logmen",
+        "father_inner_trigram",
+        "mother_inner_trigram",
+        "child_sex"
+      ],
+      "source_output_classes": [
+        "family_continuity_omen"
+      ],
+      "dependency_family": "TIB-PARENT-CHILD-AGES",
+      "provenance": "translated classical source as presented by Gyurme Dorje 2001, English; original Tibetan not checked",
+      "status": "historical_claim_only",
+      "empirical_human_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "next_note_id": "TIB-R0143",
+  "duplicates_excluded": [
+    "TIB-R0008 compares variant even/odd trigrams, so detailed table adds no new source count",
+    "TIB-R0009 parental destiny-element children-count prediction, retained only in prior batch",
+    "TIB-R0107 etc maternal grade matrix transcribed only once"
+  ],
+  "evidence_level": "textual claims and illustrative charts, no actual human cases",
+  "human_validation_count": 0,
+  "model_promotions": 0
+}
