@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B30_ASTRONOMY_FEASIBILITY_AND_SANSKRIT_NUANCE_VERIFIED",
+  "status": "OPEN_B31_SOURCE_INCLUSION_AND_INTERPRETIVE_PRECEDENCE_UNRESOLVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B30.md",
+  "last_checkpoint": "READING_NOTES_B31.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -89,7 +89,9 @@
     "SARAVALI_CONJUNCTION_SKY_SUPPORT_B30.json",
     "astronomical_sign_support_B30.py",
     "ZODIAC_CONVENTION_SENSITIVITY_B30.json",
-    "READING_NOTES_B30.md"
+    "READING_NOTES_B30.md",
+    "NESTED_CONJUNCTION_PRECEDENCE_AUDIT_B31.json",
+    "READING_NOTES_B31.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -219,16 +221,20 @@
     "b30_seven_same_sign_episodes": 2,
     "b30_sky_support_mode": "MOSEPH Lahiri SIDEREAL; not verified production SWIEPH se1",
     "b30_sanskrit_19_8_qualifier": "prāyo (generally), not universal",
-    "b30_all_five_planet_subsets_observed": true
+    "b30_all_five_planet_subsets_observed": true,
+    "b31_nested_unique_source_patterns_at_seven_same_sign": 119,
+    "b31_ch15_through_ch19_source_verse_entries_if_all_subsets": 120,
+    "b31_sanskrit_19_1_19_3_19_7_opposite_outcome_descriptions": true,
+    "b31_model_inclusion_semantics_frozen": false
   },
   "pending_actions": [
-    "Keep exactly 391 source-only notes; zero measured predictive successes.",
-    "All five book chapter headings sampled but not completely read; deepen specific high-value literal formula/cancellation conflicts.",
-    "Repeat B30 broad astronomical sky-support scan only if a changed method or SWIEPH se1 production provenance will change conclusions.",
-    "Do not confuse all-seven SAME-SIGN (possible 1821/1962) with all-seven EXALTED (impossible); do not multiply nested combination rules as independent hits.",
-    "No participant data, other reader branches, survey, live model or copyrighted book bytes changed."
+    "Source records 391 with zero human successes; B30 and B31 are mathematical/textual audit packets not newly scored predictions.",
+    "Saravali 19.8 'prayo' qualified; seven-in-one-sign can yield 119 distinct 2–6 subset conditions under a speculative inclusive interpreter; no original source precedence resolved.",
+    "Keep alternative exact/inclusive/maximal interpretations separate; source code must use explicit variant and fail on unsupplied tie rule.",
+    "For any future wide sky scan, production SWIEPH .se1 source provenance differs from research-only Moshier.",
+    "Continue source-critical analysis of five books with copyrighted raw bytes private, and concurrent readers/participant data untouched."
   ],
-  "next_exact_source_frontier": "Continue specific original Sanskrit or independent printed-source collation of consequential underverified ancient verses and Jaimini/Parashara computation forks; B30 feasibility figures are exploratory Moshier only, no natal/human testing. Avoid repeating B01–B30.",
+  "next_exact_source_frontier": "Source-critical verification or limited astronomy interval-root checks for precise varga/dasha/planet-strength semantics, then deeper original-text reading. Do not use source-outcome narratives to fit known people. Keep 391 historical notes and B30/B31 math audits separate.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -239,7 +245,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B30 report/source scan/results saved and read back; all-path PR isolation final check still pending.",
+    "note": "B31 source conflict and B30 Moshier method documented, remote complete PR path check pending.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
