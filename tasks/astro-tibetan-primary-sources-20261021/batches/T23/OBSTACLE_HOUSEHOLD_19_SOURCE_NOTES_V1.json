@@ -1,0 +1,408 @@
+{
+  "schema": "TIBETAN_T23_OBSTACLE_HOUSEHOLD_SOURCE_NOTES_V1",
+  "batch": "T23",
+  "accepted_parent_sha": "c794b087b3e0841592a2bc6f8709ccb1aba6a838",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_name": "Gyurme Dorje, Tibetan Elemental Divination Paintings: White Beryl and Moonbeams (2001)",
+  "reading_pages_pdf": "235–241",
+  "note_count": 19,
+  "first_note_id": "TIB-R0221",
+  "last_note_id": "TIB-R0239",
+  "source_notes": [
+    {
+      "id": "TIB-R0221",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "five household friend relations",
+      "paraphrase": "When most household members have an animal-year group and the corresponding current trigram, minority members in a separate animal group are called 'securely cherished' if the groups stand in a friend-relation; source gives five classes.",
+      "required_inputs": [
+        "majority_year_animal_distribution",
+        "minority_year_animal",
+        "current_trigram"
+      ],
+      "output_class": "household_support_relation",
+      "dependency_family": "HOUSEHOLD-COMPOSITION",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0222",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "upper-three trigrams",
+      "paraphrase": "Joint action of Khon, Li and Zon (three upper trigrams) is given a traditionally adverse family/relationship omen and distinct proposed ritual response.",
+      "required_inputs": [
+        "current_trigram_pattern",
+        "household_context"
+      ],
+      "output_class": "symbolic_obstacle",
+      "dependency_family": "TRIGRAM-COMPOUND",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0223",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "lower-three trigrams",
+      "paraphrase": "Joint action of Gin, Kham and Khen (three lower trigrams) is given a different adverse interpretation involving dispute and mobility hazards.",
+      "required_inputs": [
+        "current_trigram_pattern",
+        "age_class"
+      ],
+      "output_class": "symbolic_obstacle",
+      "dependency_family": "TRIGRAM-COMPOUND",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0224",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "four cardinal and four diagonal trigrams",
+      "paraphrase": "Four middle-direction earth trigrams and four cardinal trigrams have distinct named conjunctions; four-cardinal grouping is associated with loss of resources/disputes while four intermediate trigrams with compensation/accusation.",
+      "required_inputs": [
+        "eight_trigram_array",
+        "household_context"
+      ],
+      "output_class": "symbolic_composite_category",
+      "dependency_family": "TRIGRAM-COMPOUND",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0225",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "eightfold-door alternative prognoses",
+      "paraphrase": "When all eight trigrams coincide, the 'eightfold door closure' is generally classed favorable, but translator explicitly notes that some sources instead forecast increasingly harsh adversarial-year results.",
+      "required_inputs": [
+        "eight_trigram_coincidence",
+        "adversarial_year_variant"
+      ],
+      "output_class": "conflicting_good_bad_omen",
+      "dependency_family": "TRIGRAM-SOURCE-VARIANT",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0226",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "gendered left right triple patterns",
+      "paraphrase": "Right-side Zin/Zon/Gin and left-side Khen/Dva/Khon are interpreted as separate omens, with the right-side attached to male servants and left-side to female servants.",
+      "required_inputs": [
+        "three_side_trigrams",
+        "affected_person_category"
+      ],
+      "output_class": "role_specific_omen",
+      "dependency_family": "TRIGRAM-COMPOUND",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0227",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "two-partner-trigram named portents",
+      "paraphrase": "Plate 17 fig.15 gives separate named paired-trigram signs: woman's Li with man's Dva versus woman's Khon with man's Kham, including a named portent of 'loss of wife'.",
+      "required_inputs": [
+        "woman_natal_trigram",
+        "man_natal_trigram"
+      ],
+      "output_class": "partner_role_symbolic_portent",
+      "dependency_family": "PARTNER-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0228",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 235,
+        "printed_page": 234,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "plate-correction Gin Khen",
+      "paraphrase": "The text explicitly notes an error on Plate 9 fig.7 involving the composite Gin/Khen and associated 'two feet digging the earth' designation; preserve the correction as editorial, not an astronomical finding.",
+      "required_inputs": [
+        "source_plate_version",
+        "two_trigrams"
+      ],
+      "output_class": "textual_variant",
+      "dependency_family": "SOURCE-CRITICAL",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0229",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 236,
+        "printed_page": 235,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "five-confusions enemy relation",
+      "paraphrase": "The five 'confusions' or 'roaming of the life-spirit' require that the subject's natal animal group be hostile both to current trigram and current year, producing five natal/current-year/trigram configurations.",
+      "required_inputs": [
+        "subject_natal_animal",
+        "current_trigram",
+        "present_year_animal"
+      ],
+      "output_class": "adversarial_triple_omen",
+      "dependency_family": "HOUSEHOLD-ANIMAL-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0230",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 236,
+        "printed_page": 235,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "five-confusions source cell conflict",
+      "paraphrase": "Dorje printed p235 prose lists present Ox/Dragon/Sheep/Dog for Mouse/Pig natal with Khon trigram; Plate 9 fig.10's corresponding printed row says only Sheep. The two scopes cannot be silently equated.",
+      "required_inputs": [
+        "mouse_or_pig_natal",
+        "current_Khon",
+        "candidate_year"
+      ],
+      "output_class": "unresolved_scope",
+      "dependency_family": "SOURCE-CRITICAL",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0231",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 236,
+        "printed_page": 235,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "heavenly earthly trigram gates",
+      "paraphrase": "Plate 9 fig.11 maps each of five year-animal groups to distinct heavenly (mother) and earthly (son) trigram gates; an all-years Khen/Khon additional condition is stated separately.",
+      "required_inputs": [
+        "natal_animal_group",
+        "current_trigram"
+      ],
+      "output_class": "two_trigram_gate",
+      "dependency_family": "GATE-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0232",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 237,
+        "printed_page": 236,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "natural trigram year sign",
+      "paraphrase": "Plate 17 fig.16 lists eight natal animal/trigram natural affinities (e.g. Li with Horse/Snake and Gin with Ox); recurrence in a present year is named 'eye cast on the family'.",
+      "required_inputs": [
+        "current_trigram",
+        "present_animal_year",
+        "birth_animal_year"
+      ],
+      "output_class": "year_trigram_collision",
+      "dependency_family": "NATURAL-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0233",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 237,
+        "printed_page": 236,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "four especially adversarial natural-sign cases",
+      "paraphrase": "A subset of 'eye cast on family' examples is described as particularly severe: Gin–Ox, Khon–Sheep, Khen–Dog, Zon–Dragon.",
+      "required_inputs": [
+        "current_trigram",
+        "current_animal_year"
+      ],
+      "output_class": "adversarial_natural_collision",
+      "dependency_family": "NATURAL-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0234",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 238,
+        "printed_page": 237,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "current trigram couple-omen patterns",
+      "paraphrase": "Supplementary Plate 17 fig.17 enumerates eight couple-trigram or animal configurations dependent on present-year trigram, targeting different household roles/resources/animal assets.",
+      "required_inputs": [
+        "both_partner_trigrams_or_animals",
+        "present_trigram"
+      ],
+      "output_class": "eight_role_specific_omens",
+      "dependency_family": "PARTNER-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0235",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 238,
+        "printed_page": 237,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "ritual-transformed future outcome",
+      "paraphrase": "The source explicitly claims ritual averting can turn negative trigram conjunctive omens into benefits (Zin, Gin, Khen lists); this is a contingent intervention claim not testable from natal data alone.",
+      "required_inputs": [
+        "ritual_intervention",
+        "prior_symbolic_conjunction"
+      ],
+      "output_class": "intervention_qualified_outcome",
+      "dependency_family": "RITUAL-CONDITIONAL",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0236",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 239,
+        "printed_page": 238,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "majority minority five-trigram sequence",
+      "paraphrase": "Supplementary Plate18 fig.2 specifies five directional majority-to-minority trigram relations (Li→Dva, Dva→Zin, Zin→intermediate, intermediate→Kham, Kham→Li), not symmetric compatibility.",
+      "required_inputs": [
+        "household_majority_trigram",
+        "household_minority_trigram"
+      ],
+      "output_class": "household_role_dominance_omen",
+      "dependency_family": "HOUSEHOLD-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0237",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 240,
+        "printed_page": 239,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "four household tomb categories",
+      "paraphrase": "Supplementary Plate18 fig.3 defines four 'tombs cutting off vitality' from majority trigrams Li/Kham/Zin/Dva and corresponding majority elements Fire/Water/Wood/Iron, with distinct minority element enemy sets.",
+      "required_inputs": [
+        "majority_trigram",
+        "majority_element",
+        "minority_element"
+      ],
+      "output_class": "household_role_adversarial_omen",
+      "dependency_family": "HOUSEHOLD-ELEMENT",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0238",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 240,
+        "printed_page": 239,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "year trigram majority eight classifications",
+      "paraphrase": "Supplementary Plate18 fig.4 provides eight adverse majority natal-year/current-trigram combinations with different symbolic household outcome categories. These cannot be interpreted as an individual's independent natal prediction.",
+      "required_inputs": [
+        "majority_household_animal_group",
+        "current_trigram",
+        "affected_role"
+      ],
+      "output_class": "eight_household_omens",
+      "dependency_family": "HOUSEHOLD-ELEMENT",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0239",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 241,
+        "printed_page": 240,
+        "white_beryl_witness": "chapter 24 obstacle years ff.260–263, plate captions in source"
+      },
+      "rule_key": "five present-year trigram grade charts",
+      "paraphrase": "Plate18 fig.5 maps each current animal-year group to 'heavenly medicine', 'intimation of luck', 'growth through glory', 'cutting influence of demons' and 'five demons', using directed mother/son/identity/enemy/friend relations.",
+      "required_inputs": [
+        "current_year_animal",
+        "current_trigram"
+      ],
+      "output_class": "five_graded_trigram_relation",
+      "dependency_family": "ANNUAL-TRIGRAM",
+      "source_status": "English edition source claim, Tibetan original uncollated",
+      "human_result_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "limits": [
+    "Traditional prediction taxonomy, zero observed human outcomes",
+    "Several rules predict household distributions, not a single individual's behavior",
+    "Explicit source conflicts must remain unresolved until original Tibetan/edition comparison",
+    "Calendar year/trigram convention and role distributions must be determined before scoring",
+    "Astral or demonic causes are cultural narratives, not demonstrated mechanisms"
+  ],
+  "blind_human_tests": 0,
+  "runtime_promotions": 0
+}
