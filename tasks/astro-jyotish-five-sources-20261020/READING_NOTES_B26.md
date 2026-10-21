@@ -1,0 +1,23 @@
+# Jyotish B26 — Rath lessons 1, 3, 4 and 5: scope of source versus ritual and phonetics
+
+**Date:** 2026-10-21 UTC. The unchanged uploaded Sanjay Rath 520-page PDF SHA-256 `f05759d39fa8b19200a51544130fcc1a1f51ffee321e7c8b255fb97b14f4487d` is the evidentiary basis. `SOURCE_CANDIDATES_B26.json` has **13** new source-only records. This fills the sampling gaps in Rath's lessons, not a full Sanskrit critical edition of Jaimini and **not** 13 successful natal predictions.
+
+## The chapters mainly teach auxiliary material, not chart-to-person predictions
+
+**Lesson 1**, PDF33–40, uses *Ṛṣi Pañcamī*, guru observance, Sanskrit meanings, chandas/ritual meters and a *Mahābhārata* remote-vision episode to explain what a sage's knowledge and speech mean. In particular PDF35 attributes prophetic vision to blessings from Vyāsa to Sañjaya. These claims are explicitly religious/epic discourse in Rath's tutorial. No contemporaneously documented prediction of a named human subject is offered. PDF36 additionally summarizes Buddhist training in higher mind, conduct and wisdom; citing a Buddhist classification does not make the classification a Jaimini natal horoscope rule.
+
+**Lesson 3**, PDF49–62, discusses creation through sound, chandas, Meru Prastāra triangle expansions, and selected knowledge faculties. PDF52 relates Mercury and Mars to reasoning/logic in a four-part explanatory framework, which is **Rath's commentary** rather than a direct proof from a cited original Jaimini sutra. PDF60 distinguishes physical birth and initiation as social/religious stages, without giving an independent prospective prediction of the date of initiation.
+
+**Lesson 4, Varṇa Bheda**, PDF63–80, has a technically important **phonetic coding table on physical PDF63**, which we rendered and read. It arranges **16 vowels, 25 consonants and 9 semivowels/sibilants = 50 Sanskrit letters** and associates them with planetary and symbolic sound classes. PDF64–65 explains why an initial consonant may not be treated as a complete independent syllable. **Therefore a name-based Jyotish calculation is not reproducible from an English spelling of a Sanskrit or non-Sanskrit birth name unless orthography, spoken sounds, aspirates, conjuncts and vowel length are fixed.** PDF73 separately maps `ya, ra, la, va` to air, fire, earth and water. This is a symbolic text model, **not** a measured biomedical or physical state.
+
+**Lesson 5, Upadeśa Sūtra Introduction**, PDF81–88, opens with several meanings of *ṛṣi* and a classification of seers. The source itself states a single individual may belong to multiple classes at once (PDF82). Its pages 87–88 list several senses of *upadeśa*—reference, specification, teaching, advice, initiation—and describes how traditions refer to other shāstras. A broad claim that Jaimini *refers* to astrology source literature **does not demonstrate that every modern Parāśara technique was already spelled out in the literal Jaimini sutra**.
+
+## Consequences for the research program
+
+The chart-independent learning/ritual material adds **valuable source-context, not direct natal predictive evidence**. The distinction prevents a researcher from counting a spiritually meaningful or emotionally persuasive anecdote as a birth-chart matching result. The source could motivate an **auxiliary language-input component** (Sanskrit name parser) with exact transcription/phoneme tests, but this is separate from birthday-derived astrology.
+
+**Source layers in this batch:** Rath original explanatory prose; occasional classical Upaniṣad/Vedic/epic citations; none presumed a directly translated Jaimini natal sutra unless specifically located. We keep source data separate, with no medical/psychiatric efficacy claims for mantra practice, no historical period/factual miracle attribution beyond what the book itself reports, and no modifications to the live predictive system.
+
+## Durability and next
+
+After B24 **317** entries, B25 added 20 from the last unsampled Jātaka chapters, B26 adds **13** from Rath; **cumulative 350 historical documentary notes, zero human validations, zero production model promotions**. Source sampling coverage: Bhasin 17/17 chapters, Jātaka 19/19 divisions, Rath 22/22 lessons, while every listed section remains **only partially read** and Sanskrit text-level work is not exhaustive. `Sārāvalī` has 41/55 chapters with accepted notes and further structural/exploratory-only sections. Portuguese BPHS remains incompletely indexed. **Next work:** verify Portuguese BPHS chapter/section map and extract new information from underexamined thematic sections, then prioritize critical Sanskrit and computable model rules that can actually change blinded testing.
