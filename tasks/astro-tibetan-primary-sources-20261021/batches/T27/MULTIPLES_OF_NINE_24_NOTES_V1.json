@@ -1,0 +1,522 @@
+{
+  "schema": "TIBETAN_T27_MULTIPLES_OF_NINE_ALTERNATIVE_OBSTACLES_V1",
+  "batch": "T27",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "reading_pdf_pages": "250–260",
+  "note_count": 24,
+  "first": "TIB-R0258",
+  "last": "TIB-R0281",
+  "source_notes": [
+    {
+      "id": "TIB-R0258",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 251,
+        "printed_page": 250,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-multiples-male-run",
+      "paraphrase": "Male solitary-sign ninefold cycle begins at Mouse; displayed ages 9,18,27,36,45,54,63,72,81 correspond to Dragon,Sheep,Dog,Ox,Dragon,Sheep,Dog,Ox,Dragon and trigrams Li,Khon,Dva,Khen,Kham,Gin,Zin,Zon,Li.",
+      "required_inputs": [
+        "male_subject_sex",
+        "age_9_multiple_index",
+        "element_convention"
+      ],
+      "output_class": "male_age_year_trigram_cycle",
+      "dependency_family": "NINE-MALE",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0259",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 251,
+        "printed_page": 250,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-multiples-female-run",
+      "paraphrase": "Female solitary-sign ninefold cycle begins at Bird; ages 9,18,27,36,45,54,63,72,81 correspond to Ox,Dragon,Sheep,Dog,Ox,Dragon,Sheep,Dog,Ox and trigrams Kham,Khen,Dva,Khon,Li,Zon,Zin,Gin,Kham.",
+      "required_inputs": [
+        "female_subject_sex",
+        "age_9_multiple_index",
+        "element_convention"
+      ],
+      "output_class": "female_age_year_trigram_cycle",
+      "dependency_family": "NINE-FEMALE",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0260",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 252,
+        "printed_page": 251,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-critical-life-stages",
+      "paraphrase": "Separate most-dangerous-age classification identifies adult males 18 and age 36 for property conflict, old males 63, small children 9, young girls 18, adult women 45 and old women 54 as particularly unfavorable.",
+      "required_inputs": [
+        "subject_role_age_class",
+        "sex",
+        "age"
+      ],
+      "output_class": "qualitative_exceptional_ages",
+      "dependency_family": "NINE-CRITICAL",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0261",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 252,
+        "printed_page": 251,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-tomb-sex-age-combinations",
+      "paraphrase": "Coincidence of multiple-of-nine and tomb-sign gives different exact ages by natal sign group and subject sex, with pairs 18/36/54/72 assigned to different groups.",
+      "required_inputs": [
+        "subject_sex",
+        "natal_animal_group",
+        "current_trigram",
+        "current_year"
+      ],
+      "output_class": "sex_specific_tomb_convergence",
+      "dependency_family": "NINE-TOMB",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0262",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 252,
+        "printed_page": 251,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "childbirth-at-mother-nine-age",
+      "paraphrase": "Eight conditional childbirth omens depend on mother's age at delivery 18,27,36,45,54,63,72,81 and allegedly affect different relatives or social ranks.",
+      "required_inputs": [
+        "mother_age_at_birth",
+        "newborn_event"
+      ],
+      "output_class": "parental_kin_symbolic_obstacle",
+      "dependency_family": "NINE-CHILDBIRTH",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0263",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 252,
+        "printed_page": 251,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-eight-elements-danger",
+      "paraphrase": "A multiple of nine conjoined with specific year-animal and elemental trigram class receives distinct health/danger symbolic labels under wood,fire,earth,iron,water.",
+      "required_inputs": [
+        "current_nine_cycle",
+        "subject_natal_year_group",
+        "corresponding_trigram"
+      ],
+      "output_class": "elemental_omen_category",
+      "dependency_family": "NINE-EIGHT-ELEMENTS",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0264",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 253,
+        "printed_page": 252,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "constitutional-life-reducing-and-fatal",
+      "paraphrase": "The source specifies separate constitution-by-sexagenary-year examples for 'life-reducing' and 'potentially fatal' classes: Wood sheep/dog, Fire dog/ox, Earth dragon/sheep, Iron ox/dragon and Water dragon/sheep.",
+      "required_inputs": [
+        "constitutional_type",
+        "current_sexagenary_year"
+      ],
+      "output_class": "directed_constitutional_year_category",
+      "dependency_family": "NINE-CONSTITUTION",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0265",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 253,
+        "printed_page": 252,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "earth-year-prose-table-disagreement",
+      "paraphrase": "Prose associates the earth-element/Khon-Khen-Gin-Zon nine-cycle omen with natal Hare or Pig, while adjacent Plate9 fig.5 prints Mouse or Pig. Both appear in same English edition, and the difference is not merely OCR.",
+      "required_inputs": [
+        "earth_element_group",
+        "natal_animal",
+        "current_trigram"
+      ],
+      "output_class": "unresolved_source_year_category",
+      "dependency_family": "SOURCE-CONFLICT",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0266",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 253,
+        "printed_page": 252,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "combined-sign-four-opening-keys",
+      "paraphrase": "The combined-sign nine method starts from one of four specific year-keys: Wood Mouse for six Earth/Water sign groups, Fire Hare for Tiger/Hare, Iron Horse for Horse/Snake, Water Bird for Bird/Monkey.",
+      "required_inputs": [
+        "natal_animal_group",
+        "source_sexagenary_start",
+        "subject_age"
+      ],
+      "output_class": "combined_sign_start_key",
+      "dependency_family": "NINE-COMBINED",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0267",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 253,
+        "printed_page": 252,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "combined-sign-12-year-increments",
+      "paraphrase": "Although named among calculations of the 'multiples of nine', the combined-sign tomb sequence itself lists ages 9,21,33,45,57,69,81 (increments of twelve years), not 9,18,27,etc; keep distinct mathematical families.",
+      "required_inputs": [
+        "birth_year_group",
+        "age",
+        "start_key"
+      ],
+      "output_class": "seven_age_tomb_sequence",
+      "dependency_family": "NINE-COMBINED",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0268",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 253,
+        "printed_page": 252,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "rnga-zor-five-sign-offset",
+      "paraphrase": "The rnga-zor combined-sign calculation counts five positions before or after a nine/tomb convergence; preceding and following signs receive distinct 'butcher' and 'pit' symbolic names.",
+      "required_inputs": [
+        "nine_tomb_reference_sign",
+        "direction",
+        "offset_five"
+      ],
+      "output_class": "directed_adverse_sign",
+      "dependency_family": "NINE-RNGAZOR",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0269",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 254,
+        "printed_page": 253,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "parent-child-rnga-zor-natal-luck",
+      "paraphrase": "A different rnga-zor procedure counts forward three to five places from parent's natal animal year, checks child's year against the parent's destiny/constitution element, and allocates relative-specific omens.",
+      "required_inputs": [
+        "parent_natal_year",
+        "parent_constitution",
+        "child_natal_sexagenary_year"
+      ],
+      "output_class": "offspring_contextual_omen",
+      "dependency_family": "NINE-RNGAZOR-CHILD",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0270",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 254,
+        "printed_page": 253,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-trigram-mode-by-sex",
+      "paraphrase": "A third nine-cycle method counts from Li trigram for male subjects and from Kham trigram for female subjects, juxtaposed with the multiples of nine.",
+      "required_inputs": [
+        "subject_sex",
+        "current_age",
+        "natal_trigram"
+      ],
+      "output_class": "sex_specific_trigram_cycle",
+      "dependency_family": "NINE-TRIGRAM",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0271",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 254,
+        "printed_page": 253,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-numeric-square-mode",
+      "paraphrase": "A fourth nine-cycle calculation begins from the subject's natal numeric square and maps specific landed-on mewa to social-role- and gender-conditioned symbolic consequences.",
+      "required_inputs": [
+        "subject_natal_mewa",
+        "current_mewa",
+        "subject_social_role"
+      ],
+      "output_class": "mewa_cycle_omen",
+      "dependency_family": "NINE-MEWA",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0272",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 255,
+        "printed_page": 254,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "nine-constitutional-starts",
+      "paraphrase": "Constitutional-type nine calculation uses Wood Mouse (Earth/Water type), Fire Hare (Wood), Iron Horse (Fire), Water Bird (Iron), counting backwards to tomb signs.",
+      "required_inputs": [
+        "constitution_element",
+        "age",
+        "current_sign"
+      ],
+      "output_class": "constitutional_start_key",
+      "dependency_family": "NINE-CONSTITUTION",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0273",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 255,
+        "printed_page": 254,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "constitutional-tomb-return-stages",
+      "paraphrase": "Constitutional calculation describes age 9,21,33,45,57 outcomes; ages 69 and 81 repeat its first and second source claims rather than being new independent forecasts.",
+      "required_inputs": [
+        "constitutional_element",
+        "tomb_age_series"
+      ],
+      "output_class": "recurrent_seven_age_categories",
+      "dependency_family": "NINE-CONSTITUTION",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0274",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 256,
+        "printed_page": 255,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "31-versus-37-alternate-pebbles",
+      "paraphrase": "An alternative obstacle-year model uses 31 pebbles (24 elemental contrasts + 4 predictive + 3 nine-aspects) or 37 including 6 additional basics, rather than the standard 47-pebble procedure.",
+      "required_inputs": [
+        "six_basic_year_elements",
+        "natal_four_forces",
+        "three_nine_cycle_flags"
+      ],
+      "output_class": "alternative_procedure",
+      "dependency_family": "ALTERNATE-31-37",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0275",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 258,
+        "printed_page": 257,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Chinese-method-household-selection",
+      "paraphrase": "A further Chinese-origin method evaluates an entire family with at least four members, typically five or six selected, ordering the members by sex then seniority.",
+      "required_inputs": [
+        "family_member_birth_charts",
+        "all_member_sex_and_seniority",
+        "current_year"
+      ],
+      "output_class": "family_level_distribution",
+      "dependency_family": "FAMILY-CHINESE-PEBBLES",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0276",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 258,
+        "printed_page": 257,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Chinese-five-axis-member-contrast",
+      "paraphrase": "Each selected family member contributes five elements/pebbles: body,vitality,destiny,luck and current numeric square, contrasted with matching present-year aspects; includes colored numeric-pebble markers.",
+      "required_inputs": [
+        "member_four_forces",
+        "member_current_mewa",
+        "annual_four_forces"
+      ],
+      "output_class": "five_marker_member_grid",
+      "dependency_family": "FAMILY-CHINESE-PEBBLES",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0277",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 258,
+        "printed_page": 257,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Chinese-six-subject-grid-order",
+      "paraphrase": "For a six-member worked example, 30 position labels are distributed into five rows; body positions 1,11,21,30,20,10; vitality 3,13,23,28,18,8; destiny 5,15,25,26,16,6; luck 7,17,27,24,14,4; numeric 9,19,29,22,12,2.",
+      "required_inputs": [
+        "six_selected_family_members",
+        "five_forces_each",
+        "seniority_sex_order"
+      ],
+      "output_class": "thirty_position_grid",
+      "dependency_family": "FAMILY-CHINESE-PEBBLES",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0278",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 258,
+        "printed_page": 257,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Chinese-four-sector-permutation-residue",
+      "paraphrase": "Thirty markers are rearranged into four sectors ('divine','human','household','enemy'), with reverse traversal in second and fourth rows; 15 and 16 are residual pebbles for the six-member example.",
+      "required_inputs": [
+        "thirty_marker_grid",
+        "permutation_order",
+        "residuals"
+      ],
+      "output_class": "four_sectors_and_residuals",
+      "dependency_family": "FAMILY-CHINESE-PEBBLES",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0279",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 259,
+        "printed_page": 258,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Chinese-three-120-pebble-cycles",
+      "paraphrase": "Another method attributed to Mar-ston Jo-smon has three cycles of 120 pebbles (gSer-lo-can, gYu-lo-can, Dung-lo-can), totaling 360; each uses the five axes against four present-year/logmen/month-derived states.",
+      "required_inputs": [
+        "source_variant",
+        "subject_five_aspects",
+        "year_month_logmen_offsets"
+      ],
+      "output_class": "three_120_counterparts",
+      "dependency_family": "ALTERNATE-360",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0280",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 260,
+        "printed_page": 259,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "600-extra-day-and-hour-pebbles",
+      "paraphrase": "An extended alternative model cited by Moonbeams adds 120 pebbles for days and 120 for hours to the previous 360, totaling 600; this changes inputs and cannot be conflated with 47.",
+      "required_inputs": [
+        "alternative_360",
+        "day_contrasts",
+        "hour_contrasts"
+      ],
+      "output_class": "extended_600",
+      "dependency_family": "ALTERNATE-600",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0281",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 260,
+        "printed_page": 259,
+        "primary_text": "White Beryl chapter 24 ff.269a–273b; Moonbeams ff.29a–31b"
+      },
+      "key": "Lochen-five-reading-domains",
+      "paraphrase": "Lo-chen concludes that five generic domains—vitality, body, destiny, luck and numeric square—are respectively read as lifespan, illness, diet, merit and demonic influence, as provisional predictive output categories.",
+      "required_inputs": [
+        "natal_five_aspects",
+        "annual_five_aspects",
+        "chosen_prognosis_scheme"
+      ],
+      "output_class": "five_generic_outcome_classes",
+      "dependency_family": "FIVE-READING-DOMAINS",
+      "source_status": "English translation plus explanatory commentary, original Tibetan not independently checked",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "important_distinction": "Source's phrase 'multiples of nine' encompasses multiple nonidentical cycles, including a 12-year interval series 9/21/33/45/57/69/81, not just 9/18/27. Store separate method keys.",
+  "source_conflicts": [
+    "TIB-CONFLICT-004 in T24",
+    "TIB-CONFLICT-005: prose Hare/Pig vs Plate9 fig5 Mouse/Pig, PDF page253"
+  ],
+  "completes_scope": "White Beryl obstacle-year chapter through printed p259/PDF260; the next pages are new section artwork",
+  "human_validation": 0,
+  "model_promotions": 0
+}
