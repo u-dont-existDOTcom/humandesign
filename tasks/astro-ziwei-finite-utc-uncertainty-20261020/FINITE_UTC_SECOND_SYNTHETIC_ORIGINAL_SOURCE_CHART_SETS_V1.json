@@ -1,0 +1,1693 @@
+{
+  "schema": "HUMANDESIGN_ORIGINAL_ZIWEI_SOURCE_SHA_PINNED_SYNTHETIC_FINITE_UTC_INTERVAL_V1",
+  "status": "SYNTHETIC_INSTANT_INTERVAL_SOURCE_CHART_SET_NOT_HUMAN_ASTROLOGY",
+  "source_engine_git_commit": "fb6b30b1ca67ff62fecc0c4ea7f3e4d0553640d4",
+  "source_22_original_engine_files_sha256": {
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-07/SOURCE_ORIGINAL_ZIWEI_VOL2_1963110_RAW.txt": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/HKO_10_EXACT_RESPONSE_AND_TWO_LIBRARY_CALENDAR_PARITY_V1.json": "a6be417176401e36a23f29e194e36378c6975f2c6a109129f7ede4b7cb96d661",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2023-03-21.json": "88912236cb1f0ee759ba6e236b9895c71e35b160264d8bcb5a58c03151a62c6d",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2023-03-22.json": "44a21f5941419088610a3b58ddf01fe9c4c1e638f52c9e095b997e76b405d86b",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2023-04-19.json": "763420df9895ec61b092ca258cb68adf2a038576e4740d788dc088dba8b9b5ea",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2023-04-20.json": "ec79ad78f6864a714f588d0f77e6b9169409967ef794a5e2bae950fcefc328e0",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2025-07-25.json": "b161f056ddaf140ab9f2c830e4a6bfc515d4ac7aeff4c73f02cf1e5bdf34d401",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2026-02-16.json": "7c9070027b7403f3e35a97678e07586847ff5d9a507e6dd48c6f06d883530a61",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2026-02-17.json": "ed29b4df69c9ca1d991a02fc0e891adeb60d958e866825db8562c357041044ff",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2026-10-20.json": "abbc902baaec921190ed6d3c4b2474fd0293958ae2445edfcb7f1fd99834220b",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2027-02-06.json": "82ed25d155b31b4b55703de418324f27c96117713e48730bead22df29213ed62",
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11/evidence/hko_2028-01-01.json": "3893fd58729b05d860082a2ab04aaa05c80344abb798f11ae2b116eb62edcb07",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/dual_witness_civil_lunar.py": "d186d13f98de75f8a1884ae04009cb35abae5f708f413e0a30dcae46f8ce4fa3",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/explicit_natal_time.py": "e493d0694dc87f8eecbeb3e9843dbdd4fc584d364dab94dc75df480dd2026758",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_fourteen_stars.py": "b673639fee62cfff9b90ce116861061d7aedda735d1af6c332628142585204a2",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_two_star_skeleton.py": "78751f00057dd7f0908e20da1a4fdd32d605087f6e23c7fbb2b0e66c89f40cb5",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_vol2_aux_placements.py": "92274eb33df6e83f819c512f5b57652cd9ae24f2f69205fcf75eb78cbd70467b",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_vol2_life_body_taxonomy.py": "808836c415e90c676ef95fda0e6980fe04e753e661739c00bfd568e43a32ae7b",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_vol2_nayin_bureau.py": "ddcf119abcd6f33245e63539e536c45a86ae6b147cebf2f0874300d7f0eeae51",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_vol2_placements.py": "afd9b37e15a3b137a941f7f4fa8a74b03a0b2b025b297b76e34dd7d33ed8b740",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/quan_shu_vol2_purple_star.py": "0c448b6242f0347fd3618c01709d7d0d5d251d09f26f05d672414f7f162be831",
+    "tasks/astro-chinese-primary-sources-20261017/ziwei/ziwei_source_mechanics.py": "432895ff3a592a1c4616967bfa6d80c54758a0843ad8ac93a1d522b037f8bd99"
+  },
+  "source_original_manifest_SHA256": "aac1e39c563829a1ea07c95875260ee278928bb5f2becdbca7c2375a986c8afd",
+  "source_previous_policy_oracle_report_SHA256": "12b8ebc0a4a8a91c02f418ebf2e7787d382c750ef6bccc19afb8623d3fe731be",
+  "source_original_calculation_runner_SHA256": "b7ccf7cef9f32364b15bbeac21103b99d40e8e74207cceb43e19385023198074",
+  "pinned_external_calendar_binary_source_tree_sha256": {
+    "lunar_python": "7123d898cbe2e8afff663e57a7e25c9d4f080e383b98fcc33485d502772a2303",
+    "sxtwl": "b4c1b25f0453489e10c6d25c5407e904a31e7fca1dc72615fda5db169f143d14"
+  },
+  "pinned_external_calendar_package_versions": {
+    "lunar_python": "1.4.8",
+    "sxtwl": "2.0.7"
+  },
+  "external_calendar_package_binaries_included_in_repository": false,
+  "original_Ming_printed_source_verified": false,
+  "validated_full_ZiWei_natal_chart": false,
+  "real_birth_clock_uncertainty_to_possible_UTC_instants_implemented": false,
+  "real_birthplace_and_astronomical_apparent_solar_calibration_implemented": false,
+  "finite_declared_integer_second_UTC_interval_enumeration_complete": true,
+  "synthetic_UTC_integer_second_interval_output": {
+    "schema": "HUMANDESIGN_ZIWEI_EXPLICIT_FINITE_UTC_SECOND_SYNTHETIC_INTERVAL_SOURCE_V1",
+    "status": "INTEGER_SECOND_UTC_SOURCE_MECHANICS_NOT_REAL_PERSON_TIME_UNCERTAINTY_PROPAGATION",
+    "source_acceptance": "Pinned original source engine as-next lunar leap, HKO raw and two external calendars",
+    "fictional_UTC_intervals": 6,
+    "fake_integer_UTC_seconds_by_case": {
+      "SYNTH_DAKAR_CIVIL_HOUR_BOUNDARY": 121,
+      "SYNTH_DAKAR_LUNAR_NEW_YEAR_UTC8_MIDNIGHT": 121,
+      "SYNTH_NY_LOCAL_MEAN_SOLAR_HOUR_BOUNDARY": 601,
+      "SYNTH_HK_1965_DST_UTC8_MIDNIGHT": 121,
+      "SYNTH_NY_2026_DST_FOLD_UTC_INSTANT": 121,
+      "SYNTH_HK_2023_LEAP_HOUR_BOUNDARY": 121
+    },
+    "total_fake_integer_second_instants_unique_by_case": 1206,
+    "number_of_declared_calendar_hour_policies_per_case": 4,
+    "independent_original_HKO_for_all_source_days": false,
+    "human_birth_zone_from_approximate_location_inferred": false,
+    "source_true_apparent_solar_and_23h_Zi_day_not_supported": true,
+    "only_exact_integer_second_UTC_interval_no_real_unknown_clock_to_instant_conversion": true,
+    "human_personal_birth_records_or_survey_responses": 0,
+    "real_human_predictive_validations": 0,
+    "runtime_astrological_promotions": 0,
+    "case_results": [
+      {
+        "case_id": "SYNTH_DAKAR_CIVIL_HOUR_BOUNDARY",
+        "start_UTC": "2026-02-16T20:59:00+00:00",
+        "end_UTC": "2026-02-16T21:01:00+00:00",
+        "fictional_iana_zone": "Africa/Dakar",
+        "fictional_explicit_east_longitude": "-17.4",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 121,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T20:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T20:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-02-16T20:59:00",
+                "last_local_wall_clock": "2026-02-16T20:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "a66e5afc11cb8e36cc5ea8c6f82b20f192d485d984b6509ca07f31c517ef2c42",
+                "source_calendar_day": "2026-02-17",
+                "selected_hour_branch": "Xu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Chen",
+                "life_palace_major_stars": [
+                  "TaiYin"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "2026-02-16T21:00:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T21:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2026-02-16T21:00:00",
+                "last_local_wall_clock": "2026-02-16T21:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "2f618e9083de1c897ca904f6d2bcf87246e1d983f34cbfb92348cdffadbb09c2",
+                "source_calendar_day": "2026-02-17",
+                "selected_hour_branch": "Hai",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Mao",
+                "life_palace_major_stars": [
+                  "JuMen",
+                  "TianJi"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T20:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T21:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-02-16T20:59:00",
+                "last_local_wall_clock": "2026-02-16T21:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "a66e5afc11cb8e36cc5ea8c6f82b20f192d485d984b6509ca07f31c517ef2c42",
+                "source_calendar_day": "2026-02-17",
+                "selected_hour_branch": "Xu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Chen",
+                "life_palace_major_stars": [
+                  "TaiYin"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "a66e5afc11cb8e36cc5ea8c6f82b20f192d485d984b6509ca07f31c517ef2c42"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T20:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T20:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-02-16T20:59:00",
+                "last_local_wall_clock": "2026-02-16T20:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "2002263ca09bdd964509ebf49a6dd219a89a8b8492080e393a41214dbc92bc6e",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Xu",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Mao",
+                "life_palace_major_stars": [
+                  "TaiYang",
+                  "TianLiang"
+                ],
+                "selected_anchor_stars": [
+                  "TianLiang"
+                ]
+              },
+              {
+                "start_UTC_inclusive": "2026-02-16T21:00:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T21:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2026-02-16T21:00:00",
+                "last_local_wall_clock": "2026-02-16T21:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "8b62157b242233fe8d75d821f204186265e162c837fe476729684b671b120840",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Hai",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Yin",
+                "life_palace_major_stars": [
+                  "TianXiang",
+                  "WuQu"
+                ],
+                "selected_anchor_stars": [
+                  "WuQu"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T20:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T21:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-02-16T20:59:00",
+                "last_local_wall_clock": "2026-02-16T21:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "2002263ca09bdd964509ebf49a6dd219a89a8b8492080e393a41214dbc92bc6e",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Xu",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Mao",
+                "life_palace_major_stars": [
+                  "TaiYang",
+                  "TianLiang"
+                ],
+                "selected_anchor_stars": [
+                  "TianLiang"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "2002263ca09bdd964509ebf49a6dd219a89a8b8492080e393a41214dbc92bc6e"
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 4,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 3,
+        "source_all_policy_invariant_14star_state": false,
+        "source_all_policy_invariant_four_anchor_status_only": false,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "a66e5afc11cb8e36cc5ea8c6f82b20f192d485d984b6509ca07f31c517ef2c42": {
+            "reference_calendar_day": "2026-02-17",
+            "source_hour_Earthly_Branch": "Xu",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2026,
+            "lunar_month": 1,
+            "lunar_day": 1,
+            "source_is_leap_month": false,
+            "life_palace": "Chen",
+            "body_palace": "Zi",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TaiYin"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "9aba0b8dd61fd422eef44141cb1e33c11f1e59ff83031ec005bfc6360699ea72",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "2f618e9083de1c897ca904f6d2bcf87246e1d983f34cbfb92348cdffadbb09c2": {
+            "reference_calendar_day": "2026-02-17",
+            "source_hour_Earthly_Branch": "Hai",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2026,
+            "lunar_month": 1,
+            "lunar_day": 1,
+            "source_is_leap_month": false,
+            "life_palace": "Mao",
+            "body_palace": "Chou",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "JuMen",
+              "TianJi"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "e01dd2eeff92bed0b75ff641ed2c200e35a07139719f4d0ca0b1dbcde1e85d31",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "2002263ca09bdd964509ebf49a6dd219a89a8b8492080e393a41214dbc92bc6e": {
+            "reference_calendar_day": "2026-02-16",
+            "source_hour_Earthly_Branch": "Xu",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2025,
+            "lunar_month": 12,
+            "lunar_day": 29,
+            "source_is_leap_month": false,
+            "life_palace": "Mao",
+            "body_palace": "Hai",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TaiYang",
+              "TianLiang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "TianLiang"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "2d2c97134ea47500d6295e9f383368fd05c79ea981f713228eb2fe366b74bc3d",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "8b62157b242233fe8d75d821f204186265e162c837fe476729684b671b120840": {
+            "reference_calendar_day": "2026-02-16",
+            "source_hour_Earthly_Branch": "Hai",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2025,
+            "lunar_month": 12,
+            "lunar_day": 29,
+            "source_is_leap_month": false,
+            "life_palace": "Yin",
+            "body_palace": "Zi",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TianXiang",
+              "WuQu"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "WuQu"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "2d2c97134ea47500d6295e9f383368fd05c79ea981f713228eb2fe366b74bc3d",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      },
+      {
+        "case_id": "SYNTH_DAKAR_LUNAR_NEW_YEAR_UTC8_MIDNIGHT",
+        "start_UTC": "2026-02-16T15:59:00+00:00",
+        "end_UTC": "2026-02-16T16:01:00+00:00",
+        "fictional_iana_zone": "Africa/Dakar",
+        "fictional_explicit_east_longitude": "-17.4",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 121,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T15:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T15:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-02-16T15:59:00",
+                "last_local_wall_clock": "2026-02-16T15:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "b9054e862ae6ed38eb618078a0b0115e78eae77c7f57a1be1b9afd22a93876c6",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Shen",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Si",
+                "life_palace_major_stars": [
+                  "TianJi"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "2026-02-16T16:00:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T16:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2026-02-16T16:00:00",
+                "last_local_wall_clock": "2026-02-16T16:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "e7759c5f8b84c39ce32cc672922a8760ccc5e25558a26f568ec02c6f4473f230",
+                "source_calendar_day": "2026-02-17",
+                "selected_hour_branch": "Shen",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Wu",
+                "life_palace_major_stars": [
+                  "TaiYin",
+                  "TianTong"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T15:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T15:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-02-16T15:59:00",
+                "last_local_wall_clock": "2026-02-16T15:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "f1d4ed6dca5aa0170241b5e3b29fe5d558193ef16783b5054dfe8c0a55682090",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Wu",
+                "life_palace_major_stars": [
+                  "TianFu",
+                  "WuQu"
+                ],
+                "selected_anchor_stars": [
+                  "WuQu"
+                ]
+              },
+              {
+                "start_UTC_inclusive": "2026-02-16T16:00:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T16:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2026-02-16T16:00:00",
+                "last_local_wall_clock": "2026-02-16T16:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "2f36f7cc39d562b357adfc5774ffe03aa3e311678dff7b979b5417a9e78a72a7",
+                "source_calendar_day": "2026-02-17",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TanLang",
+                  "WuQu"
+                ],
+                "selected_anchor_stars": [
+                  "WuQu"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T15:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T16:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-02-16T15:59:00",
+                "last_local_wall_clock": "2026-02-16T16:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "b9054e862ae6ed38eb618078a0b0115e78eae77c7f57a1be1b9afd22a93876c6",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Shen",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Si",
+                "life_palace_major_stars": [
+                  "TianJi"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "b9054e862ae6ed38eb618078a0b0115e78eae77c7f57a1be1b9afd22a93876c6"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-02-16T15:59:00+00:00",
+                "end_UTC_inclusive": "2026-02-16T16:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-02-16T15:59:00",
+                "last_local_wall_clock": "2026-02-16T16:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  0
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "40733be9374ab5a9bd38be2be2664e538f97a265bbe7d898a6167d3800cb228b",
+                "source_chart_state_SHA256": "f1d4ed6dca5aa0170241b5e3b29fe5d558193ef16783b5054dfe8c0a55682090",
+                "source_calendar_day": "2026-02-16",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Wu",
+                "life_palace_major_stars": [
+                  "TianFu",
+                  "WuQu"
+                ],
+                "selected_anchor_stars": [
+                  "WuQu"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "f1d4ed6dca5aa0170241b5e3b29fe5d558193ef16783b5054dfe8c0a55682090"
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 4,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 2,
+        "source_all_policy_invariant_14star_state": false,
+        "source_all_policy_invariant_four_anchor_status_only": false,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "b9054e862ae6ed38eb618078a0b0115e78eae77c7f57a1be1b9afd22a93876c6": {
+            "reference_calendar_day": "2026-02-16",
+            "source_hour_Earthly_Branch": "Shen",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2025,
+            "lunar_month": 12,
+            "lunar_day": 29,
+            "source_is_leap_month": false,
+            "life_palace": "Si",
+            "body_palace": "You",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TianJi"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "2d2c97134ea47500d6295e9f383368fd05c79ea981f713228eb2fe366b74bc3d",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "e7759c5f8b84c39ce32cc672922a8760ccc5e25558a26f568ec02c6f4473f230": {
+            "reference_calendar_day": "2026-02-17",
+            "source_hour_Earthly_Branch": "Shen",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2026,
+            "lunar_month": 1,
+            "lunar_day": 1,
+            "source_is_leap_month": false,
+            "life_palace": "Wu",
+            "body_palace": "Xu",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TaiYin",
+              "TianTong"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "ae16808cba334b60e00b843b7347cc6ed848be97cdbc72f324437b4eece56fab",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "f1d4ed6dca5aa0170241b5e3b29fe5d558193ef16783b5054dfe8c0a55682090": {
+            "reference_calendar_day": "2026-02-16",
+            "source_hour_Earthly_Branch": "Wei",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2025,
+            "lunar_month": 12,
+            "lunar_day": 29,
+            "source_is_leap_month": false,
+            "life_palace": "Wu",
+            "body_palace": "Shen",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TianFu",
+              "WuQu"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "WuQu"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "341d6a0303506fbba039b107335595b8b7a166bdb8c4a0a87d7b7570c9333542",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "2f36f7cc39d562b357adfc5774ffe03aa3e311678dff7b979b5417a9e78a72a7": {
+            "reference_calendar_day": "2026-02-17",
+            "source_hour_Earthly_Branch": "Wei",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2026,
+            "lunar_month": 1,
+            "lunar_day": 1,
+            "source_is_leap_month": false,
+            "life_palace": "Wei",
+            "body_palace": "You",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TanLang",
+              "WuQu"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "WuQu"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "ae16808cba334b60e00b843b7347cc6ed848be97cdbc72f324437b4eece56fab",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      },
+      {
+        "case_id": "SYNTH_NY_LOCAL_MEAN_SOLAR_HOUR_BOUNDARY",
+        "start_UTC": "2026-07-01T17:55:00+00:00",
+        "end_UTC": "2026-07-01T18:05:00+00:00",
+        "fictional_iana_zone": "America/New_York",
+        "fictional_explicit_east_longitude": "-74",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 601,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 601,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-07-01T17:55:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T18:05:00+00:00",
+                "integer_second_samples": 601,
+                "first_local_wall_clock": "2026-07-01T13:55:00",
+                "last_local_wall_clock": "2026-07-01T14:05:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "e013d9a13a820056b56c42c88dd075c4878ea49a930fcd4826341e2e84bb3b15",
+                "source_calendar_day": "2026-07-02",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Hai",
+                "life_palace_major_stars": [
+                  "LianZhen",
+                  "TanLang"
+                ],
+                "selected_anchor_stars": [
+                  "LianZhen"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "e013d9a13a820056b56c42c88dd075c4878ea49a930fcd4826341e2e84bb3b15"
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 601,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-07-01T17:55:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T17:55:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-07-01T13:55:00",
+                "last_local_wall_clock": "2026-07-01T13:55:59",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "c21a46f8c316cd1d5e27a87035ffa77940d99352161bd822ece1ef280e109ae5",
+                "source_calendar_day": "2026-07-02",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Zi",
+                "life_palace_major_stars": [
+                  "JuMen"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "2026-07-01T17:56:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T18:05:00+00:00",
+                "integer_second_samples": 541,
+                "first_local_wall_clock": "2026-07-01T13:56:00",
+                "last_local_wall_clock": "2026-07-01T14:05:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "e013d9a13a820056b56c42c88dd075c4878ea49a930fcd4826341e2e84bb3b15",
+                "source_calendar_day": "2026-07-02",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Hai",
+                "life_palace_major_stars": [
+                  "LianZhen",
+                  "TanLang"
+                ],
+                "selected_anchor_stars": [
+                  "LianZhen"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 601,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-07-01T17:55:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T18:05:00+00:00",
+                "integer_second_samples": 601,
+                "first_local_wall_clock": "2026-07-01T13:55:00",
+                "last_local_wall_clock": "2026-07-01T14:05:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "1b77d43e615326c3465aea658dad8d6c008e40ef4f2967a03d452fe4daaa4f2d",
+                "source_calendar_day": "2026-07-01",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Hai",
+                "life_palace_major_stars": [
+                  "TaiYin"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "1b77d43e615326c3465aea658dad8d6c008e40ef4f2967a03d452fe4daaa4f2d"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 601,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-07-01T17:55:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T17:55:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2026-07-01T13:55:00",
+                "last_local_wall_clock": "2026-07-01T13:55:59",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "caae6791220b1cb601fe38b1216095aa0e4da174580f260962b58749d939294b",
+                "source_calendar_day": "2026-07-01",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+                "life_palace": "Zi",
+                "life_palace_major_stars": [
+                  "PoJun"
+                ],
+                "selected_anchor_stars": [
+                  "PoJun"
+                ]
+              },
+              {
+                "start_UTC_inclusive": "2026-07-01T17:56:00+00:00",
+                "end_UTC_inclusive": "2026-07-01T18:05:00+00:00",
+                "integer_second_samples": 541,
+                "first_local_wall_clock": "2026-07-01T13:56:00",
+                "last_local_wall_clock": "2026-07-01T14:05:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "1b77d43e615326c3465aea658dad8d6c008e40ef4f2967a03d452fe4daaa4f2d",
+                "source_calendar_day": "2026-07-01",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Hai",
+                "life_palace_major_stars": [
+                  "TaiYin"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 4,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 3,
+        "source_all_policy_invariant_14star_state": false,
+        "source_all_policy_invariant_four_anchor_status_only": false,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "e013d9a13a820056b56c42c88dd075c4878ea49a930fcd4826341e2e84bb3b15": {
+            "reference_calendar_day": "2026-07-02",
+            "source_hour_Earthly_Branch": "Wei",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 2026,
+            "lunar_month": 5,
+            "lunar_day": 18,
+            "source_is_leap_month": false,
+            "life_palace": "Hai",
+            "body_palace": "Chou",
+            "original_source_status": "qualified_source_variant",
+            "life_palace_major_stars": [
+              "LianZhen",
+              "TanLang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "LianZhen"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "b81c76cf78bceb3ee03d3fe215fa18f6069ffb347fd9bdbba0da587b29c6afd5",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "c21a46f8c316cd1d5e27a87035ffa77940d99352161bd822ece1ef280e109ae5": {
+            "reference_calendar_day": "2026-07-02",
+            "source_hour_Earthly_Branch": "Wu",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 2026,
+            "lunar_month": 5,
+            "lunar_day": 18,
+            "source_is_leap_month": false,
+            "life_palace": "Zi",
+            "body_palace": "Zi",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "JuMen"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "b81c76cf78bceb3ee03d3fe215fa18f6069ffb347fd9bdbba0da587b29c6afd5",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "1b77d43e615326c3465aea658dad8d6c008e40ef4f2967a03d452fe4daaa4f2d": {
+            "reference_calendar_day": "2026-07-01",
+            "source_hour_Earthly_Branch": "Wei",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 2026,
+            "lunar_month": 5,
+            "lunar_day": 17,
+            "source_is_leap_month": false,
+            "life_palace": "Hai",
+            "body_palace": "Chou",
+            "original_source_status": "qualified_source_variant",
+            "life_palace_major_stars": [
+              "TaiYin"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "2d2c97134ea47500d6295e9f383368fd05c79ea981f713228eb2fe366b74bc3d",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "caae6791220b1cb601fe38b1216095aa0e4da174580f260962b58749d939294b": {
+            "reference_calendar_day": "2026-07-01",
+            "source_hour_Earthly_Branch": "Wu",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 2026,
+            "lunar_month": 5,
+            "lunar_day": 17,
+            "source_is_leap_month": false,
+            "life_palace": "Zi",
+            "body_palace": "Zi",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "PoJun"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "PoJun"
+            ],
+            "strict_methodological_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+            "full_14_major_star_layout_sha256": "e62a43b3f0a03b8ba762ba84a15634d2bfbf828dcb1e68aa0d506e868a5b03b0",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      },
+      {
+        "case_id": "SYNTH_HK_1965_DST_UTC8_MIDNIGHT",
+        "start_UTC": "1965-06-30T15:59:00+00:00",
+        "end_UTC": "1965-06-30T16:01:00+00:00",
+        "fictional_iana_zone": "Asia/Hong_Kong",
+        "fictional_explicit_east_longitude": "114.17",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 121,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "1965-06-30T15:59:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T15:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "1965-07-01T00:59:00",
+                "last_local_wall_clock": "1965-07-01T00:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "93642d9c15f24bfc7bbc59b7f766f7167ae843a185384f3c5698bb26b7f5ea3b",
+                "source_calendar_day": "1965-06-30",
+                "selected_hour_branch": "Zi",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TianXiang"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "1965-06-30T16:00:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T16:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "1965-07-01T01:00:00",
+                "last_local_wall_clock": "1965-07-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "f1cbd66800f511fd939c669c09b3a0ad70c9eb9219c0feded2f8012a0f86eece",
+                "source_calendar_day": "1965-07-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Wu",
+                "life_palace_major_stars": [
+                  "LianZhen",
+                  "TianXiang"
+                ],
+                "selected_anchor_stars": [
+                  "LianZhen"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "1965-06-30T15:59:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T15:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "1965-07-01T00:59:00",
+                "last_local_wall_clock": "1965-07-01T00:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "93642d9c15f24bfc7bbc59b7f766f7167ae843a185384f3c5698bb26b7f5ea3b",
+                "source_calendar_day": "1965-06-30",
+                "selected_hour_branch": "Zi",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TianXiang"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "1965-06-30T16:00:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T16:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "1965-07-01T01:00:00",
+                "last_local_wall_clock": "1965-07-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b412602e1ed8099f0f656c25a82422c150aa6485012fe85c520b277503c82f2",
+                "source_calendar_day": "1965-07-01",
+                "selected_hour_branch": "Zi",
+                "selected_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TianLiang"
+                ],
+                "selected_anchor_stars": [
+                  "TianLiang"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "1965-06-30T15:59:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T15:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "1965-07-01T00:59:00",
+                "last_local_wall_clock": "1965-07-01T00:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b412602e1ed8099f0f656c25a82422c150aa6485012fe85c520b277503c82f2",
+                "source_calendar_day": "1965-07-01",
+                "selected_hour_branch": "Zi",
+                "selected_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TianLiang"
+                ],
+                "selected_anchor_stars": [
+                  "TianLiang"
+                ]
+              },
+              {
+                "start_UTC_inclusive": "1965-06-30T16:00:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T16:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "1965-07-01T01:00:00",
+                "last_local_wall_clock": "1965-07-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "f1cbd66800f511fd939c669c09b3a0ad70c9eb9219c0feded2f8012a0f86eece",
+                "source_calendar_day": "1965-07-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+                "life_palace": "Wu",
+                "life_palace_major_stars": [
+                  "LianZhen",
+                  "TianXiang"
+                ],
+                "selected_anchor_stars": [
+                  "LianZhen"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "1965-06-30T15:59:00+00:00",
+                "end_UTC_inclusive": "1965-06-30T16:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "1965-07-01T00:59:00",
+                "last_local_wall_clock": "1965-07-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  32400
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b412602e1ed8099f0f656c25a82422c150aa6485012fe85c520b277503c82f2",
+                "source_calendar_day": "1965-07-01",
+                "selected_hour_branch": "Zi",
+                "selected_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+                "life_palace": "Wei",
+                "life_palace_major_stars": [
+                  "TianLiang"
+                ],
+                "selected_anchor_stars": [
+                  "TianLiang"
+                ]
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "0b412602e1ed8099f0f656c25a82422c150aa6485012fe85c520b277503c82f2"
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 3,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 3,
+        "source_all_policy_invariant_14star_state": false,
+        "source_all_policy_invariant_four_anchor_status_only": false,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "93642d9c15f24bfc7bbc59b7f766f7167ae843a185384f3c5698bb26b7f5ea3b": {
+            "reference_calendar_day": "1965-06-30",
+            "source_hour_Earthly_Branch": "Zi",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 1965,
+            "lunar_month": 6,
+            "lunar_day": 2,
+            "source_is_leap_month": false,
+            "life_palace": "Wei",
+            "body_palace": "Wei",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TianXiang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "9aba0b8dd61fd422eef44141cb1e33c11f1e59ff83031ec005bfc6360699ea72",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "f1cbd66800f511fd939c669c09b3a0ad70c9eb9219c0feded2f8012a0f86eece": {
+            "reference_calendar_day": "1965-07-01",
+            "source_hour_Earthly_Branch": "Chou",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 1965,
+            "lunar_month": 6,
+            "lunar_day": 3,
+            "source_is_leap_month": false,
+            "life_palace": "Wu",
+            "body_palace": "Shen",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "LianZhen",
+              "TianXiang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "LianZhen"
+            ],
+            "strict_methodological_source_trait_status": "ABSTAIN_OTHER_MAJOR_STAR_CONJUNCTION_UNRESOLVED",
+            "full_14_major_star_layout_sha256": "e62a43b3f0a03b8ba762ba84a15634d2bfbf828dcb1e68aa0d506e868a5b03b0",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "0b412602e1ed8099f0f656c25a82422c150aa6485012fe85c520b277503c82f2": {
+            "reference_calendar_day": "1965-07-01",
+            "source_hour_Earthly_Branch": "Zi",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 1965,
+            "lunar_month": 6,
+            "lunar_day": 3,
+            "source_is_leap_month": false,
+            "life_palace": "Wei",
+            "body_palace": "Wei",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TianLiang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [
+              "TianLiang"
+            ],
+            "strict_methodological_source_trait_status": "SOURCE_ONLY_SINGLE_STAR_LAYOUT_NOT_PREDICTIVE_VALIDITY",
+            "full_14_major_star_layout_sha256": "e62a43b3f0a03b8ba762ba84a15634d2bfbf828dcb1e68aa0d506e868a5b03b0",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      },
+      {
+        "case_id": "SYNTH_NY_2026_DST_FOLD_UTC_INSTANT",
+        "start_UTC": "2026-11-01T05:59:00+00:00",
+        "end_UTC": "2026-11-01T06:01:00+00:00",
+        "fictional_iana_zone": "America/New_York",
+        "fictional_explicit_east_longitude": "-74",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 121,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-11-01T05:59:00+00:00",
+                "end_UTC_inclusive": "2026-11-01T06:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-11-01T01:59:00",
+                "last_local_wall_clock": "2026-11-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400,
+                  -18000
+                ],
+                "zone_fold_values": [
+                  0,
+                  1
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb",
+                "source_calendar_day": "2026-11-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb"
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-11-01T05:59:00+00:00",
+                "end_UTC_inclusive": "2026-11-01T06:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-11-01T01:59:00",
+                "last_local_wall_clock": "2026-11-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400,
+                  -18000
+                ],
+                "zone_fold_values": [
+                  0,
+                  1
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb",
+                "source_calendar_day": "2026-11-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-11-01T05:59:00+00:00",
+                "end_UTC_inclusive": "2026-11-01T06:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-11-01T01:59:00",
+                "last_local_wall_clock": "2026-11-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400,
+                  -18000
+                ],
+                "zone_fold_values": [
+                  0,
+                  1
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb",
+                "source_calendar_day": "2026-11-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2026-11-01T05:59:00+00:00",
+                "end_UTC_inclusive": "2026-11-01T06:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2026-11-01T01:59:00",
+                "last_local_wall_clock": "2026-11-01T01:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  -14400,
+                  -18000
+                ],
+                "zone_fold_values": [
+                  0,
+                  1
+                ],
+                "time_zone_TZif_SHA256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+                "source_chart_state_SHA256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb",
+                "source_calendar_day": "2026-11-01",
+                "selected_hour_branch": "Chou",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb"
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 1,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 1,
+        "source_all_policy_invariant_14star_state": true,
+        "source_all_policy_invariant_four_anchor_status_only": true,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "9104a79588fcb14e51f1253adc5e989cf50b25bc7277fa76d77f673c268989eb": {
+            "reference_calendar_day": "2026-11-01",
+            "source_hour_Earthly_Branch": "Chou",
+            "original_HKO_source_quality": "TWO_PINNED_SOFTWARE_CALENDARS_ONLY",
+            "lunar_year": 2026,
+            "lunar_month": 9,
+            "lunar_day": 23,
+            "source_is_leap_month": false,
+            "life_palace": "You",
+            "body_palace": "Hai",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "e01dd2eeff92bed0b75ff641ed2c200e35a07139719f4d0ca0b1dbcde1e85d31",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      },
+      {
+        "case_id": "SYNTH_HK_2023_LEAP_HOUR_BOUNDARY",
+        "start_UTC": "2023-03-22T04:59:00+00:00",
+        "end_UTC": "2023-03-22T05:01:00+00:00",
+        "fictional_iana_zone": "Asia/Hong_Kong",
+        "fictional_explicit_east_longitude": "114.17",
+        "all_birth_instants_fictitious": true,
+        "interval_exact_only_at_declared_integer_second_resolution": true,
+        "total_original_UTC_integer_second_inclusive_samples": 121,
+        "all_four_reference_day_hour_policies_enumerated": true,
+        "source_lunar_leap_school_predeclared": "transmitted_quan_shu_as_next",
+        "source_failing_2057_date_not_replaced_by_another_calendar_school": true,
+        "original_HKO_source_sample_dates_not_human_predictions": true,
+        "four_calendar_hour_policy_runs": [
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2023-03-22T04:59:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T04:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2023-03-22T12:59:00",
+                "last_local_wall_clock": "2023-03-22T12:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Xu",
+                "life_palace_major_stars": [
+                  "TaiYang"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "2023-03-22T05:00:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T05:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2023-03-22T13:00:00",
+                "last_local_wall_clock": "2023-03-22T13:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "6eb317832594325678cce5afaf9c54c6674e585467144d272b9b3c865b25c848",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "same_instant_fixed_utc_plus_8_calendar_day",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2023-03-22T04:59:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T05:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2023-03-22T12:59:00",
+                "last_local_wall_clock": "2023-03-22T13:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Xu",
+                "life_palace_major_stars": [
+                  "TaiYang"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285"
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "recorded_local_civil_clock",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 2,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2023-03-22T04:59:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T04:59:59+00:00",
+                "integer_second_samples": 60,
+                "first_local_wall_clock": "2023-03-22T12:59:00",
+                "last_local_wall_clock": "2023-03-22T12:59:59",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Xu",
+                "life_palace_major_stars": [
+                  "TaiYang"
+                ],
+                "selected_anchor_stars": []
+              },
+              {
+                "start_UTC_inclusive": "2023-03-22T05:00:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T05:01:00+00:00",
+                "integer_second_samples": 61,
+                "first_local_wall_clock": "2023-03-22T13:00:00",
+                "last_local_wall_clock": "2023-03-22T13:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "6eb317832594325678cce5afaf9c54c6674e585467144d272b9b3c865b25c848",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wei",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "You",
+                "life_palace_major_stars": [],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": null
+          },
+          {
+            "calendar_reference_day_policy": "birth_site_civil_date_hko_lookup",
+            "hour_Earthly_branch_policy": "local_mean_solar_longitude",
+            "source_lunar_leap_policy": "transmitted_quan_shu_as_next",
+            "interval_integer_second_samples": 121,
+            "distinct_natal_source_states": 1,
+            "source_chart_segment_states": [
+              {
+                "start_UTC_inclusive": "2023-03-22T04:59:00+00:00",
+                "end_UTC_inclusive": "2023-03-22T05:01:00+00:00",
+                "integer_second_samples": 121,
+                "first_local_wall_clock": "2023-03-22T12:59:00",
+                "last_local_wall_clock": "2023-03-22T13:01:00",
+                "zone_UTC_offset_seconds_values": [
+                  28800
+                ],
+                "zone_fold_values": [
+                  0
+                ],
+                "time_zone_TZif_SHA256": "6a5fcee243e5ab92698242d88c4699ceb7208a22ee97d342d11e41ebd2555a17",
+                "source_chart_state_SHA256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285",
+                "source_calendar_day": "2023-03-22",
+                "selected_hour_branch": "Wu",
+                "selected_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+                "life_palace": "Xu",
+                "life_palace_major_stars": [
+                  "TaiYang"
+                ],
+                "selected_anchor_stars": []
+              }
+            ],
+            "policy_invariant_source_chart_sha256": "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285"
+          }
+        ],
+        "distinct_source_calendar_hour_life_full14_states_across_all_seconds_policies": 2,
+        "distinct_four_candidate_anchor_sets_across_all_seconds_policies": 1,
+        "source_all_policy_invariant_14star_state": false,
+        "source_all_policy_invariant_four_anchor_status_only": true,
+        "robust_behavioral_prediction_from_source": false,
+        "any_real_person_birth_record": false,
+        "all_original_unique_source_state_details": {
+          "0b5c7175eebc94d68e140358b61438d8e8d8b4b3385578f1c9ab3ddddf61d285": {
+            "reference_calendar_day": "2023-03-22",
+            "source_hour_Earthly_Branch": "Wu",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2023,
+            "lunar_month": 2,
+            "lunar_day": 1,
+            "source_is_leap_month": true,
+            "life_palace": "Xu",
+            "body_palace": "Xu",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [
+              "TaiYang"
+            ],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "9aba0b8dd61fd422eef44141cb1e33c11f1e59ff83031ec005bfc6360699ea72",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          },
+          "6eb317832594325678cce5afaf9c54c6674e585467144d272b9b3c865b25c848": {
+            "reference_calendar_day": "2023-03-22",
+            "source_hour_Earthly_Branch": "Wei",
+            "original_HKO_source_quality": "ORIGINAL_HKO_SOURCE_SHA_PLUS_TWO_PINNED_SOFTWARE_CALENDARS",
+            "lunar_year": 2023,
+            "lunar_month": 2,
+            "lunar_day": 1,
+            "source_is_leap_month": true,
+            "life_palace": "You",
+            "body_palace": "Hai",
+            "original_source_status": "original_transcription_only",
+            "life_palace_major_stars": [],
+            "selected_four_provisional_behavior_anchor_stars": [],
+            "strict_methodological_source_trait_status": "ABSTAIN_NO_SELECTED_STAR_NOT_TRAIT_ABSENCE",
+            "full_14_major_star_layout_sha256": "e01dd2eeff92bed0b75ff641ed2c200e35a07139719f4d0ca0b1dbcde1e85d31",
+            "is_independent_birth_chart_empirical_truth": false,
+            "human_behavior_p_value_or_probability_available": false
+          }
+        },
+        "engine_footgun_note": "UTC instant is pre-known in this toy; an uncertain real wall clock may include multiple possible instants/DST folds not solved here."
+      }
+    ],
+    "disputed_original_calendar_interval_rejection": {
+      "case_id": "SYNTH_2057_DISPUTED_DUAL_LUNAR_CALENDAR",
+      "entire_uncertain_interval_rejected": true,
+      "reason_class": "CalendarParityError",
+      "reason": "Two calendar implementations disagree: 6tail=(2057, 8, 30, False), sxtwl=(2057, 9, 1, False)",
+      "rejected_instead_of_voting_on_calendar_school": true
+    },
+    "unique_source_calendar_hour_key_count": 18
+  },
+  "actual_human_chart_subjects": 0,
+  "real_blind_predictive_outcomes": 0,
+  "astrological_runtime_rule_promotions": 0
+}
