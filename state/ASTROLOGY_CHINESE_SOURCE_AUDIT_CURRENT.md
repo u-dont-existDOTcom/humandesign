@@ -1,3 +1,9 @@
+# Chinese V15 — next four Zi Wei Life-palace auxiliary source profiles
+
+**54 new historical source-only annotations ZWD-R0587–ZWD-R0640**, covering Lu Cun 14, Kui Yue 6, Qing Yang 17 and Tuo Luo 16 literal Wikitext lines plus a single following Huo Xing navigation marker. Original Qing Yang duplicates a male-life heading; Tuo Luo female verse lacks opening poem markup; Kui Yue has combined source verse. No fabricated corrections. **BaZi210 + Zi Wei640 =850** Chinese source-only annotations; source Life-palace remains PARTIAL. The separate accepted Western B07bh Lilly13271 + Ptolemy1066=14337 belongs to a different branch, not this V15 index. Next **ZWD-R0641 火星 cp33783** and **BZI-R0211 Di Tian Sui section19**. Human blind validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese V14 original-source checkpoint
+
 # Chinese V14 — first four auxiliary Zi Wei Life-palace star profiles
 
 **58 source-only historical notes ZWD-R0529–ZWD-R0586**: WenChang16 WenQu18 ZuoFu13 YouBi10 exact original text lines plus one LuCun next-source prefix only. Source Wikitext oldid1963110 has exact UTF8 quote codepoint/byte offsets and hashes, but lacks separate palace-grade rows for ZuoFu/YouBi and dedicated YouBi female poem heading. Never fabricate. The source's other auxiliary profiles remain open to original Brothers heading cp37269, old Ming printing unverified. **Chinese BaZi210 +ZiWei586 =796** historical source notes. Separate Western B07bg Lilly13236 + Ptolemy1066 gives aggregate **15,098** documentary annotations across independent branches; **not** real-person prediction hits. Next **ZWD-R0587 LuCun**, **BZI-R0211 Di Tian Sui**. Independent human blind tests **0**, runtime promotions **0**.
