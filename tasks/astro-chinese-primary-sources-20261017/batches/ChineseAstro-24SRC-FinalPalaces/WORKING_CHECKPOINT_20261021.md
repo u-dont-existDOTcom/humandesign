@@ -1,0 +1,11 @@
+# Chinese Zi Wei V24 — remaining Volume II source checkpoint (2026-10-21)
+
+Owner's long-range scientific astrology goal OPEN: credible original Western/Chinese books, independently accurate natal calendar/chart engines, and genuinely preregistered forward/reverse tests on untouched consenting humans versus matched-chart decoys and nonastrology. Historical text counts are not human success.
+
+Isolated writer `research/astro-chinese-v24-ziwei-career-original-source-20261021`, exact accepted V23 parent commit `37a2e42d4572aaeb6fae3d41c34df4947f87bf5b` and source index SHA256 `0bc5836d92c332a458a7d4a74dbb25488705344aa38df256dc721c6c5a673a0e`. Prior Chinese 210 BaZi+936 Zi Wei=1146 historic source lines; first new Zi Wei ZWD-R0937. No Western or BaZi branch mutated.
+
+Pinned modern Chinese Wikitext `紫微斗數全書 卷二` oldid1963110 SHA256 `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72` (106736 bytes), NOT authenticated original Ming woodblock. Four remaining sections within that one online volume: Career 官禄 cp44429–45743 (38 nonmarkup source lines, including five labelled poems and five verse lines), Estate 田宅 cp45743–46678 (24 lines), Fortune 福德 cp46678–47640 (28 lines), Parents 父母 cp47640–48890 (**33 historical text lines plus two Wikitext-only terminal metadata lines**). Source-historical candidate 38+24+28+33=123 literal lines ZWD-R0937–R1059, next ZWD-R1060 only after acceptance. Every source segment includes an original poem opener and closer. Terminal `</onlyinclude>` and `{{footer|...}}` are site markup, not astrology claims, but must be byte-preserved in exact source excerpt.
+
+Some passages physically continue previous conditionals, and poems use headings independent of prose grammar. Keep source line structure and provenance intact. Historic claims about occupational class and military rank, property, wellbeing, parental death and filial/adoption norms are NOT validated human outcomes, medical, employment, estate or relationship advice.
+
+Next steps: reproducible source freezer with exact quote Unicode/UTF8 SHA, physical-line role tags and metadata exclusion; independent source tests and cold archive; immutable guarded Chinese V24 index and remote Git SHA plus handoff. No blind real-person predictive validations or runtime rule promotions.
