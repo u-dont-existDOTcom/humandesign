@@ -1,0 +1,144 @@
+{
+  "schema": "TIBETAN_T12_NATAL_SECTOR_CHILD_TYPES_AND_FOUR_GENERATIONS_V1",
+  "status": "symbolic_source_classification_not_empirically_tested",
+  "batch": "T12",
+  "additional_historical_source_notes": 0,
+  "derived_from_ids": [
+    "TIB-R0145",
+    "TIB-R0155",
+    "TIB-R0162"
+  ],
+  "source": "Gyurme Dorje 2001's translation/analysis of White Beryl and Further Secret Point",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_anchors": {
+    "sector_pairs": "PDF pp179–180 / printed178–179, White Beryl ff214b–217a",
+    "child_types": "PDF p190 / printed189, Plate 16 fig8, White Beryl ff219b–221a",
+    "four_generations": "PDF p191 / printed190, Plate 6 fig15, White Beryl f227a/b"
+  },
+  "sector_polarity_pairs": [
+    {
+      "sectors": [
+        "clothing",
+        "growth"
+      ],
+      "grade": "best_of_favorable",
+      "polarity": "favorable"
+    },
+    {
+      "sectors": [
+        "birth",
+        "work"
+      ],
+      "grade": "middle_of_favorable",
+      "polarity": "favorable"
+    },
+    {
+      "sectors": [
+        "embryo",
+        "ablution"
+      ],
+      "grade": "least_of_favorable",
+      "polarity": "favorable"
+    },
+    {
+      "sectors": [
+        "conception",
+        "foetus"
+      ],
+      "grade": "best_of_unfavorable",
+      "polarity": "unfavorable"
+    },
+    {
+      "sectors": [
+        "tomb",
+        "ill_health"
+      ],
+      "grade": "middle_of_unfavorable",
+      "polarity": "unfavorable"
+    },
+    {
+      "sectors": [
+        "death",
+        "decline"
+      ],
+      "grade": "worst_of_unfavorable",
+      "polarity": "unfavorable"
+    }
+  ],
+  "child_21_model_types": {
+    "superior": [
+      "naturally_born_superior",
+      "fortunate_family",
+      "spontaneously_achieved_merit",
+      "sustains_elements",
+      "family_with_auspicious_coincidences",
+      "associates_with_glorious_gods_or_spirits",
+      "long_life_with_intelligence"
+    ],
+    "average": [
+      "obtains_own_lifespan",
+      "obtains_own_body",
+      "glorious_father",
+      "supportive_mother",
+      "athletic_prowess",
+      "material_wealth",
+      "signs_of_support"
+    ],
+    "inferior": [
+      "beset_by_butchers_and_malevolent_forces",
+      "reverses_into_cyclic_existence",
+      "adverse_place_of_birth",
+      "spear_wound_and_ogress_claw_marks",
+      "father_affected_by_ill_omen",
+      "mother_affected_by_ill_omen",
+      "own_life_vanquished_by_ogre"
+    ]
+  },
+  "four_generation_destiny_examples": [
+    {
+      "grandfather": "wood",
+      "father": "fire",
+      "son": "earth",
+      "grandson": "earth",
+      "claim": "prosperity_and_long_life"
+    },
+    {
+      "grandfather": "water",
+      "father": "water",
+      "son": "earth",
+      "grandson": "earth",
+      "claim": "fluctuating_fortune_family_sustained_by_one"
+    },
+    {
+      "grandfather": "fire",
+      "father": "wood",
+      "son": "water",
+      "grandson": "iron",
+      "claim": "family_line_discontinuity_within_five_generations"
+    },
+    {
+      "grandfather": "earth",
+      "father": "water",
+      "son": "fire",
+      "grandson": "iron",
+      "claim": "family_loss_in_early_childhood"
+    },
+    {
+      "grandfather": "water",
+      "father": "earth",
+      "son": "wood",
+      "grandson": "iron",
+      "claim": "hardship_and_eventual_family_line_discontinuity"
+    }
+  ],
+  "warnings": [
+    "Child labels are shortened English descriptors; do not treat them as modern diagnoses or statistical personality classes.",
+    "Some superior/inferior child categories include parental data and religious signs unavailable in birth charts.",
+    "Birth and conception timing under the lunar/tibetan system must be independently calculated before applying any literal rule.",
+    "The 12 sector labels and six pairs are source-named classifications; map to time/animal/element rules only after verifying original figure.",
+    "The four-generation family examples are ordered, not commutative; only independent verified birth-year elemental inputs qualify.",
+    "No human case is documented by these five table examples or the 21 symbolic categories."
+  ],
+  "actual_human_validation": 0,
+  "model_promotions": 0
+}
