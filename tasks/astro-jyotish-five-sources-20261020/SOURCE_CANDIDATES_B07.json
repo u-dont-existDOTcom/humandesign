@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B07",
+  "status": "SOURCE_ONLY_NOT_REVERSE_MATCH_VALIDATED",
+  "records": [
+    {
+      "id": "B07-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch48 sloka1, PDF129",
+      "domain": "lost_horoscope_horary_reconstruction",
+      "paraphrase": "An unknown birth or conception time is proposed to be recovered through an astrology chart cast at the time of the question.",
+      "method_class": "method_basis",
+      "limitations": "Distinct from natal forward prediction from independently recorded birth data.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch48 sloka2, PDF129",
+      "domain": "ten_vargas_used_for_recovery",
+      "paraphrase": "Ten divisional chart positions are enlisted to infer missing ascendant/birth parameters.",
+      "method_class": "historical_method",
+      "limitations": "No unique exact-time inversion shown by this sentence alone.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-003",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch48 slokas3-49, PDF129-131",
+      "domain": "twelve_rising_sign_phenotype_catalogue",
+      "paraphrase": "The chapter gives extensive physical, behavioral, familial and vocational descriptors for each of twelve possible rising signs.",
+      "method_class": "reverse_identity_descriptors",
+      "limitations": "Scoring must penalize broad multiple traits, contradictions, and self-reported observations already used to infer sign.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-004",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch48 Aquarius rising passage, PDF131, around slokas42-45",
+      "domain": "school_disagreement_aquarius",
+      "paraphrase": "The English rendition contrasts Satyacharya and Yavana negativity toward Aquarius or its Vargas with Chanakya's dissent.",
+      "method_class": "school_variant",
+      "limitations": "Source preserves disagreement, not majority vote predictive validation.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch48 final paragraph, PDF131",
+      "domain": "ascending_sign_strength_modifier",
+      "paraphrase": "Strong ascendant sign or strong ascendant lord is stated to make sign-level effects stronger.",
+      "method_class": "strength_condition",
+      "limitations": "Additional freedom unless strength computation and threshold fixed before human outcomes.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-006",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch49 slokas1-24, PDF131-132",
+      "domain": "hora_24_class_reverse_matching",
+      "paraphrase": "First and second Hora within each of twelve ascendants receive different body/behavior predictions, creating 24 finer categories.",
+      "method_class": "subdivision_classifier",
+      "limitations": "A broad catalogue of traits is not an identification accuracy score.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-007",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch50 slokas1-36, PDF133-135",
+      "domain": "decanate_36_class_reverse_matching",
+      "paraphrase": "First/second/third decanates of the twelve signs are separately described with physical, personal and wealth traits.",
+      "method_class": "subdivision_classifier",
+      "limitations": "Many heterogeneous outcome adjectives; modern blinded scoring needs a frozen option-level mapping.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch51 slokas1-109, PDF135-140",
+      "domain": "navamsa_108_class_reverse_matching",
+      "paraphrase": "The work catalogs traits for nine Navamsas of each of twelve rising signs, including body measurements, personal disposition, roles and preferences.",
+      "method_class": "high_flexibility_subdivision_classifier",
+      "limitations": "108 small classes and many adjectives increase overfitting opportunities; precise 3°20' boundaries and uncertainty critical.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-009",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch51 sloka110, PDF140",
+      "domain": "generalization_to_unlisted_vargas",
+      "paraphrase": "The chapter says sign-level meanings also apply to D12 and Saptamsa-level interpretations can substitute for several other unlisted divisions.",
+      "method_class": "interpretive_rule_expansion",
+      "limitations": "This broadens post-hoc choices; cannot be implemented as universal substitution without defining rule scope and conflicts.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-010",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 sloka1, PDF140",
+      "domain": "query_lagna_half_sign_natal_solar_course",
+      "paraphrase": "A horary ascendant within its first versus last 15° is used to assign the native's northern or southern solar course at birth.",
+      "method_class": "reverse_prediction_from_query",
+      "limitations": "Independent source text check needed for boundary equality at exactly 15°.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-011",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 slokas2-3, PDF140-141",
+      "domain": "season_inference_and_ayanam_conflict_swaps",
+      "paraphrase": "Season at birth is assigned from strongest horary ascendant occupant or its decanate ruler; if solar-course/season disagree, some planet assignments are exchanged.",
+      "method_class": "conflict_repair",
+      "limitations": "The text offers an explicit override; must freeze the exact conflict test and priority.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-012",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 slokas4-9, PDF141",
+      "domain": "moon_sign_ascendant_multiple_recovery_routes",
+      "paraphrase": "The section proposes natal Moon/Ascendant via horary 1st/5th/9th strength, natal Moon's sign, a person's touched body part, or geometrical reflected distance.",
+      "method_class": "multiple_alternative_reverse_estimators",
+      "limitations": "Alternative paths must be evaluated separately, not cherry-picked based on the known birth chart.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-013",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 slokas10-11, PDF141",
+      "domain": "querent_posture_infers_lagna",
+      "paraphrase": "Person standing, lying down, seated or rising is used to choose 1st/4th/7th/10th sign from horary ascendant as natal ascendant.",
+      "method_class": "behavior_at_query_as_predictor",
+      "limitations": "Requires prospective video/observation of posture at independently timestamped query; not birth-derived forward prediction.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-014",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 sloka12, PDF141",
+      "domain": "given_name_matra_shadow_nakshatra",
+      "paraphrase": "Name given by parents, phonetic matras and measured shadow length are transformed into a proposed birth nakshatra.",
+      "method_class": "name_and_live_environment_input",
+      "limitations": "Name standardization, language, pronunciation and shadow measurement introduce unrecorded inputs; formula must be deterministic.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-015",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 slokas13-15, PDF141",
+      "domain": "degree_planet_multiplier_adjust_plus_minus_nine",
+      "paraphrase": "An alternative recovery method multiplies horary ascendant longitude by sign- and occupant-dependent factors, then uses different divisors for birth year/season/tithi/navamsa/time; permits adding or subtracting nine for anomalous output.",
+      "method_class": "adjustable_arithmetic_recipe",
+      "limitations": "The 'anomalistic answers' correction creates ex-post flexibility unless exact admission and sign of correction are predeclared.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-016",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 sloka16, PDF141",
+      "domain": "source_self_acknowledged_ambiguity",
+      "paraphrase": "The author reports that the lost-horoscope rules attributed to Yavana and Bhadasana contain ambiguities and asks the student to exercise judgment.",
+      "method_class": "source_disclosed_under_specification",
+      "limitations": "Keep an explicit source-level unresolved state: do not fill the gaps through personality fit.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-017",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch52 slokas17-21, PDF141",
+      "domain": "independent_moon_based_recovery",
+      "paraphrase": "Second rectification path uses horary Moon's sign, daylight category, degrees and sign multiplication to infer natal Moon/nakshatra, including plus/minus-nine name/count adjustment.",
+      "method_class": "multiple_recovery_method",
+      "limitations": "Variant choice, special Pisces condition and sequence must be fixed before tests.",
+      "source_layer": "English compilation of traditional slokas",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-018",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Section Horário Desconhecido, cp1252 lines5492-5494",
+      "domain": "missing_birth_parameters_from_prashna",
+      "paraphrase": "The Portuguese-translated Parashara dialogue proposes to reconstruct unknown year/season/month/tithi/star/ascendant and divisional details from a Prashna ascendant.",
+      "method_class": "shared_textual_reverse_method",
+      "limitations": "Second-hand Portuguese translation: a parallel tradition, not independent observed success.",
+      "source_layer": "Second-hand Portuguese translation",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-019",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Horário Desconhecido, cp1252 lines5496-5500",
+      "domain": "ayanam_ritu_month_decans_sun_interpolation",
+      "paraphrase": "Rasi D12 of horary ascendant is linked with birth-year Jupiter; first/second Hora to solar course, decanate ruler to birth season, with swaps if contradictory.",
+      "method_class": "historical_computation_with_overrides",
+      "limitations": "Compare with Saravali Ch52.1-3; similar formulations may share textual source; do not multiply witnesses.",
+      "source_layer": "Second-hand Portuguese translation",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-020",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Horário Desconhecido, cp1252 line5502",
+      "domain": "jupiter_cycle_age_disambiguation",
+      "paraphrase": "The subject's approximate age and multiples of Jupiter's 12-year cycle are used to select a candidate birth year.",
+      "method_class": "personal_input_age",
+      "limitations": "The method is not a blind recovery from a natal chart; it explicitly consumes outside age information.",
+      "source_layer": "Second-hand Portuguese translation",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-021",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Horário Desconhecido, cp1252 lines5504-5506",
+      "domain": "prashna_to_istakal_solar_rate_inversion",
+      "paraphrase": "After estimating natal season/day, the solar longitude difference and solar motion in kalas are used to reconstruct elapsed local time relative to sunrise.",
+      "method_class": "astronomical_time_reconstruction",
+      "limitations": "Exact original Sanskrit astronomical definitions, unit conversion and boundary assumptions unresolved.",
+      "source_layer": "Second-hand Portuguese translation",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-022",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya II sloka23, printed p36-37 / PDF454-455",
+      "domain": "planetary_lords_of_six_seasons",
+      "paraphrase": "The ancient translated sloka gives planet rulers of the six Indian seasons associated with decanate assignment.",
+      "method_class": "source_computation_parallel",
+      "limitations": "Jataka printed verse and translator's lost-horoscope note must remain distinct.",
+      "source_layer": "Sastri edition: original verse versus editor comments flagged explicitly",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-023",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya II commentary to sloka23, printed p37 / PDF455",
+      "domain": "lost_horoscope_season_editorial_application",
+      "paraphrase": "Sastri's notes explain guessing birth season from the strongest planet in a query ascendant or decanate ruler if empty.",
+      "method_class": "translator_explanatory_method",
+      "limitations": "Commentary-layer formula parallels Saravali Ch52 and BPHS 5496–5500; not independent ancient verse or empirical confirmation.",
+      "source_layer": "Sastri edition: original verse versus editor comments flagged explicitly",
+      "prospective_validation": false
+    },
+    {
+      "id": "B07-024",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya II commentary to sloka23, printed p37-38 / PDF455-456",
+      "domain": "translator_western_progression_example",
+      "paraphrase": "Sastri adds his own example of progression/aspects and seasons when explaining the original Indian season rulers.",
+      "method_class": "editorial_cultural_cross_over",
+      "limitations": "An editor's progressions are not automatically part of Vaidyanatha's classical computational specification.",
+      "source_layer": "Sastri edition: original verse versus editor comments flagged explicitly",
+      "prospective_validation": false
+    }
+  ],
+  "records_count": 24,
+  "source_coverage": {
+    "saravali_chapters": [
+      48,
+      49,
+      50,
+      51,
+      52
+    ],
+    "parashara_unknown_birth_chapter": true,
+    "jataka_planet_season_sloka_and_editor_note": true
+  },
+  "model_boundary": {
+    "natal_forward": "Requires independent known DOB/time/place -> predicted answers",
+    "traditionally_rectified_horary": "Uses query-time sky plus age, name, posture, body part touched or shadow; reverse-estimation family",
+    "admission": "Must freeze distinct algorithms and all external observation inputs; do not use born-time truth to select alternatives."
+  },
+  "predictive_human_hits": 0
+}
