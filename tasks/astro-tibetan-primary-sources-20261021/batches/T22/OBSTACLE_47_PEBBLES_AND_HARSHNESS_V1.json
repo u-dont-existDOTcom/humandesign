@@ -1,0 +1,114 @@
+{
+  "schema": "TIBETAN_T22_OBSTACLE_YEAR_STRUCTURE_V1",
+  "batch": "T22",
+  "historical_note_increment": 0,
+  "source_ref": "TIB-R0209–0220",
+  "source": "Dorje 2001 White Beryl printed pp226–233/PDF227–234",
+  "pebbles": [
+    {
+      "class": "unchanging_base",
+      "count": 6
+    },
+    {
+      "class": "element_relational_tally",
+      "count": 24
+    },
+    {
+      "class": "four_force_prediction",
+      "count": 4
+    },
+    {
+      "class": "harshness",
+      "count": 7
+    },
+    {
+      "class": "numeric_square_obstacles",
+      "count": 4
+    },
+    {
+      "class": "multiple_of_nine_and_tomb_signs",
+      "count": 2
+    }
+  ],
+  "unchanging_factors": [
+    "present_year",
+    "logmen_year",
+    "current_trigram",
+    "current_mewa",
+    "growth_decline_sector",
+    "query_hour"
+  ],
+  "four_axes": [
+    "vitality",
+    "body",
+    "destiny",
+    "luck"
+  ],
+  "harshness_conditions": [
+    "natal_year_return",
+    "seventh_removed_adversarial_year",
+    "neighboring_year_same_destiny",
+    "trine_year_same_luck",
+    "ancestor_tomb_spirit_omen",
+    "spouses_same_current_trigram",
+    "natal_trigram_coincident_current_year"
+  ],
+  "logmen_sex_sectors": {
+    "male": {
+      "heaven_gate": "dog",
+      "earth_gate": "pig",
+      "count_direction": "forwards_from_tiger",
+      "initial_element_relation": "son_of_destiny"
+    },
+    "female": {
+      "heaven_gate": "dragon",
+      "earth_gate": "snake",
+      "count_direction": "backwards_from_monkey",
+      "initial_element_relation": "mother_of_destiny"
+    }
+  },
+  "logmen_four_relative_offsets": [
+    {
+      "label": "heavenly_lifeline",
+      "direction": "backwards",
+      "positions": 5
+    },
+    {
+      "label": "earthly_peg",
+      "direction": "forwards",
+      "positions": 5
+    },
+    {
+      "label": "heavenly_extension",
+      "direction": "backwards",
+      "positions": 8
+    },
+    {
+      "label": "earthly_extension",
+      "direction": "forwards",
+      "positions": 8
+    }
+  ],
+  "example_natal_year_returns": [
+    13,
+    25,
+    37,
+    49,
+    61,
+    73
+  ],
+  "example_seventh_removed_years": [
+    7,
+    19,
+    31,
+    43,
+    55
+  ],
+  "known_unknowns": [
+    "Sex-specific logmen element positions and inclusive/exclusive offset indexing need independent calculation study.",
+    "Unchanging pebbles refer to YEAR/TRIGRAM/MEWA/sector/CONSULTATION hour; it is a mixed natal plus moment-of-divination procedure.",
+    "Do not label paining or death claims medical forecasts.",
+    "When no parent/spouse/query information is available, do not fill with natal-year proxies."
+  ],
+  "human_predictions_validated": 0
+}
