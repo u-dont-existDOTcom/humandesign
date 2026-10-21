@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B41_JATAKA_RELOCATION_AND_FINANCIAL_SOURCE_CLAIMS",
+  "status": "OPEN_B42_CROSS_BOOK_MIGRATION_COMPARISON_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B41_20261021.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B42_20261021.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -134,14 +134,18 @@
     "CONTINUATION_HANDOFF_B40_20261021.md",
     "SOURCE_CANDIDATES_B41.json",
     "READING_NOTES_B41.md",
-    "CONTINUATION_HANDOFF_B41_20261021.md"
+    "CONTINUATION_HANDOFF_B41_20261021.md",
+    "SOURCE_CANDIDATES_B42.json",
+    "OVERSEAS_LIFE_EVENTS_CROSSWALK_B42.json",
+    "READING_NOTES_B42.md",
+    "CONTINUATION_HANDOFF_B42_20261021.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
     "verified_pdf_pages": 2138,
     "pdf_files": 4,
     "plain_text_files": 1,
-    "bibliographic_candidate_annotations": 426,
+    "bibliographic_candidate_annotations": 432,
     "saravali_ch20_conjunction_clauses": 47,
     "saravali_ch20_unique_planet_sets": 37,
     "saravali_ch20_duplicate_distinct_sets": 9,
@@ -337,16 +341,20 @@
       "Kalachakra_migration_time_and_duration",
       "debt_vs_wealth",
       "unexpected_treasure"
-    ]
+    ],
+    "b42_new_primary_source_annotations": 6,
+    "b42_distinct_observable_target_classes": 8,
+    "b38_b39_b40_retested_arithmetic_suite_passed": 19,
+    "real_human_outcomes_used": 0
   },
   "pending_actions": [
-    "426 primary-source documentary notes, zero independently validated real-person predictions and zero production model promotions.",
-    "B38/B39 exact aspects: 14 tests; B40 modern Jupiter conjectural correction: 5 tests, all pass and require explicit variant; never silently upgrade from Sanskrit.",
-    "B41 Jataka overseas relocation, duration, homeland wealth, debt, treasure etc are distinct measurable claims, not broad personality score.",
-    "Continue source-first research of five uploads with precise pages/verses and negative cases; original Sanskrit/modern Sastri translator notes separated.",
-    "Preserve parallel astrology reader, existing questionnaire, participant data, and model blinding; raw copyrighted translated books remain outside public GitHub."
+    "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
+    "19 arithmetic tests passed for B38/B39/B40; literal Sanskrit Jupiter discontinuity and Ernst Wilhelm editorial interpolation remain different versions.",
+    "B41 Jataka versus B42 Portuguese Parashara claims about foreign residence, settlement, income, nomadism, and planet-period travel are distinct tests; don't multiply one move as multiple successes.",
+    "Continue reading as original source material (not only a paraphrase) and verify high-leverage Sanskrit and numeric corrections; preserve true negatives.",
+    "Keep PR136 draft isolated and unmerged; copyrighted book bytes not publicly uploaded; do not touch concurrent astrology reader, original survey or participants."
   ],
-  "next_exact_source_frontier": "Follow compact B41 handoff, continue high-specificity source-first study of less deeply audited chapters, preserve source criticism and negative controls. No repetition of B01–B41 or retrospective personality matching.",
+  "next_exact_source_frontier": "Resume from compact B42 handoff. Continue deep source comparison in five original uploads beyond B01–B42, with original Sanskrit, negative cases, and deterministic calculation where feasible. Keep the modern Jupiter aspect alteration unselected and migration-event targets separate.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -357,7 +365,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B41 9 new verse-located source-only annotations and recovery handoff saved; remote PR path and full unique ID check remains.",
+    "note": "B42 source and handoff saved, all source IDs and changed paths require latest remote verification.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
