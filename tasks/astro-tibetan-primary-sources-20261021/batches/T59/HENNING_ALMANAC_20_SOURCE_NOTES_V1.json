@@ -1,0 +1,304 @@
+{
+  "schema": "TIBETAN_T59_HENNING_ALMANAC_SOURCE_NOTES_V1",
+  "source_id": "TIB-HENNING-2007",
+  "source_sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+  "source_work": "Edward Henning, Kalacakra and the Tibetan Calendar, 2007; owner-uploaded PDF; Chapter IV and Appendix I",
+  "batch": "T59",
+  "notes": [
+    {
+      "id": "TIB-R0523",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 221,
+      "printed_page": 201,
+      "rule_key": "whole_sign_ascendant",
+      "paraphrase": "Full/new moon planetary charts use twelve sign sectors and the whole rising zodiac sign as house one; not a quadrant-house model.",
+      "required_inputs": [
+        "rising_sign"
+      ],
+      "dependency_family": "HEN-LAGNA",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0524",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 221,
+      "printed_page": 201,
+      "rule_key": "full_new_planet_tables",
+      "paraphrase": "Almanacs list full/new moon planetary positions; Saturn is zero, Sun one, Rahu head eight and tail nine; intermediate days may require interpolation.",
+      "required_inputs": [
+        "monthly_planet_positions"
+      ],
+      "dependency_family": "HEN-PLANETS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0525",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 222,
+      "printed_page": 202,
+      "rule_key": "six_daily_numeric_groups",
+      "paraphrase": "Some daily boxes contain true weekday, daybreak Moon, tithi-end Sun, angular yoga, separately computed karaṇa-system Moon, and mean solar sign.",
+      "required_inputs": [
+        "tithi_and_planet_calculations"
+      ],
+      "dependency_family": "HEN-SIX-COLUMNS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0526",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 223,
+      "printed_page": 203,
+      "rule_key": "skipped_duplicated_day_boxes",
+      "paraphrase": "A skipped tithi has a box without a weekday name; a repeated tithi has two boxes and separate weekdays.",
+      "required_inputs": [
+        "calendar_tithi_mapping"
+      ],
+      "dependency_family": "HEN-CALENDAR-DAYS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0527",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 223,
+      "printed_page": 203,
+      "rule_key": "ten_elemental_yoga_definition",
+      "paraphrase": "Elemental yoga combines weekday element with lunar mansion element; separate from 27 angular yogas based on summed model longitudes.",
+      "required_inputs": [
+        "weekday_element",
+        "mansion_element"
+      ],
+      "dependency_family": "HEN-10-YOGAS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0528",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 224,
+      "printed_page": 204,
+      "rule_key": "ten_elemental_yoga_names",
+      "paraphrase": "Ten unordered element-pair categories among Earth, Water, Fire and Wind are named Siddhi, Amrita, Yauvana, Pragati, Sampanna, Balayukta, Alabha, Pratikula, Dahana and Marana.",
+      "required_inputs": [
+        "weekday_element",
+        "mansion_element"
+      ],
+      "dependency_family": "HEN-10-YOGAS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0529",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 224,
+      "printed_page": 204,
+      "rule_key": "28_other_weekday_mansion_yogas",
+      "paraphrase": "Henning separately reports a list of 28 weekday-and-mansion conjunctions; their complete named rule table is not reconstructed here.",
+      "required_inputs": [
+        "weekday",
+        "mansion",
+        "source_variant"
+      ],
+      "dependency_family": "HEN-28-YOGAS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0530",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 224,
+      "printed_page": 204,
+      "rule_key": "mansion_change_nadi",
+      "paraphrase": "Changes of lunar mansion within a day are indicated by a double-hour and one of five naḍī subunits; the day consists of sixty naḍī.",
+      "required_inputs": [
+        "model_moon_movement"
+      ],
+      "dependency_family": "HEN-MANSION-TIMES",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0531",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 225,
+      "printed_page": 205,
+      "rule_key": "Phugpa_dependent_links",
+      "paraphrase": "Phugpa twelve dependent-origination links are assigned to solar days from a mean solar definition point, adjusting positions for intervals of 28–32 days.",
+      "required_inputs": [
+        "mean_sun_definition_point"
+      ],
+      "dependency_family": "HEN-PHUGPA-LINKS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0532",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 226,
+      "printed_page": 206,
+      "rule_key": "Tsurphu_dependent_links",
+      "paraphrase": "Tsurphu assigns the same twelve dependent-origination links to lunar-day progression from day one, rather than using Phugpa solar-day assignment.",
+      "required_inputs": [
+        "Tsurphu_tithi"
+      ],
+      "dependency_family": "HEN-TSURPHU-LINKS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0533",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 227,
+      "printed_page": 207,
+      "rule_key": "lunar_animals_odd_even",
+      "paraphrase": "The first lunar day of odd-numbered months is Tiger and of even-numbered months Monkey; animals progress by lunar-day number even when calendar days repeat.",
+      "required_inputs": [
+        "lunar_month_and_tithi"
+      ],
+      "dependency_family": "HEN-LUNAR-ANIMALS",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0534",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 227,
+      "printed_page": 207,
+      "rule_key": "lunar_day_element",
+      "paraphrase": "First tithi element is the generative son of the month element; later tithis cycle without the double-element repetition of year/month signs.",
+      "required_inputs": [
+        "month_element",
+        "tithi"
+      ],
+      "dependency_family": "HEN-LUNAR-ELEMENT",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0535",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 227,
+      "printed_page": 207,
+      "rule_key": "first_lunar_trigram",
+      "paraphrase": "The first tithi trigram is Li for Tiger/Horse/Dog months, Zin for Hare/Sheep/Pig, Kham for Dragon/Monkey/Mouse, Dwa for Snake/Bird/Ox.",
+      "required_inputs": [
+        "month_animal",
+        "tithi"
+      ],
+      "dependency_family": "HEN-LUNAR-TRIGRAM",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0536",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 228,
+      "printed_page": 208,
+      "rule_key": "first_lunar_mewa",
+      "paraphrase": "First lunar-day mewa is White1 for Tiger/Snake/Monkey/Pig months, Green4 for Hare/Horse/Bird/Mouse, Red7 for Dragon/Sheep/Dog/Ox; it holds across repeated dates.",
+      "required_inputs": [
+        "month_animal",
+        "tithi"
+      ],
+      "dependency_family": "HEN-LUNAR-MEWA",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0537",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 228,
+      "printed_page": 208,
+      "rule_key": "civil_day_attributes_distinct",
+      "paraphrase": "Solar civil-day animal/element/trigram/mewa/mansion cycles follow integer day count rather than repeated or skipped tithi numbering.",
+      "required_inputs": [
+        "integer_civil_JDN"
+      ],
+      "dependency_family": "HEN-CIVIL-ATTRIBUTES",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0538",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 376,
+      "printed_page": 356,
+      "rule_key": "index_21_Abhijit_Sravana",
+      "paraphrase": "Appendix I lists Śravaṇa and Abhijit both at lunar mansion index21: 27-mansion Indian sources omit the former, Tibetan sources the latter.",
+      "required_inputs": [
+        "mansion_index",
+        "tradition"
+      ],
+      "dependency_family": "HEN-MANSION-21",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0539",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 377,
+      "printed_page": 357,
+      "rule_key": "weekday_four_elements",
+      "paraphrase": "Weekday elements are Saturday Earth, Sunday Fire, Monday Water, Tuesday Fire, Wednesday Water, Thursday Wind, Friday Earth.",
+      "required_inputs": [
+        "weekday_number"
+      ],
+      "dependency_family": "HEN-WEEK-ELEMENT",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0540",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 380,
+      "printed_page": 360,
+      "rule_key": "27_yoga_naming_shift",
+      "paraphrase": "Tsurphu starts its 27 angular-yoga names with Vaidhṛti at zero; Phugpa starts with Viṣkambha. This is a naming policy, not change in angular equation.",
+      "required_inputs": [
+        "yoga_index",
+        "calendar_tradition"
+      ],
+      "dependency_family": "HEN-ANGULAR-YOGA",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0541",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 380,
+      "printed_page": 360,
+      "rule_key": "four_fixed_seven_changing_karanas",
+      "paraphrase": "Four fixed karaṇas are Kintughna, Śakuni, Catuṣpada, Nāga; seven changing are Vava, Valava, Kaulava, Taitila, Gara, Vaṇija, Viṣṭi.",
+      "required_inputs": [
+        "half_tithi_position"
+      ],
+      "dependency_family": "HEN-KARANA",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0542",
+      "source_id": "TIB-HENNING-2007",
+      "pdf_page_1based": 381,
+      "printed_page": 361,
+      "rule_key": "half_tithi_karana_sequence",
+      "paraphrase": "Fixed karaṇa positions are H1, H58, H59, H60; the seven changing names repeat eight times over the 56 remaining half-tithi positions.",
+      "required_inputs": [
+        "half_position_H1_to_60"
+      ],
+      "dependency_family": "HEN-KARANA",
+      "human_outcome_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 20,
+  "first_id": "TIB-R0523",
+  "last_id": "TIB-R0542",
+  "source_status": "modern scholarly exposition and English table of traditional practices; no original Tibetan language collation",
+  "human_prediction_tests": 0,
+  "model_promotions": 0
+}

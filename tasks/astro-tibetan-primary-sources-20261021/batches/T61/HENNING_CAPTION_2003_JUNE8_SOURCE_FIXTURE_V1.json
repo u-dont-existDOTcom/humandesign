@@ -1,0 +1,42 @@
+{
+  "schema": "TIBETAN_T61_HENNING_P203_CAPTION_FIXTURE_V1",
+  "source": "Edward Henning (2007) Chapter IV, printed p203 / uploaded PDF one-based page223, embedded Lhasa almanac image",
+  "source_id": "TIB-HENNING-2007",
+  "source_pdf_sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+  "source_note_increment": 0,
+  "source_reuses": [
+    "TIB-R0525",
+    "TIB-R0526",
+    "TIB-R0537",
+    "TIB-R0540"
+  ],
+  "caption_directly_checked": {
+    "Gregorian_date": "2003-06-08",
+    "Tibetan_year": "Water Sheep",
+    "Tibetan_lunar_month": 4,
+    "Tibetan_lunar_day": 8,
+    "source_text_locus": "Illustration caption beneath daily box, English; scanned 2003 Tibetan digits/planetary entries not independently transcribed"
+  },
+  "derived_reconstruction_not_quoted_from_printed_table": {
+    "calendar_system": "Phugpa",
+    "epoch": 1987,
+    "anomaly_policy": "rounded",
+    "integer_JDN": 2452799,
+    "weekday": "Sunday",
+    "model_mansion_index": 10,
+    "model_angular_yoga_index": 13,
+    "model_elemental_yoga": "Pragati",
+    "Moon_mixed_radix_3": [
+      10,
+      9,
+      42
+    ],
+    "Yoga_mixed_radix_3": [
+      13,
+      16,
+      25
+    ]
+  },
+  "audit_boundary": "Only caption Gregorian↔year/month/tithi is an independently legible source parity check. Lower Tibetan-script handwritten almanac numeric columns have NOT been independently decoded and are not admitted as golden source numerics. The reconstructed mansion/yoga estimates are outputs of Janson/Henning code, NOT confirmed against the photograph.",
+  "human_prediction_tests": 0
+}
