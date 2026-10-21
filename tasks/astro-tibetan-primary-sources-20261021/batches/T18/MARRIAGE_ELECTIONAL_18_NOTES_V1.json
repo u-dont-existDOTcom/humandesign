@@ -1,0 +1,379 @@
+{
+  "schema": "ASTRO_TIBETAN_T18_MARRIAGE_ELECTIONAL_RULES_V1",
+  "batch": "T18",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Tibetan Elemental Divination Paintings (2001), White Beryl marriage pp210–223 (PDF211–224), embedded Moonbeams",
+  "source_notes": [
+    {
+      "id": "TIB-R0191",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 211,
+        "printed_page": 210,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "three-indispensable-marriage-sectors",
+      "paraphrase": "A triad of wedding-timing procedures is defined: destroying the enemy sector, adopting the wealth sector, and marrying within the same sector; each has separate animal/month/day/trigram considerations.",
+      "required_inputs": [
+        "bride_natal_year",
+        "wedding_year_month_day",
+        "partners_trigrams"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-THREE-SECTOR",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0192",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 211,
+        "printed_page": 210,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "five-enemy-sector-year-month-rules",
+      "paraphrase": "Five mother groups of the bride's animal-year or natal animal-month are matched to specific candidate auspicious wedding years/months; the two applications share one classification table.",
+      "required_inputs": [
+        "bride_year_animal",
+        "bride_natal_month_animal",
+        "candidate_wedding_year_month"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-ANIMAL-SECTOR",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0193",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 211,
+        "printed_page": 210,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "twelve-month-to-day-enemy-sector",
+      "paraphrase": "A 12-row lookup maps each bride natal animal-month to a proposed ideal wedding animal-day by the opposed sector (e.g., Tiger month to Monkey day).",
+      "required_inputs": [
+        "bride_natal_month_animal",
+        "candidate_wedding_day_animal"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-MONTH-DAY",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0194",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 212,
+        "printed_page": 211,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "four-trigram-weekday-groups",
+      "paraphrase": "Four bride-natal-trigram groups determine one proposed planet/weekday and current trigram for auspicious marriage timing (Saturn/Saturday, Jupiter/Thursday, Mars/Tuesday, Mercury/Wednesday).",
+      "required_inputs": [
+        "bride_natal_trigram",
+        "current_trigram",
+        "weekday"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-TRIGRAM-WEEKDAY",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0195",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 212,
+        "printed_page": 211,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "seventh-removed-year-wealth",
+      "paraphrase": "Marriage partners whose year-signs form a reciprocal seventh-removed relation are assigned a favorable wealth-and-children outcome; the same passage offers seasonally favorable marriage months by natal animal.",
+      "required_inputs": [
+        "both_natal_year_animals",
+        "wedding_season"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-SEVENTH-ASPECT",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0196",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 212,
+        "printed_page": 211,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "same-and-neighbor-animal-sign",
+      "paraphrase": "Same-animal couples have distinct predictions by specific animal, not a single generic compatibility rule; adjacent mouse/ox, tiger/hare, dragon/snake, horse/sheep, monkey/bird, dog/pig are classified via coincident destiny/body elements.",
+      "required_inputs": [
+        "two_natal_animal_signs",
+        "shared_element"
+      ],
+      "dependency_family": "TIB-MARRIAGE-SAME-NEIGHBOR",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0197",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 213,
+        "printed_page": 212,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "seventeen-nuptial-road-aspects",
+      "paraphrase": "The White Beryl nuptial-road divination describes seventeen calculation categories (date, trigrams, mewa, year/month/day/hour, planet/lunar mansion, directional and spiritual contexts, attendants, transportation and seat), versus three broad Moonbeams headings.",
+      "required_inputs": [
+        "wedding_time_location",
+        "birth_information",
+        "ritual_context"
+      ],
+      "dependency_family": "TIB-MARRIAGE-SEVENTEEN-ELECTIONAL",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0198",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 213,
+        "printed_page": 212,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "kham-yu-gendered-lunar-mansion-cycles",
+      "paraphrase": "The groom's fourteen-star constellation cycle progresses clockwise from Krttika to Visakha; the bride's progresses anticlockwise through fourteen from Anuradha to Bharani, using birth sign and age to assign wedding-day grades.",
+      "required_inputs": [
+        "groom_age",
+        "bride_age",
+        "birth_signs",
+        "weekday",
+        "lunar_constellations"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-KHAM-YU",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0199",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 214,
+        "printed_page": 213,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "twenty-unfortunate-ties",
+      "paraphrase": "Twenty unfavorable nuptial-tie types are enumerated, including claims combining the bride's natal elements, mother’s wedding-time elements, trigrams and mewa; the text proposes rituals, not independently documented reversals.",
+      "required_inputs": [
+        "bride_natal_chart",
+        "maternal_wedding_chart",
+        "departure_date_context"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TWENTY-TIES",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0200",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 219,
+        "printed_page": 218,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "bridal-number-and-spirits",
+      "paraphrase": "Nine numeric-square positions are paired with named bridal spirits to produce symbolic good or bad fortune categories for the bride’s departure; there is no independent statistical evidence in the table.",
+      "required_inputs": [
+        "departure_mewa",
+        "current_direction",
+        "named_spirit"
+      ],
+      "dependency_family": "TIB-MARRIAGE-BRIDAL-MEWA",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0201",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 220,
+        "printed_page": 219,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "same-year-sign-departure-ages",
+      "paraphrase": "A 12-row chart warns against bridal departure under the same sign as the bride's birth-year, specifying several alternative historical age-of-death and childlessness claims. These are not medical prognoses.",
+      "required_inputs": [
+        "bride_natal_animal",
+        "departure_animal_year",
+        "marriage_age"
+      ],
+      "dependency_family": "TIB-MARRIAGE-AGE-OMEN",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0202",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 220,
+        "printed_page": 219,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "three-season-marriage-ages",
+      "paraphrase": "The source groups natal year animals into first/middle/last seasonal quartets, assigning comparatively favorable or average marriage ages (first: 18/27; middle: 25/31; last: 24/15).",
+      "required_inputs": [
+        "bride_natal_year_animal",
+        "marriage_age",
+        "calendar_age_convention"
+      ],
+      "dependency_family": "TIB-MARRIAGE-SEASON-AGE",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0203",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 222,
+        "printed_page": 221,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "monthly-departure-dependence",
+      "paraphrase": "The timing procedure makes the claimed marital outcome depend on the bride's natal sign, groom's sign and the departure animal-month; multiple unfavorable series have different asserted affected people.",
+      "required_inputs": [
+        "both_natal_animal_signs",
+        "departure_month"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-DEPARTURE-MONTH",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0204",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 223,
+        "printed_page": 222,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "nuptial-days-and-weekdays",
+      "paraphrase": "Distinct traditional rules claim some numbered lunar days and planetary weekdays unfavorable while Thursdays/Fridays favorable and Monday moderate; these must not be reduced to an unqualified universal calendar rule.",
+      "required_inputs": [
+        "lunar_wedding_day",
+        "planetary_weekday",
+        "bride_natal_birth_day"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-DAY-WEEK",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0205",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 223,
+        "printed_page": 222,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "lunar-mansions-by-destiny-element",
+      "paraphrase": "The source distinguishes wedding departure lunar mansions to avoid from several favorable lunar mansions conditional on the bride's destiny element; planet/constellation rules overlap Indian-derived astrology.",
+      "required_inputs": [
+        "wedding_lunar_mansion",
+        "bride_destiny_element"
+      ],
+      "dependency_family": "TIB-ELECTIONAL-LUNAR-MANSION",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0206",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 223,
+        "printed_page": 222,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "ten-factors-summary",
+      "paraphrase": "Moonbeams summarizes a ten-factor electional method as year, mewa, trigram, growth sector, month, day, hour, planet, constellation and local spirit-lords.",
+      "required_inputs": [
+        "wedding_datetime",
+        "bride_natal_elements",
+        "ten_calendar_factors"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TEN-FACTORS",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0207",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 224,
+        "printed_page": 223,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "five-essential-wedding-officiants",
+      "paraphrase": "The source enumerates five attendants or roles and selects them according to their elemental relationships and year signs to the couple.",
+      "required_inputs": [
+        "attendants_birth_years",
+        "attendants_natal_elements",
+        "couple_birth_chart"
+      ],
+      "dependency_family": "TIB-MARRIAGE-ATTENDANTS",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    },
+    {
+      "id": "TIB-R0208",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 224,
+        "printed_page": 223,
+        "white_beryl_section": "Marriage, ff237b–247a; some Moonbeams f27a–27b"
+      },
+      "key": "transport-and-seat-divination",
+      "paraphrase": "The wedding transport and seat depend on bridal current trigram, natal elements and directional seat position; the prose and adjacent eight-column chart differ in the fourth trigram label (see T20).",
+      "required_inputs": [
+        "bride_current_trigram",
+        "transport",
+        "seat_direction",
+        "four_personal_elements"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TRANSPORT-SEAT",
+      "source_status": "English source testimony, no original Tibetan collation",
+      "human_predictive_validation": false,
+      "runtime_promoted": false
+    }
+  ],
+  "note_count": 18,
+  "range": "TIB-R0191–TIB-R0208",
+  "status": "HISTORICAL_TEXTUAL_PREDICATES_ONLY",
+  "warnings": [
+    "Marriage timing is electional, cannot be tested as birth-only personality prediction.",
+    "Some ceremonial customs are culturally contingent and should not be recommended as conduct.",
+    "Historical mortality claims from this text provide no reliable individualized risk estimate.",
+    "When tables give alternatives, preserve them separately and mark absent inputs unknown.",
+    "No human validation or runtime promotion established."
+  ],
+  "human_outcomes_scored": 0,
+  "model_promotions": 0,
+  "next_source_note": "TIB-R0209"
+}
