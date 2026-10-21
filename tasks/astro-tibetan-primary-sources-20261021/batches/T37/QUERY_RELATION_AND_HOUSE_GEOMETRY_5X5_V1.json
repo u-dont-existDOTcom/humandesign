@@ -1,0 +1,298 @@
+{
+  "schema": "TIBETAN_T37_QUERY_HOUR_SECTORS_HOUSE_GEOMETRY_V1",
+  "batch": "T37",
+  "source_id": "TIB-DORJE-2001",
+  "source_witness_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_witness": "Gyurme Dorje 2001 English Plate 10 fig6 (PDF283), Plate 21 fig7 (PDF289), White Beryl ff436a–438b",
+  "new_historical_notes": 0,
+  "source_notes_reused": [
+    "TIB-R0326",
+    "TIB-R0327",
+    "TIB-R0328",
+    "TIB-R0329",
+    "TIB-R0330",
+    "TIB-R0331",
+    "TIB-R0339"
+  ],
+  "sector_rules": [
+    {
+      "sector": "household",
+      "personal_axis": "vitality",
+      "comparison_axis": "consultation_hour_vitality"
+    },
+    {
+      "sector": "land",
+      "personal_axis": "destiny",
+      "comparison_axis": "consultation_hour_destiny"
+    },
+    {
+      "sector": "tomb",
+      "personal_axis": "luck",
+      "comparison_axis": "consultation_hour_luck"
+    }
+  ],
+  "relation_classes": [
+    "hour_inhibits_person",
+    "person_inhibits_hour",
+    "person_enhances_hour",
+    "hour_enhances_person",
+    "identity_wood",
+    "identity_fire",
+    "identity_water",
+    "identity_iron",
+    "identity_earth"
+  ],
+  "geometry_source_table_rows": [
+    {
+      "site_relative_position": "center",
+      "relation": "identity",
+      "per_element": [
+        {
+          "element": "wood",
+          "shape": "oblong",
+          "color": "unspecified",
+          "door_faces": [
+            "east",
+            "west"
+          ]
+        },
+        {
+          "element": "fire",
+          "shape": "triangular",
+          "color": "red",
+          "door_faces": [
+            "north"
+          ]
+        },
+        {
+          "element": "earth",
+          "shape": "square",
+          "color": "yellow",
+          "door_faces": [
+            "west"
+          ]
+        },
+        {
+          "element": "iron",
+          "shape": "semi_circular",
+          "color": "white",
+          "door_faces": [
+            "southwest"
+          ]
+        },
+        {
+          "element": "water",
+          "shape": "round",
+          "color": "blue",
+          "door_faces": [
+            "north"
+          ]
+        }
+      ]
+    },
+    {
+      "site_relative_position": "right",
+      "relation": "enemy",
+      "per_element": [
+        {
+          "element": "wood",
+          "shape": "semi_circular",
+          "color": "white",
+          "door_faces": [
+            "west",
+            "south"
+          ]
+        },
+        {
+          "element": "fire",
+          "shape": "round",
+          "color": "blue",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "earth",
+          "shape": "rectangular",
+          "color": "white",
+          "door_faces": [
+            "east"
+          ]
+        },
+        {
+          "element": "iron",
+          "shape": "rectangular",
+          "color": "red",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "water",
+          "shape": "rectangular",
+          "color": "yellow",
+          "door_faces": [
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "site_relative_position": "rear",
+      "relation": "mother",
+      "per_element": [
+        {
+          "element": "wood",
+          "shape": "round",
+          "color": "blue",
+          "door_faces": [
+            "north",
+            "southwest"
+          ]
+        },
+        {
+          "element": "fire",
+          "shape": "rectangular",
+          "color": "white",
+          "door_faces": [
+            "east",
+            "west"
+          ]
+        },
+        {
+          "element": "earth",
+          "shape": "rectangular",
+          "color": "red",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "iron",
+          "shape": "square",
+          "color": "yellow",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "water",
+          "shape": "round",
+          "color": "white",
+          "door_faces": [
+            "south"
+          ]
+        }
+      ]
+    },
+    {
+      "site_relative_position": "front",
+      "relation": "son",
+      "per_element": [
+        {
+          "element": "wood",
+          "shape": "square",
+          "color": "red",
+          "door_faces": [
+            "south",
+            "north"
+          ]
+        },
+        {
+          "element": "fire",
+          "shape": "square",
+          "color": "yellow",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "earth",
+          "shape": "semi_circular",
+          "color": "white",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "iron",
+          "shape": "round",
+          "color": "white",
+          "door_faces": [
+            "north"
+          ]
+        },
+        {
+          "element": "water",
+          "shape": "rectangular",
+          "color": "white",
+          "door_faces": [
+            "south"
+          ]
+        }
+      ]
+    },
+    {
+      "site_relative_position": "left",
+      "relation": "friend",
+      "per_element": [
+        {
+          "element": "wood",
+          "shape": "rectangular",
+          "color": "yellow",
+          "door_faces": [
+            "east",
+            "west"
+          ]
+        },
+        {
+          "element": "fire",
+          "shape": "semi_circular",
+          "color": "white",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "earth",
+          "shape": "round",
+          "color": "blue",
+          "door_faces": [
+            "north"
+          ]
+        },
+        {
+          "element": "iron",
+          "shape": "rectangular",
+          "color": "white",
+          "door_faces": [
+            "south"
+          ]
+        },
+        {
+          "element": "water",
+          "shape": "square",
+          "color": "red",
+          "door_faces": [
+            "east"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_inconsistencies_or_gaps": [
+    "The source does not prescribe that site-layout geometry is a scientifically beneficial construction plan.",
+    "'oblong' and 'rectangular' are kept as different English source labels; do not silently normalize.",
+    "The four inhibiting/enhancing relations reverse prediction direction, so no undirected relation label.",
+    "Household, land and tomb sectors use different personal elemental axes.",
+    "One row gives no explicit color for an oblong wood house; 'unspecified' is not a guessed color.",
+    "All geometry labels are documentary descriptions, not recommended alterations to buildings."
+  ],
+  "pdf_pages_1based": [
+    283,
+    289
+  ],
+  "visual_figure_review": true,
+  "real_human_prediction_tests": 0,
+  "model_promotions": 0
+}
