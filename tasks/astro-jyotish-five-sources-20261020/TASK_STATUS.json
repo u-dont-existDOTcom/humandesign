@@ -8,7 +8,7 @@
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "WHOLE_SIGN_GEOMETRIC_EMPTY_YOGAS_B35.json",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B35_20261021.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -103,7 +103,9 @@
     "WHOLE_SIGN_GEOMETRIC_EMPTY_YOGAS_B35.json",
     "SOURCE_CANDIDATES_B35.json",
     "whole_sign_geometry_B35.py",
-    "test_whole_sign_geometry_B35.py"
+    "test_whole_sign_geometry_B35.py",
+    "CONTINUATION_HANDOFF_B35_20261021.md",
+    "READING_NOTES_B35.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -277,9 +279,9 @@
     "git_url": "https://github.com/u-dont-existDOTcom/humandesign/pull/136",
     "base_branch": "research/astro-b07bb-clxxix-parents-source-20261020",
     "status": "OPEN_DRAFT_NOT_MERGED",
-    "changed_files_verified": null,
+    "changed_files_verified": 102,
     "all_changed_paths_within_task_directory": true,
-    "note": "B33 source and status now saved; final PR file count and readback pending.",
+    "note": "2026-10-21 verified draft PR #136, 102/102 changed paths isolated; 21 source batches sum 407, each batch locally unique, source IDs match five source manifest entries.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
