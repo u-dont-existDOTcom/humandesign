@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B39",
+  "artifact_type": "PRIMARY_SANSKRIT_PIECEWISE_SPECIAL_GRAHA_DRSHTI_AUDIT",
+  "status": "SOURCE_ONLY_NOT_NATAL_ENGINE",
+  "source_witnesses": [
+    {
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "CP1252 decoded Portuguese text lines2323–2343",
+      "layer": "Andre Kerr second-hand Portuguese from English",
+      "note": "Source headings explicitly separate Saturn (2327), Mars (2335), Jupiter (2343)."
+    },
+    {
+      "url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26",
+      "locator": "BPHS Chapter26 Sanskrit 10–12",
+      "layer": "Online Sanskrit transcription and new English interpretation; Sanskrit may share ancestor with other digitizations."
+    },
+    {
+      "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-26/",
+      "locator": "BPHS Sanskrit 26.10–12",
+      "layer": "Second digital text, translation/gloss is inconsistent on Jupiter 26.12; use Sanskrit wording as primary."
+    }
+  ],
+  "method": "Orient angle d=(target geocentric longitude - aspector longitude) mod 360. Let within_sign_degrees = d mod 30. Output strength in 0..60 virupas. Distinct general aspect function lives in B38, and B39 applies only planet-specific overrides.",
+  "source_derived_special_rules": [
+    {
+      "body": "Saturn",
+      "verse": "26.10",
+      "intervals_deg": [
+        {
+          "start": 30,
+          "end": 60,
+          "function": "2*(d-30)"
+        },
+        {
+          "start": 60,
+          "end": 90,
+          "function": "60-(d-60)/2"
+        },
+        {
+          "start": 240,
+          "end": 270,
+          "function": "30+(d-240)"
+        },
+        {
+          "start": 270,
+          "end": 300,
+          "function": "2*(300-d)"
+        }
+      ]
+    },
+    {
+      "body": "Mars",
+      "verse": "26.11",
+      "intervals_deg": [
+        {
+          "start": 60,
+          "end": 90,
+          "function": "15+1.5*(d-60)"
+        },
+        {
+          "start": 90,
+          "end": 120,
+          "function": "60-(d-90)"
+        },
+        {
+          "start": 180,
+          "end": 210,
+          "function": "60"
+        },
+        {
+          "start": 210,
+          "end": 240,
+          "function": "60-(d-210)"
+        }
+      ]
+    },
+    {
+      "body": "Jupiter",
+      "verse": "26.12",
+      "intervals_deg": [
+        {
+          "start": 90,
+          "end": 120,
+          "function": "45+(d-90)/2"
+        },
+        {
+          "start": 120,
+          "end": 150,
+          "function": "60-2*(d-120)"
+        },
+        {
+          "start": 210,
+          "end": 240,
+          "function": "45+(d-210)/2"
+        },
+        {
+          "start": 240,
+          "end": 270,
+          "function": "60-2*(d-240)"
+        }
+      ]
+    }
+  ],
+  "numerical_issues": [
+    {
+      "id": "B39-Q01",
+      "body": "Jupiter",
+      "boundary_deg": 270,
+      "left_limit_virupas": 0,
+      "at_boundary_virupas": 15,
+      "jump_virupas": 15,
+      "interpretation": "Direct Sanskrit 26.12 plus ordinary B38 fallback as written yields an abrupt positive discontinuity. Record it; do not automatically smooth source wording."
+    },
+    {
+      "id": "B39-Q02",
+      "source": "EnjoyLearningSanskrit English explanation for 26.12",
+      "issue": "Describes half a degree in third house and 45 in seventh, while the Sanskrit compounds bhagardham sharavedayuk for three/seven together, consistent with half the local degrees plus 45 in both.",
+      "classification": "SECONDARY_GLOSS_PARSING_DISCREPANCY"
+    },
+    {
+      "id": "B39-Q03",
+      "source": "Sanskrit witness vs Portuguese translation",
+      "issue": "Sanskrit catur-ashtabhe, 4 and 8 full-sign offsets (120–150 and 240–270) require precise ordinal sign difference convention. Do not recast as fourth/eighth counted-from-one houses without mapping.",
+      "classification": "INDEXING_CONVENTION"
+    }
+  ],
+  "script": "bphs_special_aspect_B39.py",
+  "tests": "test_bphs_special_aspect_B39.py",
+  "test_result": {
+    "unit_tests": 7,
+    "all_passed": true,
+    "run_against_local_file": true,
+    "dense_grid": "For three planets all 0.1 degree sample strengths within 0–60; continuity tests exempt the sourced Jupiter 270 jump."
+  },
+  "external_commentary_pending": "A modern interpretive proposal for Jupiter's 240–270 interval is distinct from Sanskrit; it will be registered in B40 and must not overwrite this B39 literal-source method.",
+  "source_claim_count_preexisting_B39": 3,
+  "actual_human_predictions": 0,
+  "production_rules": 0
+}
