@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B22_SOURCE_CRITICISM_CHECKPOINT",
+  "status": "OPEN_B23_ORIGINAL_SOURCE_BOUNDARIES_AND_COVERAGE",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B22.md",
+  "last_checkpoint": "READING_NOTES_B23.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -62,14 +62,17 @@
     "READING_NOTES_B21.md",
     "SOURCE_CANDIDATES_B22.json",
     "AVASTHA_SCHOOL_MAPPING_B22.json",
-    "READING_NOTES_B22.md"
+    "READING_NOTES_B22.md",
+    "SOURCE_CANDIDATES_B23.json",
+    "READING_NOTES_B23.md",
+    "OTHER_FOUR_BOOKS_COVERAGE_V2_B23.json"
   ],
   "confirmed": {
     "uploaded_files": 5,
     "verified_pdf_pages": 2138,
     "pdf_files": 4,
     "plain_text_files": 1,
-    "bibliographic_candidate_annotations": 280,
+    "bibliographic_candidate_annotations": 296,
     "saravali_ch20_conjunction_clauses": 47,
     "saravali_ch20_unique_planet_sets": 37,
     "saravali_ch20_duplicate_distinct_sets": 9,
@@ -162,18 +165,27 @@
     "b22_new_source_annotations": 24,
     "b22_planetary_avastha_systems_not_interchangeable": true,
     "b22_rath_proposed_unverified_sanskrit_emendations": 2,
-    "b22_chapter_17_scan_ocr_heading_correction": true
+    "b22_chapter_17_scan_ocr_heading_correction": true,
+    "b23_new_source_annotations": 16,
+    "bhasin_chapters_with_some_source_only_readings": 17,
+    "rath_lessons_with_some_source_only_readings": 15,
+    "jataka_divisions_with_some_source_only_readings": 9,
+    "b23_internal_short_medium_age_boundary_discrepancy": {
+      "chapter10": "medium 32-70",
+      "chapter12": "medium 33-70",
+      "resolved": false
+    },
+    "b23_hyperbolic_thousands_years_source_claims_documented": true
   },
   "pending_actions": [
-    "Preserve all 280 source-only annotations across B01-B22; none are independently verified predictive successes.",
-    "Continue source reading in genuinely unsampled books/chapters, not merely more repeated spirituality examples; use B21 coverage map.",
-    "Compare Sanskrit original of Sarvarth Ch13 and Saravali Ch5 nine-state definitions; do not conflate identically named Vikala and Khala state predicates.",
-    "Treat Rath's proposed Sanskrit word emendations as speculative until manuscripts independently support them.",
-    "Future model requires frozen source-versioned chart computation, birth-time uncertainty, predeclared dependent outcomes, matched decoys and nonastrology controls.",
-    "Parallel astrology worker files, natal-forward model, questionnaire, participant answers, Western and Chinese ledgers must remain untouched.",
-    "Raw modern copyrighted PDFs/TXT excluded from public GitHub without permissions."
+    "Keep 296 unique source-only notes and zero real-human predictive test successes; source texts can conflict internally.",
+    "Read unindexed Jataka and Rath source passages; sample remaining Portuguese BPHS uncharted sections only with precise source locators.",
+    "Maintain received original Sanskrit and editor conjecture separately, especially Rath kinship and Bhasin avastha states.",
+    "Preserve known source limitations: ChX age 32 start vs ChXII age 33 start, sub-12 age uncertainty, improbable 2,000–60,000-year lifespan claims, nonastronomical omens.",
+    "Keep PR#136 draft, no Western/Chinese other-reader, existing natal model, survey or participant edits.",
+    "Retain source rights boundary: don't commit full copyrighted books to public repo."
   ],
-  "next_exact_source_frontier": "Continue unreviewed Bhasin 10–12 and Rath 1–8/10/12 material; cross-check nine Avastha school variants against original Sanskrit and older editions; preserve Rath manuscript-conjectural corrections rather than applying them.",
+  "next_exact_source_frontier": "Continue unindexed Jataka Adhyayas III-IX, XII-XIV and Rath lessons I-VI/X; independent Sanskrit critical check on source-level ambiguous formulas, no person data. Do not repeat prior B01-B23.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -184,7 +196,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B22 new sources and comparison saved; verify exact PR file list after durable handoff.",
+    "note": "B23 files and coverage saved; final readback and PR body refresh still pending.",
     "remote_readback_scope": "Direct GitHub readback of all 26 PR changed pathnames, B01–B07 counts, all 153 distinct candidate IDs and foreign-key source manifest membership on 2026-10-21.",
     "doc_updated_in_pr": true
   },
