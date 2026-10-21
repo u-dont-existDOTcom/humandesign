@@ -1,0 +1,199 @@
+{
+  "schema": "TIBETAN_T54_SOURCE_NOTES_V1",
+  "status": "MATHEMATICAL_SOURCE_NOT_HUMAN_PREDICTIVE_EVIDENCE",
+  "source_id": "TIB-JANSON-2014",
+  "source": "Svante Janson 2014, Tibetan calendar mathematics, arXiv:1401.6285v1",
+  "canonical_online_url": "https://arxiv.org/html/1401.6285v1",
+  "new_historical_note_count": 12,
+  "source_notes": [
+    {
+      "id": "TIB-R0489",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "6, Remark 6",
+      "rule_key": "local_dawn_mean_solar",
+      "paraphrase": "Traditional day boundary is theoretical mean dawn, near 05:00 local mean solar; source says no physical sunrise calculation is required.",
+      "required_inputs": [
+        "calendar_system",
+        "observer_convention"
+      ],
+      "output_class": "calendar_day_boundary",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0490",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "6; 8.1",
+      "rule_key": "tithi_end_vs_calendar_day",
+      "paraphrase": "A civil day takes the lunar-day label ending on it; skipped/repeated labels arise from timing differences.",
+      "required_inputs": [
+        "true_month",
+        "lunar_day",
+        "day_end_time"
+      ],
+      "output_class": "assigned_date_label",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0491",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "7.1–7.4",
+      "rule_key": "mean_date_phugpa",
+      "paraphrase": "The mean lunar date is affine in true-month count and lunar-day count, with distinct rational month/day rates and epoch constants.",
+      "required_inputs": [
+        "true_month_count",
+        "lunar_day",
+        "Phugpa_epoch"
+      ],
+      "output_class": "mean_JDN_fraction",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0492",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "7.5–7.10",
+      "rule_key": "mean_sun_phugpa",
+      "paraphrase": "Mean Sun is linear in month/day counts and uses a separate mixed radix with 67 as final place, not the calendar time radix 707.",
+      "required_inputs": [
+        "true_month_count",
+        "lunar_day",
+        "longitude_epoch"
+      ],
+      "output_class": "mean_solar_circle",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0493",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "7.11–7.16; 7.24",
+      "rule_key": "moon_anomaly_policy",
+      "paraphrase": "Moon anomaly has a source-used rounded lunar-day increment and a more exact increment associated with Dharmashri/Henning; the source describes both.",
+      "required_inputs": [
+        "lunar_anomaly_policy",
+        "lunar_day",
+        "true_month"
+      ],
+      "output_class": "anomaly_circle",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0494",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "7.17–7.18",
+      "rule_key": "moon_equation_table",
+      "paraphrase": "The Moon correction interpolates a specified eight-sample signed-symmetry table over a 28-step cycle.",
+      "required_inputs": [
+        "moon_anomaly_fraction"
+      ],
+      "output_class": "moon_equation",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0495",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "7.19–7.23",
+      "rule_key": "sun_equation_and_true_date",
+      "paraphrase": "Sun correction uses a four-sample 12-step interpolation table; the corrected tithi-end time is mean date plus Moon minus Sun corrections divided by sixty.",
+      "required_inputs": [
+        "mean_date",
+        "mean_sun",
+        "moon_anomaly"
+      ],
+      "output_class": "true_tithi_end_JDN",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0496",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "8.1",
+      "rule_key": "skipped_and_repeated_day_resolution",
+      "paraphrase": "Integer part of corrected tithi-end date gives the second day of a repeated number; first extra day precedes it, while same-day tithi endings create skipped labels.",
+      "required_inputs": [
+        "fractional_tithi_ends"
+      ],
+      "output_class": "0_1_2_calendar_day_occurrences",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0497",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "8; Beginning and end of months",
+      "rule_key": "first_month_day_boundary",
+      "paraphrase": "Month begins on the day after the preceding true month's thirtieth lunar-day end; use this even if day one itself is skipped or doubled.",
+      "required_inputs": [
+        "previous_true_month",
+        "day30_end"
+      ],
+      "output_class": "first_month_calendar_JDN",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0498",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "8; Tibetan New Year",
+      "rule_key": "Losar_from_previous_month12",
+      "paraphrase": "Losar is one civil day after day30 of preceding year's regular twelfth month, including when new month one is a leap month.",
+      "required_inputs": [
+        "previous_tibetan_year",
+        "regular_month12_true_count"
+      ],
+      "output_class": "Losar_calendar_JDN",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0499",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "9.1; Table 5",
+      "rule_key": "seven_weekdays",
+      "paraphrase": "Weekday is (calendar JDN plus two) modulo seven, with Saturday assigned index zero.",
+      "required_inputs": [
+        "calendar_day_JDN"
+      ],
+      "output_class": "weekday_0_to_6",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0500",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "Appendix A.2 (A.3–A.9)",
+      "rule_key": "Tsurphu_distinct_epoch_constants",
+      "paraphrase": "Tsurphu shares mean motion constants with Phugpa but has different epoch fractions, intercalation indices and floor-based month counts.",
+      "required_inputs": [
+        "Tsurphu_epoch",
+        "year",
+        "month",
+        "tithi"
+      ],
+      "output_class": "Tsurphu_true_JDN",
+      "source_kind": "modern mathematical reconstruction, not original Tibetan source or prediction study",
+      "validated_on_real_humans": false,
+      "model_promoted": false
+    }
+  ],
+  "first_id": "TIB-R0489",
+  "last_id": "TIB-R0500",
+  "calculations_added": "Original code independently implements Janson exact Fraction true-date both Phugpa/Tsurphu and skipped/repeated Gregorian date labels",
+  "no_human_predictive_validation": true,
+  "not_read": "Remaining Cornu, Henning, Erlewine, Tibetan original manuscripts and Janson planetary appendices remain open"
+}

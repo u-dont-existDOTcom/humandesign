@@ -1,0 +1,77 @@
+{
+  "schema": "T54_PINNED_INDEPENDENT_COMPARISON_V1",
+  "source_repo": "dorjeduck/tibcal",
+  "reference_commit_sha": "01591b5bf03d038b864c4138fde3cc4285ca8001",
+  "reference_license": "MIT",
+  "original_base_commit": "4110a30342f05dd58a4167634370db52b1baa436",
+  "reference_algorithm": "Janson Phugpa E806/Tsurphu E1852, code independently authored by upstream",
+  "our_algorithm": "Janson Phugpa E1987/Tsurphu E1852, Fraction implementation",
+  "source_code_vendored": false,
+  "human_predictive_claims": 0,
+  "day_comparisons": 4386,
+  "case_groups": [
+    {
+      "system": "phugpa",
+      "Gregorian_year": 1950,
+      "compared_days": 365
+    },
+    {
+      "system": "phugpa",
+      "Gregorian_year": 1984,
+      "compared_days": 366
+    },
+    {
+      "system": "phugpa",
+      "Gregorian_year": 1985,
+      "compared_days": 365
+    },
+    {
+      "system": "phugpa",
+      "Gregorian_year": 2000,
+      "compared_days": 366
+    },
+    {
+      "system": "phugpa",
+      "Gregorian_year": 2024,
+      "compared_days": 366
+    },
+    {
+      "system": "phugpa",
+      "Gregorian_year": 2026,
+      "compared_days": 365
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 1950,
+      "compared_days": 365
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 1984,
+      "compared_days": 366
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 1985,
+      "compared_days": 365
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 2000,
+      "compared_days": 366
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 2024,
+      "compared_days": 366
+    },
+    {
+      "system": "tsurphu",
+      "Gregorian_year": 2026,
+      "compared_days": 365
+    }
+  ],
+  "mismatches": [],
+  "mismatch_count": 0,
+  "status": "PARITY_PASS"
+}

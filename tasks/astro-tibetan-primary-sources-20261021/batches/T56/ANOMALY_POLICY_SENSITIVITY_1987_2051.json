@@ -1,0 +1,133 @@
+{
+  "schema": "T56_JANSON_LUNAR_ANOMALY_ALTERNATIVE_SENSITIVITY_V1",
+  "source": "Janson 2014 \u00a77 Remark14; Dharmashri/Henning a2 exact Eq7.24",
+  "tested_years": [
+    1987,
+    2051
+  ],
+  "methods": [
+    "rounded:1/28",
+    "dharmashri_exact:3781/105840"
+  ],
+  "systems": {
+    "phugpa": {
+      "epoch": 1987,
+      "tithi_ends_compared": 24120,
+      "tithi_end_JDN_disagreements": 6,
+      "disagreement_first_20": [
+        {
+          "Tibetan_year": 2000,
+          "month": 12,
+          "leap_month": false,
+          "lunar_day": 17,
+          "rounded_jdn": 2451951,
+          "exact_jdn": 2451950,
+          "day_number_change": -1
+        },
+        {
+          "Tibetan_year": 2006,
+          "month": 3,
+          "leap_month": false,
+          "lunar_day": 12,
+          "rounded_jdn": 2453865,
+          "exact_jdn": 2453866,
+          "day_number_change": 1
+        },
+        {
+          "Tibetan_year": 2025,
+          "month": 9,
+          "leap_month": false,
+          "lunar_day": 29,
+          "rounded_jdn": 2460998,
+          "exact_jdn": 2460999,
+          "day_number_change": 1
+        },
+        {
+          "Tibetan_year": 2045,
+          "month": 9,
+          "leap_month": false,
+          "lunar_day": 27,
+          "rounded_jdn": 2468291,
+          "exact_jdn": 2468290,
+          "day_number_change": -1
+        },
+        {
+          "Tibetan_year": 2046,
+          "month": 5,
+          "leap_month": false,
+          "lunar_day": 15,
+          "rounded_jdn": 2468544,
+          "exact_jdn": 2468545,
+          "day_number_change": 1
+        },
+        {
+          "Tibetan_year": 2046,
+          "month": 8,
+          "leap_month": false,
+          "lunar_day": 18,
+          "rounded_jdn": 2468636,
+          "exact_jdn": 2468637,
+          "day_number_change": 1
+        }
+      ],
+      "Losar_disagreements": 0,
+      "Losar_disagreement_examples": []
+    },
+    "tsurphu": {
+      "epoch": 1852,
+      "tithi_ends_compared": 24120,
+      "tithi_end_JDN_disagreements": 5,
+      "disagreement_first_20": [
+        {
+          "Tibetan_year": 1994,
+          "month": 11,
+          "leap_month": false,
+          "lunar_day": 23,
+          "rounded_jdn": 2449713,
+          "exact_jdn": 2449712,
+          "day_number_change": -1
+        },
+        {
+          "Tibetan_year": 2014,
+          "month": 8,
+          "leap_month": false,
+          "lunar_day": 9,
+          "rounded_jdn": 2456934,
+          "exact_jdn": 2456933,
+          "day_number_change": -1
+        },
+        {
+          "Tibetan_year": 2022,
+          "month": 4,
+          "leap_month": false,
+          "lunar_day": 29,
+          "rounded_jdn": 2459758,
+          "exact_jdn": 2459759,
+          "day_number_change": 1
+        },
+        {
+          "Tibetan_year": 2038,
+          "month": 7,
+          "leap_month": false,
+          "lunar_day": 26,
+          "rounded_jdn": 2465691,
+          "exact_jdn": 2465692,
+          "day_number_change": 1
+        },
+        {
+          "Tibetan_year": 2049,
+          "month": 9,
+          "leap_month": false,
+          "lunar_day": 24,
+          "rounded_jdn": 2469764,
+          "exact_jdn": 2469765,
+          "day_number_change": 1
+        }
+      ],
+      "Losar_disagreements": 0,
+      "Losar_disagreement_examples": []
+    }
+  },
+  "human_prediction_successes": 0,
+  "source_note_increment": 0
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "T54_INDEPENDENT_JS_PARITY_V1",
+  "external_repo": "hnw/date-tibetan",
+  "git_commit": "7651b8b579c8332442198cc0d9ca14d0b0e8b3a8",
+  "external_package_license": "MIT",
+  "npm_install": "npm ci --omit=dev --ignore-scripts --no-audit --no-fund",
+  "tested_system": "Phugpa only (JS library does not implement Tsurphu)",
+  "source_based_engine": "T54 Janson rational E1987 rounded anomaly",
+  "original_upstream_code_in_our_repository": false,
+  "years": [
+    1950,
+    1984,
+    1985,
+    2000,
+    2024,
+    2026
+  ],
+  "compared_day_count": 2193,
+  "disagreements": 0,
+  "disagreement_examples": [],
+  "status": "PASS",
+  "human_predictive_tests": 0
+}

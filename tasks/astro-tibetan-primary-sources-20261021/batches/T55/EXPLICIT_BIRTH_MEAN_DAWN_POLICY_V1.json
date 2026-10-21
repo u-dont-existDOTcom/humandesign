@@ -1,0 +1,114 @@
+{
+  "schema": "T55_EXPLICIT_EXPERIMENTAL_BIRTH_CONVENTION_V1",
+  "status": "ASSISTANT_INFERENCE_BOUNDED_REVERSIBLE_EXPERIMENT_NOT_TRADITIONALLY_ESTABLISHED_FOR_ALL_LONGITUDES",
+  "source_basis": [
+    {
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "§6 Remark 6",
+      "claims": "Tibetan day from theoretical mean dawn and no physical sunrise calculation",
+      "limits": "author discusses Tibetan locality and local Julian calendar concept"
+    },
+    {
+      "source_id": "TIB-HENNING-2007",
+      "anchor": "Chapter I printed pp10-11",
+      "claims": "mean daybreak approximately 5am local mean solar time",
+      "limits": "not documented as globally portable birth algorithm"
+    },
+    {
+      "source_id": "TIB-CORNU-1997",
+      "anchor": "printed pp216-220; TIB-R0467 through TIB-R0470",
+      "claims": "Paris illustrated natal four-fold elemental-animal example",
+      "limits": "Cornu printed UTC/local mean solar labels contradictory; corrected independently with IANA zoneinfo"
+    }
+  ],
+  "parent_source_notes_reused": [
+    "TIB-R0489",
+    "TIB-R0490",
+    "TIB-R0497",
+    "TIB-R0467",
+    "TIB-R0468",
+    "TIB-R0469",
+    "TIB-R0470"
+  ],
+  "new_historical_annotation_count": 0,
+  "input_contract": {
+    "date_instant": "timezone-aware UTC datetime, not unqualified local clock",
+    "longitude": "independently supplied degrees East in [-180,180]; geocoding not attempted",
+    "day_boundary_policy": "project_extension_05_LMT_dawn (explicit; never default)",
+    "calendar_system": "phugpa or tsurphu, explicitly selected",
+    "calendar_epoch": "806/1927/1987 Phugpa; 1732/1852 Tsurphu",
+    "lunar_anomaly_policy": "rounded or dharmashri_exact, explicitly selected",
+    "dawn_interpretation": "theoretical 05:00 LMT; not physical sunrise, not apparent solar time",
+    "hour_animal_source": "Cornu printed pp115–116: Hare 05:00–07:00 LMT, Dragon 07:00–09:00, ... Tiger 03:00–05:00",
+    "mewa_and_five_force_source": "T53: Janson Appendix E/Cornu common symbolic attributes",
+    "birth_chart_four_pairs": "animal+element for Tibetan year, month, lunar day and traditional double-hour",
+    "missing_data_handling": "reject undefined datetime timezone, longitude, policy and unsupported epochs; never invent values"
+  },
+  "Cornu_1950_source_based_example": {
+    "local_civil": "1950-11-15T17:00+01:00 Europe/Paris",
+    "verified_UTC": "1950-11-15T16:00+00:00",
+    "longitude_East_deg": "2.3522",
+    "local_mean_solar": "1950-11-15T16:09:24.528 (naive local-mean-solar clock, not UTC or GMT)",
+    "traditional_day": "1950-11-15",
+    "Tibetan_year_label": 1950,
+    "Tibetan_lunar_month": 10,
+    "Tibetan_lunar_day": 6,
+    "traditional_hour": "monkey",
+    "four_animal_element_pairs": [
+      [
+        "tiger",
+        "iron"
+      ],
+      [
+        "ox",
+        "water"
+      ],
+      [
+        "ox",
+        "wood"
+      ],
+      [
+        "monkey",
+        "fire"
+      ]
+    ],
+    "five_year_forces": {
+      "life": "wood",
+      "body": "wood",
+      "power": "iron",
+      "fortune": "iron",
+      "spirit": "water"
+    },
+    "year_mewa": 5,
+    "day_mewa": 3,
+    "comparison_status": "Author's published worked example reproduced independent of author's mislabelled GMT/local mean solar; no human outcome tested."
+  },
+  "boundary_cases": {
+    "at_2026_Losar_04_59_LMT": {
+      "source_year": 2025,
+      "animal": "snake",
+      "tibetan_day_label": "2026-02-17",
+      "double_hour": "tiger"
+    },
+    "at_2026_Losar_05_00_LMT": {
+      "source_year": 2026,
+      "animal": "horse",
+      "tibetan_day_label": "2026-02-18",
+      "double_hour": "hare"
+    },
+    "longitude_sensitivity": {
+      "utc_instant": "2024-02-10T05:00Z",
+      "East_zero_day": "2024-02-10",
+      "West_17_45_day": "2024-02-09"
+    }
+  },
+  "validation": "verify_t55_birth_policy.py -> PASS (published source example and synthetic boundaries)",
+  "empirical_tests": {
+    "real_people_blind_predictions": 0,
+    "forward_scored": 0,
+    "reverse_scored": 0,
+    "accuracy_claim": "NONE"
+  },
+  "research_priority": "Confirm location/day-boundary policy against Tibetan practitioner manuals and additional birth worked examples before freezing any natal model.",
+  "uses_personal_user_birth_info": false
+}
