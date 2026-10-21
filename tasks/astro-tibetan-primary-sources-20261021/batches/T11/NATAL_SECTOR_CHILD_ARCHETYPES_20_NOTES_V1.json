@@ -1,0 +1,478 @@
+{
+  "schema": "TIBETAN_T11_REMAINING_NATAL_CHAPTER_SOURCE_NOTES_V1",
+  "batch": "T11",
+  "note_count": 20,
+  "first_id": "TIB-R0143",
+  "last_id": "TIB-R0162",
+  "source": "Gyurme Dorje, Tibetan Elemental Divination Paintings, 2001",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "reading": "PDF pp179–191 / printed 178–190, natal chapter remaining illustrations and commentaries",
+  "source_notes": [
+    {
+      "id": "TIB-R0143",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 179,
+        "printed_page": 178,
+        "white_beryl_folio": "214a"
+      },
+      "rule_key": "white-black-vitality-identity",
+      "paraphrase": "In the 101-pebble context, a white marker for the vitality identity-relation is associated with long life and a black marker with short life; this is a traditional symbolic assertion without a calibrated probability.",
+      "required_inputs": [
+        "vitality_identity_relation",
+        "pebble_color"
+      ],
+      "source_output_classes": [
+        "life_length_class"
+      ],
+      "dependency_family": "TIB-PEBBLE-IDENTITY",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0144",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 179,
+        "printed_page": 178,
+        "white_beryl_folio": "214a"
+      },
+      "rule_key": "five-inauspicious-luck-conditions",
+      "paraphrase": "A five-column adverse-luck chart compares natal trigram and numeric-square categories against flourishing enemy elements. The first prose example gives Dva or Zin trigram with Red Seven or Blue Three, but the extracted table has a conflicting/ambiguous numeral; do not use an unverified numeric cell.",
+      "required_inputs": [
+        "natal_trigram",
+        "natal_mewa",
+        "affected_elemental_axis",
+        "growth_sector"
+      ],
+      "source_output_classes": [
+        "five_bad_luck_classes"
+      ],
+      "dependency_family": "TIB-TRIGRAM-MEWA-COMBINATION",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0145",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 179,
+        "printed_page": 178,
+        "white_beryl_folio": "214b–221a"
+      },
+      "rule_key": "twelve-sector-graded-pairs",
+      "paraphrase": "The twelve growth-and-decline sectors are paired into three levels of the best six and three levels of the worst six; relations to vitality, body, destiny and luck alter the stated prognosis.",
+      "required_inputs": [
+        "birth_sector",
+        "elemental_axis",
+        "relation_kind"
+      ],
+      "source_output_classes": [
+        "graded_sector_outcome"
+      ],
+      "dependency_family": "TIB-TWELVE-SECTOR-GRADING",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0146",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 180,
+        "printed_page": 179,
+        "white_beryl_folio": "214b–217a"
+      },
+      "rule_key": "vitality-sector-graded-outcomes",
+      "paraphrase": "The sector pair Clothing/Growth is best for vitality, Birth/Work intermediate favorable, Embryo/Ablution lesser favorable, Conception/Foetus best of unfavorable, Tomb/Illness intermediate unfavorable, Death/Decline worst unfavorable.",
+      "required_inputs": [
+        "sector_pair",
+        "vitality_element_relation"
+      ],
+      "source_output_classes": [
+        "claimed_life_course_risk_grade"
+      ],
+      "dependency_family": "TIB-TWELVE-SECTOR-GRADING",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0147",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 180,
+        "printed_page": 179,
+        "white_beryl_folio": "214b–217a"
+      },
+      "rule_key": "body-sector-graded-outcomes",
+      "paraphrase": "The six paired sectors are also assigned a six-step graded classification for the body element, with different assertions about physique, ailments and longevity than the vitality row.",
+      "required_inputs": [
+        "sector_pair",
+        "body_element_relation"
+      ],
+      "source_output_classes": [
+        "claimed_body_grade"
+      ],
+      "dependency_family": "TIB-TWELVE-SECTOR-GRADING",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0148",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 180,
+        "printed_page": 179,
+        "white_beryl_folio": "214b–217a"
+      },
+      "rule_key": "destiny-sector-graded-outcomes",
+      "paraphrase": "The same six paired sector ranking is applied to the destiny element but the narrated consequences concern wealth, family support, possessions and material standing.",
+      "required_inputs": [
+        "sector_pair",
+        "destiny_element_relation"
+      ],
+      "source_output_classes": [
+        "resource_trajectory_grade"
+      ],
+      "dependency_family": "TIB-TWELVE-SECTOR-GRADING",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0149",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 180,
+        "printed_page": 179,
+        "white_beryl_folio": "214b–219a"
+      },
+      "rule_key": "luck-sector-graded-outcomes",
+      "paraphrase": "The scheme applies paired-sector and element-relational grades to natal luck, describing status, reputation and fortune with different outcomes for favorable and unfavorable positions.",
+      "required_inputs": [
+        "sector_pair",
+        "luck_element_relation"
+      ],
+      "source_output_classes": [
+        "luck_social_grade"
+      ],
+      "dependency_family": "TIB-TWELVE-SECTOR-GRADING",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0150",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 184,
+        "printed_page": 183,
+        "white_beryl_folio": "214b–215b"
+      },
+      "rule_key": "twelve-sector-four-similes",
+      "paraphrase": "Each of twelve growth/decline sectors has four illustrative similes, one per natal axis; the total constitutes forty-eight descriptive images, not forty-eight independent human case observations.",
+      "required_inputs": [
+        "sector",
+        "axis"
+      ],
+      "source_output_classes": [
+        "symbolic_image"
+      ],
+      "dependency_family": "TIB-ILLUSTRATED-LIFE-SECTOR",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0151",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 184,
+        "printed_page": 183,
+        "white_beryl_folio": "215b"
+      },
+      "rule_key": "five-nativity-luck-classes",
+      "paraphrase": "Five classes of overall natal luck are distinguished: backward, void, flourishing enemy, forward and established forward, with grouped sector conditions and broad life-course implications.",
+      "required_inputs": [
+        "luck_sector",
+        "enemy_relation_status"
+      ],
+      "source_output_classes": [
+        "five_luck_category"
+      ],
+      "dependency_family": "TIB-LUCK-FIVE-CLASSES",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0152",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 185,
+        "printed_page": 184,
+        "white_beryl_folio": "219a–219b"
+      },
+      "rule_key": "collective-tally-mother-four",
+      "paraphrase": "A collective tally of four maternal-relation markers across vitality, body, destiny and luck is interpreted differently when all white, half white/half black or predominantly black.",
+      "required_inputs": [
+        "maternal_relation_pebble_four_colors"
+      ],
+      "source_output_classes": [
+        "paternal_line_and_resources"
+      ],
+      "dependency_family": "TIB-FOUR-RELATIONAL-TALLIES",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0153",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 185,
+        "printed_page": 184,
+        "white_beryl_folio": "219a–219b"
+      },
+      "rule_key": "collective-tally-son-four",
+      "paraphrase": "The four son-relationship pebbles, when all white versus all black, are interpreted as different predictions about ability to maintain the ancestral home and the child's prospects.",
+      "required_inputs": [
+        "son_relation_pebble_four_colors"
+      ],
+      "source_output_classes": [
+        "family_home_continuity"
+      ],
+      "dependency_family": "TIB-FOUR-RELATIONAL-TALLIES",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0154",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 185,
+        "printed_page": 184,
+        "white_beryl_folio": "219a–219b"
+      },
+      "rule_key": "collective-tally-friend-four",
+      "paraphrase": "The four friend-relationship pebbles are separately tallied; the text associates their color patterns with wealth and dependence on external helpers.",
+      "required_inputs": [
+        "friend_relation_pebble_four_colors"
+      ],
+      "source_output_classes": [
+        "wealth_and_support"
+      ],
+      "dependency_family": "TIB-FOUR-RELATIONAL-TALLIES",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0155",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 187,
+        "printed_page": 186,
+        "white_beryl_folio": "219b–221a"
+      },
+      "rule_key": "twenty-one-model-children",
+      "paraphrase": "The Further Secret Point enumerates twenty-one symbolic child models arranged as seven superior, seven average and seven inferior. It is a taxonomy of traditional omens, not a set of independently observed infant outcomes.",
+      "required_inputs": [
+        "birth_month_phase",
+        "weekday",
+        "planet_class",
+        "constellation",
+        "parent_birth_data",
+        "trigram",
+        "mewa"
+      ],
+      "source_output_classes": [
+        "child_type"
+      ],
+      "dependency_family": "TIB-21-CHILD-CLASS",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0156",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 187,
+        "printed_page": 186,
+        "white_beryl_folio": "219b–221a"
+      },
+      "rule_key": "naturally-born-superior",
+      "paraphrase": "The 'naturally born superior' child type is associated with early evening or morning birth during lunar waxing under favorable celestial and parent-year/month conditions.",
+      "required_inputs": [
+        "birth_time",
+        "lunar_phase",
+        "weekday",
+        "natal_planet_class",
+        "natal_constellation",
+        "father_year",
+        "mother_month"
+      ],
+      "source_output_classes": [
+        "superior_child_class"
+      ],
+      "dependency_family": "TIB-21-CHILD-CLASS",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0157",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 189,
+        "printed_page": 188,
+        "white_beryl_folio": "219b–221a"
+      },
+      "rule_key": "adverse-birth-class-example",
+      "paraphrase": "One inferior child category is assigned when birth is Thursday or Friday with a so-called black month, dark body element and Black Two numeric square. This is cultural prognostic taxonomy, not a clinical classification.",
+      "required_inputs": [
+        "birth_weekday",
+        "natal_month_class",
+        "body_element_class",
+        "natal_mewa"
+      ],
+      "source_output_classes": [
+        "inferior_child_class"
+      ],
+      "dependency_family": "TIB-21-CHILD-CLASS",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0158",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 189,
+        "printed_page": 188,
+        "white_beryl_folio": "219b–221a"
+      },
+      "rule_key": "birth-posture-physical-models",
+      "paraphrase": "The text associates superior, average and inferior child archetypes with newborn orientation, hair, voice and physical features as well as broad future fortunes. These claims are culturally and medically problematic and require separate ethically appropriate observation criteria.",
+      "required_inputs": [
+        "newborn_position",
+        "infant_appearance",
+        "child_omens"
+      ],
+      "source_output_classes": [
+        "physical_sign_class"
+      ],
+      "dependency_family": "TIB-21-CHILD-CLASS",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0159",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 190,
+        "printed_page": 189,
+        "white_beryl_folio": "221a–223a"
+      },
+      "rule_key": "five-conception-vital-energies",
+      "paraphrase": "A supplementary divination classifies purported elemental vital energy from directions of breathing or nasal flow at conception; parental balance of the same element is presupposed.",
+      "required_inputs": [
+        "conception_context",
+        "parent_nasal_energy_class"
+      ],
+      "source_output_classes": [
+        "vital_energy_class"
+      ],
+      "dependency_family": "TIB-CONCEPTION-VITAL-ENERGY",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0160",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 191,
+        "printed_page": 190,
+        "white_beryl_folio": "221a–223a"
+      },
+      "rule_key": "pregnancy-birth-fallback-periods",
+      "paraphrase": "When a natal/conception elemental breath is not identified, the method substitutes contemporaneous maternal energy at birth or a period during pregnancy (stated as up to 270 days); this gives multiple observational windows, not a single fixed birth-only predictor.",
+      "required_inputs": [
+        "maternal_energy_observation_time",
+        "birth_or_gestation_period",
+        "year_month_day_hour"
+      ],
+      "source_output_classes": [
+        "surrogate_vital_element"
+      ],
+      "dependency_family": "TIB-CONCEPTION-VITAL-ENERGY",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0161",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 191,
+        "printed_page": 190,
+        "white_beryl_folio": "221a–223a"
+      },
+      "rule_key": "five-human-element-type-symbols",
+      "paraphrase": "An alternative fallback assigns symbolic human prototypes: green active wood, red sedentary fire, armored iron, blue-clothed loving water and sleeping earth.",
+      "required_inputs": [
+        "observed_human_type_symbols"
+      ],
+      "source_output_classes": [
+        "five_elemental_type"
+      ],
+      "dependency_family": "TIB-HUMAN-TYPE-SYMBOLISM",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0162",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 191,
+        "printed_page": 190,
+        "white_beryl_folio": "227a–227b"
+      },
+      "rule_key": "four-generation-destiny-sequence",
+      "paraphrase": "Another natal/family prediction depends on ordered destiny elements of grandfather, father, son and grandson. Wood→Fire→Earth→Earth is assigned prosperity; Fire→Wood→Water→Iron is assigned lineage interruption. Five illustrative rows appear in Plate 6 fig.15.",
+      "required_inputs": [
+        "grandfather_destiny_element",
+        "father_destiny_element",
+        "son_destiny_element",
+        "grandson_destiny_element"
+      ],
+      "source_output_classes": [
+        "multigenerational_lineage_fortune"
+      ],
+      "dependency_family": "TIB-FOUR-GENERATION-DESTINY",
+      "source_status": "English translation/secondary commentary, Tibetan original not independently checked",
+      "human_result_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "source_issues": [
+    "PDF179 prose says Red Seven/Blue Three for Dva/Zin while extracted table text seems to say Red Two/Blue Three; need close visual and original Tibetan check before digitizing that specific cell.",
+    "The following verses have textual alternatives, broad outcomes, and cultural/ethical claims; never count as validated medical or human behavioral results.",
+    "Twenty-one child types and forty-eight similes are descriptive source enumerations, not 69 independent predictive successes.",
+    "Four-generation prediction requires data for four actual generations, impossible from a solitary natal birth input.",
+    "Source covers conception or pregnancy observables not derivable from horoscope; exclude from birth-only score without independent witnesses."
+  ],
+  "real_human_tests": 0,
+  "runtime_promotions": 0,
+  "next_source_note": "TIB-R0163",
+  "next_frontier": "Dorje printed p191 onward (natal chapter final boundary into marriage) and subsequent marriage/obstacle years"
+}
