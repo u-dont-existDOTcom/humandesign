@@ -59,3 +59,17 @@ Continue critical page reading in all five texts and verify variants. Prioritize
 - `SARAVALI_CHAPTER_COVERAGE_V1.json` is a 55-chapter sampling index: 15 chapters had at least one cited passage through B07, 40 did not. No chapter is claimed exhaustively read or Sanskrit-collated. `READING_NOTES_B09.md` sampled new chapters 9/12/13/21/42/53/54/55: a claim of 32 of 1800 Nabhasa yogas with precedence, Moola Dasha subperiod fractions, Ashtakavarga transit bindu formulas, and nonhuman/extra-input rules. This is exploratory, **no accepted B09 annotation rows yet**.
 - **Cumulative source-only registered records remain 153 (B01–B07)**; B08 critical textual checks and B09 exploratory readings do not inflate that count. **0 actual out-of-sample human forecast validations, 0 production model promotions.** Task OPEN; PR#136 remains a draft, no changes to the competing reader lane.
 - Next exact frontier: systematically read underindexed chapters/other four books, verify source Sanskrit and rule-computation ambiguities, freeze candidate models and only then test untouched humans.
+
+## B10–B11 checkpoint (21 October 2026)
+
+B10 compares full favorable Aṣṭakavarga tables from uploaded `Saravali` Chapter53 against Portuguese `Parashara`. Its seven target sums are **48, 49, 39, 54, 56, 52, 38 = 336**. The latter source includes exactly one favorable Saturn-table contribution missing from the first: **Lagna sixth from its sign**, restoring **337** if adopted. All original data and an unapplied candidate correction are preserved in `ASHTAKAVARGA_B10_SOURCE_RECONCILIATION.json`. The user-provided sources do NOT yet establish authoritative Sanskrit resolution.
+
+`ASHTAKAVARGA_B10_JATAKA_COMMENTARY_VARIANTS.json`: Sastri's `Jataka Parijata` editor note PDF395 explicitly explains that Bindu/Rekha favorable/unfavorable notation reverses between books, while PDF397 describes a context-specific neutral tenth-from-Moon contribution to Mars. These are editor/commentary strata, not the same as original Vaidyanatha verses. `READING_NOTES_B10.md` documents these boundaries.
+
+B11 audits *Saravali* whole-chart Nabhasa patterns and override, Mūla Daśā subperiod shares and normalization, and Chapter45 extremes. Seven simultaneous exalted planets and seven simultaneous debilitated planets **cannot occur physically**, because each configuration needs Sun and Mercury at least 120° apart when observed Mercury elongation remains below approximately 28°. See `IMPOSSIBLE_EXTREME_DIGNITY_RULES_B11.json`.
+
+Portuguese `Parashara` line5326 contradicts itself on `Pinda Sadhana` planetary/sign multipliers (Mars 3 vs 8; others 6 vs 5; Capricorn 6 vs 5, duplicated Scorpio). The arithmetic is **unresolved**; no value was guessed. Exact source passages and 28 documentary new records appear in `SOURCE_CANDIDATES_B11.json` and `READING_NOTES_B11.md`.
+
+`SARAVALI_CHAPTER_COVERAGE_V2.json` now shows **20/55 chapters with at least one registered source item** and **35 without registered items**, four of which have B09 exploratory notes. Total **181 source-only annotations**. No human forecast or production-rule promotion. All work remains this independent draft PR#136 branch, not merged.
+
+**Next:** Collate Saturn/Lagna relative-sixth and Pinda multipliers against an independent critical Sanskrit/other edition; continue source coverage across underexamined chapters. Preserve all historical error/negative variants, source rights and human blind-test separation.
