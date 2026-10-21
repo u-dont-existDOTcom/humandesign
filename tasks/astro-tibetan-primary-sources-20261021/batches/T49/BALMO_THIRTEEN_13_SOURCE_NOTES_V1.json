@@ -1,0 +1,306 @@
+{
+  "schema": "TIBETAN_T49_BALMO_THIRTEEN_SOURCE_NOTES_V1",
+  "batch": "T49",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Gyurme Dorje (2001), translated White Beryl ch.27 thirteen Bal-mo lding-skor charts; conclusion Moonbeams f39a–40a",
+  "source_pages_pdf_1based": [
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    400
+  ],
+  "source_notes": [
+    {
+      "id": "TIB-R0435",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "thirteen_versus_elaborate_systems",
+      "paraphrase": "The simplified thirteen Bal-mo lding-skor charts derive from a more elaborate method said to use 2,920 pebbles, and an intermediate abridged 872-pebble method (371 basic and 501 symbolic). The simplified charts have five calculations each, not eight.",
+      "required_inputs": [
+        "method_variant",
+        "number_of_source_charts"
+      ],
+      "source_claimed_output": "counted_source_markers",
+      "dependency_family": "BALMO-METHOD-COUNT",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0436",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "five_forces_one_per_chart",
+      "paraphrase": "Each of thirteen Bal-mo charts compares the selected basis with five personal axes: vitality, body, destiny, luck and numeric square. Five positions per chart give 65 simplified basic comparisons across all thirteen.",
+      "required_inputs": [
+        "vitality",
+        "body",
+        "destiny",
+        "luck",
+        "mewa",
+        "selected_chart_start"
+      ],
+      "source_claimed_output": "five_ordered_pebbles",
+      "dependency_family": "BALMO-FIVE-FORCES",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0437",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_color_son_relation",
+      "paraphrase": "In Bal-mo, mother/friend and Earth/Water identity produce white; son/enemy and Wood/Iron/Fire identity produce black. In contrast the thirty computational charts encode son as one white and one black marker; color rules cannot be shared without a method flag.",
+      "required_inputs": [
+        "element_relation",
+        "element_identity",
+        "chosen_source_scheme"
+      ],
+      "source_claimed_output": "white_or_black_pebble",
+      "dependency_family": "BALMO-COLOR-CONFLICT",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0438",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_enemy_exception",
+      "paraphrase": "The author describes enemy relations as especially adverse within the thirteen-chart scheme. This is a textual prioritization of symbolism, not an empirically demonstrated risk threshold.",
+      "required_inputs": [
+        "enemy_relation_status",
+        "chart_basis"
+      ],
+      "source_claimed_output": "historical_severity_category",
+      "dependency_family": "BALMO-RELATION-WEIGHT",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0439",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_royal_chart_one",
+      "paraphrase": "Chart one White Garuda begins by counting backwards from the bird year whose element is enemy-related to the subject's constitution, and assigns five claims about royal residence, government, and status.",
+      "required_inputs": [
+        "constitution_element",
+        "bird_start_year",
+        "age_or_time_count",
+        "royal_context"
+      ],
+      "source_claimed_output": "five_royal_omens",
+      "dependency_family": "BALMO-ROLE-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0440",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 391,
+        "printed_page": 390,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_spiritual_chart_two",
+      "paraphrase": "Chart two White Snowlion begins backwards from a Hare-year enemy relation for a spiritual friend; its five claims concern a throne, offerings, religious commitments and attributed blessings.",
+      "required_inputs": [
+        "constitution_element",
+        "enemy_Hare_start",
+        "religious_context"
+      ],
+      "source_claimed_output": "five_spiritual_omens",
+      "dependency_family": "BALMO-ROLE-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0441",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 392,
+        "printed_page": 391,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_mantrin_and_Bon",
+      "paraphrase": "The Gold Snake chart three counts backwards from a Snake year in friend relation for mantrins. The Turquoise Dragon chart four counts backwards from a Dragon year in mother relation for Bon priests, giving different input/predicate paths.",
+      "required_inputs": [
+        "constitution_element",
+        "chart_number",
+        "sign_element_relation"
+      ],
+      "source_claimed_output": "mantrin_or_Bon_symbolic_omen",
+      "dependency_family": "BALMO-ROLE-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0442",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 393,
+        "printed_page": 392,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_ministers_men_and_women",
+      "paraphrase": "Steadfast Elephant chart five targets ministers, Striped Tiger chart six adult males and Red Owl chart seven women/nuns, with differing starting animal year and elemental relation rather than only changing the chart title.",
+      "required_inputs": [
+        "source_chart",
+        "constitutional_element",
+        "gender_or_social_role"
+      ],
+      "source_claimed_output": "five_social_role_omens",
+      "dependency_family": "BALMO-ROLE-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0443",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 395,
+        "printed_page": 394,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_children_young_wives",
+      "paraphrase": "Fiery Gemstone chart eight concerns children and Blue Peacock chart nine young wives. The source assigns vitality/body/destiny/luck/mewa outcome claims to these roles; they are not generic individual horoscope traits.",
+      "required_inputs": [
+        "subject_age_or_role",
+        "chart_start_animal",
+        "constitutional_type"
+      ],
+      "source_claimed_output": "young_person_symbolic_omens",
+      "dependency_family": "BALMO-ROLE-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0444",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 397,
+        "printed_page": 396,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_household_land_metals",
+      "paraphrase": "Chart ten Gold Tiger/Dragon/Turtle/Bird concerns servants, chart eleven Golden Estate land and treasure, and chart twelve Golden Vase valuables/metals, with distinct source starting years and target outcomes.",
+      "required_inputs": [
+        "source_chart_number",
+        "role_or_property_context",
+        "constitution_element"
+      ],
+      "source_claimed_output": "household_property_omen",
+      "dependency_family": "BALMO-PROPERTY",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0445",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 398,
+        "printed_page": 397,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Balmo_cloven_hoof_and_fire_ox",
+      "paraphrase": "Chart thirteen Adult Wild Yak concerns horses, sheep and cattle; source gives a worked start from Fire Ox for Wood-element subject but omits clear backward/forward wording in the quoted English passage. Preserve direction as unknown pending the original table.",
+      "required_inputs": [
+        "constitutional_element",
+        "fire_ox_start",
+        "animal_ownership"
+      ],
+      "source_claimed_output": "livestock_omen",
+      "dependency_family": "BALMO-ANIMAL-CHART",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0446",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 400,
+        "printed_page": 399,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "editorial_conclusion_oral_transmission",
+      "paraphrase": "In conclusion, the translator states that practical implementation of the painted computations without living oral transmission is extraordinarily difficult, while the source's divinatory status is discussed within Buddhist relative-truth doctrine. This is a source-access limit, not evidence of predictive success.",
+      "required_inputs": [
+        "oral_instruction_available",
+        "translation_variant"
+      ],
+      "source_claimed_output": "implementation_limit",
+      "dependency_family": "BALMO-SOURCE-ACCESS",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0447",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 400,
+        "printed_page": 399,
+        "primary_witness": "White Beryl ff.314b–322a and Moonbeams conclusion ff39a–40a, via 2001 English edition"
+      },
+      "rule_key": "Moonbeams_harmful_methods_omitted",
+      "paraphrase": "The conclusion quotes Moonbeams as intentionally leaving destructive/hostile divination methods to more detailed works, alongside a devotional closing. This restricts coverage: absence in the supplied book is not proof the larger tradition lacks those methods.",
+      "required_inputs": [
+        "source_text_scope",
+        "omitted_other_techniques"
+      ],
+      "source_claimed_output": "explicit_noncoverage",
+      "dependency_family": "BALMO-MOONBEAMS-LIMIT",
+      "status": "DOCUMENTARY_SOURCE_ONLY",
+      "validated_human_predictions": 0,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 13,
+  "first_id": "TIB-R0435",
+  "last_id": "TIB-R0447",
+  "bounded_coverage": "All thirteen simplified charts at method/role level plus author/editor conclusion; no claim of full original Tibetan direct translation.",
+  "source_ambiguities": [
+    "Five-pebble Bal-mo color semantics cannot reuse eight-pebble 30-chart son-relation mixed color.",
+    "Thirteen chart 13 example states 'counting from Fire Ox' without a direction in the English excerpt; do not invent.",
+    "The work itself says the practical algorithms require oral knowledge and rare commentary beyond the book.",
+    "The alternative 2920 count also arises elsewhere in a different large public funerary ceremony; counts do not make methods identical."
+  ],
+  "human_tests": 0,
+  "model_promotions": 0,
+  "next_source_id": "TIB-R0448",
+  "next_research_frontier": "After PDF400 conclusion, finish Cornu, Henning, Erlewine, Janson and directly inspect original Tibetan witnesses for source conflicts; no further core Dorje exposition until note/bibliography checks."
+}
