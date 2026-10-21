@@ -28,7 +28,7 @@ The supplied English `Saravali`, Chapter 34, physical **PDF90–94**, provides t
 
 | Verse ranges | Claimed life outcome | Evidence handling |
 |---|---|---|
-| XXIV? **34.21–24** PDF91 | Number and survival of younger siblings inferred from third-house navamsas | Source itself prints a variant between Sun/Mars aspects; freeze edition |
+| **34.21–24** PDF91 | Number and survival of younger siblings inferred from third-house navamsas | Source itself prints a variant between Sun/Mars aspects; freeze edition |
 | 34.25–27 PDF91 | Childlessness/progeny and approximate number of children | Define biological/adopted children, births vs survivors, maturity and fertility opportunity |
 | 34.28–38 PDF91–92 | Adoption, child adopted from relatives, child raised after abandonment, marital arrangements and parentage | **Sensitive history**: document text, never profile an absent person |
 | 34.39–41 PDF92 | Sex of children, childlessness and child deaths with mitigating benefic clauses | Highly sensitive medical/family stakes, no predictive personal recommendations |
