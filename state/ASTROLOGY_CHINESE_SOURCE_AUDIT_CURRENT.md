@@ -1,3 +1,9 @@
+# Chinese BaZi V27 — Di Tian Sui chapter21 source-first checkpoint
+
+**Four new historical source annotations BZI-R0219–R0222** from pinned oldid844371 (two whole verses, two whole commentaries), SHA/CP/UTF8 proof and 10/10 independent cold source tests. Expanded Chan Wei variants remain unresolved, particularly 無去取 versus 猶是可. **BaZi222 + Zi Wei1059 = 1281 historical source records**, not humans. Next **BZI-R0223 chapter22**, Zi Wei next possible **ZWD-R1060** only with an independently pinned next source. Ancient printing, chart engine and human predictive validity remain unverified; genuine human blinded validations **0**, runtime promotions **0**.
+
+## Previous accepted Chinese V26 checkpoint
+
 # Chinese BaZi V26 — original Di Tian Sui section20 Connection/Obstruction
 
 **Two new historical source-only notes BZI-R0217–BZI-R0218**, one full verse and one full commentary paragraph in pinned Chinese Wikitext oldid844370, exact SHA/CP/UTF8 quote witnesses. Symbolic Five Phase mediating relations are not five empirically distinct predictions. **BaZi218+ZiWei1059=1277 historical source annotations**, not humans. Next **BZI-R0219 Di Tian Sui section21**, pending separately pinned source; next possible Zi Wei source ZWD-R1060 needs independent Volume III. Ancient print authenticity, chart/calendar engine and actual blind human tests still OPEN. Human forecast validations **0**, runtime promotions **0**.
