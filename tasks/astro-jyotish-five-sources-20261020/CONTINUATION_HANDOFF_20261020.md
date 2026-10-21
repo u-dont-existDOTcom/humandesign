@@ -2,7 +2,9 @@
 
 **Owner request:** add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).
 
-**Draft review:** [PR #136](https://github.com/u-dont-existDOTcom/humandesign/pull/136), base `research/astro-b07bb-clxxix-parents-source-20261020`. All nine changed files are in this task directory; do not merge without review.\n\n**Exact isolated GitHub branch:** `research/astro-jyotish-five-sources-reader-20261020`, based on independently accepted astrology-research commit `964d08bb4c61f6fc410052cb996b121180f5f855`. This is **not** a modification of the other reader's work. Load UDA `AGENTS.md` at next turn and this branch-scoped `TASK_STATUS.json` before selecting the next work item.
+**Draft review:** [PR #136](https://github.com/u-dont-existDOTcom/humandesign/pull/136), base `research/astro-b07bb-clxxix-parents-source-20261020`. All changed files are confined to this reader's task directory; do not merge without review.
+
+**Exact isolated GitHub branch:** `research/astro-jyotish-five-sources-reader-20261020`, based on independently accepted astrology-research commit `964d08bb4c61f6fc410052cb996b121180f5f855`. This is **not** a modification of the other reader's work. Load UDA `AGENTS.md` at next turn and this branch-scoped `TASK_STATUS.json` before selecting the next work item.
 
 ## Saved evidence
 
@@ -33,3 +35,12 @@ Continue critical page reading in all five texts and verify variants. Prioritize
 - Verified Rath PDF453 worked Pranapada arithmetic: `(190°09′13″ + 300 × 20h56m48s) mod 360° = 354°09′13″`; **5° per birth-minute, D60 0.5° in 6 seconds**. Mathematical reproducibility is not observational astrological validation.
 - **Total 113 source-only records** (B01=24, B02=10, B03=37, B04=22, B05=20), **16 files** including task status and handoff. All restricted to `tasks/astro-jyotish-five-sources-20261020/` branch. No model/test-person or other-reader edits; zero actual prospective human confirmations.
 - Next safe frontier: full remaining house-domain scanning and genuinely independent Sanskrit/translation collation of the conflicting computation formulas and spiritual-vocation rules. No need to recreate accepted B01–B05 batches.
+
+## B06 source reading (21 October 2026)
+
+- Saved `SOURCE_CANDIDATES_B06.json` (16 new source-located records), `TERMINOLOGY_TRIAGE_B06.json` (14 explicitly excluded lexical false positives/commentary), and `READING_NOTES_B06.md` with visually checked source references.
+- **New material observational domain**: *Saravali* Ch38.16–21 PDF110 links particular temperaments to dreams of flying, fire/gold/lightning, and water/snow; Ch41.74 PDF118 distinguishes weak-planets' dasha results in **dreams/thoughts** from external results. Cross-text nightmares: *Sarvartha* PDF59,368; Portuguese BPHS text line4499. This is source material, not validated accuracy.
+- Further claims: Mercury in Sagittarius abstract meditation (*Saravali* Ch26.17–18 PDF60); exalted Mercury in Sabha avastha supposedly attains enlightenment (Portuguese BPHS line3612); *Jataka Parijata* Vol II ChV-A prior and future realms (PDF714–716). Warn about commentarial use of moksha versus verse wording.
+- *Saravali* Ch39.11 PDF111 also allows **non-planetary environment at birth** to cancel a good yoga, so chart-only inputs cannot implement every historical clause.
+- Cumulative documentary entries **129 (B01–B06)**, **0 independent human predictive successes** and **0 production astrology rules promoted**. Remain on isolated PR#136 branch; no other reader output was modified.
+- Next: nonredundant broad source-domain chapter audit, source-language collation and versioned timing/cancellation variants; do not repeat accepted earlier work.
