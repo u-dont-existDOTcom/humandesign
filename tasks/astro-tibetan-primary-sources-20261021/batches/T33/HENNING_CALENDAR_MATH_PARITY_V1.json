@@ -1,0 +1,131 @@
+{
+  "schema": "ASTRO_TIBETAN_T33_CALENDAR_SOURCE_PARITY_FIXTURES_V1",
+  "batch": "T33",
+  "historical_note_increment": 0,
+  "source_id": "TIB-HENNING-2007",
+  "source_note_refs": [
+    "TIB-R0298",
+    "TIB-R0299",
+    "TIB-R0300",
+    "TIB-R0302",
+    "TIB-R0303",
+    "TIB-R0307",
+    "TIB-R0308",
+    "TIB-R0309",
+    "TIB-R0310",
+    "TIB-R0311",
+    "TIB-R0312"
+  ],
+  "source_sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+  "source_context": "Henning 2007 Ch. VI printed pp296–343 (PDF316–363); equations checked against scans and arithmetic",
+  "period_constants": {
+    "phugpa_synodic_month_mixed_radix": {
+      "integer_solar_days": 29,
+      "radices": [
+        60,
+        60,
+        6,
+        707
+      ],
+      "digits": [
+        31,
+        50,
+        0,
+        480
+      ],
+      "reproduced_days_exact": "167025/5656",
+      "reported_rounded_days": 29.530587
+    },
+    "kalachakra_karana_synodic_month_days": 29.5305556,
+    "kalachakra_karana_solar_year_days": 365.258516,
+    "phugpa_siddhanta_solar_year_days": 365.270645
+  },
+  "historical_epoch_examples": [
+    {
+      "system": "Kalacakra_karana",
+      "label": "Monday_23_March_806",
+      "julian_day": 2015531
+    },
+    {
+      "system": "Tsurphu_Karma_Ngelek",
+      "label": "Wednesday_26_March_1732",
+      "julian_day": 2353745
+    },
+    {
+      "system": "Tsurphu_Jamgon_Kongtrul",
+      "label": "Monday_19_April_1852",
+      "julian_day": 2397598
+    },
+    {
+      "system": "Sherab_Ling_reform",
+      "label": "Sunday_29_March_1987",
+      "julian_day": 2446884
+    }
+  ],
+  "intercalation_zero": {
+    "phugpa_error_correction_reference_longitude_deg": 0,
+    "tsurphu_reference_mixed_lunar_mansions": [
+      0,
+      29,
+      34,
+      5,
+      37
+    ],
+    "radices": [
+      27,
+      60,
+      60,
+      6,
+      67
+    ],
+    "expected_decimal_longitude_deg_approx": 6.573798,
+    "tsurphu_range_decimal_degrees": [
+      6.574,
+      7.022
+    ],
+    "theoretical_comparison_near_degrees": 16,
+    "qualification": "Henning p342; zodiac decimal-degrees rounding must not be mistaken for degrees and arcminutes."
+  },
+  "period_identity": {
+    "lunations": 39592,
+    "source_printed_total_weeks": 175682,
+    "correct_total_weeks": 167025,
+    "solar_days": 1169175,
+    "weekday_excess_days_after_28_each_month": 60599,
+    "weekday_excess_weeks": 8657,
+    "reconstruction": "(39592 * 4) + 8657 = 167025; exact lunation constant 167025/5656 days times 39592 equals 1169175 days.",
+    "source_conflict_id": "TIB-CONFLICT-006",
+    "source_page_pdf": 356,
+    "source_page_printed": 336
+  },
+  "competing_engine_variants": [
+    {
+      "name": "Phugpa_sidddhanta",
+      "status": "SOURCE_DESCRIBED_NOT_CODED"
+    },
+    {
+      "name": "Tsurphu_sidddhanta",
+      "status": "SOURCE_DESCRIBED_NOT_CODED"
+    },
+    {
+      "name": "Error_Correction_method",
+      "status": "SOURCE_DESCRIBED_NOT_CODED"
+    },
+    {
+      "name": "Kalacakra_karana",
+      "status": "SOURCE_DESCRIBED_NOT_CODED"
+    },
+    {
+      "name": "Sherab_Ling_1987_experimental",
+      "status": "SOURCE_DESCRIBED_NOT_CODED"
+    }
+  ],
+  "provenance_conditions": [
+    "These are sample mathematical checks, not complete calendar engine validation.",
+    "Do not treat source typo 175682 as a historical alternative calendrical model.",
+    "No human behavioral or life-event predictive validation.",
+    "Relative planetary positions and civil/calendar dates require full independent engine before being used with a participant.",
+    "Source author's inferred 1447 observation timing remains a conjecture."
+  ],
+  "validated_human_predictions": 0
+}
