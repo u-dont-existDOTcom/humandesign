@@ -1,0 +1,307 @@
+{
+  "schema": "TIBETAN_T32_HENNING_CALENDAR_SOURCE_NOTES_V1",
+  "batch": "T32",
+  "source_id": "TIB-HENNING-2007",
+  "source_sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+  "source": "Edward Henning, Kalacakra and the Tibetan Calendar (2007), Chapter VI Different Calculation Systems",
+  "scope": "printed pp296–343 / PDF pp316–363 selected full-text passages",
+  "note_count": 15,
+  "first_note_id": "TIB-R0298",
+  "last_note_id": "TIB-R0312",
+  "source_notes": [
+    {
+      "id": "TIB-R0298",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 316,
+        "printed_page": 296
+      },
+      "key": "kalachakra-karana-806-epoch",
+      "paraphrase": "Henning presents a karaṇa epoch of Monday 23 March 806, Julian day 2015531, for the original Kālacakra computation as distinct from later Tibetan siddhānta epoch policies.",
+      "required_inputs": [
+        "calendar_method",
+        "epoch"
+      ],
+      "output_class": "astronomical_epoch",
+      "dependency_family": "HENNING-EPOCH",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0299",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 317,
+        "printed_page": 297
+      },
+      "key": "two-synodic-month-lengths",
+      "paraphrase": "The karaṇa mean synodic month is 29.5305556 solar days, whereas the Tibetan siddhānta model used in Chapter I takes 29.5305870; Henning distinguishes rate error from epoch position error.",
+      "required_inputs": [
+        "calendar_method",
+        "epoch"
+      ],
+      "output_class": "lunar_mean_period",
+      "dependency_family": "HENNING-PERIOD",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0300",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 318,
+        "printed_page": 298
+      },
+      "key": "karana-siddhanta-year-length",
+      "paraphrase": "Henning derives a karaṇa year length of 365.258516 solar days and compares it to a siddhānta figure of 365.270645, noting separate modern sidereal/tropical reference values.",
+      "required_inputs": [
+        "calendar_method"
+      ],
+      "output_class": "solar_mean_year",
+      "dependency_family": "HENNING-PERIOD",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0301",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 325,
+        "printed_page": 305
+      },
+      "key": "Venus-84-emendation-hypothesis",
+      "paraphrase": "In analysing planetary calculations Henning proposes that a Venus epoch instruction to subtract 84 may reflect a scribal error for add 84; he explicitly presents this as his conjecture, not an established source correction.",
+      "required_inputs": [
+        "Venus_epoch_sign",
+        "textual_witness"
+      ],
+      "output_class": "unverified_edition_emendation",
+      "dependency_family": "HENNING-TEXT-CRITICISM",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0302",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 356,
+        "printed_page": 336
+      },
+      "key": "39592-lunar-month-175682-weeks",
+      "paraphrase": "Henning demonstrates the Phugpa mean-weekday relation that 39,592 lunar months equal 175,682 weeks; equivalently, their weekday advance of 60,599 days corresponds to 8,657 complete seven-day cycles after removing four-week components.",
+      "required_inputs": [
+        "Phugpa_siddhanta_constant"
+      ],
+      "output_class": "period_identity",
+      "dependency_family": "HENNING-PHUGPA-IDENTITY",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0303",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 357,
+        "printed_page": 337
+      },
+      "key": "65-solar-years-804-lunar-months",
+      "paraphrase": "The Phugpa mean solar-longitude calculation uses a 65-solar-year/804-lunar-month commensurability and a worked month remainders chain deriving 22;44,6,1,41.",
+      "required_inputs": [
+        "Phugpa_solar_cycle",
+        "lunar_month_index"
+      ],
+      "output_class": "solar_longitude_recurrence",
+      "dependency_family": "HENNING-PHUGPA-IDENTITY",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0304",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 357,
+        "printed_page": 337
+      },
+      "key": "lost-Tsurphu-development",
+      "paraphrase": "Henning reports scant surviving documentation for the Tsurphu tradition’s formation, including a lost Great Text on Astronomy; inferred historical reasoning must not be presented as the extant author's exact observations.",
+      "required_inputs": [
+        "textual_history",
+        "Tsurphu_witness"
+      ],
+      "output_class": "provenance_gap",
+      "dependency_family": "HENNING-HISTORY",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0305",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 358,
+        "printed_page": 338
+      },
+      "key": "Phugpa-Tsurphu-solstice-offsets",
+      "paraphrase": "In Henning's reconstruction Phugpa employs a theoretical winter-solstice offset of 23 degrees, Tsurphu 14 degrees; he notes mean solar-longitude outputs differ by less than the naively expected nine degrees.",
+      "required_inputs": [
+        "Phugpa",
+        "Tsurphu",
+        "historical_solstice_convention"
+      ],
+      "output_class": "calendrical_variant_difference",
+      "dependency_family": "HENNING-SOLSTICE",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0306",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 359,
+        "printed_page": 339
+      },
+      "key": "Tsurphu-observation-conjecture",
+      "paraphrase": "Henning infers, from retrospective calculation and absent direct observation records, that Tsurphu solstice observations may have been about one day late; this is an analyst's reconstruction, not independently documented historical practice.",
+      "required_inputs": [
+        "derived_solstice_offsets",
+        "lost_historical_record"
+      ],
+      "output_class": "uncertain_historical_inference",
+      "dependency_family": "HENNING-INFERENCE",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0307",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 360,
+        "printed_page": 340
+      },
+      "key": "Tsurphu-1732-epoch",
+      "paraphrase": "Karma Ngelek Tendzin's Tsurphu calculation epoch is Wednesday 26 March 1732 (JD 2353745), including distinct mean weekday and mean Sun fractional constants.",
+      "required_inputs": [
+        "Tsurphu_Karma_epoch"
+      ],
+      "output_class": "epoch_lookup",
+      "dependency_family": "HENNING-TSURPHU",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0308",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 360,
+        "printed_page": 340
+      },
+      "key": "Tsurphu-1852-epoch",
+      "paraphrase": "Jamgon Kongtrul's separate Tsurphu epoch is Monday 19 April 1852 (JD 2397598), preserving the same mean-motion constants but using new epoch offsets.",
+      "required_inputs": [
+        "Tsurphu_Kongtrul_epoch"
+      ],
+      "output_class": "epoch_lookup",
+      "dependency_family": "HENNING-TSURPHU",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0309",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 361,
+        "printed_page": 341
+      },
+      "key": "1447-new-moon-offsets",
+      "paraphrase": "Henning calculates mean new-moon timing for 1447 with Phugpa about 8.3 nadi before modern calculation and Tsurphu about 5.5 nadi before; the comparison concerns mean positions, not actual human predictions.",
+      "required_inputs": [
+        "1447_epoch",
+        "nadi_time_unit",
+        "calendar_system"
+      ],
+      "output_class": "calendar_accuracy_comparison",
+      "dependency_family": "HENNING-TSURPHU",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0310",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 362,
+        "printed_page": 342
+      },
+      "key": "Tsurphu-zero-index-decimal-longitude",
+      "paraphrase": "When the intercalation index is zero at new moon Phugpa/Error Correction places mean Sun at the beginning of a zodiac sign, but Tsurphu at longitude 0;29,34,5,37 lunar-mansion units, approximately 6.574 decimal degrees Aries, not 0 degrees.",
+      "required_inputs": [
+        "calendar_variant",
+        "intercalation_index",
+        "lunar_month"
+      ],
+      "output_class": "different_month_definition_points",
+      "dependency_family": "HENNING-INTERCALATION",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0311",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 362,
+        "printed_page": 342
+      },
+      "key": "Tsurphu-zero-index-window",
+      "paraphrase": "Henning gives the Tsurphu monthly definition-point window as 0;29,78 to 0;31,80 in its notation, about 6.574 to 7.022 decimal zodiac degrees, contrasting it with a theoretical point near 16 degrees for a 14-degree solstice shift.",
+      "required_inputs": [
+        "Tsurphu_intercalary_policy"
+      ],
+      "output_class": "month_boundary_window",
+      "dependency_family": "HENNING-INTERCALATION",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    },
+    {
+      "id": "TIB-R0312",
+      "source_id": "TIB-HENNING-2007",
+      "anchor": {
+        "pdf_page_1based": 363,
+        "printed_page": 343
+      },
+      "key": "Sherab-Ling-reform-third-variant",
+      "paraphrase": "Henning describes an independently developed Sherab Ling calendar with epoch Sunday 29 March 1987 (JD 2446884) and a solar mean-motion adjustment closer to the Kālacakra karaṇa rather than the standard Phugpa/Tsurphu figures; treat as additional competing tradition.",
+      "required_inputs": [
+        "Sherab_Ling_1987_epoch",
+        "solar_rate_variant"
+      ],
+      "output_class": "calendar_method_candidate",
+      "dependency_family": "HENNING-REFORM",
+      "status": "author's original mathematical study of traditional Sanskrit/Tibetan source methods; historical claims and author conjectures separated",
+      "blinded_human_predictive_validation": false,
+      "model_promotion": false
+    }
+  ],
+  "not_a_behavior_model": true,
+  "source_risk_notes": [
+    "Henning's 84 Venus correction is explicitly conjectural, not an established literal source reading.",
+    "Historical Tsurphu solstice observations are reconstructed without direct surviving records.",
+    "6.574 in intercalation description means decimal degrees; source sexagesimal mansion coordinates are the primary precise datum.",
+    "Numerical agreement with astronomical rates is not evidence of astrological life-event prediction."
+  ],
+  "root_status": "OPEN",
+  "human_predictive_cases_validated": 0,
+  "model_promotions": 0,
+  "next_id": "TIB-R0313"
+}
