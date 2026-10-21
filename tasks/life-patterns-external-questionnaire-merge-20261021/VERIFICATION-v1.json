@@ -1,0 +1,107 @@
+{
+  "schema": "life-patterns-external-personal-source-and-design-audit-verification-v1",
+  "version_date": "2026-10-21",
+  "outcome": "PRIVATE_OWNER_SOURCE_MERGED_AND_GENERIC_INSTRUMENT_CANDIDATE_PREPARED",
+  "source": {
+    "type": "Owner-provided 7-page OpenDocument Drawing, original content private",
+    "question_ids": "Q01-Q31 (all designs reviewed, not all copied)",
+    "historical_responses_marked": 26,
+    "marked_substantive_choices": 21,
+    "missing_or_unclear_choices": 5,
+    "unanswered_future_items": 5,
+    "actual_frozen_prediction_file_checked": false,
+    "sensitive_source_sha256_published_here": false
+  },
+  "owner_private_merge": {
+    "complete_prior_source_stack_preserved": true,
+    "prior_v33_answers": 25,
+    "prior_primary_turns": 84,
+    "prior_cf003_turns": 3,
+    "prior_em_answer_count": 8,
+    "other_participant_q96_excluded": true,
+    "private_owner_downloads_zip_created": true,
+    "original_master_unchanged": true,
+    "private_hash_proof_in_owner_downloads_only": true,
+    "historical_scores_revised": false
+  },
+  "research_design": {
+    "former_optional_question_count": 23,
+    "former_optional_text_changed": 0,
+    "existing_em_v2_question_count": 8,
+    "existing_tf1_question_count": 25,
+    "new_conditional_microprobes": 7,
+    "compulsory_new_questions": 0,
+    "external_design_question_count_audited": 31,
+    "adopted_as_activity_event_designs": 15,
+    "conditional_probe_origins": 7,
+    "rejected_forced_choice": 1,
+    "rejected_aesthetic_spending_proxy": 1,
+    "dependent_event_links": 2,
+    "future_only_items": 5,
+    "past_answers_not_retroactively_astronomy_scored": true,
+    "no_live_gpt_change": true,
+    "no_live_railway_change": true,
+    "proposed_questionnaire_status": "DEVELOPMENT_OPT_IN_NO_LIVE_OR_CHART_SCORING"
+  },
+  "checks": {
+    "focused_external_design_tests": 12,
+    "focused_all_three_survey_audit_suites": 27,
+    "ruff": "PASS",
+    "all_31_dispositions_typed": true,
+    "private_original_source_sha_boundary_verified": true,
+    "future_outcomes_preserved_pending": true,
+    "synthetic_negative_corruption_mutants": 6,
+    "public_bank_no_personal_user_answers": true,
+    "original_question_wording_identity": true
+  },
+  "public_files": {
+    "PLAN.md": {
+      "sha256": "7243650d09247bb622084cd1b7aa92e37703f40367bea2d443fd979205538ee8",
+      "bytes": 3956
+    },
+    "RESULT.md": {
+      "sha256": "ae855bf618ac3698daf7ca4e5c2f35e65a35cb0b97260c95f65b40fdd52140ad",
+      "bytes": 7671
+    },
+    "START-HERE.md": {
+      "sha256": "0644e53e848435231a0d5f8124792de97fed4553fe7ef2d35b7afcecea4a0490",
+      "bytes": 1876
+    },
+    "INTERVIEWER-V3-DESIGN-DELTA.md": {
+      "sha256": "e7495fd50608968c987cca558996568e3e4083f370ee70a57c7befbd37fa5aca",
+      "bytes": 6591
+    },
+    "ITEM-DISPOSITION-SOURCE.psv": {
+      "sha256": "37899a355d3ddba5388afe78c01bb0605d56b3028aa996fcbaf5ac06600e3a85",
+      "bytes": 4148
+    },
+    "CONDITIONAL-MICROPROBES-v1.json": {
+      "sha256": "06091dac8f4dc9f181ca63702f23f26d2dcfccf4aeaa372abe789889bc364e2b",
+      "bytes": 6894
+    },
+    "LIFE-PATTERNS-ADAPTIVE-SURVEY-v3-CANDIDATE.json": {
+      "sha256": "fec3d0d18b9463d29842e65c4759fd7ed900a019889531896f89c1b3764e0084",
+      "bytes": 60968
+    },
+    "EXTERNAL-31-ITEM-DESIGN-AUDIT-v1.json": {
+      "sha256": "7153b75edfc9b3131167ce42e0a38c56869c01494f95f1755f7dc62106f0c8e7",
+      "bytes": 18293
+    },
+    "build_adaptive_survey_v3.py": {
+      "sha256": "4e279e08e0ee861ad8f3d2e4f1fb23ef37a774d78feaac9ff4212e9ab2e59a8f",
+      "bytes": 16993
+    },
+    "merge_owner_personal_results.py": {
+      "sha256": "5af9484c03fe57ed1f7b10aa772a5f58eca02c017ebf9619391d40bd0656437b",
+      "bytes": 8320
+    },
+    "render_private_personal_import.py": {
+      "sha256": "496966ef5621f19d4b27c144a4aec8efdab6086588ef181ae40ccf2b9174f71a",
+      "bytes": 2908
+    },
+    "tests/unit/test_life_patterns_external_survey_merge_20261021.py": {
+      "sha256": "de738f61508b8b87fa2b011835fae36e0623aed09e5b6ccb3acf797594f0d066",
+      "bytes": 9114
+    }
+  }
+}

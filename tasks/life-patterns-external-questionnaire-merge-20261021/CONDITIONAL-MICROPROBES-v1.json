@@ -1,0 +1,157 @@
+{
+  "schema": "life-patterns-external-survey-conditional-microprobes-v1",
+  "status": "RESEARCH_CANDIDATE_NOT_LIVE_NOT_SCORED",
+  "source": "31-question user-provided external questionnaire; structural reuse only, no original answer text or personal DOB",
+  "default_required_probes": 0,
+  "maximum_new_conditional_probes_per_session": 2,
+  "admission": "Ask only if the actual participant's relevant existing response is insufficient and this distinction matters. A conditional answer, unsure, no opportunities, or declining is complete.",
+  "questions": [
+    {
+      "id": "EP-EVIDENCE-REASON",
+      "source_ids": [
+        "Q04"
+      ],
+      "related_topics": [
+        "MYSTERY",
+        "ANGER_REPAIR"
+      ],
+      "phenomenon": "evidence versus authority in substantive disagreement",
+      "kind": "recurring_tendency",
+      "question": "When you disagree with someone about a question of fact, how do you usually make your case—by checking reasons or evidence, appealing to expertise or authority, using experience, or something else?",
+      "followup": "What circumstances change that response? If disagreements are rare, say so; examples and precise counts are optional.",
+      "dimensions": [
+        "usual_methods",
+        "estimated_frequency_or_relevance",
+        "relationship_or_stakes_conditions"
+      ],
+      "anti_proxy": "Do not claim exact five-incident evidence unless the participant actually recalls five; expertise reliance is not equivalent to gullibility."
+    },
+    {
+      "id": "EP-INDEPENDENT-FEEDBACK",
+      "source_ids": [
+        "Q05"
+      ],
+      "related_topics": [
+        "VOCATION",
+        "ART"
+      ],
+      "phenomenon": "external feedback versus self-reported behavioral tendency",
+      "kind": "optional_observer_report",
+      "question": "Have two or more people independently remarked on a repeated way you work or interact—whether a strength or difficulty? If so, what did they actually notice?",
+      "followup": "Does their description fit your experience, and when does it or doesn't it?",
+      "dimensions": [
+        "verbatim_feedback_if_volunteered",
+        "number_of_independent_reporters_optional",
+        "self_agreement_separate",
+        "contexts"
+      ],
+      "anti_proxy": "Do not collapse thoroughness, criticism and perfectionism; labels are opinions, not established objective traits."
+    },
+    {
+      "id": "EP-CHOSEN-REFLECTION",
+      "source_ids": [
+        "Q09"
+      ],
+      "related_topics": [
+        "BELIEF",
+        "HOME",
+        "CONTENTMENT"
+      ],
+      "phenomenon": "chosen reflective solitude versus imposed isolation",
+      "kind": "recurring_tendency",
+      "question": "How much time do you normally choose to spend alone for contemplation, studying, or an activity you enjoy? Is it a need, preference, opportunity, or a mixture?",
+      "followup": "How does that differ from being alone because you have to work or lack company? Has it changed over time?",
+      "dimensions": [
+        "voluntary_chosen_solitude",
+        "frequency_and_duration_optional",
+        "purpose",
+        "opportunity_constraints"
+      ],
+      "anti_proxy": "Working alone, avoiding people, contemplative practice, and preference for quiet are distinct."
+    },
+    {
+      "id": "EP-GROUP-DEPARTURE",
+      "source_ids": [
+        "Q10"
+      ],
+      "related_topics": [
+        "BELIEF_CHANGE",
+        "HOME",
+        "BONDS"
+      ],
+      "phenomenon": "intentional departure from lasting groups",
+      "kind": "optional_actual_life_history",
+      "question": "Have you voluntarily stepped away from a group or community you had belonged to for a long time? You can say none, don't know or prefer not to discuss.",
+      "followup": "If so, was the main change in your interests, values, circumstances, or the group itself? Roughly when?",
+      "dimensions": [
+        "voluntary_exit_vs_group_end",
+        "reason_if_volunteered",
+        "approximate_period_optional"
+      ],
+      "anti_proxy": "Leaving a group is not automatically rebelliousness, isolation or rejection of community."
+    },
+    {
+      "id": "EP-LEADERSHIP-HISTORY",
+      "source_ids": [
+        "Q13"
+      ],
+      "related_topics": [
+        "STATUS",
+        "VOCATION",
+        "RECIPROCITY"
+      ],
+      "phenomenon": "actual coordinating roles versus preference and capacity",
+      "kind": "optional_actual_life_history",
+      "question": "Across groups you've actually taken part in, how often have you coordinated other people's work? Separately, how often do you prefer that role?",
+      "followup": "Were the responsibilities formal, informal, paid, unpaid or mixed? Do opportunities depend on the group's needs?",
+      "dimensions": [
+        "actual_held_roles",
+        "availability_or_opportunity",
+        "preferred_vs_actual",
+        "formal_informal_and_pay_separate"
+      ],
+      "anti_proxy": "No formal title does not establish lack of leadership ability or interest."
+    },
+    {
+      "id": "EP-PARTNER-PRIORITIES",
+      "source_ids": [
+        "Q17"
+      ],
+      "related_topics": [
+        "BONDS"
+      ],
+      "phenomenon": "relationship values and priority ranking without preselected forced qualities",
+      "kind": "optional_preference",
+      "question": "What qualities matter most to you in a long-term partner? Choose your own qualities, and rank them only if doing so helps; ties are fine.",
+      "followup": "Does your answer change for different kinds of relationships or at different stages of life? You can leave the order open.",
+      "dimensions": [
+        "respondent_generated_attributes",
+        "ordering_or_ties_optional",
+        "current_vs_earlier_context_optional"
+      ],
+      "anti_proxy": "Do not infer a value as unimportant just because it ranks fifth among an arbitrarily provided list."
+    },
+    {
+      "id": "EP-PROJECT-FOLLOWTHROUGH",
+      "source_ids": [
+        "Q19"
+      ],
+      "related_topics": [
+        "VOCATION",
+        "CONTENTMENT",
+        "LEARNING_HISTORY"
+      ],
+      "phenomenon": "goal persistence versus voluntary reprioritization",
+      "kind": "recurring_tendency",
+      "question": "When you choose a substantial personal project, what usually happens over time: completion, deliberate change of aim, pausing, or abandoning it? How common is each across the projects you've had?",
+      "followup": "What tends to decide whether you continue—meaning, novelty, slow progress, available energy, other duties or something else?",
+      "dimensions": [
+        "started_projects_approximate_opportunities",
+        "completed_changed_paused_abandoned_distribution",
+        "context_conditions",
+        "age_or_phase_changes_optional"
+      ],
+      "anti_proxy": "A count of abandoned projects alone says little without the number started and reasons for stopping."
+    }
+  ]
+}
