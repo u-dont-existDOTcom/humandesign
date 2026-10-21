@@ -1,0 +1,248 @@
+{
+  "schema": "TIBETAN_T45_REBIRTH_AND_FUNERAL_SOURCE_LOOKUPS_V1",
+  "batch": "T45",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "historical_source_note_increment": 0,
+  "notes_reused": [
+    "TIB-R0396",
+    "TIB-R0397",
+    "TIB-R0399",
+    "TIB-R0400",
+    "TIB-R0404",
+    "TIB-R0405",
+    "TIB-R0412",
+    "TIB-R0414",
+    "TIB-R0416"
+  ],
+  "source_anchor": {
+    "hour_6_realms_pdf_page": 334,
+    "sector_6_realms_pdf_page": 334,
+    "mewa_rebirth_pdf_pages": [
+      330,
+      331
+    ],
+    "five_funeral_methods_pdf_pages": [
+      337,
+      338
+    ],
+    "corpse_direction_pdf_page": 355,
+    "pebble_totals_pdf_pages": [
+      325,
+      327,
+      335,
+      336,
+      346,
+      352,
+      357,
+      358
+    ]
+  },
+  "source_tables": {
+    "six_realm_by_hour_animal": [
+      {
+        "animals": [
+          "tiger",
+          "hare"
+        ],
+        "class_name": "devaloka_gods"
+      },
+      {
+        "animals": [
+          "dragon",
+          "ox"
+        ],
+        "class_name": "asuraloka_antigods"
+      },
+      {
+        "animals": [
+          "snake",
+          "mouse"
+        ],
+        "class_name": "manusyaloka_humans"
+      },
+      {
+        "animals": [
+          "horse",
+          "pig"
+        ],
+        "class_name": "tiryagloka_animals"
+      },
+      {
+        "animals": [
+          "sheep",
+          "dog"
+        ],
+        "class_name": "pretaloka_tormented_spirits"
+      },
+      {
+        "animals": [
+          "bird",
+          "monkey"
+        ],
+        "class_name": "narakaloka_hells"
+      }
+    ],
+    "six_realm_by_growth_decline_sector": [
+      {
+        "paired_sectors": [
+          "foetus",
+          "clothing"
+        ],
+        "class_name": "devaloka_gods"
+      },
+      {
+        "paired_sectors": [
+          "birth",
+          "work"
+        ],
+        "class_name": "asuraloka_antigods"
+      },
+      {
+        "paired_sectors": [
+          "ablution",
+          "growth"
+        ],
+        "class_name": "manusyaloka_humans"
+      },
+      {
+        "paired_sectors": [
+          "conception",
+          "ill_health"
+        ],
+        "class_name": "tiryagloka_animals"
+      },
+      {
+        "paired_sectors": [
+          "embryo",
+          "death"
+        ],
+        "class_name": "pretaloka_tormented_spirits"
+      },
+      {
+        "paired_sectors": [
+          "decline",
+          "tomb"
+        ],
+        "class_name": "narakaloka_hells"
+      }
+    ],
+    "mewa_to_rebirth_categories": [
+      {
+        "mewa_values": [
+          "White One",
+          "White Six",
+          "White Eight"
+        ],
+        "class_name": "gods"
+      },
+      {
+        "mewa_values": [
+          "Black Two",
+          "Blue Three",
+          "Green Four"
+        ],
+        "class_name": "lower_existences"
+      },
+      {
+        "mewa_values": [
+          "Red Seven",
+          "Red Nine",
+          "Yellow Five"
+        ],
+        "class_name": "intermediate"
+      },
+      {
+        "mewa_values": [
+          "Yellow Five"
+        ],
+        "class_name": "humans"
+      }
+    ],
+    "funeral_elemental_methods": [
+      {
+        "funeral_method": "cremation",
+        "element": "fire"
+      },
+      {
+        "funeral_method": "interment",
+        "element": "earth"
+      },
+      {
+        "funeral_method": "water_burial_or_submersion",
+        "element": "water"
+      },
+      {
+        "funeral_method": "entombment",
+        "element": "iron"
+      },
+      {
+        "funeral_method": "sky_burial_or_mountain_disposal",
+        "element": "wood"
+      }
+    ],
+    "five_deceased_year_direction_avoidance": [
+      {
+        "natal_year_animals": [
+          "horse",
+          "snake"
+        ],
+        "not_to_remove_towards": "north"
+      },
+      {
+        "natal_year_animals": [
+          "bird",
+          "monkey"
+        ],
+        "not_to_remove_towards": "south"
+      },
+      {
+        "natal_year_animals": [
+          "tiger",
+          "hare"
+        ],
+        "not_to_remove_towards": "west"
+      },
+      {
+        "natal_year_animals": [
+          "mouse",
+          "pig"
+        ],
+        "not_to_remove_towards": "intermediate_directions"
+      },
+      {
+        "natal_year_animals": [
+          "ox",
+          "dragon",
+          "sheep",
+          "dog"
+        ],
+        "not_to_remove_towards": "east"
+      }
+    ]
+  },
+  "historical_source_counts": {
+    "living_family_fixed": 20,
+    "timeliness_deceased": 58,
+    "funeral_Moonbeams_total": 199,
+    "funeral_Moonbeams_underlying": 187,
+    "funeral_Moonbeams_predictive": 12,
+    "ceremony_public_total": 2920,
+    "ceremony_public_base": 136,
+    "ceremony_public_recognition": 2784,
+    "recurrence_total": 11,
+    "recurrence_base": 10,
+    "eye_of_death_resultant": 39,
+    "eye_of_death_recognition": 55,
+    "eighteen_status_classes": 18,
+    "bon_buddhist_twelve_rites": 12,
+    "corpse_types": 13
+  },
+  "known_ambiguities": [
+    "Yellow Five appears both in general intermediate realm and particular human rebirth row; do not silently choose one.",
+    "Several afterlife categories and ritual outcomes are not independently verifiable using conventional questionnaire responses.",
+    "Source-defined funeral methods are historical/cultural records, not contemporary legal/safety instructions.",
+    "The number 199 applies to Lochen's compact funeral summary; 2920 to a distinct public-ceremony method."
+  ],
+  "empirical_human_predictive_tests": 0
+}
