@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B07_HORARY_REVERSE_RECTIFICATION_CHECKPOINT",
+  "status": "OPEN_B09_CRITICAL_SANSKRIT_AND_COVERAGE_CHECKPOINT",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B07.md",
+  "last_checkpoint": "READING_NOTES_B09.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -29,7 +29,11 @@
     "READING_NOTES_B06.md",
     "SOURCE_CANDIDATES_B07.json",
     "UNKNOWN_BIRTH_TIME_SOURCE_CROSSWALK_B07.json",
-    "READING_NOTES_B07.md"
+    "READING_NOTES_B07.md",
+    "SANSKRIT_DREAM_TEXT_CROSSWALK_B08.json",
+    "SARAVALI_CHAPTER_COVERAGE_V1.json",
+    "READING_NOTES_B08.md",
+    "READING_NOTES_B09.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -59,17 +63,34 @@
     "b06_lexical_false_positive_cases": 14,
     "measurable_novel_domain": "dream content categories, linked to Ch38 elemental/temperament configuration",
     "b07_new_source_annotations": 24,
-    "b07_parallel_horary_method_families": 10
+    "b07_parallel_horary_method_families": 10,
+    "b08_correlated_dream_source_families": 3,
+    "b08_material_translation_discrepancies": 2,
+    "b08_edition_numbering_crosswalks": 4,
+    "saravali_chapters_total": 55,
+    "saravali_chapters_with_some_notes": 15,
+    "saravali_chapters_without_notes": 40,
+    "b09_exploratory_documented_chapters": [
+      9,
+      12,
+      13,
+      21,
+      42,
+      53,
+      54,
+      55
+    ]
   },
   "pending_actions": [
-    "Verify Saravali chapter 38 dream slokas against Sanskrit source, especially coral versus pearls.",
-    "Map textual overlap of Saravali dream temperament taxonomy with independent historical Ayurveda; distinguish motif provenance from validated predictive effect.",
-    "Continue systematic source-domain inventory without repeating B01-B07; identify unsupported books/chapters.",
-    "Formalize optional horary reverse birth rectification as a separately pre-registered experiment, not natal forward prediction.",
-    "Do not mutate other reader branches, participant data, model, questionnaires or Western/Chinese ledgers.",
-    "Retain copyrighted modern books outside public repo; no source-derived outcomes counted as actual human success."
+    "Audit original Sanskrit for Saravali chapter-numbering/verse variations and two specific English dream mistranslation candidates, retaining all variants.",
+    "Expand the 55-chapter coverage index with systematic nonduplicative source notes; 40 chapters had no evidence rows as of B08, B09 exploratory notes cover eight of these but are not accepted records.",
+    "Map astrology-derived dream content against existing traditional Ayurveda taxonomy and modern empirical baselines, with proper source independence.",
+    "Review time-varying Ashtakavarga transit and Moola Dasa subperiod rules for deterministic source-computable predictions and unresolved normalizations.",
+    "Do not modify other astrology reader branches, live model, participant records, questionnaire, Western/Chinese indices.",
+    "Do not publish full modern copyrighted books on this public branch.",
+    "Keep all future person-level forecasts truly prospective/blinded, count misses/negative outcomes and preserve honest failure bounds."
   ],
-  "next_exact_source_frontier": "External Sanskrit collation for Saravali Ch38 dream symbols (English coral/pearls discrepancy) and historical Ayurvedic theory; systematic remaining chapter inventory, source-dependent and extra-input rules.",
+  "next_exact_source_frontier": "Complete systematic nonredundant source reading of Saravali unindexed chapters; independently compare Sanskrit verse variants and translation errors; verify ashtakavarga time-series formulas against reliable classical editions; only then freeze possible models.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
