@@ -1,0 +1,335 @@
+{
+  "schema": "TIBETAN_T16_MARRIAGE_CONSTITUTION_AND_PERMUTATIONS_V1",
+  "source": "Gyurme Dorje (2001) English White Beryl & Moonbeams translation/commentary",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "scope": "PDF pages 203–210, printed 202–209; White Beryl f234a/b and ff235a–237b; Moonbeams f26a–27a",
+  "source_notes": [
+    {
+      "id": "TIB-R0175",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 203,
+        "printed_page": 202,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "identical-natal-trigram-eight-omens",
+      "paraphrase": "Eight different unfavorable omen descriptions are given for partners sharing Li, Khon, Dva, Khen, Kham, Gin, Zin or Zon trigrams; the descriptions concern the bride and are not one uniform negative prediction.",
+      "required_inputs": [
+        "both_natal_trigrams"
+      ],
+      "dependency_family": "TIB-MARRIAGE-SAME-TRIGRAM",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0176",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 203,
+        "printed_page": 202,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "four-unchanging-year-trigram-cases",
+      "paraphrase": "The source identifies four specific unfavorable natal year-element/animal plus trigram patterns, including Wood Hare/Zin, Fire Horse/Li, Iron Bird/Dva and Water Mouse/Kham, under the unchanging divination tradition.",
+      "required_inputs": [
+        "year_element_animal",
+        "natal_trigram"
+      ],
+      "dependency_family": "TIB-MARRIAGE-YEAR-TRIGRAM",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0177",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 204,
+        "printed_page": 203,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "four-pairs-eight-practical-cases",
+      "paraphrase": "Under the practical or hand-gesture tradition, four paired year-sign groupings each with one trigram create eight nominal unfavorable animal/trigram combinations. The specific conditions are Ox/Tiger–Gin, Dragon/Snake–Zon, Monkey/Sheep–Khon and Mouse/Pig–Khen.",
+      "required_inputs": [
+        "year_animal",
+        "natal_trigram"
+      ],
+      "dependency_family": "TIB-MARRIAGE-YEAR-TRIGRAM",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0178",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 204,
+        "printed_page": 203,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "sex-role-dependent-marriage-omens",
+      "paraphrase": "Distinct examples combine the bride's own animal and trigram or the groom's year and trigram, sometimes also the other partner's trigram. Consequences are assigned to different targets and cannot be collapsed into a symmetric compatibility matrix.",
+      "required_inputs": [
+        "bride_year_trigram",
+        "groom_year_trigram"
+      ],
+      "dependency_family": "TIB-MARRIAGE-ROLE-SPECIFIC",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0179",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 204,
+        "printed_page": 203,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "eleven-trigram-children-examples",
+      "paraphrase": "Plate 17 fig.11 presents multiple predictions of offspring numbers or sex ratio by both partners' natal trigrams; several rows offer two possible counts and Kham/Zin appears with differing claimed child-sex outcomes.",
+      "required_inputs": [
+        "bride_natal_trigram",
+        "groom_natal_trigram"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TRIGRAM-CHILDREN",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0180",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 205,
+        "printed_page": 204,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "Moonbeams-vs-WhiteBeryl-constitutional-subject",
+      "paraphrase": "Lo-chen Dharmaśrī in Moonbeams compares constitutional types of the bride and groom; the White Beryl passage instead bases the calculation on constitutional types of the two partners' fathers. These are different input policies, not two readings of a single birth-only rule.",
+      "required_inputs": [
+        "tradition_variant",
+        "partners_constitutional_types",
+        "possibly_both_fathers_constitutional_types"
+      ],
+      "dependency_family": "TIB-MARRIAGE-COMPETING-CONSTITUTION",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0181",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 205,
+        "printed_page": 204,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "constitutional-from-natal-number",
+      "paraphrase": "For this application, the constitutional type is derived from the element corresponding to each person's natal numeric square (mewa), illustrated with iron White Six and water Blue Three.",
+      "required_inputs": [
+        "person_natal_mewa",
+        "mewa_element_lookup"
+      ],
+      "dependency_family": "TIB-MARRIAGE-CONSTITUTION-LOOKUP",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0182",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 205,
+        "printed_page": 204,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "mothers-constitutional-compatibility",
+      "paraphrase": "A separate comparison of the groom's mother and bride's mother uses their constitutional types to prognosticate purported future children's vigor and appearance; it requires both mothers' information.",
+      "required_inputs": [
+        "groom_mother_natal_constitution",
+        "bride_mother_natal_constitution"
+      ],
+      "dependency_family": "TIB-MARRIAGE-PARENT-CHILD",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0183",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 205,
+        "printed_page": 204,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "father-growth-decline-marriage",
+      "paraphrase": "The method rotates twelve growth/decline sectors beginning from the years of the partners' fathers toward their children's signs or natal trigrams, assigning favorable and unfavorable family-line omens.",
+      "required_inputs": [
+        "both_fathers_year_signs",
+        "both_partners_year_signs",
+        "both_partners_natal_trigrams",
+        "sector_rules"
+      ],
+      "dependency_family": "TIB-MARRIAGE-FATHER-SECTORS",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0184",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 206,
+        "printed_page": 205,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "nine-gi-gong-named-charts",
+      "paraphrase": "Nine permutated marriage compatibility charts are named after relationships among eight trigrams, including heavenly medicine, sustaining vitality, growth through glory, harm and cutting influence of demons.",
+      "required_inputs": [
+        "trigram_relationships",
+        "mewa_layout"
+      ],
+      "dependency_family": "TIB-MARRIAGE-NINE-CHARTS",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0185",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 207,
+        "printed_page": 206,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "three-times-three-rankings",
+      "paraphrase": "The nine charts are ranked in three auspicious, three middle and three inauspicious categories, with separate four-pebble calculations for each partner's vitality, body, destiny and luck.",
+      "required_inputs": [
+        "four_elemental_axes",
+        "nine_chart_class"
+      ],
+      "dependency_family": "TIB-MARRIAGE-NINE-CHARTS",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0186",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 209,
+        "printed_page": 208,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "WhiteBeryl-further-three-circles",
+      "paraphrase": "When prior compatibility calculations are inconclusive, White Beryl describes an additional outer/middle/inner-circle comparison: wood in the outside, mouse/ox year signs in the middle, and the couple's year signs inward; preferred score direction differs between groom and bride at different circles.",
+      "required_inputs": [
+        "groom_mewa",
+        "bride_mewa",
+        "wood_outer",
+        "mouse_ox_intermediate",
+        "year_signs_inner"
+      ],
+      "dependency_family": "TIB-MARRIAGE-FURTHER-PERMUTATION",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0187",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 209,
+        "printed_page": 208,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "Moonbeams-bride-only-permutation",
+      "paraphrase": "A distinct further permutation keeps groom's natal mewa unchanged but swaps the bride's mewa 1↔2, 3↔9, 4↔8; numbers 6 and 7 are fixed, while the described passage omits a rule for 5.",
+      "required_inputs": [
+        "tradition_Moonbeams",
+        "bride_mewa",
+        "groom_mewa",
+        "unknown_case_5"
+      ],
+      "dependency_family": "TIB-MARRIAGE-FURTHER-PERMUTATION",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0188",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 209,
+        "printed_page": 208,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "groom-seniority-sexagenary-polarity",
+      "paraphrase": "Moonbeams f27a prefers a groom older than the bride with the groom born in a male-polarity year and bride born in a female-polarity year. This is a historical gendered preference rule, not demonstrated relationship counseling.",
+      "required_inputs": [
+        "groom_age",
+        "bride_age",
+        "groom_year_polarity",
+        "bride_year_polarity"
+      ],
+      "dependency_family": "TIB-MARRIAGE-SENIORITY",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0189",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 209,
+        "printed_page": 208,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "mewa-relation-observations",
+      "paraphrase": "The text distinguishes identity and hostile mewa pairings from mother/son relations, and singles out the combination groom Red Seven and bride Blue Three as unfavorable; it does not offer a calibrated relationship probability.",
+      "required_inputs": [
+        "two_natal_mewa",
+        "mother_son_enemy_relation"
+      ],
+      "dependency_family": "TIB-MARRIAGE-MEWA-RELATION",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "TIB-R0190",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 210,
+        "printed_page": 209,
+        "underlying_work": "White Beryl and/or Moonbeams as distinguished in source"
+      },
+      "rule_key": "marriage-growth-decline-natal-month",
+      "paraphrase": "Marriage prognoses are also conditioned on the partners' natal months and twelve growth/decline sectors, crossed with vitality, body, destiny and luck. Each sector is assigned a distinctive consequence for resources, descendants or public standing.",
+      "required_inputs": [
+        "both_natal_months",
+        "four_personal_elements",
+        "sector"
+      ],
+      "dependency_family": "TIB-MARRIAGE-MONTH-SECTOR",
+      "documentary_status": "translated_claim_or_commentary_not_original_tibetan_independently_checked",
+      "human_predictive_validation": false,
+      "runtime_model_promoted": false
+    }
+  ],
+  "note_count": 16,
+  "first": "TIB-R0175",
+  "last": "TIB-R0190",
+  "batch": "T16",
+  "dependent_variants": [
+    "Bride/groom own constitutional elements versus both fathers' elements are nonidentical input policies.",
+    "Two distinct further-permutation algorithms in White Beryl and Moonbeams.",
+    "Kham/Zin multiple child-sex predictions coexist and are not a single exact forecast.",
+    "Moonbeams bride mewa 5 mapping is not given in inspected passage; exclude unknown cases."
+  ],
+  "human_predictions_tested": 0,
+  "runtime_promotions": 0,
+  "next_id": "TIB-R0191"
+}
