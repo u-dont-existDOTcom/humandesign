@@ -1,0 +1,711 @@
+{
+  "schema": "TIBETAN_T44_DEATH_CHAPTER_REMAINDER_SOURCE_NOTES_V1",
+  "batch": "T44",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "scope": "PDF318–358/printed317–357 (remaining chapter of death); source/edition study only",
+  "source_notes": [
+    {
+      "id": "TIB-R0388",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 318,
+        "printed_page": 317,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "retributions-three-source-families",
+      "paraphrase": "The second death-divination topic separates retribution into outer annual/year-cycle, inner eight-trigram, and intermediate nine-square systems. The embedded Moonbeams specifies 11 retribution pebbles relating to causes and domains, none of which is an independent observed death case.",
+      "required_inputs": [
+        "source_family",
+        "temporal_chart",
+        "eleven_symbolic_pebbles"
+      ],
+      "source_output_class": "retribution_category",
+      "dependency_family": "DEATH-RETRIBUTION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0389",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 318,
+        "printed_page": 317,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "retributions-four-forces-plus-four-times",
+      "paraphrase": "In the outer cycle, four pebbles for vitality, body, destiny and luck are read alongside year, month, day and hour. White and black variants attribute different historical ritual or social causes to the death, not tested mechanisms.",
+      "required_inputs": [
+        "death_year_month_day_hour",
+        "four_force_pebble_colors"
+      ],
+      "source_output_class": "historical_causal_narrative",
+      "dependency_family": "DEATH-RETRIBUTION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0390",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 320,
+        "printed_page": 319,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "enemy-identity-elemental-retribution",
+      "paraphrase": "Plate11 fig8 attributes distinct retribution narratives to five enemy-related elemental combinations and five same-element pairings (fire/fire, wood/wood, water/water, iron/iron, earth/earth). Ordered enemy relations are not symmetric.",
+      "required_inputs": [
+        "element_a",
+        "element_b",
+        "relation_direction",
+        "time_of_death"
+      ],
+      "source_output_class": "elemental_retribution_category",
+      "dependency_family": "DEATH-ELEMENT-RELATION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0391",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 320,
+        "printed_page": 319,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "death-sign-month-discord",
+      "paraphrase": "Plate11 fig9 matches animal signs of death against distinct potentially adverse following months, conditional also on death year/month/day/hour sharing signs. It is a post-death omen, not a natal mortality forecast.",
+      "required_inputs": [
+        "death_animal_year_day_hour",
+        "following_month_sign"
+      ],
+      "source_output_class": "death_month_omen",
+      "dependency_family": "DEATH-YEAR-MONTH",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0392",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 321,
+        "printed_page": 320,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eight-death-trigram-retributions",
+      "paraphrase": "The death trigram Li/Khon/Dva/Khen/Kham/Gin/Zin/Zon maps to material objects, foods, places and geographically directed haunting claims, with different symbolic consequences.",
+      "required_inputs": [
+        "trigram_at_death",
+        "material_context"
+      ],
+      "source_output_class": "trigram_retribution",
+      "dependency_family": "DEATH-TRIGRAM",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0393",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 322,
+        "printed_page": 321,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "demonic-influences-by-calendar-subsystem",
+      "paraphrase": "A third death-divination family attributes different spirit/relative omens to the deceased's birth animal, current trigram, current numeric square, death day, planetary weekday, lunar mansion and hour. These are distinct categorical lookup systems.",
+      "required_inputs": [
+        "natal_animal",
+        "trigram_at_death",
+        "mewa_at_death",
+        "weekday",
+        "lunar_mansion",
+        "death_hour"
+      ],
+      "source_output_class": "multi_method_spirit_omen",
+      "dependency_family": "DEATH-SPIRIT-OMENS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0394",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 325,
+        "printed_page": 324,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eighteen-funeral-status-categories",
+      "paraphrase": "The fourth death-divination topic enumerates 18 funeral status categories in six greater, six lesser and six irregular classes, often assigned according to the deceased's role, social status, family and circumstances.",
+      "required_inputs": [
+        "deceased_social_role",
+        "family_condition",
+        "tradition"
+      ],
+      "source_output_class": "18_status_classes",
+      "dependency_family": "DEATH-FUNERAL-STATUS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0395",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 327,
+        "printed_page": 326,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "thirteen-relative-funeral-types",
+      "paraphrase": "A separate enumeration lists thirteen relational funeral types distinguished by who performs rites for whom (for example spouse/spouse, father/son, teacher/student, royal roles). Unlike natal chart features these are social-role/cultural choices.",
+      "required_inputs": [
+        "mourner_relationship_to_deceased",
+        "ritual_relationship_type"
+      ],
+      "source_output_class": "13_ritual_roles",
+      "dependency_family": "DEATH-FUNERAL-RELATIONS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0396",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 327,
+        "printed_page": 326,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eleven-pebble-rebirth-three-outcomes",
+      "paraphrase": "Rebirth divination uses eleven basic pebbles and one concluding pebble; white is said to indicate gods, black the lower existences and mottled humans. This is a religious afterlife classification and is not independently measurable by ordinary life-history surveys.",
+      "required_inputs": [
+        "deceased_chart",
+        "date_of_death",
+        "eleven_pebbles"
+      ],
+      "source_output_class": "three_rebirth_symbols",
+      "dependency_family": "DEATH-REBIRTH",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0397",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 330,
+        "printed_page": 329,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "mewa-five-rebirth-overlap",
+      "paraphrase": "Plate12 fig6 groups White1/6/8 with gods, Black2/Blue3/Green4 with lower existences, Red7/9 and Yellow5 with intermediary beings, but Yellow5 also separately with humans. Preserve the overlapping Yellow5 rows; no single categorical value can be derived without a variant rule.",
+      "required_inputs": [
+        "death_mewa"
+      ],
+      "source_output_class": "overlapping_afterlife_category",
+      "dependency_family": "DEATH-REBIRTH-OVERLAP",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0398",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 331,
+        "printed_page": 330,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "nine-mewa-ritual-conditional-rebirth",
+      "paraphrase": "Plate12 fig7 makes alleged rebirth type conditional on year/month/day/hour death square and specific religious image-making/recitation interventions. These are source-reported beliefs, not outcomes validated by historical evidence.",
+      "required_inputs": [
+        "death_year_mewa",
+        "death_month_mewa",
+        "day_mewa",
+        "hour_mewa",
+        "proposed_ritual"
+      ],
+      "source_output_class": "ritual_conditional_rebirth",
+      "dependency_family": "DEATH-REBIRTH-RITUAL",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0399",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 334,
+        "printed_page": 333,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "six-realms-hour-of-death",
+      "paraphrase": "Plate20 fig3 groups birth-realm prognoses by six pairs of animal hours at death, including god, antigod, human, animal, hungry spirit and hell realms; this is not a biological fate measurement.",
+      "required_inputs": [
+        "death_hour_animal"
+      ],
+      "source_output_class": "six_realm_afterlife_symbol",
+      "dependency_family": "DEATH-REBIRTH-HOUR",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0400",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 334,
+        "printed_page": 333,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "six-realms-growth-decline-sectors",
+      "paraphrase": "Plate12 fig9 independently maps the twelve growth/decline sectors into six pairs associated with realms of rebirth, differing from the animal-hour method on the same page.",
+      "required_inputs": [
+        "death_growth_decline_sector"
+      ],
+      "source_output_class": "six_realm_afterlife_symbol",
+      "dependency_family": "DEATH-REBIRTH-SECTOR",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0401",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 335,
+        "printed_page": 334,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "twelve-religious-funeral-rite-families",
+      "paraphrase": "The sixth category enumerates twelve funerary rite styles in four families of three (Bon, Buddhist, treasure-tradition, aspiration). These are ritual alternatives organized by tradition, not twelve empirically verified successes.",
+      "required_inputs": [
+        "religious_ritual_tradition",
+        "funeral_context"
+      ],
+      "source_output_class": "12_religious_rites",
+      "dependency_family": "DEATH-RELIGIOUS-FUNERAL",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0402",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 336,
+        "printed_page": 335,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "thirteen-class-corpse-taxonomy",
+      "paraphrase": "The seventh category gives thirteen named corpse classes based on circumstances such as age, injury, lineage, homelessness, childhood, disease, or manner of death, each sometimes with subtypes. Classification is historical and ethically sensitive.",
+      "required_inputs": [
+        "deceased_age",
+        "circumstances_of_death",
+        "family_status"
+      ],
+      "source_output_class": "13_corpse_types",
+      "dependency_family": "DEATH-CORPSE-TAXONOMY",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0403",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 336,
+        "printed_page": 335,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "five-age-subclasses-and-six-infant-stages",
+      "paraphrase": "Within the thirteen corpse types, five auspicious-aged categories and six infant categories depend on age, children, widowed status and milestones; these are historic social/funerary labels and no modern diagnosis.",
+      "required_inputs": [
+        "deceased_age",
+        "household_status",
+        "child_development_stage"
+      ],
+      "source_output_class": "corpse_subtypes",
+      "dependency_family": "DEATH-CORPSE-TAXONOMY",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0404",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 337,
+        "printed_page": 336,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "five-element-funeral-methods",
+      "paraphrase": "The eighth category pairs five funeral methods with elements (cremation/fire, earth interment/earth, water/transport, entombment/iron, sky or mountain disposal/wood) and gives combinations said to be unsuitable based on year, trigram, mewa, planet and generations.",
+      "required_inputs": [
+        "method",
+        "year_sign",
+        "constitution",
+        "trigram",
+        "mewa",
+        "planet",
+        "family_generation_years"
+      ],
+      "source_output_class": "five_forbidden_funeral_omens",
+      "dependency_family": "DEATH-FIVE-FUNERAL-METHODS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0405",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 339,
+        "printed_page": 338,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "four-inauspicious-cremations",
+      "paraphrase": "Supplementary Plate20 fig4 lists four allegedly inauspicious cremation scenarios conditional on age, divorce, child survival and historical illness/disability, unlike the favorable conditions in its next chart. These are not safety or health advice.",
+      "required_inputs": [
+        "deceased_age",
+        "marriage_history",
+        "offspring_survival",
+        "historical_ailments"
+      ],
+      "source_output_class": "four_funerary_omens",
+      "dependency_family": "DEATH-CREMATION-CLASS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0406",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 343,
+        "printed_page": 342,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "funeral-items-by-eight-trigrams",
+      "paraphrase": "The ninth category maps the current death-time trigram to a different list of objects, foods, textiles, animals or symbolic funeral accoutrements, as shown in Plate12 fig13.",
+      "required_inputs": [
+        "trigram_at_death",
+        "traditional_ritual_items"
+      ],
+      "source_output_class": "eight_death_trigram_object_sets",
+      "dependency_family": "DEATH-FUNERAL-OBJECTS",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0407",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 346,
+        "printed_page": 345,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "recurrence-ten-plus-one-pebbles",
+      "paraphrase": "The tenth topic calculates recurrence of death using ten base pebbles for year, log-men, month, day, hour, planet, mansion, growth sector, mewa and trigram, plus a concluding marker (eleven total). Moonbeams separately describes this as eleven, not a contradiction.",
+      "required_inputs": [
+        "deceased_death_calendar",
+        "ten_odd_even_factors",
+        "conclusive_marker"
+      ],
+      "source_output_class": "11_marker_recurrence",
+      "dependency_family": "DEATH-RECURRENCE",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0408",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 346,
+        "printed_page": 345,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eight-ritual-irritations",
+      "paraphrase": "When classical black-pebble recurrence is indicated, the text enumerates eight major irritation forms, including natal/contemporaneous trigram, multiples-of-nine, illness/death/tomb sectors, planetary/mansion combinations and allegedly faulty prior rites.",
+      "required_inputs": [
+        "type_of_irritation",
+        "death_date_chart",
+        "funeral_context"
+      ],
+      "source_output_class": "eight_irritation_categories",
+      "dependency_family": "DEATH-RECURRENCE",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0409",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 348,
+        "printed_page": 347,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "deceased-five-aspects-kin-targets",
+      "paraphrase": "An exemplary chart assigns identity, mother, son, friend and enemy relations for deceased vitality, body, destiny, luck and life-spirit to different surviving kin/social/material targets, not simply one personal outcome.",
+      "required_inputs": [
+        "deceased_five_axes",
+        "year_month_day_hour_of_death",
+        "relation_category",
+        "family_target"
+      ],
+      "source_output_class": "affected_relative_or_resource",
+      "dependency_family": "DEATH-FIVE-AXES-KIN",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0410",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 350,
+        "printed_page": 349,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eye-of-death-role-and-birth-sign",
+      "paraphrase": "The eleventh category uses different astrological reference aspects depending on the role of the deceased; animal-year relation charts identify living relatives considered at risk through same, seventh, fourth and fifth removed signs.",
+      "required_inputs": [
+        "deceased_social_role",
+        "year_sign_deceased",
+        "living_relative_year_signs"
+      ],
+      "source_output_class": "directed_family_class",
+      "dependency_family": "DEATH-EYE-OF-DEATH",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0411",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 352,
+        "printed_page": 351,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "eye-of-death-permuted-family-grid",
+      "paraphrase": "The eye-of-death variant uses 39 resultant pebbles and 55 symbolic-recognition pebbles; Moonbeams highlights a separate numeric permutation of 20 markers, grouped across four kin columns and five age/role rows with residuals.",
+      "required_inputs": [
+        "deceased_death_month_element",
+        "five_force_relations",
+        "family_role_rows",
+        "residual_marker_layout"
+      ],
+      "source_output_class": "4x5_kin_grid",
+      "dependency_family": "DEATH-EYE-OF-DEATH",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0412",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 354,
+        "printed_page": 353,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "corpse-removal-calendar-and-compass",
+      "paraphrase": "The twelfth category combines celestial planet/mansion choices with terrestrial year/month/day/hour signs, nine-square/trigram directions, and funeral procedures; the text admits multiple philosophical accounts of how long a deceased person's body should remain undisturbed.",
+      "required_inputs": [
+        "death_calendar",
+        "deceased_year_animal",
+        "corpse_type",
+        "ritual_context"
+      ],
+      "source_output_class": "historical_disposal_calendar",
+      "dependency_family": "DEATH-CORPSE-DIRECTION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0413",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 355,
+        "printed_page": 354,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "five-animal-group-direction-restrictions",
+      "paraphrase": "The text lists five broad animal-year groups and allegedly unfavorable compass directions for transferring a corpse (horse/snake avoid north; bird/monkey south; tiger/hare west; mouse/pig intermediate; earth-animal quartet east). This is an inherited funerary tradition, not modern guidance.",
+      "required_inputs": [
+        "deceased_year_group",
+        "candidate_direction"
+      ],
+      "source_output_class": "five_directional_cautions",
+      "dependency_family": "DEATH-CORPSE-DIRECTION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0414",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 357,
+        "printed_page": 356,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "public-funeral-2920-pebbles",
+      "paraphrase": "The fourteenth category of publicly held funeral celebrations describes a much larger scheme, 136 basic/resultant plus 2,784 recognition pebbles = 2,920, and conditions for public vs private ceremony.",
+      "required_inputs": [
+        "family_obstacle_context",
+        "public_or_private_rite",
+        "funeral_count_variant"
+      ],
+      "source_output_class": "ritual_publicity_category",
+      "dependency_family": "DEATH-2920-PEBBLES",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0415",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 357,
+        "printed_page": 356,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "final-procession-eight-pebbles",
+      "paraphrase": "The fifteenth category gives procedures for funeral procession/site choice, with eight pebbles including four resulting markers; rites vary among five funeral methods and local Buddhist or Bon traditions.",
+      "required_inputs": [
+        "funeral_type",
+        "trigram",
+        "site",
+        "ceremony"
+      ],
+      "source_output_class": "eight_procession_markers",
+      "dependency_family": "DEATH-FINAL-PROCESSION",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0416",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 358,
+        "printed_page": 357,
+        "source_scope": "White Beryl Part IX, roughly ff353a–418a; Moonbeams ff36a–39a"
+      },
+      "rule_key": "Moonbeams-187-plus-twelve",
+      "paraphrase": "Lochen Dharmaśrī's final summary combines 187 underlying ritual pebbles across twelve categories with twelve further predictive markers, giving 199; this is separate from the 2,920-pebble large public-funeral method.",
+      "required_inputs": [
+        "twelve_Moonbeams_categories",
+        "187_base_pebbles",
+        "twelve_predictive_pebbles"
+      ],
+      "source_output_class": "199_marker_summary",
+      "dependency_family": "DEATH-MOONBEAMS-199",
+      "source_kind": "English translated classical source or editor's commentary; Tibetan original not independently collated",
+      "validation_scope": "HISTORICAL_SOURCE_CLAIM_ONLY",
+      "independently_tested_on_humans": false,
+      "actual_clinical_evidence": false,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 29,
+  "first_id": "TIB-R0388",
+  "last_id": "TIB-R0416",
+  "source_completeness": "ALL_FIFTEEN_LISTED_TOPICS_READ_AT_LEAST_AT_THE_METHOD_LEVEL; detailed every subcase/chart and original Tibetan witness not yet exhaustive",
+  "scientific_categories": {
+    "potentially_observable": [
+      "funeral_decisions",
+      "family_members_alive",
+      "calendar_dates",
+      "reported_social_roles"
+    ],
+    "not_independently_verifiable_by_standard_surveys": [
+      "afterlife_rebirth_realms",
+      "spirits",
+      "ritual_karmic_causes"
+    ],
+    "not_medically_validated": [
+      "death_prediction",
+      "illness_causation",
+      "life_expectancy"
+    ]
+  },
+  "interpretation_warnings": [
+    "Funeral social norms and disposal practices are contextual historical materials; no personal legal/clinical/public-health advice.",
+    "Post-event timely/untimely assessments are not prospectively accurate death forecasts.",
+    "The 199 and 2920 totals derive from different procedures, not competing source-edition readings of a single count.",
+    "White/black categories are context sensitive: colors cannot be collapsed into one universal success label.",
+    "No actual human case outcomes were collected/used."
+  ],
+  "human_blind_predictions": 0,
+  "model_promotions": 0,
+  "next_source_id": "TIB-R0417",
+  "next_read": "Dorje Part X thirty Chinese and Tibetan computational charts starts PDF361/printed360; plus complete Cornu, Henning, Erlewine, Janson source audits."
+}
