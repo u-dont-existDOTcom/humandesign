@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B25_ALL_JATAKA_DIVISIONS_SAMPLED_NOT_EXHAUSTED",
+  "status": "OPEN_B26_ALL_THREE_PDF_BOOK_CHAPTERS_SAMPLED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B25.md",
+  "last_checkpoint": "READING_NOTES_B26.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -71,14 +71,17 @@
     "OTHER_FOUR_BOOKS_COVERAGE_V3_B24.json",
     "SOURCE_CANDIDATES_B25.json",
     "READING_NOTES_B25.md",
-    "OTHER_FOUR_BOOKS_COVERAGE_V4_B25.json"
+    "OTHER_FOUR_BOOKS_COVERAGE_V4_B25.json",
+    "SOURCE_CANDIDATES_B26.json",
+    "READING_NOTES_B26.md",
+    "OTHER_FOUR_BOOKS_COVERAGE_V5_B26.json"
   ],
   "confirmed": {
     "uploaded_files": 5,
     "verified_pdf_pages": 2138,
     "pdf_files": 4,
     "plain_text_files": 1,
-    "bibliographic_candidate_annotations": 337,
+    "bibliographic_candidate_annotations": 350,
     "saravali_ch20_conjunction_clauses": 47,
     "saravali_ch20_unique_planet_sets": 37,
     "saravali_ch20_duplicate_distinct_sets": 9,
@@ -174,7 +177,7 @@
     "b22_chapter_17_scan_ocr_heading_correction": true,
     "b23_new_source_annotations": 16,
     "bhasin_chapters_with_some_source_only_readings": 17,
-    "rath_lessons_with_some_source_only_readings": 18,
+    "rath_lessons_with_some_source_only_readings": 22,
     "jataka_divisions_with_some_source_only_readings": 19,
     "b23_internal_short_medium_age_boundary_discrepancy": {
       "chapter10": "medium 32-70",
@@ -183,16 +186,19 @@
     },
     "b23_hyperbolic_thousands_years_source_claims_documented": true,
     "b24_source_annotations": 21,
-    "b25_source_annotations": 20
+    "b25_source_annotations": 20,
+    "b26_source_annotations": 13
   },
   "pending_actions": [
-    "337 source-only records, zero human real-prospective test results or model promotions.",
-    "Continue Rath lessons1/3/4/5; don't mistake rituals, phonetics and philosophical exposition for original Jaimini sutras.",
-    "Jataka all 19 divisions sampled only; deeper Sanskrit collation, exact borrowed verses and case exclusions remain.",
-    "Keep manuscript-aware cross-book dependency: Sastri identifies extensive Bṛhat Jātaka borrowing in Adhyayas III-VI.",
-    "Maintain no change to other reader, production astrology model, questionnaire or participant private history; no copyrighted full text in public repo."
+    "350 separate documentary source annotations total. Zero independently proven human prospective predictions and zero model promotions.",
+    "Portuguese BPHS CP1252 chapter map remains incomplete; inspect headings and new source sections, distinguish translator note from ancient source.",
+    "All Bhasin 17, Jataka 19, Rath22 sections sampled but NONE exhaustively read or Sanskrit-critically verified.",
+    "Continue Saravali 5 fully unreviewed chapters and other underread source passages when decision-relevant.",
+    "Do not modify participant answers, current survey, frozen natal model, Western or Chinese parallel reader files.",
+    "Keep all modern copyrighted book binaries out of public GitHub; source hashes and bounded annotations are permitted.",
+    "Preserve explicit source conflicts and null cases for future preregistered decoy comparisons."
   ],
-  "next_exact_source_frontier": "Sample Rath lessons1/3/4/5 and preserve non-natal modern exegesis separately; then deeper source-critical review of Jataka's specific version-dependent rules and Portuguese BPHS unindexed topics.",
+  "next_exact_source_frontier": "Audit chapter/section map of original Portuguese CP1252 BPHS 5941 lines and uncover new topics not already in B01–B26, then Sanskrit checks and more nonduplicative depth. All 3 long PDF books sampled but not exhaustively read.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -203,7 +209,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B25 saved and status updated before B26 continuing source work.",
+    "note": "B24-26 files committed; full remote verification of batch IDs and PR change paths pending after next source pass.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
