@@ -1,0 +1,488 @@
+{
+  "schema": "TIBETAN_T36_QUERY_HOUR_FINISH_20_SOURCE_NOTES_V1",
+  "batch": "T36",
+  "source_id": "TIB-DORJE-2001",
+  "source_witness_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_title": "Gyurme Dorje (ed. and translator), Tibetan Elemental Divination Paintings, 2001",
+  "reading_pdf_pages_1based": [
+    281,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    294
+  ],
+  "read_status": "COMPLETE_BOUNDED_SECTION_P281_TO_294_EXCEPT_PLATE_ONLY_P282_P293",
+  "note_count": 20,
+  "source_notes": [
+    {
+      "id": "TIB-R0325",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 281,
+        "printed_page_1based": 280,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "hour-input-from-earlier-natal-king-minister",
+      "paraphrase": "The hour-of-divination method reuses the previously calculated year and month king/minister pebbles but requires a separate hour element and the subject's body/vitality elements before a given query can be assessed.",
+      "required_inputs": [
+        "existing_natal_year_and_month_pebbles",
+        "consultation_hour_element",
+        "subject_body",
+        "subject_vitality"
+      ],
+      "output_class": "calculation_dependency",
+      "dependency_family": "QUERY-HOUR-CONNECTION",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0326",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 283,
+        "printed_page_1based": 282,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "three-sector-four-axis-separation",
+      "paraphrase": "Plate 10 fig.6 distinguishes household, land and tomb prognostications, respectively contrasting the hour and subject on vitality, destiny and luck elements; predictions depend on a specific sector and ordered elemental relation.",
+      "required_inputs": [
+        "chosen_sector",
+        "natal_vitality_destiny_luck_elements",
+        "consultation_hour_corresponding_elements",
+        "direction_of_relation"
+      ],
+      "output_class": "sector_specific_outcome",
+      "dependency_family": "QUERY-SECTOR-AXIS",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0327",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 283,
+        "printed_page_1based": 282,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "four-directed-element-relations",
+      "paraphrase": "For each sector, the source lists separately: hour element inhibits subject, subject inhibits hour, subject enhances hour, and hour enhances subject. Direction reversals are not identical and cannot be merged as merely favorable or unfavorable.",
+      "required_inputs": [
+        "sector",
+        "source_element",
+        "target_element",
+        "relation_direction"
+      ],
+      "output_class": "directional_fortune_class",
+      "dependency_family": "QUERY-ELEMENT-DIRECTION",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0328",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 283,
+        "printed_page_1based": 282,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "five-identity-element-readings",
+      "paraphrase": "Identity relationships for wood, fire, water, iron, and earth have five distinct textual interpretations in each household/land/tomb sector. The three-sector-by-five-identity grid is distinct from the four directed relation rows.",
+      "required_inputs": [
+        "sector",
+        "subject_element",
+        "hour_element",
+        "identity_relation"
+      ],
+      "output_class": "identity_type_fortune",
+      "dependency_family": "QUERY-ELEMENT-IDENTITY",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0329",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 284,
+        "printed_page_1based": 283,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "household-vitality-inhibition-contrasts",
+      "paraphrase": "The household sector asserts different omens when the hour's vitality inhibits the subject's vitality versus when the subject inhibits the hour. Repairs/relocation and claimed household fortunes are conditional on that order, not natal-year-only claims.",
+      "required_inputs": [
+        "subject_vitality_element",
+        "hour_vitality_element",
+        "household_condition"
+      ],
+      "output_class": "household_condition_omen",
+      "dependency_family": "QUERY-HOUSE",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0330",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 284,
+        "printed_page_1based": 283,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "land-destiny-element-direction",
+      "paraphrase": "For the land sector, the element of the hour inhibiting the subject's destiny is classed adversely, whereas the subject's destiny inhibiting the hour is classed favorably; the enhancement directions have different outcomes. This is explicitly not the household vitality rule.",
+      "required_inputs": [
+        "subject_destiny_element",
+        "hour_destiny_element",
+        "land_sector_status"
+      ],
+      "output_class": "land_sustenance_omen",
+      "dependency_family": "QUERY-LAND",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0331",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 284,
+        "printed_page_1based": 283,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "tomb-luck-element-direction",
+      "paraphrase": "The tomb sector follows its own ordered comparisons using the subject's and hour's luck elements; the narrative describes burial-site conditions and ancestor-focused omens rather than an individual's personality.",
+      "required_inputs": [
+        "subject_luck_element",
+        "hour_luck_element",
+        "tomb_sector_geometry"
+      ],
+      "output_class": "burial_site_omen",
+      "dependency_family": "QUERY-TOMB",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0332",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 285,
+        "printed_page_1based": 284,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "relatives-six-directional-comparisons",
+      "paraphrase": "The section on relatives contrasts the consultation hour with the subject's destiny, paternal relatives' vitality, maternal uncle's body, spouse's friend element, lord's luck and enemy's hostile element. Each class has its own element and direction.",
+      "required_inputs": [
+        "hour_element",
+        "subject_destiny",
+        "paternal_vitality",
+        "uncle_body",
+        "spouse_friend_of_destiny",
+        "lord_luck",
+        "enemy_relation"
+      ],
+      "output_class": "relative_location_or_status",
+      "dependency_family": "QUERY-RELATIVES",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0333",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 285,
+        "printed_page_1based": 284,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "relative-identity-five-direction-classes",
+      "paraphrase": "For an element identical to that of the hour, the chapter gives five geographic distributions of paternal relatives, maternal uncle, spouse, lord and enemy for wood/fire/earth/iron/water; chart Plate9 fig16 is the referenced source.",
+      "required_inputs": [
+        "element_identity_with_hour",
+        "relative_class"
+      ],
+      "output_class": "relative_spatial_symbolism",
+      "dependency_family": "QUERY-RELATIVES",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0334",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 286,
+        "printed_page_1based": 285,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "five-query-element-material-inventories",
+      "paraphrase": "Plate10 fig5 inventories different material possessions/animal colors under the five hour elements. The presence or absence of these items is assessed with subject body/destiny elements to label growth or decline, so the method requires an observation of possessions.",
+      "required_inputs": [
+        "hour_element",
+        "presence_of_listed_objects",
+        "subject_body",
+        "subject_destiny"
+      ],
+      "output_class": "material_inventory_class",
+      "dependency_family": "QUERY-MATERIAL-OMEN",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0335",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 286,
+        "printed_page_1based": 285,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "five-query-element-illness-correspondences",
+      "paraphrase": "The chapter groups traditional symptom and body-part correspondences under wood, fire, earth, iron and water hour elements, covering different organ/body systems. These are historical diagnoses/demonology, not evidence-based medical predictions.",
+      "required_inputs": [
+        "hour_element",
+        "observed_illness_symptoms"
+      ],
+      "output_class": "historical_illness_category",
+      "dependency_family": "QUERY-DISEASE-CLAIM",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0336",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 286,
+        "printed_page_1based": 285,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "food-cause-and-demon-correspondences",
+      "paraphrase": "Food types, provider roles, directions of arrival and spirit categories are each mapped conditionally to consultation-hour elements. The source presents them as traditional explanations for illness; no causation or treatment effectiveness is established.",
+      "required_inputs": [
+        "hour_element",
+        "food_history",
+        "person_serving_food",
+        "spatial_direction"
+      ],
+      "output_class": "historical_causal_omen",
+      "dependency_family": "QUERY-FOOD-AND-SPIRITS",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0337",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 287,
+        "printed_page_1based": 286,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "five-element-hair-appearance-table",
+      "paraphrase": "Plate10 fig5 separately gives an ordered five-element list of observed hairstyles (from short curls/matted hair through shaven/bald and related types) and five bodily marks. They are observational input classes, not birth-chart derivations.",
+      "required_inputs": [
+        "hour_element",
+        "hairstyle",
+        "physical_feature_observation"
+      ],
+      "output_class": "appearance_correspondence",
+      "dependency_family": "QUERY-APPEARANCE",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0338",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 288,
+        "printed_page_1based": 287,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "wine-from-growth-sectors",
+      "paraphrase": "Plate21 fig5 predicts presence/absence of wine from whether the subject's body/destiny elements fall within growth or decline, and distinguishes fermented/strained/half-strained conditions using growth sectors and natal year polarity.",
+      "required_inputs": [
+        "body_destiny_growth_sector",
+        "hour_element",
+        "birth_year_polarity"
+      ],
+      "output_class": "wine_presence_or_process",
+      "dependency_family": "QUERY-WINE",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0339",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 288,
+        "printed_page_1based": 287,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "five-directional-house-geometries",
+      "paraphrase": "The house divination classifies center/right/rear/front/left positions as identity/enemy/mother/son/friend, respectively, then assigns building shape, color and door facing for each of five elements. It is geomantic observation, not an individual birth-only predictor.",
+      "required_inputs": [
+        "site_relative_position",
+        "building_geometry",
+        "building_color",
+        "door_direction",
+        "element"
+      ],
+      "output_class": "site_and_building_omen",
+      "dependency_family": "QUERY-HOUSE-GEOMANCY",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0340",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 290,
+        "printed_page_1based": 289,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "consultation-mortality-three-color-categories",
+      "paraphrase": "Plate22 fig2 interprets vitality sectors/pebbles: growth or white signifies expected survival, decline or black expected death, and conception sector or mottled pebbles a third chronic-illness outcome. These are historical claims and should never be used as medical prognosis.",
+      "required_inputs": [
+        "subject_vitality",
+        "hour_growth_decline_sector",
+        "conclusive_analysis_pebble_color"
+      ],
+      "output_class": "historical_mortality_category",
+      "dependency_family": "QUERY-MORTALITY",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0341",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 290,
+        "printed_page_1based": 289,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "patient-objects-and-elements",
+      "paraphrase": "Plate22 fig3 assigns clothes, pillow, mattress and food to maternal, son, enemy and friend element relations; it lists example colors/materials for a wood-vitality patient. Record as a traditional interpretation, not medical advice.",
+      "required_inputs": [
+        "subject_vitality_element",
+        "clothing_color",
+        "pillow_color",
+        "mattress_color",
+        "food_color"
+      ],
+      "output_class": "ritual_object_categories",
+      "dependency_family": "QUERY-PATIENT-OBJECTS",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0342",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 291,
+        "printed_page_1based": 290,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "business-growth-decline",
+      "paraphrase": "Plate22 fig4 classifies business success or failure according to whether the subject's destiny and luck elements correspond to growth or decline sectors; the query timing or classification must be separately known.",
+      "required_inputs": [
+        "subject_destiny",
+        "subject_luck",
+        "growth_decline_sector",
+        "consultation_context"
+      ],
+      "output_class": "business_success_symbolic",
+      "dependency_family": "QUERY-BUSINESS",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0343",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 292,
+        "printed_page_1based": 291,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "barley-volume-internal-overlap",
+      "paraphrase": "The barley divination treats a full or half-full container as an indication of growth but also calls half-full neutral/mottled; a less-than-half or empty vessel signals decline. These overlapping definitions must be retained as source uncertainty rather than forced into a disjoint rule.",
+      "required_inputs": [
+        "measured_barley_fill_fraction",
+        "hour_vitality_destiny",
+        "container_ritual_provenance"
+      ],
+      "output_class": "barley_growth_neutral_decline",
+      "dependency_family": "QUERY-BARLEY-AMBIGUITY",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    },
+    {
+      "id": "TIB-R0344",
+      "source_id": "TIB-DORJE-2001",
+      "source_kind": "English translation and explanatory prose of White Beryl; original Tibetan not independently collated",
+      "anchor": {
+        "pdf_page_1based": 294,
+        "printed_page_1based": 293,
+        "folio_references": "White Beryl ff.435b–439a; plates 9,10,21,22 as described"
+      },
+      "rule_key": "consultation-posture-conditional-omens",
+      "paraphrase": "Plate22 fig5 assigns occupation, scholarly authority, illness or social conflict omens to gestures/posture performed around the divination, including cross-legged sitting, back-turning, falling, tree-climbing, drawing figures in sand and others. No spontaneous natal prediction exists without witnessed conduct.",
+      "required_inputs": [
+        "observed_posture_or_action",
+        "time_of_divination"
+      ],
+      "output_class": "posture_prediction_category",
+      "dependency_family": "QUERY-POSTURE",
+      "documentary_state": "SOURCE-ONLY",
+      "real_human_prediction_validated": false,
+      "promoted_into_any_predictive_engine": false
+    }
+  ],
+  "first_id": "TIB-R0325",
+  "last_id": "TIB-R0344",
+  "no_new_human_data": true,
+  "validated_human_predictions": 0,
+  "source_reuse_flags": [
+    "TIB-R0324 already covered nine numeric square negative sectors on PDF281; no duplicate record added",
+    "The page 282 and 293 are illustration-only; diagrams incorporated in page283 and page294 source anchors",
+    "Traditional illness and mortality statements are documentary claims, not medical efficacy or prognosis"
+  ],
+  "next_source_note_id": "TIB-R0345",
+  "next_unread_section": "Dorje Divinations of ill-health, PDF 297 (printed 296) onward; PDF295–296 introductory image-only."
+}
