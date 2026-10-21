@@ -1,0 +1,57 @@
+{
+  "schema": "TIBETAN_T41_QUERY_ILLNESS_SOURCE_DIFFERENCES_V1",
+  "batch": "T41",
+  "historic_annotation_increment": 0,
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "issues": [
+    {
+      "id": "TIB-CONFLICT-008",
+      "type": "COUNT_DIRECTION_VARIANT",
+      "pdf_prose_page": 298,
+      "pdf_embedded_Moonbeams_page": 300,
+      "starting_point": 3,
+      "prose_summary": "wood-constitution felt hat/ancestors: count downwards from water or fire Tiger",
+      "embedded_verse_summary": "count forwards starting from Water Tiger",
+      "source_state": "differing textual instructions, no retroactive algorithm selection",
+      "historical_note": "TIB-R0352"
+    },
+    {
+      "id": "TIB-CONFLICT-009",
+      "type": "COUNT_DIRECTION_VARIANT",
+      "pdf_prose_page": 298,
+      "pdf_embedded_Moonbeams_page": 300,
+      "starting_point": 13,
+      "prose_summary": "gatehouse: count backward from mother-element Monkey, Wood→Water Monkey",
+      "embedded_verse_summary": "count forwards from Water Monkey",
+      "source_state": "explicit directional inconsistency; do not presume typographical fix",
+      "historical_note": "TIB-R0362"
+    },
+    {
+      "id": "TIB-PLATE-CORRECTION-010",
+      "type": "PUBLISHED_PLATE_MARKER_MISMATCH",
+      "pdf_page": 302,
+      "source_description": "living/dying eye diagram contains central dots explicitly reported as incorrectly colored by the commentator",
+      "source_state": "author identifies plate errors; alternate reliable artwork or literal prose needed before computing pattern",
+      "historical_note": "TIB-R0369"
+    },
+    {
+      "id": "TIB-SCOPE-WARNING-011",
+      "type": "CONTEXT_DEPENDENT_OVERLAP_NOT_PROVEN_EDITING_ERROR",
+      "pdf_page": 292,
+      "source_description": "half-filled barley can appear under vitality-growth, neutral/mottled and other columns in prose/table, which distinguish different indicators; do not collapse into one threshold",
+      "source_state": "needs contextual subtest identifier for any code; NOT asserted as a textual numerical typo",
+      "historical_note": "TIB-R0343"
+    },
+    {
+      "id": "TIB-COUNT-NOTE-012",
+      "type": "NAMED_15_PLUS_TWO_ADDITIONAL_METHODS",
+      "pdf_page": 299,
+      "source_description": "Plate10 fig2 has columns1–15 as main topics, 16 Narapa and 17 Dungpa supplements; the text says fifteen traditional starting points",
+      "source_state": "no actual conflict in number once distinct statuses retained",
+      "historical_note": "TIB-R0349"
+    }
+  ],
+  "semantic_reconciliation": "Different branches, input contracts, target domains and image vs prose witnesses are preserved as source data. None has been optimized to a person's life history.",
+  "validated_human_outcomes": 0
+}
