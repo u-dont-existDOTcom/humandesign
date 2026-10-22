@@ -27,3 +27,13 @@ The work was **partly correct**: extensive original text annotation and syntheti
 4. If a later integrator wants the cross-tradition map on default branch, reconcile/verify existing main `ARCHITECTURE.md` and HD source protocols; do not replace those with the new map or claim V4.3 scoring compliance.
 
 **One source / engine parity / blind experiment evidence class at a time; no double-counting.** No actual real-person astrology prediction validations, no runtime rule promotions.
+
+
+## Verified owner delivery packet and exact local validation
+
+- **Direct local artifact:** `/home/joel/Téléchargements/Astrology-Maya-Books-CrossTradition-Map-20261022.zip`
+- Exact ZIP **71,524 bytes**, SHA256 `89da714a4542d5721999ac0d9e325a71583cf0054d7733d567259c4f55e7580b`.
+- **20 members**: own reading guide, four Mermaid maps, source registers, six original HD normative-domain checks/14 new unmapped categories, provenance source report, generators, tests and required original normative companions. No copyrighted full books, original codex images, vendor binaries, users' birth data or fonts were bundled.
+- **15/15 focused source integrity tests green**, including explicit mutants; **15/15 tests rerun green after independent cold ZIP extraction**. ZIP CRC and all archive source member SHA256/byte counts verified; detailed receipt `SOURCE_ARCHIVE_RELEASE_RECEIPT_20261022.json` and replay log `COLD_ARCHIVE_TEST_LOG_20261022.txt`.
+- The full book reading/pinned source-critical Maya calendar engine **has not yet happened**; source discovery is complete for this phase only. No chart-to-human prediction or runtime source-interpretation promotion.
+- Parent project scientific outcome remains OPEN; next original Dresden codex folio source and first tested Maya calendar-correlation policy should be handled in a new isolated reader/engine branch, preserving living K’iche’, classic codex, and modern Dreamspell lineage boundaries. The source map itself is experimental until a designated integrator reconciles it with main normative `ARCHITECTURE.md`, not a replacement.
