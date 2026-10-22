@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B55_WEALTH_SOURCE_PREDICATE_ROLES_AND_EVENT_TARGETS_SAVED",
+  "status": "OPEN_B56_JAIMINI_PARASHARA_ARGALA_SOURCE_VARIANTS_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B55_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B56_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -203,7 +203,14 @@
     "income_scope_B55.py",
     "test_income_scope_B55.py",
     "B55_TEST_RESULTS.txt",
-    "B55_SHA256SUMS.txt"
+    "B55_SHA256SUMS.txt",
+    "ARGALA_CROSSBOOK_VARIANTS_B56.json",
+    "READING_NOTES_B56.md",
+    "argala_versioned_B56.py",
+    "test_argala_versioned_B56.py",
+    "B56_TEST_RESULTS.txt",
+    "CONTINUATION_HANDOFF_B56_20261022.md",
+    "B56_SHA256SUMS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -567,7 +574,17 @@
     "b55_new_counted_primary_source_annotations": 0,
     "b55_cumulative_primary_source_annotations": 432,
     "b55_independent_human_predictions_tested": 0,
-    "b55_production_rules_promoted": 0
+    "b55_production_rules_promoted": 0,
+    "b56_original_uploaded_books_read": 2,
+    "b56_comparison_records": 7,
+    "b56_synthetic_integrity_tests_passed": 21,
+    "b56_cumulative_counted_source_annotations": 432,
+    "b56_new_counted_source_annotations": 0,
+    "b56_real_human_prediction_tests": 0,
+    "b56_production_rules_promoted": 0,
+    "b56_special_third_unobstructed_threshold_disputed": true,
+    "b56_ketu_vs_both_nodes_reversal_disputed": true,
+    "b56_equal_count_argala_tie_unresolved": true
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -622,9 +639,14 @@
     "B55: Jataka XV.69 gain means (fair/unfair/mixed), XV.70 donations vs deprivation, XV.72 volume, XV.73 roaming, XV.57 foreign commerce are distinct observables, not multiple successes for one move or income.",
     "B55: Original Jataka XV.64 adverse reputation does not determine the correct Sarvartha 10th v24 positive-printed versus English-negative reading because antecedents differ.",
     "B55: DLI archive metadata labels PDF 1922 while Acharane secondary text says 1932/1933; bibliographic imprint unverified, do not treat year as physical-plate established. VedicPupil chapter omits 72–74 and old routes redirect; don't assume uniform verse-number offset.",
-    "B55: Eight source-only comparison records and 21 deterministic synthetic-only tests; counted documentary total unchanged 432, zero human successes, zero production rules."
+    "B55: Eight source-only comparison records and 21 deterministic synthetic-only tests; counted documentary total unchanged 432, zero human successes, zero production rules.",
+    "B56: Original Rath Lesson17 and original Portuguese BPHS31, online Sanskrit BPHS31 and Jaimini-Venkatesha commentary distinguish third-house special Argala: one malefic unopposed versus 3+ or 1-2 obstructable; no canonical numeric threshold.",
+    "B56: Original Jaimini 1.1.9 names Ketu only in reversal; Portuguese BPHS extends to Rahu+Ketu while BPHS Sanskrit31.6 doesn't literally name either. Preserve as source versions.",
+    "B56: Rath's equal-planet-count Argala bandhana inference is more specific than inspected BPHS weaker-blocker rule; equal outcome unresolved.",
+    "B56: 5th versus 9th secondary is explicit in BPHS, Rath adds eighth versus sixth; quarter-based obstruction scope not universally established.",
+    "B56: Seven documentary comparisons and 21 standalone symbolic tests, no new unique primary source IDs and no empirical validation or production promotions."
   ],
-  "next_exact_source_frontier": "After B55: seek independent printed Sanskrit/critical recensions for Sarvartha 11th-house gain-v2/loss-v10 and Jataka XV.72 malefic-eleventh parallel; resolve 1922/1932–33 catalog year from title leaf if accessible, map VedicPupil verse-by-verse using actual loaded page, not snippets. Continue source-only new reading in under-sampled Jaimini, Saravali, BPHS chapters with matched negative rules and complete input-gates; no production or human outcome scoring.",
+  "next_exact_source_frontier": "After B56: Rath Lesson18 PDF377–381 vs BPHS Chapter29 Sanskrit/Portuguese: sign Arudha exceptions (same/seventh), differences from Venkatesha commentary, dual lords Scorpio/Aquarius, exact sign-vs-degree formula and whether graha riders apply. Continue under-read five-book source sections afterward; no participants, outcome fit or production rules.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -635,7 +657,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B55 source-only report and local tests saved after B54; 7 exact task-local files plus TASK_STATUS, original full book scans omitted. Existing source-only registry 432, no participant data, no model changes or draft PR merge.",
+    "note": "B56 original user-uploaded Rath and Portuguese Parashara selected indexed text; electronic Sanskrit/commentary source variants; seven additional archive records and 21 non-human tests saved isolated. Cumulative counted source-only notes 432; no model/participant/chart changes.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"

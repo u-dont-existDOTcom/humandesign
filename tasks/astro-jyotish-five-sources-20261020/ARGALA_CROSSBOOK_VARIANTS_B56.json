@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B56",
+  "date_utc": "2026-10-22",
+  "type": "SOURCE_ONLY_ARGALA_EDITION_VARIANTS",
+  "original_uploaded_sources": [
+    {
+      "book_id": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF 357-371, original indexed extracted text",
+      "layer": "Original user-uploaded modern edited English/Sanskrit lesson"
+    },
+    {
+      "book_id": "JYOT-BPHS-KERR-PT",
+      "location": "TXT lines 2662-2695 (chapter31 Argala)",
+      "layer": "Original uploaded Portuguese secondary translation; line window read, not physical original Sanskrit"
+    }
+  ],
+  "external_source_witnesses": [
+    {
+      "work": "Bṛhat Parāśara Horā Śāstra",
+      "url": "https://sanskritdocuments.org/doc_z_misc_sociology_astrology/par3140.html",
+      "loci": "Ch31 vv3-10",
+      "kind": "electronic Sanskrit witness, independent manuscript not verified"
+    },
+    {
+      "work": "Venkatesha Jaimini commentary",
+      "url": "https://jaiminicommentary.wordpress.com/2010/01/29/sutra-1-1-6-1-1-7-1-1-8/",
+      "loci": "third-house malefic argala, obstruction, weaker planets",
+      "kind": "translation of Sanskrit commentary posted 2010; manuscript cited but not independently reproduced"
+    },
+    {
+      "work": "Venkatesha Jaimini commentary",
+      "url": "https://jaiminicommentary.wordpress.com/2010/01/30/sutra-1-1-9-1-1-10/",
+      "loci": "fifth/ninth, alternative Ketu interpretations",
+      "kind": "Sanskrit and translated commentary"
+    },
+    {
+      "work": "Suryanarayana Rao Jaimini Sutras",
+      "url": "https://www.ebharatisampat.in/pdfs/ebharati-pdf-1619416068Jaimini-Sutras-Suryanarain-Rao-1949.pdf",
+      "loci": "chapter1 sutras5-10",
+      "kind": "separate early printed English numbering witness; image not checked this batch"
+    }
+  ],
+  "record_count": 7,
+  "records": [
+    {
+      "id": "B56-01",
+      "topic": "PRIMARY_ARGALA_PAIRS",
+      "uploaded_rath": "Lesson 17 PDF359-361: primary 2/12, 4/10, 11/3",
+      "uploaded_kerr": "Ch31 near lines 2662-2670: same primary pairs",
+      "sanskrit": "BPHS31.3 चतुर्थे च धने लाभे ... व्योमरिष्फतृतीयगाः",
+      "result": "TEXTUALLY_AGREED_AS_SYMBOLIC_PLACEMENT",
+      "limits": "Counting by reference sign or planet; neither natal success nor verified chart engine"
+    },
+    {
+      "id": "B56-02",
+      "topic": "THIRD_HOUSE_MALEFICS_VIPARITA",
+      "uploaded_rath": "Lesson 17 PDF361-364, Sutra1.1.5: malefic third generates special argala; asserted no obstruction",
+      "uploaded_kerr": "Ch31 Formation of Argala: three or more malefics in third for Vipreeta Argala",
+      "other_witness": "Venkatesha Sanskrit commentary translated 2010: malefic third permits third argala; many malefics gives unobstructed, one or two obstructable by 11th",
+      "sanskrit": "BPHS31.4-5 तृतीये व्याधिकाः पापा ... विपरीता; Jaimini कामस्था तु भूयसा पापानाम्",
+      "discrepancy": "Rath special any one vs Venkatesha one/two blockable vs BPHS later translation 3+; Sanskrit BPHS v4 does not literally enumerate three",
+      "status": "UNRESOLVED_THRESHOLD_AND_OBSTRUCTION_NOT_A_FORECAST"
+    },
+    {
+      "id": "B56-03",
+      "topic": "RAHU_KETU_REVERSE",
+      "uploaded_rath": "Lesson17 PDF370-371 Sutra1.1.9 explicitly Ketu (viparitam ketoh) anti-zodiacal",
+      "uploaded_kerr": "Ch31 says Rahu and Ketu both reverse because retrograde",
+      "sanskrit": "Jaimini 1.1.9 विपरीतं केतोः names Ketu; BPHS31.6 तमोग्रहभवा सा च व्यत्ययाज् ज्ञायते",
+      "discrepancy": "Jaimini literal specifically Ketu; BPHS generic shadow-planet phrase translated as both nodes; no silent harmonization, positional differences for Rahu",
+      "status": "SEPARATE_VERSIONED_METHODS"
+    },
+    {
+      "id": "B56-04",
+      "topic": "EQUAL_OCCUPANCY_OBSTRUCTION",
+      "uploaded_rath": "PDF363 Sutra1.1.7 equal planets in causing/opposing house claimed bandhana or stagnation, then stronger planet/group rules",
+      "uploaded_kerr": "Ch31 says obstruction ineffective if fewer/weaker; no global equal-planets tie arbitration given in passage",
+      "sanskrit": "BPHS31.4 निर्बला न्यूनसंख्या वा बाधका नैव सम्मताः and Jaimini 1.1.7 न न्यून विबलाश्च",
+      "discrepancy": "Equalling planet counts not sufficient to adjudicate; Rath bandhana conceptual gloss not an automatically validated event",
+      "status": "NO_CANONICAL_TIE_BREAK"
+    },
+    {
+      "id": "B56-05",
+      "topic": "QUARTER_BASED_OBSTRUCTION_SCOPE",
+      "uploaded_rath": "PDF369-370 interprets Parashara31.10 as tertiary 1st/7th axis and opposing 7°30 quarters",
+      "uploaded_kerr": "Ch31 Special: quarter interaction formula without explicitly restricting to 1st/7th in translated prose",
+      "sanskrit": "BPHS31.10 अर्गलां प्रतिबन्धञ्च कथमांघ्रिचतुर्थयोः ... द्वित्र्यङ्घ्रयोश्च",
+      "discrepancy": "Opposing quarter pairs clear under readings (1,4),(2,3), but applicability only 1/7 axis vs all pairs not settled from compared layers",
+      "status": "SOURCE_SCOPE_UNRESOLVED"
+    },
+    {
+      "id": "B56-06",
+      "topic": "EIGHTH_SECONDARY_ARGALA",
+      "uploaded_rath": "Lesson17 PDF366 identifies 8th producing secondary argala opposed by 6th, in addition to fifth opposed by ninth",
+      "uploaded_kerr": "Chapter31 formation: only fifth vs ninth named as extra argala/obstruction",
+      "sanskrit": "Jaimini 1.1.8 प्राग्वत् त्रिकोणे refers to trines; BPHS31.6 पञ्चमं चार्गलास्थानं नवमं तद्विरोधकृत्",
+      "discrepancy": "Eighth/sixth extension may be Rath broader theory, not literal rule in compared Sanskrit passages",
+      "status": "EDITORIAL_EXTENSION_NOT_OLD_SUTRA"
+    },
+    {
+      "id": "B56-07",
+      "topic": "ORDINALS_AND_EDITION_FAMILY",
+      "uploaded_rath": "Rath labels 1.1.5 malefic-third, 1.1.6 obstructors, 1.1.7 strength, 1.1.8 trine, 1.1.9 Ketu",
+      "external_translation": "Suryanarayana Rao e-text/older PDF labels malefic-third 1.1.6, obstructors 1.1.7, strength 1.1.8, trines 1.1.9, Ketu 1.1.10",
+      "comment": "Different handling of opening sutra splits; map by Sanskrit incipit, not global integer shift",
+      "status": "LOCAL_NUMBERING_CROSSWALK_ONLY"
+    }
+  ],
+  "method_gates": {
+    "source_only": true,
+    "production_canonical_variant": null,
+    "scores_allowed": false,
+    "human_data_consulted": false,
+    "ephemeris_used": false,
+    "independent_critical_manuscript_verified": false,
+    "synthetic_test_count": 21
+  },
+  "cumulative_primary_documentary_annotations": 432,
+  "new_primary_documentary_ids": 0,
+  "independent_prospective_human_successes": 0,
+  "production_rule_promotions": 0,
+  "next_frontier": "BPHS Arudha chapter 29 versus Rath lesson18 1.1.30–32; its double sign-lords, degrees, rider implementation. Keep source-priority unresolved, no human scoring."
+}

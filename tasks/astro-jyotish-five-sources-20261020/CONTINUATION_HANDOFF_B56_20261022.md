@@ -1,0 +1,13 @@
+# B56 exact continuation handoff — 2026-10-22 UTC
+
+**Parent goal OPEN:** independent five-book Jyotish source reading and cross-tradition comparison; no person-specific astrology or model/survey changes. Target `u-dont-existDOTcom/humandesign`, branch `research/astro-jyotish-five-sources-reader-20261020`, isolated draft PR #136. Preserve other astrology readers and all private data. Do not merge/publish original book binaries.
+
+**Base verified B55:** `2de314f05ed2ef158462474c33415b991fe9617f`, 432 unique original source notes; user-uploaded five texts in Library, unmerged reader. B53 and B54 physically collated printed Sanskrit sources; B55 distinguished 11th lord versus occupant, income source versus means; no real human prospective wins.
+
+**B56 new corpus:** Sanjay Rath original uploaded *Jaimini* course Lesson17 PDF357–371; original uploaded André Kerr Portuguese BPHS Chapter31 lines~2662–2695; online Sanskrit BPHS 31.3–10 (sanskritdocuments), and online source+translation of Venkateśa Jaimini commentary (jaiminicommentary.wordpress.com).
+
+**Key source results:** primary 2nd↔12th, 4th↔10th, 11th↔3rd and fifth↔ninth generally agree; malefic-third special argalā differs on number/obstruction: Rath any malefic and unobstructed, Portuguese BPHS says ≥3, Venkateśa says 1–2 can be blocked by eleventh while many cannot. BPHS Sanskrit31.4 `vyādhikāḥ` does not literally spell an integer three. Rath's Jaimini1.1.9 `viparītaṃ ketoḥ` reverses Ketu, while Kerr BPHS extends reversal to both nodes on its reading of 31.6 `tamograhabhavā`. Rath treats equal counts as *bandhana*, while BPHS 31.4 only rejects fewer/weaker blockers; equal not resolved. Rath extends secondary argalā to 8th↔6th, which neither compared Sanskrit trine line explicitly names; quarter-pair rule may be 1st/7th-only vs global. Sutra numbering by book differs; don't globally offset or collapse.
+
+**Saved:** `ARGALA_CROSSBOOK_VARIANTS_B56.json` (7 comparisons), `READING_NOTES_B56.md`, `argala_versioned_B56.py`, `test_argala_versioned_B56.py`, `B56_TEST_RESULTS.txt`. 21/21 symbolic source-integrity tests, no ephemeris/human tests. 432 cumulative notes, 0 new counted primary IDs pending de-dup, 0 validated human forecasts, 0 production rules. All variants have `score_allowed=false`.
+
+**Next safe executable frontier:** Rath *Arudha Pada* Lesson18 PDF377–381 vs uploaded Kerr BPHS Chapter29 & online Sanskrit BPHS Ch29; inspect dual-lords, four arudha exception cases, competing longitude rules and property/institution timing. Source-only with synthetic tests; do not mutate surveys, original prediction mapping or main/other lanes. Create B57 checkpoint on current branch. Root task remains OPEN.
