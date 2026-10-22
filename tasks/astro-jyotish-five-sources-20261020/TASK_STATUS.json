@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B44_EDITION_AND_MARRIAGE_SANSKRIT_READING_SAVED",
+  "status": "OPEN_B45_PRINTED_EDITION_CORRECTIONS_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B44_20261021.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B45_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -147,7 +147,10 @@
     "MARRIAGE_SOURCE_WITNESSES_B44.json",
     "NODE_CONJUNCTION_SOURCE_CONFLICT_B44.json",
     "READING_NOTES_B44.md",
-    "CONTINUATION_HANDOFF_B44_20261021.md"
+    "CONTINUATION_HANDOFF_B44_20261021.md",
+    "PRINTED_EDITION_COLLATION_B45.json",
+    "READING_NOTES_B45.md",
+    "CONTINUATION_HANDOFF_B45_20261022.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -367,7 +370,18 @@
     "b44_karmasakha_claimed_2015_chapters": 18,
     "b44_karmasakha_claimed_2015_verses": 1988,
     "b44_possible_empty_joint_node_configurations_under_opposite_nodes": 1,
-    "b44_node_sign_geometry_cases_evaluated": 12
+    "b44_node_sign_geometry_cases_evaluated": 12,
+    "b45_original_bhasin_english_pdf_pages_text_read": [
+      172,
+      173,
+      174
+    ],
+    "b45_source_translation_discrepancies_corrected": 1,
+    "b45_confirmed_delayed_postmarital_fortune_verses": [
+      65,
+      66
+    ],
+    "b45_new_counted_annotations": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -379,9 +393,11 @@
     "B43 Ch24.145-148 requires strength and dual-house lordship/contradiction checks; symbolic effect fractions cannot be treated as forecast probabilities.",
     "B44: edition-dependent 17-chapter/1979 VedicPupil vs 18-chapter/1988 self-described 2015 Gauḍ witness; 11 chapter-6 online Sanskrit source loci not counted until de-duplicated; total stays 432.",
     "B44 6.58 joint Rahu+Ketu in seventh geometrically impossible if literal (12/12 sign enumeration); grammar uncollated; do not translate into alternative conjunction or use harmful spouse allegations.",
-    "B44 6.59-61 historically describe childhood marriages; 6.62-64 distinguish prosperity, loss, later recovery; 6.65-66 dūre vivāhāt referent unresolved."
+    "B44 6.59-61 historically describe childhood marriages; 6.62-64 distinguish prosperity, loss, later recovery; 6.65-66 dūre vivāhāt referent unresolved.",
+    "B45 correction: Ch6 v58 Bhasin printed OR (Rahu or Ketu), online English AND; old empty-conjunction warning still conditional mathematics but cannot be falsely assigned to printed edition.",
+    "B45 v65-66 post-marital fortune is delayed, not necessarily marriage itself; v67 early/late acquisition of sons in Bhasin gloss. Uploaded English PDF indexed text actually read, page-image Sanskrit not independently verified."
   ],
-  "next_exact_source_frontier": "From B44, physically check Bhasin source chapter 6 6.58 and 6.65-66 against two Sanskrit editions if accessible, then compare marriage/children/parent loss life-event qualifiers across five books; keep no human leakage.",
+  "next_exact_source_frontier": "Read uploaded originals Bhasin Ch5 progeny positives/negatives, Saravali conception vs natal parent fate, Sastri Jataka IX parental claims and Rath karaka gloss; check online BPHS original timing rules, no human test.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
