@@ -1,0 +1,1489 @@
+{
+  "schema": "BAZI_SWIEPH_COMPRESSED_EPHEMERIS_FOURTH_BACKEND_6_JIEQI_36_CLOCKS_V1",
+  "status": "ENGINEERING_COMPARISON_ONLY_NOT_REAL_CHINESE_BIRTH_CHART_VALIDATION",
+  "parent_third_source_report_SHA256": "48d9b068797c4ef2209761c4d94532d035e26205b48c8f3cfb250c61722d06b1",
+  "vendor_Swiss_ephemeris_source": {
+    "schema": "BAZI_SWIEPH_FOURTH_JIEQI_SOURCE_PIN",
+    "source": "Swiss Ephemeris 2.10.03 compressed JPL-derived Swiss ephemeris file backend, pysweph 2.10.3.6 wrapper",
+    "source_ephemeris_path": "/home/joel/humandesign/data/ephemeris",
+    "source_manifest": "/home/joel/humandesign/data/ephemeris/swisseph_ephemeris_manifest.json",
+    "source_release_git_commit": "3fd0f956d73898b91cc4f67cf18b21af656d1342",
+    "source_sepl18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "source_sepl18_bytes": 484061,
+    "source_semo18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "source_semo18_bytes": 1304771,
+    "compiled_wrapper_binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+    "compiled_wrapper_binary_owner_path": "/tmp/hd-bazi-third-ephemeris-20261021/swisseph.cpython-312-x86_64-linux-gnu.so",
+    "expected_swieph_flags": 258,
+    "requested": "FLG_SWIEPH | FLG_SPEED",
+    "original_6_dates": {
+      "2023-02-04": 315,
+      "2026-01-05": 285,
+      "2026-02-04": 315,
+      "1912-12-07": 255,
+      "2057-08-07": 135,
+      "1965-12-07": 255
+    },
+    "previous_third_source_SHA256": "48d9b068797c4ef2209761c4d94532d035e26205b48c8f3cfb250c61722d06b1",
+    "previous_two_source_SHA256": "bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e",
+    "raw_third_party_data_files_included_in_git": false,
+    "empirical_human_test_completed": false
+  },
+  "source_Swiss_EPHE_return_flags_258_required": true,
+  "source_Swiss_prior_Moshier_flag_260_is_distinct": true,
+  "model_ephemeris_data_source_is_file_backed": true,
+  "six_term_swieph_apparent_geocentric_Sun_crossings": [
+    {
+      "JieQi_reference_date": "2023-02-04",
+      "angle_target_degrees": 315,
+      "original_source_sxtwl_UTC8_term_clock": "2023-02-04T10:42:20.856171",
+      "original_source_lunar_python_switch_clock": "2023-02-04T10:42:33",
+      "original_Moshier_model_crossing_clock": "2023-02-04T10:42:32.522494",
+      "SWIEPH_term_reference_clock": "2023-02-04T10:42:33.163007",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 315,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 314.9999999967446,
+      "Julian_day_UT": 2459979.612883831,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": 0.640513,
+      "SWIEPH_minus_sxtwl_seconds": 12.306836,
+      "lunar_python_minus_SWIEPH_seconds": -0.163007,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 1,
+      "unanimity_disagreement_samples": [
+        {
+          "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:42:21",
+          "original_JieQi_day": "2023-02-04",
+          "source_Swiss_file_ephemeris_flag_returned": 258,
+          "source_swieph_sun_minus_target_arcseconds": -0.513880543,
+          "source_swieph_sun_crossed_target": false,
+          "source_swieph_selected_year_month": {
+            "year": "壬寅",
+            "month": "癸丑"
+          },
+          "original_sxtwl_reported_year_month": {
+            "year": "癸卯",
+            "month": "甲寅"
+          },
+          "original_lunar_python_reported_year_month": {
+            "year": "壬寅",
+            "month": "癸丑"
+          },
+          "original_Moshier_selected_year_month": {
+            "year": "壬寅",
+            "month": "癸丑"
+          },
+          "source_sxtwl_matches_swieph": false,
+          "source_lunar_python_matches_swieph": true,
+          "source_Moshier_matches_swieph": true,
+          "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+          "human_birth_or_person_input_involved": false
+        }
+      ]
+    },
+    {
+      "JieQi_reference_date": "2026-01-05",
+      "angle_target_degrees": 285,
+      "original_source_sxtwl_UTC8_term_clock": "2026-01-05T16:22:53.352814",
+      "original_source_lunar_python_switch_clock": "2026-01-05T16:23:10",
+      "original_Moshier_model_crossing_clock": "2026-01-05T16:23:09.285781",
+      "SWIEPH_term_reference_clock": "2026-01-05T16:23:09.756349",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 285,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 284.99999999972573,
+      "Julian_day_UT": 2461045.849418476,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": 0.470568,
+      "SWIEPH_minus_sxtwl_seconds": 16.403535,
+      "lunar_python_minus_SWIEPH_seconds": 0.243651,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 1,
+      "unanimity_disagreement_samples": [
+        {
+          "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:22:54",
+          "original_JieQi_day": "2026-01-05",
+          "source_Swiss_file_ephemeris_flag_returned": 258,
+          "source_swieph_sun_minus_target_arcseconds": -0.668885253,
+          "source_swieph_sun_crossed_target": false,
+          "source_swieph_selected_year_month": {
+            "year": "乙巳",
+            "month": "戊子"
+          },
+          "original_sxtwl_reported_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "original_lunar_python_reported_year_month": {
+            "year": "乙巳",
+            "month": "戊子"
+          },
+          "original_Moshier_selected_year_month": {
+            "year": "乙巳",
+            "month": "戊子"
+          },
+          "source_sxtwl_matches_swieph": false,
+          "source_lunar_python_matches_swieph": true,
+          "source_Moshier_matches_swieph": true,
+          "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+          "human_birth_or_person_input_involved": false
+        }
+      ]
+    },
+    {
+      "JieQi_reference_date": "2026-02-04",
+      "angle_target_degrees": 315,
+      "original_source_sxtwl_UTC8_term_clock": "2026-02-04T04:01:51.392784",
+      "original_source_lunar_python_switch_clock": "2026-02-04T04:02:08",
+      "original_Moshier_model_crossing_clock": "2026-02-04T04:02:08.050591",
+      "SWIEPH_term_reference_clock": "2026-02-04T04:02:08.222468",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 315,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 315.0000000058595,
+      "Julian_day_UT": 2461075.3348173895,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": 0.171877,
+      "SWIEPH_minus_sxtwl_seconds": 16.829684,
+      "lunar_python_minus_SWIEPH_seconds": -0.222468,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 1,
+      "unanimity_disagreement_samples": [
+        {
+          "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:01:52",
+          "original_JieQi_day": "2026-02-04",
+          "source_Swiss_file_ephemeris_flag_returned": 258,
+          "source_swieph_sun_minus_target_arcseconds": -0.685280652,
+          "source_swieph_sun_crossed_target": false,
+          "source_swieph_selected_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "original_sxtwl_reported_year_month": {
+            "year": "丙午",
+            "month": "庚寅"
+          },
+          "original_lunar_python_reported_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "original_Moshier_selected_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "source_sxtwl_matches_swieph": false,
+          "source_lunar_python_matches_swieph": true,
+          "source_Moshier_matches_swieph": true,
+          "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+          "human_birth_or_person_input_involved": false
+        }
+      ]
+    },
+    {
+      "JieQi_reference_date": "1912-12-07",
+      "angle_target_degrees": 255,
+      "original_source_sxtwl_UTC8_term_clock": "1912-12-07T18:58:53.093262",
+      "original_source_lunar_python_switch_clock": "1912-12-07T18:58:53",
+      "original_Moshier_model_crossing_clock": "1912-12-07T18:58:53.431221",
+      "SWIEPH_term_reference_clock": "1912-12-07T18:58:53.027604",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 255,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 254.99999999799041,
+      "Julian_day_UT": 2419743.95755819,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": -0.403617,
+      "SWIEPH_minus_sxtwl_seconds": -0.065658,
+      "lunar_python_minus_SWIEPH_seconds": -0.027604,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 0,
+      "unanimity_disagreement_samples": []
+    },
+    {
+      "JieQi_reference_date": "2057-08-07",
+      "angle_target_degrees": 135,
+      "original_source_sxtwl_UTC8_term_clock": "2057-08-07T07:33:09.603424",
+      "original_source_lunar_python_switch_clock": "2057-08-07T07:34:00",
+      "original_Moshier_model_crossing_clock": "2057-08-07T07:34:11.131798",
+      "SWIEPH_term_reference_clock": "2057-08-07T07:34:10.591710",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 135,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 134.99999999953766,
+      "Julian_day_UT": 2472582.4820670336,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": -0.540088,
+      "SWIEPH_minus_sxtwl_seconds": 60.988286,
+      "lunar_python_minus_SWIEPH_seconds": -10.59171,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 2,
+      "unanimity_disagreement_samples": [
+        {
+          "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:33:10",
+          "original_JieQi_day": "2057-08-07",
+          "source_Swiss_file_ephemeris_flag_returned": 258,
+          "source_swieph_sun_minus_target_arcseconds": -2.419046964,
+          "source_swieph_sun_crossed_target": false,
+          "source_swieph_selected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "original_sxtwl_reported_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "original_lunar_python_reported_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "original_Moshier_selected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "source_sxtwl_matches_swieph": false,
+          "source_lunar_python_matches_swieph": true,
+          "source_Moshier_matches_swieph": true,
+          "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+          "human_birth_or_person_input_involved": false
+        },
+        {
+          "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:34:09",
+          "original_JieQi_day": "2057-08-07",
+          "source_Swiss_file_ephemeris_flag_returned": 258,
+          "source_swieph_sun_minus_target_arcseconds": -0.06354836,
+          "source_swieph_sun_crossed_target": false,
+          "source_swieph_selected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "original_sxtwl_reported_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "original_lunar_python_reported_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "original_Moshier_selected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "source_sxtwl_matches_swieph": false,
+          "source_lunar_python_matches_swieph": false,
+          "source_Moshier_matches_swieph": true,
+          "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+          "human_birth_or_person_input_involved": false
+        }
+      ]
+    },
+    {
+      "JieQi_reference_date": "1965-12-07",
+      "angle_target_degrees": 255,
+      "original_source_sxtwl_UTC8_term_clock": "1965-12-07T15:45:32.080078",
+      "original_source_lunar_python_switch_clock": "1965-12-07T15:45:32",
+      "original_Moshier_model_crossing_clock": "1965-12-07T15:45:31.899191",
+      "SWIEPH_term_reference_clock": "1965-12-07T15:45:32.629827",
+      "returned_ephemeris_flags": 258,
+      "solar_target_degrees": 255,
+      "geocentric_apparent_tropical_sun_longitude_degrees": 255.0000000021634,
+      "Julian_day_UT": 2439101.8232943267,
+      "root_bracket_precision_seconds": 0.002,
+      "root_iterations": 24,
+      "SWIEPH_minus_Moshier_seconds": 0.730636,
+      "SWIEPH_minus_sxtwl_seconds": 0.549749,
+      "lunar_python_minus_SWIEPH_seconds": -0.629827,
+      "original_6_clock_case_count": 6,
+      "unanimity_disagreement_count": 0,
+      "unanimity_disagreement_samples": []
+    }
+  ],
+  "all_original_36_fictional_fixed_UTC8_clock_comparisons": [
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:32:20",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -25.905275324,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:41:20",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -3.091040664,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:42:19",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.598377141,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:42:21",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.513880543,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:43:20",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 1.97878239,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:52:20",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 24.792958614,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:12:53",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -26.182386018,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:21:53",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -3.258441549,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:22:52",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.753788291,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:22:54",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.668885253,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:23:53",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 1.83576801,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:32:53",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 24.759712995,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T03:51:51",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -26.07398262,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:00:51",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -3.262167897,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:01:50",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.769770004,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:01:52",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.685280652,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:02:51",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 1.807118445,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:11:51",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 24.618884199,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T18:48:53",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -25.409297505,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T18:57:53",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -2.541990141,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T18:58:52",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.043524389,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T18:58:54",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 0.041170673,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T18:59:53",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 2.539638645,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1912-12-07T19:08:53",
+      "original_JieQi_day": "1912-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 25.406995453,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:23:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -26.413174455,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:32:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -4.854392173,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:33:08",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -2.498893933,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:33:10",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -2.419046964,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:34:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.06354836,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": false,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:43:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 21.495268486,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:35:32",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -25.407079855,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:44:32",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -2.564680141,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:45:31",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.068934197,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:45:33",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 0.015666906,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:46:32",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 2.511413303,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "1965-12-07T15:55:32",
+      "original_JieQi_day": "1965-12-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": 25.353857988,
+      "source_swieph_sun_crossed_target": true,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": true,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "FOUR_SOFTWARE_OUTPUTS_AGREE_NOT_ASTRO_ACCURACY",
+      "human_birth_or_person_input_involved": false
+    }
+  ],
+  "all_four_nonunanimity_clocks": [
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2023-02-04T10:42:21",
+      "original_JieQi_day": "2023-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.513880543,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-01-05T16:22:54",
+      "original_JieQi_day": "2026-01-05",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.668885253,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2026-02-04T04:01:52",
+      "original_JieQi_day": "2026-02-04",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.685280652,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:33:10",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -2.419046964,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": true,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    },
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:34:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.06354836,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": false,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    }
+  ],
+  "new_two_calendar_consensus_against_SWIEPH_clocks": [
+    {
+      "original_fictional_fixed_UTC8_reference_clock": "2057-08-07T07:34:09",
+      "original_JieQi_day": "2057-08-07",
+      "source_Swiss_file_ephemeris_flag_returned": 258,
+      "source_swieph_sun_minus_target_arcseconds": -0.06354836,
+      "source_swieph_sun_crossed_target": false,
+      "source_swieph_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "original_sxtwl_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_lunar_python_reported_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "original_Moshier_selected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_swieph": false,
+      "source_lunar_python_matches_swieph": false,
+      "source_Moshier_matches_swieph": true,
+      "status": "ABSTAIN_ONE_OR_MORE_SOFTWARE_WITNESSES_NONUNANIMOUS",
+      "human_birth_or_person_input_involved": false
+    }
+  ],
+  "all_four_unanimity_count": 31,
+  "all_four_nonunanimity_count": 5,
+  "historical_Chinese_original_printed_source_independently_verified": false,
+  "human_birth_input_records": 0,
+  "real_blinded_human_predictive_validations": 0,
+  "runtime_astrology_rule_promotions": 0
+}
