@@ -1,0 +1,196 @@
+{
+  "schema": "HUMANDESIGN_MAYA_YUCATEC_BOLLES_MULTISOURCE_NATAL_A140_A206_B07_V1",
+  "created_date_utc": "2026-10-22",
+  "status": "NATAL_SOURCE_TEXT_ESTABLISHED_BUT_EMPIRICAL_HUMAN_PREDICTIONS_UNTESTED",
+  "parent_owner_goal": "OPEN: accurate source-grounded, prospective blind real-human comparison against decoys and non-astrology baseline",
+  "editor_translator": "David Bolles",
+  "sources": [
+    {
+      "id": "PCML_ENGLISH_FACING_YUCATEC",
+      "title": "A Translation of the Edited Text of Post Conquest Mayan Literature",
+      "mode": "editor-translated composite original Yucatec with English",
+      "url": "http://www.davidsbooks.org/www/Maya/PCML%20Translation.pdf",
+      "private_owner_research_file": "Bolles_PCML_Translation_author_site_local.pdf",
+      "sha256": "300146706a1589e5a4725753f0a9bb8afabc405515de76db906d200e9e908abe",
+      "page_count": 325,
+      "relevant_pdf_pages": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "lines": "A140-A206"
+    },
+    {
+      "id": "PCML_ORIGINAL_PARALLEL_WITNESSES",
+      "title": "Post Conquest Mayan Literature",
+      "mode": "parallel Yucatec manuscript transcriptions and editor amalgam",
+      "url": "http://www.davidsbooks.org/www/Maya/PCML.pdf",
+      "private_owner_research_file": "Bolles_PCML_Parallel_Originals_author_site_private.pdf",
+      "sha256": "f88494cedda133f9722652f46d754d388d800028afb174035c92abad2e70e927",
+      "page_count": 376,
+      "relevant_pdf_pages": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "lines": "A140-A212"
+    },
+    {
+      "id": "BOLLES_AUTHOR_LANDING",
+      "title": "David Bolles public source archive",
+      "url": "http://www.davidsbooks.org/",
+      "mode": "publisher/author index, not a scholarly independent validator"
+    }
+  ],
+  "provenance_security": {
+    "transport": "public HTTP downloaded; HTTPS host certificate cannot be validated on owner laptop; source integrity not cryptographically attested by origin",
+    "sha_locally_reproducible": true,
+    "untrusted_document_not_executed": true,
+    "source_pdfs_committed_public_repo": false,
+    "source_pdfs_in_owner_zip": false
+  },
+  "separate_historic_manuscript_ancestors": [
+    {
+      "id": "KAUA",
+      "source": "Book of Chilam Balam of Kaua",
+      "sections": [
+        "pp11-12",
+        "p14",
+        "p21-22"
+      ],
+      "manuscript_count_estimate": 1,
+      "three_text_loci_not_three_independent_humans": true
+    },
+    {
+      "id": "CHAN_CAH",
+      "source": "Book of Chilam Balam of Chan Cah",
+      "sections": [
+        "pp1-4; insertion p42"
+      ],
+      "manuscript_count_estimate": 1
+    },
+    {
+      "id": "PEREZ",
+      "source": "Códice Pérez II",
+      "sections": [
+        "pp94-95"
+      ],
+      "manuscript_count_estimate": 1,
+      "copyist_editor_changed_some_texts_reported_by_Bolles": true
+    },
+    {
+      "id": "IXIL",
+      "source": "Book of Chilam Balam of Ixil",
+      "sections": [
+        "p17b, only Kan/ChicChan contextual"
+      ],
+      "manuscript_count_estimate": 1
+    }
+  ],
+  "classification": {
+    "section_title_original": "u mutil uinic zanzamal",
+    "translated_title": "The Fate of a Person Born on Each Day of the Uinal",
+    "prediction_class": "natal_trait_attributed_to_birth_day",
+    "author_english_pdf_page": 20,
+    "original_bilingual_excerpt_pages": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "parallel_manuscripts_pdf_pages": [
+      38,
+      39,
+      40,
+      41
+    ],
+    "day_count": 20,
+    "sex_applied": "text introduction says men or women; not a modern gender-efficacy validation",
+    "directional_day_attributions": "Editor interpolates world directions using Madrid and Fejérváry-Mayer codices, often in parentheses. Not original witness natal trait.",
+    "calendar_day_number_13_modifier_for_this_passage": false,
+    "no_verified_birth_hour_boundary": true,
+    "not_same_as_1722_highland_5x52_text": true,
+    "source_domain_register": "MAYA_B07_YUCATEC_NATAL_20_SOURCE_DOMAIN_ROWS.txt"
+  },
+  "source_fidelity_positive_candidates": [
+    {
+      "modern_yucatec": "CHUWEN",
+      "historic_written": "Chuen",
+      "artisanal_claim": "woodworking/carpentry, weaving, maker of things",
+      "english_pdf_page": 22,
+      "original_parallel_pdf_page": 38,
+      "reviewed_origins": [
+        "Kaua pp11-12",
+        "Kaua p14",
+        "Kaua pp21-22",
+        "Codex Pérez pp94-95",
+        "Chan Cah pp1-4"
+      ],
+      "evidence_strength": "SOURCE_WITNESS_PREDICATE_CLEAR; several textual variants, not independent person outcomes",
+      "test_eligibility": "UNFROZEN_POTENTIAL_PRIMARY",
+      "modern_grouping": "single day vs other 19"
+    },
+    {
+      "modern_yucatec": "MEN",
+      "historic_written": "Men",
+      "artisanal_claim": "weaving, possibly writing/speaking",
+      "english_pdf_page": 23,
+      "original_parallel_pdf_page": 40,
+      "reviewed_origins": [
+        "Kaua pp11-12",
+        "Kaua p14",
+        "Kaua pp21-22",
+        "Codex Pérez pp94-95"
+      ],
+      "evidence_strength": "weaving in longer Kaua source; wording overlaps ambiguous ah men/sacal; no independent human effects",
+      "test_eligibility": "EXPLORATORY_ONLY"
+    },
+    {
+      "modern_yucatec": "KAB’AN",
+      "historic_written": "Caban",
+      "artisanal_claim": "woodworking in one Kaua long variant, merchant and traveler in shorter variants",
+      "english_pdf_page": 23,
+      "original_parallel_pdf_page": 40,
+      "reviewed_origins": [
+        "Kaua pp11-12",
+        "Kaua p14",
+        "Kaua pp21-22",
+        "Codex Pérez pp94-95"
+      ],
+      "evidence_strength": "carpentry weak cross-variant: seen in longer Kaua source, not short Pérez/Kaua readings; no human effects",
+      "test_eligibility": "EXPLORATORY_ONLY"
+    }
+  ],
+  "nonpromotion": {
+    "verified_private_manuscript_autograph_available": false,
+    "modern_regional_natal_birth_day_assignment_verified": false,
+    "ethically_allowed_initial_domains": [
+      "voluntary nonclinical crafting and making activities",
+      "self-reported practical creative participation"
+    ],
+    "prohibited_trait_domains": [
+      "criminal violence",
+      "illness, lifespan or diagnosis",
+      "sexual morality",
+      "poverty or worthiness",
+      "gender/ethnic moralizations",
+      "historical bloodletting as a therapeutic recommendation"
+    ],
+    "historical_copy_variants_independent_phenotypic_replications": 0,
+    "actual_untouched_human_natal_validations": 0,
+    "frozen_prediction_packages": 0,
+    "rule_promotions_to_runtime": 0,
+    "known_development_user_surveys_or_birth_dates_used": 0
+  },
+  "notes": [
+    "This bilingual edited passage explicitly names individuals born on each of twenty days, unlike 1722 K'iche' AHILABALZIH untranslated source.",
+    "Multiple same ancestral literary traditions should not be counted as repeated independent proof of astrological predictiveness.",
+    "Source title and labels use historical Yucatec spelling; a K'iche' visually identical or semantically related label can mean a different day. Yucatec Kan corresponds K'iche' K'at; K'iche' Kan instead corresponds Yucatec Chicchan.",
+    "The three-day artisan cluster is a modern investigator construct, not a literal pre-existing Yucatec rule. The original source Chuen-only forecast is stronger for fidelity.",
+    "A short feasibility pilot can test the process but not demonstrate a moderate effect at realistic 5% single-day prevalence without adequate sample size or enrichment.",
+    "Modern world direction assignments were inserted by editor, using codex cross-references; omit from natal test."
+  ]
+}

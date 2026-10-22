@@ -1,0 +1,235 @@
+{
+  "schema": "MAYA_B07_YUCATEC_ARTISAN_CLAIM_WITNESS_VARIANTS_V1",
+  "status": "SOURCE_COMPARISON_NOT_HUMAN_VALIDATION",
+  "source_original": {
+    "id": "BOLLES_PCML_PARALLEL",
+    "title": "Post Conquest Mayan Literature",
+    "source_url": "http://www.davidsbooks.org/www/Maya/PCML.pdf",
+    "original_pdf_sha256": "f88494cedda133f9722652f46d754d388d800028afb174035c92abad2e70e927",
+    "original_pdf_pages": [
+      38,
+      39,
+      40,
+      41
+    ],
+    "printed_pages": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "manuscript_composite_line_numbers": "A140-A212",
+    "methodology": "Five printed parallel columns from manuscripts Kaua 11-12, Kaua 14, Kaua 21-22, Chan Cah 1-4, Codex Perez 94-95. Similar textual variants are not independent behavioral observations."
+  },
+  "source_english": {
+    "id": "BOLLES_PCML_TRANSLATION",
+    "title": "A Translation of the Edited Text of Post Conquest Mayan Literature",
+    "source_url": "http://www.davidsbooks.org/www/Maya/PCML%20Translation.pdf",
+    "original_pdf_sha256": "300146706a1589e5a4725753f0a9bb8afabc405515de76db906d200e9e908abe",
+    "pdf_pages": [
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "line_numbers": "A140-A205",
+    "meaningful_prefix": "Anyone born under the day named, male or female; English is an edited synthesis rather than a single unaltered manuscript.",
+    "status": "explicit_natal_predicates_historically_attested"
+  },
+  "independent_manuscript_ancestors_count_max": 3,
+  "separate_sources": [
+    "KAUA",
+    "CHAN_CAH",
+    "PEREZ"
+  ],
+  "flags": {
+    "multiple_Kaua_loci_same_ancestral_source": true,
+    "original_Chan_Cah_fragment_source_not_complete_natal_cycle_in_every_witness": true,
+    "bricker_miram_translation_independent_of_Bolles_source_architecture": false,
+    "physical_original_autograph_checked": false
+  },
+  "entries": [
+    {
+      "printed_day": "Chuen",
+      "canonical_yucatec": "CHUWEN",
+      "witness_variants": [
+        {
+          "id": "KAUA_11_12",
+          "source_locus": "parallel volume PDF p38 col1 A166–A169",
+          "domain": [
+            "woodwork",
+            "weaving",
+            "making_objects",
+            "wealth"
+          ],
+          "scope": "explicit_manual_craft_and_material_making"
+        },
+        {
+          "id": "KAUA_14",
+          "source_locus": "parallel p38 col2 Chuen line",
+          "domain": [
+            "making",
+            "wealth"
+          ],
+          "scope": "maker_and_wealth_more_general"
+        },
+        {
+          "id": "KAUA_21_22",
+          "source_locus": "parallel p38 col3 Chuen line",
+          "domain": [
+            "woodwork",
+            "weaving",
+            "wealth"
+          ],
+          "scope": "explicit_material_making_and_weaving"
+        },
+        {
+          "id": "CHAN_CAH_1_4",
+          "source_locus": "parallel p39 col1 near A168",
+          "domain": [
+            "making_or_weaving"
+          ],
+          "scope": "related_terminology_but_not_independently_translated_for_this_row"
+        },
+        {
+          "id": "PEREZ_94_95",
+          "source_locus": "parallel p39 col2 Chuen",
+          "domain": [
+            "making",
+            "weaving_related",
+            "wealth"
+          ],
+          "scope": "generic_making_word_and_weaving_related_word"
+        }
+      ],
+      "composite_translation_locus": "English PDF p22 Chuen (A167–A170)",
+      "source_unfrozen_modern_construct": "time making/weaving/woodworking or repairs",
+      "first_human_trial_candidate": true,
+      "source_to_modern_behavior_equivalence_verified": false,
+      "historical_replicated_human_outcomes": 0
+    },
+    {
+      "printed_day": "Men",
+      "canonical_yucatec": "MEN",
+      "witness_variants": [
+        {
+          "id": "KAUA_11_12",
+          "source_locus": "parallel p40 col1 A180",
+          "domain": [
+            "weaving",
+            "speaking",
+            "scribe_related"
+          ],
+          "scope": "longer_occupation_text"
+        },
+        {
+          "id": "KAUA_14",
+          "source_locus": "parallel p40 col2 Men",
+          "domain": [
+            "makers"
+          ],
+          "scope": "less_specific"
+        },
+        {
+          "id": "KAUA_21_22",
+          "source_locus": "parallel p40 col3 Men",
+          "domain": [
+            "weaving_related"
+          ],
+          "scope": "weaving_maker_word"
+        },
+        {
+          "id": "CHAN_CAH_1_4",
+          "source_locus": "parallel p41 col1 A180",
+          "domain": [
+            "makers"
+          ],
+          "scope": "short_fragment_uncertain"
+        },
+        {
+          "id": "PEREZ_94_95",
+          "source_locus": "parallel p41 col2 Men",
+          "domain": [
+            "weaving_related"
+          ],
+          "scope": "wording_and_orthography_changed_relative_to_longer_Kaua"
+        }
+      ],
+      "composite_translation_locus": "English PDF p23 Men",
+      "source_unfrozen_modern_construct": "weaving and craft",
+      "first_human_trial_candidate": false,
+      "source_to_modern_behavior_equivalence_verified": false,
+      "historical_replicated_human_outcomes": 0
+    },
+    {
+      "printed_day": "Caban",
+      "canonical_yucatec": "KAB’AN",
+      "witness_variants": [
+        {
+          "id": "KAUA_11_12",
+          "source_locus": "parallel p40 col1 A185–A188",
+          "domain": [
+            "commerce",
+            "travel",
+            "woodwork"
+          ],
+          "scope": "woodwork_appears_in_this_long_version"
+        },
+        {
+          "id": "KAUA_14",
+          "source_locus": "parallel p40 col2 Caban",
+          "domain": [
+            "commerce",
+            "travel"
+          ],
+          "scope": "woodwork_not_visible"
+        },
+        {
+          "id": "KAUA_21_22",
+          "source_locus": "parallel p40 col3 Caban",
+          "domain": [
+            "commerce"
+          ],
+          "scope": "woodwork_not_visible"
+        },
+        {
+          "id": "CHAN_CAH_1_4",
+          "source_locus": "parallel p41 col1 Caban",
+          "domain": [
+            "commerce_or_travel"
+          ],
+          "scope": "woodwork_not_visible"
+        },
+        {
+          "id": "PEREZ_94_95",
+          "source_locus": "parallel p41 col2 Caban",
+          "domain": [
+            "commerce"
+          ],
+          "scope": "woodwork_not_visible"
+        }
+      ],
+      "composite_translation_locus": "English PDF p23 Caban",
+      "source_unfrozen_modern_construct": "carpentry/making",
+      "first_human_trial_candidate": false,
+      "source_to_modern_behavior_equivalence_verified": false,
+      "historical_replicated_human_outcomes": 0
+    }
+  ],
+  "provenance_warnings": [
+    "Never count three Kaua manuscript loci as three independently sampled persons or traditions.",
+    "The printed comparison is an edited transcription; no original original-folio photographic autograph of Kaua or Chan Cah has been separately authenticated in this packet.",
+    "Craft words do not prove a particular modern occupation or quantified questionnaire outcome; cross-language construct review required.",
+    "Chuen-alone source candidate is stronger than arbitrarily merging Men/Caban into an equal-strength three-day artisan class.",
+    "The bracketed world-directions in Bolles's English are supplied from Madrid/Fejervary-Mayer comparison and cannot be treated as literal independent original natal attributes.",
+    "Do not derive historical stigma or serious moral, criminal, medical, sexual predictions in participant recruitment."
+  ],
+  "results": {
+    "source_compared_variant_columns": 5,
+    "source_days_case_studied": 3,
+    "historical_personal_outcomes": 0,
+    "scored_untouched_human_participants": 0,
+    "validated_natal_effects": 0
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "schema": "HUMANDESIGN_MAYA_COLONIAL_YUCATEC_ARTISAN_UNFROZEN_BLIND_STUDY_B07",
+  "status": "PRE_REGISTRATION_DRAFT_NOT_FROZEN_NOT_RUNNING",
+  "prepared_date": "2026-10-22",
+  "hypothesis_id": "MAYA-YUC-CHUWEN-ARTISAN-DRAFT-001",
+  "anchor_source": "MAYA_B07_YUCATEC_NATAL_SOURCE_PROVENANCE_V1.json",
+  "lineage": [
+    "Kaua 11-12",
+    "Kaua 14",
+    "Kaua 21-22",
+    "Chan Cah 1-4",
+    "Perez 94-95"
+  ],
+  "primary": {
+    "historic_written_day": "Chuen",
+    "canonical_yucatec_day": "CHUWEN",
+    "source_birth_natal_class": "artisan/carpenter/weaver/maker from colonial edited per-birth day text",
+    "investigator_construct": "voluntary craft participation with modern broader examples",
+    "source_construct_equivalence_established": false,
+    "source_feature_eligible_for_scored_untouched_human": false,
+    "prediction_direction": "More observed voluntary making/crafting than participants born on other 19 Yucatec days, under a predeclared GMT584283 date-only hypothesis",
+    "same_construct_claim_independent_human_evidence": 0
+  },
+  "question_prototype": {
+    "item_id": "MAYA-B07-C-HANDS12",
+    "instructions": "During the past 12 months, approximately how much time did you spend voluntarily making or repairing tangible objects, such as weaving, sewing, woodworking, furniture repair, carving, ceramics, or similar hands-on crafts? Exclude mandatory household chores and work you were required to do for pay.",
+    "response_options": [
+      "0 hours",
+      "1–5 hours",
+      "6–20 hours",
+      "21–50 hours",
+      "51–100 hours",
+      "Over 100 hours",
+      "I cannot reliably estimate",
+      "Prefer not to answer"
+    ],
+    "predeclared_scored_bins": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "primary_outcome_type": "ordered_bin_score",
+    "primary_nonresponse": [
+      "I cannot reliably estimate",
+      "Prefer not to answer"
+    ],
+    "separate_opportunity_item": "In the past 12 months did you have the time, materials or practical access to do such hands-on activities? None/some/substantial/unknown.",
+    "separate_paid_trade_item": "Is craft/making part of your occupation or paid work? No/occasionally/regularly/prefer not.",
+    "source_inclusive_wording_not_yet_independently_content_validated": true
+  },
+  "population": {
+    "description": "New, consenting adult participants whose chart and answers were never used to design the claim",
+    "participants_can_view_own_birth_sign_before_response": false,
+    "recorded_priors": [
+      "prior awareness of Mayan/Yucatec natal calendar",
+      "age band",
+      "sex/gender when voluntarily disclosed",
+      "education",
+      "paid manual trade",
+      "income/access proxy",
+      "language",
+      "region",
+      "calendar birth date provenance",
+      "clock source quality"
+    ],
+    "birth_collection": "private consented location, Gregorian civil date, birth time/timezone provenance, ±uncertainty range",
+    "do_not_include_development_cases_in_confirmation": true,
+    "do_not_derive_personality_from_sensitive_birth_identifiers_in_git": true,
+    "birth_time_filter_before_answers": "source-unresolved ritual day turnover: use documented birth-time around 10:00–14:00 local time for first-date-only methodological pilot, or defer until source-specific local boundary corroborated; no after-response selection.",
+    "historical_era_calendar_continuity_validated": false,
+    "selection_status": "UNFROZEN"
+  },
+  "chart_and_decoys": {
+    "assumed_reference": "GMT584283 date-only reference conversion, birth time policy unresolved; model exploratory",
+    "alternative_correlation": "GMT584285 sensitivity recorded separately in all reports, not selected by best answer fit",
+    "alternative_day_shifts": [
+      1,
+      2,
+      7,
+      13,
+      20,
+      130
+    ],
+    "null_models": [
+      "permuted frozen birth-label mapping among participants",
+      "nonastrology age/trade/access baseline"
+    ],
+    "hidden_prediction_data": "Before scored answers, conceal exact day/claimed direction, then compute individual privately; date labels and questionnaires hash/freeze.",
+    "natal_chart_engine_verified_for_living_yucatec": false,
+    "no_prediction_selected_post_outcome": true
+  },
+  "analysis_draft": {
+    "primary_group": "CHUWEN one day of 20; expected ~5% birth-day prevalence under approximate uniform cycle",
+    "primary_test": "predeclared positive direction on ordinal craft-hours response, against 19 other signs; preregister a valid permutation or rank-based test and covariate adjustment before outcomes; do not interpret as calibrated probability",
+    "type_one_error_rate": "one primary contrast, alpha .05, final details not frozen",
+    "repeated_items_from_same_construct_count_as_one_outcome": true,
+    "label_shift_null_and_calendar_correlation_variants_report_separately": true,
+    "missingness_and_region_by_person_handling": "must be frozen before collecting answers",
+    "negative_results_and_permutation_ranks_retained": true,
+    "mechanical_feasibility_only_minimal_pilot_n": 60,
+    "confirmatory_n_at_alpha05_80percent_power_for_standardized_d03_approx": 1836,
+    "n_note": "Approximate Gaussian unbalanced two-group d=0.3; actual ordered response, attrition, nonuniform birth seasonality, eligibility, multiple models and sampling could require more; not empirical effect estimate"
+  },
+  "exploratory_not_primary": {
+    "modern_composite_day_names": [
+      "CHUWEN",
+      "MEN",
+      "KAB’AN"
+    ],
+    "source_ascription_same_wording_strength_equal": false,
+    "witness_variants": "Men weaving in long Kaua text, Caban carpentry only in longer Kaua reading, while trade/travel remains in other variants",
+    "is_investigator_generated_group_not_in_original_source": true,
+    "estimated_prevalence_under_uniform_day_names": 0.15,
+    "sample_size_for_d03_approx_two_sided_80power": 684,
+    "requires_distinct_multitest_adjustment_if_promoted": true,
+    "not_usable_to_rescue_failed_single_CHUWEN_result": true
+  },
+  "prelaunch_gates": [
+    "Independent source-domain content-validity review and exact primary item wording",
+    "Fix source-specific date correlation and ambiguity/eligibility without using response data",
+    "Check original manuscript variants (completed here as source critical, not contemporary date turnover)",
+    "Lock target, alternatives and nonastrology baseline, sample plan, exclusions, ordinal scoring and missingness",
+    "Independent chart computation and frozen hash manifest before respondent answers",
+    "Consent and privacy-safe survey flow, no owner-known development respondents counted as untouched",
+    "No publication of specific individual birth-day trait prediction before their scored response freeze"
+  ],
+  "counters": {
+    "frozen_questionnaire_versions": 0,
+    "scored_untouched_participants": 0,
+    "validated_human_effects": 0,
+    "runtime_model_promotions": 0
+  },
+  "source_construct_alignment_revision": {
+    "original_draft_item_excludes_paid_work": true,
+    "historic_claim_includes_professional_making_roles": true,
+    "risk": "False content-validity fail from measuring hobby time alone while ancestral source makes occupational/craft ascriptions",
+    "proposed_alternate_item_NOT_FROZEN": "During the last 12 months, about how much time did you spend making, building, weaving, woodworking, sewing, repairing or otherwise creating tangible things, including both paid and unpaid activity? Exclude routine cleaning and ordinary chores. Separate paid/unpaid follow-up required.",
+    "scoring_policy": "Retain same six hour bins only as draft; occupation and craft accessibility measured separately; scoring and rubric MUST be chosen before participant response freeze",
+    "independent_content_validity_review_complete": false,
+    "promoted_to_primary_question": false,
+    "revision_made_after_scored_human_outcomes": false
+  },
+  "feasibility_interpretation": {
+    "random_cohort_60_expected_single_Chuen_birthdays_approx": 3.0,
+    "birth_day_probability_approx": 0.05,
+    "approx_probability_zero_Chuen_in_60_if_independent_uniform": 0.0461,
+    "methodological_pilot_not_significance_claim": true,
+    "confirmatory_power_1836_only_rough_gaussian_estimate": true
+  }
+}

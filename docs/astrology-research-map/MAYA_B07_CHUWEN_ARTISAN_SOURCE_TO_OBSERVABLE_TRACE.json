@@ -1,0 +1,81 @@
+{
+  "claim_id": "MAYA-YUC-B07-CHUWEN-ARTISAN-UNFROZEN-01",
+  "tradition_id": "MAYA-LIVING",
+  "source_witness": {
+    "source_id": "BOLLES-PCML-KAUA-CHAN-PEREZ-A140-A206",
+    "kind": "original_edition_translation",
+    "locus": "Bolles translation PDF p22 (A165–A170, Chuen); source parallel PDF pp38-39 columns Kaua/Chan Cah/Pérez",
+    "layer": "translation",
+    "limited_original_quote": null,
+    "paraphrase": "Composite colonial Yucatec birth-day source associates people born on Chuen with carpentry, weaving, making, wealth or broad aptitude; wording and intensity vary by manuscript witness.",
+    "original_source_hash_sha256": "300146706a1589e5a4725753f0a9bb8afabc405515de76db906d200e9e908abe",
+    "alternate_witness_ids": [
+      "KAUA_11_12",
+      "KAUA_14",
+      "KAUA_21_22",
+      "CHAN_CAH_1_4",
+      "PEREZ_94_95"
+    ]
+  },
+  "prediction_class": "natal_trait",
+  "chart_feature": {
+    "algorithm_ref": "docs/astrology-research-map/maya_calendar_reference.py (GMT584283 date-only lowland reference)",
+    "calendar_policy_ref": null,
+    "predicate": null,
+    "uncertainty_state": "conflicted"
+  },
+  "observable": {
+    "construct": "Time spent doing manual building/weaving/object-making, paid and unpaid; score/source alignment UNFROZEN",
+    "question_ids": [
+      "MAYA-B07-C-HANDS12 (UNFROZEN; original prototype leisure-only undercovers paid craft occupations)"
+    ],
+    "effect_direction": "Candidate positive Chuen versus all other signs (UNFROZEN; no participant predictions issued)",
+    "falsifier": "If a future preregistered independent cohort meets frozen date/measurement eligibility yet Chuen craft outcome is not positively elevated against source-declared null and matched decoys, the preregistered claim fails; variants cannot rescue it.",
+    "time_horizon": "Past 12 months (candidate retrospective activity report, prospective prediction freeze required)",
+    "confounds": [
+      "paid craft occupation",
+      "income and material access",
+      "family education",
+      "age",
+      "language",
+      "country",
+      "culture",
+      "household responsibilities",
+      "manual injury",
+      "birth date seasonality",
+      "local civic date uncertainty",
+      "local birth-hour day boundary"
+    ]
+  },
+  "dependencies": {
+    "same_construct_other_claim_ids": [],
+    "source_lineage_ids": [
+      "KAUA ancestral manuscript (3 dependent loci)",
+      "CHAN_CAH ancestral manuscript",
+      "CODEX_PEREZ edited compilation",
+      "BOLLES modern composite translation"
+    ],
+    "conditional_exceptions": [
+      "No verified current Yucatec natal day rollover/epoch/modern continuity",
+      "Yucatec Chuen canonical CHUWEN corresponds K'iche' B'ATZ' not the original 1722 K'iche' rule",
+      "Historical source occupational traits include paid work but current question prototype excludes work paid under obligation",
+      "Question construct and scoring need independent pre-outcome content validity",
+      "No actual forward-blind human evidence; original manuscripts not used to calculate participant data"
+    ]
+  },
+  "readiness": {
+    "stage": "source_only",
+    "frozen_before_outcomes": false,
+    "model_commit_sha256": null,
+    "exclusion_reason": "Unverified current regional birth-date cutoff and contradictory type/timing; outcome/prototype alignment and independent review unresolved; no private birth-time engine and chart freeze",
+    "decoy_spec": "Draft GMT584283±1,±2,±7,±13,±20,±130 plus GMT584285 sensitivity; commit exact decoy panel, birth-date limits, source and model before answers",
+    "nonastrology_null_spec": "Draft age/trade/access/language baselines and cohort chart-label permutation; predeclare matching and ordinal permutation statistic before answers"
+  },
+  "human_evidence": {
+    "untouched_test_participants": 0,
+    "validated_predictive_successes": 0,
+    "effect_size_status": "unmeasured",
+    "permutation_null_result": null,
+    "public_report_ref": null
+  }
+}

@@ -1,6 +1,10 @@
 # Living cross-tradition astrology research map
 22 October 2026 — **source-controlled research overview; no new validated predictive model**
 
+## Yucatec original per-birth-day predictions and variant comparison (B07)
+
+[New original-source natal reading](MAYA_B07_ORIGINAL_YUCATEC_NATAL_PREDICTIONS_SOURCE_AUDIT_20261022.md): editor David Bolles's facing colonial Yucatec/English passage `U Mutil Uinic Zanzamal` explicitly concerns **people born on each of 20 named days**; [source-critical evidence/provenance](MAYA_B07_YUCATEC_NATAL_SOURCE_PROVENANCE_V1.json), [20 day-sign classification table](MAYA_B07_YUCATEC_NATAL_20_SOURCE_DOMAIN_ROWS.txt), and [original Kaua/Chan Cah/Pérez column comparison](MAYA_B07_YUCATEC_ARTISAN_WITNESS_VARIANTS.json) identify **Chuen artisan/maker** as a stronger source-fidelity candidate than combining weaker Men/Caban craft wording. [Chuen source-to-observable trace](MAYA_B07_CHUWEN_ARTISAN_SOURCE_TO_OBSERVABLE_TRACE.json) and [an explicitly UNFROZEN study design](MAYA_B07_ARTISAN_BLIND_STUDY_DRAFT_V1.json) prohibit an unjustified real-person prediction: old manuscripts are not independent human trait validation, current Yucatec birth clock/count is unverified, and the initial leisure-only craft item neglects paid occupational craft. **141/141 focused source/engineering tests pass; 0 human predictive validations; 0 model promotions.**
+
 ## 1722 K’iche’ manuscript: historical Julian/Gregorian caution (B06)
 
 [Source-critical correction](MAYA_B06_1722_CIVIL_DATE_STYLE_SOURCE_CONFLICT_20261022.md): the Newberry Library’s description calls the 1722 copy’s Spanish dates **Julian**, whereas the later Guatemala Ministry study treats them as **Gregorian**. The manuscript itself visibly records the labels without deciding that terminology. Our fixed GMT584283 reference matches **30/30 photographed rows when labels are Gregorian**, but **0/30** if the same written 1722–23 dates are interpreted as Julian (+11 actual days). **The historic calendar-style ambiguity remains OPEN**; none of the 52 directly read sacred-day groups is affected, and **0 human predictions** were validated. Tests **113/113**.
