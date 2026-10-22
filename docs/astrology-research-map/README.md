@@ -1,6 +1,10 @@
 # Living cross-tradition astrology research map
 22 October 2026 — **source-controlled research overview; no new validated predictive model**
 
+## Maya 1722 facsimile full 52-group audit (B05)
+
+[Direct reading of all 52 photographed five-day groups](MAYA_B05_FULL_52_1722_FOLIO_SOURCE_AUDIT_20261022.md) extends the earlier 13 verified groups with [39 more hand-transcribed groups](MAYA_1722_B05_DIRECT_FOLIO_GROUPS_14_TO_52.txt). All **260** numbered day-name combinations occur once, and **107/107** source/algorithm tests pass. K'iche' interpretive prose remains untranslated; **zero human natal predictions validated**.
+
 ## Maya 1722 original facsimile first direct collation (22 October, B04)
 
 The [1722 K'iche' manuscript's **actual photographed 1877 copy** is now partly read directly](MAYA_B04_ORIGINAL_1722_FOLIO_COLLATION_AND_5x52_20261022.md): **26/26 original photo SHA checks**, **30 hand-read 1722–1723 Gregorian/sacred-day entries**, **13 observed five-entry AHILABALZIH groups** corresponding to a [pure 5×52 calendar-interval calculation](maya_1722_five_by_52_reference.py). Original 1722 [May 3 = 9 Queh](MAYA_1722_PRIMARY_FACSIMILE_HAND_READ_B04.json) and **1723 May 3 = 10 Ee** align with the existing date-only GMT584283 engine. The 1722 text's 52 mathematical five-name groups should NOT be silently collapsed into a modern 20-personality-sign horoscope; ancient codices and living regional practitioner readings remain separate. The old 2005 filmed-date discrepancy stays **unresolved**. Publisher-authorized 2009 critical edition **opening chapter** and its 20-name Table 1.1 were read, not the full 1722 translation (pp.64–135). **96/96** total local map-source tests pass; **zero** real-human predictive validations.
