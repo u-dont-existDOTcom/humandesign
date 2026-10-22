@@ -1,0 +1,34 @@
+flowchart TD
+  OWNER["Research question: can actual birth-derived charts predict unseen people's responses?"]
+  SOURCES["Source corpora: HD, Western, Jyotish, Chinese, Tibetan, Maya + gaps"]
+  WITNESS["Edition / page / original claim / cultural scope"]
+  KIND{"What kind of claim?"}
+  ASTR["Astronomy / calendar / chart mechanics"]
+  NATAL["Natal trait or timed personal-event claim"]
+  OTHER["Horary, communal, electional or ritual claim"]
+  FEATURE["Deterministic feature; explicit time / calendar / source policy"]
+  PRED["One falsifiable sign->observable claim; effect/negation and dependencies"]
+  TIME{"Verified chart and source policy for target date?"}
+  ABSTAIN["Abstain and retain variants / unknowns"]
+  QUESTION["Concealed, balanced question; base rate and confounders"]
+  FREEZE["Freeze source, engine, rules, questions, scores, charts, decoys and seeds"]
+  REAL["Untouched consenting humans: answers collected AFTER freeze"]
+  SCORE["Forward and reverse blind scoring vs matched decoys, random charts and nonastro baseline"]
+  RESULT["Report calibrated evidence, nulls, ties and failures separately by tradition"]
+  NEXT["New source/model version only for future untouched cohort"]
+  CORPUS["Versioned source/claim inventories"]
+  OWNER --> SOURCES --> WITNESS --> KIND
+  KIND -- "Astronomy/calendric only" --> ASTR
+  KIND -- "Individual natal or personal timing" --> NATAL
+  KIND -- "Other application" --> OTHER
+  ASTR --> FEATURE
+  NATAL --> PRED
+  OTHER --> CORPUS
+  FEATURE --> TIME
+  PRED --> TIME
+  TIME -- "No or variant conflict" --> ABSTAIN
+  TIME -- "Yes" --> QUESTION --> FREEZE --> REAL --> SCORE --> RESULT
+  ABSTAIN --> CORPUS
+  WITNESS --> CORPUS
+  RESULT --> CORPUS
+  RESULT --> NEXT --> SOURCES
