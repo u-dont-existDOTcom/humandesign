@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B52_CLASSICAL_VOCATION_DEPENDENCY_AND_B51_SOURCE_VARIANTS_SAVED",
+  "status": "OPEN_B53_PRINTED_1929_SANSKRIT_SOURCE_COLLATION_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B52_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B53_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -182,7 +182,14 @@
     "READING_NOTES_B52.md",
     "SOURCE_COLLATION_B51_B52.json",
     "B51_B52_SOURCE_INTEGRITY_TESTS.py",
-    "CONTINUATION_HANDOFF_B52_20261022.md"
+    "CONTINUATION_HANDOFF_B52_20261022.md",
+    "B53_TEST_RESULTS.txt",
+    "CONTINUATION_HANDOFF_B53_20261022.md",
+    "PRINTED_SANSKRIT_COLLATION_B53.json",
+    "READING_NOTES_B53.md",
+    "SHA256SUMS.txt",
+    "original_witness_integrity_B53.py",
+    "test_original_witness_integrity_B53.py"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -507,7 +514,18 @@
     "b52_cumulative_de_duplicated_annotations": 432,
     "b52_independent_human_predictions_tested": 0,
     "b52_production_rules_promoted": 0,
-    "b52_actual_printed_sanskrit_manuscripts_verified": false
+    "b52_actual_printed_sanskrit_manuscripts_verified": false,
+    "b53_public_domain_1929_printing_visually_inspected": true,
+    "b53_1929_physical_source_sha256": "8fc0e8a5a212d1b3312363135347c47846671a3d184232eaf276ea0c96f57624",
+    "b53_1929_source_pdf_pages": 298,
+    "b53_printed_loci_verified": 5,
+    "b53_1929_same_lineage_other_web_transcriptions_not_independent": true,
+    "b53_1929_original_binary_published": false,
+    "b53_synthetic_integrity_tests_passed": 19,
+    "b53_new_counted_original_annotations": 0,
+    "b53_cumulative_counted_annotations": 432,
+    "b53_real_human_forecasts_validated": 0,
+    "b53_production_rules_promoted": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -546,9 +564,14 @@
     "B51: 11th gain/loss coactivation remains unresolved; neighboring v9 strength/direction not canonical preference.",
     "B52: BJ 10.1 and JP XV.43 share near-verbatim 10th wealth/navamsa Sanskrit core; preserve actual variants; historical transmission dependency group, not double-counted independent predictive successes.",
     "B52: BJ 10.2–3 and JP XV.44–50 seven-planet vocational taxonomy overlap but later expansions and translator notes may differ; strongest-only vs all claims unfrozen.",
-    "B51-B52: 17+12 full local tests and 12 combined repository source-integrity tests only; no astronomy, new participant tests, predictive validation or production changes."
+    "B51-B52: 17+12 full local tests and 12 combined repository source-integrity tests only; no astronomy, new participant tests, predictive validation or production changes.",
+    "B53: Original 1929 Mahīdhara bhāṣā-ṭīkā Sanskrit plate PDF166–173 visually read; archive SHA256 8fc0e8a5a212d1b3312363135347c47846671a3d184232eaf276ea0c96f57624; this is one physical print, not separate ancient manuscripts.",
+    "B53: v2-v3 source Sanskrit yajña ritual versus Bhasin translated public service; negative trio Mercury/Jupiter/Venus physically confirmed, English 'these three' implies tenth lord/Jupiter/Mercury.",
+    "B53: v16 printed Sanskrit vā vs English AND confirmed; v24 1929 printed Sanskrit satkīrti favorable versus Bhasin English unfavorable, conjectural copy error never silently accepted.",
+    "B53: 11th v2 malefic-eleventh gain versus 11th v10 malefic-eleventh loss both physically on 1929 plate; no rule priority demonstrated, synthetic collision abstain.",
+    "B53: 19 source/provenance symbolic tests passed locally; 0 new unique primary source IDs, 0 human prediction tests, 0 production promotions, original 1929 PDF remains outside public repo."
   ],
-  "next_exact_source_frontier": "After B52: obtain original printed Sanskrit witnesses for Sarvartha Ch8 10th vv3/16/24 and 11th vv2/10, and for BJ X.1-3 / JP XV.43-50. Compare original occupational expansions without treating inherited text as independent empirical evidence; preserve negative cases, source conflict abstentions, and no participant/model use.",
+  "next_exact_source_frontier": "After B53: visually collate a Sanskrit printing genuinely independent of the Bombay/1929 and Gauḍ 2015 line if accessible, for tenth-house v24 positive-vs-negative fame and eleventh v2/10 conflicting gain/loss. Then continue original Jātaka Pārijāta XV.51+ versus Varāhamihira Bṛhat Jātaka X.4+ for additional nonduplicated occupational negatives and specific observed targets. No participants/model updates.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -559,7 +582,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B52 restored from B50 through separate source-only collation; B51/B52 notes/structured crosswalk/combined no-human-data tests are confined to five-book task; original book bytes not uploaded. Historical 432 original annotation count unchanged.",
+    "note": "B53 physical printed source evidence added to isolated five-book reader: one public-domain 1929 Sanskrit plate inspected, 7 new task-local research/test/checksum files, original complete book PDF deliberately not redistributed. Cumulative documentary registry remains 432. Draft PR unmerged.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"
