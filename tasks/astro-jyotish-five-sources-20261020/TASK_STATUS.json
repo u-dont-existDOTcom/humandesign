@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B49_TEXT_VARIANTS_AND_SOURCE_DIAGNOSTICS_SAVED",
+  "status": "OPEN_B50_FIVE_BOOK_CAREER_INCOME_SOURCE_COLLATION_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B49_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B50_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -171,7 +171,13 @@
     "CONTINUATION_HANDOFF_B49_20261022.md",
     "marriage_witness_variants_B49.py",
     "test_marriage_witness_variants_B49.py",
-    "B49_TEST_RESULTS.txt"
+    "B49_TEST_RESULTS.txt",
+    "CAREER_INCOME_SOURCE_COLLATION_B50.json",
+    "READING_NOTES_B50.md",
+    "CONTINUATION_HANDOFF_B50_20261022.md",
+    "career_income_scope_B50.py",
+    "test_career_income_scope_B50.py",
+    "B50_TEST_RESULTS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -475,7 +481,17 @@
     "b49_original_printed_sanskrit_plate_verified": false,
     "b49_independent_manuscripts_verified": 0,
     "b49_production_rules_promoted": 0,
-    "b49_independent_human_predictions_tested": 0
+    "b49_independent_human_predictions_tested": 0,
+    "b50_original_five_uploaded_works_indexed_text_read": 5,
+    "b50_source_witness_issues_documented": 6,
+    "b50_new_counted_primary_annotations": 0,
+    "b50_synthetic_source_tests_passed": 8,
+    "b50_cumulative_historical_annotations": 432,
+    "b50_human_forecasts_validated": 0,
+    "b50_production_promotions": 0,
+    "b50_critical_sanskrit_original_plate_verified": false,
+    "b50_original_portuguese_indexed_full_line_window_read": true,
+    "b50_original_portuguese_raw_bytes_verified": false
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -501,9 +517,15 @@
     "B49: BPHS18.34 proofread online Sanskrit तद्द्यूने vs electronic variants तद्द्वूने; dyūna attested seventh-house noun, but printed Sanskrit witness not inspected and Venus seventh-from-ninth versus ascendant translation conflict unresolved.",
     "B49: BPHS18.38 modern English and Portuguese 12/21 versus Sanskrit e-text 12/19 has no proven separate Sanskrit recension; archive only, no individual death prediction.",
     "B49: BPHS18.40 same site's English duration versus Hindi age-at-first-marriage, verse18.41 favors indexed marriage age; no universal rule precedence in inspected 18.22–42, collision remains no-score.",
-    "B49: 10 no-biography synthetic-only source tests pass; all six B49 files are public-safe research analysis, no copyrighted complete source and no real-human predictive validation."
+    "B49: 10 no-biography synthetic-only source tests pass; all six B49 files are public-safe research analysis, no copyrighted complete source and no real-human predictive validation.",
+    "B50: Bhasin Ch8 11th v2 vs v10 and online Sanskrit have gain versus loss for overlapping malefic-eleventh antecedents; no source priority decided; abstain.",
+    "B50: Bhasin 10th v29 printed English dual-navamsa no hunting versus online Sanskrit dual hunting and movable movement; need original critical Sanskrit plate.",
+    "B50: Jataka Parijata XV.43 translator note contrasts strongest-only and Bhattoṭpala all-indicators income routing; never choose after reading occupations.",
+    "B50: Source-layer mismatch for medicine profession: Jataka Sun translated verse, Mars translator note, Rath modern Saturn table; not independent predictive validations.",
+    "B50: BPHS Portuguese original indexed text now accessible via full lines, but no raw-file bytes; distinct after-marriage wealth timing vs Bhasin generic gain in 2nd↔11th exchange.",
+    "B50: 8 synthetic-only tests pass, six source-audit records, five uploaded works sampled; no new accepted primary annotations."
   ],
-  "next_exact_source_frontier": "After B49: seek actual printed Sanskrit plate/critical apparatus for BPHS18.33–34/38 and original Portuguese full line context; discriminate house-vs-lord antecedents without hindsight, and read five-book career/wealth/property negative as well as positive rule families. Preserve explicit no-score abstention for unsolved marriage rule conflicts.",
+  "next_exact_source_frontier": "B50 frontier: independently collate printed Sanskrit/original-language witnesses for Bhasin eleventh v2 vs v10 opposite wealth outcomes and 10th v29 movable/dual hunting; examine Jataka Pārijāta XV.43-50 Bhattoṭpala and Gargi original-strength precedence; inventory negative profession/income cases across all five uploaded works. Preserve source-layer labels, no model or human scoring until frozen methods and independent data.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B50",
+  "research_type": "FIVE_ORIGINAL_UPLOADED_BOOKS_CAREER_WEALTH_SOURCE_COLLATION",
+  "date_utc": "2026-10-22",
+  "data_access": "Library indexed text of original 4 PDF scans and Portuguese text; PDF page images not returned; original Sanskrit printing in PDFs not visually certified",
+  "book_source_family_count": 5,
+  "counted_new_annotations": 0,
+  "source_annotation_registry_cumulative": 432,
+  "independent_human_outcome_tests": 0,
+  "production_rules_promoted": 0,
+  "records": [
+    {
+      "id": "B50-01",
+      "family": "BHASIN_INTERNAL_OPPOSITE_WEALTH_OUTCOMES",
+      "uploaded_source": "J. N. Bhasin, Sarvartha Chintamani, PDF212-213, Eleventh House vv2 and10",
+      "online_sanskrit": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8",
+      "online_locator": "8.3.2 and 8.3.10",
+      "antecedent_overlap": "Malefic planet physically in eleventh; e.g. symbolic Aries ascendant with Saturn Aquarius in eleventh and eleventh lord not separately in an angular/trinal house",
+      "v2": "Wealth gain from malefic associated with eleventh, as independent alternative to eleventh lord in kendra/trine",
+      "v10": "Wealth loss with malefic in eleventh, independently of other option involving eleventh lord influenced by malefics",
+      "epistemic_status": "OPPOSITE_OUTCOMES_IN_UPLOADED_ENGLISH_AND_PARALLEL_ONLINE_SANSKRIT_TEXT; NO_PRIORITY_SPECIFIED_IN_LOCAL_PAIR",
+      "score_allowed": false
+    },
+    {
+      "id": "B50-02",
+      "family": "BHASIN_MOVEMENT_VS_HUNTING_MODE_TRANSLATION",
+      "uploaded_source": "J. N. Bhasin, Sarvartha Chintamani, PDF208, tenth-house v29",
+      "online_sanskrit": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8",
+      "online_locator": "8.1.29",
+      "printed_english": "Movable rasi AND movable navamsa -> hunting; fixed OR dual navamsa -> no hunting movement",
+      "sanskrit_interpretation": "Movable division -> movement, fixed -> stability, dual -> hunting excursion",
+      "difference": "In particular the dual navamsa case is hunting-positive in displayed Sanskrit and hunting-negative in printed Bhasin English; do not collapse general mobility into hunting",
+      "no_printed_sanskrit_plate_read": true,
+      "score_allowed": false
+    },
+    {
+      "id": "B50-03",
+      "family": "JATAKA_PROFESSION_ROUTING_RULE_CONFLICT",
+      "uploaded_source": "V. S. Sastri, Jataka Parijata, Adhyaya XV 43-50, PDF924-930",
+      "explicit_printed_note": "Following XV.43, notes present selecting strongest 10th-place/10th lord/navamsa source versus Bhattoṭpala's quoted objection that every relevant planet should be considered",
+      "alternative_families": ["SINGLE_STRONGEST", "ALL_INDICATING_SOURCES"],
+      "additional_scope": "Verse43 includes parental/relative/friend/other income source as distinct from occupational activity; verses44-50 give planet-governed occupations",
+      "source_layer": "CLASSICAL_VERSE_VERSUS_TRANSLATOR_NOTES_QUOTING_BHATTOTPALA_GARGI",
+      "canonical_selection": null,
+      "score_allowed": false
+    },
+    {
+      "id": "B50-04",
+      "family": "CROSS_SOURCE_OCCUPATIONAL_SEMANTIC_NONINDEPENDENCE",
+      "sources": [
+        "Jataka Parijata XV.44 PDF927: Sun-owned navamsa includes dealing in medicines in translated verse",
+        "Jataka Parijata XV.46 PDF928: Mars-associated doctors/chemists are in translator Notes, not the translated verse list",
+        "Sanjay Rath Jaimini Upadesa Sutra course PDF48: author modern kala-graha profession table maps Saturn to medicine",
+        "Saravali Ch30 PDF72-76: planetary 10th-house claims describe honor, status or success, not directly a specific employed profession"
+      ],
+      "issue": "Treating 'medical profession' predicted under Sun, Mars and Saturn as corroborating independent successes would ignore source-layer, rule-family, social-era and breadth distinctions",
+      "source_layer": "VERSES_AND_MODERN_TRANSLATOR_OR_AUTHOR_COMMENTS_NOT_INTERCHANGEABLE",
+      "score_allowed": false
+    },
+    {
+      "id": "B50-05",
+      "family": "EXCHANGE_2_11_OUTCOME_TIMING_NON_EQUIVALENCE",
+      "uploaded_sources": [
+        "Bhasin Sarvartha Chintamani PDF212, eleventh-house v3",
+        "André Kerr Portuguese BPHS library TXT lines 1444-1481, eleventh-house effects"
+      ],
+      "shared_antecedent": "Second-house lord in eleventh and eleventh-house lord in second (exchange)",
+      "bhasin_outcome": "General substantial income gain; v3 also has separate both-lords-in-kendra alternative",
+      "portuguese_bphs_outcome": "Accumulation of wealth after marriage",
+      "difference": "Timing relative to marriage is an added observable, not equivalent to general gain and not a claim marriage caused the wealth",
+      "portuguese_indexed_text_recovered": true,
+      "portuguese_raw_bytes_read": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B50-06",
+      "family": "CAREER_WEALTH_TARGET_SPLIT",
+      "sources": [
+        "Bhasin tenth-house Ch8 PDF204-208: public service, honor, duties, fame; eleventh PDF212-213: income",
+        "Jataka Parijata XV PDF924-930: transfer/source of wealth, profession, education/status",
+        "Saravali Ch30 PDF72-76: 10th-house accomplishment and social status",
+        "Rath Lesson2 PDF47-49: kala direction and author's profession table, not a complete natal vocation inference",
+        "Kerr Portuguese BPHS lines 878-889 and 1430-1490: 10th house profession and authority, 11th gain"
+      ],
+      "distinct_observables": ["OCCUPATION_TITLE_OR_SECTOR", "EARNINGS_FROM_WHOM", "INCOME_LEVEL", "DATED_INCOME_AFTER_MARRIAGE", "PUBLIC_WORK_OR_SOCIAL_STATUS", "DIRECTION_TIMING"],
+      "rule_completeness": "NOT_FROZEN; historical income measures and occupational castes should not be mapped post hoc into contemporary jobs",
+      "score_allowed": false
+    }
+  ],
+  "synthetic_diagnostic_unit_tests_passed": 8,
+  "source_only": true
+}
