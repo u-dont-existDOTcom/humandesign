@@ -1,0 +1,79 @@
+{
+  "schema": "MAYA_DRESDEN_FIRST_FOLIO_DISCOVERY_V1",
+  "as_of": "2026-10-22",
+  "status": "folio_window_selected_original_glyph_and_image_not_yet_verified",
+  "project_root_outcome": "Classical source-first astrology/calendar extraction and independently scored untouched human predictions; no human data in this task",
+  "primary_manuscript": {
+    "holder": "Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden",
+    "catalog_title": "Codex Dresdensis / Dresden Maya Codex",
+    "original_era": "Late Postclassic; SLUB estimates about 1300–1521 CE",
+    "digital_catalog": "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex",
+    "source_interpretive_index": "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex/content",
+    "original_facsimile_location_confirmed": "SLUB digital collection portal; exact IIIF canvas not yet pinned",
+    "authenticated_original_glyph_folio_extracted": false
+  },
+  "alternate_facsimile_witness": {
+    "project": "NcodeX/University of California Berkeley et al.",
+    "display_name": "Digital Edition Dresden Codex RS-01",
+    "reproduction_basis": "Ernst Wilhelm Förstemann 1892 facsimile, not a modern original photographic source",
+    "portal": "https://ncodex.org/resources.php",
+    "catalog_license_declared": "CC0 1.0 for NcodeX digital edition",
+    "exact_IIIF_manifest_id_and_canvas_not_yet_pinned": true
+  },
+  "candidate_folio_windows": [
+    {
+      "folio_id": "MAYA-DRESDEN-VENUS-01",
+      "historical_pages": [
+        "24",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "described_by": "SLUB interpretive edition contents catalog",
+      "genre": "Venus morning-star astronomic calendar and ritual omen",
+      "source_clock": "codex transmits schematic 584-day Venus period, represented over 104 years according to SLUB",
+      "source_context": "SLUB indicates in the omen cycle the morning-star phase of Venus is linked to threatening ritual imagery and possible harm; original glyph/block reading not yet extracted",
+      "candidate_test_scope": "Calendar arithmetic of Venus interval and attributed rituals; NOT individual birth-sign traits",
+      "original_glyph_text_transcribed": false,
+      "original_image_canvas_seen": false,
+      "rule_count_accepted": 0
+    },
+    {
+      "folio_id": "MAYA-DRESDEN-MOON-02",
+      "historical_pages": [
+        "13c",
+        "14–23"
+      ],
+      "described_by": "SLUB interpretive edition contents catalog",
+      "genre": "Moon goddess almanacs, health/illness symbolism",
+      "source_context": "SLUB summary associates moon-goddess depictions with healing and illness; not medical advice or a personal natal health prediction",
+      "original_glyph_text_transcribed": false,
+      "original_image_canvas_seen": false,
+      "rule_count_accepted": 0
+    },
+    {
+      "folio_id": "MAYA-DRESDEN-TZOLKIN-03",
+      "historical_pages": [
+        "4–14b",
+        "29–45"
+      ],
+      "described_by": "SLUB interpretive edition contents catalog",
+      "genre": "260-day almanacs and agriculture/ritual day forecasts",
+      "source_context": "SLUB says divination day forecasts involve the timing of farming, travel, warfare, marriage, births and health, not automatically stable natal personalities",
+      "original_glyph_text_transcribed": false,
+      "original_image_canvas_seen": false,
+      "rule_count_accepted": 0
+    }
+  ],
+  "editions_and_provenance": {
+    "facsimile_pagination_variant_notice": "FAMSI notes Förstemann, Kingsborough and later facsimile order differs; historical physical page numbering should be reconciled before original glyph references",
+    "facsimile_history_reference": "https://www.famsi.org/mayawriting/codices/dresden.html",
+    "research_epistemic_status": "institutional original-holder interpretive catalog and later 1892 visual facsimile discovery, NOT independently deciphered original Maya manuscript"
+  },
+  "next_safe_action": "Open/obtain SLUB photographed page24 and pages46-50 or independently sourced NcodeX original 1892 facsimile canvas; pin exact URL, media SHA, physical page/section label, original surviving numeric bars and dots; compare at least two scholarly decipherments and potential page-order error; only after that freeze an original astronomic claim, do not invent natal personality interpretations.",
+  "independent_real_human_blind_predictive_validations": 0,
+  "calendrical_Maya_engine_promotions": 0,
+  "runtime_rules_promoted": 0
+}
