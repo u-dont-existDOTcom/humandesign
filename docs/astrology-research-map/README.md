@@ -1,6 +1,10 @@
 # Living cross-tradition astrology research map
 22 October 2026 — **source-controlled research overview; no new validated predictive model**
 
+## Maya Tedlock/Madrid first source-audit increment (22 October, separate later branch)
+
+[First dated Momostenango K'iche' calendar source check and prospective Noj birth-claim draft](MAYA_TEDLOCK_MADRID_FIRST_CALENDAR_ANCHOR_AUDIT_20261022.md), with [page-indexed and SHA-anchored record](MAYA_TEDLOCK_MADRID_SOURCE_WITNESSES_V1.json), adds partial reading of the owner's *Time and the Highland Maya* (printed pp. 94–100, 107–126) and selected *Madrid Codex: New Approaches* chapters. Tedlock explicitly dated 1975-06-22 as **9 Akabal**, 1977-03-02 as **4 Ik**, and 1977-03-15 as **4 Tziquin**. All **3/3** are arithmetically consistent with the preexisting lowland reference GMT **584283** date-only converter, and **0/3** with alternative GMT **584285**; these are one ethnographer's dated Momostenango examples and **NOT** proof of uninterrupted present-day regional calendar continuity or the natal day-rollover time. Noj birth-day creativity/problem-solving is an **unfrozen draft** for a blinded test, not a scored prediction. *Madrid* almanacs and Central Mexican Borgia comparisons are **not** automatically Maya natal rules. **Zero human predictions scored; no model/runtime promotion.**
+
 ## Current reconciled owner guide and Maya source status (22 October)
 
 Start with [**which Maya books you already own, what else matters, and whether our research map is doing the right job**](OWNER_GUIDE_MAYA_BOOKS_SYSTEMS_AND_RESEARCH_MAP_20261022.md). This owner-readable guide supersedes the earlier book-status conclusion that Maya source reading had not begun; accepted **later separate Maya source-reader branches** have now verified actual user-owned books, one living Indigenous daykeeper publication, and two original 1892 printed facsimile pages of the Dresden Venus material.

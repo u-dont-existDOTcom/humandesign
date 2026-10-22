@@ -1,0 +1,239 @@
+{
+  "schema": "HUMANDESIGN_MAYA_TEDLOCK_MADRID_SOURCE_WITNESSES_V1",
+  "prepared_utc_date": "2026-10-22",
+  "purpose": "Source-critical person-predicate and 1975/1977 Momostenango ethnographic day-count checks; separate contemporary Zunil, historical Lowland codices, and Central Mexican Borgia contexts.",
+  "status": "SOURCE_RESEARCH_AND_DEVELOPMENT_CANDIDATE_ONLY",
+  "source_books": [
+    {
+      "source_id": "MAYA-TEDLOCK-1992-REV",
+      "author": "Barbara Tedlock",
+      "title": "Time and the Highland Maya",
+      "edition": "revised 1992, University of New Mexico Press",
+      "owned_artifact_type": "EPUB",
+      "owner_file_sha256": "95c88db1d7310e2b247a7ed5b8f15136abb27064ed49b3c3a33949ce7e607081",
+      "size_bytes": 1594870,
+      "verified_owner_file_sha256_current_turn": true,
+      "read_printed_page_ranges": [
+        "94-100",
+        "107-126",
+        "143 (targeted)",
+        "61 and 203 (targeted)"
+      ],
+      "fully_read": false,
+      "original_source_file_in_repository": false,
+      "cultural_scope": "Momostenango K'iche' fieldwork with other highland comparisons"
+    },
+    {
+      "source_id": "MAYA-MADRID-STUDIES-2004",
+      "editors": "Gabrielle Vail and Anthony F. Aveni",
+      "title": "The Madrid Codex: New Approaches to Understanding an Ancient Maya Manuscript",
+      "edition": "2004 University Press of Colorado; owned PDF scans first paperback 2009",
+      "owned_artifact_type": "PDF",
+      "owner_file_sha256": "4a75d30f35e0f0832ecf124150fe28123738b2a1428589a9403d8cd3ddfe0f23",
+      "size_bytes": 18424830,
+      "verified_owner_file_sha256_current_turn": true,
+      "read_printed_page_ranges": [
+        "1-16 (selected methodological passages)",
+        "131-137",
+        "215-223",
+        "385-392 (selected comparative passages)"
+      ],
+      "fully_read": false,
+      "original_source_file_in_repository": false,
+      "cultural_scope": "Madrid codex Lowland Maya calendrics; comparative Borgia Central Mexican material separated"
+    }
+  ],
+  "dated_ethnographic_day_witnesses": [
+    {
+      "id": "TEDLOCK-DATE-1975-06-22",
+      "source_id": "MAYA-TEDLOCK-1992-REV",
+      "printed_page": 108,
+      "local_artifact_locus": "content/page_108.xml",
+      "civil_gregorian_date": "1975-06-22",
+      "described_community": "Momostenango",
+      "source_number": 9,
+      "source_name_spelling": "Akabal",
+      "normalized_yucatec": "AK’B’AL",
+      "normalized_kiche_from_other_community_crosswalk": "AQ’AB’AL",
+      "correct_GMT_584283_number": 9,
+      "correct_GMT_584283_yucatec": "AK’B’AL",
+      "correct_GMT_584283_kiche": "AQ’AB’AL",
+      "alternative_GMT_584285_number": 7,
+      "alternative_GMT_584285_yucatec": "IMIX’",
+      "source_context": "Author states her elicitation on this exact date began with current day; independently dated local label rather than later chart reconstruction."
+    },
+    {
+      "id": "TEDLOCK-DATE-1977-03-02",
+      "source_id": "MAYA-TEDLOCK-1992-REV",
+      "printed_page": 100,
+      "local_artifact_locus": "content/page_100.xml",
+      "civil_gregorian_date": "1977-03-02",
+      "described_community": "Momostenango",
+      "source_number": 4,
+      "source_name_spelling": "Ik",
+      "normalized_yucatec": "IK’",
+      "normalized_kiche_from_other_community_crosswalk": "IQ’",
+      "correct_GMT_584283_number": 4,
+      "correct_GMT_584283_yucatec": "IK’",
+      "correct_GMT_584283_kiche": "IQ’",
+      "alternative_GMT_584285_number": 2,
+      "alternative_GMT_584285_yucatec": "AJAW",
+      "source_context": "Author dates entry of Mam 4 Ik at a shrine, not a modern birth sign."
+    },
+    {
+      "id": "TEDLOCK-DATE-1977-03-15",
+      "source_id": "MAYA-TEDLOCK-1992-REV",
+      "printed_page": 100,
+      "local_artifact_locus": "content/page_100.xml",
+      "civil_gregorian_date": "1977-03-15",
+      "described_community": "Momostenango",
+      "source_number": 4,
+      "source_name_spelling": "Tziquin",
+      "normalized_yucatec": "MEN",
+      "normalized_kiche_from_other_community_crosswalk": "TZ’IKIN",
+      "correct_GMT_584283_number": 4,
+      "correct_GMT_584283_yucatec": "MEN",
+      "correct_GMT_584283_kiche": "TZ’IKIN",
+      "alternative_GMT_584285_number": 2,
+      "alternative_GMT_584285_yucatec": "B’EN",
+      "source_context": "Author dates entry of Secretary 4 Tziquin; exactly 13 civil days after the 4 Ik Mam entry."
+    }
+  ],
+  "ethnographic_cross_validation": {
+    "GMT584283_matches_dated_momostenango_label_count": 3,
+    "GMT584285_matches_dated_momostenango_label_count": 0,
+    "one_author_three_dated_mentions_not_three_independent_ethnographers": true,
+    "march_1977_pair_related_by_13_day_interval": true,
+    "reference_lowland_independent_source": "Smithsonian NMAI Living Maya Time, 2012-12-21=4 Ajaw and 2012-12-20=3 Kawak; source anchor separately documented in preexisting test_maya_calendar_reference.py",
+    "result_scope": "Documented arithmetic parity of a selected Lowland correlation with Tedlock's dated Momostenango field reports in 1975-77 only; NOT full proof of every region, era, birth clock policy, or natal traits.",
+    "no_birthday_user_data_processed": true
+  },
+  "source_critical_findings": [
+    {
+      "id": "TEDLOCK-CONTINUOUS-NO-FIRST-DAY",
+      "source": "MAYA-TEDLOCK-1992-REV",
+      "pages": [
+        94,
+        95,
+        96,
+        97
+      ],
+      "paraphrase": "The ethnographer explicitly challenges assigning a single universal start day to the continuous 260-day count. Momostenango informants did not consistently name an initial day.",
+      "classification": "calendar_epistemology_not_natal_predicate",
+      "contrast": "Zunil Komon Tohil daykeepers describe B'atz' renewal/new year ceremony; ritual renewal does not necessarily claim a mathematically privileged epoch."
+    },
+    {
+      "id": "TEDLOCK-NUMBER-CONTEXT",
+      "source": "MAYA-TEDLOCK-1992-REV",
+      "pages": [
+        107,
+        108
+      ],
+      "paraphrase": "Numbers affect specific rites, shrines and interpreted strength; lower 1-3, middle 7-9, upper 11-13 differ in ethnographic contexts.",
+      "classification": "local_divinatory_numeral_context_not_universal_number_personality_rule",
+      "restriction": "No arbitrary inherited 13-tone modifier applied to the Zunil natal E claim."
+    },
+    {
+      "id": "TEDLOCK-BIRTH-NOJ",
+      "source": "MAYA-TEDLOCK-1992-REV",
+      "pages": [
+        122
+      ],
+      "paraphrase": "Momostenango birth-day passage associates Noj with creative, innovative thought and problem solving; separately discusses daykeeping/leadership roles.",
+      "classification": "direct_ethnographically_reported_natal_disposition",
+      "eligible_only_as": "falsifiable_development_candidate"
+    },
+    {
+      "id": "TEDLOCK-BIRTH-E",
+      "source": "MAYA-TEDLOCK-1992-REV",
+      "pages": [
+        117,
+        118
+      ],
+      "paraphrase": "Momostenango E birth passage discusses culturally gendered priest-shaman/midwife roles and life fortune; it does not independently predict general elective travel propensity.",
+      "classification": "local_natal_role_prediction_not_independent_support_for_Zunil_travel_trait"
+    },
+    {
+      "id": "KOMON-TOHIL-BIRTH-E",
+      "source": "MAYA-S01",
+      "pages": [
+        1
+      ],
+      "paraphrase": "Zunil daykeepers associate those born on E with being good travelers, sociable and generous.",
+      "classification": "direct_living_practitioner_natal_claim",
+      "restriction": "'good travelers' could mean ability, frequency, enjoyment or favorable journey outcome; select one before seeing responses."
+    },
+    {
+      "id": "MADRID-VAIL-AVENI-CALENDRIC",
+      "source": "MAYA-MADRID-STUDIES-2004",
+      "pages": [
+        131,
+        132,
+        137
+      ],
+      "paraphrase": "Chapter 5 distinguishes 260-day tzolk'in ritual divination, 365-day haab', 52-year Calendar Round, and dated historical Long Count.",
+      "classification": "calendar_ritual_not_personal_birth_disposition"
+    },
+    {
+      "id": "MADRID-VAIL-52YR-ALMANAC",
+      "source": "MAYA-MADRID-STUDIES-2004",
+      "pages": [
+        215,
+        216,
+        223
+      ],
+      "paraphrase": "Chapter 8 argues that some Madrid almanacs organize annual/52-year rites rather than a 260-day-only periodicity; yearbearer pages M.34-M.37 and M.90a-M.92a are examples.",
+      "classification": "calendar_ritual_yearbearer_not_natal_predictor"
+    },
+    {
+      "id": "MADRID-POHL-BORGIA-MARRIAGE",
+      "source": "MAYA-MADRID-STUDIES-2004",
+      "pages": [
+        385,
+        386,
+        387
+      ],
+      "paraphrase": "Pohl's comparative chapter discusses prognostic marriage calculation in Borgia 58-60 and ethnographic implements of Nahua/Mixtec groups. This is NOT an interpretation of a Madrid Maya natal rule.",
+      "classification": "distinct_Nahua_Mixtec_elective_marriage_not_Maya_birth_traits"
+    },
+    {
+      "id": "TEDLOCK-DAY-CLOCK-CONTEXT",
+      "source": "MAYA-TEDLOCK-1992-REV",
+      "pages": [
+        61,
+        101,
+        203
+      ],
+      "paraphrase": "A ceremonial day may begin at dawn, a particular solar yearbearer arrives at midnight, and uncertain dream timing can involve both adjacent days. These distinct functions do not establish a unique natal-day birth-time cutoff.",
+      "classification": "birth_day_boundary_UNRESOLVED"
+    }
+  ],
+  "prospective_test_candidate": {
+    "candidate_id": "MAYA-MOMO-NOJ-DIVERGENT-THINKING-DRAFT-01",
+    "source_anchored_region": "Momostenango K'iche', Tedlock revised 1992 printed p122",
+    "birth_day_sign": "NO’J",
+    "number_1_13_policy": "pooled until birth-number modifier independently source-specified and prespecified",
+    "direction": "higher preregistered blind-scored novel problem-solving performance than non-Noj births",
+    "measured_task_draft": "Timed identical divergent-thinking prompts; independent masked raters grade non-redundant, applicable novelty with a fixed rubric. Specify language, age accommodations, prompts, reliability and scoring before freeze.",
+    "visible_to_participants_before_response": "No birth sign, hypothesis, group label or expected direction",
+    "proposed_primary_comparison": "Noj sign versus all other day names, unadjusted and predeclared demographic-adjusted (age, education, language); no outcome-guided decoy selection.",
+    "controls": "A preregistered +1 or +2 civil-day phase shift, permuted sign labels with same birth-season structure, matched non-astrology baseline, and multiple-testing correction if testing other signs/traditions.",
+    "null_contrary": "No positive effect on the fixed score, or outcomes better explained by non-astrology controls, must be reported as misses.",
+    "domain_ambiguity": "A brief task measures one aspect of creativity, not all lifetime creative behavior; exact source-to-measure transfer requires independent blind content review.",
+    "birth_date_time_policy": "Civil date and time/place recorded privately; GMT584283 is a documented Momostenango date-only development alignment, NOT validated full regional/era natal assignment; until boundary known, restrict or abstain near ambiguous day transitions.",
+    "cohort_policy": "Consenting adults with sources independently collected, source-related local cultural cohort separately from other populations; known owner/friend survey respondents excluded from untouched validation.",
+    "quantitative_freeze_status": "NOT_FROZEN; no sample size/power, task rubric, birth-boundary rule, calibrated effect prior, final decoys or independent review yet",
+    "candidate_status": "PRE_REGISTRATION_DRAFT_NOT_ELIGIBLE_TO_SCORE"
+  },
+  "unresolved_before_trial": [
+    "Current Momostenango practitioner corroboration of long-term continuity and day boundary, or explicit abstention boundaries",
+    "Birth time/source and locality policy independently fixed",
+    "Precise source-authorized measurable interpretation and masked scoring rubric",
+    "Decoy/null model, family-wise test policy, enrollment and target power locked",
+    "Prediction/engine/questionnaire SHA frozen BEFORE genuine untouched participants",
+    "Consent, ethical/privacy protocol and result reporting including negative findings"
+  ],
+  "human_predictions_tested": 0,
+  "independently_validated_human_successes": 0,
+  "runtime_rule_promotions": 0
+}
