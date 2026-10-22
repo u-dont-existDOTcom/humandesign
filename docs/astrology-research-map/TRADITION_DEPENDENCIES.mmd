@@ -1,0 +1,25 @@
+flowchart LR
+  BAB["Babylonian horoscopes"]
+  HEL["Greek / Hellenistic beyond Ptolemy"]
+  PERS["Arabic / Persian medieval"]
+  LILLY["Lilly and classical West"]
+  MOD["Modern psychological West"]
+  INDIA["Indian Jyotish"]
+  TIB["Tibetan calendrics / elemental"]
+  ZW["Chinese Zi Wei"]
+  BAZI["Chinese BaZi"]
+  MAY["Maya K'iche daykeeping"]
+  CODEX["Maya lowland codices"]
+  NAHUA["Nahua tonalamatl"]
+  DREAM["Modern Dreamspell: QUARANTINE"]
+  BAB -. "earlier source family" .-> HEL
+  HEL -. "translations / influence" .-> PERS
+  PERS -. "transmission" .-> LILLY
+  HEL -. "roots + later reinterpretation" .-> MOD
+  HEL -. "historic contact; NOT independent" .-> INDIA
+  INDIA -. "Kalacakra / related" .-> TIB
+  BAZI -. "elemental cycles" .-> TIB
+  ZW -. "Chinese methods alongside" .-> BAZI
+  MAY -. "same calendar family, not identical rules" .-> CODEX
+  NAHUA -. "Mesoamerican 260-day relative, culturally distinct" .-> CODEX
+  DREAM -. "NOT a primary ancient Maya source" .-> MAY
