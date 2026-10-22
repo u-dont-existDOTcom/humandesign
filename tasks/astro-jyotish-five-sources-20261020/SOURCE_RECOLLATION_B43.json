@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B43",
+  "research_only": true,
+  "branch": "research/astro-jyotish-five-sources-reader-20261020",
+  "corpus_basis": "Additional online Sanskrit-transcription witnesses to the already inventoried five-book study, primarily cross-checking the uploaded Portuguese BPHS and B41 Jataka interpretations.",
+  "witness_count": 10,
+  "primary_annotation_count_delta": 0,
+  "cumulative_documentary_annotations_unchanged": 432,
+  "reason_no_count_increase": "Witnesses/collations and adjacent verse readings have not yet been globally de-duplicated against B01–B42; recollation is not counted as independent new book rules.",
+  "witnesses": [
+    {
+      "id": "B43-W01",
+      "locus": "BPHS 11.11",
+      "signal": "pravāsasya (प्रवासस्य)",
+      "textual_result": "Residence away from home is one of the domains judged from the tenth house, alongside livelihood, honor, father and debts.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/11/11",
+      "status": "separate general house-signification passage"
+    },
+    {
+      "id": "B43-W02",
+      "locus": "BPHS 24.62",
+      "signal": "paradeśī (परदेशी)",
+      "textual_result": "With the sixth lord in the second: living outside one's own locality, happiness, public speaking and work engagement are asserted; international border-crossing is not specified.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/62",
+      "linked_previous": "B42-001"
+    },
+    {
+      "id": "B43-W03",
+      "locus": "BPHS 24.70",
+      "signal": "videśe ca sukhī (विदेशे च सुखी)",
+      "textual_result": "With the sixth lord in the tenth: a favorable experience in a foreign place, alongside public recognition, speech and father-related qualification; no citizenship claim.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/70",
+      "linked_previous": "B42-002"
+    },
+    {
+      "id": "B43-W04",
+      "locus": "BPHS 24.126",
+      "signal": "pravāsī (प्रवासी)",
+      "textual_result": "With the eleventh lord in the sixth: living away from one's place appears with unfavorable health/hostility indicators, not with inevitable successful migration.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/126",
+      "linked_previous": "B42-003"
+    },
+    {
+      "id": "B43-W05",
+      "locus": "BPHS 24.145",
+      "signal": "balābala-vivekena (बलाबलविवेकेन)",
+      "textual_result": "The preceding house-lord statements require strength/weakness judgment, so literal unqualified yes/no rules omit an explicit source limitation.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/145",
+      "compare_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-24?page=3",
+      "editorial_notice": "VedicPupil displays only the latter hemistich; the siva.sh witness contains both."
+    },
+    {
+      "id": "B43-W06",
+      "locus": "BPHS 24.146",
+      "signal": "dvirāśīśasya; virodhe tulya-phalayoḥ",
+      "textual_result": "For two-sign planetary lords, effects for both lordships are to be considered; equal opposing effects cancel, according to the verse.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/146-150"
+    },
+    {
+      "id": "B43-W07",
+      "locus": "BPHS 24.147",
+      "signal": "vibhinnayoḥ phalayoḥ; pūrṇa-bale; ardha-bale",
+      "textual_result": "Distinct results are said to occur together; strong/medium-strength planets yield full/half effects according to traditional source language; these are not calibrated outcome probabilities.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/146-150"
+    },
+    {
+      "id": "B43-W08",
+      "locus": "BPHS 24.148",
+      "signal": "pādaṃ hīna-bale",
+      "textual_result": "The continuation assigns a quarter effect to low-strength planets; this is a historical interpretive scale, not measured probability.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/24/146-150"
+    },
+    {
+      "id": "B43-W09",
+      "locus": "BPHS 53.61",
+      "signal": "gṛha-kṣetra-abhivṛddhi",
+      "textual_result": "In the Moon major period's Venus subperiod, favorable Venus placement relative to the main-period lord is associated with property/land growth and gain.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/53/61-65",
+      "status": "separate period-specific counterpart"
+    },
+    {
+      "id": "B43-W10",
+      "locus": "BPHS 53.62",
+      "signal": "videśa-vāsa-duḥkha (विदेशवासदुःख)",
+      "textual_result": "An adverse Venus subperiod configuration describes difficulties associated with foreign residence; Sanskrit alone does not establish deportation, despite that word in the displayed English rendering.",
+      "source_url": "https://www.siva.sh/brihat-parashara-hora-shastra/53/61-65",
+      "status": "translational over-specification flagged"
+    }
+  ],
+  "editorial_restrictions": [
+    "Online Sanskrit transcriptions are not an independently established critical manuscript edition.",
+    "Two websites that appear to transmit the same text are not two historical confirmations.",
+    "Preserve B42 Portuguese source records and B41 Jataka source readings unchanged.",
+    "No copied copyrighted PDF/text or biography-based calibration.",
+    "Source arithmetic/verbal effect fractions are not probability scores."
+  ],
+  "validated_human_predictions": 0
+}
