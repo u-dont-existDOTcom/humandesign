@@ -1,0 +1,198 @@
+{
+  "schema": "MAYA_OWNER_LOCAL_BOOK_SOURCE_INTAKE_V1",
+  "date": "2026-10-22",
+  "parent_root_goal_status": "OPEN",
+  "source_library_location_hint": "~/Documents/astrology; no user-specific absolute locator committed",
+  "copyright_originals_in_Git_or_archive": false,
+  "total_input_files": 5,
+  "research_sources_usable_for_next_reading": 4,
+  "fiction_omitted_from_original_sources": 1,
+  "books_fully_read_or_complete": 0,
+  "published_original_Maya_predicate_rules": 0,
+  "Maya_date_conversion_algorithm_verified_against_independent_oracle": false,
+  "Maya_regional_daykeeper_meaning_collated": false,
+  "correlation_policy": "UNDECIDED: compare GMT 584283, 584285 (plus documented alternatives); no retrofit using participant",
+  "source_regions_not_interchangeable": [
+    "lowland Postclassic Yucatec codices",
+    "K'iche' Momostenango contemporary practice",
+    "Mesoamerican general astronomy",
+    "Mesoamerican Aztec calendar"
+  ],
+  "historical_source_claims_not_real_human_data": true,
+  "input_sources": [
+    {
+      "id": "MAYA-AVENI-VAIL-MADRID",
+      "title": "The Madrid Codex: New Approaches to Understanding an Ancient Maya Manuscript",
+      "authors_or_editors": "Gabrielle Vail and Anthony F. Aveni (editors)",
+      "edition": "2004 (catalogue; local filename says 2010)",
+      "input_file_type": ".pdf",
+      "owner_document_basename": "The Madrid Codex _ New Approaches to Understanding an -- Aveni, Anthony F_;Vail, Gabrielle -- Mesoamerican worlds, Boulder, Colo, 2010 -- University -- isbn13 9780870817861 -- bbe4efcf444b24ca61ef3caa6e7e23ad -- Anna’s Archive.pdf",
+      "source_bytes": 18424830,
+      "source_sha256": "4a75d30f35e0f0832ecf124150fe28123738b2a1428589a9403d8cd3ddfe0f23",
+      "intake_role": "source_critical_Codex_Madrid_interpretation",
+      "interpretation_restriction": "source_criticism_not_verified_natal_prediction",
+      "availability": "verified_readable_owner_local_not_redistributed",
+      "has_been_read_in_full": false,
+      "source_provenance_next_reading_windows": [
+        {
+          "source": "The Madrid Codex",
+          "pdf_index_start": 170,
+          "topic": "Chapter 5: Maya Calendars and Dates (Tzolk'in, almanacs)"
+        },
+        {
+          "source": "The Madrid Codex",
+          "pdf_index_start": 186,
+          "topic": "Chapter 6: Intervallic Structure"
+        },
+        {
+          "source": "The Madrid Codex",
+          "pdf_index_start": 210,
+          "topic": "Chapter 7: Haab dates in Codex"
+        }
+      ],
+      "actual_forward_blinded_real_human_predictions": 0,
+      "PDF_pages": 461,
+      "text_layer_verification": "pdftotext extracted: short targeted source window only",
+      "include_in_scholarly_original_source_counts": false
+    },
+    {
+      "id": "MAYA-AVENI-SKYWATCHERS",
+      "title": "Skywatchers: A Revised and Updated Version of Skywatchers of Ancient Mexico",
+      "authors_or_editors": "Anthony F. Aveni",
+      "edition": "2001 revised edition",
+      "input_file_type": ".pdf",
+      "owner_document_basename": "Skywatchers _ A Revised And Updated Version Of Skywatchers -- Aveni, Anthony F; Aveni, Anthony F_ Skywatchers of ancient -- Revised and Updated -- isbn13 9780292705029 -- 5309501d787bf32d1e70839971fe7a84 -- Anna’s Archive.pdf",
+      "source_bytes": 34422644,
+      "source_sha256": "1c39aae446dfb6921b44e5f19843a41d014a7bbf9edd0ee959d67284721fce70",
+      "intake_role": "historical_astroarchaeology_and_sky_tables",
+      "interpretation_restriction": "astronomical_context_not_natal_personality_evidence",
+      "availability": "verified_readable_owner_local_not_redistributed",
+      "has_been_read_in_full": false,
+      "source_provenance_next_reading_windows": [
+        {
+          "pdf_index_start": 141,
+          "topic": "Maya astronomy/history, calendar and codices"
+        },
+        {
+          "pdf_index_start": 153,
+          "topic": "Tzolk'in / ritual almanac"
+        },
+        {
+          "pdf_index_start": 175,
+          "topic": "Lunar eclipse and Venus astronomy (first read historical terminology)"
+        }
+      ],
+      "actual_forward_blinded_real_human_predictions": 0,
+      "PDF_pages": 428,
+      "text_layer_verification": "pdftotext extracted: short targeted source window only",
+      "include_in_scholarly_original_source_counts": false
+    },
+    {
+      "id": "MAYA-REINGOLD-DERSHOWITZ-CALENDRICAL",
+      "title": "Calendrical Calculations: The Ultimate Edition",
+      "authors_or_editors": "Edward M. Reingold and Nachum Dershowitz",
+      "edition": "2018 fourth/ultimate edition",
+      "input_file_type": ".pdf",
+      "owner_document_basename": "Calendrical calculations _ the ultimate edition -- Edward M_ Reingold, Nachum Dershowitz, Edward M_ Reingold -- 4, 2018-03-31 -- Cambridge University -- isbn13 9781107057623 -- b3c463b12a3fca47df83de426d0e4f29 -- Anna’s Archive.pdf",
+      "source_bytes": 36377384,
+      "source_sha256": "8d1be3796c9265f0f6cfa85a4628ed61c3e3466c1954ec095b998a262782f48f",
+      "intake_role": "formal_calendar_conversion_algorithms",
+      "interpretation_restriction": "math_not_personality_divination_or_original_classical_rulebook",
+      "availability": "verified_readable_owner_local_not_redistributed",
+      "has_been_read_in_full": false,
+      "source_provenance_next_reading_windows": [
+        {
+          "pdf_index_start": 214,
+          "topic": "Chapter 11 Mayan Long Count, Haab, Tzolkin, Aztec calendars (printed pp169–184)"
+        }
+      ],
+      "actual_forward_blinded_real_human_predictions": 0,
+      "PDF_pages": 663,
+      "text_layer_verification": "pdftotext extracted: short targeted source window only",
+      "include_in_scholarly_original_source_counts": false
+    },
+    {
+      "id": "MAYA-TEDLOCK-HIGHLAND-DAYKEEPERS",
+      "title": "Time and the Highland Maya",
+      "authors_or_editors": "Barbara Tedlock",
+      "edition": "1992 revised edition",
+      "input_file_type": ".epub",
+      "owner_document_basename": "Time and the Highland Maya (Woodrow Wilson Center Special) -- Barbara Tedlock -- Revised, PS, 1992 -- University of New Mexico Press -- isbn13 9780585304335 -- 1a3226430c6a07655b2d25ad656eb198 -- Anna’s Archive.epub",
+      "source_bytes": 1594870,
+      "source_sha256": "95c88db1d7310e2b247a7ed5b8f15136abb27064ed49b3c3a33949ce7e607081",
+      "intake_role": "living_Maya_daykeeper_260_day_ethnography",
+      "interpretation_restriction": "regional_living_practice_not_universal_historic_classic_code",
+      "availability": "verified_readable_owner_local_not_redistributed",
+      "has_been_read_in_full": false,
+      "source_provenance_next_reading_windows": [
+        {
+          "ebook_page_label": "1",
+          "topic": "Introduction to Maya time study"
+        },
+        {
+          "ebook_page_label": "91–99",
+          "topic": "260-day count, ritual/calendar ethnography"
+        },
+        {
+          "ebook_page_label": "200",
+          "topic": "260-day cycle and Year-bearer relationship"
+        }
+      ],
+      "actual_forward_blinded_real_human_predictions": 0,
+      "epub_structure": {
+        "epub_xml_page_files": 274,
+        "epub_html_section_files": 0,
+        "epub_package_metadata_title": "test",
+        "actual_chapter_content_checked": true,
+        "test_metadata_anomaly": true
+      },
+      "include_in_scholarly_original_source_counts": false
+    },
+    {
+      "id": "EXCLUDE-WHEELER-FICTION",
+      "title": "Doomsday Match (The Dresden Codex, Book 1)",
+      "authors_or_editors": "Jeff Wheeler",
+      "edition": "2023",
+      "input_file_type": ".epub",
+      "owner_document_basename": "Doomsday Match (The Dresden Codex) -- Wheeler, Jeff -- 2023 -- 47North -- 526a57bb884892fae489e602384cb50a -- Anna’s Archive.epub",
+      "source_bytes": 949159,
+      "source_sha256": "498cd6e83b30c0ef35dc9c511d13ae1db55d46d81558c92a4faae4fedb73d1f2",
+      "intake_role": "FICTION_NOT_THE_DRESDEN_CODEX",
+      "interpretation_restriction": "excluded_from_historical_source_evidence",
+      "availability": "verified_owner_local_fiction_EXCLUDED_from_source",
+      "has_been_read_in_full": false,
+      "source_provenance_next_reading_windows": [],
+      "actual_forward_blinded_real_human_predictions": 0,
+      "epub_structure": {
+        "epub_xml_page_files": 0,
+        "epub_html_section_files": 52,
+        "epub_package_metadata_title": "Doomsday Match (The Dresden Codex)",
+        "actual_chapter_content_checked": true,
+        "test_metadata_anomaly": false
+      },
+      "include_in_scholarly_original_source_counts": false
+    }
+  ],
+  "online_original_manuscript_facsimiles_to_consult": [
+    {
+      "id": "DRESDEN-CODEX-DIGITAL",
+      "title": "Dresden Maya Codex (original manuscript digitization)",
+      "url": "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex",
+      "status": "official_online_retrieval_available_unchanged"
+    },
+    {
+      "id": "MADRID-CODEX-FAMSI",
+      "title": "Madrid Codex facsimile digital reproductions",
+      "url": "https://www.famsi.org/mayawriting/codices/madrid.html",
+      "status": "historic_facsimile_links_retrievable_review_permissions_quality"
+    },
+    {
+      "id": "CODEX-MAYA-MEXICO",
+      "title": "Códice Maya de México (formerly Grolier; official INAH edition/exhibition)",
+      "url": "https://codicemayademexico.inah.gob.mx/",
+      "status": "official_historic_manuscript_context_available"
+    }
+  ],
+  "real_human_blinded_predictive_validations": 0,
+  "runtime_astrology_rule_promotions": 0
+}

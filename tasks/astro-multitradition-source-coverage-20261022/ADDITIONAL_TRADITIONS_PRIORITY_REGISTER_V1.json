@@ -1,0 +1,93 @@
+{
+  "schema_version": "DISTINCT_ASTROLOGICAL_TRADITIONS_TRIAGE_V1",
+  "goal": "Coverage-before-depth across independent natal, historical, electional, divinatory and cross-cultural traditions",
+  "priority_not_proof_of_astrological_effect": true,
+  "source_level_not_product_promotion": true,
+  "traditions": [
+    {
+      "tradition_id": "ASTRO-HELLENISTIC",
+      "priority_tier": 1,
+      "tradition_class": "Hellenistic practical natal techniques",
+      "expected_incremental_value": "high",
+      "first_reference_texts": "Vettius Valens, Anthologies; Dorotheus of Sidon, Carmen Astrologicum",
+      "starter_reference_url": "https://www.skyscript.co.uk/valens_riley.html",
+      "reason_for_priority": "Source differences from Ptolemy/Lilly matter for timing, chronocrators, technique and independent original-rule maps. Riley translation is openly posted but incomplete; Dorotheus survives through Arabic mediation.",
+      "actual_state": "research_planned_no_complete_critical_sources_in_current_research",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ASTRO-ISLAMIC-PERSIAN",
+      "priority_tier": 1,
+      "tradition_class": "Medieval Arabic/Persian astrological synthesis",
+      "expected_incremental_value": "high",
+      "first_reference_texts": "Abu Ma'shar Great Introduction; al-Biruni Book of Instruction; al-Qabisi",
+      "starter_reference_url": "https://old-digitalcollections.nypl.org/collections/the-book-of-instruction-in-the-elements-of-the-art-of-astrology?filters%5Btopic%5D%5B%5D=Science%2C+Medieval&filters%5Btype%5D=text&keywords=",
+      "reason_for_priority": "Independent bridges between classical Greek/Indian/Arabic medieval methods and later Lilly; historical original Arabic/Persian and translation lineages, lots, profections, elections and annual revolutions.",
+      "actual_state": "research_planned_translation_critical_review_required",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ASTRO-MESOAMERICAN-NAHUA",
+      "priority_tier": 2,
+      "tradition_class": "Mexica/Nahua tonalpohualli day-sign fate almanacs",
+      "expected_incremental_value": "medium_high",
+      "first_reference_texts": "Florentine Codex Book IV; Codex Borgia; Elizabeth Hill Boone",
+      "starter_reference_url": "https://www.getty.edu/projects/florentine-codex/",
+      "reason_for_priority": "Related 260-day divination but separate from Maya, with direct historical birth-day prognostic material; cross-cultural comparison should avoid treating it as a second independent unrelated clock.",
+      "actual_state": "research_planned_day_count_related_to_maya",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ASTRO-MESOPOTAMIAN",
+      "priority_tier": 2,
+      "tradition_class": "Babylonian horoscopy and omen astronomy",
+      "expected_incremental_value": "medium_high",
+      "first_reference_texts": "Francesca Rochberg The Heavenly Writing; documented Babylonian horoscope tablets",
+      "starter_reference_url": "https://www.cambridge.org/core/books/the-heavenly-writing/9A24735C23CA63EF8E1819B283B39F47",
+      "reason_for_priority": "Historical precursor; separates personal horoscopes and royal/collective omen claims; important transmission but perhaps lower marginal behavioral signal than missing original Hellenistic natal texts.",
+      "actual_state": "research_planned_source_language_and_outcome_limits",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ASTRO-CHINESE-QIMEN",
+      "priority_tier": 3,
+      "tradition_class": "Qi Men Dun Jia question-time/electional and other Chinese divination",
+      "expected_incremental_value": "medium",
+      "first_reference_texts": "Early and later printed Chinese Qi Men Dun Jia methods, version/era critical editions required",
+      "starter_reference_url": null,
+      "reason_for_priority": "Method/phenotype space distinct from Zi Wei and BaZi, but often question- or date-of-action divination rather than birth-derived stable personality.",
+      "actual_state": "discovery_only_do_not_falsely_call_another_natal_system",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ASTRO-SOUTHEAST-ASIA",
+      "priority_tier": 4,
+      "tradition_class": "Burmese, Thai and related weekday natal astrology",
+      "expected_incremental_value": "exploratory",
+      "first_reference_texts": "Documented Mahabote and weekday birth traditions, identify authoritative local-language sources first",
+      "starter_reference_url": null,
+      "reason_for_priority": "Potential independent coarse weekday/pattern structures, but culture-specific source provenance and calendar alignment must be researched before scoring.",
+      "actual_state": "exploratory_no_pinned_source_or_engine",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    },
+    {
+      "tradition_id": "ADJACENT-DIVINATION",
+      "priority_tier": 4,
+      "tradition_class": "Ifa, geomancy and other ritual systems",
+      "expected_incremental_value": "outside_core_astrology",
+      "first_reference_texts": "Traditional original cultural knowledge, not automatically an astronomical natal horoscope",
+      "starter_reference_url": null,
+      "reason_for_priority": "Separate comparative divination practice only with legitimate source/cultural context; don't present as missing horoscopic astrology.",
+      "actual_state": "outside_core_or_optional",
+      "source_pinned_original_rules": 0,
+      "validated_real_human_prediction_results": 0
+    }
+  ],
+  "no_person_blind_predictions_in_these_new_lanes": true
+}
