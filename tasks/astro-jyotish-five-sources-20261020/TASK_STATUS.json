@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B58_ARUDHA_OUTCOME_INHERITANCE_AND_TARGET_NEGATIVES_SAVED",
+  "status": "OPEN_B59_PORTUGUESE_ARUDHA_TRANSLATION_SCOPE_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B58_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B59_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -224,7 +224,12 @@
     "test_pada_rule_transfer_B58.py",
     "B58_TEST_RESULTS.txt",
     "CONTINUATION_HANDOFF_B58_20261022.md",
-    "B58_SHA256SUMS.txt"
+    "B58_SHA256SUMS.txt",
+    "READING_NOTES_B59.md",
+    "PORTUGUESE_SANSKRIT_BPHS29_COLLATION_B59.json",
+    "pada_source_scope_B59.py",
+    "test_pada_source_scope_B59.py",
+    "CONTINUATION_HANDOFF_B59_20261022.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -635,7 +640,13 @@
     "b58_new_counted_original_annotations": 0,
     "b58_cumulative_accepted_original_annotations": 432,
     "b58_human_predictive_successes_validated": 0,
-    "b58_production_rule_promotions": 0
+    "b58_production_rule_promotions": 0,
+    "b59_source_comparison_records": 7,
+    "b59_competing_condition_forks": 4,
+    "b59_repository_guard_test_methods": 22,
+    "b59_cumulative_source_annotations": 432,
+    "b59_independent_real_human_forecasts": 0,
+    "b59_production_rules_promoted": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -706,7 +717,7 @@
     "B58: 29.34 A1/A7 source relationship quadrants/trines (1,4,5,7,9,10) favorable vs 6,8,12 adverse, leaves 2,3,11 unspecified; 29.36 does discuss 3 and 11 separately but for kingship not friendship.",
     "B58: Historical moral and health accusations remain unscorable, actual A1/A7 chart state unresolved across school algorithms from B57; 19 source-only tests passed."
   ],
-  "next_exact_source_frontier": "After B58: recover original uploaded Kerr Portuguese BPHS Chapter29 line context and independently printed Sanskrit readings for 29.22,27,29,35; continue original five-book breadth from under-read Rath/Saravali/Bhasin/Jataka chapters; specify positive, negative and missing-input outcome targets without looking at participant histories, no production promotion.",
+  "next_exact_source_frontier": "B59 next: original uploaded Portuguese BPHS Chapter30 Upapada first-house choice versus Sanskrit and Rath; preserve source versions, negatives and missing input gates, no human chart scoring or model edits.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -717,7 +728,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B58 expands Sanskrit BPHS chapter29 source-only reading and four inherited transfer edges, with 8 archival comparison records and 19 synthetic tests; original book PDF bytes not copied. Accepted documentary source IDs 432, zero real human prediction validation, no model or survey changes.",
+    "note": "B59 uploaded original Portuguese Chapter29 comparison with electronic Sanskrit, source-only seven records and 22 synthetic guard methods; not original book bytes. 432 source notes, zero independent predictions.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"

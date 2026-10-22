@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B59",
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "date": "2026-10-22",
+  "type": "SOURCE_ONLY_TRANSLATION_COLLATION",
+  "witnesses": [
+    {
+      "id": "KERR_PT",
+      "type": "user-provided original indexed Portuguese text",
+      "window": "Chapter 29 lines 2550–2669",
+      "raw_file_sha_reverified": false
+    },
+    {
+      "id": "SANSKRIT_E_TEXT",
+      "type": "online electronic Sanskrit",
+      "urls": [
+        "https://www.transliteral.org/pages/z110720153949/view",
+        "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-29/",
+        "https://www.siva.sh/brihat-parashara-hora-shastra/29/26-30"
+      ],
+      "independent_manuscript_verified": false
+    }
+  ],
+  "records": [
+    {
+      "id": "B59-01",
+      "verse": "29.12",
+      "source_difference": "Portuguese duplicates twelfth on both sides of aspect/no-aspect; Sanskrit has eleventh aspected and twelfth not aspected.",
+      "effect": "Literal Portuguese condition impossible; Sanskrit condition is not equivalent.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-02",
+      "verse": "29.15",
+      "source_difference": "Portuguese rules out malefic association in twelfth; Sanskrit rules out any planetary aspect to twelfth.",
+      "effect": "Benefic aspects and malefic conjunctions are separate predicates.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-03",
+      "verse": "29.27",
+      "source_difference": "Portuguese second from UL whereas Sanskrit second from same padā, AL in the chapter.",
+      "effect": "Different relative sign reference, synthetic nonnested activation.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-04",
+      "verse": "29.29",
+      "source_difference": "Sanskrit expressly excludes relatives from Karakamsha transfer, omitted in Portuguese.",
+      "effect": "Do not generate family outcomes from transferred rule.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-05",
+      "verse": "29.22",
+      "source_difference": null,
+      "effect": "Expenditure-source combinations transferred to gain source; one inherited family.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-06",
+      "verse": "29.25",
+      "source_difference": null,
+      "effect": "One, two, or all three Moon/Venus/Jupiter alternatives preserved, positive translation control.",
+      "score_allowed": false
+    },
+    {
+      "id": "B59-07",
+      "verse": "29.35",
+      "source_difference": null,
+      "effect": "Extends relations/gain-loss to other padas, not a rescission of 29.29 exclusion.",
+      "score_allowed": false
+    }
+  ],
+  "confirmed": {
+    "new_unique_counted_annotations": 0,
+    "cumulative_counted_annotations": 432,
+    "prospective_human_validated_successes": 0,
+    "production_rules_promoted": 0,
+    "semantic_regression_tests_locally_passed": 22
+  },
+  "unresolved": "No independently inspected printed critical Sanskrit; original Portuguese raw bytes not rehashed; source variants unscored."
+}
