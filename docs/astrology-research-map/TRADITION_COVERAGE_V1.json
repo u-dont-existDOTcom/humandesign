@@ -1,0 +1,282 @@
+{
+  "schema": "HUMANDESIGN_CROSS_TRADITION_COVERAGE_SOURCE_MAP_V1",
+  "date_utc": "2026-10-22",
+  "scope": "cross-tradition source/readiness map only, not merged predictive model",
+  "status": "PROVISIONAL_CROSS_LANE_READBACK_NOT_SAME_BRANCH_MERGE",
+  "traditional_systems": [
+    {
+      "id": "HD-MODERN",
+      "name": "Human Design (modern synthesis)",
+      "state": "separately modeled; engineering source + survey mapping already exists",
+      "source_count": null,
+      "coverage": "Current main ARCHITECTURE.md and reference/core/MAPPING_V2_EVIDENCE_PROTOCOL.md handle one tradition; no single cross-tradition map previously",
+      "method": "birth-time planetary/bodygraph structure and self-report patterns",
+      "next": "reuse established HD source/behavior mapping and separate natal chart engine",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "WEST-LILLY-PTOLEMY",
+      "name": "Western 17th-century Lilly + Ptolemy",
+      "state": "substantial but unfinished accepted research",
+      "source_count": 14337,
+      "source_count_parts": {
+        "lilly": 13271,
+        "ptolemy": 1066
+      },
+      "evidence_ref": "research/astro-b07bh-merchant-friends-source-20261021",
+      "coverage": "Historical documentary annotations; more late Lilly, critical collation, chart algorithms and tested outcomes remain",
+      "method": "horary, natal, predictive timing/returns and classical planetary placements",
+      "next": "Lilly original source chapter imprisonment (writer state must be checked)",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "HELLENISTIC-EXPANSION",
+      "name": "Hellenistic Greco-Roman outside Ptolemy",
+      "state": "major independent source reading gap",
+      "source_count": 0,
+      "evidence_url": "https://www.skyscript.co.uk/valens_riley.html",
+      "coverage": "Valens Anthologies and Dorotheus Carmen Astrologicum not established as accepted source-first reader in this audit",
+      "method": "natal lots, distributions, zodiacal releasing and time-lords",
+      "next": "pin Valens and Dorotheus original/translated editions; prioritize testable natal/timing rule families",
+      "priority": "high",
+      "human_validation": 0
+    },
+    {
+      "id": "BABYLONIAN",
+      "name": "Mesopotamian/Babylonian",
+      "state": "missing source-first track",
+      "source_count": 0,
+      "evidence_url": "https://sites.dlib.nyu.edu/viewer/books/isaw_aphs000011/1",
+      "coverage": "Francesca Rochberg Babylonian Horoscopes (1998) available free for noncommercial research; historically earlier birth horoscopes",
+      "method": "birth positions of planets, astronomical omens, calendar natal/life contexts",
+      "next": "read original Akkadian translated horoscope samples and assess actual measurable natal claims",
+      "priority": "high",
+      "human_validation": 0
+    },
+    {
+      "id": "ARABIC-PERSIAN",
+      "name": "Medieval Arabic/Persian and Judeo-Arabic astrology",
+      "state": "missing separate source-first track",
+      "source_count": 0,
+      "evidence_url": "https://www.iranicaonline.org/articles/abu-masar-jafar-b/",
+      "coverage": "Al-Biruni, Abu Ma'shar, Masha'allah, Sahl ibn Bishr; historically draws from Greek/Indian/Persian; do not double-count lineage as independent evidence",
+      "method": "nativities, horary, profections, conjunctions, electional periods",
+      "next": "al-Biruni 1934 text + Abu Ma'shar, selected natal/time rules, dependency map against Lilly/Ptolemy",
+      "priority": "high",
+      "human_validation": 0
+    },
+    {
+      "id": "JYOTISH-FIVE",
+      "name": "Indian Jyotish five-book study",
+      "state": "active source-first research incomplete",
+      "source_count": 432,
+      "evidence_ref": "research/astro-jyotish-five-sources-reader-20261020",
+      "coverage": "All five supplied books sampled, original 2,138 PDF pages plus one Portuguese text; all 55 Saravali chapters touched, not exhaustively critically collated",
+      "method": "sidereal natal graha, houses, yogas, dashas, timing, family/relationships",
+      "next": "resolve Sanskrit/BPHS edition variants and predeclare exact prediction rules, continuing B48",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "CHINESE-BAZI",
+      "name": "Chinese Four Pillars / BaZi",
+      "state": "accepted literary sources; engineering parity partial",
+      "source_count": 230,
+      "evidence_ref": "research/astro-chinese-v30-bazi-dts24-original-source-20261021",
+      "coverage": "Di Tian Sui through chapter24 and earlier rules; optional computational calendar work but unresolved exact solar-term seconds",
+      "method": "sexagenary year/month/day/hour, stems/branches, periods, elemental strength",
+      "next": "Di Tian Sui chapter25 and verified chart-to-question rules; exact solar-term policy",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "CHINESE-ZIWEI",
+      "name": "Chinese Zi Wei Dou Shu",
+      "state": "one online historical volume documentary complete only",
+      "source_count": 1059,
+      "evidence_ref": "research/astro-chinese-v30-bazi-dts24-original-source-20261021",
+      "coverage": "Twelve palace sections from transmitted Zi Wei Volume II; other volumes, ancient printed versions and computational policy unresolved",
+      "method": "twelve palaces, star placements, variants, natal events/behavior",
+      "next": "pin Volume III and early printed Four Transformations; refine candidate blind behaviors",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "TIBETAN",
+      "name": "Tibetan natal, elemental and Kālacakra calendrical traditions",
+      "state": "active source reading incomplete",
+      "source_count": 595,
+      "evidence_ref": "research/astro-tibetan-t62-henning-originals-planets-20261021",
+      "coverage": "Cornu, Gyurme Dorje/White Beryl + Moonbeams, Henning, Janson, Erlewine; still untranslated original Tibetan pages and book chapters",
+      "method": "mewa, parkha, birth year/hour, obstacles, marriage, Phugpa lunar timing",
+      "next": "finish primary source comparisons and calendar-model tests, beginning TIB-R0596",
+      "priority": "existing-core",
+      "human_validation": 0
+    },
+    {
+      "id": "MAYA-LIVING",
+      "name": "Living K'iche' Chol Q'ij birth-day reading",
+      "state": "NEW source-first reading initiated; no model or accepted natal prediction yet",
+      "source_count": 0,
+      "source_catalog": "MAYA_SOURCE_CATALOG_V1.json",
+      "coverage": "Smithsonian permission-published three-page original account by Komon Tohil daykeepers first-read; all 20 named days mapped; only candidate claims, no inference",
+      "method": "20 day names x numbers 1..13, name-dependent traits and ritual meanings",
+      "next": "audit ethnographic transmission, calendar-to-civil-date anchor, separate culturally sourced predictions/consent",
+      "priority": "high-new",
+      "human_validation": 0
+    },
+    {
+      "id": "MAYA-CODEX",
+      "name": "Ancient lowland Maya calendrics, celestial and ritual almanacs",
+      "state": "NEW bibliography source located, historical codices not yet extracted",
+      "source_count": 0,
+      "source_catalog": "MAYA_SOURCE_CATALOG_V1.json",
+      "coverage": "Dresden codex digital institution facsimile found; Brickers astronomical text and Madrid codex study identified",
+      "method": "Long Count, Tzolk'in, Haab, Venus/eclipse/ritual/electional timing",
+      "next": "pinned Dresden facsimile and third-party data correspondence; do NOT infer universal natal personality claims",
+      "priority": "high-new",
+      "human_validation": 0
+    },
+    {
+      "id": "NAHUA-TONALPOHUALLI",
+      "name": "Nahua/Mexican tonalamatl and Tonalpohualli",
+      "state": "missing but priority neighbor — not interchangeable with Maya",
+      "source_count": 0,
+      "evidence_url": "https://utpress.utexas.edu/9780292756564/",
+      "coverage": "Elizabeth Hill Boone Cycles of Time and Meaning in the Mexican Books of Fate (2007), Codex Borgia/Borbonicus original facsimiles to pin",
+      "method": "260-day divinatory almanacs with explicitly documented newborn fate and marriage/electional claims",
+      "next": "source-first comparison of natal day and marriage/divination domains under separate Nahua terminology",
+      "priority": "high-new",
+      "human_validation": 0
+    },
+    {
+      "id": "WESTERN-MODERN",
+      "name": "Modern psychological/popular Western natal astrology",
+      "state": "distinct popular-trait school missing as mapped source lineage",
+      "source_count": 0,
+      "evidence_url": "https://openlibrary.org/works/OL6357686W/Horoscope_symbols",
+      "coverage": "Robert Hand Horoscope Symbols and modern lineage to separate from Ptolemy/Lilly; perhaps Liz Greene/Stephen Arroyo later",
+      "method": "tropical natal planets, houses, aspects -> repeated self-reported psychological traits",
+      "next": "choose one dated edition and original phrase-conditioned observable mapping; keep modern school labels",
+      "priority": "medium-high",
+      "human_validation": 0
+    },
+    {
+      "id": "CHINESE-ELECTIONAL",
+      "name": "Chinese Qimen Dunjia / Da Liu Ren",
+      "state": "additional time/divination system, not equivalent natal birth profiling",
+      "source_count": 0,
+      "evidence_url": null,
+      "coverage": "not inventoried/accepted as original rulebook; do not claim source",
+      "method": "event-time divination, tactical/timing questions rather than self-report natal traits",
+      "next": "later source bibliography conditional on actual outcome domain need",
+      "priority": "optional-conditional",
+      "human_validation": 0
+    },
+    {
+      "id": "MALAGASY-VINTANA",
+      "name": "Malagasy Vintana / Sikidy divination",
+      "state": "distinct ethnographic candidate only",
+      "source_count": 0,
+      "evidence_url": null,
+      "coverage": "no vetted original/ethnographic source yet; do not assume identical to celestial natal astrology",
+      "method": "regional day/fate and geomantic/electional traditions depending on locality",
+      "next": "confirm cultural relevance and vetted practitioner/ethnographic text before any algorithm; no artificial natal conversion",
+      "priority": "exploratory",
+      "human_validation": 0
+    },
+    {
+      "id": "NEWAGE-DREAMSPELL",
+      "name": "Modern Dreamspell calendar/astrology",
+      "state": "explicitly separate modern invention, not Maya historical control",
+      "source_count": 0,
+      "coverage": "José Argüelles-related modern system; not promoted as classical Maya witness",
+      "method": "modern 13 Moon/Dreamspell derived dates and significance",
+      "next": "if studied, label modern-system separate cohort; never silently mix with Chol Q'ij",
+      "priority": "quarantined-optional",
+      "human_validation": 0
+    }
+  ],
+  "documented_cross_source_links_not_confirmation": [
+    {
+      "from": "BABYLONIAN",
+      "to": "HELLENISTIC-EXPANSION",
+      "kind": "historical conceptual transmission/cross-cultural development; not independent confirmatory evidence"
+    },
+    {
+      "from": "HELLENISTIC-EXPANSION",
+      "to": "ARABIC-PERSIAN",
+      "kind": "documented translation/transmission and original innovations"
+    },
+    {
+      "from": "ARABIC-PERSIAN",
+      "to": "WEST-LILLY-PTOLEMY",
+      "kind": "medieval Latin transmission; avoid repeated source agreement being scored independently"
+    },
+    {
+      "from": "HELLENISTIC-EXPANSION",
+      "to": "WEST-LILLY-PTOLEMY",
+      "kind": "Western Roman/Greek ancestry; Ptolemy is already counted in Western"
+    },
+    {
+      "from": "HELLENISTIC-EXPANSION",
+      "to": "JYOTISH-FIVE",
+      "kind": "historical interaction with Indic astrology complex/multidirectional; no simple one-way independence"
+    },
+    {
+      "from": "JYOTISH-FIVE",
+      "to": "TIBETAN",
+      "kind": "Indian Kālacakra and Jyotish historical input to Tibetan calendar"
+    },
+    {
+      "from": "CHINESE-BAZI",
+      "to": "TIBETAN",
+      "kind": "Chinese elemental and year-animal cycles influence Tibetan elemental systems"
+    },
+    {
+      "from": "MAYA-LIVING",
+      "to": "MAYA-CODEX",
+      "kind": "shared Maya calendar family but not interchangeable place/language/era practice"
+    },
+    {
+      "from": "NAHUA-TONALPOHUALLI",
+      "to": "MAYA-CODEX",
+      "kind": "shared broader Mesoamerican 260-day calendrical heritage, distinct cultures and divination sources"
+    },
+    {
+      "from": "HELLENISTIC-EXPANSION",
+      "to": "WESTERN-MODERN",
+      "kind": "one historically contributing lineage; modern reinterpretations/psychology are distinct sources"
+    },
+    {
+      "from": "MAYA-LIVING",
+      "to": "NEWAGE-DREAMSPELL",
+      "kind": "DO NOT treat as direct authentic tradition; modern related claims require separate lineage"
+    }
+  ],
+  "required_claim_processing": [
+    "source_and_edition_witness",
+    "exact_claim_and_source_limit",
+    "source_family_dependency_dedupe",
+    "chart_feature_and_calendar_policy",
+    "observable_and_negation",
+    "question_wording_and_comparison_base_rate",
+    "preregistered_prediction_and_decoy_hash",
+    "untouched_real_human_answer",
+    "statistical_scoring_and_null_result"
+  ],
+  "no_undocumented_inference": "No natal claim can be promoted from pure astronomical table, source commentary on different class of divination, or attractive posthoc life story.",
+  "project_empirical_state": {
+    "source_annotations_not_real_people": true,
+    "real_human_blind_pred_successes": 0,
+    "astrological_runtime_rules_promoted_from_new_source_tracks": 0
+  },
+  "update_rules": [
+    "When source first-read becomes accepted, change same family state + original ref and update overview.",
+    "When a testable claim is extracted, assign claim ID and map precisely one chart predicate to at least one observable with predeclared contrary cases.",
+    "When human study starts, freeze model and cohort metadata before any response; maintain separate Human Design, natal, timing, electional, relationship denominators.",
+    "When a linked source is merely derivative of another, preserve dependency and never count corroboration as independent."
+  ]
+}
