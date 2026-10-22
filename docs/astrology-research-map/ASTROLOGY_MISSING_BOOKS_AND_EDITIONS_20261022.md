@@ -1,4 +1,9 @@
 # Astrology source acquisition audit — Hellenistic, Arabic/Latin, and remaining branches
+
+## Later local acquisition evidence — supersedes missing-book labels (22 October 2026)
+
+**The owner supplied an accessible local book collection after the earlier connected-Drive-only audit.** [Read the machine-checked local inventory, SHA-256 witnesses and source integrity corrections](LOCAL_ACQUISITION_RECONCILIATION_20261022.md) **before** using this document's original “missing” labels. Paulus/Olympiodorus, Hephaistio Books I–II, Firmicus Bram, the full-looking Yamamoto/Burnett *Great Introduction*, Boone, Demetra George I–II, and additional Maya papers **are now acquired**. Bricker is **only a four-page review**, not the monograph. The apparent al-Bīrūnī file is **misattributed Max Heindel** and cannot substantiate historical al-Bīrūnī claims. *Primary Directions* has been obtained separately from Amazon, but its text was not extracted here and the owner is not using Work mode to extract it. Remaining not-obtained works are optional references, **not a request to buy**. This addendum controls acquisition claims below; the rest remains the original historical research record.
+
 22 October 2026 · Research-only · Parent outcome OPEN · No human predictive validity established
 
 ## Scope, authority, and inventory boundary
