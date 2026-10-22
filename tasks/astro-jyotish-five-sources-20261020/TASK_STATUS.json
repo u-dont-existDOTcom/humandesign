@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B56_JAIMINI_PARASHARA_ARGALA_SOURCE_VARIANTS_SAVED",
+  "status": "OPEN_B57_ARUDHA_SCHOOL_SPECIFIC_CALCULATIONS_AND_ABSTENTIONS_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B56_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B57_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -210,7 +210,14 @@
     "test_argala_versioned_B56.py",
     "B56_TEST_RESULTS.txt",
     "CONTINUATION_HANDOFF_B56_20261022.md",
-    "B56_SHA256SUMS.txt"
+    "B56_SHA256SUMS.txt",
+    "ARUDHA_SOURCE_VARIANT_MATRIX_B57.json",
+    "READING_NOTES_B57.md",
+    "arudha_source_variants_B57.py",
+    "test_arudha_source_variants_B57.py",
+    "B57_TEST_RESULTS.txt",
+    "CONTINUATION_HANDOFF_B57_20261022.md",
+    "B57_SHA256SUMS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -584,7 +591,29 @@
     "b56_production_rules_promoted": 0,
     "b56_special_third_unobstructed_threshold_disputed": true,
     "b56_ketu_vs_both_nodes_reversal_disputed": true,
-    "b56_equal_count_argala_tie_unresolved": true
+    "b56_equal_count_argala_tie_unresolved": true,
+    "b57_original_uploaded_rath_book_page_window": [
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385
+    ],
+    "b57_source_variation_records": 8,
+    "b57_synthetic_integrity_tests_passed": 31,
+    "b57_full_twelve_lord_placement_matrix": true,
+    "b57_rath_bphs_vs_venkatesha_exception_outputs_diverge": true,
+    "b57_venkatesha_lord_tenth_abstention": true,
+    "b57_undeclared_within_sign_degree_boundary_abstained": true,
+    "b57_both_graha_arudha_count_origins_diagnostic_only": true,
+    "b57_new_counted_original_annotations": 0,
+    "b57_cumulative_counted_source_annotations": 432,
+    "b57_independent_human_predictions_evaluated": 0,
+    "b57_production_rules_promoted": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -644,9 +673,14 @@
     "B56: Original Jaimini 1.1.9 names Ketu only in reversal; Portuguese BPHS extends to Rahu+Ketu while BPHS Sanskrit31.6 doesn't literally name either. Preserve as source versions.",
     "B56: Rath's equal-planet-count Argala bandhana inference is more specific than inspected BPHS weaker-blocker rule; equal outcome unresolved.",
     "B56: 5th versus 9th secondary is explicit in BPHS, Rath adds eighth versus sixth; quarter-based obstruction scope not universally established.",
-    "B56: Seven documentary comparisons and 21 standalone symbolic tests, no new unique primary source IDs and no empirical validation or production promotions."
+    "B56: Seven documentary comparisons and 21 standalone symbolic tests, no new unique primary source IDs and no empirical validation or production promotions.",
+    "B57: Rath and BPHS29 Sanskrit sign-Arudha riders resolve raw 1st or 7th to 10th-from-raw: lord 1st/7th => house10 and lord 4th/10th => house4. Twelve synthetic placements enumerate only 3,4,5,9,10,11.",
+    "B57: Sanskrit Venkatesha Jaimini commentary gives different locally specified exceptions: lord fourth => seventh, lord seventh => original, cited Vriddha Karika own/seventh => original. It offers alternate karaka readings; lord tenth not resolved and diagnostic abstains.",
+    "B57: Scorpio/Aquarius multiple source lords require strength and possibly two candidate padas; neither winner nor strength scheme frozen.",
+    "B57: Rath own complement-degree proposal differs from retained-degree tradition; source Sanskrit sign rules contain no degree determination; exact 0-degree complement boundary unresolved.",
+    "B57: Online BPHS29.6 English gloss count origin for graha-arudha differs from Rath/Venkatesha commentary; distinguish modern gloss from authentic Sanskrit recension; 8 archival records and 31 source tests, zero human tests."
   ],
-  "next_exact_source_frontier": "After B56: Rath Lesson18 PDF377–381 vs BPHS Chapter29 Sanskrit/Portuguese: sign Arudha exceptions (same/seventh), differences from Venkatesha commentary, dual lords Scorpio/Aquarius, exact sign-vs-degree formula and whether graha riders apply. Continue under-read five-book source sections afterward; no participants, outcome fit or production rules.",
+  "next_exact_source_frontier": "After B57: recover/inspect the original uploaded Portuguese BPHS Ch29 and an independently printed Sanskrit witness for the competing Jaimini 1.1.30–32 Arudha exceptions; compare Scorpio/Aquarius two-lord strength rules, graha-arudha rider scope, then broaden under-read sources for new concrete positive and negative claims. Never select a source school based on a known person; keep score_allowed=false.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -657,7 +691,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B56 original user-uploaded Rath and Portuguese Parashara selected indexed text; electronic Sanskrit/commentary source variants; seven additional archive records and 21 non-human tests saved isolated. Cumulative counted source-only notes 432; no model/participant/chart changes.",
+    "note": "B57 sign/graha Arudha textual variants and synthetic full twelve-position matrix saved as 7 task-local files; user-uploaded Rath indexed pages plus external Sanskrit; no copyrighted raw book data. Source annotation registry 432 unchanged, no human testing or model scoring.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"
