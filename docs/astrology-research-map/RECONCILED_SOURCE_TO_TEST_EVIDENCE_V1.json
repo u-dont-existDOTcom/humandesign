@@ -1,0 +1,120 @@
+{
+  "schema": "ASTROLOGY_CROSS_LANE_SOURCE_ENGINE_QUESTION_HUMAN_RECONCILIATION_V1",
+  "status": "SOURCE_ONLY_DESCRIPTIVE_INTEGRATION_NO_MODEL_PROMOTION",
+  "source_lane_git_heads": {
+    "mesoamerica_source_map": "f3afeab41671ddf75978a3901f6f38d5620747a3",
+    "independent_maya_books_crosswalk": "7b6b904266c69fa43fb0f5bffe1bdc4af16c984a",
+    "owner_held_book_intake": "5ef97bd9a1cc684556f5da99fe5aa2ce27d23764",
+    "dresden_folio_visual_reader": "a2c8a2ee1fb1897a9edaf145db88649af825d215"
+  },
+  "source_files_sha256_and_bytes": {
+    "docs/astrology-research-map/TRADITION_COVERAGE_V1.json": {
+      "sha256": "6ad1781ed04775bbe745c031873d8e43107b9eb192b49a36b3e8063b87e9230c",
+      "bytes": 14378,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "docs/astrology-research-map/MAYA_SOURCE_CATALOG_V1.json": {
+      "sha256": "c85395bd7a9bc2f54199c56bde010f9394932071cc03cee0b14ff54daa5fef3b",
+      "bytes": 9902,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "docs/astrology-research-map/MAYA_FIRST_SOURCE_WITNESS_V1.json": {
+      "sha256": "e666ac9236bc292ff4c2edb7a62a6afdf8a93166b87d347ce3e026d3d93eb83c",
+      "bytes": 9213,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "docs/astrology-research-map/CLAIM_TRACE_EXAMPLE_MAYA_E_V1.json": {
+      "sha256": "a9ea324f52ad000df155982cb7d2f14a57a8230d2655d7c6cd3f4b0ed6c040b8",
+      "bytes": 2010,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-maya-comparative-map-20261022/MAYA_LOCAL_SOURCE_INVENTORY_V1.json": {
+      "sha256": "2a4af2c69ba6c19935984c8a725bf3b23af5efa81ab803a1aaaaa8c80a13c089",
+      "bytes": 9547,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-maya-comparative-map-20261022/MAYA_SOURCE_FIRST_READING_AND_PARALLEL_MAP_ALIGNMENT_20261022.md": {
+      "sha256": "aa0259ecc3317c1a8526ff62d2ab9f373d6a02d1acdb2c4cb87a2586bdb0a21e",
+      "bytes": 7563,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-multitradition-source-coverage-20261022/TRADITION_CONSTRUCT_AND_SURVEY_CROSSWALK_V1.json": {
+      "sha256": "1a5a9382053ca2428bcd340a8bc32ee3a7368a372535bccf447bd153bf821f32",
+      "bytes": 22263,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-multitradition-source-coverage-20261022/MAYA_BOOKS_OTHER_SYSTEMS_AND_METHOD_20261022.md": {
+      "sha256": "36be1f493409a45ee09baaf0c104df26efd4ec1ff5fccfcf8db297f43e528dba",
+      "bytes": 13542,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-multitradition-source-coverage-20261022/MAYA_RANKED_SOURCE_REGISTER_V1.json": {
+      "sha256": "3440dc0b3ae21634938c66d94be54a2d50882436fb324b51f3c4cf6b4fed3810",
+      "bytes": 16140,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-multitradition-source-coverage-20261022/ADDITIONAL_TRADITIONS_PRIORITY_REGISTER_V1.json": {
+      "sha256": "b43d33526ffd4129f6bd683d147ea4f256c3d31fd0ea61f5078498dfe98ce2ef",
+      "bytes": 5916,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-maya-dresden-facsimile-page24-20261022/DRESDEN_VENUS_P24_P46_VISUAL_SOURCE_WITNESS_V1.json": {
+      "sha256": "156abfc5781ea7d8f6fd5cdcf4af6c757a192b01636a4fbd53d295a192ce21db",
+      "bytes": 6147,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-maya-dresden-facsimile-page24-20261022/MAYA_SOURCE_TO_TEST_MAP_DELTA_V2.json": {
+      "sha256": "c930f52fad9b0cba3e3d1dfe11375be1bfd050075659103a280aa462619d9979",
+      "bytes": 3039,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    },
+    "tasks/astro-maya-dresden-facsimile-page24-20261022/DRESDEN_FOLIOS24_46_SOURCE_CRITICAL_REVIEW_20261022.md": {
+      "sha256": "f7c0921e57be795189258c94f687bb4b1a3bff6d71296cb85256a197cba71a51",
+      "bytes": 7460,
+      "evidence_layer": "SOURCE_OR_METHOD_DOCUMENTATION_NOT_HUMAN_SUCCESS"
+    }
+  },
+  "one_canonical_living_overview_diagram": "docs/astrology-research-map/WORKFLOW.mmd",
+  "evaluation_gates_diagram": "docs/astrology-research-map/SOURCE_TO_TEST_GATES.mmd",
+  "historical_dependency_map": "docs/astrology-research-map/TRADITION_DEPENDENCIES.mmd",
+  "other_parallel_Mermaid_diagrams_copied_into_canonical_tree": false,
+  "owner_available_usable_nonfiction_Maya_books": 4,
+  "owner_excluded_fiction": 1,
+  "owned_book_completely_read_count": 0,
+  "source_Maya_Dresden_original_1892_photo_facsimile_foils_inspected": 2,
+  "genuine_authentic_surviving_Maya_codex_glyphs_independently_deciphered": 0,
+  "Maya_tradition_region_layers": [
+    "Precontact_Lowland_codex_ritual_astronomy",
+    "Colonial_Chilam_Balam_syncretic_text",
+    "Living_Kiche_Chol_Qij_daykeeping",
+    "Modern_Dreamspell_not_ancient_primary"
+  ],
+  "living_Kiche_source_read_total_daynames": 20,
+  "living_Kiche_source_person_claims_held_as_exploratory": 7,
+  "Maya_lowland_calendar_GMT_correlation_choices": [
+    584283,
+    584285
+  ],
+  "independent_Kiche_daycount_anchor_verified": false,
+  "source_claim_crosswalk_existing_HD_domains": 6,
+  "source_claim_crosswalk_non_HD_candidate_only": 14,
+  "cross_tradition_runtime_chart_claims_scored": 0,
+  "uncertainty_states": [
+    "SOURCE_ONLY",
+    "CALENDAR_VARIANT_UNRESOLVED",
+    "MAPPING_UNFROZEN",
+    "CONTEXTUAL_RITUAL_NOT_NATAL",
+    "SYNTHETIC_ENGINEERING_ONLY",
+    "ABSTAIN",
+    "HUMAN_BLIND_UNTESTED"
+  ],
+  "next_required_for_Maya_person_claim": [
+    "source_interpretation_regional_original_locus",
+    "date_to_correct_regional_traditional_day_after_epoch_and_day_boundary",
+    "calibrated_concealed_question_positive_opposite_base_rate",
+    "freeze_rule_decoys_chart_and_prediction_before_untouched_humans"
+  ],
+  "actual_independently_blinded_human_predictive_validations": 0,
+  "astrology_rule_promotions": 0,
+  "main_runtime_changes": false
+}
