@@ -1,0 +1,13 @@
+# B55 continuation checkpoint — 2026-10-22 UTC
+
+**Owner root task OPEN**: independent source-only study of five uploaded Jyotish books and cross-checks, not a frozen empirical astrology predictor. Repository `u-dont-existDOTcom/humandesign`, task branch `research/astro-jyotish-five-sources-reader-20261020`, draft PR 136; do not merge, publish original book binaries, or touch other reader ledgers, participants, survey or production.
+
+**B54 done and read back:** printed *Jātaka Pārijāta* Adhyāya XV pp312–323 (DLI item 2015.312156) compared to 1929 printed *Sarvārtha Cintāmaṇi*: 10th lord conjoined with eighth lord in *Sarvārtha* versus aspect in *Jātaka*; two related authority formulas with actual variants. 16 synthetic source tests passed. Unchanged source registry 432, zero human predictive evidence.
+
+**B55 newly read** original *Jātaka* PDF323–326 (printed pp927–930). Its XV.72 malefic-eleventh/lord-kendra-or-trikona gain alternatives closely parallel *Sarvārtha* Ch8 eleventh v2; this does NOT resolve *Sarvārtha* eleventh v10 malefic-eleventh LOSS and is not independent successful prediction. *Jātaka* XV.67–68 concerns **eleventh occupants**, but XV.71 concerns **eleventh LORD** (major potential misimplementation). XV.69's moralized source of wealth, XV.70's donation vs deprivation, XV.72 income volume, XV.73 wandering vs XV.57 foreign trade are distinct target classes. XV.64 adverse public reputation under other conditions does not settle *Sarvārtha* printed v24 positive `satkīrti` disagreement.
+
+**Provenance caution:** DLI/archive catalog dates item 2015.312156 to 1922; an external catalog calls the same scan 1932/33; original imprint page was not inspected. Treat edition year as unresolved and anchor on DLI item, source SHA256, scanned PDF/printed page. VedicPupil page 15 omissions and historical/redirected snippets make global verse renumbering unsafe; only locally verified alignments admissible.
+
+**B55 artifacts**: `SOURCE_SCOPE_CROSSWALK_B55.json` (8 source-only records), `READING_NOTES_B55.md`, `income_scope_B55.py`, `test_income_scope_B55.py`, `B55_TEST_RESULTS.txt`. **21/21** focused synthetic unit tests passed. No original source binary in repo, no person data, zero independent human forecasts, zero promoted rules, 432 existing counted primary notes, +0 B55.
+
+**Next action**: inspect a genuinely different Sanskrit print for *Sarvārtha* eleventh v2/v10 and original Jātaka XV.72, plus verify uncertain edition numbering; then broaden to unique under-read chapters from Jaimini, Saravali and Portuguese Parashara. Keep negative targets and all source conflicts explicit. **Root task remains OPEN**. Resume exact task branch and checkpoint, no merge.

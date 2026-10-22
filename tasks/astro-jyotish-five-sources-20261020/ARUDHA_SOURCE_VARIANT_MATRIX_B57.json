@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B57",
+  "date_utc": "2026-10-22",
+  "type": "SOURCE_ONLY_ARUDHA_CALCULATION_VARIANTS",
+  "owner_task": "Independent five original uploaded book source study and comparative external Sanskrit witnesses, no human outcomes or model promotion",
+  "library_source": {
+    "id": "JYOT-JAIMINI-RATH-V1",
+    "user_uploaded_title": "Sanjay Rath: A Course on Jaimini Maharṣi’s Upadeśa Sūtra",
+    "physical_pdf_pages": [
+      377,
+      378,
+      379,
+      380,
+      381
+    ],
+    "source_layer": "modern edited English/Sanskrit course, excerpts read from Library indexed original PDF, page-image Sanskrit not independently visually collated"
+  },
+  "external_source_layers": [
+    {
+      "name": "Bṛhat Parāśara Horā Śāstra Ch29",
+      "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-29/",
+      "witness": "online Sanskrit e-text + generated/modern English gloss, NOT critically edited manuscript",
+      "loci": "verses 1–11"
+    },
+    {
+      "name": "Venkateśa Jaimini Upadeśa commentary",
+      "url": "https://jaiminicommentary.wordpress.com/2010/02/02/sutra-1-1-30/",
+      "witness": "posted 2010 Sanskrit commentary + English translation attributed to manuscript, unverified printed plate",
+      "locus": "site heading 1.1.29 for yāvadīśāśrayaṃ, Vriddha Kārikā own/seventh"
+    },
+    {
+      "name": "Venkateśa Jaimini exceptions commentary",
+      "url": "https://jaiminicommentary.wordpress.com/2010/02/",
+      "witness": "site February 2010 archive contains original Sanskrit and English interpretation of svasthē dārāḥ and sutasthe janma; site numbering differs Rath by one",
+      "locus": "site headings 1.1.30–31"
+    },
+    {
+      "name": "Other scholarly parallel not adopted as canonical",
+      "url": "https://www.scienceoflight.net/science-of-light-course/classical-vedic-astrology/parashara-and-jaimini/",
+      "witness": "modern crosswalk, not manuscript",
+      "locus": "Jaimini 1.1.30–32 and BPHS29.1–7"
+    }
+  ],
+  "records": [
+    {
+      "id": "B57-01",
+      "locus": "Rath Lesson18 PDF377–381 vs online BPHS29.2",
+      "source_claim": "Compute bhāva padā by inclusive distance from house to ruler and repeating count from ruler",
+      "mathematical_antecedent": "source sign S, sign of ruler L, n=((L-S) mod12)+1, raw=(L+n-1) mod12",
+      "status": "SHARED_CONVENTION_WITH_UNVERIFIED_CRITICAL_RECENSION",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-02",
+      "locus": "Rath PDF380–381 vs online BPHS29.4–5",
+      "source_claim": "If raw pada falls in original or its opposite, count tenth from raw. L in 1st/7th -> pada 10th; L in 4th/10th -> pada 4th.",
+      "synthetic_relative_outputs": {
+        "lord1": 10,
+        "lord4": 4,
+        "lord7": 10,
+        "lord10": 4
+      },
+      "status": "MODERN_RATH_ALIGNED_WITH_BPHS_ONLINE_SANSKRIT; NOT UNIVERSAL_JAIMINI_PRIORITY",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-03",
+      "locus": "Venkateśa commentary site 2010, svasthē dārāḥ, sutasthe janma, cited Vriddha Kārikā",
+      "source_claim": "Sanskrit commentary interprets lord 4th => 7th from original and lord 7th => original lagna, explicitly unlike BPHS/Rath; cited older verse similarly puts 1st/7th lord in original pada.",
+      "exact_sanskrit_fragments": [
+        "लग्नस्वामिनि दाराः सप्तमस्थो राशिर्लग्नारूढं भवति",
+        "सुतस्थे सप्तमस्थे लग्नस्वामिनि जन्मलग्नमारुढं भवति"
+      ],
+      "synthetic_relative_outputs": {
+        "lord1": 1,
+        "lord4": 7,
+        "lord7": 1,
+        "lord10": null
+      },
+      "commentarial_ambiguity": "Author also offers alternative kāraka semantics; not proven single consensus among surviving transmissions. No specified tenth-lord rider in examined local section.",
+      "status": "ALTERNATIVE_COMMENTARIAL_ALGORITHM_WITH_LOCAL_ABSTENTION",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-04",
+      "locus": "Rath PDF378 vs online BPHS29.7",
+      "source_claim": "Rath says Scorpio and Aquarius have dual sign lords and two resulting ārūḍhas, both can operate; stronger dominates; BPHS online verse dvinātha ... sabalāvadhi invokes strength.",
+      "unfrozen": "classical criterion comparing graha strengths or whether multiple features should be admitted simultaneously; exact node co-lord convention",
+      "source_only_selection": "retain each candidate and leave chosen lord null without frozen strength",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-05",
+      "locus": "Rath PDF379 vs online BPHS29.2, 29.4–5",
+      "source_claim": "Rath describes both traditional exact source degree retained and personal proposal arudha degree=(30-source degree) within derived sign; online Sanskrit verse fixes sign but specifies no within-sign degree.",
+      "example": {
+        "original_sign": "Aries",
+        "original_degree": "9°50′",
+        "lord_sign": "Gemini",
+        "pada_sign": "Leo",
+        "tradition_degree": "9°50′",
+        "Rath_complement_degree": "20°10′"
+      },
+      "boundary_issue": "source degree 0° gives complement 30°, outside ordinary [0,30) sign interval; non-production code abstains at zero instead of wrapping silently",
+      "source_layer": "modern Rath proposal vs claimed tradition vs underlying Sanskrit sign definition",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-06",
+      "locus": "Rath PDF378 graha ārūḍha, Venkateśa commentary on yāvadīśāśrayaṃ, online BPHS29.6 English",
+      "source_claim": "Rath/Venkateśa count from planet to one of its owned signs then advance the same count from OWNED SIGN; online English gloss suggests second count from PLANET, a degenerate outcome always its owned sign.",
+      "synthetic_example": {
+        "planet": "Sun",
+        "sun_position": "Aries",
+        "owned_sign": "Leo",
+        "count": 5,
+        "Rath_Venk_result": "Sagittarius",
+        "literal_online_English_gloss_result": "Leo"
+      },
+      "warning": "Electronic English gloss is not independent old Sanskrit reading; source syntax needs philological adjudication. Graha ārūḍha does not automatically inherit bhāva riders.",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-07",
+      "locus": "Rath PDF377–385 social reflection and BPHS29.8–10 gain descriptions",
+      "source_claim": "Social image vs physical possessions, and good/evil acquisition modes are distinct targets; word-for-word geometric sunlight analogies are Rath modern explanatory theory.",
+      "negative_target": "An attractive social title does not prove substantive achievement; wealth amount is not evidence of wealth acquisition by alleged unlawful means",
+      "sensitive_claims": "no moral/criminal characterization of an individual, nor medical/financial guidance from historical astrology",
+      "score_allowed": false
+    },
+    {
+      "id": "B57-08",
+      "locus": "Rath PDF381 ready reckoner plus 12-case exhaustive synthetic enumeration",
+      "source_claim": "After standard BPHS/Rath riders, only relative houses 3,4,5,9,10,11 can hold a pada; Venkateśa local interpretation can instead yield first/seventh and does not resolve tenth placement.",
+      "enumeration": [
+        {
+          "lord_relative_house": 1,
+          "raw_arudha_relative_house": 1,
+          "Rath_BPHS_relative_house": 10,
+          "Venkatesha_local_relative_house": 1,
+          "Venkatesha_status": "COMMENTARY_OR_CITED_VRIDDHA_FIRST_SEVENTH_RULE"
+        },
+        {
+          "lord_relative_house": 2,
+          "raw_arudha_relative_house": 3,
+          "Rath_BPHS_relative_house": 3,
+          "Venkatesha_local_relative_house": 3,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 3,
+          "raw_arudha_relative_house": 5,
+          "Rath_BPHS_relative_house": 5,
+          "Venkatesha_local_relative_house": 5,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 4,
+          "raw_arudha_relative_house": 7,
+          "Rath_BPHS_relative_house": 4,
+          "Venkatesha_local_relative_house": 7,
+          "Venkatesha_status": "COMMENTARY_SVASTHE_DARAH_SEVENTH"
+        },
+        {
+          "lord_relative_house": 5,
+          "raw_arudha_relative_house": 9,
+          "Rath_BPHS_relative_house": 9,
+          "Venkatesha_local_relative_house": 9,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 6,
+          "raw_arudha_relative_house": 11,
+          "Rath_BPHS_relative_house": 11,
+          "Venkatesha_local_relative_house": 11,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 7,
+          "raw_arudha_relative_house": 1,
+          "Rath_BPHS_relative_house": 10,
+          "Venkatesha_local_relative_house": 1,
+          "Venkatesha_status": "COMMENTARY_OR_CITED_VRIDDHA_FIRST_SEVENTH_RULE"
+        },
+        {
+          "lord_relative_house": 8,
+          "raw_arudha_relative_house": 3,
+          "Rath_BPHS_relative_house": 3,
+          "Venkatesha_local_relative_house": 3,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 9,
+          "raw_arudha_relative_house": 5,
+          "Rath_BPHS_relative_house": 5,
+          "Venkatesha_local_relative_house": 5,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 10,
+          "raw_arudha_relative_house": 7,
+          "Rath_BPHS_relative_house": 4,
+          "Venkatesha_local_relative_house": null,
+          "Venkatesha_status": "UNRESOLVED_TENTH_LORD_PLACEMENT_NOT_LOCAL_SOURCE_RULE"
+        },
+        {
+          "lord_relative_house": 11,
+          "raw_arudha_relative_house": 9,
+          "Rath_BPHS_relative_house": 9,
+          "Venkatesha_local_relative_house": 9,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        },
+        {
+          "lord_relative_house": 12,
+          "raw_arudha_relative_house": 11,
+          "Rath_BPHS_relative_house": 11,
+          "Venkatesha_local_relative_house": 11,
+          "Venkatesha_status": "BASE_COUNT_NO_ADDITIONAL_COMMENTARIAL_RIDER"
+        }
+      ],
+      "method": "pure mod-12 symbol logic; independent of astronomical feasibility or data; unscored",
+      "score_allowed": false
+    }
+  ],
+  "record_count": 8,
+  "new_counted_primary_annotations": 0,
+  "cumulative_documentary_annotations": 432,
+  "independent_human_predictive_successes": 0,
+  "production_rules_promoted": 0,
+  "source_binaries_published": false,
+  "next_exact_frontier": "Further compare original BPHS Portuguese Ch29 line text when accessible; resolve Venkatesha different sutra numbering and alternate karaka reading; extend to two-lord strength and genuinely new under-read five-book topics. Preserve full source-only no-score."
+}

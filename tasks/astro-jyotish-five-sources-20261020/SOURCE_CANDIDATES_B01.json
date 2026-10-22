@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B01",
+  "accepted_as": "source-location and interpretation notes only",
+  "analytical_as_of": "2026-10-20 UTC",
+  "historical_prediction_success_count": 0,
+  "human_validation_count": 0,
+  "production_model_promotions": 0,
+  "source_citation_policy": "Locators refer to immutable uploaded PDFs or line numbers in cp1252-decoded plaintext. Each paragraph is a paraphrase of a particular translation, not independently collated Sanskrit. Do not use any as scored rule without versioned independent source-text verification and frozen computational semantics.",
+  "record_count": 24,
+  "records": [
+    {
+      "id": "B01-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p6, ch3 slokas 13-16",
+      "kind": "computation",
+      "source_paraphrase": "Vargottama/navamsa subdivisions, decanate and Hora lords defined by sign modality and divisional location.",
+      "source_layer": "English translation paraphrase",
+      "flags": [],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p7-8, ch3 slokas 32-36",
+      "kind": "timing/mechanism",
+      "source_paraphrase": "Angular, succedent and cadent house placements assigned different life-period effects; planets have dignity and exaltation-degree rules.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Needs direct verse separation before timing implementation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-003",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p11, ch4 slokas 32-35",
+      "kind": "computation",
+      "source_paraphrase": "Planetary aspects include partial ordinary aspects and special full aspects of Saturn (3rd/10th), Jupiter (5th/9th) and Mars (4th/8th).",
+      "source_layer": "English translation paraphrase",
+      "flags": [],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-004",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p40-41, ch20 slokas 1-6",
+      "kind": "event",
+      "source_paraphrase": "Several specifically enumerated four-or-more-planet conjunctions are asserted to produce initiation, renunciation or ascetic behavior.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Extreme conjunction rarity and conjunction-orb unresolved",
+        "No observed human outcome verified"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p42, ch20 sloka 21",
+      "kind": "cancellation",
+      "source_paraphrase": "If the asceticism-indicating planet is combust or aspected by another body, an aspirant may desire initiation but fail to enter the order.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Source attributes this qualification to Yavanas",
+        "Unclear conjunction precedence"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-006",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p42, ch20 sloka 22",
+      "kind": "event",
+      "source_paraphrase": "Moon in a Saturn decanate aspected by Mars and Saturn, or Moon in an Aries/Scorpio navamsa aspected by Saturn, is said to indicate religious initiation.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Cross-check closely related Jataka Parijata XV.41; not independent validation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-007",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p43, ch20 sloka 37",
+      "kind": "cancellation",
+      "source_paraphrase": "A Raja Yoga occurring with renunciation yogas is said to change the interpretation toward virtuous rule with eventual entry into a religious order.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Do not code as generic unconditional override"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p81, ch32 slokas 3-5",
+      "kind": "event",
+      "source_paraphrase": "Ninth-house occupants and ninth lord govern fortune; occupation/aspect by own lord is associated with local fortune, other influences with fortune elsewhere.",
+      "source_layer": "English translation paraphrase",
+      "flags": [
+        "Original verse specificity and competing conditions require collation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-009",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "PDF p195, ch7, ninth-house opening slokas 1-2",
+      "kind": "domain mapping",
+      "source_paraphrase": "Ninth-house topics include guru, prospects/fortune, father, descendants, compassion, tapas and charity.",
+      "source_layer": "Ancient author's slokas via Bhasin English rendering",
+      "flags": [
+        "Scanned Sanskrit and translation need critical verification"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-010",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "PDF p4, translator introductory note points 4-6; p5",
+      "kind": "provenance/exclusion",
+      "source_paraphrase": "Rahu/Ketu aspects and proposed Lahiri ayanamsa correction are translator-supplied additions, not asserted as original author's stated rule.",
+      "source_layer": "Modern translator note",
+      "flags": [
+        "Exclude translator-only mechanics from historical-original rule set"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-011",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "PDF pp8-9, ch1 slokas 10-11",
+      "kind": "computation",
+      "source_paraphrase": "Decanates use 1st/5th/9th sign lords; navamsa counting starts from own sign for movable, ninth for fixed and fifth for dual.",
+      "source_layer": "Ancient author's slokas via Bhasin English rendering",
+      "flags": [
+        "Use page images for dense tabular varga details"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-012",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT lines 579-635, especially 583 and 607-635",
+      "kind": "computation",
+      "source_paraphrase": "The Portuguese text enumerates 16 divisional charts D1 through D60 and methods for subdivisions.",
+      "source_layer": "Portuguese adaptation of English translation, traditional attribution",
+      "flags": [
+        "No verse IDs supplied for these paragraphs; high textual dependency uncertainty"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-013",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT lines 646-650",
+      "kind": "domain mapping",
+      "source_paraphrase": "Divisional use: D12 is assigned parents; D20 religiosity; D24 learning; D10 status and occupation; D7 children.",
+      "source_layer": "Portuguese adaptation of English translation, traditional attribution",
+      "flags": [
+        "House-domain relevance distinct from statistical predictive success"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-014",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT lines 5510-5522, Yogas de Vocação Espiritual",
+      "kind": "event",
+      "source_paraphrase": "A group of four or more strong planets in one house is given as a condition for ascetic/spiritual vocation.",
+      "source_layer": "Portuguese adaptation of English translation, traditional attribution",
+      "flags": [
+        "Needs direct verse collation and conjunction strength implementation",
+        "Cross-source echoes of Saravali/JP, not independent success"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-015",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT line 629, Trimshamsamsa (D-30)",
+      "kind": "textual defect",
+      "source_paraphrase": "Portuguese text gives five successive D30 angular intervals (5,5,8,7,5) but only four planetary rulers (Mars, Saturn, Mercury, Venus).",
+      "source_layer": "Portuguese adaptation, defective in supplied file",
+      "flags": [
+        "FAIL_CLOSED_D30_RULER_ENUMERATION; no inferred missing ruler"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-016",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT line 702, Categorias das casas",
+      "kind": "textual defect",
+      "source_paraphrase": "The supplied Portuguese text places the 10th house in both angular (kendras) and cadent (apoklimas) categories.",
+      "source_layer": "Portuguese adaptation, defective in supplied file",
+      "flags": [
+        "FAIL_CLOSED_BHAVA_CLASSIFICATION; source collation required"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-017",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p8, Adhyaya I sloka 3 (printed p2)",
+      "kind": "textual relationship",
+      "source_paraphrase": "Jataka Parijata author explicitly describes abridging Saravali.",
+      "source_layer": "Author's verse as translated into English",
+      "flags": [
+        "Dependency: JP and Saravali not separate independent confirming witnesses"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-018",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p915, Adhyaya XV slokas 17-18 (printed p906 vicinity)",
+      "kind": "event/qualification",
+      "source_paraphrase": "A conjunction in the 10th involving strong planets with strength of tenth lord is associated with asceticism; additional lord/planet conditions qualify the kind of ascetic life.",
+      "source_layer": "Author's verse via Sastri English, OCR noisy",
+      "flags": [
+        "Original print/verse verification required",
+        "Scanned text interrupted over page break"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-019",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p922, Adhyaya XV sloka 40",
+      "kind": "event",
+      "source_paraphrase": "Asceticism is associated with Saturn aspect and particular weakness/isolation of the lagna lord.",
+      "source_layer": "Author's verse via Sastri English, OCR noisy",
+      "flags": [
+        "Exact 'or' logic requires direct scan verification"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-020",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p923, Adhyaya XV sloka 41",
+      "kind": "event",
+      "source_paraphrase": "Moon in a Saturn decanate aspected by Saturn, or Moon in a Saturn/Mars amsa aspected by Saturn, is presented as a renunciation condition.",
+      "source_layer": "Author's verse via Sastri English, OCR noisy",
+      "flags": [
+        "Compare Saravali chapter20 sloka22, not independent validation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-021",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p923, Adhyaya XV sloka 42 and translator note",
+      "kind": "cancellation",
+      "source_paraphrase": "Combustion or defeat of asceticism-producing planets may indicate devotion or aspiration rather than accomplished initiation.",
+      "source_layer": "Verse translation plus distinctly marked Sastri note",
+      "flags": [
+        "Keep source statement separate from Sastri's philosophical interpretation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-022",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF pp288-289, lesson15 Charakaraka schemes and BPHS 34.1-2 quotation",
+      "kind": "methodological variant",
+      "source_paraphrase": "Rath teaches seven- and eight-chara-karaka schemes; his interpretive rationale assigns the eight-planet scheme including Rahu to living beings.",
+      "source_layer": "Modern Rath interpretation plus quoted Sanskrit BPHS passage",
+      "flags": [
+        "Do not equate Rath's preferred application with universally established Jaimini original",
+        "Competing schools exist; model variant selection must be frozen before tests"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-023",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF pp304-306, lesson15 individual Atmakaraka interpretations",
+      "kind": "domain mapping",
+      "source_paraphrase": "Rath offers planet-specific spiritual life lessons and practices keyed to the natal atmakaraka.",
+      "source_layer": "Modern Rath commentary",
+      "flags": [
+        "Do not project prescriptions or retrospectively tailored cases onto ancient sutras"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    },
+    {
+      "id": "B01-024",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF p312, Sri Aurobindo worked example",
+      "kind": "retrospective case",
+      "source_paraphrase": "A spiritual renunciation narrative is illustrated using Aurobindo's chart and a known biography.",
+      "source_layer": "Modern retrospective worked example",
+      "flags": [
+        "Development/example only: outcome known to commentator",
+        "No blind validation"
+      ],
+      "status": "SOURCE_ONLY_NOT_VERIFIED_AS_EMPIRICAL_OR_COMPUTATIONAL_RULE"
+    }
+  ],
+  "dependencies": [
+    {
+      "a": "JYOT-JP-SASTRI",
+      "b": "JYOT-SARAVALI-EN",
+      "basis": "JP I.3 names Saravali as a work abridged; specific borrowed verse lineage needs independent textual collation"
+    },
+    {
+      "a": "JYOT-JAIMINI-RATH-V1",
+      "b": "JYOT-BPHS-KERR-PT",
+      "basis": "Rath quotes BPHS tradition; supplied Portuguese BPHS and Rath English represent differing modern transmission paths, not independent tests"
+    }
+  ]
+}

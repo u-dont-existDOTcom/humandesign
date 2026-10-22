@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B53",
+  "date_utc": "2026-10-22",
+  "method": "ACTUAL_PRINTED_SANSKRIT_VISUAL_COLLATION",
+  "source_work": "Sarvartha Chintamani",
+  "printed_witness": {
+    "publisher_or_editor": "Mahidhara Sharma bhasha-tika, 1929 Bombay printed edition",
+    "archive_identifier": "in.ernet.dli.2015.312429",
+    "url": "https://archive.org/details/in.ernet.dli.2015.312429",
+    "pdf_filename": "2015.312429.Sarvarth-Chintamani.pdf",
+    "pages": 298,
+    "bytes": 8735151,
+    "sha256": "8fc0e8a5a212d1b3312363135347c47846671a3d184232eaf276ea0c96f57624",
+    "visual_render_dpi": [
+      165,
+      320
+    ],
+    "ocr_used_only_for_navigation": true,
+    "independent_manuscript_edition_count_proven": 0,
+    "printed_witness_count_visually_examined": 1
+  },
+  "comparison_sources": [
+    {
+      "layer": "ORIGINAL_UPLOADED_ENGLISH_TRANSLATION",
+      "name": "J. N. Bhasin Sarvartha Chintamani",
+      "library_pdf_pages": [
+        204,
+        206,
+        207,
+        208,
+        212,
+        213
+      ],
+      "printed_sanskrit_glyphs_in_library_pdf_independently_visualized": false
+    },
+    {
+      "layer": "ONLINE_SANSKRIT_E_TEXT_NOT_SEPARATE_MANUSCRIPT",
+      "url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8"
+    },
+    {
+      "layer": "RESEARCH_EDITION_HISTORY_SECONDARY",
+      "url": "https://karmasakha.com/texts/sarvartha-chintamani"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B53-W1",
+      "locus": "Ch8 10th vv2-3",
+      "archive_pdf_pages": [
+        166,
+        167
+      ],
+      "original_printed_pages": [
+        148,
+        149
+      ],
+      "observed_transliterated_fragments": [
+        "yajñakarā",
+        "śaśāṅkātmajajīvaśukrāḥ"
+      ],
+      "sanskrit_negative_trio": [
+        "Mercury",
+        "Jupiter",
+        "Venus"
+      ],
+      "bhasin_v2_v3_english_target": "GENERAL_PUBLIC_SERVICE",
+      "source_sanskrit_v2_v3_target": "RITUAL_SACRIFICE",
+      "bhasin_negative_trio": [
+        "TENTH_LORD",
+        "Jupiter",
+        "Mercury"
+      ],
+      "status": "TARGET_SCOPE_AND_PREDICATE_DISAGREEMENT",
+      "score_allowed": false
+    },
+    {
+      "id": "B53-W2",
+      "locus": "Ch8 10th v16",
+      "archive_pdf_pages": [
+        168
+      ],
+      "original_printed_pages": [
+        150
+      ],
+      "sanskrit_word": "vā",
+      "english_connective": "and",
+      "sanskrit_possible_connective": "or",
+      "status": "GRAMMAR_NOT_FROZEN",
+      "score_allowed": false
+    },
+    {
+      "id": "B53-W3",
+      "locus": "Ch8 10th v24",
+      "archive_pdf_pages": [
+        169
+      ],
+      "original_printed_pages": [
+        151
+      ],
+      "sanskrit_outcome": "FAVORABLE_REPUTATION",
+      "sanskrit_tail": "satkīrtisahito bhavet",
+      "english_outcome": "UNFAVORABLE_REPUTATION",
+      "hypothesized_copy_forward": "POSSIBLE_NOT_VERIFIED",
+      "status": "OUTCOME_POLARITY_MISMATCH",
+      "score_allowed": false
+    },
+    {
+      "id": "B53-W4",
+      "locus": "Ch8 11th v2",
+      "archive_pdf_pages": [
+        171
+      ],
+      "original_printed_pages": [
+        153
+      ],
+      "adverse_house_config": "MALEFIC_IN_11TH",
+      "outcome": "GAIN",
+      "status": "PHYSICALLY_PRINTED",
+      "score_allowed": false
+    },
+    {
+      "id": "B53-W5",
+      "locus": "Ch8 11th v10",
+      "archive_pdf_pages": [
+        172
+      ],
+      "original_printed_pages": [
+        154
+      ],
+      "adverse_house_config": "MALEFIC_IN_11TH",
+      "outcome": "LOSS",
+      "status": "PHYSICALLY_PRINTED_AND_CAN_COACTIVATE_W4",
+      "score_allowed": false
+    }
+  ],
+  "method_constraints": [
+    "Visual inspection of 1929 PDF page images, not simply electronic/OCR text",
+    "One Bombay-branch print is not a separate ancient manuscript witness",
+    "No conjectural emendation or post-hoc reconciliation",
+    "No personal birth data, participant profiles, medical/ethics advice or public redistributions of modern translated scans"
+  ],
+  "tests": {
+    "module": "test_original_witness_integrity_B53.py",
+    "pass": 19,
+    "fail": 0,
+    "meaning": "source-fixture and synthetic logical guards only"
+  },
+  "counts": {
+    "before_unique_annotations": 432,
+    "after_unique_annotations": 432,
+    "new_unique_annotations": 0,
+    "human_prospective_predictions_tested": 0,
+    "production_rules_promoted": 0
+  },
+  "next_exact": "Seek distinct independent Sanskrit transmission for vv3,16,24,11th v2/v10 and identify actual Jataka profession expansions versus Bṛhat Jātaka shared text"
+}

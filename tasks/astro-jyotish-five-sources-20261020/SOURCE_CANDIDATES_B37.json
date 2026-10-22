@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B37",
+  "record_count": 3,
+  "status": "DOCUMENTARY_SOURCE_CRITICISM_ONLY",
+  "records": [
+    {
+      "id": "B37-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "English Saravali Ch4 slokas32–33 PDF11; original Sanskrit Ch4 vv32–33 CSU p5 lines161–166 and older Jain Sanskrit transcript lines773–774",
+      "source_layer": "Digitized original-language verse versus modern English translation",
+      "paraphrase": "Sanskrit enumerates aspects in increasing quarter steps: 3rd/10th 1/4, 5th/9th 1/2, 4th/8th 3/4, 7th full. The user's English rendering wrongly swaps the half and three-quarter categories.",
+      "limit": "This repairs local fraction order only, not a whole manuscript stemma or all historical aspect systems."
+    },
+    {
+      "id": "B37-002",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Jataka Parijata Adhyaya II slokas30–31, uploaded compound PDF physical 463, printed p66",
+      "source_layer": "Original Sanskrit printed adjacent to V Subramanya Sastri English translation; scan inspected",
+      "paraphrase": "Sloka30 states quarter at third/tenth, half at fifth/ninth, three-quarter at fourth/eighth, full seventh; sloka31 gives special planetary aspect strengths.",
+      "limit": "Matching fractional vocabulary across works reflects shared textual tradition; not independent prediction evidence."
+    },
+    {
+      "id": "B37-003",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Portuguese Parashara cp1252 text heading Avaliação dos aspectos planetários, line2311; continuous-longitude computation lines2319–2343",
+      "source_layer": "Portuguese second-hand translation, not critically checked original Sanskrit",
+      "paraphrase": "The same sequence 3rd/10th, 5th/9th, 4th/8th, seventh is assigned increasing quarters, with additional interpolated degree-based drigbala calculations and special Saturn/Mars/Jupiter treatments.",
+      "limit": "Do not equate sampled fractional-sign drsti with continuous-degree Drigbala or with Jaimini Rasi Drsti."
+    }
+  ],
+  "previous_B36_impact": "B36 source-specific no Sun-to-Mercury aspect result depends on allowed aspect-house set, not its fractional strengths. Update B36 experimental code to offer explicitly selected uploaded-English versus Sanskrit-restored weights, preserving both.",
+  "zero_independent_human_predictions": 0,
+  "production_changes": 0
+}

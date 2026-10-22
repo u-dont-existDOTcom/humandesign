@@ -1,0 +1,15 @@
+# B51 — Source predicates, reputation polarity and conflicting income rules
+
+2026-10-22 UTC. Source criticism only, no natal forecasts, no model changes. Original uploaded J. N. Bhasin *Sarvārtha Cintāmaṇi* indexed PDF204–208 and 212–213 checked against VedicPupil electronic Sanskrit Chapter 8. The uploaded printed Sanskrit glyphs were OCR-corrupted, and no printed Sanskrit plate or independent manuscript has been visually verified. Preserve readings separately.
+
+1. **Tenth-house 8.1.2–3:** both printed English and Sanskrit v2 name tenth-house lord, Jupiter and Mercury under favorable strength conditions. Bhasin v3 then refers anaphorically to “these three planets” under unfavorable conditions (English 6th/8th/12th and malefic aspect). Displayed Sanskrit v3 instead expressly says `दुःस्थाः शशांकात्मजजीवशुक्राः पापेक्षिताः`—Mercury, Jupiter and **Venus**. If tenth lord is not Venus, which chart activates this adverse-work clause differs. Sanskrit `duḥsthā` is not independently proven to equal exactly the English 6/8/12 houses; source-only tests label that assumption, not a canonical rule.
+
+2. **8.1.16 (orders):** Uploaded Bhasin PDF206 requires Sun in tenth **and** joined Mars and tenth lord in angular house for harsh commands; Sanskrit e-text `आज्ञास्थानगते सूर्ये भूमिपुत्रेण वा युते` contains `vā` (or), reasonably Sun in tenth **or** Sun conjoined Mars with the lord angular. Syntax/critical source remains unverified, both configurations diagnostic-only; no person-specific moral judgments.
+
+3. **8.1.24 (fame):** Bhasin PDF207 says weak afflicted tenth lord in cruel ṣaṣṭyaṃśa → **bad name**; electronic Sanskrit source says `सत्कीर्तिसहितो भवेत्` → **good fame** under apparently adverse antecedents. Same positive tail in electronic vv20–23 makes copy-forward plausible **but unproven**. Next verse25 explicitly says `अपकीर्ति`. Keep both versions, refuse canonical automatic correction, avoid retrofitting.
+
+4. **Eleventh-house 8.3.2 vs 8.3.10 (income):** Bhasin PDF212–213 and Sanskrit transcript show malefic in eleventh → gain (v2) AND loss (v10). Verse9 discusses strength, directions, magnitude of gains; it does not itself state a priority rule resolving v2/v10. B50 unresolved opposition persists.
+
+The independently developed local B51 module `work_fame_variant_B51.py` and `test_work_fame_variant_B51.py` produced 17/17 synthetic-only source-integrity tests; tests are source-version thought-experiments, not observational validation. Keep `score_allowed=false`, no human data or predicted outcomes. Cumulative 432 de-duplicated original documentary notes, +0 new IDs, 0 independent prospective human successes, 0 production rule promotions.
+
+Locators: Bhasin uploaded physical PDF204–208,212–213; Sanskrit e-text https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8. Next read an independently verified original Sanskrit printed witness for vv3,16,24 and 11th v2/10. 

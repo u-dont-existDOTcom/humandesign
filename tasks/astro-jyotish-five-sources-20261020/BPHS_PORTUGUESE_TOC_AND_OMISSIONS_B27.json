@@ -1,0 +1,892 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B27",
+  "source_id": "JYOT-BPHS-KERR-PT",
+  "source_sha256": "d271b96457dade884ae4fd0c268d09e88696beeca707fce2b1d2159aa6084b62",
+  "date": "2026-10-21",
+  "language": "Portuguese",
+  "encoding": "CP1252",
+  "line_count": 5941,
+  "source_author_layer": "André Kerr's adaptation from English into Portuguese, not directly verified Sanskrit manuscript.",
+  "method": "Original TOC has every other line filled from physical line16 through188. Match each TOC heading case- and accent-insensitively to BODY EXACT equal heading, choosing the first match later than previous accepted matching heading. Distinct body-only numbered headings checked separately. These are translator-book headings, not proof of 86 original Sanskrit chapters.",
+  "counts": {
+    "toc_entries": 87,
+    "astrological_or_ritual_topics": 86,
+    "editorial_conclusion": 1,
+    "toc_to_body_exact_matches": 87,
+    "body_only_numbered_sections": 9,
+    "body_only_unnumbered_sections": 1,
+    "raw_text_lines": 5941
+  },
+  "toc_entries": [
+    {
+      "toc_ordinal": 1,
+      "toc_line_1based": 16,
+      "title": "A criação",
+      "matched_body_heading_line_1based": 214,
+      "body_until_next_toc_heading_exclusive": 245,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 2,
+      "toc_line_1based": 18,
+      "title": "As Encarnações dos Planetas",
+      "matched_body_heading_line_1based": 245,
+      "body_until_next_toc_heading_exclusive": 256,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 3,
+      "toc_line_1based": 20,
+      "title": "Características dos Planetas",
+      "matched_body_heading_line_1based": 256,
+      "body_until_next_toc_heading_exclusive": 429,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 4,
+      "toc_line_1based": 22,
+      "title": "A Descrição dos Signos Do Zodíaco",
+      "matched_body_heading_line_1based": 429,
+      "body_until_next_toc_heading_exclusive": 514,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 5,
+      "toc_line_1based": 24,
+      "title": "Ascendentes Especiais",
+      "matched_body_heading_line_1based": 514,
+      "body_until_next_toc_heading_exclusive": 573,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 6,
+      "toc_line_1based": 26,
+      "title": "As 16 Divisões de Um Signo",
+      "matched_body_heading_line_1based": 573,
+      "body_until_next_toc_heading_exclusive": 642,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 7,
+      "toc_line_1based": 28,
+      "title": "Considerações Sobre Os Divisionais",
+      "matched_body_heading_line_1based": 642,
+      "body_until_next_toc_heading_exclusive": 719,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 8,
+      "toc_line_1based": 30,
+      "title": "Aspectos dos Signos",
+      "matched_body_heading_line_1based": 719,
+      "body_until_next_toc_heading_exclusive": 800,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 9,
+      "toc_line_1based": 32,
+      "title": "Antídotos Para Males",
+      "matched_body_heading_line_1based": 800,
+      "body_until_next_toc_heading_exclusive": 819,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 10,
+      "toc_line_1based": 34,
+      "title": "julgamento das Casas",
+      "matched_body_heading_line_1based": 819,
+      "body_until_next_toc_heading_exclusive": 898,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 11,
+      "toc_line_1based": 36,
+      "title": "Efeitos do Ascendente",
+      "matched_body_heading_line_1based": 898,
+      "body_until_next_toc_heading_exclusive": 964,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 12,
+      "toc_line_1based": 38,
+      "title": "Efeitos de 2ª casa",
+      "matched_body_heading_line_1based": 964,
+      "body_until_next_toc_heading_exclusive": 1026,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 13,
+      "toc_line_1based": 40,
+      "title": "Efeitos da 3ª casa",
+      "matched_body_heading_line_1based": 1026,
+      "body_until_next_toc_heading_exclusive": 1059,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 14,
+      "toc_line_1based": 42,
+      "title": "Efeitos da 4ª casa",
+      "matched_body_heading_line_1based": 1059,
+      "body_until_next_toc_heading_exclusive": 1118,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 15,
+      "toc_line_1based": 44,
+      "title": "Efeitos da 5ª casa",
+      "matched_body_heading_line_1based": 1118,
+      "body_until_next_toc_heading_exclusive": 1139,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 16,
+      "toc_line_1based": 46,
+      "title": "Efeitos de 6ª casa",
+      "matched_body_heading_line_1based": 1139,
+      "body_until_next_toc_heading_exclusive": 1200,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 17,
+      "toc_line_1based": 48,
+      "title": "Efeitos da 7ª casa",
+      "matched_body_heading_line_1based": 1200,
+      "body_until_next_toc_heading_exclusive": 1284,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 18,
+      "toc_line_1based": 50,
+      "title": "Efeitos da 8ª casa",
+      "matched_body_heading_line_1based": 1284,
+      "body_until_next_toc_heading_exclusive": 1321,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 19,
+      "toc_line_1based": 52,
+      "title": "Efeitos da 9ª casa",
+      "matched_body_heading_line_1based": 1321,
+      "body_until_next_toc_heading_exclusive": 1420,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 20,
+      "toc_line_1based": 54,
+      "title": "Efeitos da 10ª casa",
+      "matched_body_heading_line_1based": 1420,
+      "body_until_next_toc_heading_exclusive": 1449,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 21,
+      "toc_line_1based": 56,
+      "title": "Efeitos da 11º Casa",
+      "matched_body_heading_line_1based": 1449,
+      "body_until_next_toc_heading_exclusive": 1469,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 22,
+      "toc_line_1based": 58,
+      "title": "Efeitos da 12ª casa",
+      "matched_body_heading_line_1based": 1469,
+      "body_until_next_toc_heading_exclusive": 1493,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 23,
+      "toc_line_1based": 60,
+      "title": "Efeitos dos Regentes das Casas",
+      "matched_body_heading_line_1based": 1493,
+      "body_until_next_toc_heading_exclusive": 2098,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 24,
+      "toc_line_1based": 62,
+      "title": "Efeitos dos Planetas Sombra",
+      "matched_body_heading_line_1based": 2098,
+      "body_until_next_toc_heading_exclusive": 2299,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 25,
+      "toc_line_1based": 64,
+      "title": "Avaliação dos aspectos planetários",
+      "matched_body_heading_line_1based": 2299,
+      "body_until_next_toc_heading_exclusive": 2346,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 26,
+      "toc_line_1based": 66,
+      "title": "Avaliação de Forças",
+      "matched_body_heading_line_1based": 2346,
+      "body_until_next_toc_heading_exclusive": 2621,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 27,
+      "toc_line_1based": 68,
+      "title": "Upapada lagna",
+      "matched_body_heading_line_1based": 2621,
+      "body_until_next_toc_heading_exclusive": 2676,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 28,
+      "toc_line_1based": 70,
+      "title": "Karakatwas dos planetas",
+      "matched_body_heading_line_1based": 2676,
+      "body_until_next_toc_heading_exclusive": 2719,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 29,
+      "toc_line_1based": 72,
+      "title": "Efeitos do Karakamsa",
+      "matched_body_heading_line_1based": 2719,
+      "body_until_next_toc_heading_exclusive": 2816,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 30,
+      "toc_line_1based": 74,
+      "title": "Yogakarakas",
+      "matched_body_heading_line_1based": 2816,
+      "body_until_next_toc_heading_exclusive": 2911,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 31,
+      "toc_line_1based": 76,
+      "title": "nabhasa Yogas",
+      "matched_body_heading_line_1based": 2911,
+      "body_until_next_toc_heading_exclusive": 3054,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 32,
+      "toc_line_1based": 78,
+      "title": "muitos Outros Yogas",
+      "matched_body_heading_line_1based": 3054,
+      "body_until_next_toc_heading_exclusive": 3165,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 33,
+      "toc_line_1based": 80,
+      "title": "Yogas do Sol",
+      "matched_body_heading_line_1based": 3165,
+      "body_until_next_toc_heading_exclusive": 3178,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 34,
+      "toc_line_1based": 82,
+      "title": "Raj Yogas",
+      "matched_body_heading_line_1based": 3178,
+      "body_until_next_toc_heading_exclusive": 3239,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 35,
+      "toc_line_1based": 84,
+      "title": "Yogas de Associação Real",
+      "matched_body_heading_line_1based": 3239,
+      "body_until_next_toc_heading_exclusive": 3268,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 36,
+      "toc_line_1based": 86,
+      "title": "Combinações Para Riqueza",
+      "matched_body_heading_line_1based": 3268,
+      "body_until_next_toc_heading_exclusive": 3327,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 37,
+      "toc_line_1based": 88,
+      "title": "Combinações de Pobreza",
+      "matched_body_heading_line_1based": 3327,
+      "body_until_next_toc_heading_exclusive": 3360,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 38,
+      "toc_line_1based": 90,
+      "title": "Longevidade",
+      "matched_body_heading_line_1based": 3360,
+      "body_until_next_toc_heading_exclusive": 3493,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 39,
+      "toc_line_1based": 92,
+      "title": "Planetas Matadores",
+      "matched_body_heading_line_1based": 3493,
+      "body_until_next_toc_heading_exclusive": 3550,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 40,
+      "toc_line_1based": 94,
+      "title": "Avasthas dos Corpos Celestes",
+      "matched_body_heading_line_1based": 3550,
+      "body_until_next_toc_heading_exclusive": 3655,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 41,
+      "toc_line_1based": 96,
+      "title": "Dashas dos Planetas",
+      "matched_body_heading_line_1based": 3655,
+      "body_until_next_toc_heading_exclusive": 3852,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 42,
+      "toc_line_1based": 98,
+      "title": "Efeitos dos Dashas",
+      "matched_body_heading_line_1based": 3852,
+      "body_until_next_toc_heading_exclusive": 3899,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 43,
+      "toc_line_1based": 100,
+      "title": "Efeitos Distintos dos Regentes dos Dashas de Várias Casas",
+      "matched_body_heading_line_1based": 3899,
+      "body_until_next_toc_heading_exclusive": 3912,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 44,
+      "toc_line_1based": 102,
+      "title": "Efeitos do Kaal Chakr",
+      "matched_body_heading_line_1based": 3912,
+      "body_until_next_toc_heading_exclusive": 3945,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 45,
+      "toc_line_1based": 104,
+      "title": "Efeitos dos Char Dashas",
+      "matched_body_heading_line_1based": 3945,
+      "body_until_next_toc_heading_exclusive": 4010,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 46,
+      "toc_line_1based": 106,
+      "title": "Trabalhando com AD de Planetas e Signos",
+      "matched_body_heading_line_1based": 4010,
+      "body_until_next_toc_heading_exclusive": 4031,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 47,
+      "toc_line_1based": 108,
+      "title": "Efeitos do AD no Dasha de Sol",
+      "matched_body_heading_line_1based": 4031,
+      "body_until_next_toc_heading_exclusive": 4090,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 48,
+      "toc_line_1based": 110,
+      "title": "Efeitos no AD no Dasha da Lua",
+      "matched_body_heading_line_1based": 4090,
+      "body_until_next_toc_heading_exclusive": 4151,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 49,
+      "toc_line_1based": 112,
+      "title": "Efeitos do AD no Dasha de Marte",
+      "matched_body_heading_line_1based": 4151,
+      "body_until_next_toc_heading_exclusive": 4218,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 50,
+      "toc_line_1based": 114,
+      "title": "Efeitos do AD no Dasha de Rahu",
+      "matched_body_heading_line_1based": 4218,
+      "body_until_next_toc_heading_exclusive": 4289,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 51,
+      "toc_line_1based": 116,
+      "title": "Efeitos do AD no Dasha de Júpiter",
+      "matched_body_heading_line_1based": 4289,
+      "body_until_next_toc_heading_exclusive": 4362,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 52,
+      "toc_line_1based": 118,
+      "title": "Efeitos do AD no Dasha de Saturno",
+      "matched_body_heading_line_1based": 4362,
+      "body_until_next_toc_heading_exclusive": 4435,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 53,
+      "toc_line_1based": 120,
+      "title": "Efeitos dos Antar Dashas no Dasha do Mercúrio",
+      "matched_body_heading_line_1based": 4435,
+      "body_until_next_toc_heading_exclusive": 4504,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 54,
+      "toc_line_1based": 122,
+      "title": "Efeitos do AD no Dasha de Ketu",
+      "matched_body_heading_line_1based": 4504,
+      "body_until_next_toc_heading_exclusive": 4573,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 55,
+      "toc_line_1based": 124,
+      "title": "Efeitos do AD no Dasha de Vênus",
+      "matched_body_heading_line_1based": 4573,
+      "body_until_next_toc_heading_exclusive": 4648,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 56,
+      "toc_line_1based": 126,
+      "title": "Efeitos dos PDs nos ADs",
+      "matched_body_heading_line_1based": 4648,
+      "body_until_next_toc_heading_exclusive": 4813,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 57,
+      "toc_line_1based": 128,
+      "title": "Efeitos de SDs no PDs",
+      "matched_body_heading_line_1based": 4813,
+      "body_until_next_toc_heading_exclusive": 4980,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 58,
+      "toc_line_1based": 130,
+      "title": "Efeitos de Prana Dashas em Sukshma Dashas",
+      "matched_body_heading_line_1based": 4980,
+      "body_until_next_toc_heading_exclusive": 5145,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 59,
+      "toc_line_1based": 132,
+      "title": "Efeitos dos ADs no Kala Chakr",
+      "matched_body_heading_line_1based": 5145,
+      "body_until_next_toc_heading_exclusive": 5200,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 60,
+      "toc_line_1based": 134,
+      "title": "Efeitos dos Dashas dos Signos Nas Amsas de Vários Signos",
+      "matched_body_heading_line_1based": 5200,
+      "body_until_next_toc_heading_exclusive": 5257,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 61,
+      "toc_line_1based": 136,
+      "title": "AshtakaVarga",
+      "matched_body_heading_line_1based": 5257,
+      "body_until_next_toc_heading_exclusive": 5310,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 62,
+      "toc_line_1based": 138,
+      "title": "Trikon Shodana no Ashtakavarga",
+      "matched_body_heading_line_1based": 5310,
+      "body_until_next_toc_heading_exclusive": 5317,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 63,
+      "toc_line_1based": 140,
+      "title": "Ekadhipatya Shodana no Ashtakavarga",
+      "matched_body_heading_line_1based": 5317,
+      "body_until_next_toc_heading_exclusive": 5324,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 64,
+      "toc_line_1based": 142,
+      "title": "Pinda Sadhana no Ashtakavarga",
+      "matched_body_heading_line_1based": 5324,
+      "body_until_next_toc_heading_exclusive": 5329,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 65,
+      "toc_line_1based": 144,
+      "title": "Efeitos do Ashtakavarga",
+      "matched_body_heading_line_1based": 5329,
+      "body_until_next_toc_heading_exclusive": 5364,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 66,
+      "toc_line_1based": 146,
+      "title": "Determinação de Longevidade Através Do AshtakaVarga",
+      "matched_body_heading_line_1based": 5364,
+      "body_until_next_toc_heading_exclusive": 5369,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 67,
+      "toc_line_1based": 148,
+      "title": "AshtakaVarga Agregado",
+      "matched_body_heading_line_1based": 5369,
+      "body_until_next_toc_heading_exclusive": 5388,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 68,
+      "toc_line_1based": 150,
+      "title": "Efeitos dos Raios dos Planetas",
+      "matched_body_heading_line_1based": 5388,
+      "body_until_next_toc_heading_exclusive": 5435,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 69,
+      "toc_line_1based": 152,
+      "title": "características dos Panchmahapurushas",
+      "matched_body_heading_line_1based": 5435,
+      "body_until_next_toc_heading_exclusive": 5452,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 70,
+      "toc_line_1based": 154,
+      "title": "Efeitos dos Elementos",
+      "matched_body_heading_line_1based": 5452,
+      "body_until_next_toc_heading_exclusive": 5463,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 71,
+      "toc_line_1based": 156,
+      "title": "Efeitos das Gunas",
+      "matched_body_heading_line_1based": 5463,
+      "body_until_next_toc_heading_exclusive": 5490,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 72,
+      "toc_line_1based": 158,
+      "title": "horário Desconhecido",
+      "matched_body_heading_line_1based": 5490,
+      "body_until_next_toc_heading_exclusive": 5509,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 73,
+      "toc_line_1based": 160,
+      "title": "Yogas de Vocação Espiritual",
+      "matched_body_heading_line_1based": 5509,
+      "body_until_next_toc_heading_exclusive": 5682,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 74,
+      "toc_line_1based": 162,
+      "title": "Efeitos de Marcas no Corpo Para Homens e Mulheres",
+      "matched_body_heading_line_1based": 5682,
+      "body_until_next_toc_heading_exclusive": 5703,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 75,
+      "toc_line_1based": 164,
+      "title": "Efeitos de Maldições Em Nascimentos Anteriores",
+      "matched_body_heading_line_1based": 5703,
+      "body_until_next_toc_heading_exclusive": 5780,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 76,
+      "toc_line_1based": 166,
+      "title": "nascimentos Inauspiciosos",
+      "matched_body_heading_line_1based": 5780,
+      "body_until_next_toc_heading_exclusive": 5785,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 77,
+      "toc_line_1based": 168,
+      "title": "Remédios para Nascimento Amavasya",
+      "matched_body_heading_line_1based": 5785,
+      "body_until_next_toc_heading_exclusive": 5792,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 78,
+      "toc_line_1based": 170,
+      "title": "Remédios para Nascimento em Krishna Chaturdashi",
+      "matched_body_heading_line_1based": 5792,
+      "body_until_next_toc_heading_exclusive": 5799,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 79,
+      "toc_line_1based": 172,
+      "title": "Remédios Para Nascimento em Bhadra e Yogas Inauspiciosos",
+      "matched_body_heading_line_1based": 5799,
+      "body_until_next_toc_heading_exclusive": 5808,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 80,
+      "toc_line_1based": 174,
+      "title": "Remédios Para Nascimento de Nakshatra Familiar",
+      "matched_body_heading_line_1based": 5808,
+      "body_until_next_toc_heading_exclusive": 5815,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 81,
+      "toc_line_1based": 176,
+      "title": "Remédios para Nascimento Sankranti",
+      "matched_body_heading_line_1based": 5815,
+      "body_until_next_toc_heading_exclusive": 5838,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 82,
+      "toc_line_1based": 178,
+      "title": "Remédio Para Nascimento em Eclipses",
+      "matched_body_heading_line_1based": 5838,
+      "body_until_next_toc_heading_exclusive": 5849,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 83,
+      "toc_line_1based": 180,
+      "title": "Remédios Para O Nascimento Gandanta",
+      "matched_body_heading_line_1based": 5849,
+      "body_until_next_toc_heading_exclusive": 5872,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 84,
+      "toc_line_1based": 182,
+      "title": "remédios para Nascimento Abhukta Mula",
+      "matched_body_heading_line_1based": 5872,
+      "body_until_next_toc_heading_exclusive": 5909,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 85,
+      "toc_line_1based": 184,
+      "title": "Remédios para Nascimento De Uma Filha Após Três Filhos",
+      "matched_body_heading_line_1based": 5909,
+      "body_until_next_toc_heading_exclusive": 5918,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 86,
+      "toc_line_1based": 186,
+      "title": "Remédios de Partos Incomuns",
+      "matched_body_heading_line_1based": 5918,
+      "body_until_next_toc_heading_exclusive": 5929,
+      "level": "TRANSLATOR_TABLE_OF_CONTENTS_ENTRY",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    },
+    {
+      "toc_ordinal": 87,
+      "toc_line_1based": 188,
+      "title": "Conclusão",
+      "matched_body_heading_line_1based": 5929,
+      "body_until_next_toc_heading_exclusive": 5942,
+      "level": "CONCLUSION",
+      "heading_match": "CASEFOLD_ACCENT_INSENSITIVE_EXACT_WITH_MONOTONIC_ORDER"
+    }
+  ],
+  "body_only_sections": [
+    {
+      "heading": "9. Males de Nascença",
+      "body_line_1based": 743,
+      "within_toc_parent": "Aspectos dos Signos",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "28. Forças Isht e Kasht",
+      "body_line_1based": 2528,
+      "within_toc_parent": "Avaliação de Forças",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "29. Padas das casas",
+      "body_line_1based": 2562,
+      "within_toc_parent": "Avaliação de Forças",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "31. Argala e Intervenção Planetária",
+      "body_line_1based": 2653,
+      "within_toc_parent": "Upapada lagna",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "37. Yogas da Lua",
+      "body_line_1based": 3142,
+      "within_toc_parent": "muitos Outros Yogas",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "74. Efeitos do Sudarshana Chakra",
+      "body_line_1based": 5404,
+      "within_toc_parent": "Efeitos dos Raios dos Planetas",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "80. Horóscopo das Mulheres",
+      "body_line_1based": 5533,
+      "within_toc_parent": "Yogas de Vocação Espiritual",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "81. Efeitos das Características dos Corpos Femininos",
+      "body_line_1based": 5581,
+      "within_toc_parent": "Yogas de Vocação Espiritual",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "84. Medidas Corretivas dos Planetas",
+      "body_line_1based": 5743,
+      "within_toc_parent": "Efeitos de Maldições Em Nascimentos Anteriores",
+      "type": "BODY_ONLY_NUMBERED_SECTION"
+    },
+    {
+      "heading": "Remédio Para Nascimento Gandanta de Jyeshtha",
+      "body_line_1based": 5892,
+      "within_toc_parent": "remédios para Nascimento Abhukta Mula",
+      "type": "BODY_ONLY_UNNUMBERED_SECTION"
+    }
+  ],
+  "disambiguations": [
+    {
+      "heading": "Yogakarakas",
+      "earlier_nonheading_occurrence": 2708,
+      "selected_section_heading": 2816
+    },
+    {
+      "heading": "Combinações de Pobreza",
+      "earlier_nonheading_occurrence": 975,
+      "selected_section_heading": 3327
+    }
+  ],
+  "notices": [
+    "The TOC omits several *numbered* content chapters (e.g. 74 Sudarshana Chakra, 80 Women, 81 Female physical characteristics, 84 Planetary remedial measures). The book's printed chapter numbering cannot be inferred by the ordinal TOC index.",
+    "Source text near lines5533–5580 contains female-horoscope passages missing from TOC between spiritual-vocation and body-mark chapters; not part of previous B01–B26 coverage.",
+    "Human health/reproductive/family harm and ritual prescriptions are historical assertions, not diagnoses or validated remedies.",
+    "Later sections include imported notes from Brihat Jataka, Phaladeepika and Jataka Parijata; not necessarily original Parashara verses.",
+    "No person natal chart, participant answer or retrospective outcome used to locate headings."
+  ],
+  "status": "SOURCE_STRUCTURE_INDEX_ONLY_NOT_PREDICTIVE_MODEL",
+  "new_rule_candidates": 0,
+  "empirical_human_validations": 0,
+  "model_promotions": 0
+}

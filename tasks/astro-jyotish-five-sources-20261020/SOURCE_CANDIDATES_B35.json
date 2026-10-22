@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B35",
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "status": "SOURCE_ONLY",
+  "record_count": 2,
+  "records": [
+    {
+      "id": "B35-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "English Saravali Chapter35 verse154, physical PDF104; Sanskrit Chapter35 verse155 (CSU and Jain printed)",
+      "source_claim": "Venus, Jupiter and Mercury in second house; Moon, Sun, Mars in seventh; claimed political elevation.",
+      "source_layer": "Translated Kalyanavarman source, original Sanskrit wording separately checked",
+      "external_math": "In whole-sign model Mercury H2 and Sun H7 at least 120 degrees apart; geocentric Mercury within 28 degrees of Sun. Antecedent empty for whole-sign only.",
+      "limits": "Do not generalize to all unequal house systems. Source-only history, not predictive evidence."
+    },
+    {
+      "id": "B35-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "English Saravali Chapter35 verse185 physical PDF106; Sanskrit Chapter35 verse186 (CSU and Jain)",
+      "source_claim": "Venus/Jupiter first house, Sun fourth house, Moon tenth, Saturn eleventh; Mercury/Mars wording differs among edition/footnote readings; claimed rulership.",
+      "source_layer": "Translated verse plus original digitized Sanskrit with main and parenthetical variants",
+      "external_math": "Whole-sign Venus H1 vs Sun H4 require at least 60 degrees; Venus solar elongation at most ~48 degrees; literal whole-sign antecedent empty regardless of Mercury/Mars variant.",
+      "limits": "Mercury second-house condition itself extra restriction only under variant. Other house systems not checked. No human outcome tested."
+    }
+  ],
+  "source_variant_matrix": "WHOLE_SIGN_GEOMETRIC_EMPTY_YOGAS_B35.json",
+  "observed_person_predictions": 0,
+  "model_promotions": 0
+}

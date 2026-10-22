@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B02",
+  "date": "2026-10-20 UTC",
+  "status": "SOURCE_ONLY",
+  "record_count": 10,
+  "records": [
+    {
+      "id": "B02-001",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p917 (printed907), Adhyaya XV sloka23",
+      "kind": "observable historical event",
+      "paraphrase": "A Raja-Yoga subject with Jupiter in ninth and Saturn's aspects on Jupiter/Moon/Lagna is described as founder of a philosophical system.",
+      "layer": "Ancient source via Sastri English",
+      "limits": "Not independent success; requires criteria for 'founder', and direct verse critical verification.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-002",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p917 (printed907), Adhyaya XV sloka23",
+      "kind": "timing/sequence",
+      "paraphrase": "A second pattern with Saturn in ninth and no planetary aspects is described as entering a religious order before becoming a ruler.",
+      "layer": "Ancient source via Sastri English",
+      "limits": "Specific life sequence vs generic spirituality; test negative chronology too.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-003",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p918 (printed908), Adhyaya XV sloka25",
+      "kind": "claimed metaphysical endpoint",
+      "paraphrase": "10th lord conjoined four planets in an angle or trine is said to yield 'emancipation'.",
+      "layer": "Ancient source via Sastri English, page image manually checked",
+      "limits": "Subjective/metaphysical outcome is not an independently measurable observation by default; cannot score as confirmed salvation/enlightenment.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-004",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p918 (printed908), Adhyaya XV sloka25",
+      "kind": "observable event",
+      "paraphrase": "Four planets in tenth house is separately asserted to indicate an ascetic life.",
+      "layer": "Ancient source via Sastri English, page image manually checked",
+      "limits": "Separate from emancipation claim and from broader 4+ planet combinations.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF p41, Chapter 20 sloka20",
+      "kind": "cancellation",
+      "paraphrase": "Sun being the strongest ascetic significator can lead to devotional faith without ability to fulfill the order; a defeated significator can indicate leaving after initiation.",
+      "layer": "English-only compilation",
+      "limits": "Clear failure/reversal clauses; freeze condition precedence and observable endpoints.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-006",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p923 (printed913), Adhyaya XV sloka41",
+      "kind": "negative prediction",
+      "paraphrase": "Rahu/Ketu/Gulika with asceticism-signifying planet and malefic amsa is said to predict apostasy after joining an order.",
+      "layer": "Ancient source via Sastri English, page image manually checked",
+      "limits": "Potentially stigmatizing; this is a historical claim, not basis for evaluating a person.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-007",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF p923 (printed913), Adhyaya XV sloka42",
+      "kind": "cancellation",
+      "paraphrase": "Asceticism-signifying planets obscured by Sun or defeated in planetary war can imply admiration/unsuccessful entry rather than initiation.",
+      "layer": "Ancient source via Sastri English plus separate translator commentary, page image checked",
+      "limits": "Do not conflate author's rule with Sastri note; negative cases matter.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF pp42-43, chapter 20 slokas 30-36",
+      "kind": "taxonomy",
+      "paraphrase": "Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn are assigned differing types of religious orders, practices or devotional roles.",
+      "layer": "English-only source translation",
+      "limits": "Requires historical/cultural construct mapping; labels do not directly measure internal awe or awakening.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-009",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "PDF pp918-922 Adhyaya XV slokas26-39 vs JYOT-SARAVALI-EN PDF pp41-42 chapter20 slokas6-19",
+      "kind": "transmission comparison",
+      "paraphrase": "Manually matched 28 of 37 JP conjunction clauses to parallel Saravali slokas; nine JP clauses did not match corresponding sets exactly.",
+      "layer": "Two modern English versions of classical materials",
+      "limits": "Not a statistical success rate; compares text clauses only; may be translation or source-edition variation.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    },
+    {
+      "id": "B02-010",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "PDF pp40-41 chapter20 slokas2-19",
+      "kind": "internal textual overlap",
+      "paraphrase": "47 enumerated conjunction clauses collapse to 37 distinct planet sets; nine sets repeated, one appears with differing honored/sorrowful outcomes.",
+      "layer": "English-only source",
+      "limits": "Cannot treat repeated claims as independent corroboration or select favorable output retrospectively.",
+      "status": "UNVERIFIED_TRANSLATED_SOURCE_CLAIM_NO_PROSPECTIVE_TEST"
+    }
+  ],
+  "human_predictions_ran": 0,
+  "model_promotions": 0
+}

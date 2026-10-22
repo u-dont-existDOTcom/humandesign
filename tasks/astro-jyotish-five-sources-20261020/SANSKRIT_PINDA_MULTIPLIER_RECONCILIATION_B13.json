@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B13",
+  "status": "EXTERNAL_SANSKRIT_TEXT_CRITICAL_REPAIR_CANDIDATE_ONLY",
+  "source_edition": "Brihat Parashara Hora Shastra, Chapter 69 (Piṇḍa Sādhana) verses1-4; exact historical original manuscript and age not established",
+  "witnesses": [
+    {
+      "kind": "user_supplied_secondhand_portuguese",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "CP1252 line5326, Pinda Sadhana",
+      "transmission": "Portuguese adaptation translated from an English text; prose versus parenthetical charts disagree."
+    },
+    {
+      "kind": "sanskrit_text",
+      "url": "https://www.transliteral.org/pages/z110726085844/view",
+      "locator": "Chapter69 vv1-4, plain Devanagari, page lines123–130",
+      "note": "Sanskrit typeset/typed text; no physical manuscript cited; published online 2011."
+    },
+    {
+      "kind": "sanskrit_text",
+      "url": "https://sa.wikisource.org/wiki/बृहत्पाराशरहोराशास्त्रम्/अध्यायः_६९_(पिण्डसाधनाध्यायः)",
+      "locator": "Chapter69 vv1-4",
+      "note": "Wikisource Sanskrit, encoding corruption visible; underlying recension independence not established."
+    },
+    {
+      "kind": "sanskrit_with_segmentation_and_translation",
+      "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-69/",
+      "locator": "Chapter69 verses2–4, especially 3 and 4",
+      "note": "Correct Sanskrit and multiplicative context; this site's verse4 auto/hand translation erroneously calls graha multiplier numbers 'dasha durations in years' although verse1 and headings concern Pinda, not dashas."
+    },
+    {
+      "kind": "additional_online_sanskrit",
+      "url": "https://vedicpupil.in/hi/library/books/brihat-parashara-hora-shastra/chapter-69",
+      "locator": "Chapter69 verses1–4",
+      "note": "Corroborates same Sanskrit, not an independent ancient manuscript."
+    }
+  ],
+  "sanskrit_key_parts": [
+    {
+      "verse": "69.2",
+      "fragment": "गोसिंहौ दशभिर्गुण्यौ वसुभिर्युग्मवृश्चिकौ",
+      "translation_scope": "Taurus, Leo 10; Gemini, Scorpio 8."
+    },
+    {
+      "verse": "69.3",
+      "fragment": "सप्तभिस्तुलमेषौ च मृगकन्ये च पञ्चभिः",
+      "translation_scope": "Libra, Aries 7; Capricorn, Virgo 5."
+    },
+    {
+      "verse": "69.4",
+      "fragment": "जीवारशुक्रसौम्यानां दशाष्टनगसायकाः । पञ्च शेषग्रहाणां च",
+      "translation_scope": "Jupiter 10; Mars 8; Venus 7; Mercury 5; all remaining Sun Moon Saturn 5."
+    }
+  ],
+  "derived_sign_multipliers": {
+    "Aries": 7,
+    "Taurus": 10,
+    "Gemini": 8,
+    "Cancer": 4,
+    "Leo": 10,
+    "Virgo": 5,
+    "Libra": 7,
+    "Scorpio": 8,
+    "Sagittarius": 9,
+    "Capricorn": 5,
+    "Aquarius": 11,
+    "Pisces": 12
+  },
+  "derived_planet_multipliers": {
+    "Sun": 5,
+    "Moon": 5,
+    "Mars": 8,
+    "Mercury": 5,
+    "Jupiter": 10,
+    "Venus": 7,
+    "Saturn": 5
+  },
+  "portuguese_prose_discrepancies": [
+    {
+      "field": "Capricorn and Virgo sign multiplier",
+      "literal_value": 6,
+      "sanskrit_value": 5,
+      "status": "TRANSLATION_PROSE_VALUE_CONTRADICTS_SOURCE_SANSKRIT"
+    },
+    {
+      "field": "Mars planet multiplier",
+      "literal_value": 3,
+      "sanskrit_value": 8,
+      "status": "TRANSLATION_PROSE_VALUE_CONTRADICTS_SOURCE_SANSKRIT"
+    },
+    {
+      "field": "Sun/Moon/Mercury/Saturn planet multiplier",
+      "literal_value": 6,
+      "sanskrit_value": 5,
+      "status": "TRANSLATION_PROSE_VALUE_CONTRADICTS_SOURCE_SANSKRIT"
+    }
+  ],
+  "portuguese_parenthetical_chart_discrepancies": [
+    {
+      "field": "Scorpio duplicated in Taurus position",
+      "literal_value": "Scorpio 10, Scorpio 8",
+      "sanskrit_value": "Taurus 10, Scorpio 8",
+      "status": "SIGN_LABEL_DUPLICATION"
+    },
+    {
+      "field": "Virgo sign multiplier in chart",
+      "literal_value": 6,
+      "sanskrit_value": 5,
+      "status": "CHART_NUMERIC_VALUE_INCORRECT"
+    },
+    {
+      "field": "planet multipliers in chart",
+      "literal_value": {
+        "Sun": 5,
+        "Moon": 5,
+        "Mars": 8,
+        "Mercury": 5,
+        "Jupiter": 10,
+        "Venus": 7,
+        "Saturn": 5
+      },
+      "sanskrit_value": "ALL_MATCH",
+      "status": "CHART_BETTER_REPRESENTS_SANSKRIT_THAN_PORTUGUESE_PROSE"
+    },
+    {
+      "field": "Capricorn sign multiplier in chart",
+      "literal_value": 5,
+      "sanskrit_value": 5,
+      "status": "MATCH"
+    }
+  ],
+  "computation_admission": {
+    "sanskrit_version": "PROVISIONALLY_RECONSTRUCTED_PLAIN_MULTIPLIERS",
+    "pinda_full_algorithm": "UNRESOLVED_PENDING_TRIKONA_EKADHIPATYA_REDUCTION_PRIORITIES",
+    "source_provenance": "Source digitizations may copy one Sanskrit recension; do not label manuscript-level critical edition",
+    "production_rule_changes": 0,
+    "human_outcomes_compared": 0
+  },
+  "editorial_note": "The 2012–2026 Enjoy Learning Sanskrit translation calls Chapter69 verse4 a list of daśā durations in years; that is an additional interpretation defect. Verse4 directly follows verse3 'grahamānam athocyate' and is used for Piṇḍa multiplier weights, NOT a seven-planet daśā-year table.",
+  "next": "Read verses on Trikon Shodhana and Ekadhipatya Shodhana from independent Sanskrit to resolve their condition order, then create source-versioned pure arithmetic fixtures. No change to live astrology engine or questionnaire."
+}

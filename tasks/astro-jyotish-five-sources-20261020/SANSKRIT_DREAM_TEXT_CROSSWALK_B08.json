@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B08",
+  "record_type": "TEXT_CRITICAL_SOURCE_CROSSWALK_NOT_NEW_PREDICTIVE_CLAIMS",
+  "basis": {
+    "uploaded_id": "JYOT-SARAVALI-EN",
+    "uploaded_sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+    "uploaded_chapter": 38,
+    "uploaded_pdf_pages": [
+      109,
+      110,
+      111
+    ],
+    "sanskrit_print": {
+      "title": "Saravali attributed Kalyanavarman; catalogued as Pandurang Javji 1928 / V Subramanya Shastri; modern scanned reprint includes 2012 front matter",
+      "catalog_url": "https://jainqq.org/explore/009887/1",
+      "complete_transcribed_book_url": "https://jainqq.org/booktext/Saravali/009887",
+      "sanskrit_chapter": 37,
+      "full_pdf_catalog_pages": 268,
+      "scan_pages": [
+        173,
+        174,
+        175
+      ],
+      "printed_page_numbers": [
+        157,
+        158,
+        159
+      ],
+      "scope": "Historical Sanskrit typeset printing; direct digitization OCR text checked against page previews, not comprehensive manuscripts"
+    },
+    "contemporary_sanskrit_transcription": {
+      "url": "https://vedicpupil.in/library/books/saravali/chapter-38",
+      "claim": "Later Sanskrit transcription presents dream couplets as combined verses and relabels the chapter 38",
+      "critical_metadata_problem": "Page header incorrectly describes Raja Yoga Obstructions, while verse text clearly discusses five-elements/natures; do not take auto-generated summary as authoritative."
+    },
+    "retrieval_date": "2026-10-21"
+  },
+  "numbering": [
+    {
+      "phenomenon": "five elements/planet strength classification",
+      "uploaded": "Chapter38 sloka5 / PDF109",
+      "sanskrit_print": "Chapter37 sloka11 / scan page173",
+      "sanskrit_online": "Chapter38 Verse38.5"
+    },
+    {
+      "phenomenon": "wind disposition and dream of flying in sky",
+      "uploaded": "Chapter38 slokas16-17 / PDF110",
+      "sanskrit_print": "Chapter37 slokas22-23 / scan page174",
+      "sanskrit_online": "Chapter38 Verse38.16 (combines two Sanskrit slokas)"
+    },
+    {
+      "phenomenon": "pitta disposition, gold/sun/fire/red lotuses/blood/lightning dream",
+      "uploaded": "Chapter38 slokas18-19 / PDF110",
+      "sanskrit_print": "Chapter37 slokas24-25 / scan page175",
+      "sanskrit_online": "Chapter38 Verse38.18 (combines two Sanskrit slokas)"
+    },
+    {
+      "phenomenon": "kapha disposition, waters/pearls/swan/conch/moon/frost dream",
+      "uploaded": "Chapter38 slokas20-21 / PDF110",
+      "sanskrit_print": "Chapter37 slokas26-27 / scan page175",
+      "sanskrit_online": "Chapter38 Verse38.20 (combines two Sanskrit slokas)"
+    }
+  ],
+  "translation_discrepancies": [
+    {
+      "id": "B08-D01",
+      "concept": "pitta dream imagery: grotesque human category vs botanic cluster",
+      "uploaded_english_exact": "red lotus, eunuch, blood and lightning",
+      "source_sanskrit_short": "रक्ताब्जषण्ड",
+      "source_print": "Saravali Ch37 verse25, JainQQ scan p175",
+      "modern_sanskrit_translation": "groups of red lotuses, floods of blood, and masses of lightning",
+      "interpretation": "Compound 'rakta-abja-ṣaṇḍa' denotes a grove/cluster of red lotuses in context; English 'eunuch' appears to arise from interpreting ṣaṇḍa out of compound.",
+      "status": "HIGH_CONFIDENCE_TRANSLATION_ERROR_CANDIDATE",
+      "remedy": "Preserve uploaded literal text but exclude 'eunuch dream' indicator from any proposed model until independently confirmed Sanskrit critical edition."
+    },
+    {
+      "id": "B08-D02",
+      "concept": "kapha dream imagery: coral versus pearls",
+      "uploaded_english_exact": "coral stones",
+      "source_sanskrit_short": "मुक्ताफलप्रकर",
+      "source_print": "Saravali Ch37 verse27, JainQQ scan p175",
+      "modern_sanskrit_translation": "heaps of pearls",
+      "interpretation": "Muktāphala means pearls; no coral term in this span. The supplied English edition's coral motif is materially different.",
+      "status": "HIGH_CONFIDENCE_TRANSLATION_ERROR_CANDIDATE",
+      "remedy": "Do not silently replace historic uploaded wording; if modelized use source-qualified separately frozen variants pending collation."
+    },
+    {
+      "id": "B08-D03",
+      "concept": "structural chapter and sloka sequence",
+      "uploaded_english_exact": "Chapter 38 Effects of natural constituents and primordial compounds",
+      "source_print": "Sanskrit print Chapter 37 includes Panchamahapurusha material and element/dream verses, with 22,23/24,25/26,27 numbering",
+      "modern_sanskrit_translation": "online Sanskrit webpage labels Ch38 and collapses consecutive verse pairs into one displayed item",
+      "status": "CONFIRMED_EDITORIAL_RENUMBERING_AND_REARRANGEMENT",
+      "remedy": "Use explicit per-edition verse crosswalk, not blind assumption that numbered references agree."
+    }
+  ],
+  "edition_cautions": [
+    "Online Sanskrit transcription has contradictory site-specific chapter title and combines paired slokas; not an independent manuscript.",
+    "Catalog describes a 1928 edition but digitized composite includes later 2012 front matter; source edition and later compilation should be catalogued separately.",
+    "The two web Sanskrit transcriptions agree on relevant phrases but may share ancestor; not two independent textual witnesses.",
+    "Structural difference arises from verse rearrangement, not merely shifting the chapter number."
+  ],
+  "independent_classical_motif_parallels": [
+    {
+      "source": "Preethishree M. and Pratibha Kulkarni, Swapna in Ayurveda, Journal of Ayurveda and Integrated Medical Sciences 2022 7(3):47–52",
+      "url": "https://jaims.in/index.php/jaims/article/download/1780/2018?inline=1",
+      "location": "p48, Tables3-5",
+      "findings": "Classical Ayurvedic sources summarized: vata→wandering/flying, pitta→sun/gold/bright light/fire/lightning, kapha→ponds/lotuses/swans.",
+      "evidence_type": "HISTORICAL_TEXT_REVIEW_NOT_PROSPECTIVE_EFFECT_STUDY"
+    },
+    {
+      "source": "Tendulkar SS, Dwivedi RR, Swapna in the Indian classics: Mythology or science? AYU 2010;31(2):170–174",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3215360/",
+      "location": "Introduction and conceptual review",
+      "findings": "Classical Indian/Ayurvedic literatures link dream content to dominant doshic temperament; review explicitly discusses substantial mythology and uncertainty.",
+      "evidence_type": "HISTORICAL_NARRATIVE_REVIEW_NOT_PROSPECTIVE_EVIDENCE"
+    }
+  ],
+  "inference": "Saravali's dream mapping has a close non-astrological Ayurvedic explanatory counterpart; it cannot be counted as uniquely generated by natal astrology. Shared formulas/motifs may reflect common cultural scholarship but borrowing direction/chronology is not established.",
+  "future_comparison_design": "When considered for an actual test, freeze the astrology planet-strength-to-temperament mapping and dream motifs, collect prospective dream journals, compare with an Ayurveda-only classifier and empirical population dream-motif baseline. Never score variants post hoc. Treat Ayurveda temperaments as historical constructs, not established objective biomedical phenotypes.",
+  "unchanged_existing_records": [
+    "B06-001",
+    "B06-002",
+    "B06-003",
+    "B06-004"
+  ],
+  "new_documentary_rule_records": 0,
+  "actual_predictive_evidence": 0,
+  "production_rule_changes": 0
+}

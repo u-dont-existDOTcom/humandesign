@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B11",
+  "audit_type": "ASTRONOMICAL_FEASIBILITY_GATES_ON_HISTORICAL_TEXT_NOT_PERSON_EVALUATION",
+  "source": "JYOT-SARAVALI-EN",
+  "reference_source_locators": [
+    "Uploaded English Saravali Chapter3, PDF p8",
+    "Chapter45 PDF p123–124"
+  ],
+  "physical_astronomy": {
+    "maximum_mercury_sun_elongation_deg": 28,
+    "reference": "ESA Bulletin 103, BepiColombo article, introductory Mercury maximum elongation statement",
+    "url": "https://www.esa.int/esapub/bulletin/bullet103/grard103.pdf",
+    "scope": "Mercury geocentric sky separation; sign-longitude separation cannot exceed 120 degrees when sky separation is below 28. Direct longitude proof can be reconstructed with ecliptic-plane geometry and Mercury's small orbital latitude."
+  },
+  "formal_sign_intervals": {
+    "Aries": [
+      0,
+      30
+    ],
+    "Virgo": [
+      150,
+      180
+    ],
+    "Libra": [
+      180,
+      210
+    ],
+    "Pisces": [
+      330,
+      360
+    ]
+  },
+  "infeasible_cases": [
+    {
+      "rule": "ALL_SEVEN_PLANETS_EXALTED",
+      "locator": "Saravali uploaded English PDF p123–124, Chapter45, slokas23–26; exaltation signs from Chapter3 slokas35–36 PDF p8",
+      "required_sun": "Aries",
+      "sun_longitude_range_deg": [
+        0,
+        30
+      ],
+      "required_mercury": "Virgo",
+      "mercury_longitude_range_deg": [
+        150,
+        180
+      ],
+      "min_same_zodiac_longitude_gap_deg": 120,
+      "rule_description": "When all seven classical planets are in exaltation signs, native is alleged to become emperor",
+      "status": "INFEASIBLE_FOR_REAL_GEOCENTRIC_PLANETARY_LONGITUDES"
+    },
+    {
+      "rule": "ALL_SEVEN_PLANETS_DEBILITATED",
+      "locator": "Saravali uploaded English PDF p124, Chapter45, slokas38–41; debilitation as opposite of exaltation from Chapter3 slokas35–36 PDF p8",
+      "required_sun": "Libra",
+      "sun_longitude_range_deg": [
+        180,
+        210
+      ],
+      "required_mercury": "Pisces",
+      "mercury_longitude_range_deg": [
+        330,
+        360
+      ],
+      "min_same_zodiac_longitude_gap_deg": 120,
+      "rule_description": "When all seven occupy their debilitation signs, native is alleged to have severe deprivation",
+      "status": "INFEASIBLE_FOR_REAL_GEOCENTRIC_PLANETARY_LONGITUDES"
+    }
+  ],
+  "implications": [
+    "These upper-end 'all seven' rules cannot be tested on any physical modern/historical chart with correctly computed geocentric longitudes; they are not false human predictions in the usual prospective-test sense because the premise never occurs.",
+    "An astronomy-aware rule engine should classify the antecedent as EMPTY_SUPPORT/NOT_TESTABLE rather than report 100% success because no sampled person matches.",
+    "Do not infer that all lesser-count configurations or all house-dignity rulership rules are similarly impossible; test each separately.",
+    "Under either tropical or uniformly shifted sidereal longitude convention, Mercury–Sun relative angular separation remains constrained.",
+    "Precomputed ephemeris assertions should be independently checked if a production engine tries to find an all-seven match."
+  ],
+  "analysis_date": "2026-10-21",
+  "source_only_not_predictive_accurate": true
+}

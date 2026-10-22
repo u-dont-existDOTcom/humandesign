@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "batch": "B46",
+  "source": "JYOT-JAIMINI-RATH-V1",
+  "original_uploaded_pdf_sha256": "f05759d39fa8b19200a51544130fcc1a1f51ffee321e7c8b255fb97b14f4487d",
+  "loci": [
+    {
+      "locator": "Sutra1.1.13 PDF293",
+      "term": "bhratr",
+      "english": "siblings/master",
+      "relative_longitude_rank": 3
+    },
+    {
+      "locator": "Sutra1.1.14 PDF294",
+      "term": "matr",
+      "english": "mother/shelter",
+      "relative_longitude_rank": 4
+    },
+    {
+      "locator": "Sutra1.1.15 PDF294",
+      "term": "pitr",
+      "english": "father",
+      "relative_longitude_rank": 5
+    },
+    {
+      "locator": "Sutra1.1.16 PDF294",
+      "term": "putra",
+      "english": "siblings/master [appears copied from bhratr]",
+      "relative_longitude_rank": 6
+    },
+    {
+      "locator": "Sutra1.1.19 + explanatory BPHS citation PDF295-296",
+      "term": "putrakaraka",
+      "english": "child significator; merged into matr in 7-karaka scheme"
+    }
+  ],
+  "conclusion": "Likely English editorial copy-forward error in v1.1.16, not proof putra Sanskrit means sibling",
+  "method_fork": "Seven versus eight Chara Karaka, with Rahu included/reversed in eight scheme, is unselected; Rath living/nonliving distinction is commentary",
+  "confidence": "probable typographic error, not final Sanskrit edition adjudication",
+  "no_model_change": true
+}

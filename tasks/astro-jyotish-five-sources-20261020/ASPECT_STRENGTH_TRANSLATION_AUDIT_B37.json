@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B37",
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "status": "SOURCE_CRITICAL_CORRECTION_OF_TRANSLATION_NOT_EMPIRICAL_VALIDATION",
+  "source_provenance": [
+    {
+      "id": "JYOT-SARAVALI-EN",
+      "locator": "Physical PDF11, Ch4.32–33",
+      "layer": "User uploaded English",
+      "fraction_order": "3/10 quarter, 4/8 half, 5/9 three-quarter, seventh full"
+    },
+    {
+      "id": "SARAVALI_SANSKRIT",
+      "locator": "CSU Sanskrit Ch4 verses32–33 p5 lines161–165; older Jain digitization Ch4 v32–33",
+      "layer": "Printed Sanskrit witnesses, not independent manuscript critical editions",
+      "short_original": "त्रिदशत्रिकोणचतुरस्रसप्तमानां फलं क्रमेणैव",
+      "fraction_order": "3/10 quarter, 5/9 half, 4/8 three-quarter, seventh full"
+    },
+    {
+      "id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya II slokas30–31, physical PDF463, printed p66",
+      "layer": "Sanskrit alongside Sastri English",
+      "fraction_order": "3/10 quarter, 5/9 half, 4/8 three-quarter, seventh full"
+    },
+    {
+      "id": "JYOT-BPHS-KERR-PT",
+      "locator": "CP1252 line2311; separate Drigbala longitudes 2319–2343",
+      "layer": "Portuguese second-hand translation",
+      "fraction_order": "3/10 quarter, 5/9 half, 4/8 three-quarter, seventh full"
+    }
+  ],
+  "house_aspect_comparison": [
+    {
+      "relative_house": 1,
+      "english_fraction": "0",
+      "sanskrit_restored_fraction": "0"
+    },
+    {
+      "relative_house": 2,
+      "english_fraction": "0",
+      "sanskrit_restored_fraction": "0"
+    },
+    {
+      "relative_house": 3,
+      "english_fraction": ".25",
+      "sanskrit_restored_fraction": ".25"
+    },
+    {
+      "relative_house": 4,
+      "english_fraction": ".50",
+      "sanskrit_restored_fraction": ".75"
+    },
+    {
+      "relative_house": 5,
+      "english_fraction": ".75",
+      "sanskrit_restored_fraction": ".50"
+    },
+    {
+      "relative_house": 6,
+      "english_fraction": "0",
+      "sanskrit_restored_fraction": "0"
+    },
+    {
+      "relative_house": 7,
+      "english_fraction": "1",
+      "sanskrit_restored_fraction": "1"
+    },
+    {
+      "relative_house": 8,
+      "english_fraction": ".50",
+      "sanskrit_restored_fraction": ".75"
+    },
+    {
+      "relative_house": 9,
+      "english_fraction": ".75",
+      "sanskrit_restored_fraction": ".50"
+    },
+    {
+      "relative_house": 10,
+      "english_fraction": ".25",
+      "sanskrit_restored_fraction": ".25"
+    },
+    {
+      "relative_house": 11,
+      "english_fraction": "0",
+      "sanskrit_restored_fraction": "0"
+    },
+    {
+      "relative_house": 12,
+      "english_fraction": "0",
+      "sanskrit_restored_fraction": "0"
+    }
+  ],
+  "materially_changed_houses": [
+    4,
+    5,
+    8,
+    9
+  ],
+  "downstream_repair": {
+    "prior": "B36 arithmetic used implicit uploaded English fractions",
+    "current": "Revised code requires explicit english_uploaded or sanskrit_restored, no implicit default; six revised tests passed",
+    "unchanged": "Sun-Mercury source-specific sign aspect impossible in both because minimum eligible house is third, corresponding to ≥30°"
+  },
+  "textual_relation": "Agreement across translations is textual transmission, not independently observed human prediction accuracy; original Sanskrit witnesses may share printed ancestor.",
+  "scope_limits": [
+    "Degree-based Drigbala from Portuguese BPHS is not the same as sign-fraction catalogue.",
+    "Rath/Jaimini Rasi Drsti is a different aspect method.",
+    "No participant birth chart evaluated."
+  ],
+  "source_rules_added_to_registry": 3,
+  "human_tests": 0,
+  "production_changes": 0
+}

@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "B21",
+  "artifact_type": "SOURCE_DERIVED_EXPERIMENT_FEASIBILITY_NOT_A_MODEL_OR_PREREGISTRATION",
+  "status": "OPEN_CANDIDATES_NOT_READY_FOR_PROSPECTIVE_RUN",
+  "cases": [
+    {
+      "id": "B21-T01",
+      "claim": "Mathematics, grammar and logical-specialty attainment",
+      "source_locations": [
+        "JYOT-JP-SASTRI XI.81-85 PDF750-751",
+        "JYOT-BPHS-KERR-PT line2767"
+      ],
+      "target_class": "observable_educational_vocation",
+      "operational_target": "dated qualifications/occupations or standardized competency, scored as explicitly separate professions",
+      "necessary_inputs": [
+        "Independent natal chart, birthplace/time quality",
+        "freeze whether exactly mathematician vs grammarian vs philosopher, not 'smart'",
+        "matched chart and matched demography/education decoys"
+      ],
+      "readiness_status": "MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Source D9/varga and house strength conditions unclear; cultural education access confounds.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T02",
+      "claim": "Prosperity onset at 16/20/30",
+      "source_locations": [
+        "JYOT-SC-BHASIN Chapter II vv114-116 PDF75"
+      ],
+      "target_class": "age_specific_financial_milestone",
+      "operational_target": "predeclared income/asset thresholds or years of economic stability, not general optimism",
+      "necessary_inputs": [
+        "birth time and cohort socioeconomic baseline",
+        "declare age versus after-age onset windows",
+        "freeze source formula conditional branches and measure misses"
+      ],
+      "readiness_status": "MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Historical prose lacks quantitative definition of comfort; modern onset thresholds are imposed operationalizations.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T03",
+      "claim": "Literal dream motifs conditional on planetary temperament",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch38.16-21 PDF110",
+        "Sanskrit_DREAM_TEXT_CROSSWALK_B08"
+      ],
+      "target_class": "self_reported_dream_content",
+      "operational_target": "coded prospective 30-night dream journal; flight/fire/light/water motifs with denominator of remembered dreams",
+      "necessary_inputs": [
+        "freeze source-restored pearls and red lotuses vs corrupt English alternatives",
+        "independent astrology-to-temperament classifier",
+        "traditional Ayurveda nonchart comparator",
+        "empirical dream-base-rate and diary-recall controls"
+      ],
+      "readiness_status": "LOW_TO_MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Shared Ayurvedic taxonomy means motif association alone is not astrology evidence; free-form language can bias coding.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T04",
+      "claim": "Formally entering, leaving or switching a spiritual order",
+      "source_locations": [
+        "JYOT-BPHS-KERR-PT lines5513-5529",
+        "JYOT-JP-SASTRI XV.40-42 PDF922-924",
+        "JYOT-SARAVALI-EN XX.20-29 PDF41-42"
+      ],
+      "target_class": "dated_organizational_transition",
+      "operational_target": "joining or leaving named institution with time and membership evidence",
+      "necessary_inputs": [
+        "freeze four-planet yoga definition, strength/combustion and aspects",
+        "exact Dasha/bhukti system and windows",
+        "all negative forecasts about failed initiation",
+        "include noninitiated matched people"
+      ],
+      "readiness_status": "LOW",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Very rare context-dependent outcome, many source variants and severe textual dependence.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T05",
+      "claim": "Independent house/property acquisition",
+      "source_locations": [
+        "JYOT-SC-BHASIN Ch IV 54-56 PDF115",
+        "JYOT-JP-SASTRI XI.55-56 PDF741"
+      ],
+      "target_class": "dated_documented_asset",
+      "operational_target": "purchase/inheritance/donation and date; mother-versus-brother source coded separately",
+      "necessary_inputs": [
+        "family estate and purchasing power baseline",
+        "full legal ownership record, real wealth opportunity",
+        "distinguish general 'assets' from specific family source"
+      ],
+      "readiness_status": "MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Cultural and economic access dominate; sources may share earlier Horā lore.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T06",
+      "claim": "Specific siblings/offspring count",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch34.21-41 PDF91-92",
+        "JYOT-SC-BHASIN Ch IV PDF106-108"
+      ],
+      "target_class": "documented_family_composition",
+      "operational_target": "number of older/younger siblings, births versus survivors; child counts if voluntarily independently supplied",
+      "necessary_inputs": [
+        "separate self vs family-member targets",
+        "family planning and birth cohort baselines",
+        "explicit unknown state for unreported or private family facts"
+      ],
+      "readiness_status": "MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Strong privacy and sensitive health issues. No medical/fertility recommendations.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T07",
+      "claim": "Month/year Sudarshana forecast cross-checked with Ashtakavarga",
+      "source_locations": [
+        "JYOT-BPHS-KERR-PT Section74 lines5406-5432",
+        "ASHTAKAVARGA_B10_SOURCE_RECONCILIATION.json"
+      ],
+      "target_class": "prospective_repeated_time_series",
+      "operational_target": "dated externally observable outcome domains chosen before each monthly interval",
+      "necessary_inputs": [
+        "freeze three-reference fallback when references coincide",
+        "12-year major/12-month subperiod calculations and calendar boundaries",
+        "critical source-correct Ashtakavarga entries",
+        "frozen tie/conflict reconciliation and temporal placebo"
+      ],
+      "readiness_status": "LOW_UNTIL_CALCULATION_RESOLVED",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Very flexible good/bad ratings; circular corroboration from two astrology features not independent data.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T08",
+      "claim": "Nabhasa seven-body configurations",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch21 PDF43-45"
+      ],
+      "target_class": "static_broad_life_characteristics",
+      "operational_target": "predeclared discrete occupational or residential outcomes, not a bundle of adjective hits",
+      "necessary_inputs": [
+        "32-vs-1800 scope declaration",
+        "Asraya exclusion when other yoga present",
+        "candidate feature coverage and impossible-state checks",
+        "life-course baselines"
+      ],
+      "readiness_status": "LOW",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Extremely broad and historically socially framed outcomes; source catalog incomplete.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T09",
+      "claim": "Panchamahapurusha appearance measurements",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch37 PDF108",
+        "JYOT-BPHS-KERR-PT lines5437-5449"
+      ],
+      "target_class": "measurable_anthropometric_features",
+      "operational_target": "independently assessed non-sensitive body proportions with culturally normalized units",
+      "necessary_inputs": [
+        "decode traditional angula and other measurement units",
+        "independent rater and sign/house definition",
+        "sex/ancestry/age/baseline cohort control"
+      ],
+      "readiness_status": "LOW",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Several historical medical/sexual/rulership statements ethically unsuitable; source books depend on shared ancient typologies.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T10",
+      "claim": "Horary query-to-concealed birth parameter reconstruction",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch48-52 PDF129-141",
+        "JYOT-BPHS-KERR-PT lines5492-5506"
+      ],
+      "target_class": "reverse_birth_data_prediction",
+      "operational_target": "separate year/season/nakshatra/ascendant/time accuracy from certified answer key",
+      "necessary_inputs": [
+        "fixed query time and place",
+        "predeclare supplied age/name/posture/physical observations",
+        "all alternative formulas and ±9 corrections tracked",
+        "control baseline using supplied age, language and place"
+      ],
+      "readiness_status": "POTENTIAL_DIAGNOSTIC_BUT_NOT_FORWARD_NATAL",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "External participant observations and time of question make this fundamentally different from chart→human forward tests.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-T11",
+      "claim": "Meditation/japa frequency",
+      "source_locations": [
+        "JYOT-SC-BHASIN VII.40-41 PDF201",
+        "JYOT-SARAVALI-EN XX.22-37 PDF42-43"
+      ],
+      "target_class": "observable_self_reported_practice",
+      "operational_target": "hours per week/retreat attendance and documented initiation, not claims of liberation",
+      "necessary_inputs": [
+        "independent D9/house computation",
+        "separate prior religious training and culture",
+        "control trauma/volitional reporting uncertainties without converting misses into support"
+      ],
+      "readiness_status": "MODERATE",
+      "exclude_from_ordinary_forward_scoring": false,
+      "reason": "Claims often mixed with unreliably operationalizable samadhi or metaphysical enlightenment.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-X01",
+      "claim": "Actual liberation/moksha or postmortem realm",
+      "source_locations": [
+        "JYOT-SC-BHASIN VII.42 VIII.5",
+        "JYOT-JP-SASTRI V-A.15",
+        "JYOT-BPHS-KERR-PT line2801"
+      ],
+      "target_class": "metaphysical_nonobserved_claim",
+      "operational_target": "UNSCORABLE_AS_FACT_FROM_LIVING_PARTICIPANT",
+      "necessary_inputs": [
+        "may record attributed philosophical belief or reported experience only"
+      ],
+      "readiness_status": "INELIGIBLE_FOR_FACTUAL_VALIDATION",
+      "exclude_from_ordinary_forward_scoring": true,
+      "reason": "Self-report of liberation cannot establish its metaphysical truth; do not turn a historical cosmology into a fake measurable endpoint.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-X02",
+      "claim": "Birth-event weather/meteor omen override",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch39.11 PDF111",
+        "JYOT-SARAVALI-EN Ch12.8-9 PDF28"
+      ],
+      "target_class": "extra_input_not_natal_geometry",
+      "operational_target": "NOT_RECONSTRUCTIBLE_FROM_STANDARD_NATAL_CHART",
+      "necessary_inputs": [
+        "requires independent period-specific meteorology, meteor sightings or sky visibility"
+      ],
+      "readiness_status": "NOT_CHART_ONLY",
+      "exclude_from_ordinary_forward_scoring": true,
+      "reason": "Cannot claim fully implemented natal astrology from birth date and planetary positions alone.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    },
+    {
+      "id": "B21-X03",
+      "claim": "Personal medical mortality, harm or family sexual accusations",
+      "source_locations": [
+        "JYOT-SARAVALI-EN Ch47 PDF126-127",
+        "JYOT-SC-BHASIN Ch III/VI birth-family allegations"
+      ],
+      "target_class": "high_stakes_or_sensitively_inferred",
+      "operational_target": "DO_NOT_USE_FOR_PERSONAL_ADVICE_OR_UNCONSENTED_PROFILING",
+      "necessary_inputs": [
+        "preserve text criticism only; a controlled research ethics approval would be a separate project"
+      ],
+      "readiness_status": "NOT_CLINICAL",
+      "exclude_from_ordinary_forward_scoring": true,
+      "reason": "Historical moralized medical/high-stakes claims have no validated treatment/safety status and can be harmful when applied to named people.",
+      "source_evidence_only": true,
+      "empirical_accuracy": null
+    }
+  ],
+  "counts": {
+    "total": 14,
+    "ordinary_candidate_families": 11,
+    "special_or_excluded": 3,
+    "actual_validated_human_predictions": 0
+  },
+  "controls": {
+    "fundamental_rule": "No tuning on known respondent data; only a new frozen source+algorithm+questionnaire+baseline+matched-decoy bundle can be used for untouched human testing.",
+    "multiple_testing": "Report all source-supported outcomes, every attempted rule and dependent-correlation groups; no best-story selection.",
+    "source_versioning": "Original verse / translation / commentary / variant distinguished. B18 reduction calculators remain competing pure arithmetic choices.",
+    "high_stakes": "No clinical, legal, financial or relationship safety advice based on astrology."
+  },
+  "scope_limit": "Diagnostic classification, not a commitment to add all optional questionnaire questions. The current live survey was not examined or changed."
+}

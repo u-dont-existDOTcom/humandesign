@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B03",
+  "source_claims": 37,
+  "records": [
+    {
+      "id": "JYOT-B03-001",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 vv6; printed192 / PDF195",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "religious_disposition",
+      "claim": "Benefic/navamsa/strong ninth-lord configurations are associated with deeply established religion and morality.",
+      "target_type": "formal_algorithm",
+      "caveat": "The precise Vaisheshika and D60 strength rules require varga implementation; no claim about actual truth of beliefs.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-002",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v7; printed192-193 / PDF195-196",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "religious_institution_leadership",
+      "claim": "A strong ninth lord alongside favorable Jupiter/Venus navamsa indications is claimed to forecast leadership of a religious institution.",
+      "target_type": "observable_career_event",
+      "caveat": "Define formal institutional leadership independently from private spiritual practice.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-003",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v8; printed193 / PDF196",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "religious_disposition",
+      "claim": "Ninth lord in navamsa of Jupiter, Venus or Mercury, with favorable aspects and benefic enclosure, is linked to being religious.",
+      "target_type": "personal_belief_or_affiliation",
+      "caveat": "Rashi D9 and enclosure semantics still need frozen computation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-004",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v9; printed193 / PDF196",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "moralized_religious_hypocrisy",
+      "claim": "A benefic ninth-house occupant in a malefic navamsa and malefic D60 is linked in the translation to hypocritical religion.",
+      "target_type": "historically_moralized_claim",
+      "caveat": "Do not score moral allegations about a person as fact without defensible behavioral operationalization; important inverse case.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-005",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v10; printed193 / PDF196",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "religious_sincerity",
+      "claim": "Several favorable ninth-house/navamsa/karaka factors together are said to imply sincere religious or moral devotion.",
+      "target_type": "personal_belief_and_practice",
+      "caveat": "Sincerity vs performance cannot be inferred from public religiosity alone.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-006",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v11; printed193 / PDF196",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "moralized_conduct",
+      "claim": "Malefic ninth-house and ninth-lord factors are linked to 'sinful' behavior in the translation.",
+      "target_type": "historically_moralized_claim",
+      "caveat": "Do not elevate ancient moral labels to clinical or factual profiling.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-007",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v40; printed198 / PDF201; Sanskrit and English rendered",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "japa_meditation_samadhi",
+      "claim": "Tenth lord in ninth plus strong ninth lord favorably connected is associated with japa, meditation and samadhi.",
+      "target_type": "practice_plus_experiential",
+      "caveat": "Distinguish observable japa from self-reported meditative absorption. Sanskrit line visually checked; not critical edition.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-008",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v41; printed198 / PDF201; Sanskrit and English rendered",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "japa_meditation_samadhi",
+      "claim": "Strong dispositor of the tenth lord's navamsa and mutual ninth/tenth-lord relationship likewise indicate japa, meditation or samadhi.",
+      "target_type": "practice_plus_experiential",
+      "caveat": "Alternative configuration, not independent person/outcome; D9 boundary essential.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-009",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 v42; printed198 / PDF201; Sanskrit and English rendered",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "realization_supreme",
+      "claim": "Ninth/tenth lord in Devloka or Paravata division with favorable aspect is associated with realization of the Supreme.",
+      "target_type": "metaphysical",
+      "caveat": "Do not score metaphysical realization as independently verified; whether specific divisional terminology has multiple meanings unresolved.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-010",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 vv43-46; printed198-199 / PDF201-202",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "charitable_conduct",
+      "claim": "Multiple alternative ninth-house configuration rules predict charitable practices and major acts of giving.",
+      "target_type": "observable_prosocial_behavior",
+      "caveat": "Must declare base rates, opportunity/resources, absolute vs relative giving.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-011",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 vv47-49; printed199 / PDF202",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "charity_moderated_by_resources",
+      "claim": "Translation explicitly says charity yogas depend on wealth/power yogas and may otherwise yield priest/supervisor roles rather than major benefaction.",
+      "target_type": "conditional_resources",
+      "caveat": "Necessary opportunity/wealth interaction, not unconditional prediction that favorable chart implies donated wealth.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-012",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch7 vv55-56; printed200 / PDF203",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "guru_devotion",
+      "claim": "Ninth-lord navamsa dispositor linked favorably to Jupiter/Venus or a favorable ninth-house complex is associated with devotion to one's guru.",
+      "target_type": "teacher_relationship",
+      "caveat": "Teacher allegiance differs from abstract faith, meditation or insight.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-013",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch8 v1; printed201 / PDF204",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "tenth_house_domain_scope",
+      "claim": "Tenth house covers actions, power, honor, profession, public works, foreign living, and related matters.",
+      "target_type": "domain_mapping",
+      "caveat": "Important non-personality scope; not a directional prediction on its own.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-014",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch8 vv2-3; printed201 / PDF204",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "public_service",
+      "claim": "Strong tenth lord with Jupiter/Mercury and favorable aspects is associated with helping public causes; weak/unfavorable house positions are an explicit absence case.",
+      "target_type": "observable_public_service",
+      "caveat": "Combine positive and negative clauses; measure projects independently.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-015",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch8 v5; printed201 / PDF204; Sanskrit and English rendered",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "moksha_or_liberation",
+      "claim": "Mars in a Pisces tenth house with benefics is claimed to yield moksha/liberation; the verse separately treats sacred Ganges bathing under Jupiter/Moon configurations.",
+      "target_type": "metaphysical_and_ritual",
+      "caveat": "Do not equate spiritual attainment with evidence from chart or autobiographical claim. Printed verse image examined.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-016",
+      "source_id": "JYOT-SC-BHASIN",
+      "locator": "Ch8 vv8-12; printed202 / PDF205",
+      "source_layer": "CLASSICAL_TRANSLATION",
+      "domain": "public_works_religious_service",
+      "claim": "Specific tenth-house combinations are associated with public restorations of wells, tanks, temples and other service works.",
+      "target_type": "observable_public_project",
+      "caveat": "Potential rare-event predictor; period and geographic/cultural opportunity need declaration.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-017",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Section Yogas de Vocação Espiritual, text line 5513",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "four_plus_strong_planets_one_house",
+      "claim": "Four or more strong planets in a single house are said to produce different classes of ascetics based on which planet is strongest.",
+      "target_type": "observable_vocation_class",
+      "caveat": "No explicit Kendra/Trikona house restriction in this supplied paragraph; contrast JP XV.15. English intermediary unverified.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-018",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text lines 5515 and 5519",
+      "source_layer": "MODERN_EDITORIAL_NOTE",
+      "domain": "explicit_brihat_jataka_dependency",
+      "claim": "Translator's notes expressly attribute closely similar four-planet and war/aspect variants to Varahamihira's Brihat Jataka.",
+      "target_type": "source_transmission",
+      "caveat": "Do not count notes as independent Parashara statements or success evidence.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-019",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text line 5517",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "combustion_prevents_initiation",
+      "claim": "Combustion of capable ascetic planets is said to leave devotion/respect without entry to an order.",
+      "target_type": "negative_outcome",
+      "caveat": "Need distinguish intention vs actual entry and timeline; traditional celestial combustion definitions required.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-020",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text line 5521",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "sun_survivor_competition",
+      "claim": "Other planets losing strength through combustion can shift indicated ascetic type to Sun (Tapaswi).",
+      "target_type": "competition_exception",
+      "caveat": "Appears potentially in tension with line5517; requires freezing precedence before executable implementation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-021",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text line 5523",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "moon_lord_saturn_ascetic",
+      "claim": "Moon-sign-lord and Saturn aspects plus Moon in Saturn decanate/navamsa are associated with entrance into a Saturn-type religious order.",
+      "target_type": "specific_yoga_and_category",
+      "caveat": "First clause's aspect direction ambiguous in Portuguese; do not silently choose. Compare Saravali XX.22-23 and JP XV.40-41.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-022",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text lines 5525, 5527 and 5529",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "initiation_exit_reentry_timing",
+      "claim": "Planetary war defeat is said to cause departure; where multiple strong planets indicate orders, the order of daśā periods determines successive changes in religious affiliation.",
+      "target_type": "longitudinal_event_sequence",
+      "caveat": "Need exact dasha scheme, ingress definition, entry/exit ground truth and source-text collation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-023",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Same section, text lines 5529-5531",
+      "source_layer": "PORTUGUESE_SECOND_HAND_TRANSLATION",
+      "domain": "philosophical_founder_and_leadership_order",
+      "claim": "Rājayoga with ninth Jupiter and Saturn's aspects is associated with philosophical school founding; ninth Saturn alone gives religious life before worldly leadership.",
+      "target_type": "rare_historical_event",
+      "caveat": "Similar JP XV.23 passage explicitly credited there to Brihat Jataka; textual dependence.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-024",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Chapter XX sloka20; PDF41",
+      "source_layer": "ENGLISH_ONLY_CLASSICAL_RENDERING",
+      "domain": "religious_intent_vs_departure",
+      "claim": "Strongest Sun indicates faith without competence; overridden/defeated planet points toward leaving an order after initiation; several strong planets imply several possible orders.",
+      "target_type": "negative_and_transition",
+      "caveat": "Culturally loaded wording; 'competence' not a medical ability.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-025",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Chapter XX sloka21; PDF42",
+      "source_layer": "ENGLISH_ONLY_CLASSICAL_RENDERING",
+      "domain": "combustion_or_aspect_cancels_entry",
+      "claim": "Combustion or aspect of asceticism significator by another planet is said to yield frustrated intent rather than achieved initiation.",
+      "target_type": "negative_outcome",
+      "caveat": "Check apparent conflict with slokas22-29 where a Saturn aspect helps confer initiation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-026",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Chapter XX slokas22-23; PDF42",
+      "source_layer": "ENGLISH_ONLY_CLASSICAL_RENDERING",
+      "domain": "saturn_moon_induction_and_rule_precedence",
+      "claim": "Saturn aspects to Moon in a Saturn decanate or Aries/Scorpio navamsa and a sole Saturn aspect to Moon-sign lord are linked to initiation; text says earlier yogas prevail over latter context.",
+      "target_type": "rule_precedence",
+      "caveat": "Requires Sanskrit collation to settle how XX.21 cancels and XX.22-23 confers.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-027",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Chapter XX slokas24-29; PDF42",
+      "source_layer": "ENGLISH_ONLY_CLASSICAL_RENDERING",
+      "domain": "ascetic_path_moderators",
+      "claim": "Alternative factors predict loss of fortune prior to religious entry, distressed ascetic life, religious leadership then withdrawal, or food scarcity.",
+      "target_type": "longitudinal_events",
+      "caveat": "Do not flatten all events into generic religious tendency.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-028",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XV sloka15; printed903 / PDF913",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "four_or_five_planets_angle_or_trine",
+      "claim": "Four or five strong planets occupying a kendra or trikona are said to yield forms of renunciation based on strongest planet.",
+      "target_type": "observable_vocation",
+      "caveat": "Requires angular/trine placement; differs from BPHS Portuguese line5513's generic single-house requirement.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-029",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XV sloka17; printed904-905 / PDF914-915",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "three_planets_tenth_and_lord_strength",
+      "claim": "Three strong planets tenth house with strong tenth lord also give asceticism; weakness or certain house lords may reverse/qualify moral conduct claims.",
+      "target_type": "specific_yoga_with_qualifiers",
+      "caveat": "Do not merge with unrelated four-planet rule. Translation split at scanned page boundary.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-030",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XV sloka19; printed905-906 / PDF915-916",
+      "source_layer": "CLASSICAL_SANSKRIT_AND_TRANSLATION",
+      "domain": "bhukti_activated_spiritual_events",
+      "claim": "The paragraph explicitly says effects of each yoga occur in bhukti of the karaka of the generating house.",
+      "target_type": "event_timing_method",
+      "caveat": "Daśā/bhukti model-specific convention remains unresolved; distinguishes from BPHS line5529 broader daśā sequence.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-031",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XV sloka23; printed907 / PDF917 and printed footnote",
+      "source_layer": "PRINTED_TEXT_PLUS_EDITORIAL_NOTE",
+      "domain": "brihat_jataka_named_source",
+      "claim": "The translator note explicitly says the founder-of-philosophy and monastic-before-leadership sloka comes from Brihat Jataka.",
+      "target_type": "provenance",
+      "caveat": "Matches BPHS Portuguese lines5529-5531; do not count as an independent person validation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-032",
+      "source_id": "JYOT-JP-SASTRI",
+      "locator": "Adhyaya XV sloka42 (scan misreads number); printed913-914 / PDF923-924",
+      "source_layer": "CLASSICAL_TEXT_PLUS_SEPARATE_TRANSLATOR_NOTE",
+      "domain": "initiation_cancellation",
+      "claim": "Strong planets obscured by Sun or defeated in planetary war with aspects are said to fail entry; Sastri adds distinct interpretive rationale.",
+      "target_type": "negative_outcome_and_source_layer",
+      "caveat": "Keep original translated verse separate from Sastri note and the Portuguese editor's parallel note.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-033",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Sutra 1.1.10 + commentary, PDF288-290",
+      "source_layer": "SANSKRIT_SUTRA_WITH_RATH_COMMENTARY",
+      "domain": "seven_vs_eight_charakaraka",
+      "claim": "Sutra permits 7/8 significator schemes; Rath's commentary argues seven apply to inanimate creation and eight including Rahu to living beings.",
+      "target_type": "competing_model_variants",
+      "caveat": "The living-vs-inanimate prescription is not established as explicit literal sutra content; must freeze source-school version.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-034",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Charakaraka lesson, PDF p287",
+      "source_layer": "MODERN_RATH_EXPOSITION",
+      "domain": "spiritual_deity_ninth_from_karakamsa",
+      "claim": "Rath associates ninth from the Karakamsha with protection of the soul, dharma and the personal deity.",
+      "target_type": "modern_spiritual_mapping",
+      "caveat": "This is exposition introducing his framework, not a direct sutra formula validated against humans.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-035",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF p307, Rath's Theory 1 and footnote114",
+      "source_layer": "EXPLICIT_RATH_THEORY",
+      "domain": "self_labeled_new_proposition",
+      "claim": "Rath labels a natal interpretive rule as 'Rath's Theory 1' and states it emerged from his examination of charts.",
+      "target_type": "explicit_modern_inference",
+      "caveat": "Keep in modern-derived lane; source provides no independent out-of-sample predictive evaluation.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-036",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF pp304-307, each planet as Atmakaraka",
+      "source_layer": "MODERN_RATH_EXPOSITION",
+      "domain": "planet_specific_spiritual_lessons",
+      "claim": "Rath provides planet-linked spiritual paths and personal behavioral advice, including Rahu as heightened spirituality and possible monk when supporting factors hold.",
+      "target_type": "modern_school_phenomenology",
+      "caveat": "Do not attribute self-improvement prescriptions to a literal Jaimini sutra or generalize to observed chart success.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    },
+    {
+      "id": "JYOT-B03-037",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF p317, commentary to BPHS 44.15",
+      "source_layer": "MODERN_RATH_EXPOSITION",
+      "domain": "quantified_confidence_without_validation",
+      "claim": "Rath describes one interpretation as having '100% surety' while illustrating it with known charts and without a held-out benchmark in this section.",
+      "target_type": "methodology_critical",
+      "caveat": "Do not store 100% as measured success rate; it is an author's confidence statement, not a systematic test.",
+      "status": "DOCUMENTARY_ONLY_NOT_MODEL_RULE"
+    }
+  ],
+  "source_ids": [
+    "JYOT-SC-BHASIN",
+    "JYOT-BPHS-KERR-PT",
+    "JYOT-SARAVALI-EN",
+    "JYOT-JP-SASTRI",
+    "JYOT-JAIMINI-RATH-V1"
+  ],
+  "verification": {
+    "files_seen": 5,
+    "rendered_page_images": [
+      "Sarvarth Chintamani PDF195,196,201,204,205",
+      "Sanjay Rath PDF288,289,307"
+    ],
+    "other_extraction": "Jataka PDF 913-924, Saravali PDF40-43, BPHS cp1252 plaintext lines5509-5531",
+    "textual_source_only": true,
+    "ancient_sanskrit_critical_comparison_complete": false,
+    "blind_predictions_run": 0,
+    "production_rules_promoted": 0
+  },
+  "methodological_flags": [
+    "Do not conflate ascetic status, devotional faith, practices, samadhi, moksha and spiritual institution leadership.",
+    "Some semantically overlapping passages explicitly derive from Brihat Jataka and Saravali; these are dependencies, not independent forecasts.",
+    "Rath's Theory and Sastri/Bhasin/Portuguese editor notes are separate from claimed ancient verse.",
+    "Do not choose among conflicting translations or conflict-resolution rules after observing life histories.",
+    "Culturally loaded moral and metaphysical assertions require different measurement limits from observable behaviors."
+  ],
+  "next": "Build a traceable cross-text rule-family graph, audit computational branch ambiguities, and continue reviewing other house domains without altering survey or model."
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B44",
+  "work": "Sarvārtha Cintāmaṇi",
+  "comparison_date_utc": "2026-10-21",
+  "source_1": {
+    "label": "VedicPupil live English chapter map",
+    "url": "https://vedicpupil.in/library/books/sarvartha-chintamani",
+    "claimed_chapters": 17,
+    "claimed_verses": 1979,
+    "verse_counts_by_chapter": [
+      138,
+      117,
+      155,
+      187,
+      133,
+      113,
+      118,
+      96,
+      101,
+      96,
+      22,
+      84,
+      108,
+      96,
+      136,
+      265,
+      14
+    ],
+    "source_status": "Online edited presentation; translation independently cautions it can be wrong"
+  },
+  "source_2": {
+    "label": "Karma Sakha self-described 2015 Guruprasād Gauḍ/Chaukhambā source",
+    "url": "https://karmasakha.com/texts/sarvartha-chintamani",
+    "claimed_chapters": 18,
+    "claimed_verses": 1988,
+    "verse_counts_by_chapter": [
+      138,
+      117,
+      155,
+      187,
+      133,
+      113,
+      120,
+      96,
+      101,
+      95,
+      22,
+      84,
+      108,
+      96,
+      136,
+      265,
+      14,
+      8
+    ],
+    "source_status": "Editorial provenance/colophon claims read via search-indexed page; machine OCR and publisher plates not directly checked this batch; site explicitly warns it is an etext not critically read page by page"
+  },
+  "source_3": {
+    "label": "J. N. Bhasin English edition publisher contents",
+    "url": "https://www.motilalbanarsidass.com/en-us/products/the-sarvarth-chintamani-of-vyankatesh-sharma",
+    "claimed_chapters": 17,
+    "claimed_verses": null,
+    "source_status": "Table of contents 17 chapters; number of Sanskrit verses not independently counted"
+  },
+  "live_difference": {
+    "chapter_count": 1,
+    "verse_count": 9,
+    "chapter_differences": [
+      {
+        "chapter": 7,
+        "vedicpupil": 118,
+        "karmasakha_gauḍ_2015": 120,
+        "delta_2015_minus_vedicpupil": 2
+      },
+      {
+        "chapter": 10,
+        "vedicpupil": 96,
+        "karmasakha_gauḍ_2015": 95,
+        "delta_2015_minus_vedicpupil": -1
+      },
+      {
+        "chapter": 18,
+        "vedicpupil": null,
+        "karmasakha_gauḍ_2015": 8,
+        "delta_2015_minus_vedicpupil": 8
+      }
+    ]
+  },
+  "historical_uncertainty": [
+    "Karma Sakha describes Row 1899 and 1906 printings as only 16 chapters; these are edition-level differences, not yet independently validated.",
+    "Search engine also retains an older VedicPupil page with 1,891 verses/17 chapters; live page says 1,979, so older snippets are not a current verse census.",
+    "No verse-index concordance may be inferred solely from shared chapter number.",
+    "A 17-chapter outline of the Bhasin book does not mean all extant Sanskrit editions have exactly those chapters."
+  ],
+  "prerequisites_for_alignment": [
+    "Record edition + chapter title + verse headword and Sanskrit incipit + physical printed page whenever comparing source verses",
+    "Do not assume Karma 6.58 matches Bhasin 6.58 without actual witness",
+    "Avoid calling either online site a critical edition"
+  ],
+  "computed_checks": {
+    "vedicpupil_sum_matches_claim": true,
+    "karmasakha_sum_matches_claim": true,
+    "delta_accounts_for_discrepancy": true
+  }
+}

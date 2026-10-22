@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B45",
+  "date_utc": "2026-10-22",
+  "research_lane": "five uploaded Jyotish books; source-only not participant data",
+  "evidence_access": {
+    "source_pdf_text": "READ_SUCCESS_FROM_USER_LIBRARY",
+    "raw_file_copy": "UNAVAILABLE_FROM_LIBRARY",
+    "image_visual_check": "NOT_SUCCEEDED",
+    "encoding_caveat": "PDF Sanskrit glyph OCR is poor; rely on English source text and keep original-language parse open",
+    "source": {
+      "id": "JYOT-SC-BHASIN",
+      "edition": "J. N. Bhasin English translation scanned 374-page user Library PDF",
+      "hash": "b47358c872f3a22c0c60cab140e97efdcaeffe4450420c8b8827a00242915456",
+      "verification": "file-library text extraction read at source PDF pages; page images did not return as pixels, so Sanskrit glyph recognition is NOT independently verified"
+    }
+  },
+  "antecedent_b44": [
+    "NODE_CONJUNCTION_SOURCE_CONFLICT_B44.json",
+    "MARRIAGE_SOURCE_WITNESSES_B44.json",
+    "READING_NOTES_B44.md"
+  ],
+  "collations": [
+    {
+      "id": "B45-001",
+      "source_locator": "Sarvārtha Cintāmaṇi Ch6 v58, physical PDF p172/374",
+      "bhasin_gloss": "Rahu or Ketu in the seventh, with malefic aspect and cruel navamsa; historical hostile allegations about wife's conduct",
+      "alternative_online_gloss": "Rahu and Ketu in seventh; literal impossible co-occupation",
+      "alternative_source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-58",
+      "historical_sanskrit_incipt": "sarāhuketo madane...",
+      "editorial_conclusion": "Printed Bhasin explicitly reads OR, while the online explanation says AND. The antipodal node geometry refutes only the literal same-seventh AND interpretation, not the classical condition as translated by Bhasin. Morphology/edition variation not proven.",
+      "human_ethics": "Never issue allegations of infidelity/poisoning/violence against any spouse on an astrological rule; document only as source history.",
+      "status": "TRANSLATION_CONFLICT_UNRESOLVED_SANSKRIT"
+    },
+    {
+      "id": "B45-002",
+      "source_locator": "Ch6 vv65–66, physical PDF p173/374",
+      "bhasin_gloss": "Rise in fortune/prospects happens a long time after marriage under stated malefic configurations",
+      "alternative_source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-65",
+      "online_supporting_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-66",
+      "textual_marker": "dūre vivāhāt",
+      "editorial_conclusion": "Two translations favor DELAY IN POSTMARRIAGE PROSPERITY, not DELAY TO FIRST MARRIAGE; do not operationalize as marriage-age predictor.",
+      "status": "ENGLISH_EDITION_RECONCILIATION_PROVISIONAL"
+    },
+    {
+      "id": "B45-003",
+      "source_locator": "Ch6 v67, physical PDF p174/374",
+      "bhasin_gloss": "Extend method to early/late acquisition of sons; Bhasin adds explanatory observation that malefic influences delay.",
+      "online_verse_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-67",
+      "editorial_conclusion": "The English print explicitly names children acquisition timing; verify Sanskrit before attributing the malefic-delay gloss to original author instead of translator.",
+      "status": "CHILD_TIMING_GLOSS_LAYER_UNRESOLVED"
+    },
+    {
+      "id": "B45-004",
+      "source_locator": "Ch6 vv59–61, physical PDF pp172–173/374",
+      "bhasin_gloss": "Bālye marriage described as early boyhood/childhood, with additional ascendant/seventh/second and strong division conditions",
+      "editorial_conclusion": "The wording indicates childhood, not a generic early 20s marriage; do not update a contemporary behavioral questionnaire to normalize child marriage.",
+      "status": "CONFIRMED_ENGLISH_SOURCE_CONTEXT"
+    },
+    {
+      "id": "B45-005",
+      "source_locator": "Ch6 vv62–64, physical PDF p173/374",
+      "bhasin_gloss": "Postmarital improvement (v62), financial deterioration (v63), later recovery after loss (v64) under differing configurations",
+      "editorial_conclusion": "Three conditional states, not three independent corroborations for one financial trajectory; cannot count a loss-and-recovery as a single net 'prosperity' prediction.",
+      "status": "CONFIRMED_ENGLISH_SOURCE_CONTEXT"
+    }
+  ],
+  "supersessions": [
+    {
+      "origin": "NODE_CONJUNCTION_SOURCE_CONFLICT_B44.json",
+      "scope": "The assertion that the historical Bhasin passage itself requires both nodes in the 7th",
+      "disposition": "SUPERSEDED_AS_SOURCE_ATTRIBUTION",
+      "preserved": "The 12/12 nodal antipodal geometry test remains correct given the literal joint-conjunction premise, but Bhasin writes OR; must keep alternative parse open.",
+      "human_evidence": false
+    },
+    {
+      "origin": "READING_NOTES_B44.md 6.65–66",
+      "scope": "Referent 'late fortune or late marriage' unresolved at the English-translation level",
+      "disposition": "PARTIALLY_RESOLVED",
+      "preserved": "Both print Bhasin and online English read late improvement AFTER marriage. Independent Sanskrit grammatical adjudication and precise operational timing remain open."
+    },
+    {
+      "origin": "READING_NOTES_B44.md 6.67",
+      "scope": "Parenthood timing treated as only a generic method transfer",
+      "disposition": "REFINED",
+      "preserved": "Bhasin explicitly claims early/late attainment of sons; separate translator's malefic-delay explanation from literal Sanskrit."
+    }
+  ],
+  "no_new_counted_annotations": true,
+  "cumulative_source_annotations": 432,
+  "independently_validated_human_predictions": 0,
+  "production_promotions": 0
+}

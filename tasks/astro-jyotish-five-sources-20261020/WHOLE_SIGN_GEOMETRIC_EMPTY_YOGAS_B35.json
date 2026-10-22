@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B35",
+  "status": "MATHEMATICAL_ANTECEDENT_FEASIBILITY_NOT_EMPIRICAL_ASTROLOGY",
+  "astronomical_reference": {
+    "mercury_max_solar_elongation_deg": 28,
+    "venus_max_solar_elongation_deg": 48,
+    "source": "University of Nebraska–Lincoln NAAP Solar System Models",
+    "url": "https://astro.unl.edu/naap/ssm/elongation.html",
+    "assumption": "Geocentric tropical/sidereal ecliptic longitude difference of Mercury or Venus from Sun cannot exceed conservative angular elongation bounds. No astrology outcomes used."
+  },
+  "method": {
+    "zodiac_bins": "12 equal 30 degree signs; houses counted inclusively from Lagna in whole-sign interpretation",
+    "min_separation_formula": "max(0, (minimum circular separation in sign indices - 1)*30 degrees)",
+    "whole_sign_only": true,
+    "not_applicable_to": "Unequal quadrant houses/other historical bhava interpretations until independently evaluated; do not assert universal astronomical impossibility under every house scheme."
+  },
+  "source_cases": [
+    {
+      "id": "B35-D01",
+      "user_translation": "Saravali English35.154 physical PDF104, Moon/Sun/Mars in 7th; Venus/Jupiter/Mercury in 2nd",
+      "original_source": "Sanskrit35.155, older Jain printed and CSU, named Sun clear",
+      "pair": [
+        "Sun",
+        "Mercury"
+      ],
+      "relative_house_signs": [
+        7,
+        2
+      ],
+      "zero_based_sign_difference": 5,
+      "min_separation_deg": 120,
+      "max_allowed_deg": 28,
+      "classification": "WHOLE_SIGN_EMPTY_SUPPORT",
+      "logic": "Both planets always within ~28 deg of each other from Earth. Separated by at least 120 deg if in seventh and second whole signs."
+    },
+    {
+      "id": "B35-D02",
+      "user_translation": "Saravali English35.185 physical PDF106, Venus/Jupiter in ascendant and Sun in fourth; Mercury/Mars in second",
+      "original_source": "Sanskrit35.186, Jain printing and CSU, Mercury/Mars main wording vakragau (retrograde); footnoted alternate artha-gau (second-house)",
+      "pair": [
+        "Sun",
+        "Venus"
+      ],
+      "relative_house_signs": [
+        4,
+        1
+      ],
+      "zero_based_sign_difference": 3,
+      "min_separation_deg": 60,
+      "max_allowed_deg": 48,
+      "classification": "WHOLE_SIGN_EMPTY_SUPPORT_IN_BOTH_SANSKRIT_VARIANTS",
+      "logic": "Venus within ~48 deg of Sun, but whole-sign first versus fourth requires at least 60 deg; location variant for Mercury does not remove Sun/Venus conflict."
+    },
+    {
+      "id": "B35-D03",
+      "user_translation": "Saravali English35.185 Mercury and Mars in second",
+      "original_source": "Sanskrit35.186 second-house footnote variant only; main vakragau may mean both retrograde",
+      "pair": [
+        "Sun",
+        "Mercury"
+      ],
+      "relative_house_signs": [
+        4,
+        2
+      ],
+      "zero_based_sign_difference": 2,
+      "min_separation_deg": 30,
+      "max_allowed_deg": 28,
+      "classification": "ADDITIONAL_WHOLE_SIGN_EMPTY_CONDITION_IN_TRANSLATED_SECOND_HOUSE_VERSION",
+      "logic": "Even if Venus were disregarded, Sun fourth/Mercury second requires ≥30 degrees, exceeding Mercury geocentric limit."
+    },
+    {
+      "id": "B35-D04",
+      "user_translation": "Sarvali Ch45 or Sarvartha Ch9 seven exalted",
+      "original_source": "Sun exalted Aries, Mercury exalted Virgo",
+      "pair": [
+        "Sun",
+        "Mercury"
+      ],
+      "relative_signs": [
+        1,
+        6
+      ],
+      "min_separation_deg": 120,
+      "max_allowed_deg": 28,
+      "classification": "PREVIOUSLY_DOCUMENTED_EMPTY_ANTECEDENT_REPRODUCED"
+    }
+  ],
+  "six_planets_exalted": {
+    "planet_exaltation_sign_index_0_11": {
+      "Sun": 0,
+      "Moon": 1,
+      "Mars": 9,
+      "Mercury": 5,
+      "Jupiter": 3,
+      "Venus": 11,
+      "Saturn": 6
+    },
+    "one_missing_body_cases": [
+      {
+        "omitted": "Sun",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Mercury",
+              "Venus"
+            ],
+            "min_zodiac_gap_deg": 150,
+            "conservative_max_separation_deg": 76
+          }
+        ]
+      },
+      {
+        "omitted": "Moon",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Sun",
+              "Mercury"
+            ],
+            "min_zodiac_gap_deg": 120,
+            "conservative_max_separation_deg": 28
+          },
+          {
+            "pair": [
+              "Mercury",
+              "Venus"
+            ],
+            "min_zodiac_gap_deg": 150,
+            "conservative_max_separation_deg": 76
+          }
+        ]
+      },
+      {
+        "omitted": "Mars",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Sun",
+              "Mercury"
+            ],
+            "min_zodiac_gap_deg": 120,
+            "conservative_max_separation_deg": 28
+          },
+          {
+            "pair": [
+              "Mercury",
+              "Venus"
+            ],
+            "min_zodiac_gap_deg": 150,
+            "conservative_max_separation_deg": 76
+          }
+        ]
+      },
+      {
+        "omitted": "Mercury",
+        "excluded_by_simple_elongation": false,
+        "exclusions": []
+      },
+      {
+        "omitted": "Jupiter",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Sun",
+              "Mercury"
+            ],
+            "min_zodiac_gap_deg": 120,
+            "conservative_max_separation_deg": 28
+          },
+          {
+            "pair": [
+              "Mercury",
+              "Venus"
+            ],
+            "min_zodiac_gap_deg": 150,
+            "conservative_max_separation_deg": 76
+          }
+        ]
+      },
+      {
+        "omitted": "Venus",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Sun",
+              "Mercury"
+            ],
+            "min_zodiac_gap_deg": 120,
+            "conservative_max_separation_deg": 28
+          }
+        ]
+      },
+      {
+        "omitted": "Saturn",
+        "excluded_by_simple_elongation": true,
+        "exclusions": [
+          {
+            "pair": [
+              "Sun",
+              "Mercury"
+            ],
+            "min_zodiac_gap_deg": 120,
+            "conservative_max_separation_deg": 28
+          },
+          {
+            "pair": [
+              "Mercury",
+              "Venus"
+            ],
+            "min_zodiac_gap_deg": 150,
+            "conservative_max_separation_deg": 76
+          }
+        ]
+      }
+    ],
+    "only_not_excluded_by_these_simple_bounds": [
+      "Mercury"
+    ],
+    "warning": "NOT_EXCLUDED does not imply physically realizable. Further orbital coincidence and historical calculations needed; do not count as predictive support."
+  },
+  "related_source_texts": [
+    {
+      "source_id": "JYOT-SARAVALI-EN",
+      "locators": [
+        "PDF104 verse154",
+        "PDF106 verse185"
+      ]
+    },
+    {
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "verses": [
+        "155",
+        "186"
+      ]
+    },
+    {
+      "url": "https://jainqq.org/booktext/Saravali/009887",
+      "verses": [
+        "155",
+        "186"
+      ]
+    },
+    {
+      "url": "https://jainqq.org/explore/002342/393/",
+      "context": "Parallel verse in another electional text places Sun at Lagna, Moon seventh, Mercury/Jupiter/Venus second; textual similarity does not establish direct borrowing or authorship, and different target is king's departure instead of birth."
+    }
+  ],
+  "model_gate": {
+    "whole_sign_branch": "FAIL_CLOSED_EMPTY_PREDICATE",
+    "other_bhava_branches": "UNKNOWN_NOT_TESTED",
+    "complete_historical_source_truth": "UNVERIFIED",
+    "code_fixture": "whole_sign_geometry_B35.py",
+    "tests": "test_whole_sign_geometry_B35.py"
+  },
+  "new_human_predictions": 0,
+  "source_model_promotions": 0
+}

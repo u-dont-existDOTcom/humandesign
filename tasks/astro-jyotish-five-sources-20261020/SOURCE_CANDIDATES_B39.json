@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B39",
+  "date": "2026-10-21",
+  "status": "SOURCE_ONLY_SPECIAL_ASPECTS_NOT_CANONICAL_RUNTIME",
+  "record_count": 3,
+  "records": [
+    {
+      "id": "B39-001",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Portuguese BPHS CP1252 lines2323–2327; external Sanskrit Chapter26 verse10",
+      "domain": "saturn_special_sphuta_drishti_degree_intervals",
+      "source_paraphrase": "Saturn's special aspect strength depends on degrees passed/remain in the first and ninth sign intervals and distinct adjustments in the second and eighth intervals. The rule supplies source-specific reinforced strengths near the 3rd/10th aspects.",
+      "source_layer": "Secondhand Portuguese translated verse, original Sanskrit electronically transcribed in BPHS 26.10",
+      "critical_limits": [
+        "Sanskrit sign-interval indexing and boundary convention must be declared.",
+        "The strength in virūpas is an input to astrology's own formalism, not empirical evidence of harm or benefit.",
+        "No claims for people without a fully frozen method."
+      ],
+      "original_sanskrit_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-10"
+    },
+    {
+      "id": "B39-002",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Portuguese BPHS CP1252 lines2331–2335; external Sanskrit Chapter26 verse11",
+      "domain": "mars_special_sphuta_aspect_fourth_eighth_angle",
+      "source_paraphrase": "Mars gets strengthened aspects in three- and seven-sign difference cases, a distinct calculation in the two-sign case, and a full aspect in the six-sign case. The source-derived degree function is not the ordinary B38 interpolation.",
+      "source_layer": "Portuguese translation and electronically transcribed Sanskrit BPHS 26.11",
+      "critical_limits": [
+        "The degree-within-sign meaning is distinct from ordinal houses and from the sign-based graha fractions in Saravali.",
+        "A modern software reference's Mars 90°–120° formula disagrees with the literal source reconstruction; do not silently use it.",
+        "No ancient-case evidence of actual predictive success."
+      ],
+      "original_sanskrit_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-11"
+    },
+    {
+      "id": "B39-003",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "Portuguese BPHS CP1252 lines2339–2343; external Sanskrit Chapter26 verse12",
+      "domain": "jupiter_special_sphuta_aspect_degree_and_boundary",
+      "source_paraphrase": "Jupiter uses half the within-sign degree plus forty-five in the third/seventh sign segments and sixty minus double degree in fourth/eighth, then returns to the ordinary rule elsewhere.",
+      "source_layer": "Secondhand Portuguese translated Sanskrit and electronically transcribed BPHS26.12",
+      "critical_limits": [
+        "Under one explicit half-open sign-segment interpolation, around exact 270° the value changes from near-zero on the left to about fifteen on the right when the ordinary rule resumes. This mathematically discontinuous interpretation is tracked, not smoothed.",
+        "Other recensions or different boundary rules may resolve it; no manuscript stemma or live engine selection yet.",
+        "No person outcomes tested."
+      ],
+      "original_sanskrit_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-12"
+    }
+  ],
+  "source_audit": "SPECIAL_GRAHA_DRISHTI_B39.json",
+  "math_module": "bphs_special_aspect_B39.py",
+  "local_tests": "test_bphs_special_aspect_B39.py",
+  "observed_human_predictions": 0,
+  "production_rules_promoted": 0
+}

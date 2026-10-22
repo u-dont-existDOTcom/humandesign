@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_scope": "B51_B52",
+  "date_utc": "2026-10-22",
+  "study_type": "DOCUMENTARY_SOURCE_CRITICISM_WITH_TEXT_FIXTURE_UNIT_TESTS",
+  "source_library": "Five originally uploaded works; BJ10 solely external earlier comparative witness",
+  "witness_limits": {
+    "original_bhasin_indexed_english_pages": [
+      204,
+      205,
+      206,
+      207,
+      208,
+      212,
+      213
+    ],
+    "original_jataka_indexed_english_pages": [
+      924,
+      925,
+      926,
+      927,
+      928,
+      929,
+      930
+    ],
+    "original_sanskrit_printed_plates_checked": false,
+    "online_text_independent_manuscripts_verified": 0,
+    "private_people_consulted": 0
+  },
+  "records": [
+    {
+      "id": "B51-01",
+      "locus": "Sarvartha Chintamani Ch8 tenth house vv2-3",
+      "english_antecedent_planets": [
+        "TENTH_LORD",
+        "Jupiter",
+        "Mercury"
+      ],
+      "sanskrit_e_text_negative_planets": [
+        "Mercury",
+        "Jupiter",
+        "Venus"
+      ],
+      "sanskrit_fragment": "दुःस्थाः शशांकात्मजजीवशुक्राः पापेक्षिताः",
+      "material_discrepancy": "Verse2 trio referred to by English 'these three' in v3 is not v3's explicitly named Sanskrit negative trio",
+      "unfrozen": "duḥsthā exact bad-house restriction; independent printed Sanskrit",
+      "score_allowed": false
+    },
+    {
+      "id": "B51-02",
+      "locus": "Sarvartha Chintamani Ch8 tenth house v16",
+      "english_condition": "Sun tenth AND Sun conjunct Mars AND tenth lord angular",
+      "online_sanskrit": "आज्ञास्थानगते सूर्ये भूमिपुत्रेण वा युते",
+      "possible_sanskrit_condition": "(Sun tenth OR Sun joined Mars) AND tenth lord angular",
+      "unfrozen": "source syntax/attachment of वा and edition",
+      "score_allowed": false
+    },
+    {
+      "id": "B51-03",
+      "locus": "Sarvartha Chintamani Ch8 tenth house v24",
+      "english_outcome": "NEGATIVE_FAME",
+      "sanskrit_e_text_outcome": "POSITIVE_FAME",
+      "sanskrit_tail": "सत्कीर्तिसहितो भवेत्",
+      "context": "Positive tail reused in immediately preceding v20-23, next v25 uses अपकीर्ति. Dittography conceivable but NOT VERIFIED.",
+      "score_allowed": false
+    },
+    {
+      "id": "B51-04",
+      "locus": "Sarvartha Chintamani Ch8 eleventh vv2,9,10",
+      "shared_antecedent": "Malefic in eleventh",
+      "v2_outcome": "WEALTH_GAIN",
+      "v10_outcome": "WEALTH_LOSS",
+      "v9_role": "strength of direction and gain magnitude, NO explicit precedence between v2/10",
+      "canonical_precedence": null,
+      "score_allowed": false
+    },
+    {
+      "id": "B52-01",
+      "earlier": "Varahamihira Brihat Jataka X.1",
+      "later": "V S Sastri uploaded Jataka Parijata XV.43",
+      "shared_incipit": "अर्थाप्तिः",
+      "shared_navamsha_compound": "भेन्द्वर्कास्पदपतिगांशनाथवृत्त्या",
+      "locus_JP_pdf": 924,
+      "comparison": "Near-verbatim source-of-wealth 10th-house and navamsha vocational formula with genuine father/mother, enemy, servant Sanskrit word variants",
+      "direction_of_copying_proven": false,
+      "dependency_group": "CLASSICAL_JYOTISH_BJ10_JP15_WORK_INCOME_FORMULA",
+      "independent_prediction_confirmation": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B52-02",
+      "earlier": "Brihat Jataka X.2-3",
+      "later": "Jataka Parijata XV.44-50 PDF927-930",
+      "issue": "Sun–Saturn sevenfold vocation category correspondence; JP contains additional specifics and editor Notes that may not be inherited verse",
+      "source_dependency_scope": "CORE_SEVEN_CLASS_TEMPLATE_ONLY_NOT_ALL_ADDITIONS",
+      "modern_occupation_calibration": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B52-03",
+      "older_commentary": "N. Chidambaram Aiyar BJ X.1 Notes",
+      "later_commentary": "V S Sastri JP XV.43 Notes citing Bhattoṭpala/Gargi PDF925-926",
+      "issue": "Multiple simultaneous income indicators vs selecting strongest; commentary not equivalent to source verse",
+      "global_arbitration_frozen": false,
+      "score_allowed": false
+    }
+  ],
+  "links": [
+    "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8",
+    "https://vedicpupil.in/library/books/jataka-parijata/chapter-15",
+    "https://www.wisdomlib.org/hinduism/book/brihat-jataka-by-varahamihira-sanskrit-english/d/doc1501718.html",
+    "https://www.siva.sh/brihat-jataka/10",
+    "https://chestofbooks.com/new-age/astrology/Brihat-Jataka/Chapter-X-On-Avocation.html"
+  ],
+  "reproducibility": {
+    "expanded_local_source_variant_tests_passed": 17,
+    "expanded_local_text_lineage_tests_passed": 12,
+    "combined_repository_regression_tests_passed": 12,
+    "combined_script": "B51_B52_SOURCE_INTEGRITY_TESTS.py",
+    "test_semantics": "Symbolic source-logic/text-fixture integrity only; no independent human sample."
+  },
+  "counts": {
+    "cumulative_unique_documentary_annotations": 432,
+    "new_primary_unique_annotations": 0,
+    "independent_human_predictive_successes": 0,
+    "production_rules_promoted": 0
+  },
+  "next": "Independent printed Sanskrit witnesses, constrained semantic variants, crossbook source lineage, explicit misses and no-score abstentions"
+}

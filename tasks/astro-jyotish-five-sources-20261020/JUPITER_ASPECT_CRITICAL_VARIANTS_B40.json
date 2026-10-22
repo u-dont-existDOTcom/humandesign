@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B40",
+  "artifact_class": "MODERN_COMMENTATOR_VERSUS_SANSKRIT_ORIGINAL_BOUNDARY_VARIANT",
+  "status": "RESEARCH_ONLY_UNSELECTED",
+  "historical_source": {
+    "source_id": "JYOT-BPHS-KERR-PT",
+    "locator": "User Portuguese BPHS CP1252 line2343; Sanskrit BPHS Chapter26 verse12",
+    "sanskrit_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-12",
+    "meaning": "In Jupiter's eighth full-sign offset (240–270° oriented difference), source language gives 60 minus twice local degrees. At 270° the ordinary Ch26.6–9 formula resumes, yielding 15."
+  },
+  "modern_commentary": {
+    "author": "Ernst Wilhelm",
+    "work": "Graha Sutras",
+    "publisher": "Kala Occult Publishers",
+    "publisher_book_page": "https://vedic-astrology.net/Books/Graha-Sutras.asp",
+    "excerpt": "https://pdfcoffee.com/graha-drishtipdf-pdf-free.html",
+    "location": "Graha Drishti chapter, printed page329",
+    "layer": "Modern commentator's conjectural Sanskrit emendation; not a discovered different ancient manuscript",
+    "argument": "Literal Jupiter 240–270 formula reaches zero at 270° before ordinary continuation at 15; Wilhelm argues this is abnormal and proposes a continuous taper from 60 to 15 across the sector.",
+    "replacement": "15 + 1.5*(270 - oriented_angle_deg), for 240<=angle<270"
+  },
+  "secondary_digital_table": {
+    "url": "https://saravali.github.io/astrology/drishti_sputa.html",
+    "last_page_modification": "2017-11-06 (as stated on page)",
+    "warnings": [
+      {
+        "id": "B40-S01",
+        "interval": "150–180",
+        "literal_web_formula": "2*(150-a)",
+        "at_a160": -20,
+        "declared_web_range": "0–60 virupas",
+        "status": "MECHANICAL_NEGATIVE_VALUE_INCONSISTENT_WITH_SAME_PAGE_BOUND"
+      },
+      {
+        "id": "B40-S02",
+        "interval": "Jupiter240–270",
+        "literal_web_formula": "15 + 2*(270-a)/3",
+        "at_a240": 35,
+        "same_webpage_declared_jupiter_full_9th_at_240": 60,
+        "status": "SECONDARY_WEB_ARITHMETIC_CONTRADICTION"
+      }
+    ],
+    "disposition": "Do not implement defective secondary table automatically, nor treat it as original Sanskrit or an observed prediction result."
+  },
+  "competing_formulas": [
+    {
+      "id": "sanskrit_literal",
+      "sector": "240<=d<270",
+      "jupiter_virupa": "60-2*(d-240)",
+      "end_behavior": {
+        "left_limit_at270": 0,
+        "at270": 15,
+        "jump": 15
+      },
+      "source_class": "Sanskrit-transmitted formula plus separately documented ordinary fallback",
+      "status": "HISTORICAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "wilhelm_editorial_repair",
+      "sector": "240<=d<270",
+      "jupiter_virupa": "15+1.5*(270-d)",
+      "end_behavior": {
+        "left_limit_at270": 15,
+        "at270": 15,
+        "jump": 0
+      },
+      "source_class": "Modern commentary conjecture, uncollated Sanskrit manuscript variant",
+      "status": "ALTERNATE_SCHOOL_REPAIR"
+    }
+  ],
+  "small_examples": [
+    {
+      "angle": 240,
+      "literal": 60,
+      "modern": 60
+    },
+    {
+      "angle": 245,
+      "literal": 50,
+      "modern": 52.5
+    },
+    {
+      "angle": 255,
+      "literal": 30,
+      "modern": 37.5
+    },
+    {
+      "angle": 260,
+      "literal": 20,
+      "modern": 30
+    },
+    {
+      "angle": 269,
+      "literal": 2,
+      "modern": 16.5
+    },
+    {
+      "angle": 270,
+      "literal": 15,
+      "modern": 15
+    }
+  ],
+  "artifacts": {
+    "existing_historical": "bphs_special_aspect_B39.py",
+    "new_variant": "jupiter_eighth_variant_B40.py",
+    "new_tests": "test_jupiter_eighth_variant_B40.py",
+    "test_result": "Five unit tests passed locally; source literal exactly preserved, modern repair only changes [240,270), both yield 0–60, version selection required."
+  },
+  "evaluation": {
+    "new_primary_five_book_source_records": 0,
+    "no_human_outcomes_used": true,
+    "prediction_successes": 0,
+    "production_model_changes": 0
+  },
+  "limitations": [
+    "A discontinuous piecewise formula does not prove its historical author's wording is corrupt: original boundary semantics/editions may differ.",
+    "Wilhelm's repair is analytically motivated but not demonstrated as a literal Sanskrit variant or superior prediction.",
+    "Two Sanskrit webpages may share transcription lineage; publisher commentary is not a critical edition.",
+    "No interpretation chosen on basis of respondent life events."
+  ],
+  "next": "Review the other Sanskrit passages (Saturn/Mars) for exact boundary effects, and source specificity in separate astrological schools. No automatic substitution into HumanDesign engine."
+}

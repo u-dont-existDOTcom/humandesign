@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B43",
+  "status": "PROPOSED_SOURCE_TARGET_CONTROLS_NOT_PRODUCTION",
+  "evidence": "BPHS Sanskrit chapter 11.11, 24.62, 24.70, 24.126, 24.145-148 and 53.61-62; B41/B42 cross-book study",
+  "rules": [
+    {
+      "source_ref": "B42-001",
+      "new_witness": "B43-W02",
+      "meaning_class": "residence_away_from_home_unresolved_border",
+      "required_natal_condition": "sixth_house_lord_in_second",
+      "excluded_unstated": [
+        "citizenship",
+        "permanent_emigration",
+        "international_border_crossed",
+        "automatic_timing"
+      ]
+    },
+    {
+      "source_ref": "B42-002",
+      "new_witness": "B43-W03",
+      "meaning_class": "happiness_in_foreign_place_not_settlement",
+      "required_natal_condition": "sixth_house_lord_in_tenth",
+      "excluded_unstated": [
+        "residence_duration",
+        "permanent_emigration",
+        "citizenship",
+        "inevitable_travel"
+      ]
+    },
+    {
+      "source_ref": "B42-003",
+      "new_witness": "B43-W04",
+      "meaning_class": "residence_away_from_home_with_adverse_context",
+      "required_natal_condition": "eleventh_house_lord_in_sixth",
+      "excluded_unstated": [
+        "prosperity_abroad",
+        "citizenship",
+        "permanent_emigration"
+      ]
+    },
+    {
+      "source_ref": "B43-W10",
+      "meaning_class": "distress_during_foreign_residence",
+      "period_condition": "Venus subperiod of Moon; Venus in 6th/8th/12th relative to period lord or malefic association (exact logic requires edition reconciliation)",
+      "excluded_unstated": [
+        "formal_deportation",
+        "compulsory_exile",
+        "international_border_crossed_on_precise_date"
+      ]
+    },
+    {
+      "source_ref": "B43-W09",
+      "meaning_class": "property_land_gain_during_positive_subperiod",
+      "period_condition": "Venus subperiod of Moon; favorable Venus placement from period lord",
+      "excluded_unstated": [
+        "same_as_migration",
+        "automatic_wealth_abroad"
+      ]
+    }
+  ],
+  "overarching_constraints": {
+    "source_ch24_strength_qualifier": "24.145 must be evaluated before any strong natal claim; method for converting symbolic strength to a specified output is not frozen",
+    "source_ch24_dual_lordship": "24.146-147 require checking both planetary sign rulerships and resolution of opposing effects",
+    "source_ch24_strength_fractions": "24.147-148 full/half/quarter are effect magnitudes in the text, not numerical probabilities or clinical effect sizes",
+    "negative_result_policy": "Preserve no-event and opposite outcome responses; do not erase contradiction by interpreting any temporary trip as emigration",
+    "event_dedup": "One observed move/period must remain one correlated outcome observation even when many overlapping traditional clauses match it",
+    "method_status": "Neither the zodiac/lordship convention nor Sanskrit source version nor prediction model selected or empirically validated"
+  },
+  "explicit_modern_overreach": {
+    "claim": "Three BPHS natal placements imply eventual foreign citizenship, soon if not yet occurred",
+    "modern_url": "https://astrologyekdk.com/blog/to-go-or-not-to-go-livelihood-in-foreign-countries",
+    "judgment": "commentator extension not entailed by chapter 24 Sanskrit",
+    "basis": [
+      "Paradeśī and pravāsī do not specify legal nationality.",
+      "Videśe ca sukhī concerns favorable experience in a foreign place.",
+      "The verses do not state passport or naturalization, inevitability or soon.",
+      "The chapter requires strength/dual-lordship qualifications."
+    ]
+  }
+}

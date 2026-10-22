@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B28",
+  "source_id": "JYOT-SARAVALI-EN",
+  "source_sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+  "date": "2026-10-21",
+  "status": "DOCUMENTARY_SOURCE_ONLY_NOT_VERIFIED_ORIGINAL_SANSKRIT",
+  "record_count": 12,
+  "records": [
+    {
+      "id": "B28-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch1.2–5, PDF5",
+      "domain": "historical_source_dependency_brihat_jataka_yavana",
+      "source_paraphrase": "Kalyāṇavarman says he is extending Varāhamihira's compressed Bṛhat Jātaka work on signs, periods, longevity and rulership while selecting teachings ascribed to Yavanas.",
+      "source_layer": "AUTHOR_SELF_DECLARATION_VIA_UNIDENTIFIED_ENGLISH_TRANSLATION",
+      "limitation": "Astrology book's acknowledgment of transmission, not an independent forecast or proof of original author chronology.",
+      "source_only": true
+    },
+    {
+      "id": "B28-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch2.1–5, PDF5",
+      "domain": "multiple_uses_of_hora",
+      "source_paraphrase": "The introductory chapter derives Horā from Ahorātra and separately reports senses of Hora as Lagna, half a sign and the wider science of chart analysis, linked to karma/fate.",
+      "source_layer": "TRANSLATED_PHILOSOPHICAL_EXPOSITION",
+      "limitation": "Etymological and doctrinal statements are not a unique testable astronomical formula.",
+      "source_only": true
+    },
+    {
+      "id": "B28-003",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch10.1–3, PDF22",
+      "domain": "three_origins_of_birth_misfortune",
+      "source_paraphrase": "The natal-adversity chapter explicitly divides causes into preordained, accidental and planetary-combination-derived categories, treating only one class in detail.",
+      "source_layer": "HISTORICAL_AUTHOR_CLASSIFICATION",
+      "limitation": "Not every claimed effect is computable from natal position; severe infant-health claims not clinical evidence.",
+      "source_only": true
+    },
+    {
+      "id": "B28-004",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch10.14–15, PDF22",
+      "domain": "conflicting_ages_10_or_16_from_rahu",
+      "source_paraphrase": "For one Rahu/angular condition the translation reports a proposed ten-year limit, but attributes an alternative sixteen-year result to another authority.",
+      "source_layer": "TRANSLATED_VERSE_EXPLICIT_VARIANT",
+      "limitation": "Two age thresholds cannot both be treated as a correctly predicted exact death date; ethically non-actionable mortality claim.",
+      "source_only": true
+    },
+    {
+      "id": "B28-005",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch10.77–82, PDF25",
+      "domain": "time_of_illness_chart_different_input",
+      "source_paraphrase": "Some allegedly fatal time intervals are inferred from the planetary configuration at the *onset of illness*, a separate time-of-event horoscope rather than the natal chart.",
+      "source_layer": "TRANSLATED_VERSE_HISTORICAL_MEDICAL_CLAIM",
+      "limitation": "No use for prognosis or emergency/medical treatment; requires independently timed event chart and has no verified clinical accuracy.",
+      "source_only": true
+    },
+    {
+      "id": "B28-006",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch10.103–104, PDF26",
+      "domain": "source_statement_no_use_further_calc_plus_marana_pada_note",
+      "source_paraphrase": "After severe childhood combinations the source says further calculations may be unnecessary, while a modern English Notes paragraph offers alternate meanings of Marana Pada in 10.104.",
+      "source_layer": "TRANSLATED_VERSE_PLUS_MODERN_EDITOR_NOTE",
+      "limitation": "Marana Pada as eighth house versus projected eighth-house Arudha is a real computation fork. Notes are not original Kalyāṇavarman verse.",
+      "source_only": true
+    },
+    {
+      "id": "B28-007",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch10.108–110, PDF26",
+      "domain": "sky_omens_meteor_gale_as_override",
+      "source_paraphrase": "An early adversity passage includes meteor sighting and wind/gale with a specified muhūrta as additional birth-omen indicators.",
+      "source_layer": "TRANSLATED_HISTORICAL_ASTROLOGY_CLAIM",
+      "limitation": "Cannot infer actual meteorological phenomena from planetary birth ephemeris alone; no medical risk claims justified.",
+      "source_only": true
+    },
+    {
+      "id": "B28-008",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch11.1–6, PDF26–27",
+      "domain": "bright_moon_venus_counteracts_adverse_yogas",
+      "source_paraphrase": "Following Chapter10's adverse configurations, the next chapter describes a bright/full Moon and Venus/benefic aspects and varga strengths as supposedly cancelling harms.",
+      "source_layer": "TRANSLATED_SARAVALI_CANCELLATION_FORMULA",
+      "limitation": "Must preserve negative premise and cancellation together; retroactive symptom or outcome-based cancellations prohibited.",
+      "source_only": true
+    },
+    {
+      "id": "B28-009",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch11.7–17, PDF27",
+      "domain": "moon_counterrules_and_medical_metaphors",
+      "source_paraphrase": "The chapter lists multiple alternative Moon-natal position/divisional-strength counterrules and compares their effects with historical Ayurveda remedies as similes.",
+      "source_layer": "TRANSLATED_SARAVALI_CANCELLATION_FORMULA",
+      "limitation": "Text's medical comparisons are rhetorical similes; do not treat examples like saline water or herbs as validated healthcare guidance.",
+      "source_only": true
+    },
+    {
+      "id": "B28-010",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch14.1, PDF30",
+      "domain": "solar_vasi_vesi_ubhayachari_definitions",
+      "source_paraphrase": "Vāsī, Veśī and Ubhayacārī are defined by occupied twelfth, second or *both* signs from Sun, expressly excluding Moon (and, in the English explanation, nodes).",
+      "source_layer": "TRANSLATED_SARAVALI_RULE_DEFINITION",
+      "limitation": "Do not count lunar phase as a qualifying planet; no modern outer planets without new version.",
+      "source_only": true
+    },
+    {
+      "id": "B28-011",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch14.2–9, PDF30–31",
+      "domain": "solar_yoga_planet_specific_results",
+      "source_paraphrase": "A planet-specific differentiation assigns different claims to Jupiter/Venus/Mercury/Mars/Saturn producing Vāsī and Veśī rather than a single unconditional outcome.",
+      "source_layer": "TRANSLATED_SARAVALI_RULE_VARIANTS",
+      "limitation": "Effects bundled with social/moral adjectives and conditional on which planet is present; multiple statements not independent hits.",
+      "source_only": true
+    },
+    {
+      "id": "B28-012",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Ch14.10–11, PDF31",
+      "domain": "solar_yoga_strength_sign_division_override",
+      "source_paraphrase": "The author says the solar yoga-producing planet's actual strength, sign and amsa must modify the result, and Ubhayacārī has distinct combined effects.",
+      "source_layer": "TRANSLATED_SARAVALI_RULE_QUALIFICATION",
+      "limitation": "Any prospective scoring must compute full dignity and not cherry-pick one of several conjunction outcomes after the fact.",
+      "source_only": true
+    }
+  ],
+  "chapters_newly_registered": [
+    1,
+    2,
+    10,
+    11,
+    14
+  ],
+  "validation": {
+    "independent_birth_charts_seen": false,
+    "real_human_predictions_tested": 0,
+    "production_promotions": 0
+  },
+  "source_scope": "Five formerly fully unregistered chapters have now been sampled from supplied original 150p English source, not ancient Sanskrit critical edition."
+}

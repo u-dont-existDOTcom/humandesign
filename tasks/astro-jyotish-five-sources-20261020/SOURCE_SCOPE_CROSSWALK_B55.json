@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B55",
+  "date_utc": "2026-10-22",
+  "source_only": true,
+  "source_artifacts_original_bytes_published": false,
+  "source_printings": [
+    "DLI in.ernet.dli.2015.312156; Sanskrit/English Sastri printing, 682 PDF pages, SHA256 22ba00808cab6793886d4f671ef9acd0ad72e93e8227c70c20d434bb5bb018ea",
+    "DLI in.ernet.dli.2015.312429; Sanskrit/Hindi Mahīdhara printing, 298 PDF pages, SHA256 8fc0e8a5a212d1b3312363135347c47846671a3d184232eaf276ea0c96f57624"
+  ],
+  "physical_pages_examined_this_batch": {
+    "JP": [
+      323,
+      324,
+      325,
+      326
+    ],
+    "SC_prior_batch": [
+      171,
+      172
+    ]
+  },
+  "record_count": 8,
+  "records": [
+    {
+      "id": "B55-JP-15-67-68",
+      "printed_locators": [
+        "JP XV.67 PDF321 printed925",
+        "JP XV.68 PDF322 printed926"
+      ],
+      "source_role": "ELEVENTH_OCCUPANT",
+      "strength_gate": "V67 explicitly adds adequate strength; do not infer all later occurrences inherit the same condition",
+      "target": "SOURCE_PERSON_OR_INSTITUTION",
+      "observables": "Where income originates; possibly multiple sources",
+      "negative_control": "Having a certain occupation without earning from the stated person/source is a miss, not a hit",
+      "notes": "Do not infer house lord from planets physically located in house; no chart scoring"
+    },
+    {
+      "id": "B55-JP-15-69",
+      "printed_locators": [
+        "JP XV.69 PDF323 printed927"
+      ],
+      "source_role": "ELEVENTH_OCCUPANT_BENEFIC_MALEFIC_MIXED",
+      "target": "INCOME_MEANS_MORAL_CLAIM",
+      "archival_cases": {
+        "benefic_only": "claimed fair means",
+        "malefic_only": "claimed ill-gotten means",
+        "mixed": "claimed mixed means"
+      },
+      "scientific_ethics": "Historical moral/ethical allegations NOT scored against people or used to infer crimes. The source offers a mixed case, not two independent scores for mixed occupancy.",
+      "negative_control": "Amount of money says nothing directly about whether it was acquired through the source's claimed means"
+    },
+    {
+      "id": "B55-JP-15-70",
+      "printed_locators": [
+        "JP XV.70 PDF323 printed927"
+      ],
+      "source_role": "LORDS_OF_SECOND_AND_ELEVENTH_VS_WEAK_ELEVENTH_OCCUPANT",
+      "targets": [
+        "DISTRIBUTION_DONATION",
+        "DOCUMENTED_DEPRIVATION"
+      ],
+      "positive_condition": "2nd/11th lords friendly to Lagna lord -> source prescribes beneficial disposal of wealth",
+      "negative_condition": "weak/defeated/debilitated or otherwise unfavorable eleventh occupant -> historical need/begging claim",
+      "gate": "Do not collapse disposition of money and whether money is possessed. Technical strength, graha-yuddha, Dusthana and Reḵā-yoga requirements need exact definition before any synthetic astronomy.",
+      "negative_control": "Ordinary charitable donations do not validate claims of impoverishment; ordinary low income is not equivalent to begging"
+    },
+    {
+      "id": "B55-JP-15-71",
+      "printed_locators": [
+        "JP XV.71 PDF324 printed928"
+      ],
+      "source_role": "ELEVENTH_LORD_NOT_OCCUPANT",
+      "target": "SOURCE_PERSON_OR_INSTITUTION",
+      "contrast": "XV.67-68 describe occupants; XV.71 explicitly describes who OWNS/ rules eleventh, even when the planet is located elsewhere.",
+      "caste_bias": "Original uses historical derogatory occupational classes for Saturn; do not classify modern livelihoods or people as ignoble.",
+      "negative_control": "Saturn occupying eleventh cannot be substituted for Saturn being lord of eleventh; they may be different planets"
+    },
+    {
+      "id": "B55-JP15-72-SC11-2",
+      "printed_locators": [
+        "JP XV.72 PDF324 printed928",
+        "SC Ch8 eleventh v2 PDF171 printed154"
+      ],
+      "source_role": "LORD_ELEVENTH_KENDRA_TRIKONA_OR_MALEFIC_ELEVENTH",
+      "target": "INCOME_AMOUNT",
+      "shared_semantic_alternatives": [
+        "eleventh lord in angular/trinal houses",
+        "malefic occupying eleventh"
+      ],
+      "JP_added_condition": "eleventh lord in own, exalted or friendly rāśi/aṃśa; verse also requires discussing strength, planetary period, directional source",
+      "SC_variant": "SC 11th v10 PDF172 printed155 asserts loss with malefic eleventh, contrary to SC v2 gain; JP v72 does NOT settle source precedence",
+      "lineage": "Comparable classical teaching or shared formula; Sanskrit lexical identity is NOT established, direction of transmission unknown",
+      "negative_control": "Cannot count JP gain as independent empirical replication, and cannot dismiss contradictory SC loss after seeing a person's income"
+    },
+    {
+      "id": "B55-JP-15-73",
+      "printed_locators": [
+        "JP XV.73 PDF325 printed929"
+      ],
+      "source_role": "TWELFTH_HOUSE_LORD_SATURN_MOVABLE",
+      "target": "ITINERANT_WANDERING",
+      "contrast": [
+        "JP XV.57 PDF318 foreign commercial trading is different",
+        "residence abroad is different",
+        "foreign earnings without physical movement is different"
+      ],
+      "input_gate": "12th house/lord, Saturn conjunction/aspect, sign quality and/or Dusthana; grammar/alternative scope not yet frozen",
+      "negative_control": "Single tourism trip or one permanent emigration is not by itself repeated roaming"
+    },
+    {
+      "id": "B55-JP-15-64",
+      "printed_locators": [
+        "JP XV.64 PDF320 printed924",
+        "SC tenth v24 PDF169 printed151"
+      ],
+      "source_role": "AFFLICTED_TENTH_AND_LORD",
+      "target": "PUBLIC_REPUTATION",
+      "contrast": "JP XV.64 negative-slander claim has malefic tenth/aspect and weak tenth lord; SC tenth v24 on 1929 Sanskrit plate has positive satkīrti where Bhasin English translates negative. These predicates overlap in theme but are NOT identical, so JP cannot force an editorial correction of SC."
+    },
+    {
+      "id": "B55-EDITION-DATE-AND-NUMBERING",
+      "printed_locators": [
+        "JP PDF324 printed928",
+        "1922 Archive item metadata",
+        "VedicPupil currently accessible Chapter 15 text"
+      ],
+      "source_role": "EDITION_PROVENANCE",
+      "date_witnesses": {
+        "InternetArchive_metadata": "1922 dc.date.citation and copyright",
+        "Acharane_site": "1932/1933 V. Subrahmanya Sastri edition, labels same DLI item"
+      },
+      "resolution": "Archive catalog dates 1922, external annotation says 1932/33, printing's actual imprint/title leaf NOT visually verified; refer to item SHA and printed pages, not an independently proved imprint date",
+      "numbering": "Printed XV.60/61 corresponds to VedicPupil /verse-59/60 when checked. VedicPupil chapter page currently omits printed 72–74; cached deprecated URL snippets are not a verified additional exact verse-number crosswalk.",
+      "negative_control": "A stale snippet, redirect or different route is not evidence of a globally fixed +1 or -1 mapping"
+    }
+  ],
+  "primary_source_urls": [
+    "https://archive.org/details/in.ernet.dli.2015.312156",
+    "https://archive.org/details/in.ernet.dli.2015.312429"
+  ],
+  "supplementary_evidence_urls": [
+    "https://acharane.com/sources/jataka-parijata-15-72/",
+    "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-8",
+    "https://vedicpupil.in/library/books/jataka-parijata/chapter-15/verse-59",
+    "https://www.wilbourhall.org/pdfs/brihatjataka00varaiala.pdf"
+  ],
+  "evaluation": {
+    "human_chart_inputs": 0,
+    "respondent_data": 0,
+    "observed_prediction_successes": 0,
+    "production_rules": 0,
+    "new_unique_original_documentary_note_ids": 0,
+    "cumulative_unique_source_notes": 432,
+    "source_classification_tests_passed": 21
+  },
+  "provenance_policy": "Textual coincidences are not independent forecast confirmations; cross-work semantic similarities need own explicit dependency family; do not infer moral character or criminality from natal planets.",
+  "next_frontier": "Original Sanskrit critical collation of SC eleventh v2 vs v10 and JP XV.72 with documented alternative readings; complete physical-to-online 15th chapter local verse map; under-sampled primary texts (Jaimini / Saravali / Portuguese Parashara) with true negatives and input gates; no biography leakage."
+}

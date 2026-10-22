@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B06",
+  "audit_title": "Targeted lexical screen: distinguish dream predictions from nearby false positive language",
+  "method": {
+    "data_basis": "All 4 user-supplied PDFs extracted with PyMuPDF page.get_text(); the Portuguese text decoded as cp1252; target terms checked against local passage and selected rendered pages.",
+    "terms_english": [
+      "wonder",
+      "awe",
+      "miracle",
+      "revelation",
+      "visions",
+      "visionary",
+      "synchron",
+      "mystical",
+      "ecstasy",
+      "trance",
+      "intuition",
+      "dreams",
+      "dream",
+      "meditation",
+      "samadhi",
+      "enlighten",
+      "moksha",
+      "salvation",
+      "liberation",
+      "renunciation",
+      "unexpected",
+      "sudden",
+      "surprise",
+      "foretold",
+      "knowledge of the future",
+      "past life",
+      "past birth"
+    ],
+    "terms_portuguese": [
+      "sonho",
+      "surpresa",
+      "espanto",
+      "maravilha",
+      "revelação",
+      "visão",
+      "sincronic",
+      "êxtase",
+      "samadhi",
+      "meditação",
+      "iluminação",
+      "moksha",
+      "salvação",
+      "libertação",
+      "renúncia",
+      "inici",
+      "inesperad",
+      "repentino",
+      "súbito",
+      "vida passada",
+      "intuição",
+      "presságio",
+      "premoni",
+      "manifestação"
+    ],
+    "limits": [
+      "Substring matches often occur inside unrelated words (e.g. 'visions' inside 'divisions'), especially scanned OCR.",
+      "This is a precision-oriented terminology audit, NOT an exhaustive original-language absence study.",
+      "Every unlisted chapter may contain synonym, unrecognized morphology or OCR-garbled text.",
+      "Some exact terms refer to editor commentary rather than translated ancient passages."
+    ]
+  },
+  "positive_source_claims_location": "SOURCE_CANDIDATES_B06.json",
+  "false_positive_or_nonprediction_cases": [
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF176",
+      "term": "synchron",
+      "actual": "Calendrical intercalation synchronizing days, months and year",
+      "disposition": "NOT a claim about experiential synchronicities"
+    },
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF236",
+      "term": "synchron",
+      "actual": "Rath commentary about coordinated limbs and a conjectural hemispheric-brain mapping",
+      "disposition": "NOT a natal forecast of meaningful coincidences; neurologic attribution unverified"
+    },
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF36",
+      "term": "revelation",
+      "actual": "Grammar/epistemological exposition of vyakarana; prophetic explanation in doctrinal passage",
+      "disposition": "NOT a per-person natal rule about sudden realization"
+    },
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF93 and PDF97",
+      "term": "dream",
+      "actual": "Dream narrative about an earlier spiritual teacher and his family",
+      "disposition": "Historical religious story, not an independent natal prediction"
+    },
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF357 and PDF410",
+      "term": "dream",
+      "actual": "Metaphors for hope/desire or known airline business aspiration",
+      "disposition": "NOT literal sleep-dream horoscope rule"
+    },
+    {
+      "source": "JYOT-JAIMINI-RATH-V1",
+      "location": "PDF506",
+      "term": "surprise",
+      "actual": "Krishna surprised by a ritual in a religious narrative",
+      "disposition": "NOT a trait prediction about surprise frequency"
+    },
+    {
+      "source": "JYOT-SC-BHASIN",
+      "location": "PDF33-34 and PDF244",
+      "term": "moksha/samadhi",
+      "actual": "Translator's interpretive explanations of exaltation, Saturn/Jupiter and voids",
+      "disposition": "SOURCE LAYER translator commentary, not independently a Sanskrit shloka predicting samadhi"
+    },
+    {
+      "source": "JYOT-SC-BHASIN",
+      "location": "PDF175",
+      "term": "wonder",
+      "actual": "Translator's rhetorical phrase concerning retrospective marriage interpretation",
+      "disposition": "NOT a claim about sense of wonder"
+    },
+    {
+      "source": "JYOT-SARAVALI-EN",
+      "location": "PDF110 sloka11",
+      "term": "moksha",
+      "actual": "Explanatory aside distinguishing dharma/artha/kama from liberation",
+      "disposition": "NOT a moksha-producing combination"
+    },
+    {
+      "source": "JYOT-SARAVALI-EN",
+      "location": "PDF62",
+      "term": "wonder",
+      "actual": "Adverb meaning exceptionally learned, not personal awe",
+      "disposition": "NOT a questionnaire indicator"
+    },
+    {
+      "source": "JYOT-JP-SASTRI",
+      "location": "PDF967",
+      "term": "revelation",
+      "actual": "Astrological inference about husband's qualities in gendered text",
+      "disposition": "NOT a sudden insight/revelation propensity"
+    },
+    {
+      "source": "JYOT-JP-SASTRI",
+      "location": "PDF369",
+      "term": "enlighten",
+      "actual": "An adjective describing learning or intelligence in lunar mansion passage",
+      "disposition": "NOT a claimed realization of liberation"
+    },
+    {
+      "source": "JYOT-BPHS-KERR-PT",
+      "location": "TXT line3612",
+      "term": "samadhi",
+      "actual": "Problematic Portuguese rendering of a condition involving throat/neck disease, not meditation",
+      "disposition": "Ambiguous medical-language artifact; NOT a positive samadhi result"
+    },
+    {
+      "source": "JYOT-BPHS-KERR-PT",
+      "location": "TXT line3890",
+      "term": "êxtase",
+      "actual": "Venus-dasha description grouping intoxication, pleasure and pride",
+      "disposition": "NOT a claim of ecstatic mystical experiences"
+    }
+  ],
+  "conclusion": "Concrete sleep-dream outcome predictions were located. No source-located classical predictive formula specifically scoring the *frequency of everyday surprise/wonder or meaningful synchronicities* was authenticated from these searched examples. This is NOT evidence of absence from any full traditional corpus.",
+  "copyright_safe": true
+}

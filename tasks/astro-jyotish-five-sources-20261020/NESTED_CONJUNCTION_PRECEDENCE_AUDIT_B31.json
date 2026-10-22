@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B31",
+  "status": "ORIGINAL_SANSKRIT_SOURCE_SCOPE_AND_PREDICATE_NESTING_COMPARISON_NO_HUMAN_OUTCOMES",
+  "source": "Sārāvalī",
+  "source_witnesses": [
+    {
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Uploaded English source chapters15–20, PDF31–43, especially chapter19 verses1,3,7,8 PDF39–40"
+    },
+    {
+      "source": "Central Sanskrit University Lucknow",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p20.html",
+      "locator": "Original Sanskrit Chapter19 lines6–35",
+      "layer": "Digitized Sanskrit witness, not proven critical independent manuscript"
+    }
+  ],
+  "textual_cases": [
+    {
+      "sloka": "19.1",
+      "group": [
+        "Sun",
+        "Moon",
+        "Mars",
+        "Mercury",
+        "Jupiter",
+        "Venus"
+      ],
+      "excluded": "Saturn",
+      "sanskrit_evidence": "विद्याधनधर्मरत",
+      "translation_scope": "Devoted to learning, wealth and religious duty; multiple languages; bodily thinness",
+      "morally_loaded": false
+    },
+    {
+      "sloka": "19.3",
+      "group": [
+        "Sun",
+        "Moon",
+        "Mars",
+        "Mercury",
+        "Venus",
+        "Saturn"
+      ],
+      "excluded": "Jupiter",
+      "sanskrit_evidence": "मूर्ख",
+      "translation_scope": "Among other claims, described as lacking knowledge/wisdom; severe negative moral and medical allegations",
+      "morally_loaded": true
+    },
+    {
+      "sloka": "19.7",
+      "group": [
+        "Moon",
+        "Mars",
+        "Mercury",
+        "Jupiter",
+        "Venus",
+        "Saturn"
+      ],
+      "excluded": "Sun",
+      "sanskrit_evidence": "धनसुतसौभाग्ययुत",
+      "translation_scope": "Described as possessing wealth, offspring and fortune, and holding status",
+      "morally_loaded": false
+    },
+    {
+      "sloka": "19.8",
+      "group": "five_or_six_joint_bodies_generic",
+      "sanskrit_evidence": "प्रायो दरिद्रदु:खी मूर्ख:",
+      "translation_scope": "'Usually' unfavorable; additionally mutual-aspect statement credited to Kandalas",
+      "scope": "qualified tendency; not universal assertion"
+    }
+  ],
+  "mechanical_variants": [
+    {
+      "name": "EXACT_PLANET_SET_ONLY",
+      "interpretation": "Only named groups with no extra planets count; source chapters 15–19 enumerate 2–6, and no seven-planet exact-group catalog clause was registered in those chapters.",
+      "seven_body_case": {
+        "catalogue_hits": 0,
+        "scope": "UNDEFINED_OR_OUT_OF_DOMAIN_UNLESS_ANOTHER_7_BODY_RULE_ADDED"
+      },
+      "status": "POSSIBLE_METHOD_CHOICE_NOT_PROVEN_SOURCE_DEFAULT"
+    },
+    {
+      "name": "INCLUSIVE_SUBSET",
+      "interpretation": "Every named subset of a larger co-sign/one-house set is deemed active; the seven-body group activates all available unique 2–6 classical subsets.",
+      "seven_body_case": {
+        "unique_subsets_2_to_6": 119,
+        "enumerated_verses_2_to_6_including_duplicate_five_set": 120,
+        "source_chapter_counts": [
+          {
+            "subset_size": 2,
+            "unique_sets_at_seven_group": 21,
+            "matching_english_catalogue_chapter": 15
+          },
+          {
+            "subset_size": 3,
+            "unique_sets_at_seven_group": 35,
+            "matching_english_catalogue_chapter": 16
+          },
+          {
+            "subset_size": 4,
+            "unique_sets_at_seven_group": 35,
+            "matching_english_catalogue_chapter": 17
+          },
+          {
+            "subset_size": 5,
+            "unique_sets_at_seven_group": 21,
+            "matching_english_catalogue_chapter": 18
+          },
+          {
+            "subset_size": 6,
+            "unique_sets_at_seven_group": 7,
+            "matching_english_catalogue_chapter": 19
+          }
+        ]
+      },
+      "logical_issue": "Same seven-body conjunction would simultaneously activate 19.1 positive learning, 19.3 negative knowledge, 19.7 wealth and 19.8 generally poor, unless a precedence/outcome arbitration rule is frozen.",
+      "status": "POSSIBLE_METHOD_CHOICE_NOT_PROVEN_SOURCE_DEFAULT"
+    },
+    {
+      "name": "LARGEST_MATCHING_SET_PRECEDENCE",
+      "interpretation": "Prefer six-body clauses over five-body clauses if seven bodies, then disambiguate seven alternative six-body clauses and source general rule.",
+      "seven_body_case": {
+        "six_body_clauses": 7,
+        "ambiguity": "More than one largest six subset, with irreconcilable target polarity before arbitration"
+      },
+      "status": "INFERRED_MODEL_VARIANT_NO_SOURCE_QUOTED_TIE_BREAK"
+    }
+  ],
+  "combinatorics": {
+    "classical_body_count": 7,
+    "catalogue_unique_sets_if_all_present": [
+      {
+        "subset_size": 2,
+        "unique_sets_at_seven_group": 21,
+        "matching_english_catalogue_chapter": 15
+      },
+      {
+        "subset_size": 3,
+        "unique_sets_at_seven_group": 35,
+        "matching_english_catalogue_chapter": 16
+      },
+      {
+        "subset_size": 4,
+        "unique_sets_at_seven_group": 35,
+        "matching_english_catalogue_chapter": 17
+      },
+      {
+        "subset_size": 5,
+        "unique_sets_at_seven_group": 21,
+        "matching_english_catalogue_chapter": 18
+      },
+      {
+        "subset_size": 6,
+        "unique_sets_at_seven_group": 7,
+        "matching_english_catalogue_chapter": 19
+      }
+    ],
+    "unique_predicates_sum": 119,
+    "five_body_ch18_duplicate_verses": [
+      "18.13",
+      "18.20"
+    ],
+    "catalogue_verses_sum_with_duplicate": 120,
+    "nonindependent_human_events_from_one_birthday": 1,
+    "additional_ch20_ascetic_4_plus_conditions": "Not included in counts; may further increase overlapping narrative clauses."
+  },
+  "source_semantics": {
+    "sanskrit_19_1": "एकभवनोपयातैः (in one bhavana/house) — not an explicit numeric degree orb",
+    "sanskrit_19_8": "प्रायो = generally/often; source rule is defeasible. A quoted tradition attributes mutual-aspect general effects to Kandalas.",
+    "ambiguity": "No explicit full tie-breaking algorithm for larger seven-body supersets emerges from these passages; competing alternatives remain open."
+  },
+  "astronomy_relation": "B30 demonstrated physically possible all-seven within ONE sidereal 30° sign on 1821 Apr02–03 and 1962 Feb04–05. This is not proof every source's stricter 'Bhava' or conjunction-orb definition applies.",
+  "controls": [
+    "No person was evaluated or profiled.",
+    "Every asserted source meaning is a bounded paraphrase from specified Sanskrit/English witnesses.",
+    "English Chapter18 duplicate from Sanskrit crosswalk B15 carried as one unique planet set, two verses.",
+    "Do not count active subsets as independent predictive confirmations under any variant."
+  ],
+  "frozen_model_selection": null,
+  "source_annotations_added": 0,
+  "predictive_human_successes": 0,
+  "production_rules_promoted": 0
+}

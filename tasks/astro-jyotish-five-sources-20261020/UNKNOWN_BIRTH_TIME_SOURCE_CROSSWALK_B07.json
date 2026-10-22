@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B07",
+  "source_ids": [
+    "JYOT-SARAVALI-EN",
+    "JYOT-BPHS-KERR-PT",
+    "JYOT-JP-SASTRI"
+  ],
+  "result_type": "TRANSMISSION_AND_INPUT_COMPARISON_NOT_ACCURACY_TEST",
+  "method_families": [
+    {
+      "method": "Recover unknown birth year/season from current horary chart",
+      "saravali": "Ch48.1 and Ch52.1-3, PDF129 and 140-141",
+      "bphs": "Portuguese lines5492-5500",
+      "jataka": "Ancient season rulers in Adhyaya II.23, PDF454; modern Sastri application in PDF455",
+      "relationship": "Strong methodological overlap; not three independent measured forecasts",
+      "requires": [
+        "exact question time/location",
+        "planetary positions at Prashna",
+        "predeclared ayana and ritu"
+      ],
+      "test": "Conceal certified birth details; freeze resulting birth-season answer before reveal"
+    },
+    {
+      "method": "Horary ascendant first/second Hora -> birth ayana",
+      "saravali": "Ch52.1, PDF140, first 15° vs second 15°",
+      "bphs": "line5496, first vs second Hora",
+      "jataka": "No matching explicit rule verified in supplied sloka23",
+      "relationship": "Same functional 15° split, but exact equality boundary unspecified",
+      "requires": [
+        "horary ascendant longitude",
+        "D2 boundary convention"
+      ],
+      "test": "Binary north/south birth-half prediction, independently scored"
+    },
+    {
+      "method": "Horary ascendant decanate lord -> natal ritu",
+      "saravali": "Ch52.2–3, PDF140–141; prefer strongest occupant when present",
+      "bphs": "line5496, decanate ruler with season assignments",
+      "jataka": "PDF455 note says strongest ascendant occupant takes precedence, else decanate ruler",
+      "relationship": "Parallel mechanics in distinct modern editions; JP note is commentator layer",
+      "requires": [
+        "strength algorithm",
+        "planet vs decanate lord precedence",
+        "local seasonal interpretation"
+      ],
+      "test": "Freeze exact season classes/calendar mapping"
+    },
+    {
+      "method": "Contradiction between ayana and season -> alternate season lords",
+      "saravali": "Ch52.2–3, PDF140–141; lists Moon/Venus, Mercury/Mars, Jupiter/Saturn swaps",
+      "bphs": "line5498, Mercury/Mars Venus/Moon Saturn/Jupiter swaps",
+      "jataka": "No corresponding correction established",
+      "relationship": "Pair sets overlap but source paraphrase order differs; requires direct-language check",
+      "requires": [
+        "formal contradiction predicate",
+        "deterministic one-shot swap rule"
+      ],
+      "test": "Record conflict flag before birth truth; no multiple retry strategies"
+    },
+    {
+      "method": "Jupiter's approx 12-year birth cycle -> birth year using approximate age",
+      "saravali": "Ch52.4–9, PDF141, multiple-of-12 age adjustment",
+      "bphs": "line5502, explicit approximate age and Jupiter cycle",
+      "jataka": "No matching original-verse rule located here",
+      "relationship": "Shared mechanism and outside-person information: not sky-only recovery",
+      "requires": [
+        "approximate age precision and source",
+        "cycle selection rule"
+      ],
+      "test": "Report both year accuracy and information supplied by age prior"
+    },
+    {
+      "method": "Compute birth month/tithi/time from horary degrees",
+      "saravali": "Ch52.2–3 and13–15, PDF140–141, divisions/multipliers plus optional nine adjustment",
+      "bphs": "lines5500,5504–5506, solar relative-to-sunrise interpolation",
+      "jataka": "No full comparable original-rule sequence verified",
+      "relationship": "Both invert from Prashna to reconstructed birth parameters, formulas not identical",
+      "requires": [
+        "unit systems",
+        "civil calendar conversion",
+        "all permitted corrections fixed"
+      ],
+      "test": "Numerical birth hour/month with full uncertainty and predeclared tolerance"
+    },
+    {
+      "method": "Live querent posture/touched body -> inferred natal rising/Moon",
+      "saravali": "Ch52.4–11, PDF141",
+      "bphs": "No matching passages established in supplied unknown-time section",
+      "jataka": "No matching sloka23 content",
+      "relationship": "Distinct live sensory inputs, absent from ordinary natal calculation",
+      "requires": [
+        "posture/body touched recorded blind to chart",
+        "standardized observational context"
+      ],
+      "test": "Separate reverse-observation cohort; randomize query timing"
+    },
+    {
+      "method": "Parental name and shadow measurement -> birth star",
+      "saravali": "Ch52.12, PDF141",
+      "bphs": "No explicit parallel found in lines5492–5506",
+      "jataka": "No parallel in cited PDF454–456",
+      "relationship": "Orthogonal name/phonetics and physical shadow input",
+      "requires": [
+        "birth-assigned name",
+        "matra rules by language",
+        "precise measured Chayangula"
+      ],
+      "test": "Blind name/time/place and star before certificate reveal"
+    },
+    {
+      "method": "Multiple rival formulas and post-hoc correction permitted",
+      "saravali": "Ch52.13–21, PDF141; plus/minus 9 and source's own Ch52.16 ambiguity warning",
+      "bphs": "line5502 allows cycle alternatives based on approximate age; Ritu conflicts swapped",
+      "jataka": "PDF455 editor gives alternative progression examples but original verse is season-signification only",
+      "relationship": "Unfrozen correction branches could force favorable recovery: report attempts and predeclare variants",
+      "requires": [
+        "versioned branch registry",
+        "all attempts output even failed",
+        "no optimized refit on known humans"
+      ],
+      "test": "Use untouched held-out birth records and penalize tuning and missing cases"
+    },
+    {
+      "method": "Arudha/pada and divisonal personality inferred from records",
+      "saravali": "Ch48–51, PDF129–140; 12 Lagna, 24 Hora, 36 decanate, 108 Navamsa descriptions",
+      "bphs": "Not yet matched to these four classifier catalogs here",
+      "jataka": "Parallel sign/planet descriptions in earlier chapters but not a demonstrated independent crosswalk",
+      "relationship": "180 output cells across related nested classifiers, not 180 independent discriminators",
+      "requires": [
+        "exact boundaries",
+        "fixed option mappings",
+        "missing birth time uncertainty propagation"
+      ],
+      "test": "Score the whole battery jointly; prevent independent multiplication of overlapping trait evidence"
+    }
+  ],
+  "method_count": 10,
+  "source_layer_warning": "Ancient verse, modern translated paragraph and later translator note are distinct layers; overlap shows historical transmission or commentary, not independent case validation.",
+  "eval_separation": {
+    "forward_natal": "true DOB/time/place known to researcher before frozen predicted outcome; response hidden until scored",
+    "reverse_horary": "horary sky and contemporaneous observables at query time used to infer concealed known birth parameters",
+    "admissibility": "Not valid to score the same person as a successful forward prediction if physical/behavioral traits were used first to select birth time."
+  },
+  "unresolved": [
+    "Exact source-language parsing",
+    "historical provenance and borrowings",
+    "different horary query choices",
+    "same person's repeat-query reliability",
+    "time and season conventions",
+    "multipliers and ±9 exception sequence"
+  ],
+  "successful_human_matches": 0
+}
