@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "B54",
+  "research_type": "PHYSICAL_PRINT_SOURCE_LINEAGE_AND_PREDICATE_VARIANTS",
+  "date_utc": "2026-10-22",
+  "corpus_scope": "Independent historical reading of the five uploaded Jyotish books; Brihat Jataka used only as earlier comparison source",
+  "printed_witnesses": [
+    {
+      "id": "SC_1929_PRINT",
+      "work": "Sarvartha Chintamani",
+      "edition": "1929 Mahidhara Sarma bhasha-tika scan, Archive DLI 2015.312429",
+      "archive_item_url": "https://archive.org/details/in.ernet.dli.2015.312429",
+      "sha256_original_full_pdf_not_republished": "8fc0e8a5a212d1b3312363135347c47846671a3d184232eaf276ea0c96f57624",
+      "visual_pages_pdf_1_based": [166, 167, 168, 169, 171, 172, 173],
+      "complete_raw_pdf_in_public_repo": false
+    },
+    {
+      "id": "JP_1922_PRINT",
+      "work": "Jataka Parijata",
+      "edition": "1922 bilingual Sanskrit-English print scanned as Archive DLI 2015.312156",
+      "archive_item_url": "https://archive.org/details/in.ernet.dli.2015.312156",
+      "sha256_original_full_pdf_not_republished": "22ba00808cab6793886d4f671ef9acd0ad72e93e8227c70c20d434bb5bb018ea",
+      "pdf_page_count": 682,
+      "visual_pages_pdf_1_based": [312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323],
+      "complete_raw_pdf_in_public_repo": false
+    }
+  ],
+  "records": [
+    {
+      "id": "B54-01",
+      "topic": "Authority rule and shared transmitted formula",
+      "witness_a": {"id":"SC_1929_PRINT", "locator":"Ch8 tenth-house v15; PDF168 / printed150", "sanskrit_distinctive":"आज्ञास्थानाधिपे सौम्ये ... शोभनांशगते वापि ... आज्ञाधिपो भवेत्"},
+      "witness_b": {"id":"JP_1922_PRINT", "locator":"Adhyaya XV v60; PDF319 / printed923", "electronic_number":"15.59", "sanskrit_distinctive":"आज्ञास्थानाधिपे सौम्ये ... शोभनांशगते वापि ... आज्ञाधरो भवेत्"},
+      "conclusion":"Closely overlapping core authority verse but several transmitted adjective/predicate variants; grouping is literary evidence only, not independent prediction successes",
+      "copying_direction_proven": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B54-02",
+      "topic": "Eighth-lord conjunction versus eighth-lord aspect changes predicate",
+      "witness_a": {"id":"SC_1929_PRINT", "locator":"Ch8 tenth-house v17; PDF168 / printed150", "verbatim_fragment":"आज्ञाधिपे मन्दयुते रन्ध्रनाथेन संयुते", "predicate":"Tenth lord joined Saturn and conjoined eighth lord"},
+      "witness_b": {"id":"JP_1922_PRINT", "locator":"Adhyaya XV v61; PDF319 / printed923", "electronic_number":"15.60", "verbatim_fragment":"आज्ञाधिपे मन्दयुते रन्ध्रनाथेन वीक्षिते", "predicate":"Tenth lord joined Saturn and aspected by eighth lord"},
+      "result_class":"Harsh-official-orders historical claim; not personal moral profiling",
+      "relationship":"The same verse family contains semantically different source predicates. A real conjunction need not be an aspect, and an aspect need not be a conjunction; source-winner not selected.",
+      "mechanics_unfrozen":"Definition of sambandha, lord computation, separate cruel-navamsa versus kendra alternatives, and sign versus degree aspects",
+      "canonical_version_selected": null,
+      "score_allowed": false
+    },
+    {
+      "id": "B54-03",
+      "topic":"Local edition-specific verse-number offset",
+      "witness_a":"1922 printed JP PDF319 labels authority v60 and harsher-order v61",
+      "witness_b":"VedicPupil electronically labels same Sanskrit lemmas XV.59 and XV.60",
+      "scope":"Offset demonstrated for these two aligned loci ONLY. It is not asserted as a fixed full-chapter offset.",
+      "score_allowed": false
+    },
+    {
+      "id": "B54-04",
+      "topic":"Foreign commerce not equivalent to residence abroad",
+      "source":"JP_1922_PRINT Adhyaya XV v57 PDF318 printed922, Mars and Venus tenth from Moon",
+      "printed_translated_outcome":"Merchant trading in foreign lands",
+      "observable_separations":["international commercial trade", "foreign residence", "international travel", "wealth from abroad"],
+      "limitation":"Not a direct observable without independently defining occupation, trade volume/period and opportunity; one trip or move is not a success.",
+      "score_allowed":false
+    },
+    {
+      "id":"B54-05",
+      "topic":"Profession labels broadened across text and commentarial notes",
+      "source":"JP_1922_PRINT v57-v59 PDF318-319 printed922-923",
+      "interpretive_issues":[
+        "Printed v57 Mars+Mercury describes scientific knowledge in English whereas Sanskrit sastra requires historic context; not automatically modern laboratory science",
+        "Printed v59 Saturn+Venus English names cosmetic powder manufacturing and commerce while the Sanskrit includes terms associated with painting/commerce; broad OR outcome and translation layer",
+        "Repeated occupation sector labels cannot each count as independent success from one antecedent"
+      ],
+      "source_only":true,
+      "score_allowed":false
+    },
+    {
+      "id":"B54-06",
+      "topic":"Stronger than strongest-only commentary alternative",
+      "source":"Varahamihira Brihat Jataka X.4 plus Sastri printed JP XV.43 note PDF312 printed916",
+      "summary":"Brihat Jataka X.4 allows resources determined in multiple ways by situated and strong planets; Sastri separately cites Bhattotpala citing Gargi for considering all relevant income indicators instead of one strongest planet",
+      "conclusion":"Two supporting textual discussions of plural wealth sources; not proof of global method, still separate transfers and provenance",
+      "independent_empirical_successes":0,
+      "score_allowed":false
+    }
+  ],
+  "family_ids": ["CLASSICAL_JYOTISH_SC8_JP15_AUTHORITY_FORMULA", "CLASSICAL_JYOTISH_BJ10_JP15_WORK_INCOME_FORMULA"],
+  "tests": {"module":"test_printed_crossbook_variants_B54.py", "synthetic_only_passed":16, "independent_human_data_used":false},
+  "counts": {"historical_unique_documentary_annotations_before":432,"historical_unique_documentary_annotations_after":432,"new_registry_ids":0,"production_rules_promoted":0,"prospective_human_prediction_successes":0},
+  "next_frontier":"Original Sanskrit manuscript/independent print collations for harsh-orders union versus sight, a full-chapter verse-number concordance for JP electronic/1922/modern Sastri, and other observable income negatives. Do not choose one variant by consulting outcomes."
+}

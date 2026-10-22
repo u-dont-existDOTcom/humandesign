@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B53_PRINTED_1929_SANSKRIT_SOURCE_COLLATION_SAVED",
+  "status": "OPEN_B54_PRINTED_1922_JATAKA_SARVARTHA_CROSSBOOK_DEPENDENCY_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B53_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B54_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -189,7 +189,14 @@
     "READING_NOTES_B53.md",
     "SHA256SUMS.txt",
     "original_witness_integrity_B53.py",
-    "test_original_witness_integrity_B53.py"
+    "test_original_witness_integrity_B53.py",
+    "PRINTED_CROSSBOOK_DEPENDENCY_B54.json",
+    "READING_NOTES_B54.md",
+    "CONTINUATION_HANDOFF_B54_20261022.md",
+    "printed_crossbook_variants_B54.py",
+    "test_printed_crossbook_variants_B54.py",
+    "B54_TEST_RESULTS.txt",
+    "B54_SHA256SUMS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -525,7 +532,18 @@
     "b53_new_counted_original_annotations": 0,
     "b53_cumulative_counted_annotations": 432,
     "b53_real_human_forecasts_validated": 0,
-    "b53_production_rules_promoted": 0
+    "b53_production_rules_promoted": 0,
+    "b54_1922_sastri_jataka_print_physically_inspected": true,
+    "b54_1922_jataka_source_sha256": "22ba00808cab6793886d4f671ef9acd0ad72e93e8227c70c20d434bb5bb018ea",
+    "b54_jataka_source_pdf_pages": 682,
+    "b54_original_printed_sarvarth_jataka_crossbook_pairs": 2,
+    "b54_1922_jataka_print_editions_verified": 1,
+    "b54_local_verse_number_offset_verified": 1,
+    "b54_synthetic_source_integrity_tests_passed": 16,
+    "b54_new_counted_primary_annotations": 0,
+    "b54_cumulative_documentary_annotations": 432,
+    "b54_production_rules_promoted": 0,
+    "b54_real_human_predictions_evaluated": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -569,9 +587,14 @@
     "B53: v2-v3 source Sanskrit yajña ritual versus Bhasin translated public service; negative trio Mercury/Jupiter/Venus physically confirmed, English 'these three' implies tenth lord/Jupiter/Mercury.",
     "B53: v16 printed Sanskrit vā vs English AND confirmed; v24 1929 printed Sanskrit satkīrti favorable versus Bhasin English unfavorable, conjectural copy error never silently accepted.",
     "B53: 11th v2 malefic-eleventh gain versus 11th v10 malefic-eleventh loss both physically on 1929 plate; no rule priority demonstrated, synthetic collision abstain.",
-    "B53: 19 source/provenance symbolic tests passed locally; 0 new unique primary source IDs, 0 human prediction tests, 0 production promotions, original 1929 PDF remains outside public repo."
+    "B53: 19 source/provenance symbolic tests passed locally; 0 new unique primary source IDs, 0 human prediction tests, 0 production promotions, original 1929 PDF remains outside public repo.",
+    "B54 original printed 1922 Jataka Parijata pdf SHA256 22ba00808cab6793886d4f671ef9acd0ad72e93e8227c70c20d434bb5bb018ea visually read PDF312–323, 682 pages, no binary published.",
+    "B54 Sarvartha tenth v15 vs printed Jataka XV.60 authority formula is a shared text family; v17 eighth lord conjunction vs Jataka XV.61 aspect is a material chart-predicate difference, not equivalent.",
+    "B54 1922 printed Jataka v60/v61 correspond to VedicPupil online v59/v60 only at these loci; do not globally shift all verses.",
+    "B54 printed Jataka XV.57 Mars+Venus tenth from Moon predicts trading in foreign lands, not mere residence/travel; historical profession categories are broad and opportunity-dependent.",
+    "B54 16 standalone source integrity tests, no chart/person evaluation; 0 new counted annotations; 432 cumulative, 0 validated prospective successes, 0 production promotions."
   ],
-  "next_exact_source_frontier": "After B53: visually collate a Sanskrit printing genuinely independent of the Bombay/1929 and Gauḍ 2015 line if accessible, for tenth-house v24 positive-vs-negative fame and eleventh v2/10 conflicting gain/loss. Then continue original Jātaka Pārijāta XV.51+ versus Varāhamihira Bṛhat Jātaka X.4+ for additional nonduplicated occupational negatives and specific observed targets. No participants/model updates.",
+  "next_exact_source_frontier": "After B54: examine Jataka Parijata printed XV.64,67–71 plus Brihat Jataka X.4 onward for independently source-specific negative and income-condition alternatives. Continue careful local-only numbering crosswalk for 1922 vs VedicPupil and original Sastri. Seek separate original-language editions before choosing between Sarvartha 10th v17 eighth-lord conjoined and Jataka XV.61 eighth-lord aspect. No participant/model, no duplicate counted prediction.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -582,7 +605,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B53 physical printed source evidence added to isolated five-book reader: one public-domain 1929 Sanskrit plate inspected, 7 new task-local research/test/checksum files, original complete book PDF deliberately not redistributed. Cumulative documentary registry remains 432. Draft PR unmerged.",
+    "note": "B54 physically inspected 1922 Jataka Parijata source, saved task-local comparison/test evidence only; scan binaries excluded. Original five-book task remains open, zero human predictions and unchanged 432 source IDs.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"
