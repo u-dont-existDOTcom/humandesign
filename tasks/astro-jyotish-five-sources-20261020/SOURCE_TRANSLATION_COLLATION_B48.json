@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B48",
+  "status": "SOURCE_CRITICISM_ONLY_NO_MODEL_PROMOTION",
+  "date_utc": "2026-10-22",
+  "source_provenance": {
+    "uploaded_portuguese_id": "JYOT-BPHS-KERR-PT",
+    "uploaded_portuguese_original_sha256": "d271b96457dade884ae4fd0c268d09e88696beeca707fce2b1d2159aa6084b62",
+    "retrieval": "ChatGPT Library files.search indexed text snippets on specified content queries; raw CP1252 bytes/entire text NOT accessed; snippet page/line offsets unavailable",
+    "online_sanskrit_witnesses": [
+      "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/",
+      "https://www.siva.sh/brihat-parashara-hora-shastra/18/21-25",
+      "https://www.siva.sh/brihat-parashara-hora-shastra/16/16-20"
+    ],
+    "source_independence": "Different online mirrors or Portuguese derived from English are not independent manuscript recensions"
+  },
+  "comparison_count": 8,
+  "comparisons": [
+    {
+      "id": "B48-01",
+      "sanskrit_locus": "BPHS 18.21",
+      "translation_layer": "Original Portuguese Kerr indexed segment agrees that Venus in dual sign with exalted lord and strong 7th lord indicates many wives",
+      "source_critical_finding": "Full three-condition multiple-marriage rule exists immediately before age rules; its seventh-lord strength is not automatically established by B47 synthetic sky",
+      "classification": "PARTIALLY_TRIGGERED_B47; NOT_RULE_FIRED",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-21/",
+      "mathematical_witness": {
+        "venus": "Pisces exalted (dual)",
+        "venus_dispositor": "Jupiter Cancer exalted",
+        "seventh_lord": "Saturn Pisces; full strength NOT calculated"
+      }
+    },
+    {
+      "id": "B48-02",
+      "sanskrit_locus": "BPHS 18.22–23",
+      "translation_layer": "Uploaded Portuguese and both Sanskrit online witnesses have age alternatives 5/9 and 7/11",
+      "source_critical_finding": "Both clauses contain prāyaśaḥ (generally) and no ordinal 'first'; distinct ages do not establish an unconditional contradictory first-marriage claim",
+      "classification": "UNRESOLVED_EVENT_ORDINAL_AND_QUALITATIVE_FREQUENCY",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-22/",
+      "sibling_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-23/"
+    },
+    {
+      "id": "B48-03",
+      "sanskrit_locus": "BPHS 18.30",
+      "portuguese_indexed_gloss": "Casará entre os 22 e 27 anos [between 22 and 27]",
+      "sanskrit_transliteration_age_fragment": "dvāviṃśe saptaviṃśe'bde",
+      "sanskrit_semantics": "22nd OR 27th year, two disjoint values",
+      "source_critical_finding": "Portuguese between-language widens two alternatives to contiguous 22–27, erroneously admitting 23,24,25,26 (four extra years)",
+      "classification": "TRANSLATION_TARGET_WIDENING_CONFIRMED",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-30/",
+      "literal_ages": [
+        22,
+        27
+      ],
+      "incorrect_interval": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "B48-04",
+      "sanskrit_locus": "BPHS 18.33",
+      "portuguese_indexed_gloss": "Venus ninth from ninth (but explanatory arithmetic calls it seventh); Rahu described at one of fifth/ninth",
+      "sanskrit_condition_fragment": "bhāgyād bhāgyagate śukre taddvaye rāhusaṃyute",
+      "source_critical_finding": "Inclusive 9th from 9th is 5th, not 7th. Original Sanskrit online witnesses place Venus in 5th; Rahu/two-lords grammar not fully resolved by PT gloss.",
+      "classification": "ARITHMETIC_TRANSLATION_ERROR_CONFIRMED; RAHU_PREDICATE_UNRESOLVED",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-33/",
+      "correct_house_from_ascendant": 5,
+      "portuguese_claimed_house": 7
+    },
+    {
+      "id": "B48-05",
+      "sanskrit_locus": "BPHS 18.34",
+      "portuguese_indexed_gloss": "Venus in ascendant, seventh lord in own seventh house",
+      "sanskrit_condition_fragment": "bhāgyāj jāmitrage śukre tad-dvūne dāranāyake",
+      "source_critical_finding": "Venus seventh from ninth computes as third, not ascendant. Other Sanskrit phrase tad-dvūne remains grammatically unsettled; do not overwrite either transmitted text.",
+      "classification": "PLACEMENT_TRANSLATION_CONFLICT; REMAINDER_UNRESOLVED",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-34/",
+      "correct_relative_house_from_ascendant": 3,
+      "portuguese_venus_house": 1
+    },
+    {
+      "id": "B48-06",
+      "sanskrit_locus": "BPHS 18.38",
+      "portuguese_indexed_gloss": "Adverse spouse-loss ages 12 or 21",
+      "sanskrit_age_fragment": "dvādaśaika-ūnavimśābde",
+      "sanskrit_semantics": "12th or 19th year",
+      "source_critical_finding": "21 in Portuguese differs from 19 in the online Sanskrit recension; absent critical manuscript collation, mark witness disagreement not authoritative correction. High-stakes death claim archival only.",
+      "classification": "NUMERICAL_WITNESS_DISCREPANCY_UNRESOLVED_RECENSION",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-38/",
+      "portuguese_ages": [
+        12,
+        21
+      ],
+      "sanskrit_ages": [
+        12,
+        19
+      ]
+    },
+    {
+      "id": "B48-07",
+      "sanskrit_locus": "BPHS 18.40–41",
+      "portuguese_indexed_gloss": "Three marriages section retains 10,22,33 but has malformed tenth-house/year phrasing",
+      "sanskrit_ordinal_fragment": "prathamaṃ ... dvitīyaṃ ... tṛtīyakaṃ",
+      "source_critical_finding": "Here the text explicitly distinguishes first marriage at 10, second at 22, third at 33 with shared antecedent from 18.40. Earlier vv22–23 lack these index markers.",
+      "classification": "EVENT_ORDINAL_EXPLICIT_IN_LATER_PASSAGE",
+      "online_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-40/",
+      "sibling_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-41/",
+      "explicit_ordinal_ages": {
+        "first": 10,
+        "second": 22,
+        "third": 33
+      }
+    },
+    {
+      "id": "B48-08",
+      "sanskrit_locus": "BPHS 16.18–20",
+      "portuguese_indexed_gloss": "Offspring years 32/33, 30/36, and 40 under distinct conditions",
+      "sanskrit_semantics": "Independent online Sanskrit chapter 16 matches these disjoint alternatives and respective Jupiter/fifth lord configurations",
+      "source_critical_finding": "Previously inaccessible uploaded Portuguese source now cross-checked by indexed Library snippet. Age alternatives are not all years within their minima/maxima; no original complete CP1252 line-window read.",
+      "classification": "PORTUGUESE_INDEXED_ALIGNMENT_RESOLVED_FOR_THESE_NUMBERED_AGE_CLAUSES",
+      "online_url": "https://www.siva.sh/brihat-parashara-hora-shastra/16/16-20",
+      "disjoint_age_sets": [
+        [
+          32,
+          33
+        ],
+        [
+          30,
+          36
+        ],
+        [
+          40
+        ]
+      ]
+    }
+  ],
+  "research_limits": [
+    "Historical predictions not established human facts",
+    "Do not use spouse-death claims as personal safety/lifespan advice",
+    "Preserve original Portuguese version rather than silently fixing the translation",
+    "Distinct alternative ages remain discrete",
+    "Prāyaśaḥ is qualitative and cannot be assigned a numeric probability",
+    "B47 witness charts are synthetic: no human biographies or responses consulted",
+    "No new distinct registry annotations are admitted without de-duplication"
+  ],
+  "registry_annotations_before": 432,
+  "registry_annotations_after": 432,
+  "independently_validated_human_predictions": 0,
+  "production_model_promotions": 0
+}
