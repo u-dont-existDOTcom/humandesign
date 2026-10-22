@@ -1,0 +1,255 @@
+{
+  "schema": "MAYA_LIVING_DAY_KEEPER_KICHE_YUCATEC_SOURCE_WITNESS_V1",
+  "status": "SOURCE_FIRST_READ_ONLY_NOT_FROZEN_MAYA_MODEL",
+  "source": {
+    "title": "The Meaning of the Days in the Maya Sacred Calendar",
+    "author": "Komon Tohil K'iche' daykeepers of Zunil, Quetzaltenango, Guatemala",
+    "host": "Smithsonian National Museum of the American Indian: Living Maya Time",
+    "url": "https://maya.nmai.si.edu/sites/default/files/resources/The%20Meaning%20of%20the%20Days%20in%20the%20Maya%20Sacred%20Calendar.pdf",
+    "pages": 3,
+    "source_direct_authority": "Written by practitioners and reprinted with permission according to PDF footnote page 1.",
+    "consulted": "Full three pages read in current research; no raw book PDF copied into GitHub.",
+    "not_historical_codex_or_ancient_original": true,
+    "complete_edition_sha256_not_yet_pinned": true
+  },
+  "day_name_crosswalk_only": [
+    {
+      "index_within_published_table": 0,
+      "kiche": "B’ATZ’",
+      "yucatec": "CHUWEN",
+      "source_pdf_page_one_based": 1
+    },
+    {
+      "index_within_published_table": 1,
+      "kiche": "E",
+      "yucatec": "EB’",
+      "source_pdf_page_one_based": 1
+    },
+    {
+      "index_within_published_table": 2,
+      "kiche": "AJ",
+      "yucatec": "B’EN",
+      "source_pdf_page_one_based": 1
+    },
+    {
+      "index_within_published_table": 3,
+      "kiche": "I’X",
+      "yucatec": "IX",
+      "source_pdf_page_one_based": 1
+    },
+    {
+      "index_within_published_table": 4,
+      "kiche": "TZ’IKIN",
+      "yucatec": "MEN",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 5,
+      "kiche": "AJMAQ",
+      "yucatec": "K’IB’",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 6,
+      "kiche": "NO’J",
+      "yucatec": "KAB’AN",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 7,
+      "kiche": "TIJAX",
+      "yucatec": "ETZ’NAB’",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 8,
+      "kiche": "KAWOQ",
+      "yucatec": "KAWAK",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 9,
+      "kiche": "AJPU’",
+      "yucatec": "AJAW",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 10,
+      "kiche": "IMOX",
+      "yucatec": "IMIX’",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 11,
+      "kiche": "IQ’",
+      "yucatec": "IK’",
+      "source_pdf_page_one_based": 2
+    },
+    {
+      "index_within_published_table": 12,
+      "kiche": "AQ’AB’AL",
+      "yucatec": "AK’B’AL",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 13,
+      "kiche": "K’AT",
+      "yucatec": "K’AN",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 14,
+      "kiche": "KAN",
+      "yucatec": "CHIKCHAN",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 15,
+      "kiche": "KAME",
+      "yucatec": "KIMI",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 16,
+      "kiche": "KEJ",
+      "yucatec": "MANIK’",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 17,
+      "kiche": "Q’ANIL",
+      "yucatec": "LAMAT",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 18,
+      "kiche": "TOJ",
+      "yucatec": "MULUK",
+      "source_pdf_page_one_based": 3
+    },
+    {
+      "index_within_published_table": 19,
+      "kiche": "TZ’I’",
+      "yucatec": "OK",
+      "source_pdf_page_one_based": 3
+    }
+  ],
+  "observed_primary_claims_development_only": [
+    {
+      "id": "MAYA-CAND-001",
+      "name": "E / Eb'",
+      "page": 1,
+      "source_claim_paraphrase": "People born on this day are associated with travel inclination, generosity and sociability.",
+      "provisional_observable": "Frequency of voluntary exploratory travel when resources permit; could instead operationalize resource-sharing generosity, not both as a single score.",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "finances",
+        "mobility",
+        "work",
+        "caregiving",
+        "migration",
+        "culture"
+      ],
+      "eligibility": "blocked until correct day-name anchor, independent calendar parity, nonleading question, decoy control, source-frozen target"
+    },
+    {
+      "id": "MAYA-CAND-002",
+      "name": "B’atz’ / Chuwen",
+      "page": 1,
+      "source_claim_paraphrase": "A daykeeper tradition links this birth day to sociability, teaching roles and favorable work or relationship outcomes.",
+      "provisional_observable": "Repeated voluntary helping others learn; objective business/marriage results would require separate definitions and horizon.",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "education",
+        "social role",
+        "marriage opportunity",
+        "wealth and discrimination"
+      ],
+      "eligibility": "do not score high stakes claimed successes or after-the-fact interpretations"
+    },
+    {
+      "id": "MAYA-CAND-003",
+      "name": "Aj / B’en",
+      "page": 1,
+      "source_claim_paraphrase": "Birth-day disposition includes a calm manner alongside possible moodiness.",
+      "provisional_observable": "Measure calmness and mood variability separately to avoid posthoc fitting either polarity.",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "stress",
+        "age",
+        "sleep",
+        "measurement variability"
+      ],
+      "eligibility": "source is broad; no scoring until operationalization and calibration"
+    },
+    {
+      "id": "MAYA-CAND-004",
+      "name": "No’j / Kab’an",
+      "page": 2,
+      "source_claim_paraphrase": "The source associates this day with prudence, advising/ideas and sometimes traditional occupations.",
+      "provisional_observable": "Specific cautious deliberation habits, not predicted profession from one arbitrary date sign.",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "education",
+        "social role",
+        "socioeconomic status"
+      ],
+      "eligibility": "do not treat occupational stereotype as verified destiny"
+    },
+    {
+      "id": "MAYA-CAND-005",
+      "name": "Imox / Imix’",
+      "page": 2,
+      "source_claim_paraphrase": "The daykeepers describe associated birth dispositions using creativity and intuitive action language.",
+      "provisional_observable": "Repeated creative problem-solving behavior in concrete contexts; intuitive self-label should not be required.",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "creative opportunity",
+        "question interpretation",
+        "culture"
+      ],
+      "eligibility": "weak specificity; source claim unvalidated"
+    },
+    {
+      "id": "MAYA-CAND-006",
+      "name": "Toj / Muluk",
+      "page": 3,
+      "source_claim_paraphrase": "The source associates this sign with conciliatory roles and self-teaching.",
+      "provisional_observable": "Frequency of personally initiating conflict-mediation among peers (independent from general agreeableness).",
+      "status": "EXPLORATORY_ONLY",
+      "confounds": [
+        "relationship networks",
+        "work role",
+        "culture",
+        "social desirability"
+      ],
+      "eligibility": "not selected into prospective test until many-to-many overlap audit"
+    },
+    {
+      "id": "MAYA-CAND-007",
+      "name": "Tz’i’ / Ok",
+      "page": 3,
+      "source_claim_paraphrase": "Traditional source ascribes both positive intelligence and negative jealousy stereotypes to births on this day.",
+      "provisional_observable": "Not selected for early self-report due stigma and broad, leading definitions.",
+      "status": "QUARANTINED_FOR_EARLY_TEST",
+      "confounds": [
+        "stigmatization",
+        "relationship circumstances",
+        "self-presentation"
+      ],
+      "eligibility": "no third-party personality attribution or relationship safety prediction"
+    }
+  ],
+  "critical_limits": [
+    "The source is living K'iche' testimony; Yucatec names are cross-reference but not identical universal regional interpretive rules.",
+    "The PDF describes day-name associations; do not infer fixed 13-tone modifiers without a separately sourced table.",
+    "Civil/Gregorian to sacred day conversion still needs source-anchored epoch, date/time boundary and policy checks.",
+    "The source describes broad positive and negative traits; prospective trial must declare outcome, comparison group and multiple-testing correction in advance.",
+    "Cultural source credibility is independent of empirical success; do not treat any claim as observed confirmed.",
+    "Do not put named birth data, privately authored survey answers or scanned copyrighted book pages into public GitHub."
+  ],
+  "actual_calculation_engine_verified": false,
+  "number_of_original_source_candidate_annotations_not_in_canonical_registry": 7,
+  "real_human_blind_validations": 0,
+  "astrology_model_promotions": 0
+}
