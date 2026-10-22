@@ -1,0 +1,82 @@
+{
+  "schema": "HUMANDESIGN_MAYA_1722_CIVIL_DATE_STYLE_DISCREPANCY_B06_V1",
+  "date": "2026-10-22",
+  "status": "UNRESOLVED_HISTORICAL_CALENDAR_LABEL_STYLE_NOT_NATAL_PREDICTION",
+  "parent_source": "MAYA_1722_PRIMARY_FACSIMILE_HAND_READ_B04.json",
+  "sources": [
+    {
+      "id": "FAMSI_1722_FOLIO",
+      "kind": "original_handwritten_copy_photograph",
+      "date": "1877 copy of 1722 text",
+      "url": "https://www.famsi.org/research/mltdp/item58/ms_coll_700_item58_wk1_body0001.html",
+      "locus": "photo body0001 first handwritten date Mayo 3 matched to 9 Queh",
+      "statement_scope": "numeric/word labels; no explicit Julian-or-Gregorian legend is visible in this focal manuscript folio"
+    },
+    {
+      "id": "NEWBERRY_LIBRARY_2026_BIBLIOGRAPHY",
+      "kind": "library_bibliographic_descriptor",
+      "title": "Modern Editions of Colonial Spanish Sources for Indian Linguistics",
+      "url": "https://www.newberry.org/uploads/files/Modern%20Editions%20of%20Colonial%20Spanish%20Sources%20-%20Linguistics.pdf",
+      "pdf_page_index_zero_based": 26,
+      "printed_page": 26,
+      "exact_short_phrase": "Julian calendar equivalents in Spanish",
+      "community": "Quiché (K'iche')",
+      "source_scope": "describes 1722 Berendt-copied calendar; not a transcription of the manuscript date-style legend",
+      "shares_upenn_famsi_archive_metadata": true
+    },
+    {
+      "id": "GARAY_XOYON_2016",
+      "kind": "government_research_publication",
+      "title": "Armonización de los calendarios mayas",
+      "url": "https://mcd.gob.gt/wp-content/uploads/2017/02/Armonizacion-Maya.pdf",
+      "sha256": "16950ebf88f4bb7f0e94315e516aefdf1e99ae3cc3652e78948a2da96454fdf2",
+      "source_short_span": "May 3, 1722 = 9 Kej as interpreted on a Gregorian date via GMT584283; the figure about 1722 manuscript describes Gregorian calendar",
+      "explanation": "later scholarly conversion/interpretation, not necessarily the style used by the eighteenth-century scribe"
+    },
+    {
+      "id": "WEEKS_SACHSE_PRAGER_2009_INTRO",
+      "kind": "publisher_authorized_excerpt",
+      "title": "Maya Daykeeping: Three Calendars from Highland Guatemala, opening chapter",
+      "url": "https://upcolorado.com/media/acfupload/9780870819969.pdf",
+      "sha256": "07bba98f12a7b305628a549269a1e6313b7c6955825b54fbebb3aeff937bc944",
+      "span": "18-page chapter excerpt with calendrical names, does not independently settle this date-label convention in passages examined"
+    }
+  ],
+  "fixed_comparison": {
+    "original_1877_copy_day_label": "1722-05-03, 9 Queh",
+    "civil_date_label_as_Gregorian_candidate": "1722-05-03",
+    "civil_date_label_as_Julian_candidate_as_Gregorian_equivalent": "1722-05-14",
+    "civil_days_difference_Julian_to_Gregorian": 11,
+    "difference_scope": "European Julian-to-Gregorian offset applies to 1722/1723 dates in this research sample; no general converter implied",
+    "correlation_constant_for_both_policies": 584283,
+    "same_written_label_as_Gregorian_expected": {
+      "number": 9,
+      "kiche": "KEJ"
+    },
+    "same_written_label_as_Julian_expected": {
+      "number": 7,
+      "kiche": "TIJAX"
+    },
+    "observed_prior_sample_count": 30,
+    "observed_gregorian_same_label_parity_count": 30,
+    "observed_julian_same_label_parity_count": 0,
+    "one_manuscript_not_30_independent_traditions": true,
+    "no_calendar_choice_from_trait_fit": true,
+    "source_style_independently_confirmed": false,
+    "all_52_historical_5_by_52_group_names_independent_of_civil_date_style": true
+  },
+  "candidate_explanations_UNRESOLVED": [
+    "Newberry/FAMSI catalogue uses Julian generically for non-Maya civil year dates or by inherited metadata, whereas 1722 manuscript's written civil dates align with modern Gregorian calculation",
+    "Source's 1877 copy labels reflect actual historical Julian civil dates, in which case fixed GMT584283 does not align on the same instants; a historically different local count or conversion policy would need source proof",
+    "The manuscript's own civic-date labels may have been normalized by a copyist or later cataloguer, instead of preserving the 1722 author's date convention",
+    "Difference may reflect date metadata or older calendar reform conventions; original manuscript introduction and 2009 pp64-135 appendix need authoritative interpretation."
+  ],
+  "boundary": {
+    "full_book_translation_read": false,
+    "natal_claims_derived_from_calendar_style": 0,
+    "untouched_human_predictions": 0,
+    "previous_B04_direct_group_photographs_remain_valid": true,
+    "prohibit_silent_julian_or_gregorian_policy_promotion": true,
+    "recommended_next_source_action": "Read Berendt original introductory leaf and the critical edition's conversion note; if unresolved, maintain both historical civil-date interpretations and abstain from affected person's calendar reconstructions."
+  }
+}

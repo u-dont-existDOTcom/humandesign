@@ -1,6 +1,10 @@
 # Living cross-tradition astrology research map
 22 October 2026 — **source-controlled research overview; no new validated predictive model**
 
+## 1722 K’iche’ manuscript: historical Julian/Gregorian caution (B06)
+
+[Source-critical correction](MAYA_B06_1722_CIVIL_DATE_STYLE_SOURCE_CONFLICT_20261022.md): the Newberry Library’s description calls the 1722 copy’s Spanish dates **Julian**, whereas the later Guatemala Ministry study treats them as **Gregorian**. The manuscript itself visibly records the labels without deciding that terminology. Our fixed GMT584283 reference matches **30/30 photographed rows when labels are Gregorian**, but **0/30** if the same written 1722–23 dates are interpreted as Julian (+11 actual days). **The historic calendar-style ambiguity remains OPEN**; none of the 52 directly read sacred-day groups is affected, and **0 human predictions** were validated. Tests **113/113**.
+
 ## Maya 1722 facsimile full 52-group audit (B05)
 
 [Direct reading of all 52 photographed five-day groups](MAYA_B05_FULL_52_1722_FOLIO_SOURCE_AUDIT_20261022.md) extends the earlier 13 verified groups with [39 more hand-transcribed groups](MAYA_1722_B05_DIRECT_FOLIO_GROUPS_14_TO_52.txt). All **260** numbered day-name combinations occur once, and **107/107** source/algorithm tests pass. K'iche' interpretive prose remains untranslated; **zero human natal predictions validated**.
