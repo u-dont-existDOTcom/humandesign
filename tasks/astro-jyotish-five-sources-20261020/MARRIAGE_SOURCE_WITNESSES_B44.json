@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "batch_id": "JYOT_B44",
+  "scope": "Marriage chapter of Sarvartha Chintamani, online Sanskrit and interpretive commentary; not physical Bhasin pages",
+  "source_id": "JYOT-SC-BHASIN",
+  "witness_kind": "external_online_sanskrit_recension_unaligned_to_uploaded_Bhasin",
+  "checked_loci": 11,
+  "unique_citation_sites": 1,
+  "records": [
+    {
+      "verse": 57,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-57",
+      "classification": "character-and-religiosity",
+      "paraphrase": "With Saturn strongly ruling the seventh and benefic/Jupiter aspects, describes spouse as charitable, religious and morally virtuous.",
+      "qualifiers": [
+        "Spouse gender presumed female in historical text",
+        "Moral or religious values are not objective natal conclusions"
+      ],
+      "scorability": "DO_NOT_PREDICT_SPIRITUAL_WORTH"
+    },
+    {
+      "verse": 58,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-58",
+      "classification": "severe-adverse-partner-claim-and-geometry-warning",
+      "paraphrase": "Links seventh-house Rahu/Ketu or nodal condition with marital unfaithfulness and extreme danger to the husband, with separate malefic/krura-amsha conditions.",
+      "qualifiers": [
+        "Printed sarāhuketo ... madane potentially read as Rahu AND Ketu occupying the seventh",
+        "Literal co-presence impossible under antipodal node convention",
+        "Exact Sanskrit syntax and alternate edition not yet collated",
+        "Gender-biased and threatening allegations cannot be made about any individual from astrology"
+      ],
+      "scorability": "NOT_ADMISSIBLE_UNTIL_SOURCE_PARSED_AND_NOT_FOR_HIGH_STAKES"
+    },
+    {
+      "verse": 59,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-59",
+      "classification": "age_of_first_marriage",
+      "paraphrase": "Seventh lord near ascendant OR specified benefic near ascendant/seventh-associated sign is associated with marriage bālye, 'in childhood'.",
+      "qualifiers": [
+        "Proximity sannihite and samīpa-rāśi must be operationalized",
+        "The source says childhood, not generally twenties or exact adult age",
+        "Historical child marriage must not be normalized as advice"
+      ],
+      "scorability": "SOURCE_ONLY_AMBIGUOUS_THRESHOLD"
+    },
+    {
+      "verse": 60,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-60",
+      "classification": "age_of_marriage",
+      "paraphrase": "Benefic, favorable varga and aspects involving ascendant, second and seventh houses/lord are associated with bālye marriage.",
+      "qualifiers": [
+        "Conjunction vs disjunction not frozen",
+        "Vargha and 'benefic' definitions unresolved",
+        "No numeric age threshold"
+      ],
+      "scorability": "SOURCE_ONLY_AMBIGUOUS"
+    },
+    {
+      "verse": 61,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-61",
+      "classification": "age_of_marriage",
+      "paraphrase": "Seventh lord in Pārāvatāṃśa-or-higher division, strong second lord, and ascendant lord in gentle division associate with marriage in childhood.",
+      "qualifiers": [
+        "Pārāvatāṃśa and mṛdu divisions require separately verified math",
+        "No numeric age threshold",
+        "Do not silently translate childhood as marriage in twenties"
+      ],
+      "scorability": "SOURCE_ONLY_AMBIGUOUS"
+    },
+    {
+      "verse": 62,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-62",
+      "classification": "economic_after_marriage",
+      "paraphrase": "Various Venus/ascendant/second-house supports associated with favorable fortune after marriage.",
+      "qualifiers": [
+        "VedicPupil flags ambiguous śukre'stage as seventh-house vs combust reading",
+        "Fortune not operationalized",
+        "Does not specify international migration or exact timing"
+      ],
+      "scorability": "SOURCE_ONLY_ALTERNATIVE_TO_NEGATIVE"
+    },
+    {
+      "verse": 63,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-63",
+      "classification": "economic_after_marriage_negative",
+      "paraphrase": "Afflicted significator, seventh, second and ascendant lords are associated with significant deterioration of fortune through marriage.",
+      "qualifiers": [
+        "Multiple adverse conditions and and/or remain unparsed",
+        "Opposite in valence to v62; do not score both automatically"
+      ],
+      "scorability": "SOURCE_ONLY_NEGATIVE"
+    },
+    {
+      "verse": 64,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-64",
+      "classification": "economic_recovery_after_marriage",
+      "paraphrase": "Even after loss, favorable association/aspect may accompany later return of good fortune.",
+      "qualifiers": [
+        "A repair/cancellation, not independent evidence of original loss",
+        "Timing undefined",
+        "Must not rescue an incorrect v63 prediction post hoc"
+      ],
+      "scorability": "SOURCE_ONLY_EXCEPTION"
+    },
+    {
+      "verse": 65,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-65",
+      "classification": "delayed_fortune_or_marriage_unresolved",
+      "paraphrase": "Specified adverse seventh-lord/significator conditions lead to dūre vivāhāt; English site interprets fortune coming much later after marriage.",
+      "qualifiers": [
+        "Sanskrit explicit temporal referent not fully certain without surrounding commentary",
+        "Do not relabel it 'late marriage' or 'late recovery' yet",
+        "Several alternative conditions require disambiguation"
+      ],
+      "scorability": "UNRESOLVED_OUTCOME"
+    },
+    {
+      "verse": 66,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-66",
+      "classification": "delayed_fortune_or_marriage_unresolved",
+      "paraphrase": "Further malefic placements/aspects lead to dūre vivāhāt, similarly rendered as late fortune after marriage by site.",
+      "qualifiers": [
+        "Same lexical uncertainty as 6.65",
+        "May overlap 6.65, so correlated not independent"
+      ],
+      "scorability": "UNRESOLVED_OUTCOME"
+    },
+    {
+      "verse": 67,
+      "source_url": "https://vedicpupil.in/library/books/sarvartha-chintamani/chapter-6/verse-67",
+      "classification": "methodological_transfer",
+      "paraphrase": "Tells reader to consider similar method for sons and other matters.",
+      "qualifiers": [
+        "Methodological instruction, not an independent quantified prediction",
+        "Cannot convert wealth or marriage outcomes into a child outcome without source-specified mechanics"
+      ],
+      "scorability": "NOT_A_LIFE_EVENT_PREDICTION"
+    }
+  ],
+  "source_id_caveat": "JYOT-SC-BHASIN identifies owner source family; online VedicPupil verse numbering/text not assumed textually identical to Bhasin translation; no chapter-level collation yet",
+  "annotation_count_delta": 0,
+  "reason_no_new_count": "The 11 loci were checked as supplemental witnesses, not de-duplicated against earlier B01-B43 source registries",
+  "no_human_outcomes_consulted": true,
+  "production_promotions": 0
+}
