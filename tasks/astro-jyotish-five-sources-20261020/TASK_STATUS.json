@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B45_PRINTED_EDITION_CORRECTIONS_SAVED",
+  "status": "OPEN_B46_FAMILY_EVENT_CROSSBOOK_SOURCE_AUDIT_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B45_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B46_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -150,7 +150,12 @@
     "CONTINUATION_HANDOFF_B44_20261021.md",
     "PRINTED_EDITION_COLLATION_B45.json",
     "READING_NOTES_B45.md",
-    "CONTINUATION_HANDOFF_B45_20261022.md"
+    "CONTINUATION_HANDOFF_B45_20261022.md",
+    "FAMILY_EVENT_SOURCE_MATRIX_B46.json",
+    "FAMILY_EVENT_INPUT_AND_OBSERVABLE_GATES_B46.json",
+    "JAIMINI_PUTRAKARAKA_ENGLISH_GLOSS_B46.json",
+    "READING_NOTES_B46.md",
+    "CONTINUATION_HANDOFF_B46_20261022.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -381,7 +386,13 @@
       65,
       66
     ],
-    "b45_new_counted_annotations": 0
+    "b45_new_counted_annotations": 0,
+    "b46_grouped_source_loci": 19,
+    "b46_new_counted_source_annotations": 0,
+    "b46_original_uploaded_pdf_text_families_read": 4,
+    "b46_online_sanskrit_bp_without_original_portuguese": true,
+    "b46_putrakaraka_english_copy_gloss_discrepancy": true,
+    "b46_missing_conception_chart_input_gate": true
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -395,9 +406,12 @@
     "B44 6.58 joint Rahu+Ketu in seventh geometrically impossible if literal (12/12 sign enumeration); grammar uncollated; do not translate into alternative conjunction or use harmful spouse allegations.",
     "B44 6.59-61 historically describe childhood marriages; 6.62-64 distinguish prosperity, loss, later recovery; 6.65-66 dūre vivāhāt referent unresolved.",
     "B45 correction: Ch6 v58 Bhasin printed OR (Rahu or Ketu), online English AND; old empty-conjunction warning still conditional mathematics but cannot be falsely assigned to printed edition.",
-    "B45 v65-66 post-marital fortune is delayed, not necessarily marriage itself; v67 early/late acquisition of sons in Bhasin gloss. Uploaded English PDF indexed text actually read, page-image Sanskrit not independently verified."
+    "B45 v65-66 post-marital fortune is delayed, not necessarily marriage itself; v67 early/late acquisition of sons in Bhasin gloss. Uploaded English PDF indexed text actually read, page-image Sanskrit not independently verified.",
+    "B46: 19 grouped five-family loci, four original Library PDF translations verified, one BPHS online Sanskrit proxy because original Portuguese Library content read unavailable; 0 new unique counted annotations, total 432.",
+    "B46: Bhasin Ch5 v22 balances opposite progeny outcomes; Saravali Ch8 requires conception chart, Jataka IX.72 father star, Rath v1.1.16 copy-gloss error; reserve all as source-only.",
+    "B46 exact historical age sets (offspring 32/33, 30/36, 40; marriage 5/9, 7/11) remain distinct disjoint alternatives, not generic adult predictions; no high-stakes advice."
   ],
-  "next_exact_source_frontier": "Read uploaded originals Bhasin Ch5 progeny positives/negatives, Saravali conception vs natal parent fate, Sastri Jataka IX parental claims and Rath karaka gloss; check online BPHS original timing rules, no human test.",
+  "next_exact_source_frontier": "After B46 collate disputed Bhasin ch6.58 original Sanskrit, original Portuguese BPHS Ch16 ages when CP1252 file readable, define competing-rule precedence blind to human outcomes.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",

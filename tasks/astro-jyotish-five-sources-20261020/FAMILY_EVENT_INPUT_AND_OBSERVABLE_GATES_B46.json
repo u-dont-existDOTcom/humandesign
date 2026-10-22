@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "batch": "B46",
+  "data_inputs": [
+    {
+      "name": "birth_only",
+      "needed": [
+        "DOB",
+        "birth time",
+        "place/timezone",
+        "astronomy version"
+      ],
+      "applicable": [
+        "Bhasin Ch5",
+        "Saravali Ch9",
+        "BPHS Ch16,18"
+      ],
+      "status": "SOURCE_ONLY_NO_HUMAN_TEST"
+    },
+    {
+      "name": "conception_record",
+      "needed": [
+        "independently documented conception instant",
+        "conception location",
+        "both partners' natal charts if required"
+      ],
+      "applicable": [
+        "Saravali Ch8 11-16,23-26,44-49"
+      ],
+      "status": "CANNOT_EVALUATE_FROM_NATAL_ONLY"
+    },
+    {
+      "name": "linked_father_birth_data",
+      "needed": [
+        "child chart",
+        "father natal asterism",
+        "father natal Lagna/Navamsa if required"
+      ],
+      "applicable": [
+        "Jataka Adhyaya IX 72"
+      ],
+      "status": "ARCHIVE_ONLY_NOT_MORTALITY_ADVICE"
+    }
+  ],
+  "literal_age_branch_sets": [
+    {
+      "source": "BPHS 16.18",
+      "ages": [
+        32,
+        33
+      ],
+      "target": "offspring_birth_year_of_life",
+      "origin": "https://www.siva.sh/brihat-parashara-hora-shastra/16/18"
+    },
+    {
+      "source": "BPHS 16.19",
+      "ages": [
+        30,
+        36
+      ],
+      "target": "offspring_birth_year_of_life",
+      "origin": "https://www.siva.sh/brihat-parashara-hora-shastra/16/19"
+    },
+    {
+      "source": "BPHS 16.20",
+      "ages": [
+        40
+      ],
+      "target": "offspring_birth_year_of_life",
+      "origin": "https://www.siva.sh/brihat-parashara-hora-shastra/16/20"
+    },
+    {
+      "source": "BPHS 18.22",
+      "ages": [
+        5,
+        9
+      ],
+      "target": "historic_childhood_marriage_year_of_life",
+      "origin": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-18"
+    },
+    {
+      "source": "BPHS 18.23",
+      "ages": [
+        7,
+        11
+      ],
+      "target": "historic_childhood_marriage_year_of_life",
+      "origin": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-18"
+    }
+  ],
+  "unresolved": [
+    "age in current year of life versus completed age",
+    "two disjoint permitted ages are NOT an intervening range",
+    "AND-versus-OR among verse conditions and conflict precedence",
+    "source version and ayanamsa/house conventions",
+    "classify no_children vs late_parenthood vs adoption vs child_loss",
+    "separate father away at birth from father deceased, child age at death",
+    "do not infer father death from child chart or blame children",
+    "no unsupported pregnancy/gender/medical/reproductive decisions",
+    "one family event is one correlated outcome, not multiple independent wins"
+  ],
+  "no_model_or_questionnaire_change": true
+}
