@@ -1,0 +1,764 @@
+{
+  "schema": "MAYA_1722_BERENDT_FACSIMILE_DIRECT_VISUAL_WITNESS_B04",
+  "date": "2026-10-22",
+  "parent_goal": "OPEN prospective source-grounded real-human astrology predictions; this is original document collation only.",
+  "manuscript": {
+    "title": "Calendario de los indios de Guatemala, 1722, Kiché",
+    "physical_primary_surrogate": "Carl/Karl Hermann Berendt copy from 1877, not original manuscript in 1722 author's own hand",
+    "holding": "University of Pennsylvania Berendt-Brinton Linguistic Collection Ms. Coll. 700 Item 58",
+    "digitized_by": "FAMSI Mesoamerican Language Texts Digitization Project",
+    "landing_url": "https://www.famsi.org/research/mltdp/item58/",
+    "image_url_pattern": "https://www.famsi.org/research/mltdp/item58/ms_coll_700_item58_wk1_{image_id}.jpg",
+    "reported_image_pages": 69,
+    "facsimile_pages_original_digitized_work_separately_copied_to_repo": false,
+    "visually_examined_image_sha256": [
+      {
+        "id": "afront0001",
+        "sha256": "8af358685ccaccb8063e93455ccb96f006d8968b9dff6f14cd6a3cc0479848b0"
+      },
+      {
+        "id": "body0001",
+        "sha256": "f5dfb852d5e55ab8ec5d7710fc9276c765d859b036e01c62c364693778fa4bd0"
+      },
+      {
+        "id": "body0002",
+        "sha256": "3de1e2d2752aaf35092d28f0da9c6af5a5e270d24b3cf8dd77be4c161311467f"
+      },
+      {
+        "id": "body0003",
+        "sha256": "c972cfed8822710ff324fe6ea867698a049825f3492050b11f70f3e8fc41fd25"
+      },
+      {
+        "id": "body0005",
+        "sha256": "92e1ee730b0e6a79a85ac569707d24e29e476c58850332e580693fa62658ba02"
+      },
+      {
+        "id": "body0010",
+        "sha256": "9c997b7b81ddcec08aa7656176323bb712488c49d5f15d62118e4ab8261a2ade"
+      },
+      {
+        "id": "body0015",
+        "sha256": "18e9c7605d389a39cc6943af0076d530b0866de6d73bf8ee057f2c35e3cf5bc4"
+      },
+      {
+        "id": "body0016",
+        "sha256": "8893d1390fb6d35612e9c7aec4722555b996be4b18838c2a474c5db008460503"
+      },
+      {
+        "id": "body0017",
+        "sha256": "f567a1c52ec832cf152a60c5a42e87bf694163dbae04596d6e86e2a271877e95"
+      },
+      {
+        "id": "body0018",
+        "sha256": "36db72ec375f0fd56f2e4a1ad906d215459623c3cda5dcc85d848523a092d18e"
+      },
+      {
+        "id": "body0019",
+        "sha256": "398a94531a4fbe39734f36becc08209699c324efa021633913a093a8bc17b81c"
+      },
+      {
+        "id": "body0020",
+        "sha256": "196b31620d54ae835942186c8838ebec6a832fae43cca1de8f342cefea3199f5"
+      },
+      {
+        "id": "body0021",
+        "sha256": "5458a8cd7d737205f6ab2719e9917514a5eef6de7a9fdcc5c4224aa66abd7c0f"
+      },
+      {
+        "id": "body0022",
+        "sha256": "23038c1d52dab20adbe0a84c615f5169b697742971de1d177941ab9e7251901e"
+      },
+      {
+        "id": "body0023",
+        "sha256": "42b9cdfc05ece2b48a7d0f05b52a68e37a779eae61b35b9d0f56aae3370e1835"
+      },
+      {
+        "id": "body0024",
+        "sha256": "5e2e17822523144f0d0b71e6b50c2128ac82acd3ca58704df14a74666ca9940c"
+      },
+      {
+        "id": "body0025",
+        "sha256": "38aa09af791775d8c4f74822db1dd4636da0161230ecf0986734874e8e949272"
+      },
+      {
+        "id": "body0026",
+        "sha256": "9b97b1255cfda5e764b28a1b0a704c0a166edcc5cfd2067e57062c8e88ec0546"
+      },
+      {
+        "id": "body0030",
+        "sha256": "cde383f1e31be96ffb089ba7ad2d02cfb21c45ef26fd9a0ac913e3a7837c8187"
+      },
+      {
+        "id": "body0035",
+        "sha256": "d281c7d8da82823cd304a55dfd2eedc0fc7bf725ec1e326ce00123a60e944882"
+      },
+      {
+        "id": "body0036",
+        "sha256": "306c326606c900427bb5079863995209fb9b88bd6de1f6795fe049f547ab930f"
+      },
+      {
+        "id": "body0037",
+        "sha256": "543fa37fa243a7b32d672023de2c8cf3e73f5438ced8f25fcb42a1bdf0c8816b"
+      },
+      {
+        "id": "body0040",
+        "sha256": "785900a8b4786629d80cb0b974fa60bac1b9c9668477eb148ef1046f26bbfb48"
+      },
+      {
+        "id": "body0045",
+        "sha256": "2426c53698761eb5d213b1faef1d9f53c2fbe61ef14d98d4464cf27b35271441"
+      },
+      {
+        "id": "body0049",
+        "sha256": "2604482a73b77fa152179324e22a481d06b5a3a0fd3f404cbea2d459f979c281"
+      },
+      {
+        "id": "body0050",
+        "sha256": "dd3774da24e8b80caf215013c89d2c1d70f3bde367beb0b6976d4b137a8ba7d1"
+      }
+    ],
+    "primary_span_observations": [
+      {
+        "id": "B04_1722_DAILY",
+        "pages": "body0001–body0017",
+        "classification": "consecutive 1722 May to 1723 May paired K'iche' numbered sacred dates with handwritten Spanish month/day columns and 7-letter day-cycle markers",
+        "fully_transcribed": false
+      },
+      {
+        "id": "B04_1723_1727_SUMMARIES",
+        "pages": "body0018–body0022",
+        "classification": "year-section headings include 1723, 1724, 1725, 1726, 1727 with year-dependent parallel month/yearbearer lists",
+        "fully_transcribed": false
+      },
+      {
+        "id": "B04_52GROUP",
+        "pages": "body0023–body0035",
+        "classification": "AHILABALZIH manuscript section includes groups of five equal-numbered day-name combinations; source visual structural audit, K'iche' interpretation untranslated",
+        "fully_transcribed": false
+      },
+      {
+        "id": "B04_EXPLICIT_DATE",
+        "pages": "body0036",
+        "handwritten_short_locus": "En 6 Diciembre De 1722 años",
+        "classification": "copy shows Spanish date line; transcription from 800px archival image, handwriting legibility good"
+      },
+      {
+        "id": "B04_DIFFERENT_HAND",
+        "pages": "body0037",
+        "handwritten_short_locus": "De otra mano",
+        "classification": "explicit manuscript heading signalling an additional hand/section; should not treat all pages as one continuously authored interpretation"
+      },
+      {
+        "id": "B04_MONTH_LIST",
+        "pages": "body0050",
+        "classification": "numerical/month-name list; not independently full-transcribed, ambiguous final handwritten total is unresolved"
+      }
+    ]
+  },
+  "publisher_preview": {
+    "source_title": "Maya Daykeeping: Three Calendars from Highland Guatemala",
+    "authors_editors": [
+      "John M. Weeks",
+      "Frauke Sachse",
+      "Christian M. Prager"
+    ],
+    "year": 2009,
+    "publisher": "University Press of Colorado",
+    "authorized_intro_pdf_url": "https://upcolorado.com/media/acfupload/9780870819969.pdf",
+    "authorized_intro_pdf_sha256": "07bba98f12a7b305628a549269a1e6313b7c6955825b54fbebb3aeff937bc944",
+    "authorized_intro_pdf_page_count": 18,
+    "available_material": "Chapter 1 intro pp.1-16 and contents; not 1722 chapter pp.64-135",
+    "printed_table_1_1": "p. 4 names 1685, 1722, 1854 in parallel, manuscript transliteration corroboration without claiming exact raw glyph reading",
+    "printed_table_1_2": "p. 5 historical month name variants across 1722 A-I/A-II/A-III–VI/C",
+    "colonial_natal_context": "p.12 quotes Coto on person names from birthday signs, while pp.13-16 mix ritual good/bad days, specific historical author attributions and person-birth references; distinguish all three",
+    "special_source_boundary": "Book's cited Hernández Spina 1854 Toj birth ascription is historically stigmatizing and is not a fact or candidate clinical/sexual judgment; keep scholarly paraphrase separate from 1722 text."
+  },
+  "observed_1722_1723_date_rows": [
+    {
+      "gregorian": "1722-05-03",
+      "number": 9,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0001",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-07",
+      "number": 13,
+      "normalized_kiche": "B’ATZ’",
+      "source_handwritten_transliteration": "Ba4 / Batz (reading normalized with editorial table)",
+      "photo_id": "body0001",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-08",
+      "number": 1,
+      "normalized_kiche": "E",
+      "source_handwritten_transliteration": "Ee",
+      "photo_id": "body0001",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-14",
+      "number": 7,
+      "normalized_kiche": "TIJAX",
+      "source_handwritten_transliteration": "Tihax",
+      "photo_id": "body0001",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-15",
+      "number": 8,
+      "normalized_kiche": "KAWOQ",
+      "source_handwritten_transliteration": "Caok",
+      "photo_id": "body0002",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-23",
+      "number": 3,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0002",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-05-31",
+      "number": 11,
+      "normalized_kiche": "TZ’IKIN",
+      "source_handwritten_transliteration": "4iquin",
+      "photo_id": "body0002",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-06-01",
+      "number": 12,
+      "normalized_kiche": "AJMAQ",
+      "source_handwritten_transliteration": "Ahmak",
+      "photo_id": "body0002",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-06-05",
+      "number": 3,
+      "normalized_kiche": "AJPU’",
+      "source_handwritten_transliteration": "Hunahpu",
+      "photo_id": "body0002",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-06-06",
+      "number": 4,
+      "normalized_kiche": "IMOX",
+      "source_handwritten_transliteration": "Ymox",
+      "photo_id": "body0003",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-06-12",
+      "number": 10,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0003",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-06-28",
+      "number": 13,
+      "normalized_kiche": "AQ’AB’AL",
+      "source_handwritten_transliteration": "A4bal",
+      "photo_id": "body0003",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-07-21",
+      "number": 10,
+      "normalized_kiche": "KAME",
+      "source_handwritten_transliteration": "Queme",
+      "photo_id": "body0005",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-07-22",
+      "number": 11,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0005",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-07-31",
+      "number": 7,
+      "normalized_kiche": "AJMAQ",
+      "source_handwritten_transliteration": "Ahmak",
+      "photo_id": "body0005",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-08-01",
+      "number": 8,
+      "normalized_kiche": "NO’J",
+      "source_handwritten_transliteration": "Noh",
+      "photo_id": "body0005",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-08-11",
+      "number": 5,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0005",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-11-09",
+      "number": 4,
+      "normalized_kiche": "NO’J",
+      "source_handwritten_transliteration": "Noh",
+      "photo_id": "body0010",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1722-11-19",
+      "number": 1,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0010",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-03-01",
+      "number": 12,
+      "normalized_kiche": "TOJ",
+      "source_handwritten_transliteration": "Toh",
+      "photo_id": "body0015",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-03-02",
+      "number": 13,
+      "normalized_kiche": "TZ’I’",
+      "source_handwritten_transliteration": "4'ij / Tzi",
+      "photo_id": "body0015",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-03-03",
+      "number": 1,
+      "normalized_kiche": "B’ATZ’",
+      "source_handwritten_transliteration": "Ba4 / Batz",
+      "photo_id": "body0015",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-03-19",
+      "number": 4,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0015",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-04-08",
+      "number": 11,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0016",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-04-13",
+      "number": 3,
+      "normalized_kiche": "E",
+      "source_handwritten_transliteration": "Ee",
+      "photo_id": "body0016",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-04-28",
+      "number": 5,
+      "normalized_kiche": "KEJ",
+      "source_handwritten_transliteration": "Queh",
+      "photo_id": "body0017",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-05-01",
+      "number": 8,
+      "normalized_kiche": "TZ’I’",
+      "source_handwritten_transliteration": "4'ij / Tzi",
+      "photo_id": "body0017",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-05-02",
+      "number": 9,
+      "normalized_kiche": "B’ATZ’",
+      "source_handwritten_transliteration": "Ba4 / Batz",
+      "photo_id": "body0017",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-05-03",
+      "number": 10,
+      "normalized_kiche": "E",
+      "source_handwritten_transliteration": "Ee",
+      "photo_id": "body0018",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    },
+    {
+      "gregorian": "1723-05-04",
+      "number": 11,
+      "normalized_kiche": "AJ",
+      "source_handwritten_transliteration": "Ah",
+      "photo_id": "body0018",
+      "source_type": "independently_hand_read_date_row_from_photo",
+      "handwriting_transcription_status": "CONFIDENT_DATE_AND_COEFFICIENT_MODERN_NAME_MAPPING; EXACT_SPECIAL_CHAR_AMBIGUOUS"
+    }
+  ],
+  "transliteration_1722_from_publisher_table": [
+    {
+      "order_in_20_day_sequence": 1,
+      "modern_kiche": "IMOX",
+      "editorial_1722_variant": "Ymox / Ymos"
+    },
+    {
+      "order_in_20_day_sequence": 2,
+      "modern_kiche": "IQ’",
+      "editorial_1722_variant": "Yε / Yk"
+    },
+    {
+      "order_in_20_day_sequence": 3,
+      "modern_kiche": "AQ’AB’AL",
+      "editorial_1722_variant": "Aεbal / Akbal / Acbal"
+    },
+    {
+      "order_in_20_day_sequence": 4,
+      "modern_kiche": "K’AT",
+      "editorial_1722_variant": "4at"
+    },
+    {
+      "order_in_20_day_sequence": 5,
+      "modern_kiche": "KAN",
+      "editorial_1722_variant": "Can"
+    },
+    {
+      "order_in_20_day_sequence": 6,
+      "modern_kiche": "KAME",
+      "editorial_1722_variant": "Queme / Came"
+    },
+    {
+      "order_in_20_day_sequence": 7,
+      "modern_kiche": "KEJ",
+      "editorial_1722_variant": "Queh"
+    },
+    {
+      "order_in_20_day_sequence": 8,
+      "modern_kiche": "Q’ANIL",
+      "editorial_1722_variant": "εanil / Canil"
+    },
+    {
+      "order_in_20_day_sequence": 9,
+      "modern_kiche": "TOJ",
+      "editorial_1722_variant": "Toh / Thoh"
+    },
+    {
+      "order_in_20_day_sequence": 10,
+      "modern_kiche": "TZ’I’",
+      "editorial_1722_variant": "4’ij"
+    },
+    {
+      "order_in_20_day_sequence": 11,
+      "modern_kiche": "B’ATZ’",
+      "editorial_1722_variant": "Ba4 (Batz in modern transliteration)"
+    },
+    {
+      "order_in_20_day_sequence": 12,
+      "modern_kiche": "E",
+      "editorial_1722_variant": "Ee / E"
+    },
+    {
+      "order_in_20_day_sequence": 13,
+      "modern_kiche": "AJ",
+      "editorial_1722_variant": "Ah"
+    },
+    {
+      "order_in_20_day_sequence": 14,
+      "modern_kiche": "I’X",
+      "editorial_1722_variant": "Yx / Balam"
+    },
+    {
+      "order_in_20_day_sequence": 15,
+      "modern_kiche": "TZ’IKIN",
+      "editorial_1722_variant": "4iquin"
+    },
+    {
+      "order_in_20_day_sequence": 16,
+      "modern_kiche": "AJMAQ",
+      "editorial_1722_variant": "Ahmak"
+    },
+    {
+      "order_in_20_day_sequence": 17,
+      "modern_kiche": "NO’J",
+      "editorial_1722_variant": "Noh"
+    },
+    {
+      "order_in_20_day_sequence": 18,
+      "modern_kiche": "TIJAX",
+      "editorial_1722_variant": "Tihax"
+    },
+    {
+      "order_in_20_day_sequence": 19,
+      "modern_kiche": "KAWOQ",
+      "editorial_1722_variant": "Caok"
+    },
+    {
+      "order_in_20_day_sequence": 20,
+      "modern_kiche": "AJPU’",
+      "editorial_1722_variant": "Hunahpu"
+    }
+  ],
+  "independently_read_5x52_group_rows": [
+    {
+      "group_serial": 1,
+      "coefficient": 1,
+      "names_in_photo_read_order": [
+        "IMOX",
+        "AJ",
+        "KAN",
+        "NO’J",
+        "TOJ"
+      ],
+      "photo_id": "body0023",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 2,
+      "coefficient": 2,
+      "names_in_photo_read_order": [
+        "IQ’",
+        "I’X",
+        "KAME",
+        "TIJAX",
+        "TZ’I’"
+      ],
+      "photo_id": "body0023",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 3,
+      "coefficient": 3,
+      "names_in_photo_read_order": [
+        "AQ’AB’AL",
+        "TZ’IKIN",
+        "KEJ",
+        "KAWOQ",
+        "B’ATZ’"
+      ],
+      "photo_id": "body0023",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 4,
+      "coefficient": 4,
+      "names_in_photo_read_order": [
+        "K’AT",
+        "AJMAQ",
+        "Q’ANIL",
+        "AJPU’",
+        "E"
+      ],
+      "photo_id": "body0023",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 5,
+      "coefficient": 5,
+      "names_in_photo_read_order": [
+        "KAN",
+        "NO’J",
+        "TOJ",
+        "IMOX",
+        "AJ"
+      ],
+      "photo_id": "body0024",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 6,
+      "coefficient": 6,
+      "names_in_photo_read_order": [
+        "KAME",
+        "TIJAX",
+        "TZ’I’",
+        "IQ’",
+        "I’X"
+      ],
+      "photo_id": "body0024",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 7,
+      "coefficient": 7,
+      "names_in_photo_read_order": [
+        "KEJ",
+        "KAWOQ",
+        "B’ATZ’",
+        "AQ’AB’AL",
+        "TZ’IKIN"
+      ],
+      "photo_id": "body0024",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 8,
+      "coefficient": 8,
+      "names_in_photo_read_order": [
+        "Q’ANIL",
+        "AJPU’",
+        "E",
+        "K’AT",
+        "AJMAQ"
+      ],
+      "photo_id": "body0024",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 9,
+      "coefficient": 9,
+      "names_in_photo_read_order": [
+        "TOJ",
+        "IMOX",
+        "AJ",
+        "KAN",
+        "NO’J"
+      ],
+      "photo_id": "body0025",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 10,
+      "coefficient": 10,
+      "names_in_photo_read_order": [
+        "TZ’I’",
+        "IQ’",
+        "I’X",
+        "KAME",
+        "TIJAX"
+      ],
+      "photo_id": "body0025",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 11,
+      "coefficient": 11,
+      "names_in_photo_read_order": [
+        "B’ATZ’",
+        "AQ’AB’AL",
+        "TZ’IKIN",
+        "KEJ",
+        "KAWOQ"
+      ],
+      "photo_id": "body0025",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 12,
+      "coefficient": 12,
+      "names_in_photo_read_order": [
+        "E",
+        "K’AT",
+        "AJMAQ",
+        "Q’ANIL",
+        "AJPU’"
+      ],
+      "photo_id": "body0025",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    },
+    {
+      "group_serial": 13,
+      "coefficient": 13,
+      "names_in_photo_read_order": [
+        "AJ",
+        "KAN",
+        "NO’J",
+        "TOJ",
+        "IMOX"
+      ],
+      "photo_id": "body0026",
+      "interpretive_text_translation_status": "NOT_TRANSLATED_DIRECTLY_FROM_1722_COPY",
+      "not_5_independent_person_predictions": true
+    }
+  ],
+  "structural_sensitivity": {
+    "five_day_names_per_group": true,
+    "successive_same_number_labels_every_52_days_in_260_day_count": true,
+    "observed_groups_checked": 13,
+    "complete_52_groups_algorithmically_enumerable": true,
+    "source_content_not_frozen_natal_rule": true,
+    "uses_source_photo_not_assistant_invented_20_name_traits": true,
+    "literal_5_by_52_layout_is_mathematical_structural_parallel_to_some_Dresden_Madrid_almanacs_not_proof_of_direct_borrowing": true
+  },
+  "critical_limitations": [
+    "First calendar May 3 year 1722 is recorded in photographed Berendt 1877 copy; historically transmitted text, not autographic 1722 primary sheet.",
+    "Source date/correspondence computed under the fixed GMT 584283 model is a consistency check; visual source independently bears handwritten May3=9 Queh but 1722 manuscript or copy may reflect its own calendrical convention.",
+    "30 selected date rows on multiple manuscript folios are not 30 independent author or locale observations.",
+    "Notebook 1722 'Ahilabalzih' group text remains untranslated by this researcher; a five-name grouping is NOT automatically a natal horoscope prediction nor comparable to a modern 20-sign questionnaire.",
+    "Publisher free PDF excerpt presents chapter 1 only (18 pages), not 1722 chapter; use primary scans for later pages and do not claim to have read book in full.",
+    "Several old alphabet letters diacritics read in manuscript can be visually ambiguous at 650px resolution; modern normalized names are separately anchored to editorial Table 1.1.",
+    "Exact sixteenth/eighteenth century Spanish/Guatemalan Gregorian or Julian civil calendar practice should be source-checked before extending this to non-1722 centuries.",
+    "Later folios with 1723-1727 and explicit scribal hand distinction cannot be represented as one person's uninterrupted natal testimony.",
+    "Current living Momostenango birth-day sunrise/sunset rollover and filmed Feb 2005 source discrepancy remain unresolved.",
+    "0 actual human validations and no production chart claims"
+  ],
+  "status": {
+    "document_pages_total": 69,
+    "image_pages_hash_pinned": 26,
+    "hand_read_daily_date_rows": 30,
+    "observed_5x52_rows": 13,
+    "source_natal_rules_added": 0,
+    "blind_real_human_outcomes": 0,
+    "production_natal_promotions": 0
+  }
+}
