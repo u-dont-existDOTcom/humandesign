@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B48_PORTUGUESE_SANSKRIT_MARRIAGE_COLLATION_SAVED",
+  "status": "OPEN_B49_TEXT_VARIANTS_AND_SOURCE_DIAGNOSTICS_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B48_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B49_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -165,7 +165,13 @@
     "marriage_scope_integrity_B48.py",
     "test_marriage_scope_integrity_B48.py",
     "READING_NOTES_B48.md",
-    "CONTINUATION_HANDOFF_B48_20261022.md"
+    "CONTINUATION_HANDOFF_B48_20261022.md",
+    "SOURCE_WITNESS_COLLATION_B49.json",
+    "READING_NOTES_B49.md",
+    "CONTINUATION_HANDOFF_B49_20261022.md",
+    "marriage_witness_variants_B49.py",
+    "test_marriage_witness_variants_B49.py",
+    "B49_TEST_RESULTS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -461,7 +467,15 @@
     "b48_source_integrity_unit_tests_passed": 14,
     "b48_verse_21_full_strength_verified": false,
     "b48_production_rules_promoted": 0,
-    "b48_independent_human_predictions_tested": 0
+    "b48_independent_human_predictions_tested": 0,
+    "b49_new_counted_primary_annotations": 0,
+    "b49_crossbook_primary_source_count_cumulative": 432,
+    "b49_source_witness_issue_records": 5,
+    "b49_source_variant_arithmetic_tests_passed": 10,
+    "b49_original_printed_sanskrit_plate_verified": false,
+    "b49_independent_manuscripts_verified": 0,
+    "b49_production_rules_promoted": 0,
+    "b49_independent_human_predictions_tested": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -482,9 +496,14 @@
     "B47: Astronomically feasible synthetic Cancer asc with Sun Capricorn, seventh lord Saturn and exalted Venus conjunct in Pisces triggers BPHS18.22 age5/9 and18.23 age7/11; first-marriage age sets disjoint; source scope/precedence unresolved. MOSEPH Lahiri nonproduction 8 focused tests pass.",
     "B48 Portuguese original indexed snippets recovered, not full CP1252 bytes. BPHS18.30 age22 OR27 wrongly rendered 'between'; 18.33 ninth from ninth is fifth not seventh; 18.34 seventh from ninth is third not ascendant; 18.38 PT 12/21 vs Sanskrit 12/19 (spouse loss, archive-only).",
     "B48 original Sanskrit verses18.40–41 distinguish FIRST/SECOND/THIRD marriage, whereas 18.22–23 generic age claims use prāyaśaḥ and are not automatically first-marriage age forecasts. B47 collision is conditional single-first-event hypothetical, not proof of ancient contradiction. Possible 18.21 multiple-marriage rescue remains UNVERIFIED due unknown 7th-lord strength.",
-    "B48 Portuguese-indexed BPHS16.18–20 age alternatives 32/33,30/36,40 agree with Sanskrit source proxy; 14 isolated source-integrity tests pass; no modeling/human test, no new unique source IDs."
+    "B48 Portuguese-indexed BPHS16.18–20 age alternatives 32/33,30/36,40 agree with Sanskrit source proxy; 14 isolated source-integrity tests pass; no modeling/human test, no new unique source IDs.",
+    "B49: BPHS18.33 printed Santhanam Rahu in 5th-or-9th versus modern online Rahu conjunct lords of fifth+ninth are nonnested synthetic predicates; no grammatical/edition winner; abstain.",
+    "B49: BPHS18.34 proofread online Sanskrit तद्द्यूने vs electronic variants तद्द्वूने; dyūna attested seventh-house noun, but printed Sanskrit witness not inspected and Venus seventh-from-ninth versus ascendant translation conflict unresolved.",
+    "B49: BPHS18.38 modern English and Portuguese 12/21 versus Sanskrit e-text 12/19 has no proven separate Sanskrit recension; archive only, no individual death prediction.",
+    "B49: BPHS18.40 same site's English duration versus Hindi age-at-first-marriage, verse18.41 favors indexed marriage age; no universal rule precedence in inspected 18.22–42, collision remains no-score.",
+    "B49: 10 no-biography synthetic-only source tests pass; all six B49 files are public-safe research analysis, no copyrighted complete source and no real-human predictive validation."
   ],
-  "next_exact_source_frontier": "After B48: seek independent Sanskrit editorial witness for 18.33/34/38 plus full uploaded Portuguese line-context; map source-governed precedence or retain abstentions for coactivating marriage-age clauses. Continue high-specificity under-read original five-book outcomes without known human outcomes; do not promote rules.",
+  "next_exact_source_frontier": "After B49: seek actual printed Sanskrit plate/critical apparatus for BPHS18.33–34/38 and original Portuguese full line context; discriminate house-vs-lord antecedents without hindsight, and read five-book career/wealth/property negative as well as positive rule families. Preserve explicit no-score abstention for unsolved marriage rule conflicts.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",

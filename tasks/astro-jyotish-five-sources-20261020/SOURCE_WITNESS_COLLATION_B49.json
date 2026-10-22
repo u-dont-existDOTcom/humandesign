@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B49",
+  "research_type": "SOURCE_CRITICISM_NO_RULE_PROMOTION",
+  "date_utc": "2026-10-22",
+  "related_batch": "JYOT_B48",
+  "scope": "BPHS 18.22-42; source text/editorial discrepancies; no participant charts",
+  "source_independence_note": "Several online sites reproduce the same Sanskrit electronic text or translations; these URLs do not establish independent manuscript recensions.",
+  "claims": [
+    {
+      "id": "B49-01",
+      "locus": "18.33",
+      "question": "Rahu in 5th OR 9th versus Rahu conjoined with lords of both fifth and ninth",
+      "sanskrit_fragment": "bhāgyād bhāgyagate śukre taddvaye rāhusaṃyute",
+      "witnesses": [
+        {"type":"edited_english_print_scan_OCR", "name":"R. Santhanam, vol I, p.168", "interpretation":"Venus fifth; Rahu in either fifth or ninth", "url":"https://studylib.net/doc/27858738/maharishi-parashara---brihat-parasara-hora-sastra--vol.-1-"},
+        {"type":"online_sanskrit_plus_editorial_english", "name":"Enjoy Learning Sanskrit", "interpretation":"Venus fifth; fifth and ninth lords with Rahu", "url":"https://enjoylearningsanskrit.com/scriptures/parashara/chapter-18/verse-33/"},
+        {"type":"online_sanskrit_unresolved", "name":"SanskritDocuments", "interpretation":"Untranslated compound taddvaye; antecedent disputed", "url":"https://sanskritdocuments.org/doc_z_misc_sociology_astrology/par1120.html"}
+      ],
+      "source_critical_conclusion": "The second reading adds implicit house lords absent as explicit īśa/nātha in the visible verse; the first is a translator's specific inference, not dictated solely by grammar. These have genuinely different chart antecedents.",
+      "simulation": "Synthetic Aries-ascendant signs with Venus Leo, Rahu Sagittarius, Sun Aries, Jupiter Gemini satisfy printed-house version only; Venus Leo, Rahu Capricorn, Sun/Jupiter Capricorn satisfy lords-conjunction only.",
+      "canonical_predicate": null,
+      "score_allowed": false
+    },
+    {
+      "id": "B49-02",
+      "locus": "18.34",
+      "question": "dyūne vs dvūne one-akṣara Sanskrit witness mismatch",
+      "variants": [
+        {"reading":"तद्द्यूने", "origin":"Ahto Jarve encoded text, SanskritDocuments proofread by Jarve and Ginda Lass", "url":"https://sanskritdocuments.org/doc_z_misc_sociology_astrology/par1120.html"},
+        {"reading":"तद्द्वूने", "origin":"E-Bharatisampat e-text and several web editions", "url":"https://www.ebharatisampat.in/read_chapter.php?bookid=NDE4NjYyMTkwMjQxMzUy"}
+      ],
+      "external_lexical_control": "द्यून dyūna is attested as astrological seventh house in Varāhamihira Bṛhat Jātaka 1.16: https://www.wisdomlib.org/hinduism/book/brihat-jataka-by-varahamihira-sanskrit-english/d/doc1501579.html",
+      "source_critical_conclusion": "Dyūne has a meaningful astronomical lexical parse; dvūne may be a copying error but no printed Sanskrit plate or manuscript was verified to decide. First half independently puts Venus seventh from ninth = third from ascendant. English/Portuguese Venus-ascendant gloss conflicts.",
+      "canonical_predicate": null,
+      "score_allowed": false
+    },
+    {
+      "id": "B49-03",
+      "locus": "18.38",
+      "question": "Discrepant year-of-life numeral in high-stakes historical spouse-loss verse",
+      "sanskrit_reading": [12,19],
+      "modern_english_and_portuguese_reading": [12,21],
+      "sanskrit_witness_url": "https://sanskritdocuments.org/doc_z_misc_sociology_astrology/par1120.html",
+      "english_print_transcription_url": "https://studylib.net/doc/27858738/maharishi-parashara---brihat-parasara-hora-sastra--vol.-1-",
+      "uploaded_portuguese": "Kerr, indexed excerpts inspected in B48, no raw-line context",
+      "status": "DIFFERENT_TRANSLATION_NUMERALS_WITHOUT_VERIFIED_DIFFERENT_SANSKRIT_MANUSCRIPTS",
+      "use": "ARCHIVAL_ONLY_NO_INDIVIDUAL_DEATH_RISK",
+      "score_allowed": false
+    },
+    {
+      "id": "B49-04",
+      "locus": "18.40-41",
+      "question": "Same modern site's English first-marriage duration interpretation contradicts its Hindi first-marriage age interpretation",
+      "english": "First marriage lasts ten years (duration)",
+      "hindi": "First marriage occurs in tenth year of life (event age)",
+      "english_url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-18/verse-40",
+      "hindi_url": "https://vedicpupil.in/hi/library/books/brihat-parashara-hora-shastra/chapter-18/verse-40",
+      "comparison": "Printed Santhanam and 18.41 second-at-22 and third-at-33 support event-age interpretation, but that is contextual source reading, not independent validation.",
+      "canonical_event_semantics": "FIRST_MARRIAGE_YEAR_10_WITH_EDITORIAL_CONFLICT_FLAG",
+      "score_allowed": false
+    },
+    {
+      "id": "B49-05",
+      "locus": "18.22-42",
+      "question": "Does inspected chapter provide universal priority among competing generic marriage-year rules?",
+      "chapter_scope": "The full Sanskrit 18.22-42 passage was inspected in SanskritDocuments and E-Bharatisampat",
+      "finding": "Verses 18.40-41 index first/second/third marriages for their specific configuration, but no chapter-global ranking or conflict rule for vv22-34 is explicitly present in the inspected passage.",
+      "limits": "Absence finding scoped to examined chapter/witnesses, not all editions, commentaries or five books.",
+      "conflicting_generic_rule_status": "UNRESOLVED_EVENT_INDEX_AND_DISJOINT_AGES",
+      "score_allowed": false
+    }
+  ],
+  "test_count": 10,
+  "test_scope": "Synthetic symbolic sign configurations and source-variant classification only",
+  "source_annotations_before": 432,
+  "source_annotations_after": 432,
+  "validated_prospective_human_predictions": 0,
+  "production_rules_promoted": 0
+}
