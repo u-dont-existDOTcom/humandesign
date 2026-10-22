@@ -1,0 +1,247 @@
+{
+  "schema": "MAYA_SOURCE_CRITICAL_SUNSET_DAY_BOUNDARY_AND_NATAL_FALSIFIABILITY_V1",
+  "status": "RESEARCH_SOURCE_SENSITIVITY_NO_HUMAN_MODEL",
+  "prepared_utc_date": "2026-10-22",
+  "parent_owner_goal_status": "OPEN",
+  "source": {
+    "id": "MAYA-GARAY-XOYON-2016",
+    "title": "Armonización de los calendarios mayas",
+    "authors": [
+      "Alejandro Garay",
+      "Igor Xoyón"
+    ],
+    "publisher": "Ministerio de Cultura y Deportes, Guatemala",
+    "date": "2016-11",
+    "url": "https://mcd.gob.gt/wp-content/uploads/2017/02/Armonizacion-Maya.pdf",
+    "pdf_page_count": 119,
+    "sha256": "16950ebf88f4bb7f0e94315e516aefdf1e99ae3cc3652e78948a2da96454fdf2",
+    "sha256_checked_owner_local_pdf": true,
+    "original_pdf_committed_to_repository": false,
+    "page_locations": [
+      {
+        "printed_pages": "39-44",
+        "pdf_pages": "43-48",
+        "classification": "historical_epigraphic_and_secondary_ethnographic_evidence_and_author_interpretation",
+        "finding": "Historical sacred Cholq'ij day begins at onset of darkness while Ab' changes at dawn; not every community or natal clock verified"
+      },
+      {
+        "printed_page": 58,
+        "pdf_page": 62,
+        "classification": "reported_modern_practitioner_consultation",
+        "finding": "Authors report Guatemala council of Maya spiritual guides agreed with sunrise/sunset distinction; >90% number concerns celebrating the yearbearer on 5 K'ayab', NOT sunset agreement."
+      },
+      {
+        "printed_page": 86,
+        "pdf_page": 90,
+        "classification": "worked_example_and_author_proposal",
+        "finding": "2015-04-02 before sunset 4 E'; after sunset 5 Aj. 2015-02-21 3 E'/4 Aj year cycle included."
+      }
+    ]
+  },
+  "contrasting_source": {
+    "id": "MAYA-CANO-ETAL-2020",
+    "title": "Permanencia y uso contemporáneo del calendario Cholq’ij/Tachb’al Amaq’ en tierras altas de Guatemala",
+    "authors": [
+      "Eréndira Cano Contreras",
+      "Erin Estrada Lugo",
+      "Jaime Page Pliego",
+      "Egleé Zent"
+    ],
+    "journal": "Estudios de Cultura Maya",
+    "volume": 56,
+    "year": 2020,
+    "doi": "10.19130/iifl.ecm.2020.56.2.0007",
+    "url": "https://www.scielo.org.mx/scielo.php?pid=S0185-25742020000200177&script=sci_arttext",
+    "inference": "Continued practices are heterogeneous over region and specialist; not an independent proof of specific sunset natal birth-time rule or empirical effectiveness."
+  },
+  "calendar_policy_variants": [
+    {
+      "id": "GMT_584283_BEFORE_SUNSET",
+      "proleptic_gregorian_civil_date_offset": 0,
+      "sacred_day_relation": "before_sunset",
+      "solar_ab_status": "NOT_CALCULATED"
+    },
+    {
+      "id": "GMT_584283_AFTER_SUNSET",
+      "proleptic_gregorian_civil_date_offset": 1,
+      "sacred_day_relation": "after_sunset",
+      "solar_ab_status": "NOT_CALCULATED"
+    },
+    {
+      "id": "GMT_584283_UNKNOWN_PHASE",
+      "candidate_offsets": [
+        0,
+        1
+      ],
+      "sacred_day_relation": "unknown",
+      "eligibility": "ABSTAIN"
+    },
+    {
+      "id": "GMT_584285_SENSITIVITY",
+      "correlation": 584285,
+      "eligibility": "ALTERNATIVE_CALENDAR_SENSITIVITY_ONLY"
+    }
+  ],
+  "dated_source_witnesses": [
+    {
+      "id": "GARAY-1927-03-10-NIGHT",
+      "civil_date": "1927-03-10",
+      "phase": "after_sunset",
+      "day_number": 2,
+      "kiche_name": "Q’ANIL",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Garay/Xoyón citing La Farge Jacaltec/Popti' night ceremony; derived from secondary ethnographic report, not direct 2016 observation"
+    },
+    {
+      "id": "GARAY-1927-03-15-NIGHT",
+      "civil_date": "1927-03-15",
+      "phase": "after_sunset",
+      "day_number": 7,
+      "kiche_name": "AJ",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Garay/Xoyón citing La Farge Jakaltek/Popti' yearbearer after sunset; secondary report"
+    },
+    {
+      "id": "GARAY-1939-03-12-DAY",
+      "civil_date": "1939-03-12",
+      "phase": "before_sunset",
+      "day_number": 5,
+      "kiche_name": "E",
+      "source_pdf_page": 48,
+      "printed_page": 44,
+      "provenance": "Worked illustration; author proposals not independent field observation"
+    },
+    {
+      "id": "GARAY-1939-03-12-NIGHT",
+      "civil_date": "1939-03-12",
+      "phase": "after_sunset",
+      "day_number": 6,
+      "kiche_name": "AJ",
+      "source_pdf_page": 48,
+      "printed_page": 44,
+      "provenance": "Worked illustration; author proposals not independent field observation"
+    },
+    {
+      "id": "GARAY-1939-11-26-DAY",
+      "civil_date": "1939-11-26",
+      "phase": "before_sunset",
+      "day_number": 4,
+      "kiche_name": "B’ATZ’",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Authors' theoretical corrected daylight label alongside Lincoln ethnographic night label"
+    },
+    {
+      "id": "GARAY-1939-11-26-NIGHT",
+      "civil_date": "1939-11-26",
+      "phase": "after_sunset",
+      "day_number": 5,
+      "kiche_name": "E",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Garay/Xoyón citing Lincoln 1942 Ixil ethnography, secondary report"
+    },
+    {
+      "id": "GARAY-1940-11-25-DAY",
+      "civil_date": "1940-11-25",
+      "phase": "before_sunset",
+      "day_number": 5,
+      "kiche_name": "AJMAQ",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Authors' corrected daylight label alongside Lincoln ethnographic night label"
+    },
+    {
+      "id": "GARAY-1940-11-25-NIGHT",
+      "civil_date": "1940-11-25",
+      "phase": "after_sunset",
+      "day_number": 6,
+      "kiche_name": "NO’J",
+      "source_pdf_page": 47,
+      "printed_page": 43,
+      "provenance": "Garay/Xoyón citing Lincoln 1942 Ixil ethnography, secondary report"
+    },
+    {
+      "id": "GARAY-2015-02-21-DAY",
+      "civil_date": "2015-02-21",
+      "phase": "before_sunset",
+      "day_number": 3,
+      "kiche_name": "E",
+      "source_pdf_page": 90,
+      "printed_page": 86,
+      "provenance": "Proposed harmonized schedule worked example"
+    },
+    {
+      "id": "GARAY-2015-02-21-NIGHT",
+      "civil_date": "2015-02-21",
+      "phase": "after_sunset",
+      "day_number": 4,
+      "kiche_name": "AJ",
+      "source_pdf_page": 90,
+      "printed_page": 86,
+      "provenance": "Proposed harmonized schedule via +1 date; interpretation not separate independent observation"
+    },
+    {
+      "id": "GARAY-2015-04-02-DAY",
+      "civil_date": "2015-04-02",
+      "phase": "before_sunset",
+      "day_number": 4,
+      "kiche_name": "E",
+      "source_pdf_page": 90,
+      "printed_page": 86,
+      "provenance": "2016 publication explicit paired day/night calendar worked example"
+    },
+    {
+      "id": "GARAY-2015-04-02-NIGHT",
+      "civil_date": "2015-04-02",
+      "phase": "after_sunset",
+      "day_number": 5,
+      "kiche_name": "AJ",
+      "source_pdf_page": 90,
+      "printed_page": 86,
+      "provenance": "2016 publication explicit paired day/night calendar worked example"
+    },
+    {
+      "id": "GARAY-2016-02-21-DAY",
+      "civil_date": "2016-02-21",
+      "phase": "before_sunset",
+      "day_number": 4,
+      "kiche_name": "NO’J",
+      "source_pdf_page": 62,
+      "printed_page": 58,
+      "provenance": "Harmonized yearbearer 5 K'ayab' 4 No'j, not a primary historical field observation"
+    },
+    {
+      "id": "GARAY-2016-02-21-NIGHT",
+      "civil_date": "2016-02-21",
+      "phase": "after_sunset",
+      "day_number": 5,
+      "kiche_name": "TIJAX",
+      "source_pdf_page": 90,
+      "printed_page": 86,
+      "provenance": "Derived next sacred day from GMT584283 date-only engine, not a separately explicitly dated 2016 night source claim"
+    }
+  ],
+  "closeout": {
+    "number_of_tested_paired_day_phase_rows": 14,
+    "genuinely_independent_ethnographic_reports": "Multiple derived from Lincoln/La Farge or authors' calculations; number of independent original field reports NOT claimed",
+    "calendar_date_only_GMT_584283_prior_check": "1975-06-22=9 Akabal;1977-03-02=4 Ik;1977-03-15=4 Tziquin (Tedlock), preserved unchanged",
+    "natal_local_practitioner_day_clock_confirmed": false,
+    "astronomy_local_sunset_timestamp_computed": false,
+    "day_sign_personality_prediction_validated": false,
+    "actual_consenting_untouched_humans_tested": 0,
+    "runtime_rule_promotions": 0,
+    "public_copyrighted_originals_copied": false
+  },
+  "cultural_scope_locks": [
+    "2016 authors argue for general day clock; no assertion every contemporary Momostenango/Zunil daykeeper adopts same birth-time rule",
+    "Sacred Cholq'ij/Tzolk'in sign (260) and solar Ab'/Haab' months (365) turn over at different times in the investigated interpretation; never copy sacred date offset to solar calendar",
+    "Highland Ab' calendar has separate ~40-day month-year alignment relative to Classic Lowland system; do not infer lowland Haab from highland yearbearer",
+    "Day sign number and name are coupled for traditional use; pooled Noj (all numbers 1-13) remains a MODERN experimental simplification to be content-reviewed, not the exact historic method",
+    "Existing dictionary of Zunil day names is transliteration crosswalk only; cultural characterization remains independent",
+    "Dated calendar agreement is engineering/source parity, not validation of person's traits",
+    "No participant-specific calculation or sensitive birth inputs committed into public repository"
+  ]
+}
