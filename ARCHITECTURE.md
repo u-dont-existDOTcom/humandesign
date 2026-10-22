@@ -1,5 +1,7 @@
 # Architecture
 
+The [living cross-tradition astrology source-to-test map](docs/astrology-research-map/README.md) supplements this **Human Design-specific** architecture. The map inventories Maya and other historical astrology sources without modifying or claiming compliance of this project's frozen Human Design V4.3 scorer, natal calculator, survey models, or production runtime.
+
 ## Goal
 
 Implement an end-to-end research system that can:

@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Astrology source-to-observable evidence trace",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "A candidate claim is not valid human predictive evidence simply because it has source text, an astrological calendar and an agreeable personal story.",
+  "required": [
+    "claim_id",
+    "tradition_id",
+    "source_witness",
+    "prediction_class",
+    "chart_feature",
+    "observable",
+    "dependencies",
+    "readiness",
+    "human_evidence"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tradition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "kind",
+        "locus",
+        "layer",
+        "paraphrase"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "living_practitioner",
+            "historical_primary_text",
+            "original_edition_translation",
+            "commentator",
+            "modern_interpretive"
+          ]
+        },
+        "locus": {
+          "type": "string"
+        },
+        "layer": {
+          "enum": [
+            "original",
+            "translation",
+            "translator_commentary",
+            "secondary_analysis",
+            "new_inference"
+          ]
+        },
+        "limited_original_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "paraphrase": {
+          "type": "string"
+        },
+        "original_source_hash_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "alternate_witness_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "prediction_class": {
+      "enum": [
+        "natal_trait",
+        "natal_timed_event",
+        "relationship",
+        "electional",
+        "horary",
+        "astronomical_only",
+        "cultural_nonpredictive"
+      ]
+    },
+    "chart_feature": {
+      "type": "object",
+      "required": [
+        "algorithm_ref",
+        "calendar_policy_ref",
+        "predicate",
+        "uncertainty_state"
+      ],
+      "properties": {
+        "algorithm_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "calendar_policy_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "predicate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uncertainty_state": {
+          "enum": [
+            "unimplemented",
+            "conflicted",
+            "implemented_unverified",
+            "independently_verified",
+            "not_applicable"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "observable": {
+      "type": "object",
+      "required": [
+        "construct",
+        "question_ids",
+        "effect_direction",
+        "falsifier",
+        "time_horizon",
+        "confounds"
+      ],
+      "properties": {
+        "construct": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "question_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "effect_direction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "falsifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_horizon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confounds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object",
+      "required": [
+        "same_construct_other_claim_ids",
+        "source_lineage_ids",
+        "conditional_exceptions"
+      ],
+      "properties": {
+        "same_construct_other_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_lineage_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conditional_exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "readiness": {
+      "type": "object",
+      "required": [
+        "stage",
+        "frozen_before_outcomes",
+        "exclusion_reason"
+      ],
+      "properties": {
+        "stage": {
+          "enum": [
+            "source_only",
+            "exploratory",
+            "development",
+            "preregistered_frozen",
+            "untouched_human_test",
+            "historically_refuted",
+            "dropped"
+          ]
+        },
+        "frozen_before_outcomes": {
+          "type": "boolean"
+        },
+        "model_commit_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exclusion_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decoy_spec": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nonastrology_null_spec": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "human_evidence": {
+      "type": "object",
+      "required": [
+        "untouched_test_participants",
+        "validated_predictive_successes",
+        "effect_size_status"
+      ],
+      "properties": {
+        "untouched_test_participants": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "validated_predictive_successes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "effect_size_status": {
+          "enum": [
+            "unmeasured",
+            "null",
+            "negative",
+            "positive",
+            "uncertain"
+          ]
+        },
+        "permutation_null_result": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_report_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

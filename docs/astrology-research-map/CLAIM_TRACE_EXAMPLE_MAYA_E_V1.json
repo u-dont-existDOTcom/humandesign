@@ -1,0 +1,61 @@
+{
+  "claim_id": "MAYA-CAND-001",
+  "tradition_id": "MAYA-LIVING",
+  "source_witness": {
+    "source_id": "MAYA-S01",
+    "kind": "living_practitioner",
+    "locus": "Komon Tohil PDF p.1, E / Eb' day line",
+    "layer": "translation",
+    "limited_original_quote": "good travelers",
+    "paraphrase": "The living daykeeper source characterizes people born on E/Eb' as inclined toward travel, sociability and generosity.",
+    "original_source_hash_sha256": null,
+    "alternate_witness_ids": []
+  },
+  "prediction_class": "natal_trait",
+  "chart_feature": {
+    "algorithm_ref": "maya_calendar_reference.py (DATE ONLY, lowland reference NOT independent K'iche' living anchor)",
+    "calendar_policy_ref": null,
+    "predicate": null,
+    "uncertainty_state": "unimplemented"
+  },
+  "observable": {
+    "construct": "Voluntary travel propensity relative to opportunity",
+    "question_ids": [],
+    "effect_direction": null,
+    "falsifier": null,
+    "time_horizon": null,
+    "confounds": [
+      "income",
+      "place of residence",
+      "ability to travel",
+      "employment",
+      "family responsibilities",
+      "life stage"
+    ]
+  },
+  "dependencies": {
+    "same_construct_other_claim_ids": [],
+    "source_lineage_ids": [
+      "MAYA-S01"
+    ],
+    "conditional_exceptions": [
+      "Original K'iche' day boundary and K'iche'-Gregorian continuity not independently verified",
+      "Source describes a day-name trait, not numerical 1-13 modifiers"
+    ]
+  },
+  "readiness": {
+    "stage": "source_only",
+    "frozen_before_outcomes": false,
+    "model_commit_sha256": null,
+    "exclusion_reason": "No verified living K'iche' date-to-dayname anchor, question wording, measured effect direction, prior null or decoys",
+    "decoy_spec": null,
+    "nonastrology_null_spec": null
+  },
+  "human_evidence": {
+    "untouched_test_participants": 0,
+    "validated_predictive_successes": 0,
+    "effect_size_status": "unmeasured",
+    "permutation_null_result": null,
+    "public_report_ref": null
+  }
+}
