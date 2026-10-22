@@ -1,5 +1,7 @@
 # Living cross-tradition astrology research map
 
+**22 October local update:** [12-file acquired-book inventory, verified hashes, al-Bīrūnī misattribution, and revised reading order](LOCAL_ACQUISITION_RECONCILIATION_20261022.md). This supersedes the earlier Drive-only ‘missing book’ statuses while preserving the initial audit's source recommendations.
+
 ## Hellenistic and other missing-book acquisition audit (22 October 2026)
 
 The verified title-by-title [Hellenistic, Arabic/Persian, Babylonian and cross-tradition acquisition audit](ASTROLOGY_MISSING_BOOKS_AND_EDITIONS_20261022.md) distinguishes existing copies, legal free reference scans and genuinely missing source editions; it specifically notes that owned *Persian Nativities IV* replaces the partial *III*. It changes no prediction score or model.
