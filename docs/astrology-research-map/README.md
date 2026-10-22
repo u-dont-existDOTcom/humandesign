@@ -1,5 +1,6 @@
 # Living cross-tradition astrology research map
 
+**22 October source-reading update:** [Hephaistio II's page-anchored profession and dignity variant witnesses](HEPHAISTIO_II_FIRST_SOURCE_COMPARISON_20261022.md) are source-only and not scored or promoted.\n
 **22 October local update:** [12-file acquired-book inventory, verified hashes, al-Bīrūnī misattribution, and revised reading order](LOCAL_ACQUISITION_RECONCILIATION_20261022.md). This supersedes the earlier Drive-only ‘missing book’ statuses while preserving the initial audit's source recommendations.
 
 ## Hellenistic and other missing-book acquisition audit (22 October 2026)
