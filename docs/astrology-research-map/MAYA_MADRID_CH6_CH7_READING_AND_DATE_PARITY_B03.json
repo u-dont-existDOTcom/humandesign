@@ -1,0 +1,159 @@
+{
+  "schema": "MAYA_MADRID_CHAPTERS_6_7_SCHOLARLY_DATE_PARITY_B03_V1",
+  "created_date": "2026-10-22",
+  "source": {
+    "title": "The Madrid Codex: New Approaches to Understanding an Ancient Maya Manuscript",
+    "editors": "Gabrielle Vail and Anthony F. Aveni",
+    "publisher": "University Press of Colorado",
+    "publication_year": 2004,
+    "owner_held_pdf_sha256": "4a75d30f35e0f0832ecf124150fe28123738b2a1428589a9403d8cd3ddfe0f23",
+    "read_chapter_6_printed_pages": "147-170 (including methods, tables 6.5-6.9 and dated-case analysis)",
+    "read_chapter_7_printed_pages": "171-214 (selected passages, tables 7.1-7.3 and notes)",
+    "original_book_text_or_images_redistributed": false
+  },
+  "methodological_points": [
+    {
+      "id": "AVENI-COGNATE-ALMANACS",
+      "printed_page": 152,
+      "claim": "Aveni identifies 15 numerically cognate Dresden/Madrid almanac pairs by black-number temporal interval pattern and studies editorial revisions and relative dating.",
+      "classification": "textual_mathematical_interdependence_not_15_independent_birth_rules"
+    },
+    {
+      "id": "AVENI-906",
+      "printed_pages": [
+        158,
+        160,
+        161,
+        167
+      ],
+      "claim": "He evaluates an approximately 131-year later Madrid M.10a-13a version of a dated Dresden D.38b-41b astronomical/seasonal almanac; dates are interpretive fits, some competing possibilities.",
+      "classification": "model_fitted_astronomical_historical_source_not_prospective_natal_person"
+    },
+    {
+      "id": "VAIL-HAAB",
+      "printed_pages": [
+        171,
+        172
+      ],
+      "claim": "Vail and Victoria Bricker identify about 40 possible Haab dates beyond previously recognized Calendar Round M.73b, challenging the assumption all Madrid almanacs are exclusively 260-day divination.",
+      "classification": "scholarly_candidate_dates_not_all_independently_deciphered"
+    },
+    {
+      "id": "VAIL-MADRID-65",
+      "printed_pages": [
+        172,
+        178
+      ],
+      "claim": "Madrid 65-72 plus 73b spans 260 date signs, with 13 Ahau 13 Cumku as Calendar Round terminal glyph; the assigned Gregorian year 1451 relies on separate scholarly evidence/interpretation.",
+      "classification": "calendar_epigraphic_reconstruction_not_birth_trait"
+    },
+    {
+      "id": "CLASSIC-MAYAPAN-NOTATION",
+      "printed_pages": [
+        207,
+        208,
+        211
+      ],
+      "claim": "A date may be given as 13 Ik 9 Ceh in Mayapan convention and 13 Ik 10 Ceh in Classic notation; the sacred 260-day 13 Ik is unchanged.",
+      "classification": "calendar_month_numbering_policy_not_GMT_correlation_shift"
+    },
+    {
+      "id": "RITUAL-AND-CHART",
+      "printed_pages": [
+        152,
+        153,
+        172
+      ],
+      "claim": "Marriage themes in some cognate almanacs cannot be treated as natal marriage compatibility forecasts; astronomical tables and ritual timing are separate method classes.",
+      "classification": "contextual_almanac_not_natal"
+    }
+  ],
+  "published_scholar_calendar_examples": [
+    {
+      "id": "DRESDEN_AVENI_775_CAUAC",
+      "gregorian": "0775-05-20",
+      "source_printed_page": 158,
+      "source_reported_number": 6,
+      "source_reported_yucatec": "KAWAK",
+      "source_haab_day": null,
+      "source_haab_month": null,
+      "origin": "scholarly proposed source date for D.38b-41b; not independently historically recorded birth"
+    },
+    {
+      "id": "MADRID_AVENI_906_CAUAC",
+      "gregorian": "0906-05-13",
+      "source_printed_page": 161,
+      "source_reported_number": 6,
+      "source_reported_yucatec": "KAWAK",
+      "source_haab_day": null,
+      "source_haab_month": null,
+      "origin": "scholarly proposed fit to M.10a-13a, not an observed independent natal forecast"
+    },
+    {
+      "id": "VAIL_M73B_1451",
+      "gregorian": "1451-08-05",
+      "source_printed_page": 172,
+      "source_reported_number": 13,
+      "source_reported_yucatec": "AJAW",
+      "source_haab_day": 13,
+      "source_haab_month": "KUMK’U",
+      "origin": "proposed Gregorian placement of 13 Ahau 13 Cumku on M.73b; date fitted by scholarly method"
+    },
+    {
+      "id": "VAIL_925_WO",
+      "gregorian": "0925-01-16",
+      "source_printed_page": 208,
+      "source_reported_number": 4,
+      "source_reported_yucatec": "IK’",
+      "source_haab_day": 5,
+      "source_haab_month": "WO’",
+      "origin": "proposed date 4 Ik 5 Uo in the scholars' model"
+    },
+    {
+      "id": "VAIL_925_KANKIN",
+      "gregorian": "0925-09-21",
+      "source_printed_page": 207,
+      "source_reported_number": 5,
+      "source_reported_yucatec": "OK",
+      "source_haab_day": 13,
+      "source_haab_month": "K’ANK’IN",
+      "origin": "proposed date 5 Oc 13 Kankin in model"
+    },
+    {
+      "id": "VAIL_924_KEH_CLASSIC",
+      "gregorian": "0924-08-09",
+      "source_printed_page": 207,
+      "source_reported_number": 13,
+      "source_reported_yucatec": "IK’",
+      "source_haab_day": 10,
+      "source_haab_month": "KEH",
+      "mayapan_same_date_haab_day": 9,
+      "origin": "text expressly gives 9 Ceh Mayapan vs 10 Ceh Classic; reference converter emits Classic"
+    },
+    {
+      "id": "VAIL_924_PAX_CLASSIC",
+      "gregorian": "0924-10-26",
+      "source_printed_page": 207,
+      "source_reported_number": 13,
+      "source_reported_yucatec": "AJAW",
+      "source_haab_day": 8,
+      "source_haab_month": "PAX",
+      "mayapan_same_date_haab_day": 7,
+      "origin": "text expressly gives 7 Pax Mayapan vs 8 Pax Classic"
+    }
+  ],
+  "statistical_evidence": {
+    "source_date_computations_are_correlation_dependent": true,
+    "scholarly_generated_dates_not_independent_oracle": true,
+    "original_glyph_folio_personality_decipherments_added": 0,
+    "untouched_human_natal_predictions": 0,
+    "human_validation_effects": 0
+  },
+  "guardrails": [
+    "Do not count 15 almanac pairs as 15 independent traditions or natal predictions",
+    "Do not conflate 40 *possible* Haab source witnesses with 40 independently decoded glyph checks",
+    "Do not transpose the Mayapan Classic 1-day Haab numbering difference into sacred day sign or GMT 584283 vs 584285 choice",
+    "Do not reinterpret Aveni's fitted eclipse dates as prospectively observed predictions from that historical era",
+    "Do not use these scholarly matched Gregorian dates to tune the community living-daykeeper birth clock"
+  ]
+}

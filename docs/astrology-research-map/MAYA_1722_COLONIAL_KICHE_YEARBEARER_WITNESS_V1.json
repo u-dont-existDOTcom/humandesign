@@ -1,0 +1,175 @@
+{
+  "schema": "MAYA_1722_COLONIAL_KICHE_YEARBEARER_SOURCE_WITNESS_V1",
+  "date": "2026-10-22",
+  "status": "HISTORICAL_SOURCE_LINEAGE_AND_DATE_ONLY_CALENDAR_PARITY_NO_HUMAN_PREDICTION",
+  "primary_source_trace": {
+    "source_title": "Calendario de los indios de Guatemala, 1722, Kiché",
+    "language": "K'iche' with Spanish equivalents",
+    "manuscript_origin_year": 1722,
+    "transmission": "18th-century original not directly available; Karl Hermann Berendt 1877 manuscript copy preserved",
+    "holding": "University of Pennsylvania Library, Berendt-Brinton Linguistic Collection, Ms. Coll. 700 Item 58",
+    "digital_facsimile_catalogue": "https://research.famsi.org/research/mltdp/catalog.htm",
+    "digital_facsimile_landing": "https://www.famsi.org/research/mltdp/item58/",
+    "facsimile_page_1_direct": "https://www.famsi.org/research/mltdp/item58/",
+    "facsimile_status": "Digitized scans located/catalogue verified, original K'iche' day-and-month lines not independently transcribed by this worker",
+    "reported_content": "Chol Bal K'ih and Ahi'l Bal K'ih; Julian/Gregorian European day equivalents recorded in later Berendt copy; dates also for 1723-1727",
+    "source_classification": "colonial_Kiche_date_calendar_not_ancient_codex_glyph_or_natal_trait"
+  },
+  "scholarly_reading": {
+    "title": "Maya Daykeeping: Three Calendars from Highland Guatemala",
+    "authors": [
+      "John M. Weeks",
+      "Frauke Sachse",
+      "Christian M. Prager"
+    ],
+    "publication_year": 2009,
+    "publisher": "University Press of Colorado",
+    "book_description_source": "https://www.jstor.org/stable/j.ctt46nw7g",
+    "source_1722_chapter": "Calendario de los indios de Guatemala, 1722 (pp. 64-135); original work currently catalogued, not fully read in this session",
+    "description": "Contains K'iche'/Kaqchikel originals and facing translations for 1685, 1722 and 1854-55 calendars, plus correlation appendix; not among owner's four previously verified Maya books",
+    "priority_change": "Higher immediate priority than Bricker's specialized astronomical volume FOR highland birth-day/time source policy, but not an absolute prerequisite to a small carefully limited human test",
+    "source_independence": "Authors describe/publish copies of same 1722 manuscript; not independent repeated modern daykeeping observations."
+  },
+  "first_civil_date_anchor": {
+    "date": "1722-05-03",
+    "calendar_weekday": "Sunday",
+    "natal_or_electional": "K'iche' ritual yearbearer, NOT personal birth trait",
+    "source_report_day_name": "9 Kej (Keh / Deer)",
+    "source_report_historical_highland_year_start": "1 Nab'e Mam / First Elder (per scholarly Edmonson report; terminology must remain original source)",
+    "lowland_GMT584283_tzolkin": {
+      "number": 9,
+      "kiche": "KEJ",
+      "yucatec": "MANIK’"
+    },
+    "lowland_GMT584283_haab": {
+      "day": 5,
+      "month": "K’AYAB"
+    },
+    "lowland_plus_40_calendar_day": "1722-06-12",
+    "lowland_plus_40_haab": {
+      "day": 0,
+      "month": "POP"
+    },
+    "forty_day_offset_is_2016_author_model": true,
+    "source_sign_and_solar_pair_independence": "2016 publication already calculates calendar dates with GMT584283; agreement confirms consistency, not an independent arbitrary-calendar accuracy test",
+    "origin": "2016 government work printed p.33 / PDF p.37 (one-based), citing manuscript; Edmonson secondary account supplies 9 Deer 1 First Elder Sunday May3 1722."
+  },
+  "later_interpretive_source": {
+    "id": "GARAY_XOYON_2016",
+    "title": "Armonización de los calendarios mayas",
+    "authors": [
+      "Alejandro Garay",
+      "Igor Xoyón"
+    ],
+    "publisher": "Guatemala Ministry of Culture and Sports",
+    "url": "https://mcd.gob.gt/wp-content/uploads/2017/02/Armonizacion-Maya.pdf",
+    "pdf_sha256": "16950ebf88f4bb7f0e94315e516aefdf1e99ae3cc3652e78948a2da96454fdf2",
+    "table_pdf_page_one_based": 37,
+    "table_printed_page": 33,
+    "related_notes_pdf_pages_one_based": [
+      40,
+      48
+    ],
+    "warning": "Authors explicitly use GMT 584283 to compute European calendar correspondence; nine matching source-table entries are source/engine reconstruction parity, not nine independent prospective confirmations."
+  },
+  "later_source_table_date_rows": [
+    {
+      "civil": "1722-05-03",
+      "community": "K'iche'",
+      "reported": 9,
+      "sign": "KEJ",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1927-03-15",
+      "community": "Popti'",
+      "reported": 6,
+      "sign": "E",
+      "author_after_sunset_starred": true,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1932-03-13",
+      "community": "Q'anjob'al",
+      "reported": 11,
+      "sign": "NO’J",
+      "author_after_sunset_starred": true,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1937-03-12",
+      "community": "Mam",
+      "reported": 3,
+      "sign": "IQ’",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1939-03-12",
+      "community": "Ixil",
+      "reported": 5,
+      "sign": "E",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1939-03-12",
+      "community": "Akateko",
+      "reported": 5,
+      "sign": "E",
+      "author_after_sunset_starred": true,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1947-03-10",
+      "community": "Mam",
+      "reported": 13,
+      "sign": "E",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1977-03-02",
+      "community": "K'iche'",
+      "reported": 4,
+      "sign": "IQ’",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    },
+    {
+      "civil": "1979-03-02",
+      "community": "Ixil",
+      "reported": 6,
+      "sign": "E",
+      "author_after_sunset_starred": false,
+      "printed_haab_day": 5,
+      "printed_haab_month": "K’AYAB"
+    }
+  ],
+  "evidence_scope": {
+    "table_rows": 9,
+    "unique_civil_dates": 8,
+    "are_all_rows_independent": false,
+    "source_1977_Tedlock_row_partially_shared": true,
+    "community_natal_birth_clock_verified": false,
+    "original_script_1722_fully_read": false,
+    "untouched_human_predictive_validations": 0,
+    "production_model_promotions": 0
+  },
+  "critical_distinctions": [
+    "1722 archive transcription and 2009 scholarly edition are the same manuscript-lineage, not independent trials.",
+    "2016 historical yearbearer table source dates are author-selected and GMT-correlated, so re-running GMT 584283 mostly shows internal consistency, not independent secular calendar verification.",
+    "1 Nab'e Mam historical label, Highland New Year ceremony and Lowland 0 Pop month are NOT to be collapsed into one named day without community-specific reckoning.",
+    "1722 yearbearer date is historical collective/religious calendar, not evidence that natal traits exist.",
+    "Community-specific yearbearer signs and before/after-sunset ritual time remain separate from date-only Long Count arithmetic."
+  ]
+}

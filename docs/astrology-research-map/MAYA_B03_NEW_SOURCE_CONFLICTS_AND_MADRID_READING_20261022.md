@@ -1,0 +1,62 @@
+# Maya research B03 — dated practitioner disagreement and Madrid Codex interval/date audit
+
+22 October 2026 · An evidence-critical continuation of the 16-tradition `humandesign` source-to-blind-test research map. **No new human predictions, no model deployment, no new universal Maya chart rule.**
+
+## Source conflict discovered, not retrofitted away
+
+A small **firsthand translated daykeeper interview** (Andrés Xiloj, *Breaking the Maya Code*, Night Fire Films; K'iche' statements translated by Allen J. Christenson) is labeled by its producer as recorded **February 12, 2005 in Momostenango**, but Xiloj calls the current day **7 Tz'i'** and the following day **8 B'atz'** (PDF pp.1–2). On the producer's civil date, the existing reference GMT 584283 converter expects **8 B'atz'** already. Therefore the prior 3/3 Tedlock 1975/1977 dates cannot be promoted as validation of **every** Momostenango day and timestamp.
+
+Source: [Xiloj's original translated interview, four-page PDF](https://nightfirefilms.org/breakingthemayacode/interviews/XilojTRANSCRIPT.pdf), SHA-256 `aeb9f16932456225e218ae5f6820c19799b396e342f03eb28e231dc91995d295`, PDF p.1 source/capture header and event reference; PDF p.2 self-reported day. We read all four pages. Neither original K'iche' audio timestamp nor the filming date assignment for his exact utterance was independently checked. The 8/9 sign sequence is internally coherent; the missing datum is the *civil time/date* and conversion convention.
+
+### Diagnostic, fixed four-variant comparison
+
+| Date/report | GMT 584283 civil-day | GMT 584283 post-dusk (+1) | GMT 584285 civil-day | GMT 584285 post-dusk (+1) |
+|---|---|---|---|---|
+| 2005-02-12, producer header / Xiloj says **7 Tz'i'** | **8 B'atz'** — mismatch | **9 E** — mismatch | **6 Toj** — mismatch | **7 Tz'i'** — conditional match |
+| 2019-05-10, reported local **8 B'atz'** | **8 B'atz'** — match | **9 E** — mismatch | **6 Toj** — mismatch | **7 Tz'i'** — mismatch |
+
+The 2019 independent published commentary by **Diego Vásquez Monterroso**, dated 15 May 2019, describes **10 May** as an 8 B'atz' ceremony in Momostenango. [Original dated editorial](https://plazapublica.com.gt/opinion/la-fiesta-de-los-ajqijab-el-8-batz/). This is a written account of a ceremonial date, **not** a clock-stamped recording and not a second 2005 daykeeper interview.
+
+Another primary production record strengthens the **date-label ambiguity**: Barbara and Dennis Tedlock were interviewed **February 11–12, 2005**, in the same workshop by the same film crew, and Barbara also describes **8 B'atz' as “tomorrow”** (PDF pp.1,11). The fixed GMT 584283 converter gives **7 Tz'i' on February 11** and **8 B'atz' on February 12**. It is therefore *plausible* that some recorded material or metadata straddles the two-day shoot. The exact date and clock hour of Xiloj's utterance remain unverified; **do not “correct” the original producer header** or infer what hour the interview occurred. [Tedlocks' 43-page companion filmed interview](https://nightfirefilms.org/breakingthemayacode/interviews/TedlocksTRANSCRIPT.pdf), downloaded locally SHA-256 `e3b2dc37d9e96b69aa8f9fd5cc22270a0ed8598c14221350fa0618e96360ad6b`.
+
+The two filmed transcripts **share a producer and locale**; they are not two independent communities or independent date-recording systems. The earlier source reporting a modern day count “two days later” (Zach Zorich's 2012 *The Modern Calendar Priests*, citing Allen J. Christenson) offers **no same-day dated comparison or explicit conversion rule**. It does not prove universal GMT 584285. [Archaeology magazine contextual article](https://archaeology.org/issues/november-december-2012/collection/calendar-priests/the-maya-sense-of-time/).
+
+**What is not resolved:** filmed interview segment timestamps, interviewed speaker's sunset/midnight/natal-day policy, Gregorian filming metadata, ancient-versus-contemporary epoch shift and regional variant. The dated 2016 Guatemala Ministry of Culture sunset/dawn discussion remains a conditional historically argued source interpretation, not a universally adopted birth-hour policy.
+
+### Reproducible evidence and negative cases
+
+- [New source-critical date-ledger](MAYA_2005_PRACTITIONER_AND_2019_DATE_DISCREPANCY_V1.json) retains both incompatible calendar examples, source identity, translation/metadata uncertainties, and a refusal to choose an after-sunset or correlation variant from agreement with another source.
+- [Published-date diagnostic](maya_published_day_witness_audit.py) computes **all four policies** for each public historical date and lists compatible policies without choosing one. It is neither a natal chart nor a participant-specific prediction.
+- [Historical source discrepancy tests](test_maya_practitioner_2005_anchor_conflict.py) verify the 2005 difference, both 2019 and Tedlock earlier agreements, provenance and mutation cases. A failed calendar-policy match is retained, not repaired by source choice.
+
+## Continued source reading: Madrid and Dresden almanac parallels
+
+Further reading of owner-held `The Madrid Codex: New Approaches to Understanding an Ancient Maya Manuscript`, edited by Gabrielle Vail and Anthony F. Aveni, focused on **Anthony Aveni chapter 6 (printed pp.147–170)** and **Vail/Victoria Bricker chapter 7 (printed pp.171–214)**. User-owned PDF SHA-256 `4a75d30f35e0f0832ecf124150fe28123738b2a1428589a9403d8cd3ddfe0f23`. These were substantive selected passages, figures and mathematical tables, **not every page/glyph fully decoded**.
+
+1. Aveni pp.152–167 compares **15 numerically cognate** almanac pairs in Dresden and Madrid. His analysis models shifted interval sequences, eclipse windows and seasonal alignments. He argues Madrid M.10a–13a may be a version **~131 years later** than Dresden D.38b–41b, fitting to **May 13, 906 = 6 Cauac** versus Dresden **May 20, 775 = 6 Cauac**. These are **scholarly reconstructions fitted to astronomical/source evidence**, not original prospective human natal predictions. Shared source descent **must not be counted as independent corroboration**.
+2. Vail/Bricker pp.171–180 identify **around 40 candidate haab date loci** in Madrid in addition to one recognized Calendar Round date, challenging the assumption that all Madrid almanacs were restricted to unanchored repeating 260-day divination. Their model places the **13 Ahau 13 Cumku** date in M.73b at **August 5, 1451**. The calendar calculation reproduces the day number, day sign and Haab position.
+3. Vail/Bricker pp.207–208 distinguish a one-day **Haab month-label convention** in Classic versus Mayapán notation: **August 9, 924 = 13 Ik 10 Ceh (Classic) = 13 Ik 9 Ceh (Mayapán)**, and **October 26, 924 = 13 Ahau 8 Pax (Classic) = 13 Ahau 7 Pax (Mayapán)**. **The 260-day sign stays 13 Ik/13 Ahau**. This is **not** a 1-day sacred sign offset, not evidence for GMT 584285, and not the 2016 sacred-sunset clock question.
+
+The [chapter 6–7 seven-case ledger](MAYA_MADRID_CH6_CH7_READING_AND_DATE_PARITY_B03.json) separates actual glyph/source inscriptions from interpreted Gregorian placements. Every case is reproduced under the existing GMT 584283 **date-only / Classic Haab notation** algorithm. The new [focused academic date tests](test_maya_madrid_ch6_ch7_source_dates.py) assert Gregorian/260/365 relationships, explicitly reject model-selected “independent truth” status, and retain zero human prediction effects. These scholarly dates **depend on the same underlying correlation**, so they cannot independently decide the living K'iche' 2005 discrepancy.
+
+## Newly recovered archival lead: 1722 K'iche' and 1685/1854 calendars
+
+The [FAMSI–University of Pennsylvania manuscript catalogue](https://research.famsi.org/research/mltdp/catalog.htm) identifies `Calendario de los indios de Guatemala, 1722, Kiché` in Berendt–Brinton Collection **Ms. Coll. 700 Item 58**. The available manuscript is **Berendt's 1877 copy** of a text dated 1722, not the original written sheet and not an Ancient Classic Maya codex. [Open the online manuscript folio scans](https://www.famsi.org/research/mltdp/item58/). This session located the original facsimile pages and catalogue description, but **did not claim independent transcription of the manuscript's K'iche' characters or all folios**.
+
+The more direct scholarly reading still missing from the owner's verified four-book collection is **John M. Weeks, Frauke Sachse and Christian M. Prager, *Maya Daykeeping: Three Calendars from Highland Guatemala* (2009)**. The [2009 university-press/JSTOR book catalogue](https://www.jstor.org/stable/j.ctt46nw7g) describes facing original/English editions of **1685 Kaqchikel**, **1722 K'iche'** and **1854–55** calendars. The 1722 chapter is identified as pp.64–135. For *historical Highland natal and day-count provenance*, this should rank ahead of the Bricker 2011 specialized astronomical tables volume; **neither is mandatory before a bounded source-specific pilot**.
+
+The [2016 Garay–Xoyón government study, printed p.33 / PDF p.37](https://mcd.gob.gt/wp-content/uploads/2017/02/Armonizacion-Maya.pdf) expressly reports historical **3 May 1722 = 9 Kej, 5 K'ayab'** in the K'iche' ritual yearbearer list. A separate earlier scholarly summary of the same 1722 lineage identifies it as **Sunday 3 May 1722** and the year's **Nab'e Mam / First Elder**. Our unmodified GMT584283 *Gregorian date-only* converter independently returns **Sunday 3 May = 9 KEJ / 5 K'AYAB'**. Advance the Gregorian date **exactly 40 days** to 12 June 1722 and the existing Lowland Haab becomes **0 Pop**. This is consistent with the **2016 authors' proposed Highland yearbearer / Lowland 0 Pop separation**; it is not proof that “Nab'e Mam” and lowland 0 Pop mean the same ceremonial event.
+
+The 2016 paper supplies **9 tabulated yearbearer rows on 8 distinct Gregorian civil dates** for different K'iche', Popti', Q'anjob'al, Mam, Ixil, and Akateko communities spanning **1722–1979**. The reference converter reproduces the published numbered sacred-day signs and 5 K'ayab' on each date; the paper itself specifies use of **GMT584283** to calculate its conversions, however, so these **9/9 are model consistency checks, not nine independent empirical validations**. The 1977 K'iche' example also overlaps Tedlock's dated observational evidence. Stars next to some entries indicate the authors' distinct next-day ceremony/sunset policy and are **not** a one-size-fits-all natal clock.
+
+The new [colonial manuscript lineage/source-date record](MAYA_1722_COLONIAL_KICHE_YEARBEARER_WITNESS_V1.json) and [seven targeted regression tests](test_maya_colonial_1722_yearbearer_witness.py) preserve the dates, historic source pedigree, modern source-method circularity, 40-day offset, 1685/1854 archival book priority and zero natal human-validation status.
+
+## Stronger scientific map policy
+
+The cross-tradition map still has 16 historical/modern families and one canonical source-to-test Mermaid diagram. This batch adds *an incompatible day-observation* instead of quietly rewriting a calendar epoch. Calendar fit is engineering/source criticism. It does not demonstrate birth-sign traits predict a single human answer.
+
+**Noj creativity** remains only a Momostenango ethnographic natal source interpretation from Tedlock, *not independently established by the Zunil statement*. A new 2005 Tedlock quote about choosing a creative action on a **Noj day** addresses **activity on a calendar day**, not people **born** on that day, and should not be scored as natal corroboration.
+
+Next independent evidentiary need: obtain original recording date and clock-time provenance for the 2005 interviews, plus contemporaneous Momostenango practitioner-dated rituals on fixed Gregorian civil dates and their local birthday sunset convention; or leave disputed source dates unresolved and abstain on boundary-affected birth predictions. Only after an independently chosen birth-day policy and specific nonstigmatizing claim and decoys are fixed may one invite untouched consenting people and freeze predictions before seeing results.
+
+**Outcome:** three historical dated Tedlock matches preserved, **one original translated filmed practitioner/header discordance** preserved, **one 2019 published day agreement** preserved; seven scholarly source-model dates reproduce but are not independent historical field observations. Natal human prospective validations **0**, human predictive successes **0**, runtime rule promotions **0**.

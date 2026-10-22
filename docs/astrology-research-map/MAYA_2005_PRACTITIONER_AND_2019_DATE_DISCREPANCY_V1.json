@@ -1,0 +1,199 @@
+{
+  "schema": "MAYA_DATED_PRACTITIONER_CONFLICT_AUDIT_V1",
+  "created_date_utc": "2026-10-22",
+  "status": "SOURCE_CRITICAL_CONFLICT_UNRESOLVED_NO_NATAL_MODEL_PROMOTION",
+  "purpose": "Preserve a translated Momostenango daykeeper's dated 2005 day account which does not match prior 584283 day-only anchors, alongside independent 2019 reporting.",
+  "sources": [
+    {
+      "id": "XILOJ_2005",
+      "type": "indigenous_practitioner_translated_filmed_interview_transcript",
+      "witness": "Andres Xiloj",
+      "community": "Momostenango K'iche' Guatemala",
+      "producer": "Night Fire Films — Breaking the Maya Code",
+      "interview_date_printed": "2005-02-12",
+      "original_spoken_language": "K'iche'",
+      "translator": "Allen J. Christenson",
+      "source_url": "https://nightfirefilms.org/breakingthemayacode/interviews/XilojTRANSCRIPT.pdf",
+      "source_sha256": "aeb9f16932456225e218ae5f6820c19799b396e342f03eb28e231dc91995d295",
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "original_pdf_in_git": false,
+      "time_of_day_recorded": false,
+      "original_video_checked": false,
+      "producer_date_metadata_independently_verified": false,
+      "day_quote_spans": [
+        "today 7 Tz'i' (PDF p2)",
+        "tomorrow 8 B'atz' (p1)",
+        "following 9 E' (p2)"
+      ],
+      "prediction_class": "ritual/current sacred day; not natal personality"
+    },
+    {
+      "id": "VASQUEZ_2019",
+      "type": "dated_journalistic_local_ceremony_report_not_practitioner_quote",
+      "author": "Diego Vásquez Monterroso",
+      "published_date": "2019-05-15",
+      "claimed_event_date": "2019-05-10",
+      "claimed_day": "8 B'atz'",
+      "community": "Momostenango",
+      "article_title": "La fiesta de los ajq'ijab': el 8 B'atz'",
+      "source_url": "https://plazapublica.com.gt/opinion/la-fiesta-de-los-ajqijab-el-8-batz/",
+      "locus": "lead paragraph and publication line",
+      "interpretation": "Author distinguishes daykeeper responsibility-renewal from generalized Maya New Year.",
+      "prediction_class": "ritual date; not natal"
+    },
+    {
+      "id": "ZORICH_2012",
+      "type": "journalistic_paraphrase_of_specialist",
+      "author": "Zach Zorich",
+      "subject": "Allen J. Christenson",
+      "published_date": "2012-11",
+      "article_title": "The Modern Calendar Priests",
+      "source_url": "https://archaeology.org/issues/november-december-2012/collection/calendar-priests/the-maya-sense-of-time/",
+      "summary": "Reports a modern Highland Maya ritual calendar two-day shift versus the ancient one.",
+      "limitation": "No paired dated local day-number observation, specific source conversion algorithm, or birth-specific rollover; cannot equate this statement automatically to GMT584285."
+    },
+    {
+      "id": "TEDLOCKS_2005_COMPANION",
+      "type": "same_film_crew_two_day_companion_interview_of_ethnographers_not_independent_day_counter",
+      "witnesses": [
+        "Barbara Tedlock",
+        "Dennis Tedlock"
+      ],
+      "producer": "Night Fire Films — Breaking the Maya Code",
+      "printed_recorded_date_span": "2005-02-11 through 2005-02-12",
+      "venue": "Angel Xiloj weaving workshop, Momostenango",
+      "source_url": "https://nightfirefilms.org/breakingthemayacode/interviews/TedlocksTRANSCRIPT.pdf",
+      "sha256": "e3b2dc37d9e96b69aa8f9fd5cc22270a0ed8598c14221350fa0618e96360ad6b",
+      "pdf_pages": 43,
+      "source_page_1": "Producer dates interviews Feb11–12 rather than exclusively Feb12.",
+      "source_page_11": "Barbara Tedlock twice describes 8 B'atz' as 'tomorrow', without segment recording day/time.",
+      "source_page_11_noj_context": "Barbara describes thought/creativity on a Noj day as today's voluntary activity, NOT people born on that day.",
+      "source_page_14": "Same-day filming context: Andres Xiloj is named as the lineage patron.",
+      "independent_calendar_anchor": false,
+      "same_producer": true,
+      "same_location": true,
+      "film_segment_timestamp_verified": false,
+      "calendar_inference": "This makes one-day ambiguity of producer/interview segment plausible; it does not prove Xiloj interview was recorded Feb11, nor distinguish competing counts."
+    }
+  ],
+  "dated_speaker_sequence": [
+    {
+      "id": "XILOJ_TODAY",
+      "civil_date_from_producer": "2005-02-12",
+      "relative_position": 0,
+      "day_number": 7,
+      "kiche": "TZ’I’",
+      "page": 2,
+      "original_civil_date_independently_verified": false
+    },
+    {
+      "id": "XILOJ_TOMORROW",
+      "civil_date_from_producer": "2005-02-13",
+      "relative_position": 1,
+      "day_number": 8,
+      "kiche": "B’ATZ’",
+      "page": 1,
+      "derived_not_independently_dated": true
+    },
+    {
+      "id": "XILOJ_SUBSEQUENT",
+      "civil_date_from_producer": "2005-02-14",
+      "relative_position": 2,
+      "day_number": 9,
+      "kiche": "E",
+      "page": 2,
+      "derived_not_independently_dated": true
+    }
+  ],
+  "later_report": {
+    "id": "VASQUEZ_2019_BATZ",
+    "civil_date": "2019-05-10",
+    "day_number": 8,
+    "kiche": "B’ATZ’",
+    "day_phase": "unknown",
+    "source_class": "published reported date, not independent local-day measurement"
+  },
+  "prior_tedlock": {
+    "source_id": "MAYA-TEDLOCK-1992-REV",
+    "witness_file": "MAYA_TEDLOCK_MADRID_SOURCE_WITNESSES_V1.json",
+    "three_dated_momostenango_GMT584283_matches": 3,
+    "three_dated_momostenango_GMT584285_matches": 0,
+    "not_independent_of_self": true
+  },
+  "variants_predeclared_for_audit": [
+    {
+      "id": "GMT584283_SAME_DATE",
+      "correlation": 584283,
+      "offset": 0
+    },
+    {
+      "id": "GMT584283_AFTER_DUSK",
+      "correlation": 584283,
+      "offset": 1
+    },
+    {
+      "id": "GMT584285_SAME_DATE",
+      "correlation": 584285,
+      "offset": 0
+    },
+    {
+      "id": "GMT584285_AFTER_DUSK",
+      "correlation": 584285,
+      "offset": 1
+    }
+  ],
+  "hypotheses_NOT_SELECTED": [
+    {
+      "hypothesis": "FILM_HEADER_ONE_DAY_OFF",
+      "observation": "The standard GMT584283 formula makes 2005-02-11 the observed 7 Tz'i' day; filmmaker dated interview 2005-02-12.",
+      "unverified": "Film-crew original recording date and local clock"
+    },
+    {
+      "hypothesis": "GMT584285_AFTER_SUNSET",
+      "observation": "2005-02-12 after dusk maps to 7 Tz'i' under GMT584285, and Feb13 after dusk to 8 B'atz'.",
+      "unverified": "Interview time, practice-specific midnight/sunset policy, relevant locale/era count"
+    },
+    {
+      "hypothesis": "RITUAL_OR_DAY_LABEL_DIFFERENCE",
+      "observation": "Ceremonial eve/boundary language could differ from Gregorian daytime.",
+      "unverified": "Interview-day clock and context"
+    },
+    {
+      "hypothesis": "CHANGED_TRADITIONAL_COUNT",
+      "observation": "2005 and 2019 reported local dates might use different anchor or counting conventions.",
+      "unverified": "Independent contemporary practicing authority"
+    },
+    {
+      "hypothesis": "TRANSLATION_ERROR",
+      "observation": "Internal 7→8→9 sequence coherent; still only translated transcript.",
+      "unverified": "Original K'iche' audio and translator notes"
+    },
+    {
+      "hypothesis": "TEDLOCKS_COMPANION_DAY_RANGE",
+      "observation": "Night Fire's companion ethnographers' transcript spans Feb11-12 and says 8 B'atz' tomorrow; 584283 date-only says 8 B'atz' Feb12.",
+      "unverified": "Which clip and remark was recorded on Feb11 versus Feb12; whether ceremony began at dusk the previous civil date.",
+      "source": "TEDLOCKS_2005_COMPANION",
+      "status": "CONDITIONAL_COMPETING_EXPLANATION_NOT_A_CORRECTION"
+    }
+  ],
+  "nonpromotable_findings": {
+    "xiloj_2005_GMT584283_date_only_concordant": false,
+    "xiloj_2005_GMT584285_after_dusk_conditional_concordant": true,
+    "vasquez_2019_GMT584283_date_only_concordant": true,
+    "vasquez_2019_GMT584285_after_dusk_concordant": false,
+    "xiloj_tomorrow_and_subsequent_not_independent": true,
+    "source_dates_not_birth_traits": true,
+    "living_birthday_time_boundary_unverified": true,
+    "source_comparison_not_human_success": true,
+    "actual_human_predictive_validations": 0,
+    "production_model_promotions": 0,
+    "companions_tedlocks_interview_no_independent_civil_date_anchor": true,
+    "xiloj_associated_filming_metadata_may_conflate_multiple_days": true
+  },
+  "publication_data_boundary": "Keep copyrighted original filmed transcript PDF and any private participant birth data out of public GitHub."
+}
