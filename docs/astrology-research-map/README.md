@@ -1,4 +1,9 @@
 # Living cross-tradition astrology research map
+
+## Hellenistic and other missing-book acquisition audit (22 October 2026)
+
+The verified title-by-title [Hellenistic, Arabic/Persian, Babylonian and cross-tradition acquisition audit](ASTROLOGY_MISSING_BOOKS_AND_EDITIONS_20261022.md) distinguishes existing copies, legal free reference scans and genuinely missing source editions; it specifically notes that owned *Persian Nativities IV* replaces the partial *III*. It changes no prediction score or model.
+
 22 October 2026 — **source-controlled research overview; no new validated predictive model**
 
 ## Current reconciled owner guide and Maya source status (22 October)
