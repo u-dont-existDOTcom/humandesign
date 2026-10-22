@@ -1,0 +1,28 @@
+flowchart TD
+  CLAIM["Historical or living-practitioner source claim"]
+  WIT{"Identifiable source/edition/locus and full qualifiers?"}
+  TYPE{"Individual predictive claim rather than general myth/astronomy?"}
+  FEATURE{"Deterministic chart feature across allowed birth uncertainties?"}
+  OBS{"One clear measurable observable, contrary result and time window?"}
+  MULTI{"Duplicate wording / borrowed source / broad Barnum claim?"}
+  BLOCK["Unresolved / exploratory source only"]
+  DEDUP["Source-dependency and overlap record; no independent corroboration count"]
+  READY["Candidate hypothesis only; not proven"]
+  FREEZE{"Charts, effect, denominator, null, decoys and wording frozen BEFORE people?"}
+  DEV["Development-only; never count as untouched test"]
+  TEST["Blind independent participant response and locked evaluation"]
+  REPORT["Positive/negative/null with calibration and base rate"]
+  CLAIM --> WIT
+  WIT -- No --> BLOCK
+  WIT -- Yes --> TYPE
+  TYPE -- No --> BLOCK
+  TYPE -- Yes --> FEATURE
+  FEATURE -- No --> BLOCK
+  FEATURE -- Yes --> OBS
+  OBS -- No --> BLOCK
+  OBS -- Yes --> MULTI
+  MULTI -- Yes --> DEDUP --> READY
+  MULTI -- No --> READY
+  READY --> FREEZE
+  FREEZE -- No --> DEV
+  FREEZE -- Yes --> TEST --> REPORT
