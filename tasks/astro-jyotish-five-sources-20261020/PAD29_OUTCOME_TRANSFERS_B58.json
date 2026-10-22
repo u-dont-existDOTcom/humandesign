@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B58",
+  "date_utc": "2026-10-22",
+  "source_only": true,
+  "source_witness": {
+    "id": "BPHS_ELECTRONIC_SANSKRIT_CH29",
+    "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-29/",
+    "verses_inspected": "29.8-37",
+    "manuscript_or_original_upload_bytes_inspected": false,
+    "original_Portuguese_Kerr_already_prior_structurally_indexed": true
+  },
+  "records": [
+    {
+      "id": "B58-01",
+      "verses": "29.8–15",
+      "family": "GAINS_ELEVENTH_FROM_ARUDHA",
+      "claims": [
+        "wealth_quantity",
+        "acquisition_means_historically_moralized",
+        "happiness",
+        "royal_status",
+        "unobstructed_gain_if_no_twelfth_aspect"
+      ],
+      "source_conditions": "planetary aspects and/or conjunctions to eleventh, strength/argala clauses, exclusion of twelfth aspects in v12",
+      "interchangeable": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B58-02",
+      "verses": "29.16–21",
+      "family": "EXPENDITURE_TWELFTH_FROM_ARUDHA",
+      "claims": [
+        "spending_amount",
+        "spending_cause",
+        "spending_source"
+      ],
+      "subcategories": [
+        "mixed",
+        "government",
+        "relatives",
+        "disputes",
+        "own_resources",
+        "siblings"
+      ],
+      "interchangeable": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B58-03",
+      "verses": "29.22",
+      "family": "SOURCE_DEPENDENCY_PROJECTION_12_TO_11",
+      "source_house": 12,
+      "destination_house": 11,
+      "derived_from": "B58-02",
+      "source_clause": "lābhabhāve ca te yogā lābhayogakarās tathā",
+      "separate_success_credit": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B58-04",
+      "verses": "29.23–27",
+      "family": "SEVENTH_POSITIVE_NEGATIVE_AND_7_TO_2_TRANSFER",
+      "source_house": 7,
+      "destination_house": 2,
+      "historical_high_stakes": [
+        "abdominal_pain",
+        "early_aging"
+      ],
+      "positive": [
+        "wealth_at_one_two_or_three_of_Moon_Venus_Jupiter",
+        "good_fame_with_exaltation"
+      ],
+      "source_clause": "cintyās tathaiva te yogā dvitīye’pi sadā",
+      "separate_success_credit": false,
+      "high_stakes_excluded": true,
+      "score_allowed": false
+    },
+    {
+      "id": "B58-05",
+      "verses": "29.28–29",
+      "family": "STRONG_SECOND_HOUSE_AND_ARUDHA_TO_KARAKAMSHA",
+      "source_frame": "ARUDHA",
+      "target_frame": "KARAKAMSHA",
+      "explicit_exclusion": "bāndhava-varjitāḥ_RELATIVES",
+      "new_independent_yoga": false,
+      "score_allowed": false
+    },
+    {
+      "id": "B58-06",
+      "verses": "29.31–34",
+      "family": "A1_A7_HOUSE_RELATIONSHIP_FAVORABLE_ADVERSE",
+      "source_scope": "A7 location from A1, and associated strength requirements where source states them",
+      "favorable_relative_houses": [
+        1,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "adverse_relative_houses": [
+        6,
+        8,
+        12
+      ],
+      "unclassified_relative_houses": [
+        2,
+        3,
+        11
+      ],
+      "treatment": "unclassified not automatic favorable/unfavorable",
+      "score_allowed": false
+    },
+    {
+      "id": "B58-07",
+      "verses": "29.35–37",
+      "family": "EXTEND_A1_A7_TO_OTHER_PADAS_AND_DISTINCT_ROYAL_OUTCOMES",
+      "projection": "padas such as A5 inherit typed relation in specific houses, NOT independent success",
+      "different_outcome": "29.36 rulership for A1/A7 mutual 3rd/11th even though 29.34 does not classify friendship there",
+      "risk": "explosive rule multiplication and retrospective choosing of target",
+      "score_allowed": false
+    },
+    {
+      "id": "B58-08",
+      "verses": "29.9–10,17,22,27,29,35",
+      "family": "MIXED_AND_TRANSFER_REUSE_DEDUP",
+      "observable_separation": [
+        "wealth_volume",
+        "moral_source_claim_unsupported",
+        "expenditure",
+        "friendship",
+        "rulership"
+      ],
+      "dependencies": [
+        "29.22 derives 29.16-21",
+        "29.27 derives 29.23-26",
+        "29.29 projects Arudha to Karakamsha except relatives",
+        "29.35 extends A1/A7 to other padas"
+      ],
+      "scoring": "historical comparison only",
+      "score_allowed": false
+    }
+  ],
+  "record_count": 8,
+  "transfer_registry": [
+    "BPHS29.22",
+    "BPHS29.27",
+    "BPHS29.29",
+    "BPHS29.35"
+  ],
+  "new_deduplicated_original_five_book_annotations": 0,
+  "cumulative_documentary_source_only_annotations": 432,
+  "validated_prospective_human_predictions": 0,
+  "production_rules_promoted": 0,
+  "research_rights": "No original full book binary transferred to public repository",
+  "predictive_use_allowed": false
+}

@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B57_ARUDHA_SCHOOL_SPECIFIC_CALCULATIONS_AND_ABSTENTIONS_SAVED",
+  "status": "OPEN_B58_ARUDHA_OUTCOME_INHERITANCE_AND_TARGET_NEGATIVES_SAVED",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "CONTINUATION_HANDOFF_B57_20261022.md",
+  "last_checkpoint": "CONTINUATION_HANDOFF_B58_20261022.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -217,7 +217,14 @@
     "test_arudha_source_variants_B57.py",
     "B57_TEST_RESULTS.txt",
     "CONTINUATION_HANDOFF_B57_20261022.md",
-    "B57_SHA256SUMS.txt"
+    "B57_SHA256SUMS.txt",
+    "PAD29_OUTCOME_TRANSFERS_B58.json",
+    "READING_NOTES_B58.md",
+    "pada_rule_transfer_B58.py",
+    "test_pada_rule_transfer_B58.py",
+    "B58_TEST_RESULTS.txt",
+    "CONTINUATION_HANDOFF_B58_20261022.md",
+    "B58_SHA256SUMS.txt"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -613,7 +620,22 @@
     "b57_new_counted_original_annotations": 0,
     "b57_cumulative_counted_source_annotations": 432,
     "b57_independent_human_predictions_evaluated": 0,
-    "b57_production_rules_promoted": 0
+    "b57_production_rules_promoted": 0,
+    "b58_sanskrit_electronic_bphs_ch29_outcomes_read_range": "8–37",
+    "b58_online_sanskrit_source_not_uploaded_portuguese": true,
+    "b58_source_comparison_records": 8,
+    "b58_transfer_inheritance_edges": 4,
+    "b58_synthetic_integrity_tests_passed": 19,
+    "b58_rule_transfer_12_to_11_7_to_2_karakamsha_other_padas_preserved": true,
+    "b58_29_34_unclassified_a1_a7_relative_houses": [
+      2,
+      3,
+      11
+    ],
+    "b58_new_counted_original_annotations": 0,
+    "b58_cumulative_accepted_original_annotations": 432,
+    "b58_human_predictive_successes_validated": 0,
+    "b58_production_rule_promotions": 0
   },
   "pending_actions": [
     "432 source-only annotations, zero independently validated real-human predictions, zero production rules.",
@@ -678,9 +700,13 @@
     "B57: Sanskrit Venkatesha Jaimini commentary gives different locally specified exceptions: lord fourth => seventh, lord seventh => original, cited Vriddha Karika own/seventh => original. It offers alternate karaka readings; lord tenth not resolved and diagnostic abstains.",
     "B57: Scorpio/Aquarius multiple source lords require strength and possibly two candidate padas; neither winner nor strength scheme frozen.",
     "B57: Rath own complement-degree proposal differs from retained-degree tradition; source Sanskrit sign rules contain no degree determination; exact 0-degree complement boundary unresolved.",
-    "B57: Online BPHS29.6 English gloss count origin for graha-arudha differs from Rath/Venkatesha commentary; distinguish modern gloss from authentic Sanskrit recension; 8 archival records and 31 source tests, zero human tests."
+    "B57: Online BPHS29.6 English gloss count origin for graha-arudha differs from Rath/Venkatesha commentary; distinguish modern gloss from authentic Sanskrit recension; 8 archival records and 31 source tests, zero human tests.",
+    "B58: Original-language electronic Sanskrit BPHS29.8–37 read, no full uploaded Portuguese raw re-read, no independent critical manuscript; separate income amount, spending, moralized means, social rank, relationship categories.",
+    "B58: Four source-dependent transfer edges 29.22 12th→11th, 29.27 7th→2nd, 29.29 ārūḍha→kārakāṃśa excluding family, 29.35 A1/A7→other padas cannot count as independent source wins.",
+    "B58: 29.34 A1/A7 source relationship quadrants/trines (1,4,5,7,9,10) favorable vs 6,8,12 adverse, leaves 2,3,11 unspecified; 29.36 does discuss 3 and 11 separately but for kingship not friendship.",
+    "B58: Historical moral and health accusations remain unscorable, actual A1/A7 chart state unresolved across school algorithms from B57; 19 source-only tests passed."
   ],
-  "next_exact_source_frontier": "After B57: recover/inspect the original uploaded Portuguese BPHS Ch29 and an independently printed Sanskrit witness for the competing Jaimini 1.1.30–32 Arudha exceptions; compare Scorpio/Aquarius two-lord strength rules, graha-arudha rider scope, then broaden under-read sources for new concrete positive and negative claims. Never select a source school based on a known person; keep score_allowed=false.",
+  "next_exact_source_frontier": "After B58: recover original uploaded Kerr Portuguese BPHS Chapter29 line context and independently printed Sanskrit readings for 29.22,27,29,35; continue original five-book breadth from under-read Rath/Saravali/Bhasin/Jataka chapters; specify positive, negative and missing-input outcome targets without looking at participant histories, no production promotion.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -691,7 +717,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": 136,
     "all_changed_paths_within_task_directory": true,
-    "note": "B57 sign/graha Arudha textual variants and synthetic full twelve-position matrix saved as 7 task-local files; user-uploaded Rath indexed pages plus external Sanskrit; no copyrighted raw book data. Source annotation registry 432 unchanged, no human testing or model scoring.",
+    "note": "B58 expands Sanskrit BPHS chapter29 source-only reading and four inherited transfer edges, with 8 archival comparison records and 19 synthetic tests; original book PDF bytes not copied. Accepted documentary source IDs 432, zero real human prediction validation, no model or survey changes.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five Jyotish books: 432 source notes, aspect variants and migration evidence map"
