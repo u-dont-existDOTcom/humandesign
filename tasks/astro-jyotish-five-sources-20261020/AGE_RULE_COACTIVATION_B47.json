@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B47",
+  "class": "SOURCE_CONDITIONS_FIRED_IN_SYNTHETIC_SKY_NOT_OBSERVED_HUMAN",
+  "source_family": "JYOT-BPHS-KERR-PT",
+  "source_witness_access": "ONLINE_SANSKRIT_NOT_UPLOADED_PORTUGUESE",
+  "sources": [
+    "https://www.siva.sh/brihat-parashara-hora-shastra/18/21-25",
+    "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-18"
+  ],
+  "first_tested_utc": "2026-10-22",
+  "sky": {
+    "instant_utc": "1908-02-10T17:30:00Z",
+    "latitude_deg": 0,
+    "longitude_deg": 0,
+    "coordinate_role": "hypothetical astronomically possible location, NOT a person's birthplace",
+    "ephemeris_library": "pyswisseph 2.10.03",
+    "requested_method": "MOSEPH",
+    "returned_planet_flag_decimal": 65604,
+    "returned_method": "MOSEPH",
+    "sidereal": "Lahiri",
+    "production_swieph_verified": false,
+    "sun_sidereal_deg": 298.0319324031504,
+    "venus_sidereal_deg": 333.32163802839307,
+    "saturn_sidereal_deg": 332.91297809025326,
+    "ascendant_sidereal_deg": 106.89004532693363,
+    "house_model": "Whole signs; Cancer ascendant; Capricorn seventh; Pisces ninth"
+  },
+  "tests_of_source_conditions": [
+    {
+      "source": "BPHS18.22",
+      "source_age_set": [
+        5,
+        9
+      ],
+      "seventh_lord": "Saturn in Pisces",
+      "alternative_reading_of_shubha_rasi": [
+        "Jupiter-owned benefic sign Pisces",
+        "ninth sign Pisces"
+      ],
+      "venus": "Exalted in Pisces",
+      "fires_under_both_textual_readings": true
+    },
+    {
+      "source": "BPHS18.23",
+      "source_age_set": [
+        7,
+        11
+      ],
+      "sun": "Capricorn seventh sign",
+      "dispositor": "Saturn in Pisces",
+      "venus": "Pisces conjunct Saturn; separation about 0.41 degrees",
+      "fires": true
+    }
+  ],
+  "age_set_intersection": [],
+  "scoring_qualification": "No single FIRST-MARRIAGE year satisfies both predictions if read as first-marriage timings; this is source collision, not universal logical contradiction because original verses need not both refer to a unique first marriage.",
+  "possible_resolutions": [
+    "one verse predicts later marriage than another",
+    "unstated conditional priority or different horoscope school",
+    "age ordinal convention differs",
+    "explicit competing outcomes unresolved; refuse hindsight choice"
+  ],
+  "mathematical_evidence": "8/8 focus tests passed from locally tested exact source code, subject to remote blob SHA identity check",
+  "source_annotation_increment": 0,
+  "cumulative_registry": 432,
+  "human_predictive_hits": 0,
+  "model_promotions": 0
+}
