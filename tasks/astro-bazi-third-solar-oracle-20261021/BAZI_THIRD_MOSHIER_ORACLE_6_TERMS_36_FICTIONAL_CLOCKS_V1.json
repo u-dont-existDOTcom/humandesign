@@ -1,0 +1,1268 @@
+{
+  "schema": "BAZI_SIX_JIEQI_THREE_ASTRONOMICAL_SOFTWARE_WITNESS_COMPARISON_V1",
+  "status": "DEVELOPMENT_ONLY_NOT_AUTHORITY_FOR_HISTORICAL_BIRTH_CHARTS",
+  "input_previous_two_source_fixture_SHA256": "bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e",
+  "source_third_ephemeris_pin": {
+    "schema": "BAZI_THIRD_SOLAR_ORACLE_DEPENDENCY_PIN_20261021",
+    "purpose": "Independent numerical tropical geocentric apparent Sun ecliptic longitude term-crossing source using Swiss Ephemeris Moshier, not authoritative ancient printed calendar or real-person prediction",
+    "source_license_note": "Swiss Ephemeris Moshier astronomical source library installed research-only under owner /tmp; do not redistribute its binaries in source repository or user ZIP",
+    "dependency_package": "pysweph",
+    "dependency_version": "2.10.3.6",
+    "embedded_swiss_ephemeris_version": "2.10.03",
+    "python_module": "swisseph",
+    "library_source_binary_absolute_owner_path": "/tmp/hd-bazi-third-ephemeris-20261021/swisseph.cpython-312-x86_64-linux-gnu.so",
+    "source_binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+    "source_binary_bytes": 2391504,
+    "expected_calc_ut_returnflags": 260,
+    "required_flags": "FLG_MOSEPH | FLG_SPEED",
+    "geocentric_solar_longitude": "apparent tropical ecliptic of date; default with Moshier/UT delta-T conversion internal",
+    "reference_clock": "fictional Gregorian fixed UTC+08:00 shifted eight hours backward for UT Julian date",
+    "only_predeclared_dated_terms": {
+      "2023-02-04": 315,
+      "2026-01-05": 285,
+      "2026-02-04": 315,
+      "1912-12-07": 255,
+      "2057-08-07": 135,
+      "1965-12-07": 255
+    },
+    "source_previous_dual_witness_report_sha256": "bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e",
+    "source_library_docs": "https://github.com/astrorigin/pyswisseph/blob/master/docs/programmers_manual/steps_to_get_a_planets_position.rst",
+    "source_provider_notes": "Moshier software model is an independent numerical comparison, not JPL ephemeris file or authority for historical classical original; preserve its assumptions and residuals",
+    "real_human_predictive_validations": 0,
+    "runtime_promotions": 0
+  },
+  "source_solar_positions_flags": "FLG_MOSEPH | FLG_SPEED, retflags 260",
+  "source_time_conversion": "original fixed UTC+8 reference clock minus 8h => UT Julian day => Swiss calc_ut",
+  "source_solar_term_targets": {
+    "2023-02-04": 315,
+    "2026-01-05": 285,
+    "2026-02-04": 315,
+    "1912-12-07": 255,
+    "2057-08-07": 135,
+    "1965-12-07": 255
+  },
+  "Moshier_implementation_not_JPL_ephemeris_files": true,
+  "independent_ancient_printed_BaZi_school_certified": false,
+  "precise_JieQi_dates": [
+    {
+      "JieQi_date": "2023-02-04",
+      "JieQi_apparent_tropical_target_degrees": 315,
+      "original_sxtwl_source_clock": "2023-02-04T10:42:20.856171",
+      "source_lunar_python_first_changed_pillar_second": "2023-02-04T10:42:33",
+      "source_third_clock": "2023-02-04T10:42:32.522494",
+      "solar_target_longitude_degrees": 315,
+      "model_solar_longitude_at_root_degrees": 315.00000000090404,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": 11.666323,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": 0.477506,
+      "original_source_two_library_disagreements": 1,
+      "third_model_disagreeing_samples": 1,
+      "new_source_mismatches": [
+        {
+          "fictional_reference_clock": "2023-02-04T10:42:21",
+          "JieQi_date": "2023-02-04",
+          "relative_to_sxtwl_source_term_seconds": 1,
+          "third_source_apparent_sun_minus_target_arcsec": -0.48680454,
+          "third_source_crossed_target": false,
+          "difference_seconds_from_Moshier_crossing": -11.522494,
+          "third_source_expected_year_month": {
+            "year": "壬寅",
+            "month": "癸丑"
+          },
+          "source_sxtwl_year_month": {
+            "year": "癸卯",
+            "month": "甲寅"
+          },
+          "source_lunar_python_year_month": {
+            "year": "壬寅",
+            "month": "癸丑"
+          },
+          "source_sxtwl_matches_numerical_ephemeris": false,
+          "source_lunar_python_matches_numerical_ephemeris": true,
+          "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+          "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+        }
+      ]
+    },
+    {
+      "JieQi_date": "2026-01-05",
+      "JieQi_apparent_tropical_target_degrees": 285,
+      "original_sxtwl_source_clock": "2026-01-05T16:22:53.352814",
+      "source_lunar_python_first_changed_pillar_second": "2026-01-05T16:23:10",
+      "source_third_clock": "2026-01-05T16:23:09.285781",
+      "solar_target_longitude_degrees": 285,
+      "model_solar_longitude_at_root_degrees": 284.9999999997595,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": 15.932967,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": 0.714219,
+      "original_source_two_library_disagreements": 1,
+      "third_model_disagreeing_samples": 1,
+      "new_source_mismatches": [
+        {
+          "fictional_reference_clock": "2026-01-05T16:22:54",
+          "JieQi_date": "2026-01-05",
+          "relative_to_sxtwl_source_term_seconds": 1,
+          "third_source_apparent_sun_minus_target_arcsec": -0.64890927,
+          "third_source_crossed_target": false,
+          "difference_seconds_from_Moshier_crossing": -15.285781,
+          "third_source_expected_year_month": {
+            "year": "乙巳",
+            "month": "戊子"
+          },
+          "source_sxtwl_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "source_lunar_python_year_month": {
+            "year": "乙巳",
+            "month": "戊子"
+          },
+          "source_sxtwl_matches_numerical_ephemeris": false,
+          "source_lunar_python_matches_numerical_ephemeris": true,
+          "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+          "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+        }
+      ]
+    },
+    {
+      "JieQi_date": "2026-02-04",
+      "JieQi_apparent_tropical_target_degrees": 315,
+      "original_sxtwl_source_clock": "2026-02-04T04:01:51.392784",
+      "source_lunar_python_first_changed_pillar_second": "2026-02-04T04:02:08",
+      "source_third_clock": "2026-02-04T04:02:08.050591",
+      "solar_target_longitude_degrees": 315,
+      "model_solar_longitude_at_root_degrees": 314.99999999548396,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": 16.657807,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": -0.050591,
+      "original_source_two_library_disagreements": 1,
+      "third_model_disagreeing_samples": 1,
+      "new_source_mismatches": [
+        {
+          "fictional_reference_clock": "2026-02-04T04:01:52",
+          "JieQi_date": "2026-02-04",
+          "relative_to_sxtwl_source_term_seconds": 1,
+          "third_source_apparent_sun_minus_target_arcsec": -0.6780575,
+          "third_source_crossed_target": false,
+          "difference_seconds_from_Moshier_crossing": -16.050591,
+          "third_source_expected_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "source_sxtwl_year_month": {
+            "year": "丙午",
+            "month": "庚寅"
+          },
+          "source_lunar_python_year_month": {
+            "year": "乙巳",
+            "month": "己丑"
+          },
+          "source_sxtwl_matches_numerical_ephemeris": false,
+          "source_lunar_python_matches_numerical_ephemeris": true,
+          "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+          "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+        }
+      ]
+    },
+    {
+      "JieQi_date": "1912-12-07",
+      "JieQi_apparent_tropical_target_degrees": 255,
+      "original_sxtwl_source_clock": "1912-12-07T18:58:53.093262",
+      "source_lunar_python_first_changed_pillar_second": "1912-12-07T18:58:53",
+      "source_third_clock": "1912-12-07T18:58:53.431221",
+      "solar_target_longitude_degrees": 255,
+      "model_solar_longitude_at_root_degrees": 254.99999999502526,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": 0.337959,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": -0.431221,
+      "original_source_two_library_disagreements": 0,
+      "third_model_disagreeing_samples": 0,
+      "new_source_mismatches": []
+    },
+    {
+      "JieQi_date": "2057-08-07",
+      "JieQi_apparent_tropical_target_degrees": 135,
+      "original_sxtwl_source_clock": "2057-08-07T07:33:09.603424",
+      "source_lunar_python_first_changed_pillar_second": "2057-08-07T07:34:00",
+      "source_third_clock": "2057-08-07T07:34:11.131798",
+      "solar_target_longitude_degrees": 135,
+      "model_solar_longitude_at_root_degrees": 135.0000000026281,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": 61.528374,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": -11.131798,
+      "original_source_two_library_disagreements": 1,
+      "third_model_disagreeing_samples": 2,
+      "new_source_mismatches": [
+        {
+          "fictional_reference_clock": "2057-08-07T07:33:10",
+          "JieQi_date": "2057-08-07",
+          "relative_to_sxtwl_source_term_seconds": 1,
+          "third_source_apparent_sun_minus_target_arcsec": -2.4405943,
+          "third_source_crossed_target": false,
+          "difference_seconds_from_Moshier_crossing": -61.131798,
+          "third_source_expected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "source_sxtwl_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "source_lunar_python_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "source_sxtwl_matches_numerical_ephemeris": false,
+          "source_lunar_python_matches_numerical_ephemeris": true,
+          "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+          "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+        },
+        {
+          "fictional_reference_clock": "2057-08-07T07:34:09",
+          "JieQi_date": "2057-08-07",
+          "relative_to_sxtwl_source_term_seconds": 60,
+          "third_source_apparent_sun_minus_target_arcsec": -0.08509875,
+          "third_source_crossed_target": false,
+          "difference_seconds_from_Moshier_crossing": -2.131798,
+          "third_source_expected_year_month": {
+            "year": "丁丑",
+            "month": "丁未"
+          },
+          "source_sxtwl_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "source_lunar_python_year_month": {
+            "year": "丁丑",
+            "month": "戊申"
+          },
+          "source_sxtwl_matches_numerical_ephemeris": false,
+          "source_lunar_python_matches_numerical_ephemeris": false,
+          "status": "ABSTAIN_TWO_WITNESSES_AGREE_AGAINST_THIRD",
+          "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+        }
+      ]
+    },
+    {
+      "JieQi_date": "1965-12-07",
+      "JieQi_apparent_tropical_target_degrees": 255,
+      "original_sxtwl_source_clock": "1965-12-07T15:45:32.080078",
+      "source_lunar_python_first_changed_pillar_second": "1965-12-07T15:45:32",
+      "source_third_clock": "1965-12-07T15:45:31.899191",
+      "solar_target_longitude_degrees": 255,
+      "model_solar_longitude_at_root_degrees": 254.99999999911063,
+      "model_root_max_halfwidth_seconds": 0.002,
+      "model_root_iterations": 24,
+      "ephemeris_actual_flags": 260,
+      "Moshier_minus_sxtwl_seconds": -0.180887,
+      "lunar_python_first_changed_second_minus_Moshier_seconds": 0.100809,
+      "original_source_two_library_disagreements": 0,
+      "third_model_disagreeing_samples": 0,
+      "new_source_mismatches": []
+    }
+  ],
+  "original_36_boundary_synthetic_comparisons": [
+    {
+      "fictional_reference_clock": "2023-02-04T10:32:20",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -25.87817979,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -612.522494,
+      "third_source_expected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2023-02-04T10:41:20",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -3.06396227,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -72.522494,
+      "third_source_expected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2023-02-04T10:42:19",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.57130106,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -13.522494,
+      "third_source_expected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2023-02-04T10:42:21",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.48680454,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -11.522494,
+      "third_source_expected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2023-02-04T10:43:20",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": 2.00585653,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 47.477506,
+      "third_source_expected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2023-02-04T10:52:20",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 24.82001561,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 587.477506,
+      "third_source_expected_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:12:53",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -26.16242804,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -616.285781,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:21:53",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -3.23846735,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -76.285781,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:22:52",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.73381236,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -17.285781,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:22:54",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.64890927,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -15.285781,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:23:53",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": 1.85574579,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 43.714219,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:32:53",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 24.7797069,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 583.714219,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T03:51:51",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -26.06676722,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -617.050591,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:00:51",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -3.25494559,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -77.050591,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:01:50",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.76254685,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -18.050591,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:01:52",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.6780575,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -16.050591,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:02:51",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": 1.81434241,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 42.949409,
+      "third_source_expected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:11:51",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 24.62611508,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 582.949409,
+      "third_source_expected_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T18:48:53",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -25.42637606,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -600.431221,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T18:57:53",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -2.55909204,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -60.431221,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T18:58:52",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.06062704,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -1.431221,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "辛亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T18:58:54",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": 0.02406707,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 0.568779,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T18:59:53",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": 2.5225326,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 59.568779,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1912-12-07T19:08:53",
+      "JieQi_date": "1912-12-07",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 25.38986867,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 599.568779,
+      "third_source_expected_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬子",
+        "month": "壬子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:23:09",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -26.43469077,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -662.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:32:09",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -4.8759373,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -122.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:33:08",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -2.52044128,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -63.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:33:10",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -2.4405943,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -61.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:34:09",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": -0.08509875,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -2.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": false,
+      "status": "ABSTAIN_TWO_WITNESSES_AGREE_AGAINST_THIRD",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:43:09",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 21.4736905,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 537.868202,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:35:32",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": -600,
+      "third_source_apparent_sun_minus_target_arcsec": -25.37620511,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -599.899191,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:44:32",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": -60,
+      "third_source_apparent_sun_minus_target_arcsec": -2.53378683,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -59.899191,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:45:31",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": -1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.03803843,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -0.899191,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "丁亥"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:45:33",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": 0.0465623,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 1.100809,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:46:32",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": 2.54231075,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 60.100809,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "1965-12-07T15:55:32",
+      "JieQi_date": "1965-12-07",
+      "relative_to_sxtwl_source_term_seconds": 600,
+      "third_source_apparent_sun_minus_target_arcsec": 25.384774,
+      "third_source_crossed_target": true,
+      "difference_seconds_from_Moshier_crossing": 600.100809,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": true,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "THREE_AGREE_NUMERICAL_ONLY",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    }
+  ],
+  "all_three_model_nonunanimity_samples": [
+    {
+      "fictional_reference_clock": "2023-02-04T10:42:21",
+      "JieQi_date": "2023-02-04",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.48680454,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -11.522494,
+      "third_source_expected_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "癸卯",
+        "month": "甲寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "壬寅",
+        "month": "癸丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-01-05T16:22:54",
+      "JieQi_date": "2026-01-05",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.64890927,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -15.285781,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "戊子"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2026-02-04T04:01:52",
+      "JieQi_date": "2026-02-04",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -0.6780575,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -16.050591,
+      "third_source_expected_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丙午",
+        "month": "庚寅"
+      },
+      "source_lunar_python_year_month": {
+        "year": "乙巳",
+        "month": "己丑"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:33:10",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": 1,
+      "third_source_apparent_sun_minus_target_arcsec": -2.4405943,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -61.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": true,
+      "status": "ABSTAIN_THREE_WITNESSES_DISAGREE",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    },
+    {
+      "fictional_reference_clock": "2057-08-07T07:34:09",
+      "JieQi_date": "2057-08-07",
+      "relative_to_sxtwl_source_term_seconds": 60,
+      "third_source_apparent_sun_minus_target_arcsec": -0.08509875,
+      "third_source_crossed_target": false,
+      "difference_seconds_from_Moshier_crossing": -2.131798,
+      "third_source_expected_year_month": {
+        "year": "丁丑",
+        "month": "丁未"
+      },
+      "source_sxtwl_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_lunar_python_year_month": {
+        "year": "丁丑",
+        "month": "戊申"
+      },
+      "source_sxtwl_matches_numerical_ephemeris": false,
+      "source_lunar_python_matches_numerical_ephemeris": false,
+      "status": "ABSTAIN_TWO_WITNESSES_AGREE_AGAINST_THIRD",
+      "birth_chart_status": "DEVELOPMENT_ONLY_NEVER_REAL_PERSON"
+    }
+  ],
+  "two_calendar_libraries_agree_but_Moshier_diff_count": 1,
+  "all_third_witness_nonunanimity_count": 5,
+  "human_birth_data_records": 0,
+  "human_blind_predictive_accuracy_validated": 0,
+  "runtime_astrology_rule_promotions": 0,
+  "unresolved_2057_one_or_more_model_errors": true
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "BAZI_THIRD_JIEQI_ASTRO_SOURCE_LIMITS",
+  "source_third_fixture_sha256": "48d9b068797c4ef2209761c4d94532d035e26205b48c8f3cfb250c61722d06b1",
+  "source_prior_two_library_report_sha256": "bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e",
+  "underlying_evidence": "Three software implementations; not original printed Chinese source or independent telescope observation",
+  "unresolved": [
+    "Moshier semianalytical approximations differ from modern high-accuracy JPL kernels; subsecond root solver tolerance is not absolute solar-term timing precision.",
+    "The modern reference-clock fixed UTC+8 convention is not independently a correct traditional time standard for every Chinese dynasty, century or birth site.",
+    "Swiss calc_ut internally uses its own Delta T model; no independent UT1-UTC correction was supplied for ancient/recent reference clocks.",
+    "2057-08-07 Moshier 135 degree crossing differs from both calendar libraries, despite these two agreeing at 07:34:09; a high-accuracy ephemeris or original observatory term-second source remains needed.",
+    "Original 36 fictional clocks deliberately enriched term-boundary cases; five unresolved cases are not a general population error rate.",
+    "No full BaZi strength/hidden-stem/personal-life outcome mapping independently authenticated or prospective human predictions.",
+    "No independently sampled real-human cohort, consent and preregistered demographic/nonastrology baseline."
+  ],
+  "real_human_predictive_validations": 0,
+  "runtime_astrology_promotions": 0
+}
