@@ -1,5 +1,8 @@
 # Hephaistio II time-lord reading C02 — calendars, transmitted arithmetic and competing predictions
 
+**23 October C04 Greek-source correction:** The previous 360/365/**375** arithmetic labels in this C02 audit are *accurate for the printed Schmidt English witness* but **do not all appear in the Eulogikon Greek transcription**. [C04 side-by-side numeric register](HEPHAISTIO_C04_GREEK_ENGLISH_NUMERIC_VARIANTS_V1.json) establishes Greek finer **Moon 71** vs English **Moon 81**; Greek fine headline sum **365** vs English sum **375**; Greek primary sum **360** persists, and the finer Mercury **57** differs from initial **52**. Schmidt English 150 and online Greek 150 agree on Saturn→Mercury; the later Valens appendix still gives 140. No proof yet of epagomenal intention or an independent Greek manuscript, and no numeric source was silently changed. Read [C04 report](HELLENISTIC_SOURCE_C04_GREEK_PAULUS_PAPYRUS_20261023.md) before interpreting this file.
+
+
 **Source-critical correction, 23 October C03:** The previous paraphrase of Schmidt's footnote that *Ptolemy used 2½ days per sign* is **not Ptolemy's main critically chosen reading** in Robbins's Tetrabiblos IV.10 printed p453. Robbins prints **2⅓ days per sign**, and notes a distinct **2½** reading in two manuscripts; additionally his main months count assigns **28 days per sign**. Hephaistio II.28 retains **2½**, while Paulus I.31 gives **1 day/sign**. Read [C03](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md) and the [variant register](HELLENISTIC_SOURCE_C03_VARIANTS_V1.json) before implementing calendar calculations. This correction does not alter the ch29/ch36 numerical witness or Saturn→Mars contrast.
 
 
