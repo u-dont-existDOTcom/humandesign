@@ -1,0 +1,200 @@
+{
+  "schema": "MAYA_B09_CHUEN_HISTORIC_SOURCE_ALIGNED_BEHAVIOR_FIRST_QUESTIONNAIRE_V1",
+  "stage": "DRAFT_SEMANTICALLY_IMPROVED_NOT_FROZEN_NO_PARTICIPANTS",
+  "prepared_date": "2026-10-23",
+  "historical_claim": "Colonial Yucatec Kaua per-birth-day source ascribes carpentry/weaving/making ability to Chuen-born persons (Bolles composite; earlier Barrera Vázquez translation reproduced in Thompson 1950 p80).",
+  "not_claimed": "No known statistical relationship between birth day and modern craft practices, no living uninterrupted Yucatec birth-clock validation",
+  "source_trace": "MAYA_B07_CHUWEN_ARTISAN_SOURCE_TO_OBSERVABLE_TRACE.json",
+  "independent_semantic_review": "MAYA_B09_CHUEN_INDEPENDENT_LEXICAL_SOURCE_COMPARISON_V1.json",
+  "lifecycle": {
+    "draft_but_not_deployed": true,
+    "independent_bilingual_cognitive_test_done": false,
+    "no_frozen_respondent_prediction": true,
+    "no_actual_consent": true,
+    "no_human_data_stored": true,
+    "public_repository_must_not_contain_answer_key": true
+  },
+  "primary_outcome": {
+    "id": "CHUEN_CRAFT_TOTAL_HOURS12_V1",
+    "purpose": "Approximate total hours spent in paid or unpaid tangible making over last 12 months",
+    "wording_en": "In the past 12 months, approximately how many hours have you spent making, building, decorating or repairing physical objects with your hands, including paid and unpaid activities? Examples include weaving, sewing, woodworking, pottery, carving, metalwork and similar crafts. Do not count ordinary cleaning, routine cooking or washing dishes.",
+    "wording_fr": "Au cours des 12 derniers mois, combien d’heures environ avez-vous consacrées à fabriquer, construire, décorer ou réparer des objets matériels de vos mains, dans le cadre d’activités rémunérées ou non ? Par exemple : tissage, couture, travail du bois, poterie, sculpture, travail des métaux et artisanat semblable. Ne comptez pas le ménage ordinaire, la cuisine courante ni la vaisselle.",
+    "items": [
+      "None (0 hours)",
+      "1–5 hours",
+      "6–20 hours",
+      "21–50 hours",
+      "51–100 hours",
+      "More than 100 hours",
+      "Cannot estimate reliably",
+      "Prefer not to answer"
+    ],
+    "ordinal_bins": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "missing": [
+      6,
+      7
+    ],
+    "source_equivalence": "PARTIAL: source speaks of roles/skills; modern recent hours is a measurable behavior proxy, not the historical same construct",
+    "direction_predeclaration": "Higher ordinal category for Chuen birthdays under ONE declared date-only rule",
+    "single_precommitted_primary_when_eventually_frozen": true
+  },
+  "secondary_items": [
+    {
+      "id": "CHUEN_CRAFT_PAID_SHARE12_V1",
+      "en": "How much of the time you reported making or repairing objects was part of paid work or another income-producing activity?",
+      "responses": [
+        "None",
+        "Less than half",
+        "About half",
+        "More than half",
+        "All",
+        "Cannot estimate",
+        "Prefer not to answer"
+      ],
+      "scored_primary": false,
+      "why": "The source names occupational crafts; paid versus unpaid share must not be ignored"
+    },
+    {
+      "id": "CHUEN_CRAFT_OCCUPATION12_V1",
+      "en": "During the past 12 months, was making, designing, constructing or repairing physical objects a regular part of your occupation or income-producing activities?",
+      "responses": [
+        "No",
+        "Occasionally",
+        "Regularly but not my main occupation",
+        "My main occupation",
+        "Prefer not to answer"
+      ],
+      "scored_primary": false,
+      "why": "Closer to historical artisan occupational role; distinct secondary outcome, not allowed to rescue negative primary"
+    },
+    {
+      "id": "CHUEN_CRAFT_TRAINING_V1",
+      "en": "Have you ever received formal or informal training or apprenticeship in making, weaving, carpentry, sewing, metalwork, ceramics or another tangible craft?",
+      "responses": [
+        "No",
+        "Yes, informal or self-taught",
+        "Yes, formal education/apprenticeship",
+        "Prefer not to answer"
+      ],
+      "scored_primary": false,
+      "why": "Skill/occupation more literal than hours; different construct"
+    },
+    {
+      "id": "CHUEN_CRAFT_ACCESS12_V1",
+      "en": "Over the past 12 months, how much access did you have to the time, materials, workspace and physical ability needed for making or repairing objects?",
+      "responses": [
+        "Little or none",
+        "Some",
+        "Substantial",
+        "Unsure",
+        "Prefer not to answer"
+      ],
+      "scored_primary": false,
+      "why": "Exposure and opportunity potential confound"
+    },
+    {
+      "id": "CHUEN_OCCUPATION_SCOPE_V1",
+      "en": "Which category best describes your main work during the last 12 months?",
+      "responses": [
+        "Hands-on craft/building/repair",
+        "Other manual work",
+        "Non-manual work",
+        "Studying/not employed/retired",
+        "Another situation",
+        "Prefer not to answer"
+      ],
+      "scored_primary": false,
+      "why": "Nonastrological occupational baseline"
+    }
+  ],
+  "general_covariate_fields": [
+    {
+      "id": "AGE_BAND",
+      "format": "age_band",
+      "values": [
+        "18–29",
+        "30–44",
+        "45–59",
+        "60+",
+        "Prefer not"
+      ]
+    },
+    {
+      "id": "REGION_LIVING",
+      "format": "regional_category_no_address",
+      "values": [
+        "Region self reported privately"
+      ]
+    },
+    {
+      "id": "LANGUAGE_OF_SURVEY",
+      "format": "supported_lang",
+      "values": [
+        "English",
+        "French"
+      ]
+    },
+    {
+      "id": "EDUCATION_BAND",
+      "format": "education",
+      "values": [
+        "Primary or less",
+        "Secondary",
+        "Higher education",
+        "Other",
+        "Prefer not"
+      ]
+    },
+    {
+      "id": "PRIOR_MAYA_BIRTH_DAY_AWARENESS",
+      "format": "after_behavior_items",
+      "values": [
+        "Did not know Maya birth-day sign",
+        "Knew own day sign before study",
+        "Uncertain",
+        "Prefer not"
+      ]
+    },
+    {
+      "id": "CALENDAR_DATE_SOURCE",
+      "format": "birth_metadata_separate_in_private_enrollment",
+      "values": [
+        "Self report",
+        "Family document",
+        "Civil document",
+        "Unsure"
+      ]
+    }
+  ],
+  "consent_draft": {
+    "en": "This study examines whether one historical calendar-based model is associated with ordinary activities. Such predictions are not scientifically established, and this may not represent current Maya practice. Participation is voluntary; you may skip questions or withdraw. Birth information is stored separately from research responses, with restricted access.",
+    "status": "LEGAL_PRIVACY_REVIEW_AND_PARTICIPANT_LANGUAGE_VALIDATION_REQUIRED_BEFORE_USE",
+    "source_disclosure_timing": "Describe general historical calendar research in consent but do not reveal Chuen or expected craft answer before questionnaire response freeze"
+  },
+  "presentation": {
+    "question_style": "behavior first, not source-exposed",
+    "primary_response_option_order": "ascending fixed ordinal order so numbers preserve magnitude",
+    "other_question_order": "predeclared and fixed before participant answers, avoid hidden adaptive question selection",
+    "leakage_question_timing": "prior Maya birth-day awareness asked after ordinary craft behavior items but before final response freeze",
+    "score_only_primary_outcome": true,
+    "any_other_trait_claims_promoted": false
+  },
+  "analysis_draft": {
+    "calendar_model": "GMT584283 proleptic Gregorian DATE-ONLY modern reconstruction, not living daykeeper reckoning",
+    "test_one_sided": "Chuen craft-hour ordinal scores greater than non-Chuen",
+    "null": "pre-committed matched/stratified permutation only if exchangeability justified by design",
+    "alternate_correlations": "listed sensitivity only; cannot choose best after outcomes",
+    "nonastrology_controls": "occupation/skills/access and age/region/language; one prespecified comparison for confirmatory status",
+    "no_calibrated_predictive_probabilities": true,
+    "confirmatory_sample_size_unestablished": true,
+    "feasibility_n60_inadequate_to_validate_effect": true,
+    "freeze_sha256_pending": true
+  }
+}
