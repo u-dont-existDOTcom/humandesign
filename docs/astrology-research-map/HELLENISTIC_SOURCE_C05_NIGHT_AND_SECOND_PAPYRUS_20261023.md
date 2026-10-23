@@ -1,5 +1,8 @@
 # Hellenistic primary-source reader C05 — Paulus nocturnal variants, second papyrus, and Hephaistio “face”
 
+**Later separate C06 documentary observation:** [C06 report](HELLENISTIC_SOURCE_C06_PINGREE_APPARATUS_AND_ZODIACAL_PLACES_20261023.md) found that **P.Oxy. 4277 Leo 22°11′ → Virgo** under a **zodiacal-place** category agrees with a **Valens VIII.7 Leo 22° → Virgo** table example. This is a *different ancient mechanism* from this C05 monomoiria test (1/3). Original fragment image, boundary semantics, and full table remain unverified; do not improve or combine monomoiria's accuracy statistic. C06 also now directly examined Pingree 1973 ch29/36, replacing older “not read” assertions.
+
+
 23 October 2026 · **Research only, not human prediction** · All branches other than the Hellenistic source lane untouched
 
 ## Root objective, historical evidence layers and access limits
