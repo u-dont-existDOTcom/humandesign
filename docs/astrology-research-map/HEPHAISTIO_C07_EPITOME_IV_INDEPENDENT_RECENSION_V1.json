@@ -1,5 +1,5 @@
 {
-  "schema": "HUMANDESIGN_HEPHAISTIO_EPITOME_IV_C07_SOURCE_WITNESS_V1",
+  "schema": "HUMANDESIGN_HEPHAISTIO_EPITOME_IV_SOURCE_WITNESS_C08_CORRECTED",
   "checked_date": "2026-10-23",
   "status": "SOURCE_CRITICAL_ONLY_NOT_PREDICTIVE",
   "source": {
@@ -59,10 +59,40 @@
     ],
     "sum_of_allocations": 903,
     "baseline_900_delta": 3,
-    "saturn_to_mercury_epitome_IV": 140,
+    "saturn_to_mercury_epitome_IV": 40,
     "saturn_to_mercury_main_Hephaistio_1973": 150,
     "saturn_to_mercury_later_Valens_5th_century_addition": 140,
-    "apparatus_warning": "Pingree Epitoma IV printed p240 apparatus at line 23 onwards warns that some numbers are corrupt; these numerals are transmitted/edited, not an authenticated autograph."
+    "apparatus_warning": "Pingree Epitoma IV printed p240 apparatus at line 23 onwards warns that some numbers are corrupt; these numerals are transmitted/edited, not an authenticated autograph.",
+    "formula_derived_sevenfold_allocation": [
+      210,
+      84,
+      105,
+      133,
+      56,
+      140,
+      175
+    ],
+    "formula_derived_sum": 903,
+    "formula_derived_delta_vs_900": 3,
+    "printed_epitome_IV_seven_numerals_visual": [
+      210,
+      84,
+      105,
+      133,
+      57,
+      40,
+      105
+    ],
+    "printed_epitome_IV_sum": 734,
+    "printed_epitome_IV_delta_vs_900": -166,
+    "printed_saturn_to_mercury_epitome_IV": 40,
+    "formula_derived_saturn_to_mercury_epitome_IV": 140,
+    "printed_saturn_to_moon_epitome_IV": 105,
+    "formula_derived_saturn_to_moon_epitome_IV": 175,
+    "printed_venus_value_epitome_IV": 57,
+    "formula_derived_venus_value_epitome_IV": 56,
+    "reinspection_C08": "The previous C07 register wrongly treated the formula's reconstructed values as the literal Epitome IV printed Saturn row and asserted an explicit printed 140. Actual Epitome IV Vol II p240 prints Mercury μ=40 and Moon ρε=105 (and Venus νζ=57). Editorial apparatus explicitly warns some numerals are corrupt. Do not silently correct printed readings.",
+    "seven_day_allocations_kind": "DERIVED_FROM_THE_ANCIENT_APPROXIMATE_RULE_NOT_LITERAL_PRINTED_VALUES"
   },
   "year_five_days": {
     "locus": "Epitoma IV section 37, printed p242 PDF 272",
@@ -93,8 +123,14 @@
       "Moon": 71
     },
     "compared_to_main_sum": 360,
-    "limitation": "Within a different recension, not proof that all main-text 52/57, 140/150 and finer-subdivision conflicts share one stable numerical correction."
+    "limitation": "Within a different recension, not proof that all main-text 52/57, 140/150 and finer-subdivision conflicts share one stable numerical correction.",
+    "fine_venus_heading_printed_epitome_IV": 23,
+    "fine_venus_child_sum_epitome_IV": 23,
+    "fine_venus_heading_main_primary": 22,
+    "fine_venus_editorial_expected_epitome_IV": 22,
+    "fine_venus_locator": "Pingree Vol II Epitome IV §44 printed p265/PDF295: body Venus κγ=23; apparatus line 8 'legendum κβ' (22); primary p264 uses κβ=22."
   },
   "human_validation": 0,
-  "model_promoted": false
+  "model_promoted": false,
+  "supersession": "C08 direct visual comparison corrects C07's false statement that 140 was printed in Epitome IV. 140 is formula-derived, 40 is printed; source warnings about corrupt numerals remain."
 }
