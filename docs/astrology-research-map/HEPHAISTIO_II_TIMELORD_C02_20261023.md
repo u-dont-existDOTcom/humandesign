@@ -1,0 +1,63 @@
+# Hephaistio II time-lord reading C02 — calendars, transmitted arithmetic and competing predictions
+
+23 October 2026 · Source-first audit · Experimental branch · **No runtime model or human predictive claim admitted**
+
+## Reading completed in this pass
+
+Book: Hephaistio of Thebes, *Apotelesmatics* II, Robert H. Schmidt English (1998), SHA-256 `e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073`. Read **printed pages 80–107, especially ch27–36**, from owned 59-leaf scanned PDF (one facing book leaf per left/right half). Pdf pages **47, 48, 59 were rendered and visually inspected**, in addition to both-half text extraction, to establish that material numeric discrepancies are **present in the printed source** rather than merely OCR output. Other chapter pages extracted as text and compared selectively. No copyrighted whole-book content has been stored in this public repository.
+
+Cross witnesses:
+- Vettius Valens, *Anthologies*, Riley translation, source SHA-256 `1abcb8f24a6b649c8e1c66ab0c398f99e8128c09000c7c8cca863a7c3a32ec6b`, PDF **pp170–172** explicitly labeled **“A Fifth-Century Addition”** in Riley. This is a *later appendix*, **not** a secure independent statement by second-century Valens.
+- Firmicus Maternus, *Mathesis* VI.33–40, Jean Rhys Bram translation, SHA-256 `0249e8702f15ef1c7220df7eed800340d0953d6b5c01b793a4407f4c44abef70`, PDF **pp230–236** (book printed pp226–232). Contents independently checked in preceding local inventory. Read relevant pairs and baseline cycle, not an exhaustive all-verse Latin critical comparison.
+- The Dorotheus Dykes `Carmen` printed IV.1–, PDF pp215–223 provides annual lord, profection, solar return and monthly methods, but those need literal two-system algorithm separation.
+
+## What these texts *actually* specify
+
+| Witness | Fixed-source method or provision | Remaining hard ambiguity |
+|---|---|---|
+| Hephaistio **II.27** printed 80–82 | Annual projection: each elapsed year advances the Ascendant to another sign; consider ruler's sect, phase, dignity, natal aspects and year's return/transits separately. | Epoch and exact annual clock rule must not be borrowed silently from modern practice. |
+| Hephaistio **II.28** printed 82–83 | Months: start from the annual sign and advance **one zodiacal sign per month**; days: advance **one sign per 2½ days** from the monthly sign; compare planets within or aspecting target sign. Schmidt's **fn217**, printed p83, says Paulus uses **one sign per day** and Ptolemy **one per 2½ days**. | The 30-day ideal month, birthday boundary, annual year length, interpolation and traditional day-time divisions must be specified before computation; this is not an empirical claim about a given subject. |
+| Hephaistio **II.29** printed 83–85 | A decade/time lord period of **10 years 9 months = 129 months**, distributed across Saturn 30, Jupiter 12, Mars 15, Sun 19, Venus 8, Mercury 20, Moon 25. Starting point normally the well-placed **sect luminary**, with conditional substitution if ineffective. Allocates smaller times in numeric tables. | Tables contain arithmetic discrepancies (below); whether to use proportional rounding, intercalary days, textual emendations or another method is **unresolved**. |
+| Hephaistio **II.30–36** printed 85–105 | Detailed conditional predictions for each planetary lord and the recipient of distributed smaller time; **sect, phase, angularity, sign domicile and malefic/benefic testimony often reverse or qualify results**. | One unrestricted planet-pair → “good/bad” scoring rule would distort the source. **Outcome-specific, mutually exclusive predicates** are required. |
+| Hephaistio **end II.36** printed 106–107 | Gives a **360-day** main daily year division 85/34/42/54/22/52/71 and a separate finer table, then mentions *alternative* division from the year's sign lord and explicitly notes the different procedures do not agree well. Schmidt **fn259** suggests a resemblance to Valens' releasing, which is his comparison, not the Hephaistio source proving common descent. | Which printed numbers belong to the 360-day vs 365-day procedure? The finer-day tables have internal inconsistent headers. Must **NOT** mix methods or resolve after comparing owner life history. |
+| Firmicus **Mathesis VI.33–40** | Recites same seven baseline **129-month** subperiods, with its own full sequence of planet→planet results. VI.33/34 says *ten years and eleven months* **at two points**, while VI.37–39 says **ten years and nine months**; source-derived weights still total 129, not 131. | Distinguish Latin original, translation or printed source corruption; the two-year-month totals are inconsistent **as published in Bram English**, not necessarily as the original author wrote. |
+| Valens **later “Fifth-Century Addition”**, Riley **p170–172** | Exposes two competing constructions: approximately weight-proportional subperiod days from total **129**, and repeated **129-day** daily cycles within the current planet's monthly allocation. Later commentary **criticizes the proportional approximation** and prefers the repeating short-cycle calculation; also adjusts intercalary days. | A source-critical *fifth-century textual stratum*, not securely an original Valens recommendation. It cannot be counted as an independent period-efficacy confirmation against Hephaistio. |
+
+## Numerically audited printed discrepancies
+
+Full seven-column readings, exact source page, computed totals and discrepancies are captured in the **machine-readable [period witness register](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json)**. They are **source observations, not corrected canonical periods**.
+
+**II.29, printed pp83–84, seven 129-month subsidiary rows.** For each given parent planet, compare declared number of calendar-months ×30 with all seven printed subordinate-day allocations. The resulting totals and differences:
+
+| Parent | 360-day convention would give | Sum of printed allocations | Difference |
+|---|---:|---:|---:|
+| Saturn | 900 | 913 | **+13** |
+| Jupiter | 360 | 365 | **+5** |
+| Mars | 450 | 450 | 0 |
+| Sun | 570 | 569 | −1 |
+| Venus | 240 | 243 | +3 |
+| Mercury | 600 | 606 | **+6** |
+| Moon | 750 | 764 | **+14** |
+
+Printed **II.29** uses `150` days for Saturn→Mercury; **Riley's separate fifth-century appendix**, PDF p170, gives `140` for that subperiod. This exact **10-day textual/numeric variant** reduces the 913-row to 903 (still +3 vs 900). Several residual discrepancies could represent accumulated per-subdivision rounding, intercalations, different period definitions or corrupt source transmission. The record cannot identify which from arithmetic alone. The comment in II.29 explicitly derives 900 days for Saturn's 30 months and an approximate factor of 7; some other listed row totals differ too much to be explained by rounding each of seven subgroups to the nearest integer alone.
+
+**II.36, printed p106: three different numeric levels.** The opening yearly allocation **85+34+42+54+22+52+71 = 360**. Within its printed fine-division introduction, Hermes has **57** and the Moon **81**, despite the opening **52** and **71**. The fine-divisions' **individual seven-item sums**, in planet order Saturn/Jupiter/Mars/Sun/Venus/Mercury/Moon, are **86,34,42,54,21,57,71**, whose combined total is **365**—not the stated 360, and not the stated alternative 57+81 header in the Moon case. For example Moon's 14+16+7+8+11+4+11 = **71**, despite its local heading `81`.
+
+**Interpretation:** A 360-vs-365 calendrical mixing hypothesis is now *worth checking*, but the sums do not prove that all errors arose from that mechanism. Some numbers could be simple transcription/printing defects, intentionally approximate divisions, or mixed calendar conventions. **Source variants retained, no silent correction**. This is a significant **ENGINEERING_INADMISSIBLE_PENDING_SOURCE_RESOLUTION** gate for any exact chronological claims from this particular table.
+
+## Important *opposite predictions*: Saturn→Mars
+
+The two texts make materially different conditional predictions for the same directional parent→recipient pair, and cannot both be reduced to one supportive “traditional rule”:
+
+- **Hephaistio II.30**, printed p**86–87** (PDF 49L–49R), says Saturn/Kronos distributing months or days **to Mars/Ares in a day nativity is harmful**, with setbacks, difficulties, loss and often dangerous travel; **in a night nativity** the result becomes **less severe and eventually relatively successful**, although not carefree. This is a **sect-dependent reversal**.
+- **Firmicus *Mathesis* VI.33 §5**, printed p**226** (PDF 230), gives Saturn→Mars **a favorable period in general**, explaining that opposed malefic powers counteract one another. In the relevant English paragraph this positive rule is **not explicitly scoped by sect**, although section introductory paragraphs require respecting natal condition generally.
+- Firmicus VI.33 §4–5 and Hephaistio II.30 both discuss recipients in a 129-month cycle; nevertheless exact timing granularity (month vs month/day), antecedent natal conditions, alternative time lord selection and language-era translation differences must be held constant before calling the outputs direct contradictions for a defined chart. **A genuine source disagreement candidate is identified, not a final historical contradiction solved.**
+- **Test construction:** choose **never-tested** chart periods with identical sect, lord, recipient and definitions; freeze both source-specific predicted directions **independently**, capture a predeclared adverse vs favorable objective observation or **abstain** if contextual qualifiers prevent deciding. Do not allow the model to select whichever text matches the person's biography.
+
+## Scientific/source status
+
+**COMPLETE THIS PASS:** audited and visually checked numeric subperiod tables, compared a later Valens appendix, inspected Firmicus VI.33–40 and isolated one clear conditional competing Saturn→Mars prediction. Preserved separate chapter classes, source provenance and unverified calendar interpretation.
+
+**NOT COMPLETE:** Greek critical edition or Latin original variant reconciliation; resolution of 360/365 calendars; actual software chart-period implementations; untouched forward-blind human tests; confirmation of any astrological efficacy. These are **not** requirements for recording or exploring other historically clear concepts, but are requirements for *declaring this exact table calibrated*.
+
+**Next concrete research read:** compare sources for the 129-month construction and sunrise/birthday intercalation; audit 360/365 numerals in an original-language or second translation; then freeze two competing *computable* Saturn→Mars sequences on synthetic neutral charts before any person-specific evaluation. Independently read image-only Paulus/Hephaistio I and their sect/day methods with page anchors as needed. Amazon Gansten book is **not** extracted or a blocker.
