@@ -66,6 +66,20 @@ Created the [source-exact by-sign lookup](paulus_bysign_papyrus_c04.py), with an
 
 The historical-match statistic is **reconstruction fidelity of an ancient worked astrological artifact**, not prediction of the person born in 319 CE. It must not increase the empirical project's claimed human hit rate. A wrong handwritten ancient entry stays a failure rather than silently “corrected”. Never tune a code branch after looking at any person's biography.
 
+## E. Continued actual reading — Paulus *Introductory Matters* chapters 33–37
+
+After the initial monomoiria investigation, directly reviewed the **remaining owner-owned scanned PDF leaves 84–93 (printed pages 68–77)**, visually, without OCR. This reaches the literal end of Paulus' translated *Introduction*, although **the later Olympiodorus commentary in the complete book remains absent** from the acquired PDF.
+
+| Paulus passage | Direct source meaning (modern paraphrase) | Research treatment |
+|---|---|---|
+| **Ch33**, pp68–70, PDF 84–86 | Presents multiple rival ancient **ascendant-degree rectification** clues: sect luminary's degree, trigon monomoiria, bounds and rulers of prenatal new/full moon, and dodecatemoria, sometimes selecting nearer chart positions. The accompanying Olympiodoran scholion brings in Cancer-8/Venus while corrected Paulus day-table Cancer-8/Mars. | Historical geometric alternatives, **not** authority to change a participant's recorded birth time until a description “fits”. Freeze known birth-time evidence independently. |
+| **Ch34**, pp70–73, PDF 86–89 | Describes traditional crisis/direction by ascensional times, aspects to malefics, sect and planetary phases, with a numerical worked example using Scorpio's approximately **35 time-degrees** rising across 30 zodiacal degrees (Alexandria climate). Allocating that sign's ascensional total proportionately over the sign yields **14 months per degree**, and **8 degrees × 14 = 112 months = 9 years 4 months**, as the printed example says. | First documentary calculation datum for an **ascensional direction**; chapter's disease/death predictions are not validated or medically actionable. Need historically exact latitude, fractional sign-rise engine and textual-variant audit before any event forecasts. |
+| **Ch35**, pp73–74, PDF89–90 | Moon's `bond` concerns configurations and near-exact (approximately five-degree) aspects to the Sun, with competing scholion descriptions and later release of the bond. | **Not** planetary “terms/bounds” by zodiac degree despite English overlap. Preserve source-specific naming; no human medical claim. |
+| **Ch36**, pp74–76, PDF90–92 | Rulership selection compares Sun/Moon, sect, angles/11th and bound, exaltation and trigon rulers. Describes greater-year and lesser-period allocations conditionally; the text is historical, not demonstrated longevity science. | Separate eligibility and number systems; do not deduce real lifespan, diagnosis or fatal events from figures. |
+| **Ch37**, pp76–77, PDF92–93 | Gives a schematic cosmic nativity (*Thema Mundi*) with canonical planetary places and ascendant. | **A constructed symbolic exemplar**, not an independent dated empirical human birth, not a validation participant. |
+
+**C04 extension status:** selected Paulus ch33–37 text is now visually **read and located** in the acquired copy, improving chapter coverage beyond C03. Still no Olympiodorus full commentary, ch34 original Greek critical variant assessment, real natal predictions or scoring.
+
 ## D. Verification, status, and next reading
 
 - [C04 Greek/English numeric variants](HEPHAISTIO_C04_GREEK_ENGLISH_NUMERIC_VARIANTS_V1.json)
