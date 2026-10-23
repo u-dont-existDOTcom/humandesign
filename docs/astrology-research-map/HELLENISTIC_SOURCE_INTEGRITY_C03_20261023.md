@@ -1,5 +1,8 @@
 # Hellenistic reader C03 — Paulus, Hephaistio I, Rhetorius source recovery and daily profections
 
+**Follow-on actual Paulus reading C04 (23 October):** [C04 report](HELLENISTIC_SOURCE_C04_GREEK_PAULUS_PAPYRUS_20261023.md) visually inspected remaining owned Paulus chapters **33–37**, printed pp68–77. Chapter 32's day canon is now captured as a reproducible 120-cell **editorially corrected** table with a separate contradictory Olympiodoran scholion; a genuinely different chapter-5 *by-sign* scheme reconstructed **six of seven** unambiguous computations in a **319 CE papyrus**, preserving Mercury mismatch. The original Olympiodorus commentary remains missing from this particular owner PDF. **Historical rule reconstruction is not human chart predictive validation.**
+
+
 23 October 2026. Source-level research only. No new or amended human predictions; no runtime source rule promoted.
 
 ## Scope and recovery
