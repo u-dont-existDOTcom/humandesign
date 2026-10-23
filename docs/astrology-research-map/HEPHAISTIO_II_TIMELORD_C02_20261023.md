@@ -1,5 +1,8 @@
 # Hephaistio II time-lord reading C02 — calendars, transmitted arithmetic and competing predictions
 
+**Source-critical correction, 23 October C03:** The previous paraphrase of Schmidt's footnote that *Ptolemy used 2½ days per sign* is **not Ptolemy's main critically chosen reading** in Robbins's Tetrabiblos IV.10 printed p453. Robbins prints **2⅓ days per sign**, and notes a distinct **2½** reading in two manuscripts; additionally his main months count assigns **28 days per sign**. Hephaistio II.28 retains **2½**, while Paulus I.31 gives **1 day/sign**. Read [C03](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md) and the [variant register](HELLENISTIC_SOURCE_C03_VARIANTS_V1.json) before implementing calendar calculations. This correction does not alter the ch29/ch36 numerical witness or Saturn→Mars contrast.
+
+
 23 October 2026 · Source-first audit · Experimental branch · **No runtime model or human predictive claim admitted**
 
 **Machine witness and test:** [Numeric 129-month and 360/365/375-day tables](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json), [four stdlib tests](test_hellenistic_period_witness.py), and [six separately gated candidate mechanisms](HELLENISTIC_C01_C02_SOURCE_CANDIDATES_V1.json). Tests passed 4/4 from a clean authenticated-free repository download; they check arithmetic only.\n\n### Firmicus Latin critically checked: English “eleven months” is erroneous
