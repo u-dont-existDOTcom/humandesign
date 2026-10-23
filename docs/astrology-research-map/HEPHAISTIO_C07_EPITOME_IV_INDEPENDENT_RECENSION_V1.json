@@ -1,0 +1,100 @@
+{
+  "schema": "HUMANDESIGN_HEPHAISTIO_EPITOME_IV_C07_SOURCE_WITNESS_V1",
+  "checked_date": "2026-10-23",
+  "status": "SOURCE_CRITICAL_ONLY_NOT_PREDICTIVE",
+  "source": {
+    "edition": "David Pingree, Hephaestionis Thebani Apotelesmaticorum Epitomae Quattuor, Vol II, Teubner 1974",
+    "downloaded_pdf_sha256": "6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a",
+    "downloaded_bytes": 80704330,
+    "pdf_pages": 524,
+    "bounded_review_pdfs": [
+      270,
+      271,
+      272,
+      294,
+      295,
+      296
+    ],
+    "printed_pages": [
+      240,
+      241,
+      242,
+      264,
+      265,
+      266
+    ],
+    "relationship": "Epitome IV recensional witness printed from Greek manuscripts marked I/J/K/M in the apparatus; distinct textual class relative to main manuscript P, but not an independent author or predictive corroboration.",
+    "manuscript_sigla_collation_complete": false,
+    "copyrighted_volume_shared": false
+  },
+  "saturn_subdivision": {
+    "locus": "Epitoma IV section 37, printed pages 240-241, physical PDF 270-271",
+    "core_129_month_planets": [
+      "Saturn",
+      "Jupiter",
+      "Mars",
+      "Sun",
+      "Venus",
+      "Mercury",
+      "Moon"
+    ],
+    "core_129_months": [
+      30,
+      12,
+      15,
+      19,
+      8,
+      20,
+      25
+    ],
+    "proportional_source_method": "Convert Saturn's 30 months to 900 days; divide by 129 month-total ~ 7; take approximately seven times the period of each planetary recipient. Text expressly calls this an approximation.",
+    "seven_day_allocations": [
+      210,
+      84,
+      105,
+      133,
+      56,
+      140,
+      175
+    ],
+    "sum_of_allocations": 903,
+    "baseline_900_delta": 3,
+    "saturn_to_mercury_epitome_IV": 140,
+    "saturn_to_mercury_main_Hephaistio_1973": 150,
+    "saturn_to_mercury_later_Valens_5th_century_addition": 140,
+    "apparatus_warning": "Pingree Epitoma IV printed p240 apparatus at line 23 onwards warns that some numbers are corrupt; these numerals are transmitted/edited, not an authenticated autograph."
+  },
+  "year_five_days": {
+    "locus": "Epitoma IV section 37, printed p242 PDF 272",
+    "language_evidence": "Epitoma text explicitly instructs counting the five-day period along with twelve months of each year.",
+    "self_source_not_conjecture": true,
+    "separate_kind": "A parallel recension of main Book II.29, not an independent astrologer's validation."
+  },
+  "year_365": {
+    "locus": "Epitoma IV section 44, printed p264 PDF 294",
+    "direct_source": "The year is expressly counted as 365 days in the Greek text, not merely derived from a sum.",
+    "primary_allocation": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "primary_allocation_sum": 365,
+    "compared_to_main_hephaistio_greek_II36": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 52,
+      "Moon": 71
+    },
+    "compared_to_main_sum": 360,
+    "limitation": "Within a different recension, not proof that all main-text 52/57, 140/150 and finer-subdivision conflicts share one stable numerical correction."
+  },
+  "human_validation": 0,
+  "model_promoted": false
+}
