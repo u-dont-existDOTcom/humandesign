@@ -1,0 +1,155 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C05_SOURCE_VARIANTS_V1",
+  "date_utc": "2026-10-23",
+  "root_status": "OPEN",
+  "research_only": true,
+  "human_validation_count": 0,
+  "prediction_frozen": false,
+  "model_promoted": false,
+  "report": "HELLENISTIC_SOURCE_C05_NIGHT_AND_SECOND_PAPYRUS_20261023.md",
+  "sources": {
+    "paulus_greek": {
+      "title": "Paulus Alexandrinus, Greek Eisagogika, Chapters 2 and 32",
+      "online_url": "https://eulogikon.org/works/paul-alexandria-astrology-sum-aa.md",
+      "retrieved_utf8_bytes": 181883,
+      "retrieved_sha256": "5403036ff14392f80025f9730f449d5b297ea4fee2c8e9e41f675385454d8c1c",
+      "repo_blob_sha": "d1f433537fa27fccecc2ffd38432d4a1edc4c556",
+      "critical_edition_lineage": "NOT_VERIFIED",
+      "nocturnal_instruction": "exchange triplicity ruler order, Greek chapter 32 illustrates Jupiter before Sun for fire"
+    },
+    "greenbaum_english": {
+      "source_sha256": "dffa2a86e2a8c13135b1fc9e68b798224a25464e617fa221a7551b5be08b605a",
+      "printed_page": 67,
+      "pdf_page": 83,
+      "type": "EDITORIALLY_CORRECTED_DAY_TABLE_ONLY"
+    },
+    "tolsa_2017": {
+      "title": "Cristian Tolsa, New Zodiacal Divisions in P.Oxy. LXI 4277, ZPE 203 (2017) 192-198",
+      "passage": "p.197, single-degree ruler table and footnote 10",
+      "access_kind": "REPOSTED_SCHOLARLY_TEXT_NOT_ORIGINAL_PAPYRUS_FACSIMILE"
+    },
+    "hephaistio_greek": {
+      "source_sha256": "2265293a6088920adbb487fe91ede7d275db21674da6b997fb98a9584a6c6d63",
+      "chapter": "Book I.19",
+      "term_geometry": "ἰδιοπροσωπία",
+      "distinct_term_decans": "δεκανός",
+      "critical_original_lineage": "NOT_VERIFIED"
+    }
+  },
+  "rulership": {
+    "trigon_order": [
+      "fire",
+      "earth",
+      "air",
+      "water"
+    ],
+    "day_night_pairs": {
+      "fire": [
+        "Sun",
+        "Jupiter"
+      ],
+      "earth": [
+        "Venus",
+        "Moon"
+      ],
+      "air": [
+        "Saturn",
+        "Mercury"
+      ],
+      "water": [
+        "Venus",
+        "Mars"
+      ]
+    },
+    "night_fire_begin": [
+      "Jupiter",
+      "Sun"
+    ],
+    "reconstructed_night_water": [
+      "Mars",
+      "Venus",
+      "Jupiter",
+      "Sun",
+      "Moon",
+      "Mercury",
+      "Saturn"
+    ],
+    "witness_status": "ANCIENT_GREEK_PROSE_PLUS_EDITORIAL_MODERN_SEQUENCE_RECONSTRUCTION",
+    "diurnal_printed_vs_narrative_differences": {
+      "fire": 0,
+      "earth": 0,
+      "air": 16,
+      "water": 18,
+      "total": 34,
+      "denominator": 120
+    },
+    "scholion_cancer_8": {
+      "greek_narrative": "Venus",
+      "greenbaum_edited": "Mars",
+      "scholion": "Venus"
+    }
+  },
+  "independent_second_papyrus": {
+    "identity": "P.Oxy. LXI 4277, ancient Oxyrhynchus papyrus",
+    "reported_entries": [
+      {
+        "object": "Mercury",
+        "sign": "Capricorn",
+        "complete_degrees": 6,
+        "minutes": 22,
+        "papyrus": "Venus",
+        "Paulus_by_sign_correct_ordinal": "Moon",
+        "agrees": false
+      },
+      {
+        "object": "Midheaven",
+        "sign": "Taurus",
+        "complete_degrees": 27,
+        "minutes": 8,
+        "papyrus": "Mercury",
+        "Paulus_by_sign_correct_ordinal": "Sun",
+        "agrees": false
+      },
+      {
+        "object": "Lower Midheaven",
+        "sign": "Scorpio",
+        "complete_degrees": 27,
+        "minutes": 8,
+        "papyrus": "Jupiter",
+        "Paulus_by_sign_correct_ordinal": "Jupiter",
+        "agrees": true
+      }
+    ],
+    "correct_ordinal_agreements": 1,
+    "wrong_ordinal_agreements": 0,
+    "readable_cases": 3,
+    "source_image_verified": false,
+    "documentary_reconstruction_only": true
+  },
+  "next_sources": [
+    {
+      "title": "Three Deluxe Horoscopes, Zellmann-Rohrer (2024)",
+      "verified_bibliography": true,
+      "full_PDF_read": false,
+      "access_status": "ANUBIS_ACCESS_CHALLENGE"
+    },
+    {
+      "title": "Hephaestion Greek critical apparatus Pingree (1973/4)",
+      "verified_bibliography": true,
+      "full_apparatus_read": false,
+      "access_status": "UNRESOLVED"
+    },
+    {
+      "title": "Olympiodorus, detailed nighttime monomoiria table and corrections",
+      "verified_bibliography": true,
+      "full_original_read": false,
+      "access_status": "UNRESOLVED"
+    }
+  ],
+  "code": [
+    "paulus_trigon_narrative_c05.py",
+    "test_hellenistic_c05_night.py",
+    "oxy4277_monomoiria_audit_c05.py",
+    "test_hellenistic_c05_oxy4277.py"
+  ]
+}
