@@ -1,7 +1,7 @@
 # Hellenistic Greek–Arabic source reconciliation — comparison C01
 23 October 2026 · Source-grounded exploratory research · NO human validation · Owner outcome OPEN
 
-## Why this checkpoint exists
+**Follow-on numeric source work completed:** [C02 annual and 129-month time-lord reading](HEPHAISTIO_II_TIMELORD_C02_20261023.md), [source-exact numerical witness](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json) and [candidate registry](HELLENISTIC_C01_C02_SOURCE_CANDIDATES_V1.json) extend this C01 report. Both tiers remain unscored.\n\n## Why this checkpoint exists
 Continue the previous Hephaistio II reading *at its exact unfinished comparison*, against verified owner-held Ptolemy, Dorotheus, Vettius Valens and Rhetorius sources. Reconcile overstrong absence/dignity claims in the 22 October first-reading artifact. It is a **correction and extension**, not a claim that the books are fully read or that the model predicts anything.
 
 Current base: `docs/astrology-research-map/HEPHAISTIO_II_FIRST_SOURCE_COMPARISON_20261022.md`. No relevant model/scorer mappings were changed, no birth charts were selected by fit, and no owner or development person's events were used to choose these rules.
