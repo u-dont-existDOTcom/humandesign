@@ -1,0 +1,352 @@
+{
+  "status": "MORINUS_SOURCE_ROUTINES_ONLY_NOT_FULL_APPLICATION",
+  "program": "IngenieriaAstrologica/Morinus",
+  "commit": "020492d5fce1c7a3d6b81186cef6cf04d93fb694",
+  "execution": "original AST method bodies and original speculum classes, using dependency stubs on synthetic points",
+  "synthetic": {
+    "semi_arc": {
+      "morinus": 42.17434402835047,
+      "prior_independent": 42.17434402835047,
+      "abs_delta": 0.0
+    },
+    "under_pole": {
+      "morinus": 42.20081504892782,
+      "prior_independent": 42.20081504892782,
+      "abs_delta": 0.0
+    },
+    "regiomontanus": {
+      "morinus": 46.449117851278395,
+      "prior_independent": 46.449117851278395,
+      "abs_delta": 0.0
+    },
+    "source_speculum": {
+      "POH": 25.56109561655712,
+      "AODO": 42.63694608567518,
+      "REGIO_POLE": 32.769269854894446,
+      "REGIO_W": 40.06806519137741
+    }
+  },
+  "grid": {
+    "attempts": 1200,
+    "passed": 1189,
+    "mismatches_or_rejected": 11,
+    "max_abs_deltas": {
+      "semi_arc": 1.7053025658242404e-13,
+      "regiomontanus": 2.2737367544323206e-13,
+      "under_pole": 63.25486791689707
+    },
+    "first_failures": [
+      {
+        "case": 400,
+        "input": [
+          55.47919707616095,
+          274.7948419671325,
+          6.449609426312975,
+          11.675550276735002,
+          328.665040766102,
+          -9.156867589503769
+        ],
+        "morinus": {
+          "semi_arc": 348.681947213551,
+          "regiomontanus": 352.13996292156617,
+          "under_pole": 331.7831516033805
+        },
+        "reference": {
+          "semi_arc": 348.68194721355104,
+          "regiomontanus": 352.13996292156617,
+          "under_pole": 348.70193580726357
+        },
+        "deltas": {
+          "semi_arc": 5.684341886080802e-14,
+          "regiomontanus": 0.0,
+          "under_pole": 16.918784203883092
+        }
+      },
+      {
+        "case": 446,
+        "input": [
+          60.7527267662719,
+          257.43288725168895,
+          21.100250039711057,
+          23.656711297716207,
+          44.56033649860905,
+          -19.35148894530854
+        ],
+        "morinus": {
+          "semi_arc": 102.40912876904835,
+          "regiomontanus": 109.66673128939948,
+          "under_pole": 55.19623949525519
+        },
+        "reference": {
+          "semi_arc": 102.40912876904832,
+          "regiomontanus": 109.66673128939951,
+          "under_pole": 102.98508773407318
+        },
+        "deltas": {
+          "semi_arc": 2.842170943040401e-14,
+          "regiomontanus": 2.842170943040401e-14,
+          "under_pole": 47.78884823881799
+        }
+      },
+      {
+        "case": 510,
+        "input": [
+          62.34202990638205,
+          341.23912630352316,
+          4.13264286490147,
+          17.06650946203476,
+          136.12425724600132,
+          7.123705259584952
+        ],
+        "morinus": {
+          "semi_arc": 136.00478921006552,
+          "regiomontanus": 136.99378694143724,
+          "under_pole": 131.0836723935496
+        },
+        "reference": {
+          "semi_arc": 136.0047892100655,
+          "regiomontanus": 136.99378694143724,
+          "under_pole": 135.86377161355432
+        },
+        "deltas": {
+          "semi_arc": 2.842170943040401e-14,
+          "regiomontanus": 0.0,
+          "under_pole": 4.780099220004729
+        }
+      },
+      {
+        "case": 561,
+        "input": [
+          44.72495358085417,
+          291.9002153197228,
+          11.348666435436769,
+          20.575758709401697,
+          343.07626751503324,
+          -16.114945156986625
+        ],
+        "morinus": {
+          "semi_arc": 359.0483119320299,
+          "regiomontanus": 5.049525783775891,
+          "under_pole": 350.7923746871949
+        },
+        "reference": {
+          "semi_arc": 359.0483119320299,
+          "regiomontanus": 5.049525783775891,
+          "under_pole": 359.1094174785616
+        },
+        "deltas": {
+          "semi_arc": 0.0,
+          "regiomontanus": 0.0,
+          "under_pole": 8.317042791366703
+        }
+      },
+      {
+        "case": 747,
+        "input": [
+          64.48490944236872,
+          246.97129061278113,
+          15.208882604219411,
+          20.55630692898565,
+          303.131009985547,
+          10.802591883594136
+        ],
+        "morinus": {
+          "semi_arc": 313.4462792795442,
+          "regiomontanus": 315.1264064250233,
+          "under_pole": 249.7183409783167
+        },
+        "reference": {
+          "semi_arc": 313.4462792795442,
+          "regiomontanus": 315.1264064250232,
+          "under_pole": 312.97320889521376
+        },
+        "deltas": {
+          "semi_arc": 0.0,
+          "regiomontanus": 5.684341886080802e-14,
+          "under_pole": 63.25486791689707
+        }
+      },
+      {
+        "case": 785,
+        "input": [
+          54.80976237362526,
+          325.11332924371277,
+          5.072198312049409,
+          15.7422573293913,
+          71.82521921153636,
+          11.985881896183784
+        ],
+        "morinus": {
+          "semi_arc": 68.87848461020371,
+          "regiomontanus": 69.52042343223724,
+          "under_pole": 62.37209866847879
+        },
+        "reference": {
+          "semi_arc": 68.87848461020371,
+          "regiomontanus": 69.5204234322373,
+          "under_pole": 68.80908948166069
+        },
+        "deltas": {
+          "semi_arc": 0.0,
+          "regiomontanus": 5.684341886080802e-14,
+          "under_pole": 6.436990813181893
+        }
+      },
+      {
+        "case": 1007,
+        "input": [
+          37.863532916521194,
+          291.1828673255905,
+          6.74600194812183,
+          14.23978042133519,
+          344.79540541426115,
+          -14.587021637587366
+        ],
+        "morinus": {
+          "semi_arc": 355.2313260650018,
+          "regiomontanus": 358.9575577906277,
+          "under_pole": 351.7589879459474
+        },
+        "reference": {
+          "semi_arc": 355.23132606500184,
+          "regiomontanus": 358.9575577906277,
+          "under_pole": 355.2299809365501
+        },
+        "deltas": {
+          "semi_arc": 5.684341886080802e-14,
+          "regiomontanus": 0.0,
+          "under_pole": 3.4709929906026673
+        }
+      },
+      {
+        "case": 1017,
+        "input": [
+          34.5248170093019,
+          262.16522705211656,
+          0.5180786753477378,
+          19.56612141134059,
+          339.08344936062673,
+          2.643183852486686
+        ],
+        "morinus": {
+          "semi_arc": 350.2110029714693,
+          "regiomontanus": 350.83466695980434,
+          "under_pole": 324.5169090413179
+        },
+        "reference": {
+          "semi_arc": 350.2110029714693,
+          "regiomontanus": 350.83466695980434,
+          "under_pole": 350.20913347702884
+        },
+        "deltas": {
+          "semi_arc": 0.0,
+          "regiomontanus": 0.0,
+          "under_pole": 25.692224435710955
+        }
+      },
+      {
+        "case": 1166,
+        "input": [
+          62.391910987002746,
+          285.0877775071709,
+          31.165495217766022,
+          24.985549465813364,
+          47.50528635841488,
+          5.109824587321388
+        ],
+        "morinus": {
+          "semi_arc": 53.19665380816505,
+          "regiomontanus": 56.71761124022356,
+          "under_pole": 27.372601220435627
+        },
+        "reference": {
+          "semi_arc": 53.19665380816508,
+          "regiomontanus": 56.717611240223576,
+          "under_pole": 52.40632712277109
+        },
+        "deltas": {
+          "semi_arc": 2.842170943040401e-14,
+          "regiomontanus": 0.0,
+          "under_pole": 25.033725902335448
+        }
+      },
+      {
+        "case": 1174,
+        "input": [
+          59.47450766415849,
+          267.7911219505026,
+          11.823535293537816,
+          21.793732138950865,
+          320.80649051166625,
+          8.804037780878033
+        ],
+        "morinus": {
+          "semi_arc": 330.5174433521825,
+          "regiomontanus": 333.3333852388731,
+          "under_pole": 286.82068836883104
+        },
+        "reference": {
+          "semi_arc": 330.5174433521825,
+          "regiomontanus": 333.3333852388731,
+          "under_pole": 330.12038343093764
+        },
+        "deltas": {
+          "semi_arc": 0.0,
+          "regiomontanus": 0.0,
+          "under_pole": 43.29969506210659
+        }
+      },
+      {
+        "case": 1189,
+        "input": [
+          28.75481601101137,
+          297.2086750683956,
+          2.3066796749246805,
+          22.898835353482177,
+          35.42563623129854,
+          -2.780302557215638
+        ],
+        "morinus": {
+          "semi_arc": 42.5175984766818,
+          "regiomontanus": 45.20121167798152,
+          "under_pole": 30.261624286995406
+        },
+        "reference": {
+          "semi_arc": 42.51759847668177,
+          "regiomontanus": 45.20121167798149,
+          "under_pole": 42.52284980988393
+        },
+        "deltas": {
+          "semi_arc": 2.842170943040401e-14,
+          "regiomontanus": 2.842170943040401e-14,
+          "under_pole": 12.261225522888537
+        }
+      }
+    ]
+  },
+  "method_lines": {
+    "semi_arc": [
+      2414,
+      2507
+    ],
+    "under_pole": [
+      1637,
+      1705
+    ],
+    "regiomontanus": [
+      20,
+      125
+    ]
+  },
+  "source_sha256": {
+    "placspec.py": "55f3cb5155473d3aec3c92a3c2ef65607926e2a6cefa9eacca4333e739f6cdbc",
+    "regiospec.py": "dfe24ca314008c01d2aefafd3a77d4e8869fc4a02250a4bbffc08c07d96df1ed",
+    "placidiansapd.py": "304921fc1d489b07d2efeb26356d9055cf7be1a212a7d2b007c7221be86c7f30",
+    "placidianutppd.py": "b76a131ade535d9353c6e9f65863e6edd3cd8424cf8e74b228e6f0a4af48e9c5",
+    "regiomontanpd.py": "35ca3e864e64f170b9d8223b745333b9c8eb6e9e8fb446b7f514c71a65f90a3a"
+  },
+  "reference_sha256": "f4886fde13775c1b57380c21386db60494a5fb4dc8e66b46a4943dd24ac3f67a",
+  "full_application": false,
+  "actual_ephemeris": false,
+  "human_predictive_validation": false
+}
