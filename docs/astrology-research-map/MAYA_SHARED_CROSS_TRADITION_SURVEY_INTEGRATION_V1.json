@@ -1,0 +1,412 @@
+{
+  "schema": "MAYA_INTEGRATION_INTO_EXISTING_CROSS_TRADITION_SURVEY_V1",
+  "created_utc_date": "2026-10-23",
+  "status": "INTEGRATED_RESEARCH_MAP_AND_OPTIONAL_SHARED_SURVEY_OVERLAY_NOT_DEPLOYED",
+  "owner_decision": "DO_NOT_START_SEPARATE_MAYA_HUMAN_TEST; REUSE_EXISTING_SURVEYS; TEST_ELIGIBLE_TRADITIONS_TOGETHER_AT_THE_END",
+  "parent_outcome": "OPEN: a common future untouched consented participant cohort, predictions frozen by source-specific tradition and scored against decoys/nulls separately; not every tradition is natal or survey-measurable",
+  "source_snapshot": "MAYA_SHARED_SURVEY_EXISTING_INSTRUMENT_SNAPSHOT_V1.json",
+  "full_daynames": "MAYA_COMBINED_SOURCE_DAYNAME_SURVEY_INDEX_V1.json",
+  "preserving_existing_surveys": [
+    {
+      "name": "Life Patterns V3 optional research bank",
+      "id": "LP_V3_CANDIDATE",
+      "count": 23,
+      "question_selection_unfrozen": true,
+      "do_not_edit_live": true
+    },
+    {
+      "name": "Life Patterns V1.9 tendency-first and experiences",
+      "id": "LP_TENDENCY_EXPERIENCE",
+      "counts": {
+        "tendency": 25,
+        "experience": 8
+      },
+      "scope": "reused only by stable prior IDs when evidence domains match; experience data separately unscored",
+      "do_not_edit_live": true
+    },
+    {
+      "name": "Human Design V2 shared reference question bank",
+      "id": "HD_QBANK_V1",
+      "count": 81,
+      "scope": "historically frozen HD-specific outcomes remain unmodified; no Maya rule added to HD V4.3",
+      "do_not_edit_live": true
+    }
+  ],
+  "maya_source_systems": [
+    {
+      "id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "kind": "COLONIAL_RECONSTRUCTED_BIRTH_DAY_ASCRIPTIONS",
+      "source_ref": "MAYA_B07_YUCATEC_NATAL_SOURCE_PROVENANCE_V1.json",
+      "day_name_count": 20,
+      "eligible_for_shared_respondent_evidence_if_eventually_frozen": true,
+      "requires_current_living_daycount_claim": false,
+      "status": "SOURCE_ONLY"
+    },
+    {
+      "id": "MAYA-HIGHLAND-MOMOSTENANGO-KICHE",
+      "kind": "HISTORICAL_ETHNOGRAPHIC_NATAL",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "day_name_count": 20,
+      "eligible_for_shared_respondent_evidence_if_eventually_frozen": true,
+      "requires_current_living_daycount_claim": true,
+      "status": "SOURCE_ONLY_LOCAL_NATAL_CLOCK_UNVERIFIED"
+    },
+    {
+      "id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "kind": "CONTEMPORARY_LIVING_PRACTITIONER_NATAL_TEXT",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "day_name_count": 20,
+      "eligible_for_shared_respondent_evidence_if_eventually_frozen": true,
+      "requires_current_living_daycount_claim": true,
+      "status": "SOURCE_ONLY_LOCAL_NATAL_CLOCK_UNVERIFIED"
+    },
+    {
+      "id": "MAYA-ANCIENT-CODICES",
+      "kind": "ASTRONOMICAL_RITUAL_ELECTIONAL_NOT_AUTOMATIC_NATAL",
+      "source_ref": "MAYA_MADRID_CH6_CH7_READING_AND_DATE_PARITY_B03.json",
+      "eligible_for_shared_respondent_evidence_if_eventually_frozen": false,
+      "reason": "Ritual/astronomy almanacs do not imply a human personality prediction; timing/electional predictions require a different evidence protocol."
+    },
+    {
+      "id": "MAYA-MODERN-DREAMSPELL",
+      "kind": "RECENT_MODERN_SEPARATE_SYSTEM",
+      "eligible_for_shared_respondent_evidence_if_eventually_frozen": false,
+      "reason": "Do not silently reattribute recent Dreamspell rules to classical/living Maya sources; optional separate hypothesis class only."
+    }
+  ],
+  "common_observables": [
+    {
+      "id": "CRAFT_SKILLED_WORK",
+      "construct": "Actual skill-based physical object-making, trade, apprenticed or paid/unpaid craft",
+      "existing_question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "PROXY_ONLY",
+      "conditional_question_id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+      "shared_answer_key": "SHARED-WORK-AND-MAKING",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "CREATIVE_PRODUCTION",
+      "construct": "Actual creative work versus passive aesthetic enjoyment",
+      "existing_question_ids": [
+        "ART"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "BROAD_PROXY",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-CREATIVE-PRODUCTION",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "PROBLEM_SOLVING_THOUGHT",
+      "construct": "Lived response to contradictory/problematic facts vs historical innovation",
+      "existing_question_ids": [
+        "TF1-G01",
+        "ART"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "WEAK_PROXY_CONSTRUCT_MISMATCH",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-PROBLEM-SOLVING",
+      "questionnaire_instrument_status": "TENDENCY_FIRST_AND_V3_CANDIDATE_NOT_VALIDATED"
+    },
+    {
+      "id": "ACTUAL_TRAVEL_HISTORY",
+      "construct": "Actual relocation, long-range travel and cultural encounters versus desire for travel",
+      "existing_question_ids": [
+        "TRAVEL"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "PARTIAL_HISTORY_PROXY",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-ACTUAL-TRAVEL",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "HELPING_GENEROSITY",
+      "construct": "Practical giving/helping relative to capacity and receiving support",
+      "existing_question_ids": [
+        "RECIPROCITY"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "BROAD_PROSOCIAL_PROXY",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-HELP-GIVE-RECEIVE",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "RITUAL_VOCATION",
+      "construct": "Religious/ceremonial role or vocation distinct from belief/practice",
+      "existing_question_ids": [
+        "VOCATION",
+        "BELIEF"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "BROAD_HISTORICAL_PROXY",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-SPIRITUAL-ROLE",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "RELATIONSHIP_MEDIATION",
+      "construct": "Conflict repair/helping/mediation as historical source role",
+      "existing_question_ids": [
+        "BONDS",
+        "ANGER_REPAIR"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "BROAD_PROXY_NOT_MEDIATION",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-CONFLICT-REPAIR",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    },
+    {
+      "id": "TEACHING_ROLE",
+      "construct": "Actual teaching roles not merely own education or learning",
+      "existing_question_ids": [
+        "LEARNING_HISTORY",
+        "VOCATION"
+      ],
+      "direct_measure_exists": false,
+      "existing_question_coverage": "BROAD_PROXY_NOT_DIRECT_TEACHING",
+      "conditional_question_id": null,
+      "shared_answer_key": "SHARED-TEACHING-WORK",
+      "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+    }
+  ],
+  "source_claim_bindings": [
+    {
+      "id": "MAYA-YUC-CHUWEN-CRAFT",
+      "actual_project_claim_id": "MAYA-YUC-B07-CHUWEN-ARTISAN-UNFROZEN-01",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_day_name": "CHUWEN",
+      "source_ref": "MAYA_B07_CHUWEN_ARTISAN_SOURCE_TO_OBSERVABLE_TRACE.json",
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "survey_question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "status": "SOURCE_ONLY_PRIMARY_CANDIDATE_NOT_FROZEN",
+      "research_priority": "high",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-YUC-MEN-WEAVING",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_day_name": "MEN",
+      "source_ref": "MAYA_B07_YUCATEC_ARTISAN_WITNESS_VARIANTS.json",
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "survey_question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "status": "EXPLORATORY_TEXT_VARIANTS_WEAKER",
+      "research_priority": "secondary",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-YUC-KABAN-WOODWORK",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_day_name": "KAB’AN",
+      "source_ref": "MAYA_B07_YUCATEC_ARTISAN_WITNESS_VARIANTS.json",
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "survey_question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "status": "EXPLORATORY_SINGLE_LONG_KAUA_VARIANT",
+      "research_priority": "secondary",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-MOMO-NOJ-INNOVATION",
+      "system_id": "MAYA-HIGHLAND-MOMOSTENANGO-KICHE",
+      "source_day_name": "NO’J",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "CREATIVE_PRODUCTION",
+        "PROBLEM_SOLVING_THOUGHT"
+      ],
+      "survey_question_ids": [
+        "ART",
+        "TF1-G01"
+      ],
+      "status": "SOURCE_ONLY_UNFROZEN_OUTCOME_CONTENT_GAP",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-NOJ-PRUDENCE",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "NO’J",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "PROBLEM_SOLVING_THOUGHT"
+      ],
+      "survey_question_ids": [
+        "TF1-G01"
+      ],
+      "status": "SOURCE_ONLY_SOURCE_DOMAIN_DISAGREES_WITH_MOMOSTENANGO",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-IMOX-CREATIVITY",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "IMOX",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "CREATIVE_PRODUCTION"
+      ],
+      "survey_question_ids": [
+        "ART"
+      ],
+      "status": "SOURCE_ONLY_NO_PEOPLE_VALIDATED",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-E-TRAVEL",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "E",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "ACTUAL_TRAVEL_HISTORY"
+      ],
+      "survey_question_ids": [
+        "TRAVEL"
+      ],
+      "status": "SOURCE_ONLY_ACTUAL_TRAVEL_HISTORY_IS_PARTIAL_PROXY",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-E-GENEROSITY",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "E",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "HELPING_GENEROSITY"
+      ],
+      "survey_question_ids": [
+        "RECIPROCITY"
+      ],
+      "status": "SOURCE_ONLY_BROAD_PROSOCIAL_PROXY",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-MOMO-E-RITUAL-VOCATION",
+      "system_id": "MAYA-HIGHLAND-MOMOSTENANGO-KICHE",
+      "source_day_name": "E",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "RITUAL_VOCATION"
+      ],
+      "survey_question_ids": [
+        "VOCATION",
+        "BELIEF"
+      ],
+      "status": "SOURCE_ONLY_HISTORICAL_GENDERED_ROLE_CONTEXT_NOT_PRIMARY",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-TOJ-MEDIATION",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "TOJ",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "RELATIONSHIP_MEDIATION"
+      ],
+      "survey_question_ids": [
+        "BONDS",
+        "ANGER_REPAIR"
+      ],
+      "status": "SOURCE_ONLY_COMMUNITY_CONFLICT_WITH_MOMOSTENANGO_MEDICAL_STIGMA_QUARANTINED",
+      "individual_predictive_accuracy_verified": false
+    },
+    {
+      "id": "MAYA-ZUNIL-BATZ-TEACHING",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_day_name": "B’ATZ’",
+      "source_ref": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "observable_ids": [
+        "TEACHING_ROLE"
+      ],
+      "survey_question_ids": [
+        "LEARNING_HISTORY",
+        "VOCATION"
+      ],
+      "status": "SOURCE_ONLY_LEARNING_IS_NOT_DIRECT_TEACHING",
+      "individual_predictive_accuracy_verified": false
+    }
+  ],
+  "one_proposed_conditional_shared_probes": [
+    {
+      "id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+      "stage": "FUTURE_FINAL_SHARED_SURVEY_RESEARCH_CANDIDATE_NOT_ADDED_TO_LIVE_APP",
+      "linked_observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "neutral_prompt": "In work, apprenticeships, family production or hobbies, have you regularly made or repaired physical objects using a learned skill, such as sewing, weaving, woodworking, pottery or metalwork? If so, what did you actually make, and was it paid, unpaid or both?",
+      "minimal_followup_if_needed": "Was this an enduring role, occasional activity, or something you practiced for only a short period?",
+      "source_neutral_no_astrology_day_name_in_prompt": true,
+      "admits_uncertain_skip_no_opportunity": true,
+      "must_not_ask_based_on_natal_chart": true,
+      "trigger_rule": "Only with opt-in if prior ART/VOCATION/LEARNING_HISTORY answers do not adequately establish skilled physical making; same gap rule for all participants irrespective of predicted day sign.",
+      "respondent_burden": "At most one conditional probe in addition to existing optional topic cap, not a separate Maya questionnaire",
+      "never_count_as_independent_second_outcome_if_already_covered": true,
+      "source_independent_occupational_coding_required_before_scored_use": true,
+      "no_change_to_existing_v3_question_count": 23
+    }
+  ],
+  "final_test_integration": {
+    "one_common_behavioral_interview_for_all_eligible_natal_systems": true,
+    "original_Life_Patterns_v19_live_question_bank_unchanged": true,
+    "existing_V3_23_optional_topics_not_forced": true,
+    "existing_Human_Design_V2_frozen_model_unchanged": true,
+    "material_coverage_map_before_question_selection": true,
+    "conditional_new_question_if_needed_not_because_charts_predict_CHUWEN": true,
+    "refuse_and_missing_response_states_retained": [
+      "ANSWERED",
+      "CONTEXT_DEPENDENT",
+      "NO_OPPORTUNITIES",
+      "NEVER",
+      "NOT_APPLICABLE",
+      "UNCERTAIN",
+      "SKIPPED",
+      "ALREADY_COVERED",
+      "NOT_ASKED"
+    ],
+    "birth_input_and_truth_labels_sealed_privately_separate_from_responses": true,
+    "questionnaire_item_bank_and_adaptive_selection_rules_frozen_before_any_scored_answers": true,
+    "one_shared_answer_per_construct_for_each_participant": true,
+    "source_traditions_may_reuse_one_answer_but_cannot_claim_statistically_independent_evidence": true,
+    "per_tradition_birth_chart_predictions_frozen_separately": true,
+    "per_tradition_scoring_and_decoys_with_familywise_or_hierarchical_multiplicity_declared_before_outcomes": true,
+    "no_after_outcome_calendar_or_source_variant_selection": true,
+    "historical_reconstructed_Yucatec_not_pretended_living_tradition": true,
+    "preexisting_owner_and_other_development_answer_sources_not_an_untouched_validation_cohort": true,
+    "source_specific_natal_event_pair_and_electional_targets_not_all_scored_by_one_personality_questionnaire": true,
+    "all_20_source_day_name_entries_covered_in_separate_index": true
+  },
+  "readiness": {
+    "integrated_source_and_question_metadata": true,
+    "live_app_modified": false,
+    "standalone_Maya_questionnaire_created": false,
+    "one_future_conditional_probe_proposed_not_deployed": true,
+    "joint_human_test_commenced": false,
+    "final_questionnaire_frozen": false,
+    "scored_participants": 0,
+    "empirical_Maya_validated_predictions": 0,
+    "any_astrology_runtime_rule_promoted": false
+  }
+}

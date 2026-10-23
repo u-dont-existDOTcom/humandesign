@@ -1,0 +1,171 @@
+{
+  "schema": "COMPILED_MAYA_TO_SHARED_SURVEY_RESEARCH_OVERLAY_V1",
+  "status": "COMPILED_METADATA_ONLY_NOT_FROZEN_NOT_DEPLOYED",
+  "source_snapshots": [
+    "MAYA_SHARED_SURVEY_EXISTING_INSTRUMENT_SNAPSHOT_V1.json",
+    "MAYA_COMBINED_SOURCE_DAYNAME_SURVEY_INDEX_V1.json",
+    "MAYA_SHARED_CROSS_TRADITION_SURVEY_INTEGRATION_V1.json"
+  ],
+  "maya_source_system_count": 5,
+  "yucatec_source_day_names": 20,
+  "Kiche_source_day_name_pairs": 20,
+  "separate_unscored_claims": 11,
+  "preexisting_shared_v3_optional_questions": 23,
+  "source_pinned_behavioral_question_reuses": [
+    {
+      "question_id": "ANGER_REPAIR",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-ZUNIL-TOJ-MEDIATION"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "ART",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-MOMO-NOJ-INNOVATION",
+        "MAYA-YUC-CHUWEN-CRAFT",
+        "MAYA-YUC-KABAN-WOODWORK",
+        "MAYA-YUC-MEN-WEAVING",
+        "MAYA-ZUNIL-IMOX-CREATIVITY"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "BELIEF",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-MOMO-E-RITUAL-VOCATION"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "BONDS",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-ZUNIL-TOJ-MEDIATION"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "LEARNING_HISTORY",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-YUC-CHUWEN-CRAFT",
+        "MAYA-YUC-KABAN-WOODWORK",
+        "MAYA-YUC-MEN-WEAVING",
+        "MAYA-ZUNIL-BATZ-TEACHING"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "RECIPROCITY",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-ZUNIL-E-GENEROSITY"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "TF1-G01",
+      "source_bank": "TENDENCY_FIRST",
+      "source_claim_ids": [
+        "MAYA-MOMO-NOJ-INNOVATION",
+        "MAYA-ZUNIL-NOJ-PRUDENCE"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "TRAVEL",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-ZUNIL-E-TRAVEL"
+      ],
+      "actual_existing_question_modified": false
+    },
+    {
+      "question_id": "VOCATION",
+      "source_bank": "V3_CANDIDATE",
+      "source_claim_ids": [
+        "MAYA-MOMO-E-RITUAL-VOCATION",
+        "MAYA-YUC-CHUWEN-CRAFT",
+        "MAYA-YUC-KABAN-WOODWORK",
+        "MAYA-YUC-MEN-WEAVING",
+        "MAYA-ZUNIL-BATZ-TEACHING"
+      ],
+      "actual_existing_question_modified": false
+    }
+  ],
+  "single_shared_answer_facets": [
+    {
+      "facet_id": "ACTUAL_TRAVEL_HISTORY",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-ZUNIL-E-TRAVEL"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "CRAFT_SKILLED_WORK",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-YUC-CHUWEN-CRAFT",
+        "MAYA-YUC-KABAN-WOODWORK",
+        "MAYA-YUC-MEN-WEAVING"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "CREATIVE_PRODUCTION",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-MOMO-NOJ-INNOVATION",
+        "MAYA-ZUNIL-IMOX-CREATIVITY"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "HELPING_GENEROSITY",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-ZUNIL-E-GENEROSITY"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "PROBLEM_SOLVING_THOUGHT",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-MOMO-NOJ-INNOVATION",
+        "MAYA-ZUNIL-NOJ-PRUDENCE"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "RELATIONSHIP_MEDIATION",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-ZUNIL-TOJ-MEDIATION"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "RITUAL_VOCATION",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-MOMO-E-RITUAL-VOCATION"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    },
+    {
+      "facet_id": "TEACHING_ROLE",
+      "claim_ids_reusing_same_facet": [
+        "MAYA-ZUNIL-BATZ-TEACHING"
+      ],
+      "counts_as_independent_duplicate_responses": false
+    }
+  ],
+  "future_conditional_probe_ids": [
+    "SHARED-PHYSICAL-MAKING-CONTEXT-v1"
+  ],
+  "conditional_probes_added_to_existing_live_app": false,
+  "final_survey_questionnaire_source_frozen": false,
+  "source_predictions_all_separately_unfrozen": true,
+  "real_participant_records_read_or_emitted": 0,
+  "real_human_natal_results": 0,
+  "scoring_or_runtime_changes": 0
+}

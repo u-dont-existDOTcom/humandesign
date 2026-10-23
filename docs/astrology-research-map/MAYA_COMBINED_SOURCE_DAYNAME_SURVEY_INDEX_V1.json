@@ -1,0 +1,622 @@
+{
+  "schema": "MAYA_FULL_DAYNAME_SOURCE_IDENTITY_FOR_SHARED_SURVEY_V1",
+  "status": "HISTORICAL_20_YUCATEC_PLUS_20_HIGHLAND_PAIRS_UNSCORED",
+  "date": "2026-10-23",
+  "source_files": [
+    "MAYA_B07_YUCATEC_NATAL_20_SOURCE_DOMAIN_ROWS.txt",
+    "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json"
+  ],
+  "reference_calendar_file": "maya_calendar_reference.py",
+  "Yucatec_colonial_named_days": [
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 1,
+      "historical_Yucatec_spelling": "Kan",
+      "canonical_Yucatec_day_name": "K’AN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "K’AT",
+      "source_pdf_page_number": 21,
+      "source_semantic_domain_metadata_only": "music or study",
+      "source_claim_disposition": "CONTEXT_ONLY",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": false
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 2,
+      "historical_Yucatec_spelling": "Chic Chan",
+      "canonical_Yucatec_day_name": "CHIKCHAN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "KAN",
+      "source_pdf_page_number": 21,
+      "source_semantic_domain_metadata_only": "violent moral judgment",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 3,
+      "historical_Yucatec_spelling": "Cimi",
+      "canonical_Yucatec_day_name": "KIMI",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "KAME",
+      "source_pdf_page_number": 21,
+      "source_semantic_domain_metadata_only": "violent moral judgment",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 4,
+      "historical_Yucatec_spelling": "Man Ik",
+      "canonical_Yucatec_day_name": "MANIK’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "KEJ",
+      "source_pdf_page_number": 22,
+      "source_semantic_domain_metadata_only": "hilldwelling and violent imagery",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 5,
+      "historical_Yucatec_spelling": "Lamat",
+      "canonical_Yucatec_day_name": "LAMAT",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "Q’ANIL",
+      "source_pdf_page_number": 22,
+      "source_semantic_domain_metadata_only": "alcohol and behavior moralization",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 6,
+      "historical_Yucatec_spelling": "Muluc",
+      "canonical_Yucatec_day_name": "MULUK",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "TOJ",
+      "source_pdf_page_number": 22,
+      "source_semantic_domain_metadata_only": "wealth and violent imagery",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 7,
+      "historical_Yucatec_spelling": "Oc",
+      "canonical_Yucatec_day_name": "OK",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "TZ’I’",
+      "source_pdf_page_number": 22,
+      "source_semantic_domain_metadata_only": "intelligence and alcohol moralization",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 8,
+      "historical_Yucatec_spelling": "Chuen",
+      "canonical_Yucatec_day_name": "CHUWEN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "B’ATZ’",
+      "source_pdf_page_number": 22,
+      "source_semantic_domain_metadata_only": "weaving woodworking material making",
+      "source_claim_disposition": "CRAFT_CANDIDATE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": false
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 9,
+      "historical_Yucatec_spelling": "Eb",
+      "canonical_Yucatec_day_name": "EB’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "E",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "wealth generosity",
+      "source_claim_disposition": "CONTEXT_ONLY",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": false
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 10,
+      "historical_Yucatec_spelling": "Ben",
+      "canonical_Yucatec_day_name": "B’EN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "AJ",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "poverty ascription",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 11,
+      "historical_Yucatec_spelling": "Hiix",
+      "canonical_Yucatec_day_name": "IX",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "I’X",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "warrior and violence",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 12,
+      "historical_Yucatec_spelling": "Men",
+      "canonical_Yucatec_day_name": "MEN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "TZ’IKIN",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "weaving and speech",
+      "source_claim_disposition": "CRAFT_CANDIDATE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": false
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 13,
+      "historical_Yucatec_spelling": "Cib",
+      "canonical_Yucatec_day_name": "K’IB’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "AJMAQ",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "violent moral judgment",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 14,
+      "historical_Yucatec_spelling": "Caban",
+      "canonical_Yucatec_day_name": "KAB’AN",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "NO’J",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "commerce travel woodwork and historical healing",
+      "source_claim_disposition": "CRAFT_CANDIDATE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": false
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 15,
+      "historical_Yucatec_spelling": "Eɔnab",
+      "canonical_Yucatec_day_name": "ETZ’NAB’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "TIJAX",
+      "source_pdf_page_number": 23,
+      "source_semantic_domain_metadata_only": "historical bloodletting and healer",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 16,
+      "historical_Yucatec_spelling": "Cauac",
+      "canonical_Yucatec_day_name": "KAWAK",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "KAWOQ",
+      "source_pdf_page_number": 24,
+      "source_semantic_domain_metadata_only": "scribe and yearbearer illness conditional",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 17,
+      "historical_Yucatec_spelling": "Ahau",
+      "canonical_Yucatec_day_name": "AJAW",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "AJPU’",
+      "source_pdf_page_number": 24,
+      "source_semantic_domain_metadata_only": "warrior wealth and violence",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 18,
+      "historical_Yucatec_spelling": "Imix",
+      "canonical_Yucatec_day_name": "IMIX’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "IMOX",
+      "source_pdf_page_number": 24,
+      "source_semantic_domain_metadata_only": "sexuality moralization",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 19,
+      "historical_Yucatec_spelling": "Ik",
+      "canonical_Yucatec_day_name": "IK’",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "IQ’",
+      "source_pdf_page_number": 24,
+      "source_semantic_domain_metadata_only": "sexuality moralization",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    },
+    {
+      "source_id": "BOLLES-PCML-COLONIAL-YUCATEC",
+      "sequence_number": 20,
+      "historical_Yucatec_spelling": "Akbal",
+      "canonical_Yucatec_day_name": "AK’B’AL",
+      "Kiche_linguistic_crosswalk_not_same_natal_predicate": "AQ’AB’AL",
+      "source_pdf_page_number": 24,
+      "source_semantic_domain_metadata_only": "poverty hunting and skills moralization",
+      "source_claim_disposition": "QUARANTINE",
+      "automatically_scored": false,
+      "contemporary_birth_day_clock_verified": false,
+      "unscored_historical_stigma": true
+    }
+  ],
+  "Highland_Kiche_two_community_named_day_pairs": [
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "B’ATZ’",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "CHUWEN",
+      "Momostenango_source_pdf_or_printed_page": 117,
+      "Zunil_original_PDF_page": 1,
+      "Momostenango_natal_source_domain_metadata_only": "material success; family outcomes",
+      "Zunil_natal_source_domain_metadata_only": "success; sociability; teaching",
+      "source_difference_not_resolved": "some thematic overlap but predictions differ",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "E",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "EB’",
+      "Momostenango_source_pdf_or_printed_page": 118,
+      "Zunil_original_PDF_page": 1,
+      "Momostenango_natal_source_domain_metadata_only": "ritual occupations; longevity",
+      "Zunil_natal_source_domain_metadata_only": "travel; sociability; generosity",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "AJ",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "B’EN",
+      "Momostenango_source_pdf_or_printed_page": 119,
+      "Zunil_original_PDF_page": 1,
+      "Momostenango_natal_source_domain_metadata_only": "family roles; prosperity",
+      "Zunil_natal_source_domain_metadata_only": "good fortune; calmness; reasoning",
+      "source_difference_not_resolved": "broad luck overlaps, narrower traits differ",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "I’X",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "IX",
+      "Momostenango_source_pdf_or_printed_page": 120,
+      "Zunil_original_PDF_page": 1,
+      "Momostenango_natal_source_domain_metadata_only": "wealth; physical afflictions",
+      "Zunil_natal_source_domain_metadata_only": "physical vigor",
+      "source_difference_not_resolved": "clinical risk and incompatible domains",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "TZ’IKIN",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "MEN",
+      "Momostenango_source_pdf_or_printed_page": 121,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "material aspirations; ritual occupations",
+      "Zunil_natal_source_domain_metadata_only": "kindness; romance",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "AJMAQ",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "K’IB’",
+      "Momostenango_source_pdf_or_printed_page": 122,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "business success; family conflict",
+      "Zunil_natal_source_domain_metadata_only": "courage; temperament",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "NO’J",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "KAB’AN",
+      "Momostenango_source_pdf_or_printed_page": 122,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "creative ideas; problem-solving",
+      "Zunil_natal_source_domain_metadata_only": "prudence; temperament; professional associations",
+      "source_difference_not_resolved": "natal creativity not independently replicated by Zunil birth sentence",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "TIJAX",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "ETZ’NAB’",
+      "Momostenango_source_pdf_or_printed_page": 123,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "arguments; slander; moral stigma",
+      "Zunil_natal_source_domain_metadata_only": "courage; healers; quarrels",
+      "source_difference_not_resolved": "partial conflict overlap with qualifications",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "KAWOQ",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "KAWAK",
+      "Momostenango_source_pdf_or_printed_page": 124,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "troubled relationships; spiritual punishment",
+      "Zunil_natal_source_domain_metadata_only": "divination; judicial roles",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "AJPU’",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "AJAW",
+      "Momostenango_source_pdf_or_printed_page": 125,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "ancestral connection; mediumship",
+      "Zunil_natal_source_domain_metadata_only": "talent; affection; judgment",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "IMOX",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "IMIX’",
+      "Momostenango_source_pdf_or_printed_page": 126,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "negative psychiatric/moralizing labels",
+      "Zunil_natal_source_domain_metadata_only": "work; intuition; creativity",
+      "source_difference_not_resolved": "strong conceptual conflict; never infer psychiatric status",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "IQ’",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "IK’",
+      "Momostenango_source_pdf_or_printed_page": 126,
+      "Zunil_original_PDF_page": 2,
+      "Momostenango_natal_source_domain_metadata_only": "strong temperament; anger",
+      "Zunil_natal_source_domain_metadata_only": "sociability; consideration",
+      "source_difference_not_resolved": "valence conflicts",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "AQ’AB’AL",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "AK’B’AL",
+      "Momostenango_source_pdf_or_printed_page": 110,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "verbal aptitude; status; spiritual vocation",
+      "Zunil_natal_source_domain_metadata_only": "humility; precision; ability to withstand criticism",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "K’AT",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "K’AN",
+      "Momostenango_source_pdf_or_printed_page": 111,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "debt; stigmatized conduct",
+      "Zunil_natal_source_domain_metadata_only": "legal reasoning; theory/practice",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "KAN",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "CHIKCHAN",
+      "Momostenango_source_pdf_or_printed_page": 112,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "domination; negative moral judgment",
+      "Zunil_natal_source_domain_metadata_only": "skill; wisdom; sincerity",
+      "source_difference_not_resolved": "valence conflicts",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "KAME",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "KIMI",
+      "Momostenango_source_pdf_or_printed_page": 113,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "wealth; oratory; ritual vocations",
+      "Zunil_natal_source_domain_metadata_only": "strength; suffering",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "KEJ",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "MANIK’",
+      "Momostenango_source_pdf_or_printed_page": 114,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "physical/verbal strength; dominance",
+      "Zunil_natal_source_domain_metadata_only": "defending others; physical resilience",
+      "source_difference_not_resolved": "some broad strength overlap",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "Q’ANIL",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "LAMAT",
+      "Momostenango_source_pdf_or_printed_page": 115,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "ritual vocation",
+      "Zunil_natal_source_domain_metadata_only": "vulnerability; need for support",
+      "source_difference_not_resolved": "different measured domains",
+      "stigma_quarantine": false,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "TOJ",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "MULUK",
+      "Momostenango_source_pdf_or_printed_page": 115,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "illness; indebtedness",
+      "Zunil_natal_source_domain_metadata_only": "conflict mediation; self-teaching",
+      "source_difference_not_resolved": "strong contradiction; avoid clinical claim",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    },
+    {
+      "source_id_pair": [
+        "TEDLOCK-MOMOSTENANGO-1992",
+        "KOMON-TOHIL-ZUNIL-NMAI"
+      ],
+      "Kiche_day_name": "TZ’I’",
+      "Yucatec_linguistic_crosswalk_not_same_natal_predicate": "OK",
+      "Momostenango_source_pdf_or_printed_page": 116,
+      "Zunil_original_PDF_page": 3,
+      "Momostenango_natal_source_domain_metadata_only": "indecision; sexual moralization",
+      "Zunil_natal_source_domain_metadata_only": "intelligence; jealousy",
+      "source_difference_not_resolved": "distinct domains; historical stigma",
+      "stigma_quarantine": true,
+      "same_community_or_source": false,
+      "automatically_scored": false,
+      "independent_real_human_evidence": 0
+    }
+  ],
+  "historical_maya_codex_astronomy": "EXCLUDED_FROM_NATAL_SURVEY_CLAIMS",
+  "modern_Dreamspell": "SEPARATE_MODERN_NON_CLASSICAL_SOURCE_NOT_MERGED",
+  "original_natal_numerals_1_to_13": "NOT_AN_AUTOMATIC_PERSONALITY_RULE",
+  "living_day_count_correlation_and_boundary": "UNRESOLVED_FOR_COMMUNITY_SPECIFIC_NATAL_USE",
+  "identity_matching_is_not_source_prediction_equivalence": true,
+  "actual_participants": 0,
+  "validated_natal_predictions": 0,
+  "new_surveys_or_scoring_rules_deployed": 0
+}

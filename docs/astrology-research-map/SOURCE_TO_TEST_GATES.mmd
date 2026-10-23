@@ -8,7 +8,9 @@ flowchart TD
   BLOCK["Unresolved / exploratory source only"]
   DEDUP["Source-dependency and overlap record; no independent corroboration count"]
   READY["Candidate hypothesis only; not proven"]
-  FREEZE{"Charts, effect, denominator, null, decoys and wording frozen BEFORE people?"}
+  SHARED["Map to existing Life Patterns/HD question ID and one shared observable; optional neutral gap probe only"]
+  FAMILY["Assess each source/tradition separately; correct multiple comparisons and shared response dependencies"]
+  FREEZE{"Charts, effect, denominator, family nulls, shared questions and decoys frozen BEFORE people?"}
   DEV["Development-only; never count as untouched test"]
   TEST["Blind independent participant response and locked evaluation"]
   REPORT["Positive/negative/null with calibration and base rate"]
@@ -23,6 +25,6 @@ flowchart TD
   OBS -- Yes --> MULTI
   MULTI -- Yes --> DEDUP --> READY
   MULTI -- No --> READY
-  READY --> FREEZE
+  READY --> SHARED --> FREEZE
   FREEZE -- No --> DEV
-  FREEZE -- Yes --> TEST --> REPORT
+  FREEZE -- Yes --> TEST --> FAMILY --> REPORT

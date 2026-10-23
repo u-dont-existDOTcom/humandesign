@@ -2,6 +2,8 @@
 
 The [living cross-tradition astrology source-to-test map](docs/astrology-research-map/README.md) supplements this **Human Design-specific** architecture. The map inventories Maya and other historical astrology sources without modifying or claiming compliance of this project's frozen Human Design V4.3 scorer, natal calculator, survey models, or production runtime.
 
+**Shared-survey integration (research-only, 23 October 2026):** [Maya's 20 colonial Yucatec day names, separate Highland source testimonies, 11 candidate claims and eight human outcome domains](docs/astrology-research-map/MAYA_SHARED_CROSS_TRADITION_SURVEY_INTEGRATION_V1.json) now map to the **existing Life Patterns V3 optional-question IDs**, the existing tendency-first and HD Survey V2 banks, through a [metadata-only adapter](docs/astrology-research-map/compile_maya_shared_survey_bridge.py). The [owner design decision and future single-cohort test protocol](docs/astrology-research-map/MAYA_INTEGRATED_SHARED_SURVEY_AND_FINAL_TEST_DESIGN_20261023.md) specify **one common behavioral response set and independent, source-specific per-tradition scoring**, with dependent evidence/multiplicity accounted for. No separate Maya human survey is being launched now; the V3 optional bank is a development candidate on its prior branch, not newly deployed, and all actual validation counts remain zero. Human Design's frozen V4.3 source requirements remain fully independent. See [shared-survey pipeline drill-down](docs/astrology-research-map/SHARED_SURVEY_INTEGRATION.mmd).
+
 ## Goal
 
 Implement an end-to-end research system that can:

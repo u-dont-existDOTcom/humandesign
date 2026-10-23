@@ -1,0 +1,52 @@
+{
+  "schema": "ASTRO_MAYA_SHARED_SURVEY_INTEGRATION_TASK_CONTRACT_V1",
+  "taskId": "ASTRO-MAYA-SHARED-SURVEY-INTEGRATION-20261023",
+  "status": "source_and_survey_framework_integration_implemented_human_test_deferred",
+  "parent_owner_goal_status": "OPEN",
+  "exclusive_task_scope": true,
+  "requiredBranch": "research/astro-maya-integrate-shared-survey-20261023",
+  "baseCommit": "6f90c234e14659938f12899ed4e79aae558bcb92",
+  "owner_decision": "Do not administer a separate Maya survey now. Integrate Maya claims and calendar source scope into existing common Life Patterns/HD questionnaire design; test eligible systems together at the eventual new-human validation stage.",
+  "preflightCommand": "git branch --show-current && python3 -m unittest discover -s docs/astrology-research-map -p 'test_*.py' -q",
+  "completionCommand": "python3 -m unittest discover -s docs/astrology-research-map -p 'test_*.py' -q",
+  "suspendedOtherTaskSources": [
+    "Unrelated completed root numerology task lock",
+    "Other astrology source-reader branches",
+    "Unapproved live Railway survey updates",
+    "Synthetic-only scoring promotions"
+  ],
+  "requiredArtifactPaths": [
+    "docs/astrology-research-map/MAYA_INTEGRATED_SHARED_SURVEY_AND_FINAL_TEST_DESIGN_20261023.md",
+    "docs/astrology-research-map/MAYA_SHARED_CROSS_TRADITION_SURVEY_INTEGRATION_V1.json",
+    "docs/astrology-research-map/MAYA_COMBINED_SOURCE_DAYNAME_SURVEY_INDEX_V1.json",
+    "docs/astrology-research-map/MAYA_SHARED_SURVEY_EXISTING_INSTRUMENT_SNAPSHOT_V1.json",
+    "docs/astrology-research-map/MAYA_SHARED_SURVEY_COMPILED_NONDEPLOYED_PLAN_V1.json",
+    "docs/astrology-research-map/MAYA_SHARED_LIFE_PATTERNS_V3_FINAL_STAGE_CANDIDATE_V1.json",
+    "docs/astrology-research-map/compile_maya_shared_survey_bridge.py",
+    "docs/astrology-research-map/SHARED_SURVEY_INTEGRATION.mmd",
+    "tasks/astro-maya-shared-survey-integration-20261023/CONTINUATION_HANDOFF_20261023.md"
+  ],
+  "currentAcceptance": {
+    "full_20_yucatec_names_linked": true,
+    "full_20_Kiche_name_pairs_linked": true,
+    "source_claims_mapped_to_shared_domains": 11,
+    "shared_domains": 8,
+    "reused_existing_questions": 9,
+    "existing_23_v3_questions_unmodified": true,
+    "existing_7_microprobes_unmodified": true,
+    "one_opt_in_neutral_future_candidate_not_deployed": true,
+    "source_and_question_provenance_pinned": true,
+    "human_outcomes_scored": 0,
+    "active_live_survey_deployments": 0,
+    "hd_v43_score_changes": 0
+  },
+  "deferredUntilFinalIntegratedStudy": [
+    "Receive or generate a genuinely finalized single cross-tradition survey version after source/construct adequacy review",
+    "Choose each tradition's eligible natal claims; many electional/event/relationship claims require other evidence collection",
+    "Freeze human-cohort privacy/consent, birth-correlation and clock uncertainties, selected shared questions, model weights, per-tradition decoys and familywise controls before any new respondent answers",
+    "Use entirely new untouched participants for predictive validation; historical owner surveys are development only",
+    "Score same shared answer set by independent source-native models; report each model separately and correct response/source dependencies"
+  ],
+  "no_required_owner_step_to_accept_this_source_only_integration": true,
+  "local_handoff_intent": "Cumulative repository packet and standalone owner Markdown in the laptop's Téléchargements; no copyrighted book files or personally identifying survey answers."
+}

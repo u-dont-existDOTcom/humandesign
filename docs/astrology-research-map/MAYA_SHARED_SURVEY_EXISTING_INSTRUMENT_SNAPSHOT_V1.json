@@ -1,0 +1,396 @@
+{
+  "schema": "MAYA_SHARED_SURVEY_REFERENCES_EXISTING_UNMODIFIED_INSTRUMENTS_V1",
+  "status": "SOURCE_METADATA_ONLY_NO_LIVE_SURVEY_EDIT_OR_SCORING",
+  "prepared_utc_date": "2026-10-23",
+  "survey_v3": {
+    "git_ref": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+    "path": "tasks/life-patterns-external-questionnaire-merge-20261021/LIFE-PATTERNS-ADAPTIVE-SURVEY-v3-CANDIDATE.json",
+    "sha256_original_bytes": "fec3d0d18b9463d29842e65c4759fd7ed900a019889531896f89c1b3764e0084",
+    "schema_or_version": "life-patterns-adaptive-evidence-questionnaire-candidate-v3",
+    "source_status": "DEVELOPMENT_OPT_IN_NO_LIVE_OR_CHART_SCORING",
+    "git_commit": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+    "question_count": 23,
+    "optional_microprobe_count": 7,
+    "max_base_optional_topics_per_session": 5,
+    "max_additional_conditional_probes_per_session": 2,
+    "decline_all_allowed": true,
+    "question_ids": [
+      "DREAM",
+      "BELIEF",
+      "BELIEF_CHANGE",
+      "RENUNCIATION",
+      "ART",
+      "MYSTERY",
+      "TIMELINE",
+      "VOCATION",
+      "HOME",
+      "KINSHIP",
+      "BONDS",
+      "TRAVEL",
+      "STATUS",
+      "RESOURCES",
+      "PARENTING",
+      "PLAY",
+      "LEARNING_HISTORY",
+      "ANGER_REPAIR",
+      "RECIPROCITY",
+      "CONTENTMENT",
+      "UPBRINGING",
+      "PRIVACY",
+      "SENSORY_ENJOYMENT"
+    ],
+    "microprobe_ids": [
+      "EP-EVIDENCE-REASON",
+      "EP-INDEPENDENT-FEEDBACK",
+      "EP-CHOSEN-REFLECTION",
+      "EP-GROUP-DEPARTURE",
+      "EP-LEADERSHIP-HISTORY",
+      "EP-PARTNER-PRIORITIES",
+      "EP-PROJECT-FOLLOWTHROUGH"
+    ],
+    "all_existing_question_object_sha256": {
+      "DREAM": "c16c785e12bc2007968d8bb3ed76efae91a111e25384ef328bbeb60b77c3a761",
+      "BELIEF": "e45bee8c83184c265726849afafd2aaa952b4c940592015f1c371e3a596dd0ff",
+      "BELIEF_CHANGE": "1aac42ab759ae5769d411e9fc457d4687f9159afe8ad710e8e7d1c80f04b944d",
+      "RENUNCIATION": "31d98e0aa91450f56dc994472c72b5d7138d1e1232669a3a4ec30a75c5636a27",
+      "ART": "83ff074a8e4e569022afa67df594984aabbb8357c1141a68aa83224cd0cdda43",
+      "MYSTERY": "665eab3cc0052089a7b4995d45dc9275038a1644d909c6f8cbdeffb29bb6b47f",
+      "TIMELINE": "cd303cdd192637c5f704513dfdbb56eb253d5f93ec57f277559b3d0ac6c58eda",
+      "VOCATION": "e4b6ecd90b005ea701940a3e810066f86e59f4b55efb3311efde132b42b42250",
+      "HOME": "f2687c1cf6b47a55a266216d50f186c8758a970b628de2748f6bce5d16cef5cd",
+      "KINSHIP": "21c4cdf79cffaa836de9da1efedc17e6c42158cb4711e81845b98c48cb269b09",
+      "BONDS": "97c1bf16802e7cd697fd1b0de18581dedf3363de4e9d5df84a542db4721ed456",
+      "TRAVEL": "5c9751385ef404f2e587706e00bc9333a20b0c5e750791fd9ee953082baafdf6",
+      "STATUS": "b4d988b42b06dee0b63192ebad2a25f29823ef2b346d7aa8f9fc7a0f81c4ae36",
+      "RESOURCES": "95c1d11d3acd96475c334135a61cb1c40a7f19ea74baa18dc2345cce3c1153aa",
+      "PARENTING": "88fc82f96d29d3d9bde39e021f7b93f83785439b906a0394f88b46ebcdcf2e3a",
+      "PLAY": "6235fa66078c6418ee34ec9437b8d02511bc63be5e85dc5d6e0481ebb05560a0",
+      "LEARNING_HISTORY": "dba8e54a9f40a2d8e64b615325bcd180660d124fcebfbf0ef1577663e84326ff",
+      "ANGER_REPAIR": "1187ac00ecca94b690185141c2df8dc6e3d6ffa4d8ad7c127def1aabacc104df",
+      "RECIPROCITY": "9c19575d8789fcf4fbdff15abf768e09d6f4ba6b7832e0ef83618bf36d1dbb8c",
+      "CONTENTMENT": "124caabc5ae3ed9048656ec1f751f6c2598099ceec7d6907a10885f5c34a621a",
+      "UPBRINGING": "7f0b7154682fa2b9530cc0f785f0491156283d4e633ab08e4ec0874294eabfae",
+      "PRIVACY": "b5d9fe73e66c88dab32d13a7cf5364e9b9a2d4dd26e8aa87d14bd98a437d30de",
+      "SENSORY_ENJOYMENT": "1d24660322d8846d9e6d78cf302872418a85115687f1bb343e8ed4c2d4213a2c"
+    },
+    "all_existing_microprobe_object_sha256": {
+      "EP-EVIDENCE-REASON": "d2f4a54990505bc8cc2a066d03137c6574724ac6869e9f50ec80f4b61100552a",
+      "EP-INDEPENDENT-FEEDBACK": "c8c240b23903a52822c2b0603f221b973538000f955ab703b58c98d28d6c7341",
+      "EP-CHOSEN-REFLECTION": "4d3877bed2b2294e386dcf2af34285394474e55badd2d300345c088e08cb2ea7",
+      "EP-GROUP-DEPARTURE": "54061342bcbfa0dc5dfa64d48c6807ad84c2cd4b056baaf985db16b9361042f5",
+      "EP-LEADERSHIP-HISTORY": "1a7b7c5eef63e8c498fdf1d4bf8760356e1fae7a8584b80308449b49a991b1fd",
+      "EP-PARTNER-PRIORITIES": "09e3e598461ccfd22bc60668d2221eccff41092a06c5408e539cb653205e660b",
+      "EP-PROJECT-FOLLOWTHROUGH": "89c40fdf8a9036344738275741bf431621866a11c6fe42be8b76218aaea865e4"
+    },
+    "selected_existing_question_definitions": [
+      {
+        "id": "BELIEF",
+        "question": "What, if anything, plays a regular part in your life: religious observance, meditation or other spiritual practice, philosophical reflection, a secular worldview, or none of these?",
+        "answer_dimensions": [
+          "actual_current_practice_type_optional",
+          "practice_frequency_optional",
+          "current_self_description_optional"
+        ],
+        "source_domains": [
+          "religious_spiritual_disposition",
+          "spiritual_or_ritual_practice"
+        ],
+        "already_live": false,
+        "question_sha256": "939bffd7614bc52fcda59788d17b25749d5aef020cb94bec3687214262355c42"
+      },
+      {
+        "id": "ART",
+        "question": "Over the past year, how often have you actively made, written, designed, performed or invented something for its own sake? Separately, how often have art, music, beauty or aesthetics been important experiences for you?",
+        "answer_dimensions": [
+          "creative_production_frequency",
+          "aesthetic_appreciation_frequency",
+          "example_domain_optional",
+          "creative_achievement_optional"
+        ],
+        "source_domains": [
+          "creative_production",
+          "aesthetic_music_engagement"
+        ],
+        "already_live": false,
+        "question_sha256": "566c801166f249aafda3d16052286ba0f1e8c335b08729277fce26d56e2a979c"
+      },
+      {
+        "id": "VOCATION",
+        "question": "What kinds of work or contribution have actually occupied the most of your life so far? Has there been one lasting vocation, several distinct phases, or no clear occupation or calling?",
+        "answer_dimensions": [
+          "actual_role_history_optional",
+          "felt_vocation_separate_optional",
+          "approximate_transitions_optional"
+        ],
+        "source_domains": [
+          "actual_occupation_and_vocation"
+        ],
+        "already_live": false,
+        "question_sha256": "aa70b57934f994772042f496c638e7c54ec317ae6d1dca2c23315953d0c7abc9"
+      },
+      {
+        "id": "BONDS",
+        "question": "Looking at your actual close bonds over time, have long friendships or partnerships tended to last, change, end and begin again, or follow different patterns?",
+        "answer_dimensions": [
+          "friendship_stability_optional",
+          "romantic_history_optional",
+          "approximate_phase_change_optional"
+        ],
+        "source_domains": [
+          "friendship_conflict_longterm",
+          "actual_marriage_partnership_history"
+        ],
+        "already_live": false,
+        "question_sha256": "357c90f2fe23347bed8eecb9bfa9b5a3acc3e0be7e801b14920c589d2ee195d3"
+      },
+      {
+        "id": "TRAVEL",
+        "question": "How much have actual travel, relocation, languages or living among different cultures shaped your life, if at all?",
+        "answer_dimensions": [
+          "actual_vs_desired_travel_optional",
+          "duration_or_phase_optional",
+          "felt_impact_optional"
+        ],
+        "source_domains": [
+          "actual_foreign_travel_migration"
+        ],
+        "already_live": false,
+        "question_sha256": "523ded7df230fc4f805464700b7946e9fc16a57fd8813a7a52d17b2b35e0277c"
+      },
+      {
+        "id": "RESOURCES",
+        "question": "Without giving amounts, have your material circumstances generally been stable, improving, worsening, cyclical, or too varied to summarize?",
+        "answer_dimensions": [
+          "overall_life_course_pattern_optional",
+          "approximate_phase_optional",
+          "objective_vs_subjective_security_optional"
+        ],
+        "source_domains": [
+          "actual_finances_resources"
+        ],
+        "already_live": false,
+        "question_sha256": "d70c7052a0eb093d2fbaa2fc7a113fc73823918d667279f7850d03bc7019c8d3"
+      },
+      {
+        "id": "PLAY",
+        "question": "During ordinary life over the past year, how often have you been playful, amused, silly, or spontaneously drawn into enjoyment, if at all?",
+        "answer_dimensions": [
+          "frequency_optional",
+          "typical_context_optional",
+          "social_vs_solitary_optional"
+        ],
+        "source_domains": [
+          "play_humor_spontaneous_enjoyment"
+        ],
+        "already_live": false,
+        "question_sha256": "c0ea0ff3e7abb34db7a652544921ee05e0c8d79efe1f27f2f45f3e10bf12565a"
+      },
+      {
+        "id": "LEARNING_HISTORY",
+        "question": "Across your life, what subjects, skills or crafts have you actually spent substantial time studying or learning, if any? Was this mainly formal education, self-directed study or hands-on experience?",
+        "answer_dimensions": [
+          "actual_sustained_learning_topics_optional",
+          "formal_vs_self_directed_vs_practical_optional",
+          "period_and_depth_optional"
+        ],
+        "source_domains": [
+          "education_learning_history"
+        ],
+        "already_live": false,
+        "question_sha256": "8d304aebb25a25aff5f1dda9a4b7383cda56f364e67c8af2a258d4f3428685d8"
+      },
+      {
+        "id": "ANGER_REPAIR",
+        "question": "When something genuinely upsets or angers you, how long does that feeling usually matter to you: briefly, hours, days, much longer, rarely, or very differently depending on the situation?",
+        "answer_dimensions": [
+          "typical_duration_and_variability",
+          "time_to_resume_normal_contact_optional",
+          "forgiveness_vs_trust_vs_reconciliation_optional"
+        ],
+        "source_domains": [
+          "grievance_duration_repair"
+        ],
+        "already_live": false,
+        "question_sha256": "bb375dd3a493beb173ae2a3e6cd71b394b950aa262f3428e3e5de3e73a814e02"
+      },
+      {
+        "id": "RECIPROCITY",
+        "question": "In your actual close relationships or communities, how often do you meaningfully help others, and separately how often do you seek or accept help yourself?",
+        "answer_dimensions": [
+          "giving_frequency",
+          "receiving_frequency",
+          "practical_vs_emotional_optional",
+          "conditions_that_change_the_balance_optional"
+        ],
+        "source_domains": [
+          "giving_receiving_help"
+        ],
+        "already_live": false,
+        "question_sha256": "4d975b97de9afd3e591465ad9c832fcb8f789bd1abb2d5da217da7b2101c06ee"
+      },
+      {
+        "id": "SENSORY_ENJOYMENT",
+        "question": "What everyday things bring you noticeable pleasure through the senses—such as food, music, scent, warmth, colors, textures or being in natural places—if any?",
+        "answer_dimensions": [
+          "domain_specific_enjoyment_optional",
+          "frequency_and_usual_intensity_optional",
+          "nature_vs_art_vs_food_optional"
+        ],
+        "source_domains": [
+          "everyday_sensory_pleasure"
+        ],
+        "already_live": false,
+        "question_sha256": "3fed5af9d07dff020a03270a825824fab9c615ac53bdf326fb6cd870ce8533e7"
+      }
+    ]
+  },
+  "tendency_first": {
+    "git_ref": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+    "path": "apps/life-patterns-participant/participant/static/tendency-first-v1.json",
+    "sha256_original_bytes": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+    "schema_or_version": "life-patterns-elicitation-policy-v1",
+    "source_status": "development_collection_policy_not_validated_personality_test",
+    "question_count": 25,
+    "question_ids": [
+      "TF1-A0",
+      "TF1-G19",
+      "TF1-F0",
+      "TF1-G05",
+      "TF1-M11",
+      "TF1-G06",
+      "TF1-G01",
+      "TF1-G02",
+      "TF1-D0",
+      "TF1-G10",
+      "TF1-M03",
+      "TF1-B0",
+      "TF1-G15",
+      "TF1-G16",
+      "TF1-G18",
+      "TF1-G17",
+      "TF1-STATUS",
+      "TF1-ROUTINE-CHANGE",
+      "TF1-G23",
+      "TF1-G04",
+      "TF1-G22",
+      "TF1-M05",
+      "TF1-G20",
+      "TF1-M01",
+      "TF1-PREFER-EXCHANGE"
+    ]
+  },
+  "experience_meaning": {
+    "git_ref": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+    "path": "apps/life-patterns-participant/participant/static/experience-meaning-v2.json",
+    "sha256_original_bytes": "fa41c73027f749f62425d1a8a92a52f45563ffa5c9080a9f0dc0cd90ec8d6f60",
+    "schema_or_version": "life-patterns-experience-collection-instrument-v2",
+    "source_status": "OPTIONAL_SEPARATE_UNSCORED_POST_REVIEW",
+    "question_count": 8,
+    "question_ids": [
+      "EM01",
+      "EM02",
+      "EM03",
+      "EM04",
+      "EM05",
+      "EM06",
+      "EM07",
+      "EM08"
+    ],
+    "score_status": "SEPARATE_OPTIONAL_UNSCORED"
+  },
+  "human_design_survey_bank": {
+    "git_ref": "HEAD",
+    "path": "reference/core/question_bank_v1.json",
+    "sha256_original_bytes": "31f813efc3da7263569ef010a8336b1b1b0c44801b7aa0f91e33b3fa4587d820",
+    "schema_or_version": "1.0.0",
+    "source_status": "REFERENCE_SOURCE_NOT_VERIFIED_LIVE",
+    "question_count": 81,
+    "question_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "D08",
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17",
+      "T18",
+      "T19",
+      "T20",
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05"
+    ],
+    "scope": "Existing HD V4.3/V3.6-specific measurement; not Maya scoring"
+  },
+  "privacy": "No participant inputs, answers, dates, passwords or source respondent files read or emitted.",
+  "deployment": "The V3 question bank is a development opt-in candidate; this index is not a modification or deployment of the live Life Patterns app.",
+  "human_validation": 0
+}

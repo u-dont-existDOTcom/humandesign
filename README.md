@@ -2,6 +2,8 @@
 
 This repository contains a typed Python harness for blinded Human Design birth-moment reverse-matching research. Human Design is treated as an experimental symbolic hypothesis. Synthetic recovery validates engineering coherence only; it does not validate Human Design in humans.
 
+**Cross-tradition astrology survey integration:** The [shared Life Patterns/HD questionnaire-to-Maya research bridge](docs/astrology-research-map/MAYA_INTEGRATED_SHARED_SURVEY_AND_FINAL_TEST_DESIGN_20261023.md) and [complete existing V3 research-question bank with the optional Maya-source clarification held separately](docs/astrology-research-map/MAYA_SHARED_LIFE_PATTERNS_V3_FINAL_STAGE_CANDIDATE_V1.json) map historical Maya source claims into existing survey questions and a source-controlled domain coverage matrix, preserving separate, unfrozen per-tradition predictions. It is a research-only integration for a **later common human evaluation**, not a new or active Maya survey, runtime feature, or evidence of validated astrology.
+
 ## Current model status
 
 The normative development model is now **V4.3 / behavioral target V3.5**.

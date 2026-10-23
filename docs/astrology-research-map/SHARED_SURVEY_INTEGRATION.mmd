@@ -1,0 +1,26 @@
+flowchart TD
+  HIST["Source-native natal claims: Western, Jyotish, Chinese, Tibetan, Maya, HD"]
+  MAYA["20 colonial Yucatec days, Highland Momostenango + Zunil kept separate"]
+  NONNATAL["Maya codex astronomy / electional or modern Dreamspell"]
+  SOURCE["Individual historical source + chart policy and uncertainty"]
+  MAPPING["Source-specific claim -> common behavioral domain; record overlaps"]
+  BANK["Existing Survey V2 / Life Patterns V1.9 / V3 research candidate; one common item bank"]
+  GAP{"Is the observable covered directly and source-faithfully?"}
+  HOLD["Source-only or proxy; not automatically scored"]
+  OPTIONAL["At most one neutral, opted-in physical-making clarification if source evidence is missing; chart-blind"]
+  FREEZE["Future joint study: freeze model/claims, questions, response handling, decoys, nulls BEFORE scored answers"]
+  ANSWERS["One shared blind response set per consenting new participant"]
+  MULTI["Score each eligible tradition separately; correct multiple testing and shared dependencies"]
+  END["Compare to matched decoys + nonastrology, retain negatives and uncertainty"]
+  SEPARATE["Separate event/ritual study; not a natal personality question"]
+  HIST --> SOURCE
+  MAYA --> SOURCE
+  NONNATAL --> SEPARATE
+  SOURCE --> MAPPING
+  BANK --> GAP
+  MAPPING --> GAP
+  GAP -- "No direct measure" --> HOLD
+  GAP -- "Conditional opt-in candidate, still unfrozen" --> OPTIONAL
+  GAP -- "Covered" --> FREEZE
+  OPTIONAL --> FREEZE
+  FREEZE --> ANSWERS --> MULTI --> END
