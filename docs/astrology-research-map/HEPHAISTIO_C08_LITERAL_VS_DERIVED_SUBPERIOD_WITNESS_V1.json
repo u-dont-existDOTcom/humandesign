@@ -1,0 +1,154 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C08_MANUSCRIPT_VS_RECONSTRUCTION_V1",
+  "date": "2026-10-23",
+  "status": "SOURCE_CRITICAL_ONLY_UNSCORED",
+  "source": {
+    "editor": "David Pingree",
+    "title": "Hephaestionis Thebani apotelesmaticorum epitomae quattuor",
+    "year": 1974,
+    "pdf_sha256": "6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a",
+    "physical_pages": 524,
+    "saturn_locator": {
+      "epitome": "IV.37",
+      "printed_page": 240,
+      "pdf_page": 270,
+      "warning": "p240 apparatus says some numerals on pp240-241 are corrupt"
+    },
+    "finer_locator": {
+      "epitome": "IV.44",
+      "printed_pages": [
+        264,
+        265
+      ],
+      "pdf_pages": [
+        294,
+        295
+      ]
+    },
+    "original_book_redistributed": false
+  },
+  "saturn": {
+    "planets": [
+      "Saturn",
+      "Jupiter",
+      "Mars",
+      "Sun",
+      "Venus",
+      "Mercury",
+      "Moon"
+    ],
+    "transmitted_printed_values": [
+      210,
+      84,
+      105,
+      133,
+      57,
+      40,
+      105
+    ],
+    "literal_printed_total": 734,
+    "explicit_source_approximation": "Convert 30 months to 900 days, divide across 129 combined months ≈ 7 multiplier; repeat seven times each recipient's monthly period.",
+    "derived_values": [
+      210,
+      84,
+      105,
+      133,
+      56,
+      140,
+      175
+    ],
+    "derived_total": 903,
+    "baseline_expected_30_day_months": 900,
+    "derived_error": 3,
+    "differences_literal_minus_derived": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      -100,
+      -70
+    ],
+    "printed_mercury": 40,
+    "derived_mercury": 140,
+    "printed_moon": 105,
+    "derived_moon": 175,
+    "main_hephaistio_mercury": 150,
+    "later_valens_appendix_mercury": 140,
+    "source_specificity": "140 is derived from Epitome IV's described approximate algorithm but is NOT printed in its explicit Saturn-to-Mercury allocation. The previous C07 assertion of a printed 140 is withdrawn.",
+    "text_corruption": "Epitome IV editor explicitly warns of corrupt numerals; source text is retained without silent emendation.",
+    "transcription_confidence": "Numerals re-read from PDF p270 at 230dpi; glyph νζ interpreted as 57; the numeral 40 and Moon 105 are unambiguous in direct rendering."
+  },
+  "finer_365": {
+    "primary_annual_7": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "primary_total": 365,
+    "verified_selected_finer_rows": [
+      {
+        "parent": "Saturn",
+        "source_parent_days": 85,
+        "child_values": {
+          "Saturn": 20,
+          "Jupiter": 8,
+          "Mars": 10,
+          "Sun": 13,
+          "Venus": 5,
+          "Mercury": 14,
+          "Moon": 16
+        },
+        "child_sum": 86,
+        "offset": 1,
+        "printed_page": 264
+      },
+      {
+        "parent": "Sun",
+        "source_parent_days": 54,
+        "child_values": {
+          "Sun": 8,
+          "Saturn": 12,
+          "Jupiter": 5,
+          "Mars": 7,
+          "Venus": 4,
+          "Mercury": 8,
+          "Moon": 11
+        },
+        "child_sum": 55,
+        "offset": 1,
+        "printed_page": 265
+      },
+      {
+        "parent": "Venus",
+        "source_parent_days": 22,
+        "finer_printed_heading": 23,
+        "child_values": {
+          "Venus": 1,
+          "Saturn": 5,
+          "Jupiter": 2,
+          "Mars": 3,
+          "Sun": 3,
+          "Mercury": 4,
+          "Moon": 5
+        },
+        "child_sum": 23,
+        "offset": 1,
+        "printed_page": 265,
+        "critical_apparatus": "Epitome IV printed p265 near line 8: legendum κβ, i.e. editorially prefer 22 where body reads κγ 23"
+      }
+    ],
+    "unused_unreviewed_full_rows": "Do not treat subset inspection as all 7 parent rows transcribed. Other rows require page-by-page review and numeric uncertainty notes.",
+    "nonuniformity": "Even the explicitly attested 365-day year does not yield consistently summing child distributions in examined Epitome IV rows."
+  },
+  "source_boundaries": {
+    "independent_ancient_manuscripts_confirmed": 0,
+    "model_promotion": false,
+    "real_human_predictions": 0,
+    "prior_C07_140_print_claim_corrected": true
+  }
+}
