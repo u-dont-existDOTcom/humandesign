@@ -1,0 +1,129 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C03_SOURCE_VARIANTS_V1",
+  "report": "HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md",
+  "effective_utc_date": "2026-10-23",
+  "status": "SOURCE_ONLY_UNSCORED_NO_REAL_HUMAN_VALIDATION",
+  "supports_architecture_only": true,
+  "candidate_family": "annual_monthly_daily_profections",
+  "reading_witnesses": [
+    {
+      "source_id": "PAULUS_GREENBAUM_I31_P65",
+      "kind": "translated_ancient_text_with_scholia",
+      "source_sha256": "dffa2a86e2a8c13135b1fc9e68b798224a25464e617fa221a7551b5be08b605a",
+      "printed_page": 65,
+      "pdf_page": 81,
+      "ratio_days_per_sign": [
+        1,
+        1
+      ],
+      "monthly_rule": "one_sign_per_month",
+      "access": "available_Paulus_part_only"
+    },
+    {
+      "source_id": "HEPHAISTIO_SCHMIDT_II28_P82",
+      "kind": "translated_ancient_text",
+      "source_sha256": "e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073",
+      "printed_page": 82,
+      "pdf_page": 47,
+      "side": "left",
+      "ratio_days_per_sign": [
+        5,
+        2
+      ],
+      "monthly_rule": "one_sign_per_month",
+      "access": "owned_Book_II_available"
+    },
+    {
+      "source_id": "PTOLEMY_ROBBINS_IV10_P453_MAIN",
+      "kind": "critical_English_main_Greek_facing",
+      "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+      "printed_page": 453,
+      "pdf_page": 477,
+      "ratio_days_per_sign": [
+        7,
+        3
+      ],
+      "monthly_rule": "28_days_per_sign",
+      "access": "owned_bilingual_available"
+    },
+    {
+      "source_id": "PTOLEMY_ROBBINS_IV10_P453_MSS_VARIANT",
+      "kind": "editorial_manuscript_variant_in_footnote",
+      "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+      "printed_page": 453,
+      "pdf_page": 477,
+      "ratio_days_per_sign": [
+        5,
+        2
+      ],
+      "monthly_rule": "not_auto_linked_to_30_day_alt_in_same_note",
+      "access": "two_mss_reported_by_editor"
+    }
+  ],
+  "source_integrity": [
+    {
+      "source": "Rhetorius Holden 2009 replacement",
+      "sha256": "fa587dd2b04245c63198c9438c9edd9f8164b0a165b824f386e4c890f3dd5e86",
+      "pdf_129": "printed_139",
+      "pdf_130": "printed_141",
+      "missing": "printed_p140",
+      "status": "MISSING_PAGE"
+    },
+    {
+      "source": "Rhetorius six-page recovered supplement",
+      "sha256": "8bcb6915a10b825b174b80ed9e49bdeceec9e0b11958b9e54e35af0e9a59b675",
+      "pages_verified": [
+        44,
+        45,
+        48,
+        51,
+        52,
+        81
+      ],
+      "status": "DOES_NOT_INCLUDE_140"
+    },
+    {
+      "source": "Paulus/Olympiodorus Greenbaum book",
+      "sha256": "dffa2a86e2a8c13135b1fc9e68b798224a25464e617fa221a7551b5be08b605a",
+      "last_pdf": 93,
+      "last_printed_page": 77,
+      "contents_list_to": 171,
+      "status": "PARTIAL_PAULUS_PRESENT_OLYMPIODORUS_APPENDICES_MISSING"
+    },
+    {
+      "source": "Hephaistio Book I Schmidt",
+      "sha256": "e191d15c2d7eea847881bacbd7e9b270e32ccb798fdab3d71b93b96af1d6df9c",
+      "printed_appendix_last": 64,
+      "pdf_appendix_last": 80,
+      "status": "APPEARS_COMPLETE_BOOK_I_ONLY_NOT_INDEPENDENT_GREEK_RECHECKED"
+    }
+  ],
+  "source_semantic_note": "Hephaistio I.19 p36 'own face' is luminary-relation geometry, not automatically 10-degree decan/Arabic image.",
+  "toy_28day_relative_rate_disagreement": {
+    "assumptions": [
+      "same_unsourced_relative_start_sign",
+      "integer_elapsed_days_0_to_27",
+      "no_real_calendar",
+      "not_an_astrological_prediction"
+    ],
+    "paulus_vs_hephaistio": 25,
+    "paulus_vs_ptolemy_main": 25,
+    "hephaistio_vs_ptolemy_main": 10,
+    "all_three_same": 2,
+    "code": "hellenistic_daily_sign_variants.py",
+    "tests": "test_hellenistic_daily_sign_variants.py",
+    "confirmed_pass_count": 5
+  },
+  "missing_requirements": [
+    "critical_Greek_and_apparatus",
+    "date_epoch_and_day_boundary",
+    "month_year_intercalation",
+    "two_manuscript_origin_alignment",
+    "chart_uncertainty_propagation",
+    "source_to_nonleading_observable",
+    "preanswer_prediction_freeze",
+    "untouched_human_evaluation"
+  ],
+  "runtime_promotion": false,
+  "human_prediction_evaluations": 0
+}
