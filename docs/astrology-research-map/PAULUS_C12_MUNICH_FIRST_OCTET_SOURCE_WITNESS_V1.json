@@ -1,0 +1,88 @@
+{
+  "schema": "C12_PAULUS_MUNICH_FIRST_EIGHT_SOURCE_WITNESS",
+  "date": "2026-10-23",
+  "source": {
+    "library": "Bayerische Staatsbibliothek",
+    "shelfmark": "Cod. graec. 170",
+    "ms_page": 65,
+    "digital_image": 81,
+    "iiif_manifest": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00131007/manifest",
+    "photo": "https://api.digitale-sammlungen.de/iiif/image/v3/bsb00131007_00081/full/max/0/default.jpg",
+    "observation": "Manuscript photo viewed and source table cropped; copied image NOT included"
+  },
+  "scope": "FIRST_EIGHT_ONLY_MANUALLY_DECODED_UNVERIFIED_BY_SECOND_PALEOGRAPHER",
+  "eight_by_trigon": {
+    "fire": [
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars"
+    ],
+    "earth": [
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter"
+    ],
+    "air": [
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon"
+    ],
+    "water": [
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury"
+    ]
+  },
+  "trigon_signs": {
+    "fire": [
+      "Aries",
+      "Leo",
+      "Sagittarius"
+    ],
+    "earth": [
+      "Taurus",
+      "Virgo",
+      "Capricorn"
+    ],
+    "air": [
+      "Gemini",
+      "Libra",
+      "Aquarius"
+    ],
+    "water": [
+      "Cancer",
+      "Scorpio",
+      "Pisces"
+    ]
+  },
+  "section": "Paulus chapter 32 monomoiriai by trigon",
+  "day_night": "INFERRED_DAY_FROM_FIRE_SUN_EARTH_VENUS; NOT INDEPENDENT RUBRIC_TRANSCRIPTION",
+  "notes": "Four columns represent TRIGONS, each three signs; Greek degrees alpha through eta are 1..8. In all four first octets Venus occurs TWICE because both earth and water have Venus as a triplicity lord. Do not assume later degrees repeat this pattern without independent per-cell review.",
+  "open": {
+    "full_120_read": false,
+    "boer_greek_collated": false,
+    "poxy_4277_image_verified": false,
+    "production_scored": false,
+    "human_predictive_validations": 0
+  }
+}

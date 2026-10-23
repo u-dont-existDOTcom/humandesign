@@ -415,7 +415,43 @@
       80,
       82
     ],
-    "adjacent_page_status": "Direct images read, but Greek contextual rubric/sect not yet transcribed to adequate accuracy; no 120-cell promotion."
+    "adjacent_page_status": "Direct images read, but Greek contextual rubric/sect not yet transcribed to adequate accuracy; no 120-cell promotion.",
+    "c12_column_semantics_correction": {
+      "status": "DIRECT_MS_IMAGE_REINSPECTION",
+      "prior_first_signs_only": [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer"
+      ],
+      "four_trigons_not_four_independent_sign_columns": true,
+      "trigon_groups": {
+        "fire": [
+          "Aries",
+          "Leo",
+          "Sagittarius"
+        ],
+        "earth": [
+          "Taurus",
+          "Virgo",
+          "Capricorn"
+        ],
+        "air": [
+          "Gemini",
+          "Libra",
+          "Aquarius"
+        ],
+        "water": [
+          "Cancer",
+          "Scorpio",
+          "Pisces"
+        ]
+      },
+      "bounded_first_octet_witness": "PAULUS_C12_MUNICH_FIRST_OCTET_SOURCE_WITNESS_V1.json",
+      "c11_34_cells_originally_resolved": 0,
+      "c12_nine_disputed_cells_locally_checked": 9,
+      "global_34_dispute_canonical_resolution": false
+    }
   },
   "other_open": {
     "boer_1958_actual_edition_pages_examined": false,

@@ -36,3 +36,7 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 **Standing restrictions:** no Gansten purchased Amazon ebook extraction via Work, no copyright facsimile redistribution, no spending, no human predictive claims, no biographies, no runtime rule promotion, no merges into the 16-family cross-tradition or production scorer.
 
 **One-line resume:** Begin at BSB Cod. graec. 170 p65 manuscript monomoiria figure, first fix glyph/sect then collate 120 cells; corrected Epitome Sun→Sun is 83, source tests 77, 0 humans.
+
+### C12 manuscript reinspection (supersession of incomplete column description)
+
+The C11 description named Aries, Taurus, Gemini, and Cancer as the first sign in each of four columns, but the handwritten headings also contain **two further zodiac signs each**: the columns are **four triplicities**, not four distinct sign-only tables. The manually inspected first eight degrees of each group reveal repeated Venus (twice among eight day-trigon ruler slots). See [C12 primary source](HELLENISTIC_SOURCE_C12_MUNICH_FIRST_OCTET_20261023.md) and [32-cell witness](PAULUS_C12_MUNICH_FIRST_OCTET_SOURCE_WITNESS_V1.json). This is a partial manuscript-source reading, not final night/day rubric collation or adoption of an eightfold horoscope system. C11's zero historical canonical resolutions remains true; C12 compares nine *local* discrepant cells, with **eight matching the narrative and one matching neither**.

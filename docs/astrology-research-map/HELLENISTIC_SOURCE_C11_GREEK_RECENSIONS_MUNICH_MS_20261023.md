@@ -65,3 +65,7 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 **77/77 passed, exit 0** (67 old including corrected C10 and 10 C11). Passing arithmetic tests do **not** authenticate ancient transmission or validate chart predictions. **Human predictive validations: 0**.
 
 The source-critical work is still **OPEN**: uncompleted Boer diagram collation, Munich sect and glyphs, Moon numeral, exact papyrus photo; no new rules are promoted. See [C11 durable continuation](HELLENISTIC_CONTINUATION_C11_20261023.md).
+
+### C12 manuscript reinspection (supersession of incomplete column description)
+
+The C11 description named Aries, Taurus, Gemini, and Cancer as the first sign in each of four columns, but the handwritten headings also contain **two further zodiac signs each**: the columns are **four triplicities**, not four distinct sign-only tables. The manually inspected first eight degrees of each group reveal repeated Venus (twice among eight day-trigon ruler slots). See [C12 primary source](HELLENISTIC_SOURCE_C12_MUNICH_FIRST_OCTET_20261023.md) and [32-cell witness](PAULUS_C12_MUNICH_FIRST_OCTET_SOURCE_WITNESS_V1.json). This is a partial manuscript-source reading, not final night/day rubric collation or adoption of an eightfold horoscope system. C11's zero historical canonical resolutions remains true; C12 compares nine *local* discrepant cells, with **eight matching the narrative and one matching neither**.
