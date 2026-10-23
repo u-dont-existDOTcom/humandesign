@@ -1,0 +1,83 @@
+{
+  "scope": "Available-edition reading audit and targeted preservation; same-agent verification",
+  "protected_sections_1_to_6_identical": true,
+  "all_62_disagreement_records_identical": true,
+  "method_records": 42,
+  "figure_records": 51,
+  "csv_round_trip_passed": true,
+  "changed_csv_records": {
+    "GANSTEN_METHOD_COMPARISON.csv": [
+      {
+        "id": "P03",
+        "fields": [
+          "book_reference",
+          "inspection_status"
+        ]
+      },
+      {
+        "id": "B05",
+        "fields": [
+          "unresolved_ambiguity",
+          "book_reference",
+          "inspection_status"
+        ]
+      },
+      {
+        "id": "S01",
+        "fields": [
+          "book_reference"
+        ]
+      },
+      {
+        "id": "S02",
+        "fields": [
+          "book_reference"
+        ]
+      }
+    ],
+    "GANSTEN_FIGURE_INDEX.csv": [
+      {
+        "id": "T05",
+        "fields": [
+          "chapter_or_section",
+          "inspection_status",
+          "coverage_limit"
+        ]
+      },
+      {
+        "id": "T06",
+        "fields": [
+          "chapter_or_section",
+          "inspection_status",
+          "coverage_limit"
+        ]
+      }
+    ]
+  },
+  "kernel_exit_code": 0,
+  "kernel_stdout": "42.17434402835047 42.20081504892782 46.449117851278395\n0 122.18139771253009 20.15096886082533 10.653324067373134 10.80868504335566\n5 123.34913722832933 25.033459071198852 5.5081832727086635 5.588510945435664\n",
+  "displayed_values_tolerance_degrees": 1e-08,
+  "displayed_values_passed": true,
+  "independent_external_engine_comparison": "NOT RUN",
+  "historical_primary_witness_comparison": "NOT RUN",
+  "previous_135_phase_checks": "Prior audit claim retained; not rerun in this completion",
+  "predictive_validation": "NOT RUN",
+  "files": {
+    "GANSTEN_PRIMARY_DIRECTIONS_AUDIT.md": {
+      "bytes": 82596,
+      "sha256": "f8060a3341e097d02b065be7311c47099b9b45d0d9f2d14add06c187df63ff26"
+    },
+    "GANSTEN_OPEN_QUESTIONS.md": {
+      "bytes": 21722,
+      "sha256": "99ee313bebee0519c282cccbb294f209e77f2682faf6563f64ba45690af54bc9"
+    },
+    "GANSTEN_METHOD_COMPARISON.csv": {
+      "bytes": 32610,
+      "sha256": "39ce099985722908134cc568b44a22f470466f6701457bf2dfb22867dc991c32"
+    },
+    "GANSTEN_FIGURE_INDEX.csv": {
+      "bytes": 16129,
+      "sha256": "46b372908eeda4a592ec0a61f952edeb873fb18f18391166dae40b68f8972386"
+    }
+  }
+}
