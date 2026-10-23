@@ -2,6 +2,10 @@
 
 23 October 2026 · Research branch checkpoint · OPEN scientific program
 
+## Post-checkpoint correction: Latin Firmicus resolved
+
+Read the **updated C02 report** above any older summary about Firmicus timing. The original public Kroll–Skutsch Latin VI.33.1 and VI.34.1 both give **10 years 9 months**, not the Bram English 10 years 11 months; therefore the 131-month historical variant is **not admitted**. Latin VI.33.5 independently confirms a favorable Saturn→Mars forecast against Hephaistio's daytime-adverse passage. The remaining true numerical conflicts are Hephaistio's 129-month subordinate tables, 360/365/375-day readings, Valens-appendix 140 versus Hephaistio 150, and unresolved Greek source history. These source changes are now reflected in C02, the numeric witness and candidate registry.
+
 ## Original owner outcome and boundaries
 
 User: **"continue"**, following their instruction that the newly acquired primary astrology books are on their connected laptop. Continue **reading the actual sources** toward historically accurate, falsifiable comparison across Hellenistic, Arabic/Persian, and other traditions, and **save the work in the humandesign repository**. The Amazon-acquired Martin Gansten *Primary Directions* ebook is not available in the local extracted corpus; user expressly is **not using Work mode for extraction**. No work-mode extraction, new purchase, copyrighted text redistribution, irreversible model promotion or unconsented human evaluation was authorized. The parent empirical outcome remains OPEN; human predictive validation **0**.
