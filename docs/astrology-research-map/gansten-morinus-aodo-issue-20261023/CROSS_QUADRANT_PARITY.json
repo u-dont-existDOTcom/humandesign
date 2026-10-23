@@ -1,0 +1,749 @@
+{
+  "status": "PASS",
+  "samples_generated": 9600,
+  "seed": 202610232337,
+  "totals": {
+    "valid": 9600,
+    "bad": 591,
+    "patched_bad": 0,
+    "negative_coordinate": 591,
+    "unexplained_bad": 0,
+    "negative_but_good": 0
+  },
+  "source_commit": "020492d5fce1c7a3d6b81186cef6cf04d93fb694",
+  "source_sha256": "b76a131ade535d9353c6e9f65863e6edd3cd8424cf8e74b228e6f0a4af48e9c5",
+  "location": "placidianutppd.py:1668",
+  "maximum_error_degrees": 73.6826474257096,
+  "maximum_diagnostic_residual_deg": 1.1368683772161603e-13,
+  "matrix": [
+    {
+      "hemisphere": "N",
+      "quad": "EU",
+      "region": "near0",
+      "valid": 400,
+      "bad": 79,
+      "patched_bad": 0,
+      "negative_coordinate": 79,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "EU",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "EU",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "EL",
+      "region": "near0",
+      "valid": 400,
+      "bad": 66,
+      "patched_bad": 0,
+      "negative_coordinate": 66,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "EL",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "EL",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WL",
+      "region": "near0",
+      "valid": 400,
+      "bad": 71,
+      "patched_bad": 0,
+      "negative_coordinate": 71,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WL",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WL",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WU",
+      "region": "near0",
+      "valid": 400,
+      "bad": 78,
+      "patched_bad": 0,
+      "negative_coordinate": 78,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WU",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "N",
+      "quad": "WU",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EU",
+      "region": "near0",
+      "valid": 400,
+      "bad": 73,
+      "patched_bad": 0,
+      "negative_coordinate": 73,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EU",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EU",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EL",
+      "region": "near0",
+      "valid": 400,
+      "bad": 79,
+      "patched_bad": 0,
+      "negative_coordinate": 79,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EL",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "EL",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WL",
+      "region": "near0",
+      "valid": 400,
+      "bad": 72,
+      "patched_bad": 0,
+      "negative_coordinate": 72,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WL",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WL",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WU",
+      "region": "near0",
+      "valid": 400,
+      "bad": 73,
+      "patched_bad": 0,
+      "negative_coordinate": 73,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WU",
+      "region": "near360",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    },
+    {
+      "hemisphere": "S",
+      "quad": "WU",
+      "region": "interior",
+      "valid": 400,
+      "bad": 0,
+      "patched_bad": 0,
+      "negative_coordinate": 0,
+      "unexplained_bad": 0,
+      "negative_but_good": 0
+    }
+  ],
+  "first_mismatches": [
+    {
+      "inputs": [
+        54.2115472533,
+        288.7420728912,
+        6.9856977241,
+        17.428786585,
+        54.1510047104,
+        15.2593957866
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -10.45458897215121,
+      "encoded_AODO": -10.45458897215121,
+      "source": 28.59969306710582,
+      "reference": 49.508871011408246,
+      "in_memory_fixed": 49.508871011408246,
+      "original_error": 20.909177944302428
+    },
+    {
+      "inputs": [
+        48.8719714819,
+        285.2162322777,
+        4.0347797208,
+        15.3794966131,
+        6.5707418981,
+        -13.7802402745
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.320242395706234,
+      "encoded_AODO": -9.320242395706234,
+      "source": 9.136021224522903,
+      "reference": 27.77650601593538,
+      "in_memory_fixed": 27.77650601593537,
+      "original_error": 18.64048479141246
+    },
+    {
+      "inputs": [
+        47.1660871107,
+        317.7287661727,
+        0.4310771802,
+        22.9053066204,
+        248.554812197,
+        -17.9981251509
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.45495984855671,
+      "encoded_AODO": -9.45495984855671,
+      "source": 246.68579073125363,
+      "reference": 265.59571042836706,
+      "in_memory_fixed": 265.59571042836706,
+      "original_error": 18.909919697113423
+    },
+    {
+      "inputs": [
+        50.8625958808,
+        291.3316276972,
+        6.1229266444,
+        20.5061330135,
+        239.1382424218,
+        -18.2994573665
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -11.313772389464354,
+      "encoded_AODO": -11.31377238946435,
+      "source": 243.18911650475346,
+      "reference": 265.81666128368215,
+      "in_memory_fixed": 265.81666128368215,
+      "original_error": 22.627544778928694
+    },
+    {
+      "inputs": [
+        39.4313869016,
+        300.8809441727,
+        3.0210957421,
+        18.789808491,
+        3.1912633249,
+        2.775261775
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -6.481235972005123,
+      "encoded_AODO": -6.481235972005123,
+      "source": 355.3622226372772,
+      "reference": 8.324694581287467,
+      "in_memory_fixed": 8.324694581287467,
+      "original_error": 12.962471944010304
+    },
+    {
+      "inputs": [
+        60.2367521932,
+        324.1242716923,
+        1.3904909816,
+        4.6191483124,
+        341.7328502076,
+        2.4978747754
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -1.6942783130096495,
+      "encoded_AODO": -1.6942783130096495,
+      "source": 338.37356637360915,
+      "reference": 341.76212299962845,
+      "in_memory_fixed": 341.76212299962845,
+      "original_error": 3.3885566260192945
+    },
+    {
+      "inputs": [
+        64.5410259369,
+        321.4227075826,
+        8.1226979622,
+        8.8236025655,
+        271.9696555501,
+        16.5653251967
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -0.027932975423974327,
+      "encoded_AODO": -0.027932975423976103,
+      "source": 256.1778562776236,
+      "reference": 256.2337222284716,
+      "in_memory_fixed": 256.2337222284716,
+      "original_error": 0.05586595084798773
+    },
+    {
+      "inputs": [
+        63.1943218081,
+        321.9568239459,
+        9.306783083,
+        17.5746627963,
+        48.7596197625,
+        10.3432865033
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -4.962022858777964,
+      "encoded_AODO": -4.962022858777962,
+      "source": 35.63256266082451,
+      "reference": 45.55660837838043,
+      "in_memory_fixed": 45.55660837838044,
+      "original_error": 9.924045717555913
+    },
+    {
+      "inputs": [
+        64.4420615744,
+        292.275587056,
+        0.7532855712,
+        7.5936876167,
+        23.0757484394,
+        -12.7737256347
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.685507203043965,
+      "encoded_AODO": -9.685507203043965,
+      "source": 31.3359530326881,
+      "reference": 50.70696743877603,
+      "in_memory_fixed": 50.70696743877603,
+      "original_error": 19.371014406087937
+    },
+    {
+      "inputs": [
+        11.5566037347,
+        322.3806503117,
+        1.1755023087,
+        15.5550096844,
+        249.5102894197,
+        2.6956992439
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -0.1818128776187835,
+      "encoded_AODO": -0.1818128776187835,
+      "source": 249.09891148908312,
+      "reference": 249.4625372443207,
+      "in_memory_fixed": 249.4625372443207,
+      "original_error": 0.36362575523759233
+    },
+    {
+      "inputs": [
+        35.435542936,
+        277.6576562547,
+        4.1424622897,
+        18.7923270808,
+        224.6093833174,
+        10.3044268368
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -7.509035769024762,
+      "encoded_AODO": -7.50903576902476,
+      "source": 210.90571311024698,
+      "reference": 225.9237846482965,
+      "in_memory_fixed": 225.9237846482965,
+      "original_error": 15.018071538049526
+    },
+    {
+      "inputs": [
+        62.5616556836,
+        302.1218046362,
+        1.7517142753,
+        10.9209976246,
+        177.6877039065,
+        -6.0548447144
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.882499923967913,
+      "encoded_AODO": -9.882499923967913,
+      "source": 174.1702160936181,
+      "reference": 193.93521594155393,
+      "in_memory_fixed": 193.93521594155393,
+      "original_error": 19.764999847935826
+    },
+    {
+      "inputs": [
+        43.8138011493,
+        299.3213328398,
+        2.2808306955,
+        7.1079104563,
+        261.7909817732,
+        -3.9837437572
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -2.1849608054419822,
+      "encoded_AODO": -2.1849608054419822,
+      "source": 262.09837488885154,
+      "reference": 266.46829649973546,
+      "in_memory_fixed": 266.46829649973546,
+      "original_error": 4.369921610883921
+    },
+    {
+      "inputs": [
+        29.8990831969,
+        286.5560894575,
+        6.2648025253,
+        19.4150545286,
+        1.0293853461,
+        16.0601698332
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -2.9000918028586886,
+      "encoded_AODO": -2.9000918028586886,
+      "source": 350.6540935475749,
+      "reference": 356.4542771532923,
+      "in_memory_fixed": 356.4542771532923,
+      "original_error": 5.800183605717393
+    },
+    {
+      "inputs": [
+        31.8184087773,
+        292.8016575181,
+        2.643759749,
+        18.2590063998,
+        226.5623802351,
+        5.5076855822
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -5.459440878920914,
+      "encoded_AODO": -5.459440878920914,
+      "source": 218.7419020697146,
+      "reference": 229.6607838275564,
+      "in_memory_fixed": 229.6607838275564,
+      "original_error": 10.918881757841802
+    },
+    {
+      "inputs": [
+        35.4868403027,
+        277.7022690489,
+        4.0024698379,
+        21.6246844264,
+        325.9592893422,
+        -10.2362987078
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.311299196846928,
+      "encoded_AODO": -9.311299196846928,
+      "source": 322.6694035741614,
+      "reference": 341.2920019678552,
+      "in_memory_fixed": 341.2920019678552,
+      "original_error": 18.622598393693806
+    },
+    {
+      "inputs": [
+        20.1761807375,
+        274.3303289258,
+        0.7570313506,
+        10.1976036526,
+        184.4939175588,
+        -11.3454807033
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -2.735433766328204,
+      "encoded_AODO": -2.7354337663282045,
+      "source": 185.65459573947518,
+      "reference": 191.1254632721316,
+      "in_memory_fixed": 191.1254632721316,
+      "original_error": 5.470867532656428
+    },
+    {
+      "inputs": [
+        59.236092011,
+        306.634622627,
+        9.2046059631,
+        20.4398597729,
+        60.5596706438,
+        -8.604062835
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -9.631232627778166,
+      "encoded_AODO": -9.631232627778166,
+      "source": 58.46029173000638,
+      "reference": 77.72275698556271,
+      "in_memory_fixed": 77.72275698556271,
+      "original_error": 19.26246525555632
+    },
+    {
+      "inputs": [
+        54.8201940804,
+        263.5177284623,
+        4.0538013521,
+        22.9741864477,
+        166.0035303799,
+        0.8934287484
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -25.220647554744406,
+      "encoded_AODO": -25.22064755474441,
+      "source": 139.75222631360003,
+      "reference": 190.19352142308884,
+      "in_memory_fixed": 190.19352142308884,
+      "original_error": 50.441295109488806
+    },
+    {
+      "inputs": [
+        52.2444472966,
+        292.9730233403,
+        0.6052427172,
+        15.6277812959,
+        112.3689246919,
+        -16.5249065838
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -12.27585699383037,
+      "encoded_AODO": -12.275856993830372,
+      "source": 113.76980779919742,
+      "reference": 138.32152178685817,
+      "in_memory_fixed": 138.32152178685817,
+      "original_error": 24.551713987660747
+    },
+    {
+      "inputs": [
+        49.6159706793,
+        300.2640579501,
+        2.2847027193,
+        11.5362895801,
+        84.3382572952,
+        16.770236939
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -6.004582329275158,
+      "encoded_AODO": -6.004582329275157,
+      "source": 66.043995513255,
+      "reference": 78.0531601718053,
+      "in_memory_fixed": 78.0531601718053,
+      "original_error": 12.009164658550304
+    },
+    {
+      "inputs": [
+        61.8451738873,
+        271.9040050896,
+        7.928569167,
+        16.6351530691,
+        97.7415741091,
+        18.3544388906
+      ],
+      "group": [
+        1,
+        "EU",
+        "near0"
+      ],
+      "signed_sigcoord": -18.365316912025975,
+      "encoded_AODO": -18.365316912025975,
+      "source": 49.911427008841784,
+      "reference": 86.64206083289373,
+      "in_memory_fixed": 86.64206083289373,
+      "original_error": 36.73063382405195
+    }
+  ],
+  "limits": "original method+speculum without GUI/ephemeris; only conjunction synthetic RA/dec; no chart event predictions"
+}
