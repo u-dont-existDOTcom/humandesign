@@ -1,6 +1,8 @@
 # Living cross-tradition astrology research map
 
-**22 October source-reading update:** [Hephaistio II's page-anchored profession and dignity variant witnesses](HEPHAISTIO_II_FIRST_SOURCE_COMPARISON_20261022.md) are source-only and not scored or promoted.\n
+**23 October Hellenistic source comparison:** [C01: original-source career, dignity and synastry variants](HELLENISTIC_SOURCE_COMPARISON_C01_20261023.md); [C02: 129-month period source comparison, calendar discrepancies and Saturn→Mars opposite forecasts](HEPHAISTIO_II_TIMELORD_C02_20261023.md). Read the [unmodified numerical source witness](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json) and [six quarantined source-to-test candidates](HELLENISTIC_C01_C02_SOURCE_CANDIDATES_V1.json) before any implementation. [Four arithmetic witness tests](test_hellenistic_period_witness.py) passed from a clean download. These do not validate human prediction; disputed variants are **not scored or promoted**.
+
+**22 October source-reading update:** [Hephaistio II's page-anchored profession and dignity variant witnesses](HEPHAISTIO_II_FIRST_SOURCE_COMPARISON_20261022.md) are source-only and not scored or promoted.
 **22 October local update:** [12-file acquired-book inventory, verified hashes, al-Bīrūnī misattribution, and revised reading order](LOCAL_ACQUISITION_RECONCILIATION_20261022.md). This supersedes the earlier Drive-only ‘missing book’ statuses while preserving the initial audit's source recommendations.
 
 ## Hellenistic and other missing-book acquisition audit (22 October 2026)
