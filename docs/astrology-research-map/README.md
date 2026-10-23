@@ -1,5 +1,8 @@
 # Living cross-tradition astrology research map
 
+**23 October continuation checkpoint C03:** [exact source pages, corrected acquisition status, 9/9 verification and next reading sequence](HELLENISTIC_CONTINUATION_C03_20261023.md). The Hellenistic corpus remains source-only and research-incomplete; old C01/C02 handoffs are now subordinate to C03 corrections.
+
+
 **23 October C03 source-integrity correction:** [Paulus, Hephaistio I, Rhetorius scans and three competing daily rates](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md); [four source witnesses and explicit missing-page statuses](HELLENISTIC_SOURCE_C03_VARIANTS_V1.json); [neutral exact-fraction rate comparison](hellenistic_daily_sign_variants.py) with [5/5 passing tests](test_hellenistic_daily_sign_variants.py). Rhetorius printed p140 is absent, and the Paulus PDF contains Paulus only through printed p77, **not** the Olympiodorus commentary in the contents. No model promotion or human test.
 
 
