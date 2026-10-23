@@ -1,4 +1,7 @@
 # Reconciled local astrology acquisitions and source integrity
+
+**Superseding visual scan audit, 23 October:** [C03](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md) establishes that the 93-leaf Greenbaum Paulus/Olympiodorus PDF is **truncated at printed p77**, lacking the listed Olympiodorus commentary and appendices; Hephaistio Book I **appears complete** through its printed p64 appendix. The Rhetorius 2009 replacement also **omits printed p140**, which is not supplied by its six-page supplement. Original per-file hashes, source images and reading gates are recorded in C03; read this correction rather than inferring full ownership completeness.
+
 22 October 2026 — owner-provided collection, inspected **read-only through authorized desktop access**, without Work mode.
 
 ## Meaning of this register
