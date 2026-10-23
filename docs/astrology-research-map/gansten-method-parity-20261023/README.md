@@ -1,7 +1,5 @@
-# Gansten primary directions: isolated follow-up research package
+# Gansten primary directions — source reconciliation and synthetic geometry
 
-Read `GANSTEN_RECONCILIATION_REPORT.md` for conclusions and provenance; consult `GANSTEN_LILLY_PTOLEMY_CROSSWALK.csv` for each of 12 comparisons and remaining source checks. Code is **research-only, no astronomical ephemeris or predictive inference**.
+The report and 12-row source crosswalk document the supported historical distinctions. `VERIFICATION.json` contains observed results from **nine passing unit tests** and **6,000 synthetic comparisons** of a Cartesian Regiomontanus solver against separate auxiliary-pole formulas. `SOURCE_PROVENANCE.json` identifies the source baseline and limits. The runnable Python implementation and unit/property tests were delivered as a separate downloadable ZIP in the originating ChatGPT research conversation, not yet installed in this repository.
 
-Run `python3 -m unittest -v test_geometry_reference` for the nine deterministic tests, or `python3 run_verification.py` for that suite plus randomized geometry parity and regeneration of `VERIFICATION.json`.
-
-This package must **not** replace the original Gansten audit, Lilly/Ptolemy registries, existing source maps, or the model. It is a new isolated methods/verification addendum. Any integration into a canonical empirical model requires separate source, historical-engine and untouched-human validation gates. The third-party purchased Kindle text, screenshots, and publisher tables are not included.
+**Research only:** do not merge these historical methods into a production prediction model, infer human predictive validity, or conflate independent coordinate mathematics with independently confirmed original-author methods. All code comparisons are synthetic and no human outcomes were used.
