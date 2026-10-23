@@ -1,0 +1,111 @@
+{
+  "source": "Purchased Kindle for Web edition of Martin Gansten, Primary Directions",
+  "asin": "B0HMRW6T9G",
+  "inspection_date": "2026-10-23",
+  "source_access": "Live reader screenshots and accessibility controls; no source text export",
+  "anchors_are": "Kindle reader displayed pages; not inferred print pagination",
+  "observations": [
+    {
+      "anchor": "xi",
+      "kind": "front Contents and navigation",
+      "finding": "Formula Appendix I and terms/year Appendix II listed; no software-survey entry"
+    },
+    {
+      "anchor": "160",
+      "kind": "sequential appendix boundary",
+      "finding": "Final mundane-Fortune formula discussion; next reader screen is table Appendix II at 161"
+    },
+    {
+      "anchor": "161",
+      "kind": "heading and structure",
+      "finding": "Appendix II with terms and planetary-year tables; next reader screen reaches Glossary at 163; no intervening software survey displayed",
+      "numeric_cells_audited": false
+    },
+    {
+      "anchor": "163",
+      "kind": "section transition",
+      "finding": "Glossary heading and opening entries"
+    },
+    {
+      "anchor": "iv",
+      "kind": "copyright and software credit",
+      "finding": "2009 publication; ISBN 9781902405391; chart generation credited to Solar Fire Deluxe v6.0 unless otherwise stated",
+      "does_not_establish": "Direction settings, software-review contents, calculation correctness"
+    },
+    {
+      "anchor": "x",
+      "kind": "symbols",
+      "finding": "Symbols reference inspected; no additional algorithm inferred"
+    },
+    {
+      "anchor": "177–183",
+      "kind": "index reading",
+      "finding": "Sequential index screens inspected from opening A entries through final Z entries; no program-review section. Every index hyperlink not followed."
+    },
+    {
+      "anchor": "185 (reader total 186; 100%)",
+      "kind": "terminal back matter",
+      "finding": "Publisher book advertisements, with next-page control absent on final screen; no software survey"
+    }
+  ],
+  "whole_book_searches": [
+    {
+      "query": "software",
+      "returned_count": 6,
+      "displayed_pages": [
+        "43",
+        "53",
+        "57",
+        "84",
+        "84",
+        "148"
+      ]
+    },
+    {
+      "query": "Janus",
+      "returned_count": 0
+    },
+    {
+      "query": "Solar Fire",
+      "returned_count": 1,
+      "displayed_pages": [
+        "iv"
+      ],
+      "match_opened": true,
+      "finding": "Chart-production credit rather than review"
+    },
+    {
+      "query": "Appendix III",
+      "returned_count": 3,
+      "displayed_search_result_pages": [
+        "28",
+        "119",
+        "131"
+      ],
+      "opened_match": "119",
+      "reader_screen_footer_when_opened": "118",
+      "finding": "Additional main-text planetary-years reference visually confirmed, beyond the two endnote instances previously recorded. Clicking the highlighted main-text reference did not navigate; no hyperlink destination established."
+    }
+  ],
+  "external_primary_descriptions_reopened": [
+    {
+      "url": "https://astrology.martingansten.com/books/",
+      "anchor": "Primary Directions description",
+      "finding": "Describes software-review appendices; no Kindle-specific explanation established"
+    },
+    {
+      "url": "https://www.wessexastrologer.com/product/wapd001/",
+      "anchor": "Publisher description",
+      "finding": "Describes software reviews; separate attributed review names programs; no Kindle-specific explanation established"
+    }
+  ],
+  "boundaries": [
+    "Original print software-survey text not obtained or read",
+    "No physical print contents image inspected",
+    "No publisher intent inferred",
+    "No historical primary-source verification",
+    "No independent software-engine comparison",
+    "No predictive validation",
+    "No book screenshots, publisher tables or substantial source passages in deliverables"
+  ]
+}
