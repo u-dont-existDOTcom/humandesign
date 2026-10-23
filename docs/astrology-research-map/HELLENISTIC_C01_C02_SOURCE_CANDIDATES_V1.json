@@ -1,0 +1,162 @@
+{
+  "schema": "HUMANDESIGN_SOURCE_GROUNDED_HELLENISTIC_CANDIDATE_REGISTER_V1",
+  "date_utc": "2026-10-23",
+  "evidence_files": [
+    "HELLENISTIC_SOURCE_COMPARISON_C01_20261023.md",
+    "HEPHAISTIO_II_TIMELORD_C02_20261023.md",
+    "HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json"
+  ],
+  "status": "QUARANTINED_SOURCE_ONLY_NO_HUMAN_VALIDATION",
+  "owner_goal": "Build historically faithful alternative predictions and test against untouched people independently of questionnaires and personal histories",
+  "no_human_test_claims": true,
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "id": "HEL-PTO-ACTION-SEL-001",
+      "category": "natal_profession",
+      "source_ids": [
+        "PTO-ROB IV.4 pp381-391",
+        "HEL-II 19 pp66-68"
+      ],
+      "predicate": "Select employment-signifying planet(s) based on morning appearance, MC, lunar applications and strength; distinguish Ptolemy from the Dorotheus-via-Hephaistio priority sequence.",
+      "observable": "Coarse lifelong dominant work activity type; task-language/commerce/arts/manual craft rather than exact historic job names",
+      "contrary": "Actual dominant work consistently falls outside preregistered occupation family, or no unique ruler is computable",
+      "dependencies": [
+        "Greek Ptolemy re-used by HEL",
+        "Arabic Dorotheus core lacks full profession selector; Greek fragment appendices contain parts"
+      ],
+      "blocking": [
+        "fix morning visibility and MC definitions",
+        "predeclare ties/multi-planets",
+        "modern occupational coding and blind raters",
+        "culture-opportunity covariates",
+        "birth time uncertainty"
+      ],
+      "priority": "high",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    },
+    {
+      "id": "VAL-FORTUNE-DAIMON-002",
+      "category": "natal_activity_style",
+      "source_ids": [
+        "VAL-RIL Anthologies II.19K/20P printed p35"
+      ],
+      "predicate": "Build sect-dependent Lots Fortune and Spirit/Daimon and interpret rulers independently of the occupation-selector planet.",
+      "observable": "Work focused on physical/material production vs intellectual, social or transaction activity with preregistered multidimensional alternatives",
+      "contrary": "Frozen oppositely classified activity report, including when both modes are common",
+      "dependencies": [
+        "Valens Greek Hellenistic class, not independent of Greek family in general"
+      ],
+      "blocking": [
+        "lot arithmetic and direction parity",
+        "source language meaning for handwork/intellectual",
+        "avoid self-report category contamination",
+        "discriminating base rate and null"
+      ],
+      "priority": "medium",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    },
+    {
+      "id": "HEL-DOR-EROS-DYAD-003",
+      "category": "relationship_dyadic",
+      "source_ids": [
+        "PTO-ROB IV.7 pp413-419",
+        "HEL-II 23 pp71-73",
+        "DOR-DYK Appendix C Greek excerpts XVI.6 XVII-XVIII pp338-340"
+      ],
+      "predicate": "Compare luminaries, ASC, Lot Fortune, optional Lot Eros and hearing/seeing configurations across independently calculated two-person charts; keep variants separate.",
+      "observable": "Predefined nature and direction of affinity (shared preference vs functional need vs pleasure) and relative initiative, with independent partner reports",
+      "contrary": "Predicted pair-type and direction contradicted by independent paired reports or no measurable unique class",
+      "dependencies": [
+        "Ptolemy→Hephaistio editorial reuse",
+        "Greek Dorothean fragments are not Arabic main Carmen",
+        "Hephaistio's twelfth-part terminology diverges from Robbins' same-sign rendering"
+      ],
+      "blocking": [
+        "literal Greek twelfth-part versus sign resolution",
+        "17° vs17.5° discrepancy",
+        "Lot Eros direction",
+        "requires dyad consent and nonretrofit null",
+        "couples previously seen are development-only"
+      ],
+      "priority": "medium",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    },
+    {
+      "id": "HEL-DOR-RELEASER-004",
+      "category": "method_variants_not_scored",
+      "source_ids": [
+        "HEL-II ch26 printed p79 and Schmidt fn199",
+        "DOR-DYK III.2 printed p189",
+        "Pingree English Book III free reproduction, 'image [decan]'"
+      ],
+      "predicate": "Separate four-dignity HEL candidate from five-dignity Arabic image/decan candidate for ruler of life-releaser and distributions.",
+      "observable": "NO human medical/lifespan inference; initial admissible target is computed ruler and exact discrepancy frequency on neutral synthetic charts",
+      "contrary": "No selected-ruler differences found over preregistered neutral chart universe, or variants fail numerical implementation parity",
+      "dependencies": [
+        "Greek redaction vs Arabic via Persian and later translation",
+        "Pingree gloss is editorial; interpolation chronology unproven"
+      ],
+      "blocking": [
+        "critical-language lexical witness",
+        "full ordered selection condition and bounds",
+        "lifespan safety exclusion",
+        "exact chart parity"
+      ],
+      "priority": "medium",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    },
+    {
+      "id": "HEL-C02-SATURN-MARS-005",
+      "category": "timing_source_disagreement",
+      "source_ids": [
+        "HEL-II 30 printed pp86-87",
+        "Firmicus Mathesis VI.33(5) printed p226"
+      ],
+      "predicate": "For fixed Saturn parent→Mars recipient within historically explicit 129-month regimes, HEL differentiates adverse day vs comparatively better night; Firmicus gives generally favorable pair, still conditional on natal state.",
+      "observable": "Predeclared favorable business/relationship event count versus materially adverse events in a fixed time-window, without retrospective matching; candidate-only",
+      "contrary": "Different authoritative source variants make opposite predictions for same frozen eligible period; report contradiction even if one succeeds",
+      "dependencies": [
+        "historical methods partly shared",
+        "Firmicus translation has own internal cycle-length inconsistency"
+      ],
+      "blocking": [
+        "360 vs365 period table inconsistencies",
+        "intercalary days/day boundary",
+        "single eligible algorithm each",
+        "prevent health/safety forecasting",
+        "blind objective coding and null sample"
+      ],
+      "priority": "high",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    },
+    {
+      "id": "HEL-C02-PROFECTION-006",
+      "category": "timing_construct",
+      "source_ids": [
+        "HEL-II 27-28 printed pp80-83",
+        "DOR-DYK IV.1 ff. PDF pp215-223"
+      ],
+      "predicate": "Annual 1 sign/year; month 1 sign/month; day 1 sign/2.5 days in HEL, with natal-versus-return configurations; identify Paula 1 sign/day alternative as a separate source.",
+      "observable": "Distinct objective annual, monthly or daily event count changes only after exact date policy fixed",
+      "contrary": "Predicted periods not enriched relative to matched date shifts, shuffled labels and ordinary seasonality/context",
+      "dependencies": [
+        "Dorothean and later sources sharing natal profection traditions"
+      ],
+      "blocking": [
+        "birthday/year epoch",
+        "intercalary conventions",
+        "return time and geographic chart",
+        "remainder period and actual event baseline"
+      ],
+      "priority": "medium",
+      "eligibility": "NOT_READY",
+      "allowed_use": "Source audit, variant reconciliation, synthetic chart-feature parity only; no scored prospective prediction or advice."
+    }
+  ]
+}
