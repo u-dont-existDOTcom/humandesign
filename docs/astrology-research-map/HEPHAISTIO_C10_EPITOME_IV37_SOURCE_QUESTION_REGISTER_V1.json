@@ -1,0 +1,333 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C10_EPITOME_IV37_SOURCE_QUESTION_REGISTER_V1",
+  "date": "2026-10-23",
+  "status": "SOURCE_CRITICAL_EDITION_ONLY_UNSCORED",
+  "publisher_note": "Small numerical excerpts from critical Greek edition; copyrighted scan and page images are not deposited",
+  "source": {
+    "editor": "David Pingree",
+    "title": "Hephaestionis Thebani apotelesmaticorum epitomae quattuor",
+    "year": 1974,
+    "volume": "II",
+    "local_source_sha256": "6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a",
+    "epitome": "IV",
+    "section": 37,
+    "printed_pages": [
+      240,
+      241
+    ],
+    "one_source_edition_only": true,
+    "manuscript_collation_done": false,
+    "apparatus_general_caution": "p240 numerical group through p241 line14: 'numeri nonnulli corrupti'"
+  },
+  "recipient_order": [
+    "Saturn",
+    "Jupiter",
+    "Mars",
+    "Sun",
+    "Venus",
+    "Mercury",
+    "Moon"
+  ],
+  "parent_periods": {
+    "Saturn": {
+      "parent_months": 30,
+      "nominal_30_day_baseline": 900,
+      "edited_printed_values_by_recipient": [
+        210,
+        84,
+        105,
+        133,
+        57,
+        40,
+        105
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 210",
+        "Jupiter 84",
+        "Mars 105",
+        "Sun 133",
+        "Venus 57",
+        "Mercury 40",
+        "Moon 105"
+      ],
+      "visual_transcription_status": "C08_DIRECT_VISUAL_CONFIRMED",
+      "possible_sum_days": [
+        734
+      ],
+      "possible_delta_vs_30day_months": [
+        -166
+      ],
+      "printed_page": [
+        240,
+        241
+      ]
+    },
+    "Jupiter": {
+      "parent_months": 12,
+      "nominal_30_day_baseline": 360,
+      "edited_printed_values_by_recipient": [
+        85,
+        34,
+        42,
+        54,
+        22,
+        57,
+        71
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 85",
+        "Jupiter 34",
+        "Mars 42",
+        "Sun 54",
+        "Venus 22",
+        "Mercury 57",
+        "Moon 71"
+      ],
+      "visual_transcription_status": "C09_DIRECT_VISUAL_CONFIRMED",
+      "possible_sum_days": [
+        365
+      ],
+      "possible_delta_vs_30day_months": [
+        5
+      ],
+      "printed_page": [
+        240,
+        241
+      ]
+    },
+    "Mars": {
+      "parent_months": 15,
+      "nominal_30_day_baseline": 450,
+      "edited_printed_values_by_recipient": [
+        105,
+        52,
+        52,
+        66,
+        28,
+        70,
+        87
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 105",
+        "Jupiter νβ (52) versus μβ (42) previously unresolved",
+        "Mars 52",
+        "Sun 66",
+        "Venus 28",
+        "Mercury 70",
+        "Moon 87"
+      ],
+      "visual_transcription_status": "HIGH_RES_VISUAL_PREFERS_52_SCHOLARLY_COLLATION_PENDING",
+      "possible_sum_days": [
+        450,
+        460
+      ],
+      "possible_delta_vs_30day_months": [
+        0,
+        10
+      ],
+      "printed_page": [
+        241
+      ]
+    },
+    "Sun": {
+      "parent_months": 19,
+      "nominal_30_day_baseline": 570,
+      "edited_printed_values_by_recipient": [
+        104,
+        52,
+        64,
+        130,
+        30,
+        80,
+        118
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 104",
+        "Jupiter 52",
+        "Mars 64",
+        "Sun πν (130)",
+        "Venus 30",
+        "Mercury 80",
+        "Moon 118"
+      ],
+      "visual_transcription_status": "DIRECT_ENLARGED_PRINTED_EDITION_ONLY",
+      "possible_sum_days": [
+        578
+      ],
+      "possible_delta_vs_30day_months": [
+        8
+      ],
+      "printed_page": [
+        241
+      ]
+    },
+    "Venus": {
+      "parent_months": 8,
+      "nominal_30_day_baseline": 240,
+      "edited_printed_values_by_recipient": [
+        57,
+        22,
+        28,
+        36,
+        15,
+        38,
+        17
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 57",
+        "Jupiter 22",
+        "Mars 28",
+        "Sun 36",
+        "Venus 15",
+        "Mercury 38",
+        "Moon ιζ (17)"
+      ],
+      "visual_transcription_status": "DIRECT_ENLARGED_EDITION_NOT_INDEPENDENT_COLLATION",
+      "possible_sum_days": [
+        213
+      ],
+      "possible_delta_vs_30day_months": [
+        -27
+      ],
+      "printed_page": [
+        241
+      ]
+    },
+    "Mercury": {
+      "parent_months": 20,
+      "nominal_30_day_baseline": 600,
+      "edited_printed_values_by_recipient": [
+        141,
+        57,
+        70,
+        90,
+        36,
+        96,
+        117
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 141",
+        "Jupiter 57",
+        "Mars 70",
+        "Sun 90",
+        "Venus 36",
+        "Mercury ϟϛ (96)",
+        "Moon 117"
+      ],
+      "visual_transcription_status": "DIRECT_ENLARGED_EDITION_90_96_NUMERALS_PROVISIONAL",
+      "possible_sum_days": [
+        607
+      ],
+      "possible_delta_vs_30day_months": [
+        7
+      ],
+      "printed_page": [
+        241
+      ]
+    },
+    "Moon": {
+      "parent_months": 25,
+      "nominal_30_day_baseline": 750,
+      "edited_printed_values_by_recipient": [
+        177,
+        71,
+        87,
+        null,
+        47,
+        119,
+        148
+      ],
+      "gloss_for_greek_numeric_entries": [
+        "Saturn 177",
+        "Jupiter 71",
+        "Mars 87",
+        "Sun disputed ριε=115 versus ρμε=145",
+        "Venus 47",
+        "Mercury 119",
+        "Moon 148"
+      ],
+      "visual_transcription_status": "MOON_TO_SUN_GLYPH_REMAINS_UNRESOLVED",
+      "possible_sum_days": [
+        764,
+        794
+      ],
+      "possible_delta_vs_30day_months": [
+        14,
+        44
+      ],
+      "printed_page": [
+        241
+      ]
+    }
+  },
+  "high_resolution_reading_changes": {
+    "mars_jupiter": {
+      "new_visual_preference": "νβ",
+      "new_preferred_reading": 52,
+      "earlier_open_alternative": "μβ",
+      "earlier_alternative_value": 42,
+      "reading_basis": "Repeated enlarged direct view of Pingree edited printed p241, 420dpi and 600dpi; printed Mars own νβ provides same-font comparison",
+      "reference_total_with_52": 460,
+      "other_possible_total_with_42": 450,
+      "comparison_to_month_length": 450,
+      "do_not_select_by_arithmetic": true,
+      "independent_manuscript_confirmation": false
+    },
+    "moon_sun": {
+      "candidates": [
+        {
+          "token": "ριε",
+          "days": 115
+        },
+        {
+          "token": "ρμε",
+          "days": 145
+        }
+      ],
+      "source": "Pingree edited p241 close-up; one narrow glyph remains ambiguous",
+      "source_total_candidates": [
+        764,
+        794
+      ],
+      "status": "UNRESOLVED_NO_SINGLE_ADMITTED_LITERAL_TOTAL"
+    }
+  },
+  "status_vs_prior": {
+    "c08_printed_saturn_mercury": 40,
+    "c08_derived_saturn_mercury": 140,
+    "c09_fine_365_primary_total": 365,
+    "c09_fine_365_child_total": 366,
+    "c09_source_regressions_retained": true
+  },
+  "independent_references": {
+    "boer_1958": {
+      "status": "CATALOGED_NOT_FACSIMILE_INSPECTED",
+      "locator": "Paulus Alexandrinus, ed. Boer, Elementa apotelesmatica, Leipzig Teubner 1958, xxvi+181 pages",
+      "data_lead": "French review by Alphonse Dain 1959 describes mixed late Greek manuscript tradition"
+    },
+    "boer_1962": {
+      "status": "CATALOGED_NOT_FACSIMILE_INSPECTED",
+      "locator": "Attributed Heliodorus commentary, ed. Boer, with Neugebauer and Pingree, 1962",
+      "data_lead": "1963 Dain and Mugler reviews note base Viennese MS A, Byzantine revision for absent chapters 1-8; not directly a manuscript diagram authority for Paulus §32"
+    },
+    "boer_greek_searchable_corpus": {
+      "status": "CATALOGUE_ONLY_GREEK_TEXT_NOT_OPENED",
+      "locator": "The Greek Library corpus 2.3.0, Paulus Elementa apotelesmatica tlg2053.tlg001.local001, identifies Boer 1958 pp1–100",
+      "note": "The corpus bibliographic listing alone cannot settle 34/120 disputed tabular monomoiria cells; direct edition/diagram comparison remains required."
+    },
+    "oxy_4277": {
+      "status": "UNCHANGED_ONLY_TOLSA_2017_SCHOLARLY_TEXT",
+      "prior_monomoiria_matching": "1 of 3 under by-sign algorithm; two failures preserved",
+      "note": "C05 already reads Tolsa (2017); locating the paper again is not a new original-papyrus visual confirmation; Oxford source-image item remains unchecked"
+    }
+  },
+  "assurance": {
+    "no_human_validation": 0,
+    "altered_production_scorer": false,
+    "source_author_variants_selected_to_fit_known_biographies": false,
+    "source_book_redistributed": false,
+    "full_original_ms_image_evidence": false,
+    "paulus_34_cell_dispute_remaining": 34,
+    "source_status_explanation": "Counts measure reproducible arithmetic of transcribed edition numerals; they do not validate methods, predictions or Greek autograph."
+  }
+}
