@@ -1,0 +1,133 @@
+{
+  "schema": "HUMANDESIGN_C16_BOER_1958_PREFACE_GENEALOGY_ASSERTION_REGISTRY_V1",
+  "date": "2026-10-23",
+  "source": {
+    "author_editor": "Emilie Boer",
+    "title": "Pauli Alexandrini Elementa apotelesmatica (Eisagogika)",
+    "edition_year": 1958,
+    "publisher": "B. G. Teubner, Leipzig",
+    "consulted_part": "PRAEFATIO pp. VII–XI in public OCR bibliographic preview",
+    "url": "https://dokumen.pub/paulus-alexandrinus-elementa-apotelesmatica.html",
+    "source_web_reference": "turn843134view0 (web tool textual source, current turn)",
+    "source_page_image_seen": false,
+    "source_pdf_examined": false,
+    "OCR_quality": "NOISY; diacritics, sigla and line order frequently corrupted",
+    "method": "Manually inspect the publicly rendered short Latin OCR excerpts from Praefatio, not silently upgrade to direct printed scan collation",
+    "caution": "Editor-authored claims only; do not treat commentary as direct witness to each planet glyph"
+  },
+  "observations": [
+    {
+      "id": "B1958-01",
+      "kind": "EDITORIAL_HYPOTHESIS",
+      "print_location": "Praefatio p. X (OCR web excerpt line 131)",
+      "source_short_quote": "Ex uno eodemque archetypo iam mutilo",
+      "literal_scope": "Boer considers it probable that the described subarchetypes descend from one already-mutilated exemplar (verisimile); expressed as a conjecture, not a proved physical stemma.",
+      "confidence": "HIGH_FOR_EDITORIAL_SCOPE_MEDIUM_FOR_OCR_EXACTNESS",
+      "is_ancient_author_direct_statement": false,
+      "compels_three_codex_independence": false
+    },
+    {
+      "id": "B1958-02",
+      "kind": "PRINTED_PREFACE_WITNESS_INVENTORY",
+      "print_location": "Praefatio p. VII (OCR web excerpt lines 73–74)",
+      "witnesses": [
+        {
+          "repository": "Biblioteca Medicea Laurenziana",
+          "shelfmark": "Laurentianus gr. 28.7",
+          "Boer_siglum": "L",
+          "Boer_century": "14th",
+          "new_inspected_grid": "folio 168v, C14"
+        },
+        {
+          "repository": "Biblioteca Apostolica Vaticana",
+          "shelfmark": "Vaticanus gr. 1444",
+          "Boer_siglum": "uncertain_OCR",
+          "Boer_century": "16th",
+          "new_inspected_grid": "digital opening 0202, C15"
+        },
+        {
+          "repository": "Bayerische Staatsbibliothek",
+          "shelfmark": "Monacensis gr. 170",
+          "Boer_siglum": "uncertain_OCR",
+          "Boer_century": "16th",
+          "new_inspected_grid": "handwritten p.65, C13"
+        }
+      ],
+      "literal_scope": "All three manuscripts appear explicitly in Boer's inventory; OCR glyphs used for some sigla are unsafe to transcribe.",
+      "confidence": "HIGH_FOR_SHELFMARKS",
+      "independent_witness_lineage_count_proven": 0
+    },
+    {
+      "id": "B1958-03",
+      "kind": "EDITORIAL_RELATIVE_READING_VALUE",
+      "print_location": "Praefatio pp. X–XI (OCR web excerpt lines 136–137)",
+      "siglum": "Z",
+      "shelfmark": "Parisinus gr. 2506",
+      "Boer_date": "early 14th century",
+      "Boer_short_quote": "Recensioni ceteris utilior Z",
+      "interpretation": "Boer explicitly preferred the Z recension to the others for textual work, citing preservation of readings less corrupted than other witnesses; this is relative editor judgment, not an observed trigon table.",
+      "confidence": "MEDIUM_HIGH",
+      "original_image_of_Z_inspected_this_batch": false,
+      "dates_noted_in_previous_research": "C15 called Z 13th-century from catalogue; preserve difference as dating discrepancy, not resolved",
+      "do_not_pick_variant_by_blind_biography": true
+    },
+    {
+      "id": "B1958-04",
+      "kind": "EDITORIAL_RELATIVE_READING_VALUE",
+      "print_location": "Praefatio p. XI (OCR web excerpt lines 136–137)",
+      "siglum": "Y",
+      "shelfmark": "Parisinus gr. 2425",
+      "Boer_date": "15th century",
+      "interpretation": "Despite its difficult orthography, Boer calls Y valuable for preserving older glyphs, number forms and recapitulation; not equivalent to proof its monomoiria grid is earliest.",
+      "confidence": "MEDIUM_FROM_OCR",
+      "original_image_of_Y_inspected_this_batch": false
+    },
+    {
+      "id": "B1958-05",
+      "kind": "SEPARATE_CHAPTER_ATTRIBUTION_LEAD",
+      "print_location": "Praefatio p. IX (OCR web excerpt line 128)",
+      "greek_section": "λβ' Περί της τριγωνικής μονομοιρίας",
+      "Latin_parenthesis_short_quote": "Pauli est, non Heliodori",
+      "interpretation": "One manuscript excerpt of trigon monomoiria is attributed to Paulus rather than Heliodorus within Boer's contents inventory; exact OCR witness siglum is unreadable and needs printed apparatus inspection.",
+      "confidence": "LOW_TO_MEDIUM_OCR",
+      "Heliodorus_attribution_resolved_globally": false
+    },
+    {
+      "id": "B1958-06",
+      "kind": "CRITICAL_TEXT_LIMITATION",
+      "print_location": "Praefatio p. X (OCR web excerpt lines 130–136)",
+      "interpretation": "Boer reports surviving excerpts and scribal accretions, variable chapters and headings, and substantial mutilation; the edited Greek cannot be treated as a unique pristine authorial 4th-century implementation.",
+      "confidence": "MEDIUM_HIGH_EDITORIAL_VIEW",
+      "production_rule_selected": false
+    }
+  ],
+  "cross_codex_prior": {
+    "C15_physical_manuscripts": 3,
+    "C15_florence_vatican_equal_positions": 120,
+    "C15_florence_munich_comparable_positions": 119,
+    "C15_florence_munich_matching_positions": 119,
+    "C15_original_34_disputes": {
+      "narrative_only": 11,
+      "corrected_print_only": 1,
+      "neither": 22
+    },
+    "four_trigon_120_cell_tables_physically_distinct": true,
+    "independence_of_three_transmission_stemmata_verified": false,
+    "stemma_claim": "ONE_POSSIBLE_MUTILATED_ARCHETYPE_EDITORIAL_HYPOTHESIS"
+  },
+  "source_gaps": {
+    "Boer_1958_full_text_diagram_apparatus_visually_examined": false,
+    "Boer_1962_original_diagram_visually_examined": false,
+    "Parisinus_gr_2506_full_original_photo_visually_examined": false,
+    "Parisinus_gr_2425_photo_visually_examined": false,
+    "P_Oxy_4277_original_full_image_seen": false,
+    "ms_legend_greek_day_night_certified": false
+  },
+  "publication": {
+    "isolation_branch": "research/astro-hellenistic-c16-boer-preface-20261023",
+    "production_model_changed": false,
+    "images_or_purchased_book_redistributed": false,
+    "blind_biographical_fit": false,
+    "untouched_human_predictive_validations": 0
+  }
+}
