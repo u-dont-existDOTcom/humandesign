@@ -1,5 +1,8 @@
 # Hellenistic source reading — continuation checkpoint C05
 
+**Superseding C06 continuation:** [Actual Pingree 1973 Greek critical apparatus and separate Valens/papyrus zodiacal-place reading](HELLENISTIC_SOURCE_C06_PINGREE_APPARATUS_AND_ZODIACAL_PLACES_20261023.md) completed. Original printed ch29 Greek remains Saturn→Mercury 150, whereas later Valens 140 fits proportional 129-month arithmetic more closely. Book II.36 critical p225 apparatus flags `νβ desid.` for Mercury 52, casting doubt on reading the printed 57 as intended epagomenal addition. This does not resolve historical manuscript variants. [C06 checkpoint](HELLENISTIC_CONTINUATION_C06_20261023.md) supersedes only this older checkpoint's next-action list; source comparisons and negative P.Oxy monomoiria results remain valid.
+
+
 23 October 2026 — research branch only; root scientific outcome OPEN; no prospective human predictive validation (0). This checkpoint supersedes earlier C04 **next-reading instructions** only where C05 work has been completed, without erasing their historical evidence.
 
 ## Task, authority, and safety
