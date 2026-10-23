@@ -1,0 +1,84 @@
+{
+  "schema": "HUMANDESIGN_HEPHAISTIO_PINGREE_CRITICAL_WITNESS_C06",
+  "date_utc": "2026-10-23",
+  "status": "SOURCE_ONLY",
+  "edition": "Hephaestionis Thebani apotelesmaticorum libri tres Vol I, David Pingree ed., Teubner 1973",
+  "archive_collection": "https://archive.org/details/BSGERT",
+  "pdf_sha256": "f2f803c457b7ba62df23f5c51d6f49ffff3644e17723c6673f5795298514ecae",
+  "pdf_bytes": 78200132,
+  "pdf_pages": 496,
+  "inspected": [
+    {
+      "pdf": 230,
+      "printed": 200,
+      "chapter": "II.29"
+    },
+    {
+      "pdf": 231,
+      "printed": 201,
+      "chapter": "II.29"
+    },
+    {
+      "pdf": 255,
+      "printed": 225,
+      "chapter": "II.36"
+    },
+    {
+      "pdf": 256,
+      "printed": 226,
+      "chapter": "II.36"
+    }
+  ],
+  "ch29": {
+    "saturn_to_mercury_greek": 150,
+    "schmidt_translation": 150,
+    "later_valens_addition": 140,
+    "day_cycle_months": 129
+  },
+  "ch36": {
+    "first": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 52,
+      "Moon": 71
+    },
+    "finer_header_greek": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "finer_header_schmidt_english": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 81
+    },
+    "finer_items": {
+      "Saturn": 86,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 21,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "critical_app_p225_l27": "νβ desid.",
+    "apparatus_interpretation": "Editor marks 52 as expected/required at Mercury finer heading; not an independently collated manuscript reading.",
+    "epagomenal_calendar_interpretation": "unproven"
+  },
+  "owner_private_file_path_saved": false,
+  "modern_copyrighted_full_text_saved": false,
+  "no_independent_ancient_manuscript_stemma": true,
+  "model_promotion": false,
+  "human_prediction_runs": 0
+}
