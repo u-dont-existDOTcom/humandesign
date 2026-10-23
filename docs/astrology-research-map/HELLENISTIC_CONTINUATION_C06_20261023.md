@@ -1,5 +1,8 @@
 # Hellenistic research continuation checkpoint C06 — 23 October 2026
 
+**C07 source correction:** The Greek *Hephaistio* II.29 explicitly describes a five-day supplement to the twelve-month year (Pingree p201), accompanied by a later P² manuscript marginal note. Book II.36's P apparatus contains a 365-day reference, while the editor still proposes 52 instead of 57 for Mercury. The seven subdivision totals fit 365 better (sum absolute error 263/12 days) than 360 (42 days), but do not resolve every inconsistency. [C07 report](HELLENISTIC_SOURCE_C07_FIVEDAY_CALENDAR_MANUSCRIPTS_20261023.md), [number register](HEPHAISTIO_C07_FIVEDAY_MANUSCRIPT_AND_CALENDAR_V1.json). **41/41 source-only tests passed**. This supersedes the earlier absence of explicit five-day evidence and the previous 36-test receipt; no human validation was done.
+
+
 **Owner goal:** Continue reading and comparing the existing primary astrology sources, preserve historically distinct rules, and save all work in `humandesign`. This remains an **OPEN** source and empirical astrology research mission. **0** untouched consenting humans predicted/evaluated. Do not reinterpret tested source arithmetic or historical horoscope documents as evidence astrology predicts anyone's life. Do not use Work mode to extract the owner's purchased Amazon *Primary Directions*. No runtime scoring, source model, other tradition lanes, paid action or main branch altered.
 
 ## Active evidence and retrieval
