@@ -1,5 +1,8 @@
 # Hellenistic source research continuation checkpoint — C01/C02
 
+**Later completed source pass C03 — this supersedes the relevant 'next safe' entries below:** [C03 visually checked Paulus, Hephaistio I and Rhetorius completeness](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md). Rhetorius printed p140 is genuinely absent and not restored by the six-page supplement; the scanned Paulus/Olympiodorus volume stops with Paulus at printed p77; Hephaistio I's text appears complete through p64 appendix. The daily-rate comparison is now three-way (Paulus 1, Hephaistio 2½, Ptolemy Robbins 2⅓; Ptolemy two-MSS 2½ variant), and a neutral relative 28-day contrast passed five tests. The remaining 360/365/375 original-Greek question is STILL OPEN. C03 records exact continuation.
+
+
 23 October 2026 · Research branch checkpoint · OPEN scientific program
 
 ## Post-checkpoint correction: Latin Firmicus resolved
