@@ -1,0 +1,71 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_SOURCE_TO_TEST_C04_V1",
+  "date_utc": "2026-10-23",
+  "report": "HELLENISTIC_SOURCE_C04_GREEK_PAULUS_PAPYRUS_20261023.md",
+  "status": "UNSCORED_SOURCE_ONLY",
+  "human_validation_count": 0,
+  "all_model_promotions_blocked": true,
+  "sources": {
+    "paulus_day": "Paulus, Greenbaum, Introductory Matters ch32 printed pp66-69; editorial corrected day table",
+    "paulus_bysign": "Paulus ch5, explained and checked against Greenbaum & Jones 2017 papyrus P.Berl.9825",
+    "ancient_chart": "P.Berl.9825 319 CE as edited in Greenbaum & Jones 2017 ISAW Papers 12 pp13-14,31",
+    "hephaistio_greek": "Eulogikon Greek text Hephaistio II ch29 and ch36, transcript SHA256 2265293a6088920adbb487fe91ede7d275db21674da6b997fb98a9584a6c6d63",
+    "hephaistio_english": "Schmidt translation ch29,36, physical English printed pp83–84,106–107"
+  },
+  "candidates": [
+    {
+      "id": "PAULUS_CH5_BY_SIGN_MONOMOIRIA_C04",
+      "test_class": "historical_document_reconstruction",
+      "implementable": true,
+      "synthetic_tests": "6 of 7 ancient writing readings reproduced, Mercury discrepant",
+      "eligibility": "DOCUMENT_ARITHMETIC_PARITY_ONLY",
+      "blocked_for_human_use": [
+        "no prospective frozen behavioral prediction",
+        "historical computational method != astrology empirical validity",
+        "paper Jupiter 'own' ambiguous"
+      ],
+      "code": "paulus_bysign_papyrus_c04.py"
+    },
+    {
+      "id": "PAULUS_CH32_BY_TRIGON_DAY_C04",
+      "test_class": "historical_technique_variant",
+      "implementable": true,
+      "synthetic_tests": "120 daytime editorial table cells, disputed Cancer degree-8 example retained",
+      "eligibility": "EDITORIAL_DAY_CANON_SOURCE_ONLY",
+      "blocked_for_human_use": [
+        "no unambiguous original night table",
+        "editorial correction vs manuscript table",
+        "no behavioral-outcome operationalization"
+      ],
+      "code": "paulus_monomoiria_source_c04.py"
+    },
+    {
+      "id": "HEPHAISTIO_II_360_365_375_C04",
+      "test_class": "historical_calendar_textual_variants",
+      "implementable": false,
+      "synthetic_tests": "Greek main 360, Greek fine headings 365, English fine headings 375, Greek child sums 365",
+      "eligibility": "UNRESOLVED_GREEK_ENGLISH_TEXTUAL_MISMATCH",
+      "blocked_for_human_use": [
+        "critical-edition lineage not independently verified",
+        "five intercalary days undocumented in checked window",
+        "English printed Moon81 vs Greek71",
+        "Valens-addition source dependence"
+      ],
+      "register": "HEPHAISTIO_C04_GREEK_ENGLISH_NUMERIC_VARIANTS_V1.json"
+    },
+    {
+      "id": "PAULUS_CH34_DIRECTIONS_C04",
+      "test_class": "historical_technique_arithmetic",
+      "implementable": false,
+      "synthetic_tests": "original source worked 8×14=112 months (9 years 4 months)",
+      "eligibility": "SOURCE_MATH_ONLY",
+      "blocked_for_human_use": [
+        "climate-specific ascensional tables",
+        "sect and directional geometry",
+        "critical-language variant reconciliation",
+        "medical/death outcome exclusions"
+      ]
+    }
+  ],
+  "scientific_conclusion": "No human empirical validation. Ancient horoscope reconstruction tests scribal calculation parity and can contain historical arithmetic errors."
+}
