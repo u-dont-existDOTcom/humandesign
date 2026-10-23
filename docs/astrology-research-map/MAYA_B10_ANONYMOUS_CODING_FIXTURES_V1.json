@@ -1,0 +1,157 @@
+{
+  "schema": "MAYA_B10_ANONYMOUS_OCCUPATIONAL_CODING_FIXTURES_V1",
+  "purpose": "Synthetic fact-pattern fixtures from human-authored hypotheticals: no actual person, DOB, birthplace or survey response; allow machine checking of coder input schema but NOT automatic occupational classification",
+  "source_ref": "MAYA_B10_ESTABLISHED_CRAFT_MEASURES_AND_DECISION_MATRIX.json",
+  "not_empirical_evidence": true,
+  "cases": [
+    {
+      "id": "craft_paid_wood",
+      "hypothetical": "Carpenter making window frames",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7115",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": true
+    },
+    {
+      "id": "craft_self_weaving",
+      "hypothetical": "Self-employed traditional loom weaver",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7318",
+        "code_verification": "verified",
+        "role_scope": "self_employment"
+      },
+      "expected_output_status": "PROVISIONAL_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": true
+    },
+    {
+      "id": "craft_paid_cabinet",
+      "hypothetical": "Workshop cabinet-maker",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7522",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": true
+    },
+    {
+      "id": "craft_paid_sew",
+      "hypothetical": "Paid embroidery maker",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7533",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": true
+    },
+    {
+      "id": "craft_paid_potter",
+      "hypothetical": "Pottery producer",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7314",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": true
+    },
+    {
+      "id": "retail_noncraft",
+      "hypothetical": "Cashier in a woodworking store",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "5230",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NO_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": false
+    },
+    {
+      "id": "industrial_operator",
+      "hypothetical": "Machine operator supervising automated fabric production",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "8152",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NO_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": false
+    },
+    {
+      "id": "digital_artist",
+      "hypothetical": "Digital content artist",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "2651",
+        "code_verification": "verified",
+        "role_scope": "self_employment"
+      },
+      "expected_output_status": "PROVISIONAL_NO_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": false
+    },
+    {
+      "id": "food_prep",
+      "hypothetical": "Baker producing pastries (craft work in ISCO major group 7, deliberately excluded)",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7512",
+        "code_verification": "verified",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "PROVISIONAL_NO_NARROW_ISCO_MATCH",
+      "expected_narrow_core_role": false
+    },
+    {
+      "id": "unpaid_weaver",
+      "hypothetical": "Unpaid woven blanket making; occupation classification not authorized without review",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7318",
+        "code_verification": "verified",
+        "role_scope": "unpaid_regular_subsistence"
+      },
+      "expected_output_status": "ABSTAIN_PENDING_MANUAL_CODE_OR_UNPAID_SCOPE_REVIEW",
+      "expected_narrow_core_role": null
+    },
+    {
+      "id": "apprentice_carpentry",
+      "hypothetical": "Volunteer craft apprentice without a documented job",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7115",
+        "code_verification": "verified",
+        "role_scope": "unpaid_apprenticeship"
+      },
+      "expected_output_status": "ABSTAIN_PENDING_MANUAL_CODE_OR_UNPAID_SCOPE_REVIEW",
+      "expected_narrow_core_role": null
+    },
+    {
+      "id": "uncertain_code",
+      "hypothetical": "Insufficient work detail to tell skilled craft from machine operation",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "7318",
+        "code_verification": "uncertain",
+        "role_scope": "paid_work"
+      },
+      "expected_output_status": "ABSTAIN_PENDING_MANUAL_CODE_OR_UNPAID_SCOPE_REVIEW",
+      "expected_narrow_core_role": null
+    },
+    {
+      "id": "unrecorded_job",
+      "hypothetical": "No occupation record provided",
+      "supplied_manual_code_metadata": {
+        "isco_unit_code": "UNAVAILABLE",
+        "code_verification": "unreviewed",
+        "role_scope": "not_an_occupation"
+      },
+      "expected_output_status": "ABSTAIN_PENDING_MANUAL_CODE_OR_UNPAID_SCOPE_REVIEW",
+      "expected_narrow_core_role": null
+    }
+  ],
+  "counters": {
+    "actual_humans": 0,
+    "real_births": 0,
+    "craft_human_outcomes": 0,
+    "natal_validations": 0
+  }
+}

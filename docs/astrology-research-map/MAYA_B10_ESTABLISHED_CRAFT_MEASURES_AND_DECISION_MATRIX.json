@@ -1,0 +1,262 @@
+{
+  "schema": "MAYA_B10_CHUWEN_CRAFT_CONTENT_VALIDITY_MEASUREMENT_CROSSWALK_V1",
+  "authored_date": "2026-10-23",
+  "status": "SOURCE_ALIGNED_STANDARDIZED_MEASUREMENT_OPTIONS_UNFROZEN_NO_HUMAN_OUTCOMES",
+  "root_parent_outcome": "OPEN: prospectively pre-frozen nonstigma source natal predictor against untouched consented people, fair decoys and nonastrology baselines",
+  "historical_claim_source": {
+    "source_ref": "MAYA_B09_CHUEN_INDEPENDENT_LEXICAL_SOURCE_COMPARISON_V1.json",
+    "meaning": "Colonial Yucatec Chuen birth-day attribute: carpenter, weaver, skilled maker; not a claim about hours, all modern creative hobbies, or a modern Yucatec continuously practiced calendar",
+    "inherited_colonial_text_same_ancestor_not_independent_people": true,
+    "actual_human_effects_verified": 0
+  },
+  "independent_prior_work": [
+    {
+      "id": "ILO_ISCO_08",
+      "kind": "official occupational taxonomy",
+      "title": "International Standard Classification of Occupations (ISCO-08)",
+      "source_url": "https://isco.ilo.org/en/isco-08/",
+      "version": "ISCO-08",
+      "usable_for": "Coding paid/self-employed craft work by actual tasks; major group 7 and narrower selected unit codes. Not a natal validation measure on its own.",
+      "limits": "Classification of JOB TASKS, not interest, craft skill by itself, unpaid hobbies, medical fate, or results of a birth chart."
+    },
+    {
+      "id": "ILO_UNIT_TITLES_EURL",
+      "kind": "official legal publication of unit groups",
+      "title": "EU Recommendation 2009/824/EC Annex ISCO-08 structure",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009H0824",
+      "usable_for": "Narrowly defined unit codes for skilled crafts, wood and textiles",
+      "limits": "The narrower primary-code subset is an investigator's source-specific selection, not an official ILO Chuen taxonomy."
+    },
+    {
+      "id": "BLS_ATUS",
+      "kind": "national time-use activity coding reference",
+      "title": "American Time Use Survey Coding Lexicons (2024/2025 and 2003–2025)",
+      "source_url": "https://www.bls.gov/tus/lexicons.htm",
+      "reference_category": "120309 (2003–24 classification): arts and crafts as a hobby",
+      "usable_for": "Operational examples and optional diary coding of leisure craft",
+      "limits": "ATUS 120309 is leisure-only and cannot be substituted for paid woodworking/weaving work. Photography/social-media content examples also exceed the physical-makings source scope."
+    },
+    {
+      "id": "UN_TIME_USE",
+      "kind": "United Nations statistical methods",
+      "title": "UN Statistics Division Guidelines for Producing Statistics on Time Use",
+      "source_url": "https://unstats.un.org/UNSDWebsite/demographic-social/time-use/guidelines/II/",
+      "usable_for": "Short reference period/diary and weekdays coverage to reduce retrospective recall load",
+      "limits": "Diaries of one week can miss seasonal/irregular craft practice and are not a 12-month lifetime maker trait."
+    },
+    {
+      "id": "COSMIN_2018",
+      "kind": "peer reviewed consensus instrument-development framework",
+      "title": "COSMIN methodology for evaluating content validity of patient-reported outcome measures: a Delphi study",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5891557/",
+      "doi": "10.1007/s11136-018-1829-0",
+      "usable_for": "Three separate checks: construct relevance, coverage of content and respondent comprehension with cognitive interviews",
+      "limits": "Originally for PROMs; adapt process as a general instrument-design discipline without asserting this craft survey is COSMIN certified."
+    },
+    {
+      "id": "KAN_PUDNEY_2008",
+      "kind": "time use measurement study",
+      "title": "Measurement Error in Stylized and Diary Data on Time Use",
+      "source_url": "https://doi.org/10.1111/j.1467-9531.2008.00197.x",
+      "usable_for": "Stylized retrospectively reported hours can exhibit systematic and random errors versus diary estimates",
+      "limits": "Housework sample, not direct evidence of bias direction for this Maya craft question."
+    }
+  ],
+  "candidate_primary_options": [
+    {
+      "id": "C1_SKILLED_CRAFT_OCCUPATION",
+      "candidate_rank": 1,
+      "preoutcome_status": "PREFERRED_FOR_SOURCE_FIDELITY_REQUIRES_COGNITIVE_REVIEW",
+      "meaning": "Current or previous substantial task-based craft trade, paid, self-employed, subsistence or apprenticeship (record form separately; ISCO code only applies to occupational tasks).",
+      "observable": "Blind-coded occupation tasks / actual activities, not self-label of being creative or a high-status artisan",
+      "source_alignment": "High for carpenter/weaver occupational terms; imperfect for purely voluntary unpaid crafts and latent skill",
+      "measurement": "Private open description of main and supplementary work tasks, materials/tool skills and 12-month participation duration; blinded dual coding to narrow ISCO",
+      "possible_bias": "Local employment opportunity and socioeconomic status; people without formal jobs may have craft skill; career access is not natal causation",
+      "primary_statistic_selected": false
+    },
+    {
+      "id": "C2_PAID_PLUS_UNPAID_MAKING_FREQUENCY",
+      "candidate_rank": 2,
+      "preoutcome_status": "CANDIDATE_IF_C1_TOO_NARROW",
+      "meaning": "Regular making, weaving, carpentry or related physical crafts for compensation or voluntarily (including personal, household and cultural handicrafts).",
+      "observable": "Frequency in past 4 weeks (0, less than monthly cannot fit 4-week window; use no/1/2-3/4+ sessions and a distinct 12-month any-session history)",
+      "source_alignment": "Measures enactment, not historical occupation/skill; gives opportunity-adjusted secondary contrast",
+      "measurement": "Short past-month behavior frequency with examples; avoid mixing digital content creation or all repair chores",
+      "possible_bias": "Seasonal crafts, household need, economic access and language may change behavior; 4 weeks may undercapture.",
+      "primary_statistic_selected": false
+    },
+    {
+      "id": "C3_ANNUAL_CRAFT_HOURS",
+      "candidate_rank": 3,
+      "preoutcome_status": "B09_PRIMARY_DRAFT_SUPERSEDED_FOR_REVIEW_NOT_FROZEN",
+      "meaning": "Hours making tangible things paid + unpaid during last 12 months in 6 ordinal buckets",
+      "observable": "Self reported annual time allocation, source indirectly",
+      "source_alignment": "Broader than artisan occupational state; high recall burden and less literal",
+      "measurement": "Earlier B09 working instrument, keep for descriptive comparison only unless reviewer selects it prospectively",
+      "possible_bias": "Systematic and random error in stylized time estimates; paid-work hours may dominate resulting difference",
+      "primary_statistic_selected": false
+    },
+    {
+      "id": "C4_SEVEN_DAY_DIARY_CHECK",
+      "candidate_rank": 4,
+      "preoutcome_status": "MEASUREMENT_CROSSCHECK_ONLY",
+      "meaning": "Short logged interval of daily craft work/hobby activities",
+      "observable": "Minutes and type of tangible object-making activity on each of 7 days (weekday/weekend coverage); paid job and leisure separate",
+      "source_alignment": "Nearer to observed behavior, but 7 days can miss irregular artisan work",
+      "measurement": "BLS ATUS-inspired diary with task categories and free description; NOT formally ATUS-conformant, no paid work in leisure code 120309",
+      "possible_bias": "Diary reactivity, seasonal/workday bias and rare behaviors",
+      "primary_statistic_selected": false
+    }
+  ],
+  "source_narrow_ISCO_08_candidate_codes": [
+    {
+      "code": "7115",
+      "label": "Carpenters and Joiners",
+      "domain": "woodwork"
+    },
+    {
+      "code": "7314",
+      "label": "Potters and Related Workers",
+      "domain": "ceramics"
+    },
+    {
+      "code": "7317",
+      "label": "Handicraft Workers in Wood, Basketry and Related Materials",
+      "domain": "wood_and_basketry"
+    },
+    {
+      "code": "7318",
+      "label": "Handicraft Workers in Textile, Leather and Related Materials",
+      "domain": "weaving_and_leather"
+    },
+    {
+      "code": "7522",
+      "label": "Cabinet-makers and Related Workers",
+      "domain": "wood_furniture"
+    },
+    {
+      "code": "7531",
+      "label": "Tailors, Dressmakers, Furriers and Hatters",
+      "domain": "textile_production"
+    },
+    {
+      "code": "7533",
+      "label": "Sewing, Embroidery and Related Workers",
+      "domain": "textile_sewing"
+    }
+  ],
+  "exclusion_examples_explicitly_no_source_proxy": [
+    {
+      "case": "Full-time cashier in a craft shop",
+      "ISCO_note": "retail not craft production"
+    },
+    {
+      "case": "Industrial machine operator only supervising automatic mass loom",
+      "ISCO_note": "machine operator not equivalent to craft production"
+    },
+    {
+      "case": "Regular cooking and ordinary cleaning for own household",
+      "ISCO_note": "routine chores excluded; source historical artisans not generic domestic labor"
+    },
+    {
+      "case": "Author, programmer or YouTube editor producing intangible content",
+      "ISCO_note": "artistic production alone is not source's physical crafts"
+    }
+  ],
+  "codebook_proposed_questions": [
+    {
+      "id": "WORK_DESC",
+      "neutral_en": "Describe the main tasks you did in your main and any supplementary work during the past 12 months. What physical things did you make or repair, if any?",
+      "not_scored_until_blind_coding": true
+    },
+    {
+      "id": "CRAFT_DURATION",
+      "neutral_en": "For work involving skilled physical making or repair, was it your regular paid or self-employed activity, unpaid/apprenticeship activity, or neither?",
+      "answers": [
+        "regular_paid",
+        "supplementary_paid",
+        "unpaid_regular_or_apprentice",
+        "neither",
+        "unknown_or_declined"
+      ]
+    },
+    {
+      "id": "FOUR_WEEK_FREQ",
+      "neutral_en": "In the past 4 weeks, on how many occasions did you make or repair physical objects using craft skills, paid or unpaid?",
+      "answers": [
+        "0",
+        "1",
+        "2–3",
+        "4–7",
+        "8 or more",
+        "cannot estimate",
+        "prefer not"
+      ]
+    },
+    {
+      "id": "PAST_12_MONTH_OCCASIONS",
+      "neutral_en": "Over the past year, did you do any skilled object-making tasks that did not happen in the past 4 weeks?",
+      "answers": [
+        "yes",
+        "no",
+        "not sure",
+        "prefer not"
+      ]
+    },
+    {
+      "id": "OBJECT_EXAMPLE",
+      "neutral_en": "What did you make or repair most recently, if anything?",
+      "format": "optional free response with no private identifiers"
+    },
+    {
+      "id": "DIARY",
+      "neutral_en": "For each of seven consecutive days record approximate time and work/leisure type spent physically making or repairing objects.",
+      "not_the_main_outcome": true
+    }
+  ],
+  "measurement_review_protocol": {
+    "no_real_birth_data_during_cognitive_validation": true,
+    "review_sources": [
+      "COSMIN content relevance",
+      "comprehensiveness",
+      "comprehensibility",
+      "respondent recall burden"
+    ],
+    "invite_new_cognitive_testers_separate_from_untouched_validation_group": true,
+    "no_respondent_maya_dayname_revealed": true,
+    "example_review_count": "3–6 cognitive participants if available; design estimate only, NOT a regulatory minimum",
+    "document_misunderstood_examples_and_exclusions": true,
+    "require_one_primary_selected_before_any_new_birth_date_vs_craft_outcome_linkage": true,
+    "age_language_and_opportunity_chosen_before_scoring": true,
+    "no_claim_of_external_review_completed": true
+  },
+  "hard_limits": {
+    "source_score_validation_count": 0,
+    "external_cognitive_interviews_done": 0,
+    "genuine_new_participants_recruited": 0,
+    "human_confirmatory_predictions_scored": 0,
+    "frozen_primary_outcome_choice": false,
+    "calendar_date_policy_frozen": false,
+    "source_specific_ethnographic_birth_clock_established": false,
+    "no_ISCO_occupation_codes_automatically_from_pseudonymous_free_text": true,
+    "source_PDF_books_included_in_public_repo": false
+  },
+  "code_source_verification": {
+    "verified_utc_date": "2026-10-23",
+    "source_title": "Centre commun de la sécurité sociale (Luxembourg): ISCO codes",
+    "url": "https://ccss.public.lu/en/codes-citp.html",
+    "https_http_status": 200,
+    "verified_exact_code_labels": [
+      "7115",
+      "7314",
+      "7317",
+      "7318",
+      "7522",
+      "7531",
+      "7533"
+    ],
+    "verified_code_count": 7,
+    "not_validation_of_own_investigator_selected_subset": true,
+    "method": "read code and title pair in official online listing; no population labels or natal outcomes accessed"
+  }
+}
