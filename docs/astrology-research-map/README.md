@@ -1,5 +1,8 @@
 # Living cross-tradition astrology research map
 
+**23 October C04 source reading:** [Greek Hephaistio II, Paulus chapters 32–37 and original 319 CE papyrus reconstruction](HELLENISTIC_SOURCE_C04_GREEK_PAULUS_PAPYRUS_20261023.md); [source-split Greek 360/365 versus English 375 numeric table](HEPHAISTIO_C04_GREEK_ENGLISH_NUMERIC_VARIANTS_V1.json); [separate source-to-test candidate map](HELLENISTIC_C04_SOURCE_TO_TEST_CANDIDATES_V1.json). [Paulus by-trigon](paulus_monomoiria_source_c04.py) and [by-sign papyrus checks](paulus_bysign_papyrus_c04.py) are deliberately different computations; 6/7 historical scribal entries reproduced with explicit Mercury failure, **no prospective human predictive validation**. Fresh reproducible test suite: **22/22 passed**.
+
+
 **23 October continuation checkpoint C03:** [exact source pages, corrected acquisition status, 9/9 verification and next reading sequence](HELLENISTIC_CONTINUATION_C03_20261023.md). The Hellenistic corpus remains source-only and research-incomplete; old C01/C02 handoffs are now subordinate to C03 corrections.
 
 
