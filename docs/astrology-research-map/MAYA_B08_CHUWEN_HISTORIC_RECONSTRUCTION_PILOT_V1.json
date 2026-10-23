@@ -1,0 +1,119 @@
+{
+  "schema": "MAYA_CHUWEN_HISTORICAL_RECONSTRUCTION_BLIND_PILOT_B08_V1",
+  "status": "DESIGN_CANDIDATE_NOT_FROZEN_NOT_RECRUITING_NOT_SCORED",
+  "created_utc_date": "2026-10-23",
+  "owner_goal": "OPEN - true source-grounded chart predictions measured on new untouched consenting humans, not calendar-engine tests",
+  "distinction": {
+    "primary_claim": "A single predeclared 584283-Gregorian-civil-day reconstructed Yucatec Chuwen predicate may be statistically associated with independently reported tangible making/craft activities.",
+    "DOES_NOT_CLAIM": "This does not assert continuous modern Yucatec traditional assignment, valid natal birth-hour rollover, a living-source consensus, or measured personality validity.",
+    "source_tradition": "Colonial Yucatec Kaua/Chan Cah/Perez birth-day prognostication as edited by Bolles",
+    "test_type": "modern empirical reconstruction of historical claim, not ethnographic identification with a living tradition",
+    "word_translation_condition": "Chuen carpenter/weaver/material maker visible in multiple colonial text witnesses, but independent Bricker-Miram word-for-word expert translation not yet obtained. Proxy validity still needs blinded expert review."
+  },
+  "prediction": {
+    "target_canonical_yucatec_day": "CHUWEN",
+    "date_reference": "proleptic Gregorian date-only; GMT 584283 for one primary model",
+    "treatment_contrast": "CHUWEN vs each of the other 19 day names pooled",
+    "one_primary_contrast": true,
+    "sign_coefficient_1_to_13_secondary_only": true,
+    "prediction_direction": "Chuwen respondents show higher crafting/physical-making activity than controls",
+    "one_measurable_target": "Ordinal hours of paid AND unpaid voluntary or occupational tangible making in preceding 12 months",
+    "no_claim_others_cannot_do_crafts": true,
+    "no_graded_trait_probability_claimed": true
+  },
+  "questionnaire_candidate": {
+    "primary_question_id": "MAYA-B08-CRAFT-ALL12",
+    "wordings": {
+      "english": "In the past 12 months, approximately how much time have you spent making or repairing tangible objects with your hands (for example, weaving, sewing, woodworking, carving, pottery, constructing household items or similar activities)? Include both paid work and unpaid activity. Do not count ordinary cleaning, cooking or washing dishes.",
+      "french": "Au cours des 12 derniers mois, combien de temps environ avez-vous passé à fabriquer ou réparer des objets concrets de vos mains (par exemple, tissage, couture, travail du bois, sculpture, poterie, fabrication d’objets domestiques ou activités similaires) ? Incluez les activités rémunérées et non rémunérées. Excluez le nettoyage, la cuisine et la vaisselle ordinaires.",
+      "yucatec": "NOT_TRANSLATED_OR_BACK_TRANSLATED; must be prepared by competent translator before collecting Yucatec-language respondents"
+    },
+    "response_bins": [
+      "0 hours",
+      "1–5 hours",
+      "6–20 hours",
+      "21–50 hours",
+      "51–100 hours",
+      "More than 100 hours",
+      "Cannot reliably estimate",
+      "Prefer not to answer"
+    ],
+    "ordinal_scores": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "missing_answers": [
+      "Cannot reliably estimate",
+      "Prefer not to answer"
+    ],
+    "score_status": "NOT_FROZEN",
+    "paid_unpaid_split": "Collect non-scored paid-activity and unpaid-activity rough fractions before responses; avoid double-counting the same work",
+    "opportunity_controls": [
+      "self-rated materials and time opportunity",
+      "occupation/manual trade",
+      "education",
+      "age band",
+      "home region",
+      "reported work hours",
+      "language proficiency"
+    ],
+    "constructs_not_scored_as_independent": [
+      "craft self-image",
+      "liked making",
+      "skill",
+      "emotional creativity",
+      "generic helpfulness"
+    ],
+    "independent_content_validity_check_pending": true
+  },
+  "recruitment_and_privacy": {
+    "eligible_people": "New, consenting adult participants without prior exposure to prediction or use in model-design data; verify independent DOB source and local birth-time where available.",
+    "candidate_sample_method": "Two-phase concealed birth-date screen followed by uniform invitations for positives and matched controls; screening outcome must not be disclosed in invitations",
+    "no_birth_data_or_survey_in_public_git": true,
+    "local_day_time_boundary": "Not established; declare civic date-only experiment as such, record time uncertainty for sensitivity and do not pretend noon is proof of traditional rollover",
+    "strict_design_blind": "Source hypothesis, exact individual sign and primary expected answer held away from participants and response collector until raw answers and scoring predictions hashed/frozen",
+    "respondents_can_opt_out_anytime": true,
+    "human_data_never_imported_from_owner_known_profiles_for_confirmatory_use": true,
+    "participant_own_previous_interest_in_maya_calendar_recorded": true
+  },
+  "statistical_plan_unfrozen": {
+    "candidate_primary_statistic": "Mean ordinal-score difference (Chuwen minus others) in 0..5 ordered bins; positive direction preregistered",
+    "primary_inference": "One-sided permutation of fixed Chuwen labels relative to frozen scored responses under exchangeability and predeclared matching/stratification; no after-outcome adjustment",
+    "familywise_alpha_only_if_finalized": "0.05 for one primary contrast; no flexible family rescue",
+    "nulls": [
+      "date-label permutation within prespecified eligible cohort",
+      "same instrument's overall baseline/seasonality",
+      "nonastrology occupation and access variables"
+    ],
+    "controls_and_decoys": [
+      "GMT584285 sensitivity separately labeled",
+      "one-day date shift sensitivity",
+      "other 19 signs as fixed control group",
+      "shifted-day calendar label placebo set declared before outcomes"
+    ],
+    "confounds": "Skill opportunities/access and paid craft work may be downstream of source occupations; adjusted analysis exploratory rather than opportunistically replacing primary result",
+    "missing_data_rule": "Two nonresponses excluded from scored primary, missing count reported; do not score missing as zero; minimum analyzed per-class must be declared before trial",
+    "stopping_rule": "No significance-based stopping or looking at responses before prediction/model freeze",
+    "low_n_feasibility_note": "At 60 random participants expected 3 Chuwen births on average, P(0)≈0.046; 60 is process pilot, not meaningful absence of moderate effect.",
+    "rough_confirmatory_80power_d0p3_unbalanced_unscreened_n": 1836,
+    "full_preregistration_frozen": false,
+    "human_prediction_release": false
+  },
+  "gates_not_to_broaden": {
+    "source_construct_review": "Do not claim a true eighteenth-century carpenter/weaver is equivalent to every 2026 leisure activity without independent review.",
+    "historical_cultural_era": "Living uninterrupted Yucatec source validation not required to test a declared *historical arithmetic reconstruction*, but required to claim that results validate living community practice.",
+    "freeze_and_consent": "Owner must have a real participant recruitment/consent flow; none connected here. Preparatory protocol can be audited without collecting personal data.",
+    "scoring_engine": "Do not call this the HD V4.3 model; this is separate source-specific Yucatec method."
+  },
+  "outcomes": {
+    "participants_recruited": 0,
+    "actual_predictions_frozen": 0,
+    "untouched_humans_scored": 0,
+    "effects_observed": 0,
+    "empirical_successes": 0
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "HUMANDESIGN_MAYA_YUCATEC_MODERN_DAY_COUNT_AND_CHUWEN_B08_V1",
+  "date": "2026-10-23",
+  "status": "SOURCE_CONTEXT_PLUS_FIXED_PREOUTCOME_CALENDAR_SENSITIVITY_ONLY",
+  "root_goal": "OPEN: obtain and preregister actual natal predictions, then score concealed untouched consenting humans against controls",
+  "sources": [
+    {
+      "id": "LEGUE_POOLBALAM_2012",
+      "kind": "peer_reviewed_situated_fieldwork_and_secondary_calendar_claim",
+      "title": "No Metaphorical Timeline in Gesture and Cognition Among Yucatec Mayas",
+      "authors": [
+        "Olivier Le Guen",
+        "Lorena Ildefonsa Pool Balam"
+      ],
+      "journal": "Frontiers in Psychology",
+      "published": "2012-08-10",
+      "doi": "10.3389/fpsyg.2012.00271",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2012.00271/full",
+      "source_section": "Cultural Background and Forms of Time-Keeping Among Yucatec Mayas; Ancient and modern mayan calendars; article paragraphs beginning 'The current cycle began...'",
+      "field_communities": [
+        "Kopchen",
+        "Chemax"
+      ],
+      "fieldwork_language": "Yucatec Maya",
+      "exact_short_claim": "not among the modern Yucatec Mayas",
+      "source_restriction": "The discontinuity sentence cites Villa Rojas (1945) and is background framing in a cognition/gesture study, not a complete 2026 Yucatan community calendar census; field sites are two named communities. Local continuous use cannot be asserted or universally denied.",
+      "source_predicate": "The old 260-day calendar is historically discussed; these contemporary communities' timekeeping uses Gregorian and agricultural/religious cycles, not demonstrated uninterrupted natal named-day count.",
+      "status": "RELEVANT_DISCONTINUITY_CONTRAINDICATION_TO_LIVING_SAME_RULE_CLAIM"
+    },
+    {
+      "id": "MAYA_CALLAWAY_2012",
+      "kind": "scholar_expository_historical_inscription_hypothesis_not_modern_observation",
+      "title": "What Time of Day Does the Ancient Maya Calendar Commence?",
+      "author": "Carl D. Callaway",
+      "published": "2012-12-16",
+      "url": "https://ajchich1.blogspot.com/2012/12/what-time-of-day-does-ancient-maya.html",
+      "source_section": "hypothesis comparison; paragraphs on Mathews (2001), Stuart (2004), MacLeod/Schele (2005)",
+      "provenance": "Callaway cites incompatible historical glyph/inscription interpretations: a sunset sacred day versus a sunrise sacred day, with an earlier proposal for Haab different rollover. The cited scholarship is not a current local Yucatec natal date policy.",
+      "consensus_not_asserted": true,
+      "commenter_2026_noon_to_noon_claim_rejected_as_unverified": true
+    },
+    {
+      "id": "SMITHSONIAN_CURRENT",
+      "kind": "museum_explanation_non_dated_personality",
+      "title": "Living Maya Time — Calendar System",
+      "institution": "Smithsonian National Museum of the American Indian",
+      "url": "https://maya.nmai.si.edu/calendar/calendar-system",
+      "source_scope": "Gives Yucatec day names and 260-day mathematical sequence; reports regional Maya continuing uses; does not establish exact clock timestamp for a modern Yucatec birth"
+    },
+    {
+      "id": "PRINCETON_KAUA",
+      "kind": "primary_manuscript_repository_locator_not_fully_read",
+      "title": "Book of the Chilam Balam of Kaua: manuscript [ca. 1824]",
+      "repository": "Princeton University Library",
+      "url": "https://dpul.princeton.edu/mesoamerican/catalog/zs25x9219",
+      "source_scope": "Digitized primary manuscript held by Princeton; anti-bot verification interrupted anonymous retrieval in this session. Do not claim its page 11-12 photographic transcription was independently read.",
+      "higher_priority_than_new_secondary_web_summary": true
+    },
+    {
+      "id": "BOLLES_B07",
+      "kind": "editorial_facing_Yucatec_english_multiwitness",
+      "file": "MAYA_B07_YUCATEC_NATAL_SOURCE_PROVENANCE_V1.json",
+      "source_scope": "Colonial Yucatec natal descriptions, Chuen craft words; textual existence verified, behavioral efficacy unknown."
+    }
+  ],
+  "separate_testable_claims": [
+    {
+      "id": "MAYA-YUCATEC-LIVING-UNBROKEN",
+      "meaning": "Modern Yucatec child’s natal named day follows a culturally continuous, same-epoch 260-day count with locally authenticated hour rollover",
+      "status": "NOT_ESTABLISHED",
+      "natal_engine_eligible": false
+    },
+    {
+      "id": "MAYA-YUCATEC-HISTORICAL-RECONSTRUCTION",
+      "meaning": "A specifically declared *modern researcher-implemented* GMT584283 proleptic Gregorian civil-date Chuwen predicate is prospectively associated with independently measured making/craft behavior",
+      "status": "UNFROZEN_HYPOTHESIS_TESTABLE_WITH_PROSPECTIVE_DATA",
+      "natal_engine_eligible": false,
+      "can_test_if_declared_before_answers": true
+    },
+    {
+      "id": "MAYA-YUCATEC-ALTERNATIVE-MAPPING",
+      "meaning": "GMT584285, previous/next local-day boundary variants provide sensitivity, do not select best observed after outcomes",
+      "status": "MUST_REPORT_NOT_POSTHOC_PRIMARY"
+    }
+  ],
+  "arithmetic": {
+    "main_reference": "GMT584283_GREGORIAN_CIVIL_DAY_ONLY",
+    "comparison_policies": [
+      "GMT584283_DATE_ONLY",
+      "GMT584283_NEXT_SACRED_DAY",
+      "GMT584285_DATE_ONLY",
+      "GMT584285_NEXT_SACRED_DAY"
+    ],
+    "source_justification": "Existing fixed lowland correlation and one-day hypothetical Sacred rollover; these are not 4 observed Yucatec daykeeper practices.",
+    "per_20_date_cycle": {
+      "days_chuwen_under_at_least_one_policy": 4,
+      "days_ambiguous_for_primary_chuwen_vs_not": 4,
+      "days_chuwen_under_all_four": 0,
+      "days_none_of_four_chuwen": 16
+    },
+    "conceptual_implication": "As long as all four source/date policies are equally possible, not even one civil date has a CHUWEN-positive classification that is invariant across all four; do not require this invariance to *test a declared reconstruction*.",
+    "baseline_selector_not_permitted": "After-response choice of offset/correlation is model fitting and invalidates untouched validation.",
+    "may_select_calendar_variant_to_rescue_failed_primary_after_outcomes": false
+  },
+  "method_protocol_status": {
+    "source_exists": true,
+    "live_yucatec_calendar_clock_still_unverified": true,
+    "literary_translation_not_independent_human_validation": true,
+    "paid_and_unpaid_craft_measure_alignment_not_independently_reviewed": true,
+    "participant_selection_or_sampling_not_done": true,
+    "exact_birth_date_policy_not_frozen": true,
+    "pilot_participants": 0,
+    "actual_human_predictions": 0,
+    "empirical_validated_effects": 0,
+    "runtime_rule_promotions": 0,
+    "outcome_condition": "One prospective declared model can be tested if ethical source-construct and analysis freeze is complete even if historical local continuity remains unknown; disclosure must be honest that it is a reconstruction."
+  },
+  "outside_scope": [
+    "Do not make a negative statement about all living Yucatec communities based on two field sites or Villa Rojas 1945.",
+    "Do not assume Quiche Guatemala sacred-sunset rule or Classic inscriptions determine modern Yucatec birth-day rollover.",
+    "Do not treat chart arithmetic or place-name culture labels as independent human efficacy.",
+    "Do not publicly post private birth data or individual personality diagnoses."
+  ]
+}
