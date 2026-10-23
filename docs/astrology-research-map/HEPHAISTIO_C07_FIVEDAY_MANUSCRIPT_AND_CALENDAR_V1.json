@@ -1,0 +1,113 @@
+{
+  "schema": "HUMANDESIGN_HEPHAISTIO_C07_FIVEDAY_MANUSCRIPT_V1",
+  "checked_date": "2026-10-23",
+  "status": "SOURCE_ONLY_UNSCORED",
+  "source": {
+    "editor": "David Pingree",
+    "edition": "Hephaestionis Thebani Apotelesmaticorum Libri Tres Vol I, 1973",
+    "sha256": "f2f803c457b7ba62df23f5c51d6f49ffff3644e17723c6673f5795298514ecae",
+    "rights": "Research analysis of limited pages. Critical-edition book not uploaded.",
+    "primary_manuscript_P": "Parisinus graecus 2417 (13th century) shortened transmission, not authorial autograph",
+    "corrector_P2": "14th-century corrector of manuscript P",
+    "alternate_Ep4": "epitome IV witness, related historical transmission"
+  },
+  "chapter29": {
+    "critical_printed_page": 201,
+    "pdf_page": 231,
+    "source_phrase": "τοῖς ιβ μησὶν ἐφʼ ἑκάστου ἐνιαυτοῦ συλλαμβάνουσι καὶ τὴν πενθήμερον",
+    "rendered_interpretation": "The edited Greek text expressly adds a five-day period to twelve months of each year.",
+    "P2_apparatus_note": "A 14th-century marginal corrector reiterates including the five days in the division (p201 apparatus line 31).",
+    "not_independent_ancient_authorial_P2": true,
+    "monthly_comparison": [
+      {
+        "planet": "Saturn",
+        "months": 30,
+        "printed_sum": 913,
+        "expected_360": 900,
+        "delta_360": 13,
+        "expected_365_twelfths": 10950,
+        "delta_365_twelfths": 6
+      },
+      {
+        "planet": "Jupiter",
+        "months": 12,
+        "printed_sum": 365,
+        "expected_360": 360,
+        "delta_360": 5,
+        "expected_365_twelfths": 4380,
+        "delta_365_twelfths": 0
+      },
+      {
+        "planet": "Mars",
+        "months": 15,
+        "printed_sum": 450,
+        "expected_360": 450,
+        "delta_360": 0,
+        "expected_365_twelfths": 5475,
+        "delta_365_twelfths": -75
+      },
+      {
+        "planet": "Sun",
+        "months": 19,
+        "printed_sum": 569,
+        "expected_360": 570,
+        "delta_360": -1,
+        "expected_365_twelfths": 6935,
+        "delta_365_twelfths": -107
+      },
+      {
+        "planet": "Venus",
+        "months": 8,
+        "printed_sum": 243,
+        "expected_360": 240,
+        "delta_360": 3,
+        "expected_365_twelfths": 2920,
+        "delta_365_twelfths": -4
+      },
+      {
+        "planet": "Mercury",
+        "months": 20,
+        "printed_sum": 606,
+        "expected_360": 600,
+        "delta_360": 6,
+        "expected_365_twelfths": 7300,
+        "delta_365_twelfths": -28
+      },
+      {
+        "planet": "Moon",
+        "months": 25,
+        "printed_sum": 764,
+        "expected_360": 750,
+        "delta_360": 14,
+        "expected_365_twelfths": 9125,
+        "delta_365_twelfths": 43
+      }
+    ],
+    "checks": {
+      "printed": 3910,
+      "expected360": 3870,
+      "expected365twelfths": 47085,
+      "absoluteDelta360": 42,
+      "absoluteDelta365twelfths": 263
+    },
+    "Saturn_Mercury_edited": 150,
+    "Saturn_Mercury_later_Valens": 140,
+    "status": "365-day-year is textually supported as a possible framework for II29; printed rows still deviate and no one uniform corrected algorithm has been established"
+  },
+  "chapter36": {
+    "critical_printed_page": 225,
+    "pdf_page": 255,
+    "P_apparatus_note": "post κεῖνται add. ἡμέρας τξε δʼ P",
+    "note_interpretation": "Manuscript P is reported to append a 365-day figure; exact syntax not reconstructed.",
+    "Greek_primary": 360,
+    "Greek_fine_headers": 365,
+    "Greek_fine_child_sums": 365,
+    "Schmidt_fine_headers": 375,
+    "editorial_expected_Mercury": 52,
+    "Greek_printed_fine_Mercury": 57,
+    "apparatus_note": "νβ desid.",
+    "open": "Do not assume II29's five-day addition fully explains II36's 52/57 emendation or all subparts."
+  },
+  "human_validation": "NONE",
+  "model_promoted": false
+}
