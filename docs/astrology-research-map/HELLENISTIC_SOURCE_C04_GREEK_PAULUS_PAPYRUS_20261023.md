@@ -1,5 +1,8 @@
 # Hellenistic source reading C04 — Greek Hephaistio, Paulus' monomoiria, and a 319 CE papyrus
 
+**Later C06 original edition inspection:** [C06 report](HELLENISTIC_SOURCE_C06_PINGREE_APPARATUS_AND_ZODIACAL_PLACES_20261023.md) now directly inspects David Pingree 1973 critical Greek Hephaistio II.29 (p200–201) and II.36 (p225–226), with apparatus. The original Greek p225 notes `νβ desid.` on contested 52 vs printed 57 Mercury subsidiary period; 150 vs later Valens 140 remains. This supersedes C04's former lack of access to named critical Greek edition, *but not* its intact arithmetic witness or unresolved historical-calendar question.
+
+
 **LATER C05 CORRECTION (23 October):** Greek Paulus ch32 **does** explicitly instruct nocturnal reversal of trigon rulers and exemplifies fire Jupiter → Sun; Greek ch2 specifies four day/night ruler pairs. [C05 source-first findings](HELLENISTIC_SOURCE_C05_NIGHT_AND_SECOND_PAPYRUS_20261023.md) preserve a *derived*, not manuscript-collated, full nocturnal sequence and a **34/120** conflict between Greek narrative reconstruction and the Greenbaum corrected daytime table. The 319 CE P.Berl. 9825 historical parity remains 6/7, while an **independent second papyrus** P.Oxy. 4277 produces 1/3 by-sign matches (two negatives retained). Do not interpret either as human predictive validation.
 
 
