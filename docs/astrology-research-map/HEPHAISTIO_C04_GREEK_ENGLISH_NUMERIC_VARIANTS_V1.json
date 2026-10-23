@@ -1,0 +1,128 @@
+{
+  "schema": "HUMANDESIGN_HEPHAISTIO_C04_GREEK_ENGLISH_NUMERIC_VARIANTS_V1",
+  "status": "SOURCE_ONLY_UNSCORED",
+  "checked_date": "2026-10-23",
+  "source_greek": {
+    "name": "Hephaistio, Apotelesmatika Book II online Greek transcription (Eulogikon 'Effects')",
+    "url": "https://eulogikon.org/works/hephaestion-thebes-effects-tco-ab",
+    "direct_markdown_url": "https://eulogikon.org/works/hephaestion-thebes-effects-tco-ab.md",
+    "markdown_sha256": "2265293a6088920adbb487fe91ede7d275db21674da6b997fb98a9584a6c6d63",
+    "content_hash_declared_by_host": "3888aa04d0d22515a6f1e01f8422aa282af0aeca1269295f07f3d34de6350311",
+    "chapter29_greek_page": 201,
+    "chapter36_greek_page": 225,
+    "editorial_origin": "UNVERIFIED_EXACT_EDITION_PROVENANCE: likely derived from a modern critical Greek edition; neither a separate manuscript nor independent textual tradition has been demonstrated",
+    "direct_text_verified": true
+  },
+  "source_english": {
+    "name": "Hephaistio II, translated and annotated by Robert Schmidt, 1998",
+    "file_sha256": "e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073",
+    "printed_pages": [
+      83,
+      84,
+      106
+    ],
+    "pdf_facing_pages": [
+      47,
+      48,
+      59
+    ],
+    "visually_inspected_in_prior_C02": true
+  },
+  "section29": {
+    "period_months_total": 129,
+    "saturn_to_mercury_english": 150,
+    "saturn_to_mercury_greek_ρν": 150,
+    "later_valens_appendix_saturn_to_mercury": 140,
+    "english_subperiod_row_totals": [
+      913,
+      365,
+      450,
+      569,
+      243,
+      606,
+      764
+    ],
+    "greek_transcription_subperiod_rows_numerals_match_english": true,
+    "greek_transcription_not_independent_manuscript": true
+  },
+  "section36": {
+    "year_primary_periods": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 52,
+      "Moon": 71
+    },
+    "year_primary_periods_sum": 360,
+    "greek_subperiod_headers": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "greek_subperiod_headers_sum": 365,
+    "english_subperiod_headers": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 81
+    },
+    "english_subperiod_headers_sum": 375,
+    "fine_subperiod_item_sums": {
+      "Saturn": 86,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 21,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "fine_subperiod_item_sums_total": 365,
+    "source_critical_readings": [
+      {
+        "key": "moon_subperiod_header",
+        "greek_numeral": "οα",
+        "greek_value": 71,
+        "english_printed_value": 81,
+        "status": "GREEK_ENGLISH_PRINTED_NUMERIC_DISAGREEMENT",
+        "comment": "Greek online reading agrees with Moon fine allocations total; the English printed heading differs by +10."
+      },
+      {
+        "key": "mercury_primary_to_fine_header",
+        "greek_primary_numeral": "νβ",
+        "greek_fine_numeral": "νζ",
+        "values": [
+          52,
+          57
+        ],
+        "status": "GREEK_INTERNAL_DISAGREEMENT_5_DAYS",
+        "comment": "The Greek main 360-day table and finer section differ by five days for Mercury. May relate to intercalation but intentionality remains unproven."
+      },
+      {
+        "key": "saturn_fine_allocations",
+        "intro": 85,
+        "items_sum": 86,
+        "status": "GREEK_INTERNAL_DIFFERENCE_PLUS_ONE"
+      },
+      {
+        "key": "venus_fine_allocations",
+        "intro": 22,
+        "items_sum": 21,
+        "status": "GREEK_INTERNAL_DIFFERENCE_MINUS_ONE"
+      }
+    ],
+    "candidate_explanation": "Five-day intercalation is a plausible but unproven historical interpretation; numeric coincidence is not documentary proof.",
+    "source_independence": "Greek transcription is not a separately collated manuscript; do not count Greek agreement with Schmidt as independent corroboration of original numeric readings."
+  },
+  "source_competing": "Valens Riley 'Fifth-Century Addition' pp170-172, alternative timing construction; not securely original Valens",
+  "model_promotion": false,
+  "human_validation_runs": 0
+}
