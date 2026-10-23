@@ -1,5 +1,8 @@
 # Hellenistic source-reading checkpoint C04 — 23 October 2026
 
+**SUPERCEDING C05 SOURCE UPDATE (23 October):** [Paulus nocturnal C05 source report](HELLENISTIC_SOURCE_C05_NIGHT_AND_SECOND_PAPYRUS_20261023.md) checks Greek Paulus ch2/ch32 and reconstructs nighttime seven-star cycle with an explicit source/edited table discrepancy of **34/120 day cells**. A second ancient horoscope (P.Oxy. 4277), reported by Tolsa 2017, matches the by-sign arithmetic in **1/3** entries and retains two negatives. [C05 checkpoint](HELLENISTIC_CONTINUATION_C05_20261023.md) replaces C04's previous claim that no nighttime source instructions could be located. An authenticated separate nighttime manuscript *table* remains absent, and the Greek transcription's exact critical-edition lineage remains unverified. Source-only test suite 31/31, zero human validations.
+
+
 Status: **SOURCE_RESEARCH_ACTIVE / SCIENTIFIC_PROGRAM_OPEN**. Research branch only; **no human prediction has been frozen, evaluated, promoted or validated**. Owner instruction: continue reading astrology primary books already available; preserve everything in `humandesign`; do not use Work mode to extract Amazon *Primary Directions*.
 
 ## Authoritative recovery path
