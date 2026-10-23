@@ -1,0 +1,116 @@
+{
+  "schema": "HUMANDESIGN_C17_P_OXY_4277_OXFORD_PRIMARY_IMAGE_REGISTRY_V1",
+  "date_researched": "2026-10-23",
+  "research_scope": "OFFICIAL_PRIMARY_DOCUMENT_IMAGE_RETRIEVAL_AND_PROVENANCE; NO_HUMAN_ASTROLOGY_VALIDATION",
+  "record": {
+    "institution": "Oxford Papyrology, University of Oxford Sustainable Digital Scholarship",
+    "title": "P.Oxy. LXI 4277. Deluxe Horoscope",
+    "official_collection": "The Oxyrhynchus Papyri, Egypt Exploration Society collection",
+    "official_record_id": 21178150,
+    "official_record_link": "https://portal.sds.ox.ac.uk/articles/online_resource/P_Oxy_LXI_4277_Deluxe_Horoscope/21178150",
+    "official_machine_record": "https://api.figshare.com/v2/articles/21178150",
+    "doi": "10.25446/oxford.21178150.v1",
+    "published_digital_record_utc": "2022-09-21T14:36:46Z",
+    "collection_group_id": 35280,
+    "reproduction_rights": "In Copyright, Egypt Exploration Society approval required for reproduction",
+    "evidence_of_identity": [
+      "Oxford API HTTP 200 original item metadata, not just an article using the name",
+      "Publisher title unambiguously P.Oxy. LXI 4277. Deluxe Horoscope",
+      "Two API declared original object images fetched and matching Oxford-supplied MD5 checksums"
+    ],
+    "original_source_age": "late 2nd to early 3rd century CE by handwriting per Jones/Tolsa scholarly dating; this is not the 2022 digital publication date",
+    "separate_from": "Other similar deluxe horoscopes including P.Oxy. 4276/4278 and 4477"
+  },
+  "official_images": [
+    {
+      "id": 37552438,
+      "api_filename": "POxy.v0061.n4277.a.01.hires.jpg",
+      "download_url": "https://ndownloader.figshare.com/files/37552438",
+      "publisher_md5": "b62daf036de9d026b8e986f7c74c5bb3",
+      "downloaded_bytes": 9361845,
+      "sha256": "aefec1af94416903fc25863bc7f8f74d9278fd9d4b3cc8f18056b01f2b06a084",
+      "image_dimensions": [
+        3660,
+        2632
+      ],
+      "visual_inspection": "PRIMARY ORIGINAL MAIN PAPYRUS PHOTO: personally visually inspected full overview and high-resolution separately cropped letter bands in this research session",
+      "complete_image_in_git": false
+    },
+    {
+      "id": 37552441,
+      "api_filename": "POxy.v0061.n4277.a.02.hires.jpg",
+      "download_url": "https://ndownloader.figshare.com/files/37552441",
+      "publisher_md5": "fbfc8184bec0bc05f8f61b5d3c4ff506",
+      "downloaded_bytes": 192831,
+      "sha256": "60e243177a325b26c53be96f17db439a2e176729ac64dd4f884a2708a69c9abe",
+      "image_dimensions": [
+        567,
+        343
+      ],
+      "visual_inspection": "SECOND ORIGINAL PHOTO visibly small separate fragment with measuring scale; did not assume recto/verso or physical alignment not given by metadata",
+      "complete_image_in_git": false
+    }
+  ],
+  "comparison_with_older_C05": {
+    "historical_module": "oxy4277_monomoiria_audit_c05.py",
+    "original_ref": "Tolsa (2017), ZPE 203 pp 192–198, from Jones (1999) papyrus edition",
+    "C05_status_at_that_time": "SCHOLARLY_SECONDARY_TEXT_READ; MANUSCRIPT_IMAGE_NOT_RECHECKED",
+    "C17_status": "OXFORD_OFFICIAL_FULL_IMAGE_LOCATED_AND_VISUALLY_INSPECTED; NUMERICAL_GLYPHS_NOT_INDEPENDENTLY_RETRANSCRIBED",
+    "papyrus_labels_as_reported_not_newly_certified": [
+      {
+        "object": "Mercury",
+        "longitude": "Capricorn 6°22′",
+        "reported_source_monomoiria": "Venus",
+        "preexisting_Paulus_bysign_proper_ordinal": "Moon",
+        "preexisting_match": false,
+        "scholarly_source": "Tolsa 2017 p 196–197, Mercury"
+      },
+      {
+        "object": "Midheaven",
+        "longitude": "Taurus 27°08′",
+        "reported_source_monomoiria": "Mercury",
+        "preexisting_Paulus_bysign_proper_ordinal": "Sun",
+        "preexisting_match": false,
+        "scholarly_source": "Tolsa 2017 p 196–197, ii.1"
+      },
+      {
+        "object": "Lower midheaven",
+        "longitude": "Scorpio 27°08′",
+        "reported_source_monomoiria": "Jupiter",
+        "preexisting_Paulus_bysign_proper_ordinal": "Jupiter",
+        "preexisting_match": true,
+        "scholarly_source": "Tolsa 2017 p 196–197, ii.9"
+      }
+    ],
+    "old_comparative_math_matches": 1,
+    "old_comparative_math_non_matches": 2,
+    "old_three_labels_confirmed_by_independent_palaeographic_reading_in_C17": 0,
+    "caution": "Verifying original papyrus identity and visually inspecting a photo is distinct from independently reading fragmentary Greek and numerical assignments. C05 comparative arithmetic is unchanged.",
+    "scholarly_alternative_explorations": "Tolsa tested Paulus ch32, Olympiodorus and Valens plus mixed hypotheses; none may be retrospectively admitted as empirical success."
+  },
+  "separate_categories": {
+    "zodiacal_place": "C06 independently identified Leo 22°11′ -> Virgo comparing Tolsa/Valens VIII.7; NOT the same doctrine as three monomoiria labels",
+    "zodiacal_terms_and_triplicity": "Do not pool terms, signs, segments, lots, triplicity as repeated validations of same monomoiria method",
+    "documentary_historical_computation": "not prospective human prediction; this papyrus is an ancient horoscope and does not imply that its chart predicts anyone's personality"
+  },
+  "remaining_tasks": {
+    "papyrological_glyph_collation": "Independently double-read i/ii exact single-degree planetary label glyphs from Oxford full-res original and Jones 1999 critical apparatus with page/column/line; retain damage and uncertainty",
+    "Oxford_image_access": "CLEARED: exact two original files and publisher MD5 verified",
+    "Boer_1958_printed_chapter32_table_and_apparatus": "OPEN",
+    "Boer_1962_actual_Greek_Olympiodorus_diagram": "OPEN",
+    "Paris_Z_and_Y_manuscripts": "OPEN",
+    "human_predictive_validation_count": 0,
+    "production_rule_promotion": false
+  },
+  "copyright": {
+    "image_rights": "In Copyright",
+    "not_redistributed": true,
+    "repo_contains_only_original_image_checksums_and_interpretation": true,
+    "purchased_Gansten_Kindle_not_extracted": true
+  },
+  "audit_controls": {
+    "no_known_biography_used_to_choose_historical_variant": true,
+    "mathematical_source_comparison_not_human_validation": true,
+    "blind_human_predictive_validations": 0
+  }
+}
