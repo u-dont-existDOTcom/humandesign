@@ -24,3 +24,12 @@ class TestGreekEditorialWitness(unittest.TestCase):
         self.assertEqual(r['finer_header_greek']['Mercury'],57)
         self.assertEqual(r['finer_header_greek']['Moon'],71)
         self.assertEqual(r['finer_header_schmidt_english']['Moon'],81)
+
+    def test_saturn_mercury_exact_ratio_without_text_repair(self):
+        from fractions import Fraction
+        theoretical = Fraction(900 * 20, 129)
+        self.assertLess(abs(theoretical - 140), 1)
+        self.assertGreater(abs(theoretical - 150), 10)
+        self.assertEqual(self.w['ch29']['saturn_to_mercury_greek'], 150)
+        self.assertEqual(self.w['ch29']['later_valens_addition'], 140)
+        # Better arithmetic does not establish which ancient reading is authentic.
