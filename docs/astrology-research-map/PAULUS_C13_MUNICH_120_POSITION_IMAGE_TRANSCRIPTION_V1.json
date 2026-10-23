@@ -1,0 +1,262 @@
+{
+  "schema": "HUMANDESIGN_PAULUS_MUNICH_C13_SOURCE_MANUAL_120_POSITIONS_V1",
+  "date": "2026-10-23",
+  "purpose": "Edition- and object-specific historical source transcription; NO chart prediction or source rule promotion",
+  "source": {
+    "library": "Bayerische Staatsbibliothek Munich",
+    "shelfmark": "Cod. graec. 170",
+    "handwritten_page": 65,
+    "bsb_digital_image": 81,
+    "iiif_image": "https://api.digitale-sammlungen.de/iiif/image/v3/bsb00131007_00081/full/max/0/default.jpg",
+    "iiif_manifest": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00131007/manifest",
+    "image_sha256": "371149ee4b769979977935a2c45496bb6065aef4229f2e1168dfac12a89d52fb",
+    "image_pixel_size": [
+      1831,
+      2400
+    ],
+    "table_pixel_extent_x": [
+      267,
+      780
+    ],
+    "horizontal_row_boundaries_y": [
+      1036,
+      1108,
+      1181,
+      1251,
+      1324,
+      1395,
+      1467,
+      1539,
+      1616,
+      1683,
+      1753,
+      1828,
+      1896,
+      1969,
+      2038,
+      2109
+    ],
+    "source_class": "Early-modern copy, not ancient autograph",
+    "image_stored_in_repo": false
+  },
+  "planet_glyph_key": {
+    "Sun": "Slanted elliptical/solar figure with an inner line",
+    "Jupiter": "Angled zigzag with descending tail",
+    "Venus": "Small loop/circle with vertical descending stem",
+    "Moon": "Open crescent",
+    "Saturn": "Tall hooked p-like sign",
+    "Mercury": "Round-bodied crowned figure and descending foot",
+    "Mars": "Slant-crossing angular scribble"
+  },
+  "trigon_signs": {
+    "fire": [
+      "Aries",
+      "Leo",
+      "Sagittarius"
+    ],
+    "earth": [
+      "Taurus",
+      "Virgo",
+      "Capricorn"
+    ],
+    "air": [
+      "Gemini",
+      "Libra",
+      "Aquarius"
+    ],
+    "water": [
+      "Cancer",
+      "Scorpio",
+      "Pisces"
+    ]
+  },
+  "transcription_policy": {
+    "sequence": "Values below indexed ordinal degrees 1..30, read top to bottom using Greek numeral degree column",
+    "image_only": "Transcribed from direct full-page image and 3× magnified separately inspected five-pair page regions; not from a computed sevenfold or eightfold generator",
+    "crosscheck": "First eight values reproduce independent C12 first-octet visual reading",
+    "unread_code": null,
+    "one_ambiguous_position": {
+      "trigon": "earth",
+      "degree": 28,
+      "candidates": [
+        "Mercury",
+        "Mars"
+      ],
+      "reason": "Ambiguous ornate/crossed glyph on last two groups; do not choose by neighboring sequence or predicted pattern",
+      "status": "INDETERMINATE"
+    },
+    "other_review_flags": [
+      {
+        "trigon": "earth",
+        "degree": 29,
+        "read": "Mars",
+        "confidence": "medium-low",
+        "reason": "Unusual departure from repetitive eight-slot sequence; last-line writing paler; re-examine in original"
+      },
+      {
+        "trigon": "earth",
+        "degree": 30,
+        "read": "Jupiter",
+        "confidence": "medium-low",
+        "reason": "Last-line glyph angular and resembles earlier Jupiter examples, but anomalous period"
+      },
+      {
+        "trigon": "water",
+        "degree": 9,
+        "read": "Mars",
+        "confidence": "medium",
+        "reason": "First phase displacement after initial water octet; compare with degree 2 glyph"
+      },
+      {
+        "trigon": "water",
+        "degree": 16,
+        "read": "Venus",
+        "confidence": "medium",
+        "reason": "Second eightfold-like block starts one cell earlier than naive 8× repeat"
+      }
+    ],
+    "scribal_corrections_fully_collated": false,
+    "night_day_sect": "Not proven directly from exact rubric; Sun/Jupiter fire and Venus/Moon earth make diurnal interpretation plausible only",
+    "corpus_scope": "Only four columns × 30 degrees on the one manuscript page; not a general 12-sign independent horoscope validation"
+  },
+  "observed_degrees_1_to_30": {
+    "fire": [
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury"
+    ],
+    "earth": [
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      null,
+      "Mars",
+      "Jupiter"
+    ],
+    "air": [
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter"
+    ],
+    "water": [
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn"
+    ]
+  },
+  "quality": {
+    "raw_positions": 120,
+    "definite_planet_labels": 119,
+    "unresolved_planet_labels": 1,
+    "manuscript_family_collation_completed": false,
+    "boer_1958_1962_full_apparatus_inspected": false,
+    "original_oxy4277_image_inspected": false,
+    "human_predictive_validations": 0,
+    "model_promoted": false
+  }
+}

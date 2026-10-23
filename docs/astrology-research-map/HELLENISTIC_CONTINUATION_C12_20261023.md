@@ -38,3 +38,7 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 **C12 verified test receipt: 86/86 PASS**, 77 retained + 9 new C12, command exit 0 from the isolated C12 worktree. **0 human predictions.**
 
 **Resume one-liner:** C12 manuscript first-eight yields duplicated Venus and nine locally inspectable disputed cells (8 narrative, 1 neither); finish 9–30 and confirm sect without inventing a universal eight-cycle.
+
+## C13 supersession notice — full-page inspection supersedes only C12's '25 unread' boundary
+
+The C12 first-octet observation remains preserved unchanged, but **do not generalize its eight-slot pattern**: C13 directly inspected manuscript degrees 9–30 as well. In the resulting 120-position image-based registry, **119 labels are tentatively identified, earth degree 28 remains indeterminate**. Source evidence contradicts a simple eight-position repetition for **water degrees 9–30** and earth degrees 29–30. All 34 previously disputed narrative-versus-corrected-table cells have now been compared within *this one manuscript*: **11 narrative-only, 1 corrected-only, 22 neither**. This is not a decision that either version is original/authentic, and does not change model scoring. See [C13 research report](HELLENISTIC_SOURCE_C13_MUNICH_120_IMAGE_COLLATION_20261023.md) and [C13 recorded glyphs](PAULUS_C13_MUNICH_120_POSITION_IMAGE_TRANSCRIPTION_V1.json).
