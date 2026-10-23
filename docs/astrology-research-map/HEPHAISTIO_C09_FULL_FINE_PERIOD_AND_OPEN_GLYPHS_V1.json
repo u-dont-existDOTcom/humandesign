@@ -1,0 +1,336 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C09_GREEK_SUBPERIOD_SOURCE_AUDIT_V1",
+  "date": "2026-10-23",
+  "status": "SOURCE_ONLY_UNSCORED_NO_HUMAN_VALIDATION",
+  "provenance": {
+    "editor": "David Pingree",
+    "edition": "Hephaestionis Thebani apotelesmaticorum epitomae quattuor, Vol. II (1974)",
+    "local_sha256": "6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a",
+    "original_pdf_redistributed": false,
+    "method": "Direct enlarged image inspection of edited printed Greek and page-bottom critical apparatus, not new independent manuscript witness",
+    "epitome_IV_37": {
+      "printed_pages": [
+        240,
+        241
+      ],
+      "pdf_pages": [
+        270,
+        271
+      ]
+    },
+    "epitome_IV_44": {
+      "printed_pages": [
+        264,
+        265
+      ],
+      "pdf_pages": [
+        294,
+        295
+      ]
+    }
+  },
+  "normalized_planet_order": [
+    "Saturn",
+    "Jupiter",
+    "Mars",
+    "Sun",
+    "Venus",
+    "Mercury",
+    "Moon"
+  ],
+  "section44": {
+    "printed_primary_year_days": 365,
+    "printed_primary_by_planet": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 57,
+      "Moon": 71
+    },
+    "finer_rows": {
+      "Saturn": {
+        "parent_days": 85,
+        "printed_heading_days": 85,
+        "child_values_by_normalized_planet_order": [
+          20,
+          8,
+          10,
+          13,
+          5,
+          14,
+          16
+        ],
+        "printed_child_sum": 86,
+        "delta_vs_primary_days": 1,
+        "printed_page": [
+          264,
+          265
+        ],
+        "render_pdf_pages": [
+          294,
+          295
+        ]
+      },
+      "Jupiter": {
+        "parent_days": 34,
+        "printed_heading_days": 34,
+        "child_values_by_normalized_planet_order": [
+          8,
+          3,
+          4,
+          5,
+          2,
+          5,
+          7
+        ],
+        "printed_child_sum": 34,
+        "delta_vs_primary_days": 0,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      },
+      "Mars": {
+        "parent_days": 42,
+        "printed_heading_days": 42,
+        "child_values_by_normalized_planet_order": [
+          10,
+          4,
+          5,
+          5,
+          3,
+          7,
+          8
+        ],
+        "printed_child_sum": 42,
+        "delta_vs_primary_days": 0,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      },
+      "Sun": {
+        "parent_days": 54,
+        "printed_heading_days": 54,
+        "child_values_by_normalized_planet_order": [
+          12,
+          5,
+          7,
+          8,
+          4,
+          8,
+          11
+        ],
+        "printed_child_sum": 55,
+        "delta_vs_primary_days": 1,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      },
+      "Venus": {
+        "parent_days": 22,
+        "printed_heading_days": 23,
+        "child_values_by_normalized_planet_order": [
+          5,
+          2,
+          3,
+          3,
+          1,
+          4,
+          5
+        ],
+        "printed_child_sum": 23,
+        "delta_vs_primary_days": 1,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      },
+      "Mercury": {
+        "parent_days": 57,
+        "printed_heading_days": 57,
+        "child_values_by_normalized_planet_order": [
+          13,
+          5,
+          9,
+          8,
+          3,
+          9,
+          11
+        ],
+        "printed_child_sum": 58,
+        "delta_vs_primary_days": 1,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      },
+      "Moon": {
+        "parent_days": 71,
+        "printed_heading_days": 71,
+        "child_values_by_normalized_planet_order": [
+          16,
+          7,
+          8,
+          11,
+          4,
+          11,
+          11
+        ],
+        "printed_child_sum": 68,
+        "delta_vs_primary_days": -3,
+        "printed_page": [
+          265
+        ],
+        "render_pdf_pages": [
+          295
+        ]
+      }
+    },
+    "sum_seven_primary_days": 365,
+    "sum_seven_printed_finer_row_sums": 366,
+    "net_finer_minus_primary": 1,
+    "exact_parents": [
+      "Jupiter",
+      "Mars"
+    ],
+    "mismatched_parents": [
+      "Saturn",
+      "Sun",
+      "Venus",
+      "Mercury",
+      "Moon"
+    ],
+    "venus": {
+      "upper_primary_heading": 22,
+      "printed_finer_heading": 23,
+      "editorial_apparatus": "p265 apparatus line 8 'legendum κβ' (22); not an automatic correction of the seven literal children",
+      "editorial_suggested_heading": 22,
+      "printed_finer_children_sum": 23
+    },
+    "saturn_moon_apparatus": {
+      "location": "p265 lower apparatus near line 2",
+      "read": "possible 'ιϛ] ιδ J' (16 printed vs 14 manuscript J)",
+      "status": "TENTATIVE_GLYPH_APPARATUS_NOT_COLLATION_PROOF"
+    },
+    "caveats": [
+      "Rows are visually transcribed from Pingree's edited Greek, not corroborated against separately digitized manuscript images.",
+      "Editorial 'legendum' belongs to the apparatus, not to the main text.",
+      "A complete coherent 365-day second-level allocation is not established by these rows."
+    ]
+  },
+  "section37": {
+    "jupiter": {
+      "period_months": 12,
+      "thirty_day_month_period": 360,
+      "transmitted_printed_values_by_normalized_order": [
+        85,
+        34,
+        42,
+        54,
+        22,
+        57,
+        71
+      ],
+      "printed_sum": 365,
+      "delta_vs_months_30days": 5,
+      "printed_pages": [
+        240,
+        241
+      ],
+      "note": "This +5 matches the source's independently attested annual five-day supplement; do not classify as scribal corruption solely from 360-day subtraction."
+    },
+    "venus_preliminary": {
+      "period_months": 8,
+      "thirty_day_month_period": 240,
+      "transcription_order": [
+        "Venus",
+        "Saturn",
+        "Jupiter",
+        "Mars",
+        "Sun",
+        "Mercury",
+        "Moon"
+      ],
+      "transcription_values": [
+        15,
+        57,
+        22,
+        28,
+        36,
+        38,
+        17
+      ],
+      "sum_transcription": 213,
+      "delta_vs_months_30days": -27,
+      "printed_page": 241,
+      "status": "PRELIMINARY_VISUAL_READ_NOT_INDEPENDENTLY_COLLATED",
+      "caution": "Moon token visually resembles ιζ (17); do not silently replace with a proportionally convenient number."
+    },
+    "mars_uncertainty": {
+      "period_months": 15,
+      "thirty_day_month_period": 450,
+      "non_disputed_values_by_recipient": {
+        "Mars": 52,
+        "Saturn": 105,
+        "Sun": 66,
+        "Venus": 28,
+        "Mercury": 70,
+        "Moon": 87
+      },
+      "jupiter_glyph": "μβ versus νβ unresolved on this scan",
+      "jupiter_numeric_candidates": [
+        42,
+        52
+      ],
+      "possible_sums": [
+        450,
+        460
+      ],
+      "status": "AMBIGUOUS_TRANSCRIPTION_NEEDS_ANOTHER_WITNESS",
+      "caution": "Do not let 450-day closure decide which Greek glyph was printed."
+    },
+    "other_rows": {
+      "Sun": "NOT_RECONCILED_LITERALLY_FROM_GREEK",
+      "Mercury": "NOT_RECONCILED_LITERALLY_FROM_GREEK",
+      "Moon": "NOT_RECONCILED_LITERALLY_FROM_GREEK",
+      "Saturn": "C08 source literal corrupted row retained",
+      "note": "Do not infer all seven §37 child rows have been independently audited."
+    }
+  },
+  "other_frontiers": {
+    "paulus_monomoiria_day_vs_narrative": {
+      "disputed_cells": 34,
+      "universe": 120,
+      "editorial_manuscript_diagram_examined": false,
+      "edition_leads": [
+        "Ae. Boer (1958), Paulus Alexandrinus, Eisagogika/Elementa apotelesmatica",
+        "Ae. Boer (1962), Heliodori, ut dicitur, In Paulum Alexandrinum commentarium, with Neugebauer/Pingree"
+      ]
+    },
+    "oxy_4277": {
+      "historical_agreement": "1/3 previously reconstructed from scholarly readings; do not reinterpret as empirical prediction",
+      "original_papyrus_image_verified_this_batch": false,
+      "repository_portal": "https://oxyrhynchus.web.ox.ac.uk/images"
+    }
+  },
+  "release": {
+    "production_scorer_modified": false,
+    "model_promoted": false,
+    "predictive_human_tests": 0,
+    "interpretation": "Textual edition arithmetic only; no calculation supplies independent birth-life prediction evidence."
+  }
+}
