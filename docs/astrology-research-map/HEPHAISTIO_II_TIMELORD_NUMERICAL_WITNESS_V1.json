@@ -284,13 +284,18 @@
     },
     {
       "witness": "Firmicus Mathesis VI.33-40, Bram English PDF pp230-236",
-      "claim": "recites planetary subperiods 30+12+15+19+8+20+25 months (129 months); VI.33-34 in same edition also says ten years eleven months",
-      "conclusion": "translation_source_internal_cycle_length_discrepancy"
+      "claim": "Bram English VI.33/34 prints ten years eleven months twice; verified Kroll–Skutsch original Latin VI.33.1 and VI.34.1 explicitly say ten years nine months, agreeing with 129-month allocation.",
+      "conclusion": "English_translation_or_printing_error_resolved_against_original_Latin_129_months"
     },
     {
       "witness": "Hephaistio II.36 Schmidt English printed p106 footnote 258",
       "claim": "translator explicitly calls listed values approximations",
       "conclusion": "rounding_may_explain_some_deltas_not_automatically_every_differing_value"
+    },
+    {
+      "witness": "Firmicus original Latin Mathesis VI.33.5 (Kroll–Skutsch Teubner p191; verified public Latin text)",
+      "claim": "Saturn distributing 15 months to Mars is described as a good or joyful time through mutual mitigation of opposing qualities; matches Bram English VI.33.5 direction.",
+      "conclusion": "Hephaistio daytime-adverse versus Firmicus favorable source_disagreement_witnessed_in_original_Latin"
     }
   ],
   "decision": "Do not silently repair totals, infer single calendar policy, or create human-timing predictions; preserve printed tables and variant source regimes.",
