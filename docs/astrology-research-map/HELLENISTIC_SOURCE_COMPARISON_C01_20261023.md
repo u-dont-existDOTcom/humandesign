@@ -1,4 +1,7 @@
 # Hellenistic Greek–Arabic source reconciliation — comparison C01
+
+**Visual-scan correction, 23 October C03:** [C03 source-integrity audit](HELLENISTIC_SOURCE_INTEGRITY_C03_20261023.md) proved that the Rhetorius 2009 replacement skips **printed p140**, and its six-page supplement does **not** supply it. The source's ch83 is **physically incomplete**, not merely a missing OCR footer. Paulus ch26 printed pp57–58 preserves another occupational selector, but inherited similarities must not be scored as independent. C03 also adds Ptolemy/Hephaistio/Paulus divergent daily-rate witnesses and a 5/5 source-arithmetic test; the original C01 comparisons remain source-only.
+
 23 October 2026 · Source-grounded exploratory research · NO human validation · Owner outcome OPEN
 
 **Follow-on numeric source work completed:** [C02 annual and 129-month time-lord reading](HEPHAISTIO_II_TIMELORD_C02_20261023.md), [source-exact numerical witness](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json) and [candidate registry](HELLENISTIC_C01_C02_SOURCE_CANDIDATES_V1.json) extend this C01 report. Both tiers remain unscored.\n\n## Why this checkpoint exists
