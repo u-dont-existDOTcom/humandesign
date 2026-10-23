@@ -44,6 +44,19 @@ Continue the existing C01/C02 [source comparison](HELLENISTIC_SOURCE_COMPARISON_
 - **Chapter 19, “Concerning One's Own Face and Chariots and Thrones,” printed p36, PDF p52**, visually read. “Own face” here describes a *star's geometrical relation to a luminary analogous to its domicile's aspect*—**not automatically the 10-degree face/decan dignity**. Separate chariots/thrones are delineated conditionally in the text. Different uses of “face,” “image,” and “decan” across Hephaistio, Dorotheus and later translation must be mapped by underlying Greek/Arabic terms and **cannot be flattened by a shared English gloss**.
 - **Chapter 20, printed p37, PDF p53**, explicitly presents source-transmitted universal inquiries, some flagged as condensed Ptolemaic material (translator fn). Do not treat overlap as independent Hellenistic evidence.
 
+## Deterministic relative-day comparison — source arithmetic, not birth prediction
+
+Created the isolated [pure-Python exact-fraction comparison](hellenistic_daily_sign_variants.py) and its [five deterministic tests](test_hellenistic_daily_sign_variants.py). For one **invented shared starting sign and a toy 28-day sequence**, the relative sign indices disagree as follows:
+
+| Comparison (28 neutral consecutive day indices) | Days assigning different relative signs |
+|---|---:|
+| Paulus 1 day/sign vs Hephaistio 2½ day/sign | **25/28** |
+| Paulus 1 day/sign vs Ptolemy Robbins 2⅓ day/sign | **25/28** |
+| Hephaistio 2½ vs Ptolemy Robbins 2⅓ | **10/28** |
+| All three assign exactly the same sign | **2/28** |
+
+Tests: **5/5 PASS** from an isolated temporary directory after retrieving the exact GitHub branch sources. No local or remote historical birth data or actual personal events were fed to the code. Fractional boundaries use Python `fractions.Fraction` (1, 5/2, 7/3), not floating-point rounding. The alternative Ptolemy 5/2 manuscript reading is an **independently named variant** even though its number is identical to Hephaistio's; its monthly calendar and source history are not presumed shared. This demonstration is **not a completed historical annual/monthly profection implementation**; clock epoch, month duration, day boundary, intercalation, sign-lord handling and sect are deliberately unspecified.
+
 ## Classification and next reading
 
 **Completed now:** image-level source-integrity witnesses for three author files; Paulus ch26/ch31/ch32 and Hephaistio I ch2/ch19/ch20 sampled directly; Ptolemy IV.10 and Hephaistio II.28 timing rates compared; Rhetorius chapter-83 page gap resolved as *real missing page*, not recovered; no source incorrectly filled.
