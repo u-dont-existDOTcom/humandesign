@@ -36,7 +36,7 @@ class TestEpitomeIV37C10(unittest.TestCase):
         self.assertEqual(p["Mars"]["edited_printed_values_by_recipient"],
                          [105,52,52,66,28,70,87])
         self.assertEqual(p["Sun"]["edited_printed_values_by_recipient"],
-                         [104,52,64,130,30,80,118])
+                         [104,52,64,83,30,80,118])
         self.assertEqual(p["Venus"]["edited_printed_values_by_recipient"],
                          [57,22,28,36,15,38,17])
         self.assertEqual(p["Mercury"]["edited_printed_values_by_recipient"],
@@ -54,7 +54,7 @@ class TestEpitomeIV37C10(unittest.TestCase):
                              [total-r["nominal_30_day_baseline"] for total in opts])
         self.assertEqual({n: p[n]["possible_sum_days"] for n in p},
                          {"Saturn":[734],"Jupiter":[365],"Mars":[450,460],
-                          "Sun":[578],"Venus":[213],"Mercury":[607],"Moon":[764,794]})
+                          "Sun":[531],"Venus":[213],"Mercury":[607],"Moon":[764,794]})
 
     def test_mars_52_high_res_is_not_arithmetic_fitted(self):
         m=self.source["high_resolution_reading_changes"]["mars_jupiter"]
@@ -65,7 +65,7 @@ class TestEpitomeIV37C10(unittest.TestCase):
 
     def test_sun_venus_mercury_nonclosing_rows_keep_failures(self):
         p=self.source["parent_periods"]
-        self.assertEqual(p["Sun"]["possible_delta_vs_30day_months"],[8])
+        self.assertEqual(p["Sun"]["possible_delta_vs_30day_months"],[-39])
         self.assertEqual(p["Venus"]["possible_delta_vs_30day_months"],[-27])
         self.assertEqual(p["Mercury"]["possible_delta_vs_30day_months"],[7])
         self.assertEqual(p["Jupiter"]["possible_delta_vs_30day_months"],[5])

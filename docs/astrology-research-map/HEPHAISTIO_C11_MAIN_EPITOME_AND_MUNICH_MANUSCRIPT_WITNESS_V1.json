@@ -1,0 +1,436 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C11_MAIN_EPITOME_MANUSCRIPT_CROSS_WITNESS_V1",
+  "date": "2026-10-23",
+  "status": "SOURCE_TEXTUAL_COMPARISON_NOT_PREDICTIVE",
+  "planets_order": [
+    "Saturn",
+    "Jupiter",
+    "Mars",
+    "Sun",
+    "Venus",
+    "Mercury",
+    "Moon"
+  ],
+  "sources": {
+    "main": {
+      "editor": "David Pingree",
+      "work": "Hephaestionis Thebani Apotelesmaticorum Libri Tres vol I",
+      "year": 1973,
+      "location": "Book II.29 printed pp200-201 / PDF pp230-231",
+      "local_pdf_sha256": "f2f803c457b7ba62df23f5c51d6f49ffff3644e17723c6673f5795298514ecae",
+      "status": "DIRECT_VISUAL_EDITED_GREEK"
+    },
+    "epitome": {
+      "editor": "David Pingree",
+      "work": "Hephaestionis Thebani Apotelesmaticorum Epitomae Quattuor vol II",
+      "year": 1974,
+      "location": "Epitome IV.37 printed pp240-241 / PDF pp270-271",
+      "local_pdf_sha256": "6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a",
+      "status": "DIRECT_VISUAL_EDITED_GREEK_WITH_CORRUPTION_WARNING"
+    },
+    "munich": {
+      "repository": "Bayerische Staatsbibliothek",
+      "shelfmark": "Cod. graec. 170",
+      "catalogued_date": "15th to 16th century sections; Paulus text catalogued 16th century first half",
+      "author_witness": "Paulus Alexandrinus, Introductio in apotelesmaticam artem with scholia and figures",
+      "catalogue_location": "ms pp27–73 (Pinakes witness 1763d)",
+      "table_location": "handwritten folio/page 65 / BSB IIIF image 00081, image 81/274",
+      "iiif_image_uri": "https://api.digitale-sammlungen.de/iiif/image/v3/bsb00131007_00081/full/max/0/default.jpg",
+      "iiif_manifest_uri": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00131007/manifest",
+      "catalogue_url": "https://portail.biblissima.fr/fr/ark%3A/43093/mdatac4494ac51c3bdba3277e290d1ff2815608dcb12f",
+      "pinakes_work_url": "https://pinakes.irht.cnrs.fr/notices/oeuvre/8855/",
+      "status": "ORIGINAL_EARLY_MODERN_MANUSCRIPT_IMAGE_DIRECTLY_VIEWED_NOT_FULLY_COLLATED"
+    }
+  },
+  "periods": [
+    {
+      "parent": "Saturn",
+      "base_30day_months": 900,
+      "main_1973_printed": [
+        210,
+        84,
+        105,
+        133,
+        57,
+        150,
+        175
+      ],
+      "main_sum": 914,
+      "epitome_1974_printed": [
+        210,
+        84,
+        105,
+        133,
+        57,
+        40,
+        105
+      ],
+      "epitome_sum_candidates": [
+        734
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -110,
+        -70
+      ],
+      "epitome_deviation_vs_nominal": [
+        -166
+      ]
+    },
+    {
+      "parent": "Jupiter",
+      "base_30day_months": 360,
+      "main_1973_printed": [
+        85,
+        34,
+        42,
+        54,
+        22,
+        57,
+        71
+      ],
+      "main_sum": 365,
+      "epitome_1974_printed": [
+        85,
+        34,
+        42,
+        54,
+        22,
+        57,
+        71
+      ],
+      "epitome_sum_candidates": [
+        365
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "epitome_deviation_vs_nominal": [
+        5
+      ]
+    },
+    {
+      "parent": "Mars",
+      "base_30day_months": 450,
+      "main_1973_printed": [
+        105,
+        42,
+        52,
+        66,
+        28,
+        70,
+        87
+      ],
+      "main_sum": 450,
+      "epitome_1974_printed": [
+        105,
+        52,
+        52,
+        66,
+        28,
+        70,
+        87
+      ],
+      "epitome_sum_candidates": [
+        460
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "epitome_deviation_vs_nominal": [
+        10
+      ]
+    },
+    {
+      "parent": "Sun",
+      "base_30day_months": 570,
+      "main_1973_printed": [
+        130,
+        52,
+        64,
+        83,
+        35,
+        87,
+        118
+      ],
+      "main_sum": 569,
+      "epitome_1974_printed": [
+        104,
+        52,
+        64,
+        83,
+        30,
+        80,
+        118
+      ],
+      "epitome_sum_candidates": [
+        531
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        -26,
+        0,
+        0,
+        0,
+        -5,
+        -7,
+        0
+      ],
+      "epitome_deviation_vs_nominal": [
+        -39
+      ]
+    },
+    {
+      "parent": "Venus",
+      "base_30day_months": 240,
+      "main_1973_printed": [
+        57,
+        22,
+        28,
+        36,
+        15,
+        38,
+        47
+      ],
+      "main_sum": 243,
+      "epitome_1974_printed": [
+        57,
+        22,
+        28,
+        36,
+        15,
+        38,
+        17
+      ],
+      "epitome_sum_candidates": [
+        213
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -30
+      ],
+      "epitome_deviation_vs_nominal": [
+        -27
+      ]
+    },
+    {
+      "parent": "Mercury",
+      "base_30day_months": 600,
+      "main_1973_printed": [
+        141,
+        56,
+        70,
+        90,
+        36,
+        96,
+        117
+      ],
+      "main_sum": 606,
+      "epitome_1974_printed": [
+        141,
+        57,
+        70,
+        90,
+        36,
+        96,
+        117
+      ],
+      "epitome_sum_candidates": [
+        607
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "epitome_deviation_vs_nominal": [
+        7
+      ]
+    },
+    {
+      "parent": "Moon",
+      "base_30day_months": 750,
+      "main_1973_printed": [
+        177,
+        71,
+        87,
+        115,
+        47,
+        119,
+        148
+      ],
+      "main_sum": 764,
+      "epitome_1974_printed": [
+        177,
+        71,
+        87,
+        null,
+        47,
+        119,
+        148
+      ],
+      "epitome_sum_candidates": [
+        764,
+        794
+      ],
+      "differences_epitome_minus_main_by_recipient": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0
+      ],
+      "epitome_deviation_vs_nominal": [
+        14,
+        44
+      ]
+    }
+  ],
+  "critical_new_readings": {
+    "c10_sun_correction": {
+      "recipient": "Sun",
+      "parent": "Sun",
+      "c10_bad_literal": 130,
+      "c11_editted_epitome_literal": 83,
+      "greek_printed_number": "πγ",
+      "other_witness_main_value": 83,
+      "old_c10_sum": 578,
+      "new_c11_sum": 531,
+      "basis": "Direct 390/600dpi enlargement Pingree vol II printed p241; edition glyph πγ=83, not prior error πν=130",
+      "false_green_test_repaired": true,
+      "biography_fitting": false
+    },
+    "mars_recensional_difference": {
+      "parent": "Mars",
+      "recipient": "Jupiter",
+      "epitome_greek": "νβ",
+      "epitome": 52,
+      "main_greek": "μβ",
+      "main": 42,
+      "epitome_sum": 460,
+      "main_sum": 450,
+      "independent_ancient_manuscript_collation": false
+    },
+    "saturn_critical": {
+      "parent": "Saturn",
+      "recipient": "Mercury",
+      "epitome_literal": 40,
+      "main_literal": 150,
+      "epitome_approx_derived": 140,
+      "comment": "Derived 140 is neither 40 printed nor 150 main Greek; related witnesses not independent predictions"
+    },
+    "moon_sun": {
+      "epitome_ambiguous": [
+        115,
+        145
+      ],
+      "main_reading": 115,
+      "status": "MAIN_EDITED_GREEK_115_SUPPORTED; EPITOME_DIRECT_GLYPH_OPEN"
+    },
+    "venus_direction_recheck": {
+      "parent": "Venus",
+      "recipient": "Sun",
+      "epitome_value": 36,
+      "main_value": 36,
+      "main_greek": "λϛ = 36",
+      "epitome_greek": "λϛ = 36",
+      "sun_parent_venus_recipient_main_value": 35,
+      "error_repaired": "Former C11 draft misassigned Sun→Venus 35 to Venus→Sun. Directionality must be preserved; both actual Venus-parent Sun-recipient edited Greek readings are 36. Main Venus sum 243, Epitome Venus sum 213, due to Moon 47 versus 17.",
+      "main_venus_sum": 243,
+      "epitome_venus_sum": 213
+    }
+  },
+  "munich_figure": {
+    "printed_title_claim": "Paulus monomoiria grid in catalogued Paulus folios; manuscript page65 and image81 confirmed by direct image, exact sect/title attribution not yet established",
+    "column_heading_signs": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer"
+    ],
+    "visually_read_first_degree": [
+      {
+        "sign": "Aries",
+        "glyph_description": "slanted ellipse with rising stroke/arrow, Mars-like",
+        "planet_candidate": "Mars",
+        "confidence": "LOW_TENTATIVE_DO_NOT_SCORE"
+      },
+      {
+        "sign": "Taurus",
+        "glyph_description": "circle above vertical stroke, Venus-like",
+        "planet_candidate": "Venus",
+        "confidence": "MEDIUM_PROVISIONAL"
+      },
+      {
+        "sign": "Gemini",
+        "glyph_description": "Saturn-like glyph resembling 'h' with crossbar",
+        "planet_candidate": "Saturn",
+        "confidence": "LOW_TENTATIVE_DO_NOT_SCORE"
+      },
+      {
+        "sign": "Cancer",
+        "glyph_description": "circle above vertical stem, Venus-like",
+        "planet_candidate": "Venus",
+        "confidence": "MEDIUM_PROVISIONAL"
+      }
+    ],
+    "first_degree_assignments_admitted_for_34_cell_comparison": 0,
+    "full_120_cell_glyph_decipherment_complete": false,
+    "day_night_sect_identified": false,
+    "autograph_claim": false,
+    "modern_editorial_greek_only_before_c11": false,
+    "comment": "New authentic early-modern Greek manuscript visual evidence, previously unexamined. Do not treat provisional glyph appearance as manuscript alignment with day or night; full cells and sect convention must be collated before claiming any of 34/120 resolved.",
+    "image_redistributed": false,
+    "adjacent_manuscript_pages_visually_opened": [
+      64,
+      66
+    ],
+    "adjacent_bsb_iiif_images_visually_opened": [
+      80,
+      82
+    ],
+    "adjacent_page_status": "Direct images read, but Greek contextual rubric/sect not yet transcribed to adequate accuracy; no 120-cell promotion."
+  },
+  "other_open": {
+    "boer_1958_actual_edition_pages_examined": false,
+    "boer_1962_diagram_inspected": false,
+    "paulus_disputed_cells_before": 34,
+    "paulus_disputed_cells_resolved_in_c11": 0,
+    "oxyrhynchus_4277_original_image_inspected": false,
+    "oxyrhynchus_prior_text_agreement": "1/3 unchanged (Tolsa 2017 published textual reconstructions)"
+  },
+  "controls": {
+    "human_predictive_validations": 0,
+    "production_scorer_changed": false,
+    "cross_tradition_map_changed": false,
+    "gansten_kindle_extracted": false,
+    "original_books_redistributed": false,
+    "biographical_fitting": false
+  }
+}

@@ -17,7 +17,7 @@ Columns use **Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon** recipient order
 | Saturn | 30 months | 210,84,105,133,57,**40**,105 | 900 | **734** | −166 |
 | Jupiter | 12 | 85,34,42,54,22,57,71 | 360 | **365** | +5 |
 | Mars | 15 | 105,**52?**,52,66,28,70,87 | 450 | **460** preferred visual; **450** if alternative 42 | +10 or 0 |
-| Sun | 19 | 104,52,64,130,30,80,118 | 570 | **578** | +8 |
+| Sun | 19 | 104,52,64,83,30,80,118 | 570 | **531** | −39 |
 | Venus | 8 | 57,22,28,36,15,38,17 | 240 | **213** | −27 |
 | Mercury | 20 | 141,57,70,90,36,96,117 | 600 | **607** | +7 |
 | Moon | 25 | 177,71,87,**?**,47,119,148 | 750 | **764 or 794** | +14 or +44 |
@@ -49,3 +49,7 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 ## Next exact research steps
 
 Find and inspect genuine **Boer 1958 Paulus ch2/ch32 original Greek diagram and its apparatus** and **Boer 1962 commentary** (section/pages around p113, Greek textual recension), then compare *each* of the 34 source/disagreement cells with controlled day/night and ordinal-degree indexing. Obtain authenticated **P.Oxy. Astr. 4277** image (not a similar-looking sample papyrus) and verify the same three single-degree labels from its original glyphs against Jones 1999/Tolsa 2017; preserve illegible cases as such. For §37, collate the two unresolved glyphs against a manuscript or independent critical edition, with full negative and alternate readings. Do not adjust rows or future human profiles to improve fit.
+
+## C11 supersession note (added after original C10 commit)
+
+The C10 Sun→Sun transcription `πν=130` was erroneous. Enlarged inspection of Pingree Epitome IV §37 p241 gives **`πγ=83`**; the seven Sun children now total **531**, not **578**. This source-text correction fixes a false-green C10 arithmetic test. The prior wrong assertion is preserved in Git history, not silently erased. C10 Venus→Sun **36** remains the edited Epitome reading and **also equals the main Greek Venus→Sun 36**. Main Greek **Sun→Venus 35** is the *opposite-direction* period, so no Venus Epitome total revision is admitted. See C11 full comparison and tests.

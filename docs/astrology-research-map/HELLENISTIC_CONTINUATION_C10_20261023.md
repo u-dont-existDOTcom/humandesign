@@ -14,7 +14,7 @@ Bootstrap live `u-dont-existDOTcom/universal-dev-architecture/AGENTS.md`, `LESSO
 
 Pingree 1974 edited Greek Epitome IV §37 pp240–241 was re-inspected visually at 360–600dpi from authorized workstation source file SHA-256 `6ee168a3a39d414620b7c820145c1ffe06dd437617bf79fdc6c9842f51c47f8a`.
 
-- All seven printed-row candidate vectors are now explicitly registered. Their nominal 30-day-month totals versus printed-day sums are: Saturn **900→734**; Jupiter **360→365**; Mars **450→450 or 460**; Sun **570→578**; Venus **240→213**; Mercury **600→607**; Moon **750→764 or 794**.
+- All seven printed-row candidate vectors are now explicitly registered. Their nominal 30-day-month totals versus printed-day sums are: Saturn **900→734**; Jupiter **360→365**; Mars **450→450 or 460**; Sun **570→531 (C11 reinspection corrects initial C10 578)**; Venus **240→213**; Mercury **600→607**; Moon **750→764 or 794**.
 - Mars→Jupiter appears **νβ 52** in high resolution (alongside matching Mars-own νβ), yielding **460** rather than the arithmetically convenient 450. Previous **μβ 42** remains a recorded alternate **until independent source collation**. Moon→Sun is visibly ambiguous **ριε=115 vs ρμε=145**, so there is no unique Moon sum.
 - **Saturn→Mercury 40 is printed**, **140 derived** (never falsely claim second literal 140), main II.29 **150**; C09 §44 primary **365**, fine **366**; all negative cases still present.
 - Even when displayed as a provisional preferred reading, a glyph from Pingree's edited print is NOT an ancient manuscript authentication. Edited p240 apparatus explicitly flags corrupt numbers through p241 l14. No copy of the source PDF or full page images deposited.
@@ -37,3 +37,5 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 C10 worktree test receipt: **67 tests, OK (exit 0)**. This is the historical arithmetic/provenance lane, not a release test and not any human prediction evidence.
 
 **Resume one-liner:** C10 registered all §37 rows, but two Greek glyphs and Paulus 34/120 remain unresolved. Locate Boer 1958 actual pages and first papyrus 4277 image; use the C10 JSON to preserve alternatives, no production scorer.
+
+**C11 corrective addendum:** The C10 `Sun=130` as its own finer allotment and resulting 578 sum were transcription errors. Original edited Greek Epitome IV §37 p241 reads **83**, total **531**; see C11 source report and machine witness. Venus→Sun 36 in both edited Greek witnesses; 35 pertains instead to main Sun→Venus, the opposite direction. This addendum supersedes only the affected numbers; other C10 status survives.
