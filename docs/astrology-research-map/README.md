@@ -1,5 +1,8 @@
 # Living cross-tradition astrology research map
 
+**23 October latest Hellenistic C05 research:** [Greek Paulus nocturnal triplicity reconstruction, 34/120 editorial table conflicts and second papyrus with 1/3 historical arithmetic agreement](HELLENISTIC_SOURCE_C05_NIGHT_AND_SECOND_PAPYRUS_20261023.md); [machine-readable provenance and mismatches](HELLENISTIC_C05_SOURCE_VARIANTS_V1.json), [day/night source comparison code](paulus_trigon_narrative_c05.py) and [independent papyrus audit](oxy4277_monomoiria_audit_c05.py). The [C05 continuation checkpoint](HELLENISTIC_CONTINUATION_C05_20261023.md) supersedes only earlier future-work instructions. **31/31 source tests pass from a fresh isolated GitHub retrieval; human validation remains 0.**
+
+
 **C04 recovery checkpoint:** [Exact reading progress, Greek/English source corrections, 319 CE historical parity and 22/22 test receipt](HELLENISTIC_CONTINUATION_C04_20261023.md). This is the latest Western/Hellenistic source-reading resume point; older C01–C03 checkpoints remain historical rather than being overwritten.
 
 
