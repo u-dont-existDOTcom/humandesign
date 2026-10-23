@@ -1,0 +1,20 @@
+{
+  "phase_random_attempted": 5000,
+  "phase_random_admitted": 4774,
+  "max_phase_inversion_degrees": 1.1368683772161603e-13,
+  "max_contact_phase_degrees": 3.524291969370097e-12,
+  "regio_cartesian_vs_aux_attempted": 6000,
+  "regio_cartesian_vs_aux_compared": 6000,
+  "regio_explicit_domain_rejections": 0,
+  "regio_max_delta_degrees": 1.1368683772161603e-13,
+  "regio_max_plane_residual": 1.7919693506840417e-15,
+  "source_cases": {
+    "semi_arc_example_deg": 42.17434402835045,
+    "under_pole_example_deg": 42.20081504892782,
+    "regio_example_deg": 46.44911785127838
+  },
+  "scope": "synthetic frozen-coordinate spherical calculations; no external historical application, ephemeris or human outcomes",
+  "same_agent_independent_formulas_within_1e-8deg": true,
+  "unit_tests": 9,
+  "unit_test_exit_code": 0
+}
