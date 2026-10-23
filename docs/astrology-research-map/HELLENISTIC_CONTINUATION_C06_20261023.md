@@ -21,7 +21,7 @@
 
 ## Verification and tests
 
-Targeted C06 source files + all C02–C05 arithmetic/source tests were downloaded into an isolated temporary directory from the exact GitHub branch, then `python3 -m unittest discover -s <tmp> -p 'test_hellenistic_*.py' -v` passed **35/35** at first C06 check. A subsequent **one extra C06 proportional-arithmetic test** was added that preserves Greek **150** while comparing theoretical ~139.535 to Valens **140**. **RERUN ALL SUITES AFTER THIS EDIT BEFORE THE FINAL REPORTED TOTAL**; expected **36**, but never claim success without observed actual pass. No release/merge suite or human experiments were run.
+**Final C06 verification receipt:** All current C02–C06 source and arithmetic tests were downloaded afresh as **18 branch files** into an isolated temporary directory from GitHub. `python3 -m unittest discover -s <temporary_source_directory> -p 'test_hellenistic_*.py' -v` completed **36/36 PASS, exit code 0**, including the new proportional 140-vs-150 check. These checks verify preserved historical source numbers, mathematical implementation and reported source disagreements; **they do not validate prediction of humans or justify model promotion**. No release/merge suite or human experiment was run.
 
 ## Next safe source questions
 
