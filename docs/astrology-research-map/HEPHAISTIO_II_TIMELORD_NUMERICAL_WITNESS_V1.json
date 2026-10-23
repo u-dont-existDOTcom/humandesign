@@ -1,0 +1,298 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_PERIOD_TABLE_WITNESS_V1",
+  "scope": "descriptive_source_arithmetic_not_corrected_algorithm_or_human_prediction",
+  "checked_utc_date": "2026-10-23",
+  "source": "Hephaistio of Thebes, Apotelesmatics II, Schmidt 1998 English translation",
+  "source_sha256": "e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073",
+  "visual_inspected_pdf_pages": [
+    47,
+    48,
+    59
+  ],
+  "method": "two-facing-page printed scan; printed p=2*(pdf_page-6)+(left0_right1)",
+  "terminology": "Ancient nomenclature mapped Saturn=Kronos, Jupiter=Zeus, Mars=Ares, Venus=Aphrodite, Mercury=Hermes for analysis only",
+  "base_months": {
+    "Saturn": 30,
+    "Jupiter": 12,
+    "Mars": 15,
+    "Sun": 19,
+    "Venus": 8,
+    "Mercury": 20,
+    "Moon": 25
+  },
+  "chapter29": {
+    "chapter": 29,
+    "printed_pages": "83-84",
+    "main_declared_months": 129,
+    "main_calculated_months": 129,
+    "subdivisions": [
+      {
+        "planet": "Saturn",
+        "primary_months": 30,
+        "baseline_360_day_calendar_days": 900,
+        "printed_page": "83",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 210,
+          "Jupiter": 84,
+          "Mars": 105,
+          "Sun": 133,
+          "Venus": 56,
+          "Mercury": 150,
+          "Moon": 175
+        },
+        "subperiod_sum": 913,
+        "delta_vs_baseline_360_day_calendar": 13
+      },
+      {
+        "planet": "Jupiter",
+        "primary_months": 12,
+        "baseline_360_day_calendar_days": 360,
+        "printed_page": "83",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 85,
+          "Jupiter": 34,
+          "Mars": 42,
+          "Sun": 54,
+          "Venus": 22,
+          "Mercury": 57,
+          "Moon": 71
+        },
+        "subperiod_sum": 365,
+        "delta_vs_baseline_360_day_calendar": 5
+      },
+      {
+        "planet": "Mars",
+        "primary_months": 15,
+        "baseline_360_day_calendar_days": 450,
+        "printed_page": "83-84",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 105,
+          "Jupiter": 42,
+          "Mars": 52,
+          "Sun": 66,
+          "Venus": 28,
+          "Mercury": 70,
+          "Moon": 87
+        },
+        "subperiod_sum": 450,
+        "delta_vs_baseline_360_day_calendar": 0
+      },
+      {
+        "planet": "Sun",
+        "primary_months": 19,
+        "baseline_360_day_calendar_days": 570,
+        "printed_page": "84",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 130,
+          "Jupiter": 52,
+          "Mars": 64,
+          "Sun": 83,
+          "Venus": 35,
+          "Mercury": 87,
+          "Moon": 118
+        },
+        "subperiod_sum": 569,
+        "delta_vs_baseline_360_day_calendar": -1
+      },
+      {
+        "planet": "Venus",
+        "primary_months": 8,
+        "baseline_360_day_calendar_days": 240,
+        "printed_page": "84",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 57,
+          "Jupiter": 22,
+          "Mars": 28,
+          "Sun": 36,
+          "Venus": 15,
+          "Mercury": 38,
+          "Moon": 47
+        },
+        "subperiod_sum": 243,
+        "delta_vs_baseline_360_day_calendar": 3
+      },
+      {
+        "planet": "Mercury",
+        "primary_months": 20,
+        "baseline_360_day_calendar_days": 600,
+        "printed_page": "84",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 141,
+          "Jupiter": 56,
+          "Mars": 70,
+          "Sun": 90,
+          "Venus": 36,
+          "Mercury": 96,
+          "Moon": 117
+        },
+        "subperiod_sum": 606,
+        "delta_vs_baseline_360_day_calendar": 6
+      },
+      {
+        "planet": "Moon",
+        "primary_months": 25,
+        "baseline_360_day_calendar_days": 750,
+        "printed_page": "84",
+        "quoted_numeric_subperiod_days": {
+          "Saturn": 177,
+          "Jupiter": 71,
+          "Mars": 87,
+          "Sun": 115,
+          "Venus": 47,
+          "Mercury": 119,
+          "Moon": 148
+        },
+        "subperiod_sum": 764,
+        "delta_vs_baseline_360_day_calendar": 14
+      }
+    ]
+  },
+  "chapter36": {
+    "chapter": 36,
+    "printed_page": "106",
+    "year_declared_days": 360,
+    "year_primary_table": {
+      "Saturn": 85,
+      "Jupiter": 34,
+      "Mars": 42,
+      "Sun": 54,
+      "Venus": 22,
+      "Mercury": 52,
+      "Moon": 71
+    },
+    "year_primary_sum": 360,
+    "detailed_subperiods": [
+      {
+        "planet": "Saturn",
+        "day_interval_in_local_subperiod_intro": 85,
+        "suballocations": {
+          "Saturn": 20,
+          "Jupiter": 8,
+          "Mars": 10,
+          "Sun": 13,
+          "Venus": 5,
+          "Mercury": 14,
+          "Moon": 16
+        },
+        "sum_of_suballocations": 86,
+        "delta_vs_local_intro": 1
+      },
+      {
+        "planet": "Jupiter",
+        "day_interval_in_local_subperiod_intro": 34,
+        "suballocations": {
+          "Saturn": 8,
+          "Jupiter": 3,
+          "Mars": 4,
+          "Sun": 5,
+          "Venus": 2,
+          "Mercury": 5,
+          "Moon": 7
+        },
+        "sum_of_suballocations": 34,
+        "delta_vs_local_intro": 0
+      },
+      {
+        "planet": "Mars",
+        "day_interval_in_local_subperiod_intro": 42,
+        "suballocations": {
+          "Saturn": 10,
+          "Jupiter": 4,
+          "Mars": 5,
+          "Sun": 5,
+          "Venus": 3,
+          "Mercury": 7,
+          "Moon": 8
+        },
+        "sum_of_suballocations": 42,
+        "delta_vs_local_intro": 0
+      },
+      {
+        "planet": "Sun",
+        "day_interval_in_local_subperiod_intro": 54,
+        "suballocations": {
+          "Saturn": 12,
+          "Jupiter": 5,
+          "Mars": 6,
+          "Sun": 8,
+          "Venus": 4,
+          "Mercury": 8,
+          "Moon": 11
+        },
+        "sum_of_suballocations": 54,
+        "delta_vs_local_intro": 0
+      },
+      {
+        "planet": "Venus",
+        "day_interval_in_local_subperiod_intro": 22,
+        "suballocations": {
+          "Saturn": 5,
+          "Jupiter": 2,
+          "Mars": 3,
+          "Sun": 3,
+          "Venus": 1,
+          "Mercury": 4,
+          "Moon": 3
+        },
+        "sum_of_suballocations": 21,
+        "delta_vs_local_intro": -1
+      },
+      {
+        "planet": "Mercury",
+        "day_interval_in_local_subperiod_intro": 57,
+        "suballocations": {
+          "Saturn": 13,
+          "Jupiter": 5,
+          "Mars": 9,
+          "Sun": 8,
+          "Venus": 3,
+          "Mercury": 9,
+          "Moon": 10
+        },
+        "sum_of_suballocations": 57,
+        "delta_vs_local_intro": 0
+      },
+      {
+        "planet": "Moon",
+        "day_interval_in_local_subperiod_intro": 81,
+        "suballocations": {
+          "Saturn": 16,
+          "Jupiter": 7,
+          "Mars": 8,
+          "Sun": 11,
+          "Venus": 4,
+          "Mercury": 11,
+          "Moon": 14
+        },
+        "sum_of_suballocations": 71,
+        "delta_vs_local_intro": -10
+      }
+    ],
+    "day_interval_intro_sum": 375,
+    "sum_of_all_listed_suballocations": 365
+  },
+  "cross_witnesses": [
+    {
+      "witness": "Valens Anthologies Riley PDF p170, 'Fifth-Century Addition', 7P",
+      "claim": "Saturn 30 months distribution sends 140 days to Mercury, not Hephaistio's printed 150; computed source subdivisions then sum 903, near 900",
+      "conclusion": "cross_source_numeric_variant_not_independent_valens_authority"
+    },
+    {
+      "witness": "Valens Anthologies Riley PDF p171-172, later Fifth-Century Addition",
+      "claim": "describes an explicitly preferred sequence of 129-day subperiods rather than 7-times proportional shortcut, with separate handling of intercalary days",
+      "conclusion": "algorithmic_alternative_requires_distinct_version"
+    },
+    {
+      "witness": "Firmicus Mathesis VI.33-40, Bram English PDF pp230-236",
+      "claim": "recites planetary subperiods 30+12+15+19+8+20+25 months (129 months); VI.33-34 in same edition also says ten years eleven months",
+      "conclusion": "translation_source_internal_cycle_length_discrepancy"
+    },
+    {
+      "witness": "Hephaistio II.36 Schmidt English printed p106 footnote 258",
+      "claim": "translator explicitly calls listed values approximations",
+      "conclusion": "rounding_may_explain_some_deltas_not_automatically_every_differing_value"
+    }
+  ],
+  "decision": "Do not silently repair totals, infer single calendar policy, or create human-timing predictions; preserve printed tables and variant source regimes.",
+  "scientific_validation": "NOT_ATTEMPTED"
+}
