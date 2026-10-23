@@ -1,5 +1,8 @@
 # Living cross-tradition astrology research map
 
+**23 October C06 verified-source upgrade:** [Critical Greek Hephaistio timing apparatus, Paulus textual caution and separate Valens–papyrus zodiacal-place reading](HELLENISTIC_SOURCE_C06_PINGREE_APPARATUS_AND_ZODIACAL_PLACES_20261023.md); [numerical Greek critical-edition witness](HEPHAISTIO_C06_PINGREE_CRITICAL_WITNESS_V1.json); [exact documented place attestations](valens_zodiacal_place_c06.py); [C06 continuation checkpoint](HELLENISTIC_CONTINUATION_C06_20261023.md). Direct inspection of Pingree 1973 ch29/36 preserves 150 vs later Valens 140, and the editorial suggestion `νβ desid.` for finer Mercury 52 vs printed 57. This does not prove a corrected calendar, independent ancient manuscript, or human predictive success. C06 current source tests verified separately.
+
+
 **23 October latest Hellenistic C05 research:** [Greek Paulus nocturnal triplicity reconstruction, 34/120 editorial table conflicts and second papyrus with 1/3 historical arithmetic agreement](HELLENISTIC_SOURCE_C05_NIGHT_AND_SECOND_PAPYRUS_20261023.md); [machine-readable provenance and mismatches](HELLENISTIC_C05_SOURCE_VARIANTS_V1.json), [day/night source comparison code](paulus_trigon_narrative_c05.py) and [independent papyrus audit](oxy4277_monomoiria_audit_c05.py). The [C05 continuation checkpoint](HELLENISTIC_CONTINUATION_C05_20261023.md) supersedes only earlier future-work instructions. **31/31 source tests pass from a fresh isolated GitHub retrieval; human validation remains 0.**
 
 
