@@ -1,5 +1,7 @@
 # Hellenistic research continuation checkpoint C06 — 23 October 2026
 
+**C08 source correction:** The previous C07 claim that Epitome IV directly prints Saturn→Mercury 140 was false; the enlarged critical edition p240 reads **40**, while its described approximation yields **140**. Fine allocations of the 365-day method also show Venus **22 in the header vs 23 in the detailed heading/children**. [C08 report](HELLENISTIC_SOURCE_C08_CORRUPT_EPITOME_AND_RECONSTRUCTION_20261023.md) and [machine witness](HEPHAISTIO_C08_LITERAL_VS_DERIVED_SUBPERIOD_WITNESS_V1.json) supersede those C07 literal transcription claims without changing the validated source-only research objective.
+
 **C07 source correction:** The Greek *Hephaistio* II.29 explicitly describes a five-day supplement to the twelve-month year (Pingree p201), accompanied by a later P² manuscript marginal note. Book II.36's P apparatus contains a 365-day reference, while the editor still proposes 52 instead of 57 for Mercury. The seven subdivision totals fit 365 better (sum absolute error 263/12 days) than 360 (42 days), but do not resolve every inconsistency. [C07 report](HELLENISTIC_SOURCE_C07_FIVEDAY_CALENDAR_MANUSCRIPTS_20261023.md), [number register](HEPHAISTIO_C07_FIVEDAY_MANUSCRIPT_AND_CALENDAR_V1.json). **45/45 source-only tests passed**. This supersedes the earlier absence of explicit five-day evidence and the previous 36-test receipt; no human validation was done.
 
 
