@@ -2,7 +2,7 @@
 
 23 October 2026 · Source-first audit · Experimental branch · **No runtime model or human predictive claim admitted**
 
-## Reading completed in this pass
+**Machine witness and test:** [Numeric 129-month and 360/365/375-day tables](HEPHAISTIO_II_TIMELORD_NUMERICAL_WITNESS_V1.json), [four stdlib tests](test_hellenistic_period_witness.py), and [six separately gated candidate mechanisms](HELLENISTIC_C01_C02_SOURCE_CANDIDATES_V1.json). Tests passed 4/4 from a clean authenticated-free repository download; they check arithmetic only.\n\n## Reading completed in this pass
 
 Book: Hephaistio of Thebes, *Apotelesmatics* II, Robert H. Schmidt English (1998), SHA-256 `e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073`. Read **printed pages 80–107, especially ch27–36**, from owned 59-leaf scanned PDF (one facing book leaf per left/right half). Pdf pages **47, 48, 59 were rendered and visually inspected**, in addition to both-half text extraction, to establish that material numeric discrepancies are **present in the printed source** rather than merely OCR output. Other chapter pages extracted as text and compared selectively. No copyrighted whole-book content has been stored in this public repository.
 
