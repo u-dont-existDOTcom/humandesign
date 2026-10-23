@@ -1,0 +1,239 @@
+{
+  "status": "CONFIRMED_SOURCE_LEVEL_EDGE_BUG_WITH_STATED_SCOPE",
+  "tested_commit": "020492d5fce1c7a3d6b81186cef6cf04d93fb694",
+  "source_location": "placidianutppd.py:1669 (verify pinned source line)",
+  "mechanism": "fabs(negative eastern oblique ascension) wrongly reverses sign; under-pole angular arc shifted by 2*abs(AODO)",
+  "reproduction": "synthetic equatorial fixed/moving points, northern latitude, fixed in east/above quadrant, original Morinus toPlanet methods and speculum classes",
+  "coverage_limits": "not a full wxPython app run, not all hemispheres/quadrants, no actual historical chart or empirical forecasts",
+  "samples": [
+    {
+      "seed": 20261023,
+      "counts": {
+        "cases": 1200,
+        "three_methods_exact": 1189,
+        "semi_exact": 1200,
+        "regio_exact": 1200,
+        "under_pole_exact": 1189,
+        "under_pole_mismatch": 11,
+        "under_pole_negative_AODO": 11,
+        "negative_AODO_with_no_mismatch": 0,
+        "errors_not_explained_by_negative_AODO": 0,
+        "diagnostic_corrected_exact": 1200
+      },
+      "max_error_magnitude_identity_residual": 4.263256414560601e-14,
+      "mismatch_examples": [
+        {
+          "case": 400,
+          "input": [
+            55.47919707616095,
+            274.7948419671325,
+            6.449609426312975,
+            11.675550276735002,
+            328.665040766102,
+            -9.156867589503769
+          ],
+          "source_under_pole": 331.7831516033805,
+          "reference_under_pole": 348.70193580726357,
+          "raw_AODO": -8.459392101941553,
+          "actual_abs_delta_degrees": 16.918784203883092,
+          "predicted_abs_delta_degrees": 16.918784203883106
+        },
+        {
+          "case": 446,
+          "input": [
+            60.7527267662719,
+            257.43288725168895,
+            21.100250039711057,
+            23.656711297716207,
+            44.56033649860905,
+            -19.35148894530854
+          ],
+          "source_under_pole": 55.19623949525519,
+          "reference_under_pole": 102.98508773407318,
+          "raw_AODO": -23.89442411940899,
+          "actual_abs_delta_degrees": 47.78884823881799,
+          "predicted_abs_delta_degrees": 47.78884823881798
+        },
+        {
+          "case": 510,
+          "input": [
+            62.34202990638205,
+            341.23912630352316,
+            4.13264286490147,
+            17.06650946203476,
+            136.12425724600132,
+            7.123705259584952
+          ],
+          "source_under_pole": 131.0836723935496,
+          "reference_under_pole": 135.86377161355432,
+          "raw_AODO": -2.390049610002359,
+          "actual_abs_delta_degrees": 4.780099220004729,
+          "predicted_abs_delta_degrees": 4.780099220004718
+        },
+        {
+          "case": 561,
+          "input": [
+            44.72495358085417,
+            291.9002153197228,
+            11.348666435436769,
+            20.575758709401697,
+            343.07626751503324,
+            -16.114945156986625
+          ],
+          "source_under_pole": 350.7923746871949,
+          "reference_under_pole": 359.1094174785616,
+          "raw_AODO": -4.158521395683369,
+          "actual_abs_delta_degrees": 8.317042791366703,
+          "predicted_abs_delta_degrees": 8.317042791366738
+        },
+        {
+          "case": 747,
+          "input": [
+            64.48490944236872,
+            246.97129061278113,
+            15.208882604219411,
+            20.55630692898565,
+            303.131009985547,
+            10.802591883594136
+          ],
+          "source_under_pole": 249.7183409783167,
+          "reference_under_pole": 312.97320889521376,
+          "raw_AODO": -31.62743395844852,
+          "actual_abs_delta_degrees": 63.25486791689707,
+          "predicted_abs_delta_degrees": 63.25486791689704
+        },
+        {
+          "case": 785,
+          "input": [
+            54.80976237362526,
+            325.11332924371277,
+            5.072198312049409,
+            15.7422573293913,
+            71.82521921153636,
+            11.985881896183784
+          ],
+          "source_under_pole": 62.37209866847879,
+          "reference_under_pole": 68.80908948166069,
+          "raw_AODO": -3.2184954065909537,
+          "actual_abs_delta_degrees": 6.436990813181893,
+          "predicted_abs_delta_degrees": 6.436990813181907
+        }
+      ]
+    },
+    {
+      "seed": 19870502,
+      "counts": {
+        "cases": 2400,
+        "three_methods_exact": 2375,
+        "semi_exact": 2400,
+        "regio_exact": 2400,
+        "under_pole_exact": 2375,
+        "under_pole_mismatch": 25,
+        "under_pole_negative_AODO": 25,
+        "negative_AODO_with_no_mismatch": 0,
+        "errors_not_explained_by_negative_AODO": 0,
+        "diagnostic_corrected_exact": 2400
+      },
+      "max_error_magnitude_identity_residual": 5.240252676230739e-14,
+      "mismatch_examples": [
+        {
+          "case": 62,
+          "input": [
+            60.861752735445066,
+            278.934652342484,
+            19.348304742731443,
+            16.03299751300183,
+            46.94680592549537,
+            18.98483800148294
+          ],
+          "source_under_pole": 9.218158035677593,
+          "reference_under_pole": 22.01043456247268,
+          "raw_AODO": -6.3961382633975425,
+          "actual_abs_delta_degrees": 12.792276526795092,
+          "predicted_abs_delta_degrees": 12.792276526795085
+        },
+        {
+          "case": 283,
+          "input": [
+            45.96516523832991,
+            269.91653608911184,
+            0.6863489072619586,
+            12.23869850032603,
+            37.94096478186168,
+            6.550984539623652
+          ],
+          "source_under_pole": 21.176486326042067,
+          "reference_under_pole": 42.66198959885401,
+          "raw_AODO": -10.742751636405972,
+          "actual_abs_delta_degrees": 21.48550327281194,
+          "predicted_abs_delta_degrees": 21.485503272811943
+        },
+        {
+          "case": 440,
+          "input": [
+            59.77140022382804,
+            281.1323976748635,
+            5.569538416858563,
+            11.457624810679825,
+            358.4141410422718,
+            -8.035518740578475
+          ],
+          "source_under_pole": 359.1874789773585,
+          "reference_under_pole": 19.197875184878967,
+          "raw_AODO": -10.00519810376024,
+          "actual_abs_delta_degrees": 20.010396207520444,
+          "predicted_abs_delta_degrees": 20.01039620752048
+        },
+        {
+          "case": 498,
+          "input": [
+            25.747959131328788,
+            308.8030138121407,
+            2.5104690196161528,
+            24.098605149762506,
+            24.22178431663508,
+            0.22495943473267133
+          ],
+          "source_under_pole": 20.144567368825793,
+          "reference_under_pole": 28.184600977076915,
+          "raw_AODO": -4.02001680412556,
+          "actual_abs_delta_degrees": 8.040033608251122,
+          "predicted_abs_delta_degrees": 8.04003360825112
+        },
+        {
+          "case": 595,
+          "input": [
+            37.15575580484956,
+            312.29641212280114,
+            2.2175855598003977,
+            6.523592115288135,
+            354.7852063787164,
+            6.18860890171382
+          ],
+          "source_under_pole": 351.91171712651186,
+          "reference_under_pole": 352.7029725911356,
+          "raw_AODO": -0.39562773231190596,
+          "actual_abs_delta_degrees": 0.7912554646237595,
+          "predicted_abs_delta_degrees": 0.7912554646238119
+        },
+        {
+          "case": 696,
+          "input": [
+            46.43444828505036,
+            325.29889627410955,
+            3.3765056669503792,
+            17.606196656794957,
+            30.419885037888946,
+            19.8548450510185
+          ],
+          "source_under_pole": 19.300193569518747,
+          "reference_under_pole": 26.10323376284375,
+          "raw_AODO": -3.4015200966625,
+          "actual_abs_delta_degrees": 6.803040193324989,
+          "predicted_abs_delta_degrees": 6.803040193325
+        }
+      ]
+    }
+  ],
+  "source_sha256": "b76a131ade535d9353c6e9f65863e6edd3cd8424cf8e74b228e6f0a4af48e9c5"
+}
