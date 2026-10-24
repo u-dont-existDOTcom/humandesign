@@ -1,0 +1,66 @@
+{
+  "schema": "HUMANDESIGN_C29_HELLENISTIC_SOURCE_TO_HUMAN_PREDICTION_DISPOSITION_V1",
+  "date": "2026-10-24",
+  "root_objective_status": "OPEN",
+  "source_read": {
+    "work": "Paulus Alexandrinus Eisagogika, modern Greek online text ch32 and ch33",
+    "url": "https://eulogikon.org/works/paul-alexandria-astrology-sum-aa",
+    "web_content_section_lines": [
+      "303–304",
+      "305–310"
+    ],
+    "exact_ch32_excerpt": "τὰς μοίρας τοῦ αἱρετικοῦ φωτὸς",
+    "exact_ch33_excerpt": "πρὸς τὴν τοῦ ὡροσκόπου μοιρικὴν κατάληψιν",
+    "translation_scope": "Chapter 32 specifies degrees of the sect light; chapter 33 discusses using that trigon monomoiria for determining the Ascendant degree",
+    "modern_digitization_not_boer_critical_apparatus": true,
+    "critical_editorial_variants_unresolved": true
+  },
+  "features": [
+    {
+      "candidate": "CH5_BY_SIGN_CHALDEAN",
+      "feature": "ruler of ordinal sign degree",
+      "source_role": "computable historical chart feature",
+      "human_behavioral_outcome_attested_in_checked_passage": false,
+      "status": "NO_PERSON_OUTCOME_MAPPING_FROZEN"
+    },
+    {
+      "candidate": "CH32_GREEK_NARRATIVE_DAY",
+      "feature": "trigon ruler of Sun's ordinal degree in day chart",
+      "source_role": "sect-light technique for Ascendant degree determination",
+      "human_behavioral_outcome_attested_in_checked_passage": false,
+      "status": "SOURCE_CALCULATION_ONLY"
+    },
+    {
+      "candidate": "CH32_GREEK_NARRATIVE_NIGHT",
+      "feature": "trigon ruler of Moon's ordinal degree in night chart",
+      "source_role": "sect-light technique for Ascendant degree determination, reconstructed night ordering",
+      "human_behavioral_outcome_attested_in_checked_passage": false,
+      "status": "SOURCE_CALCULATION_ONLY"
+    },
+    {
+      "candidate": "CH32_GREENBAUM_EDITED_DAY",
+      "feature": "modern corrected day trigon ruler",
+      "source_role": "editorial source comparator",
+      "human_behavioral_outcome_attested_in_checked_passage": false,
+      "status": "SOURCE_COMPARISON_ONLY"
+    }
+  ],
+  "distinct_possible_technical_question": {
+    "candidate_question": "Does the historic Ascendant-degree procedure recover independently documented birth Ascendant geometry?",
+    "type": "CHART_RECTIFICATION_OR_ASTRONOMICAL_PARITY",
+    "not_a_personality_or_life_event_prediction": true,
+    "actual_birth_data_checked": false,
+    "blinded_verification_protocol_frozen": false,
+    "method_fully_source_disambiguated": false,
+    "scientific_admission": "FUTURE_EXPERIMENT_IDEA_ONLY_NOT_A_COMPLETED_TEST"
+  },
+  "nonpromotion": {
+    "historical_glyph_certification": false,
+    "behavioral_questionnaire_predictions_frozen": false,
+    "consenting_untouched_human_tested": false,
+    "human_predictive_validations": 0,
+    "production_model_promoted": false,
+    "calculation_parity_does_not_prove_astrology": true
+  },
+  "next_step": "Find independently attested person-specific Hellenistic claim with measurable, falsifiable outcomes and freeze chart computation, variant, answers, controls and cohort BEFORE untouched human testing. Do not infer a personality from a ruler alone."
+}
