@@ -1,0 +1,141 @@
+{
+  "schema": "HUMANDESIGN_C27_CCAG_FLORENCE_VIENNA_SOURCE_BOUNDARIES_V1",
+  "date": "2026-10-24",
+  "main_owner_objective": "Source-faithful Hellenistic source variants within wider astrology model; freeze alternatives before untouched blinded human tests",
+  "main_objective_status": "OPEN",
+  "evidence_class": "FIRST_HAND_INSPECTION_OF_ORIGINAL_MEDIEVAL_PHOTOS_AND_1898_1903_PRINTED_CATALOGUE_SCANS",
+  "printed_catalogues": [
+    {
+      "short": "CCAG_VI",
+      "bibliographic": "Wilhelm Kroll, Catalogus Codicum Astrologorum Graecorum, VI: Codices Vindobonenses (Brussels, 1903)",
+      "printed_page": 27,
+      "pdf_page_one_based": 45,
+      "pdf_image_pairing": "one printed page per PDF page",
+      "pdf_source": "https://archive.org/download/CatalogusCodicumAstrologorumGraec6/Catalogus_codicum_astrologorum_graec_6.pdf",
+      "pdf_sha256": "282b09d68335979dce9daf41fdbb5b845c75fb0a1f7864bcd5d73ebf38d4c4e7",
+      "printed_page_directly_visually_read": true,
+      "OCR_standalone_not_authority": true
+    },
+    {
+      "short": "CCAG_I",
+      "bibliographic": "Alessandro Olivieri, Catalogus Codicum Astrologorum Graecorum, I: Codices Florentini (Brussels, 1898)",
+      "printed_page": 27,
+      "pdf_page_one_based": 17,
+      "pdf_page_contains_two_printed_pages": [
+        26,
+        27
+      ],
+      "pdf_source": "https://www.wilbourhall.org/astrology/CCAGTome01.pdf",
+      "pdf_sha256": "815a9aa88e445bff338a22dd8c4e5cf2039ff3098cbb9430dbfb0218c28e7794",
+      "printed_page_directly_visually_read": true,
+      "OCR_standalone_not_authority": true
+    }
+  ],
+  "catalogue_witnesses": {
+    "vienna": {
+      "shelfmark": "ÖNB Cod. phil. gr.115",
+      "catalogue": "CCAG_VI",
+      "catalogue_printed_page": 27,
+      "chapter_trigon": {
+        "number_greek": "λδ΄",
+        "number_arabic": 34,
+        "title": "Περὶ τῆς κατὰ τρίγωνον μονομοιρίας",
+        "first_words": "Ἡ κατὰ τρίγωνον",
+        "last_folio": "205v",
+        "catalogue_terminal_words": "κανόνιον τριγωνομοιρίας"
+      },
+      "chapter_next": {
+        "number_greek": "λε΄",
+        "number_arabic": 35,
+        "title": "Περὶ τῆς ἀναγκαίας τοῦ ὡροσκόπου μοίρας",
+        "first_words": "Σκοπὸν ἔχων",
+        "last_folio": "209",
+        "terminal_words": "αὕτη ἡ μέθοδος"
+      },
+      "photo_205r": {
+        "iiif_canvas_zero_based": 416,
+        "photo_study_url": "https://api.onb.ac.at/iiif/image/v3/1182CE33/uk4nGb4uCigQM1a9/full/3000,/0/default.jpg",
+        "resized_photo_sha256": "53db3e6aab81bf1db456ec90b561c54569430622ee2ef40a71e0cfca20e0128e",
+        "c26_red_rubric_preliminary": "Κανόνιον τριγωνομοιριῶν",
+        "rubric_exact_same_as_catalogue_terminal": false
+      },
+      "photo_205v": {
+        "iiif_canvas_zero_based": 417,
+        "study_sha256": "6b6e01af7442746186c8b7fef15d0687d53d982681ccebeb4106dc9fdde15748",
+        "original_ruled_table_seen": true
+      },
+      "photo_206r": {
+        "iiif_canvas_zero_based": 418,
+        "study_sha256": "cc69c70682b2fd95b95e1f9ff003e49834b9f9826316e9ab059d1b23cb6cde1f",
+        "new_chapter_text_continues": true
+      },
+      "earlier_catalogued_passage": {
+        "folio": "159–159v",
+        "catalogue": "CCAG_VI",
+        "catalogue_printed_page": 2,
+        "start_words": "Ἡ κατὰ τρίγωνον μονομοιρία λαμβάνεται οὕτως",
+        "catalogue_claim": "Des. in tabula f.159v",
+        "cross_reference": "cod. Flor. 8 f.202v",
+        "independent_manuscript": false,
+        "actual_table_photo_confirmed": false,
+        "study_canvases_checked": [
+          324,
+          325,
+          326
+        ],
+        "photo_image_bytes_separate_not_committed": true,
+        "issue": "No obvious ruled table on provisional f159v photograph; numeral/calculation rows and precise folio alignment still need adjudication"
+      }
+    },
+    "florence": {
+      "shelfmark": "BML Plut.28.14",
+      "catalogue": "CCAG_I",
+      "catalogue_printed_page": 27,
+      "chapter_trigon": {
+        "folio": "202v",
+        "catalogue_label": "σο΄",
+        "title": "Περὶ τῆς κατὰ τρίγωνον μονομοιρίας"
+      },
+      "figure": {
+        "folio": "204v",
+        "catalogue_label": "σοα΄",
+        "caption": "Κανόνιον τριγωνικῶν μονομοιριῶν· ζῴδια",
+        "direct_manuscript_photo_examined_C24": true,
+        "c24_planetary_glyph_candidates": 240,
+        "independent_palaeographic_verification": false
+      },
+      "chapter_next": {
+        "folio": "205",
+        "catalogue_label": "σοβ΄",
+        "title": "Περὶ ἀναγκαστικῆς μοίρας τοῦ ὡροσκόπου",
+        "opening_words": "Τὴν δὲ κατὰ τρίγωνον μονομοιρίαν",
+        "distinct_next_chapter_not_column_gloss": true
+      }
+    }
+  },
+  "consequence": {
+    "trigon_monomoiria_source_topic_both_attested": true,
+    "next_chapter_semantics_distinct_from_figure": true,
+    "vienna_chapter35_follows_chapter34": true,
+    "florence_title_uses_trigonikon_while_vienna_terminal_uses_trigonomoiria": true,
+    "necessary_vs_compulsory_ascent_degree_titles_not_identical": true,
+    "can_infer_Florence_slots_are_day_night_from_catalogue": false,
+    "can_infer_Vienna_15_15_subcolumns_are_day_night_from_catalogue": false,
+    "exact_ancient_algorithm_reconstructed": false,
+    "Boers_1962_actual_apparatus_read": false,
+    "citations_are_editorial_1898_1903_not_ancient_autograph": true,
+    "predictive_human_validations": 0,
+    "production_scoring_promotions": 0
+  },
+  "frozen_previous_results": {
+    "C24_first_vs_C05_day": 104,
+    "C24_first_vs_C04_corrected": 102,
+    "C24_second_adjacent_swap_consistency": 120,
+    "C24_second_vs_C05_night": 48,
+    "C22_older_source_neither_C04_nor_C05_day": 96,
+    "P_Oxy4277_matches": 1,
+    "P_Oxy4277_nonmatches": 2,
+    "Hephaistio_IV37_literal_40_derived_140_main_150": true
+  },
+  "next_action": "Compare actual Boer 1962 Greek and apparatus when lawfully accessible; bounded independent original-glyph verification where table semantics affect a falsifiable calculation, otherwise freeze textual uncertainty and proceed with cross-tradition model freeze."
+}
