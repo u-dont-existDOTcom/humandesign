@@ -1,0 +1,68 @@
+{
+  "schema": "HUMANDESIGN_C28_KROLL_CODEX_IDENTITY_V1",
+  "date": "2026-10-24",
+  "parent_goal": "source-faithful cross-tradition astrology then frozen, prospective, blinded human evaluation",
+  "root_goal_status": "OPEN",
+  "catalogue": {
+    "name": "Kroll, CCAG VI (1903)",
+    "pdf_sha256": "282b09d68335979dce9daf41fdbb5b845c75fb0a1f7864bcd5d73ebf38d4c4e7",
+    "printed_pages_examined": [
+      1,
+      2,
+      16,
+      27
+    ],
+    "pdf_pages_one_based": [
+      19,
+      20,
+      34,
+      45
+    ],
+    "photo_and_text_read_directly": true
+  },
+  "codex_108": {
+    "catalogue_item": 1,
+    "shelfmark": "Wien ÖNB phil. gr.108",
+    "page_start": 1,
+    "page_end": 16,
+    "printed_age": "saec. XVI",
+    "folio_count": 371,
+    "trigon_entry_page": 2,
+    "trigon_folio": "159-159v",
+    "Kroll_text": "Ἡ κατὰ τρίγωνον μονομοιρία λαμβάνεται οὕτως",
+    "ending_note": "Des. in tabula f. 159v",
+    "original_photo_read": false,
+    "planetary_cells_verified": 0
+  },
+  "codex_115": {
+    "catalogue_item": 2,
+    "shelfmark": "Wien ÖNB phil. gr.115",
+    "page_start": 16,
+    "page_end": 27,
+    "printed_age": "saec. XIII",
+    "folio_count": 226,
+    "trigon_entry_page": 27,
+    "trigon_chapter": 34,
+    "trigon_folio": "205v",
+    "official_manuscript_IIIF_canvas": 417,
+    "old_photos_159_r_v_belong_here": true,
+    "photos_of_115_do_not_verify_108": true
+  },
+  "correction": {
+    "supersedes": "HELIODORUS_C27_CCAG_CHAPTER_BOUNDARIES_V1.json:catalogue_witnesses.vienna.earlier_catalogued_passage",
+    "prior_assigned_witness": "phil. gr.115",
+    "corrected_witness": "phil. gr.108",
+    "prior_artifact_retained": true,
+    "error_type": "CROSS_CODEX_CONFLATION",
+    "catalogue_f159_v_photo_paradox_resolved": true
+  },
+  "scientific_gates": {
+    "Kroll_cross_reference_to_Florence_is_editorial": true,
+    "physical_witnesses_distinct": true,
+    "independent_rule_proved": false,
+    "Boer_1962_apparatus_opened": false,
+    "day_night_slots_proved": false,
+    "human_predictive_validations": 0,
+    "production_scoring_changes": 0
+  }
+}
