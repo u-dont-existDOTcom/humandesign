@@ -1,0 +1,96 @@
+{
+  "source_commit": "020492d5fce1c7a3d6b81186cef6cf04d93fb694",
+  "seed": 20261024,
+  "generated_ray_inputs": 600,
+  "counts": {
+    "semi_arc:attempt": 600,
+    "semi_arc:match": 600,
+    "under_pole:attempt": 600,
+    "under_pole:match": 596,
+    "regiomontanus:attempt": 600,
+    "regiomontanus:match": 600,
+    "under_pole:mismatch": 4
+  },
+  "max_abs_delta": {
+    "semi_arc": 1.4210854715202004e-13,
+    "under_pole": 22.196097825203026,
+    "regiomontanus": 1.1368683772161603e-13
+  },
+  "recognized_original_under_pole_AODO_sign_discrepancies": 4,
+  "unexplained_source_discrepancies": 0,
+  "first_issues": [
+    {
+      "case": 13,
+      "method": "under_pole",
+      "input": [
+        43.17145956441149,
+        143.00291722283504,
+        1.2856007422612814,
+        -19.896051943079478,
+        183.77430916534618,
+        23.255122181345687,
+        "opposition",
+        "positive_offset"
+      ],
+      "source": 358.33264649372313,
+      "reference": 9.595653224339658,
+      "delta": 11.263006730616553,
+      "stored_source_AODO": 5.631503365308266
+    },
+    {
+      "case": 33,
+      "method": "under_pole",
+      "input": [
+        -35.21494546250186,
+        239.14338298225033,
+        0.4478598035466508,
+        -19.888439003505333,
+        133.8705849738021,
+        23.40885353380133,
+        "trine",
+        "negative_offset"
+      ],
+      "source": 4.704257585613703,
+      "reference": 26.900355410816736,
+      "delta": 22.196097825203026,
+      "stored_source_AODO": -11.09804891260152
+    },
+    {
+      "case": 149,
+      "method": "under_pole",
+      "input": [
+        23.698982219648002,
+        297.80663094093455,
+        1.888374516481126,
+        15.53167198497053,
+        132.20332640452207,
+        23.77285760094348,
+        "square",
+        "positive_offset"
+      ],
+      "source": 221.63434569357577,
+      "reference": 227.11521820137432,
+      "delta": 5.480872507798551,
+      "stored_source_AODO": -2.740436253899283
+    },
+    {
+      "case": 386,
+      "method": "under_pole",
+      "input": [
+        -48.41671128940016,
+        105.41232432491829,
+        3.7184029720485867,
+        6.07961294927151,
+        318.70172136404227,
+        23.34790007995219,
+        "sextile",
+        "positive_offset"
+      ],
+      "source": 8.70546336492858,
+      "reference": 12.411766736739619,
+      "delta": 3.706303371811032,
+      "stored_source_AODO": 1.8531516859055186
+    }
+  ],
+  "scope": "unchanged Morinus toPlanet original AST only; zodiacal promissor ray \u03bb\u00b1\u03c8, \u03b2_ray=0 and natal significator bodily; conjunction target; 3 methods; not human predictions"
+}

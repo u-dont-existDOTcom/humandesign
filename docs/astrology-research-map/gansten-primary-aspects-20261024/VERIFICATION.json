@@ -1,0 +1,144 @@
+{
+  "schema": "GANSTEN_PRIMARY_ASPECT_ENGINEERING_VERIFICATION_V1",
+  "date": "2026-10-24",
+  "branch": "research/gansten-primary-directions-aspects-20261024",
+  "parent_commit": "ffb37d179fd0fe7a5ca7d36824255160c258fbbf",
+  "mode": "ENGINEERING_GEOMETRIC_AUDIT_ONLY_NO_PREDICTIVE_VALIDATION",
+  "source_basis": {
+    "title": "Gansten Primary Directions, Work audit of purchased Kindle edition",
+    "audited_filename": "GANSTEN_PRIMARY_DIRECTIONS_AUDIT.md",
+    "sha256": "426a85ee3f0b63a4b2934786f716922c86fbc6947372c891f6fad3c8b15b1afc",
+    "source_locations": "Ch.5 pp.65-70; Ch.8 pp.88-92; Appendix I pp.147-154; audit §§1.3,2.1,3.3",
+    "independent_new_Kindle_page_check": false,
+    "preserved_historical_ambiguity": true
+  },
+  "zodiacal_ray_latitude": "0° only",
+  "mundane_phase_method": "proportional semi-arc reconstructed from normalized phase u±ψ only",
+  "classical_promissors": 7,
+  "angles": "true natal Ascendant/Midheaven",
+  "latitude_policies": [
+    "retain_bodily",
+    "project_to_ecliptic"
+  ],
+  "legacy_json_unchanged": {
+    "prior_frozen_reference": "docs/astrology-research-map/gansten-primary-timeline-20261024/examples/synthetic_2000_timeline.json",
+    "sha256": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52",
+    "regression_result": "exact full JSON equality"
+  },
+  "ephemeris": {
+    "requested_and_verified": "FLG_SWIEPH",
+    "version": "2.10.03",
+    "hashes": {
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    },
+    "origin": "official Swiss Ephemeris .se1 held only on owner local machine, not in repo"
+  },
+  "tests": {
+    "command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=/home/joel/.local/share/hdmatch/ephemeris/1800-2399 /home/joel/humandesign/.venv/bin/python -m pytest -q tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "36 passed",
+    "spherical_coordinate_crosscheck": "300 random nonzero-beta against Swiss cotrans",
+    "normalized_mundane_phase_invariant": "400 deterministic random cases",
+    "independent_geometry_comparison": "500 seeded cases from previous audited source (legacy tests)",
+    "lint": "ruff check src/hdmatch/astrology tests/unit/test_primary_direction_aspects.py : pass",
+    "typing": "mypy --follow-imports=silent src/hdmatch/astrology : pass"
+  },
+  "morinus_source_comparison": {
+    "program": "IngenieriaAstrologica/Morinus",
+    "pinned_commit": "020492d5fce1c7a3d6b81186cef6cf04d93fb694",
+    "version_tag": "unmodified source toPlanet methods, not GUI",
+    "seed": 20261024,
+    "random_zodiacal_ray_cases": 600,
+    "proportional_matches": 600,
+    "regiomontanian_matches": 600,
+    "under_pole_matches": 596,
+    "under_pole_known_abs_AODO_bug": 4,
+    "unexplained_disagreements": 0
+  },
+  "synthetic_examples": {
+    "synthetic_2000_mundane_phase": {
+      "accepted": 222,
+      "evaluated": 392,
+      "schema": "astro-primary-directions-aspect-timeline-v1",
+      "profile": "mundane_proportional_semi_arc",
+      "fixed_latitude_policy": "retain_bodily"
+    },
+    "synthetic_2000_zodiacal_bodily": {
+      "accepted": 683,
+      "evaluated": 1176,
+      "schema": "astro-primary-directions-aspect-timeline-v1",
+      "profile": "zodiacal_promissor_rays",
+      "fixed_latitude_policy": "retain_bodily"
+    },
+    "synthetic_2000_zodiacal_projected": {
+      "accepted": 690,
+      "evaluated": 1176,
+      "schema": "astro-primary-directions-aspect-timeline-v1",
+      "profile": "zodiacal_promissor_rays",
+      "fixed_latitude_policy": "project_to_ecliptic"
+    },
+    "synthetic_2026_zodiacal_bodily": {
+      "accepted": 740,
+      "evaluated": 1176,
+      "schema": "astro-primary-directions-aspect-timeline-v1",
+      "profile": "zodiacal_promissor_rays",
+      "fixed_latitude_policy": "retain_bodily"
+    }
+  },
+  "files": {
+    "src/hdmatch/astrology/sky.py": {
+      "bytes": 8275,
+      "sha256": "85f19053378e129cc4cd40b5519ff2a0fa88be1a68bc895e39a3b358ea7abceb"
+    },
+    "src/hdmatch/astrology/cli.py": {
+      "bytes": 5001,
+      "sha256": "9908d7652ae612ad10498988095b3b95cb9938633d67b4f47bdf686e2cb8fb62"
+    },
+    "src/hdmatch/astrology/aspect_points.py": {
+      "bytes": 5159,
+      "sha256": "8b88b0c6dc678d65e7c22f452614f38380c0d82ae4b69bbc1f6e3b86c108773b"
+    },
+    "src/hdmatch/astrology/aspect_timeline.py": {
+      "bytes": 14038,
+      "sha256": "dbf73c696fcd5eb9693ea70e4dcf178dfa4baf84ea06c386511524dc0e920642"
+    },
+    "tests/unit/test_primary_direction_aspects.py": {
+      "bytes": 13242,
+      "sha256": "58888fa478c7618a33dafcd9726d6e734a1b45fe9bedfd4497b33df5d8f9ebfb"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/README.md": {
+      "bytes": 10719,
+      "sha256": "e0b933d4a0a7dd7a548a0785aaf4ceaa2c01c18a0a992002476cfde68f279409"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3065,
+      "sha256": "d845179fbd35a79db4f2e8ba0d3f6458a13b3b1599a7bf04b0fe9c75adb5995c"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/independent_morinus_ray_parity.py": {
+      "bytes": 5301,
+      "sha256": "e3d1f5d69bd16128d8eb47d196f56e331e2dda823ab40131572f801bf2c81df3"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/MORINUS_ZODIACAL_RAY_SOURCE_PARITY.json": {
+      "bytes": 2639,
+      "sha256": "085d1af3649f83079a313877165d10fc57aad0ce32f57d9fee09eef94fc7f728"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/examples/synthetic_2000_mundane_phase.json": {
+      "bytes": 161992,
+      "sha256": "61ef7a9864532b701b1c4788d74f74dc0956076577b0dff9daff2577c0c82f72"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/examples/synthetic_2000_zodiacal_bodily.json": {
+      "bytes": 496791,
+      "sha256": "fc8bca74ed77ade882a2954e6eb12895a23de22e75c94807162ef2290eb8cbf1"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/examples/synthetic_2000_zodiacal_projected.json": {
+      "bytes": 504998,
+      "sha256": "a0ac8da19655edac48f8e476c8aa9f73ed6cb4e2f53580b8684fb7abc66977d1"
+    },
+    "docs/astrology-research-map/gansten-primary-aspects-20261024/examples/synthetic_2026_zodiacal_bodily.json": {
+      "bytes": 537478,
+      "sha256": "17fe5ff8c0b6fd6c518fdff21ca8bf1674e7832485be785eff3f5df17a2d45a9"
+    }
+  },
+  "no_human_survey_or_predictive_claim": true,
+  "not_merged_into_production": true
+}

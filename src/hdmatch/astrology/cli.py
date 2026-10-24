@@ -14,9 +14,15 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from .aspect_timeline import (
+    AspectProfile,
+    AspectTimeline,
+    SignificatorProjection,
+    generate_aspect_timeline,
+)
 from .geometry import GeometryMethod
 from .sky import snapshot_from_swiss_files
-from .timeline import TimeKey, generate_timeline
+from .timeline import TimeKey, Timeline, generate_timeline
 
 
 def parse_utc(value: str) -> datetime:
@@ -60,6 +66,21 @@ def main(argv: list[str] | None = None) -> int:
         default=TimeKey.PTOLEMY_ONE_EQUINOCTIAL_DEGREE_PER_YEAR.value,
     )
     parser.add_argument("--max-age", type=float, default=100.0)
+    parser.add_argument(
+        "--profile",
+        choices=["body_conjunctions", *(item.value for item in AspectProfile)],
+        default="body_conjunctions",
+        help=(
+            "bodily conjunctions (legacy default), zodiacal promissor rays, "
+            "or mundane semi-arc phase aspects"
+        ),
+    )
+    parser.add_argument(
+        "--significator-projection",
+        choices=[x.value for x in SignificatorProjection],
+        default=SignificatorProjection.RETAIN_BODILY.value,
+        help="project the fixed planetary significator to beta=0 only for zodiacal ray profile",
+    )
     parser.add_argument("--output", default="-", help="JSON output path or '-' for stdout")
     args = parser.parse_args(argv)
     try:
@@ -70,9 +91,30 @@ def main(argv: list[str] | None = None) -> int:
             ephemeris_directory=args.ephemeris_dir,
         )
         methods = tuple(GeometryMethod) if args.method == "all" else (GeometryMethod(args.method),)
-        timeline = generate_timeline(
-            sky, methods=methods, time_key=TimeKey(args.key), max_age_years=args.max_age
-        )
+        timeline: Timeline | AspectTimeline
+        if args.profile == "body_conjunctions":
+            if args.significator_projection != SignificatorProjection.RETAIN_BODILY.value:
+                raise ValueError(
+                    "bodily conjunction profile does not support significator projection"
+                )
+            timeline = generate_timeline(
+                sky, methods=methods, time_key=TimeKey(args.key), max_age_years=args.max_age
+            )
+        else:
+            profile = AspectProfile(args.profile)
+            selected_methods = (
+                None
+                if profile is AspectProfile.MUNDANE_PROPORTIONAL_SEMI_ARC and args.method == "all"
+                else methods
+            )
+            timeline = generate_aspect_timeline(
+                sky,
+                profile=profile,
+                methods=selected_methods,
+                significator_projection=SignificatorProjection(args.significator_projection),
+                time_key=TimeKey(args.key),
+                max_age_years=args.max_age,
+            )
     except (ValueError, RuntimeError, OverflowError) as exc:
         parser.exit(status=2, message=f"primary-direction calculation failed: {exc}\n")
     json_text = json.dumps(timeline.to_dict(), ensure_ascii=False, indent=2) + "\n"

@@ -56,6 +56,10 @@ class DirectionBirthSnapshot:
     ephemeris_version: str
     ephemeris_mode: str
     ephemeris_file_sha256: tuple[tuple[str, str], ...]
+    # Newly retained for ecliptic zodiacal aspect-point geometry; older
+    # conjunction-only snapshots may omit them, and ray generation fails closed.
+    ecliptic_positions: tuple[tuple[str, float, float], ...] = ()
+    true_obliquity_deg: float | None = None
     coordinate_convention: str = (
         "apparent geocentric true-equator/equinox-of-date RA/Dec, "
         "east-positive geographic longitude, tropical zodiac"
@@ -63,6 +67,9 @@ class DirectionBirthSnapshot:
 
     def lookup(self) -> dict[str, EquatorialPoint]:
         return dict(self.points)
+
+    def ecliptic_lookup(self) -> dict[str, tuple[float, float]]:
+        return {name: (lon, lat) for name, lon, lat in self.ecliptic_positions}
 
     def provenance(self) -> dict[str, object]:
         return {
@@ -137,6 +144,7 @@ def snapshot_from_swiss_files(
         CelestialBody.SATURN: int(swe.SATURN),
     }
     positions: list[tuple[str, EquatorialPoint]] = []
+    ecliptic_positions: list[tuple[str, float, float]] = []
     with _SWISS_LOCK:
         swe.set_ephe_path(str(root))
         for body in CLASSICAL_BODIES:
@@ -153,6 +161,9 @@ def snapshot_from_swiss_files(
                     body.value,
                     EquatorialPoint(state.right_ascension_deg, state.declination_deg),
                 )
+            )
+            ecliptic_positions.append(
+                (body.value, state.ecliptic_longitude_deg, state.ecliptic_latitude_deg)
             )
         try:
             _cusps, ascmc = swe.houses_ex(
@@ -194,4 +205,6 @@ def snapshot_from_swiss_files(
         ephemeris_version=strict.metadata.library_version,
         ephemeris_mode="SWIEPH verified for all seven classical bodies",
         ephemeris_file_sha256=tuple((Path(f.path).name, f.sha256) for f in strict.metadata.files),
+        ecliptic_positions=tuple(ecliptic_positions),
+        true_obliquity_deg=epsilon,
     )
