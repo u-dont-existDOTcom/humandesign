@@ -1,0 +1,705 @@
+{
+  "plan_sha256": "948a1289b5f891c7f7870632ad116fb16ea6409d1bed575483c07c9901fbc0d0",
+  "schema": "SYNTHETIC_ONLY_BIRTH_INPUTS_V1",
+  "selection_frozen_before_astronomy": true,
+  "sensitivity_case_ids": [
+    "SYN-PD-006",
+    "SYN-PD-007",
+    "SYN-PD-008",
+    "SYN-PD-010",
+    "SYN-PD-011",
+    "SYN-PD-018",
+    "SYN-PD-019",
+    "SYN-PD-026",
+    "SYN-PD-029",
+    "SYN-PD-044",
+    "SYN-PD-046",
+    "SYN-PD-047",
+    "SYN-PD-049",
+    "SYN-PD-050",
+    "SYN-PD-053",
+    "SYN-PD-055",
+    "SYN-PD-057",
+    "SYN-PD-062",
+    "SYN-PD-074",
+    "SYN-PD-075",
+    "SYN-PD-078",
+    "SYN-PD-087",
+    "SYN-PD-089",
+    "SYN-PD-090"
+  ],
+  "synthetic_cases": [
+    {
+      "birth_utc": "1985-01-07T23:04:00+00:00",
+      "id": "SYN-PD-001",
+      "latitude_deg": -55,
+      "longitude_east_deg": -65.195578,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1912-01-08T16:55:00+00:00",
+      "id": "SYN-PD-002",
+      "latitude_deg": -40,
+      "longitude_east_deg": 91.119937,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "2005-01-22T17:05:00+00:00",
+      "id": "SYN-PD-003",
+      "latitude_deg": -25,
+      "longitude_east_deg": -54.900488,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1975-01-22T16:39:00+00:00",
+      "id": "SYN-PD-004",
+      "latitude_deg": -10,
+      "longitude_east_deg": 140.199804,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1961-01-18T05:48:00+00:00",
+      "id": "SYN-PD-005",
+      "latitude_deg": 10,
+      "longitude_east_deg": -110.759336,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1965-01-17T18:53:00+00:00",
+      "id": "SYN-PD-006",
+      "latitude_deg": 25,
+      "longitude_east_deg": -79.158841,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1957-01-12T09:04:00+00:00",
+      "id": "SYN-PD-007",
+      "latitude_deg": 40,
+      "longitude_east_deg": 113.089375,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1963-01-03T04:55:00+00:00",
+      "id": "SYN-PD-008",
+      "latitude_deg": 55,
+      "longitude_east_deg": -64.423494,
+      "month_stratum": 1
+    },
+    {
+      "birth_utc": "1974-02-07T04:17:00+00:00",
+      "id": "SYN-PD-009",
+      "latitude_deg": -55,
+      "longitude_east_deg": 144.814163,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1921-02-13T07:43:00+00:00",
+      "id": "SYN-PD-010",
+      "latitude_deg": -40,
+      "longitude_east_deg": 26.796542,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1981-02-11T10:29:00+00:00",
+      "id": "SYN-PD-011",
+      "latitude_deg": -25,
+      "longitude_east_deg": -150.844225,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1914-02-14T06:05:00+00:00",
+      "id": "SYN-PD-012",
+      "latitude_deg": -10,
+      "longitude_east_deg": -0.56209,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1990-02-26T17:07:00+00:00",
+      "id": "SYN-PD-013",
+      "latitude_deg": 10,
+      "longitude_east_deg": 11.935182,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1994-02-17T05:22:00+00:00",
+      "id": "SYN-PD-014",
+      "latitude_deg": 25,
+      "longitude_east_deg": 67.97442,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "2002-02-09T00:03:00+00:00",
+      "id": "SYN-PD-015",
+      "latitude_deg": 40,
+      "longitude_east_deg": 8.457789,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1962-02-04T09:54:00+00:00",
+      "id": "SYN-PD-016",
+      "latitude_deg": 55,
+      "longitude_east_deg": 126.830024,
+      "month_stratum": 2
+    },
+    {
+      "birth_utc": "1976-03-07T05:03:00+00:00",
+      "id": "SYN-PD-017",
+      "latitude_deg": -55,
+      "longitude_east_deg": -11.068201,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1976-03-07T19:16:00+00:00",
+      "id": "SYN-PD-018",
+      "latitude_deg": -40,
+      "longitude_east_deg": 64.45885,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1981-03-05T20:14:00+00:00",
+      "id": "SYN-PD-019",
+      "latitude_deg": -25,
+      "longitude_east_deg": -68.364929,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1933-03-23T07:03:00+00:00",
+      "id": "SYN-PD-020",
+      "latitude_deg": -10,
+      "longitude_east_deg": 16.206476,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1928-03-23T21:28:00+00:00",
+      "id": "SYN-PD-021",
+      "latitude_deg": 10,
+      "longitude_east_deg": 48.20707,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1962-03-19T19:16:00+00:00",
+      "id": "SYN-PD-022",
+      "latitude_deg": 25,
+      "longitude_east_deg": -74.305145,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1926-03-08T23:49:00+00:00",
+      "id": "SYN-PD-023",
+      "latitude_deg": 40,
+      "longitude_east_deg": -122.937195,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "1996-03-18T17:42:00+00:00",
+      "id": "SYN-PD-024",
+      "latitude_deg": 55,
+      "longitude_east_deg": 20.984312,
+      "month_stratum": 3
+    },
+    {
+      "birth_utc": "2002-04-04T05:32:00+00:00",
+      "id": "SYN-PD-025",
+      "latitude_deg": -55,
+      "longitude_east_deg": -9.748366,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1961-04-12T16:55:00+00:00",
+      "id": "SYN-PD-026",
+      "latitude_deg": -40,
+      "longitude_east_deg": 75.09429,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1958-04-06T22:23:00+00:00",
+      "id": "SYN-PD-027",
+      "latitude_deg": -25,
+      "longitude_east_deg": -82.461296,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1959-04-13T11:54:00+00:00",
+      "id": "SYN-PD-028",
+      "latitude_deg": -10,
+      "longitude_east_deg": 135.195197,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1990-04-10T17:21:00+00:00",
+      "id": "SYN-PD-029",
+      "latitude_deg": 10,
+      "longitude_east_deg": 50.85939,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1922-04-08T23:50:00+00:00",
+      "id": "SYN-PD-030",
+      "latitude_deg": 25,
+      "longitude_east_deg": -87.177702,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1975-04-25T17:43:00+00:00",
+      "id": "SYN-PD-031",
+      "latitude_deg": 40,
+      "longitude_east_deg": 71.019978,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "2004-04-04T06:55:00+00:00",
+      "id": "SYN-PD-032",
+      "latitude_deg": 55,
+      "longitude_east_deg": -2.40585,
+      "month_stratum": 4
+    },
+    {
+      "birth_utc": "1910-05-24T00:51:00+00:00",
+      "id": "SYN-PD-033",
+      "latitude_deg": -55,
+      "longitude_east_deg": 3.564625,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1921-05-09T14:00:00+00:00",
+      "id": "SYN-PD-034",
+      "latitude_deg": -40,
+      "longitude_east_deg": -65.354031,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1962-05-05T11:55:00+00:00",
+      "id": "SYN-PD-035",
+      "latitude_deg": -25,
+      "longitude_east_deg": -81.438041,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "2001-05-05T22:14:00+00:00",
+      "id": "SYN-PD-036",
+      "latitude_deg": -10,
+      "longitude_east_deg": 158.874782,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1966-05-05T04:02:00+00:00",
+      "id": "SYN-PD-037",
+      "latitude_deg": 10,
+      "longitude_east_deg": 15.995837,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1915-05-15T15:25:00+00:00",
+      "id": "SYN-PD-038",
+      "latitude_deg": 25,
+      "longitude_east_deg": 58.595941,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1966-05-19T11:52:00+00:00",
+      "id": "SYN-PD-039",
+      "latitude_deg": 40,
+      "longitude_east_deg": 7.735575,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1954-05-18T13:15:00+00:00",
+      "id": "SYN-PD-040",
+      "latitude_deg": 55,
+      "longitude_east_deg": -51.618604,
+      "month_stratum": 5
+    },
+    {
+      "birth_utc": "1955-06-09T10:07:00+00:00",
+      "id": "SYN-PD-041",
+      "latitude_deg": -55,
+      "longitude_east_deg": 25.095875,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1962-06-13T14:39:00+00:00",
+      "id": "SYN-PD-042",
+      "latitude_deg": -40,
+      "longitude_east_deg": 113.033568,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "2000-06-06T08:30:00+00:00",
+      "id": "SYN-PD-043",
+      "latitude_deg": -25,
+      "longitude_east_deg": -165.990583,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1995-06-21T12:18:00+00:00",
+      "id": "SYN-PD-044",
+      "latitude_deg": -10,
+      "longitude_east_deg": 107.58667,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "2000-06-22T16:24:00+00:00",
+      "id": "SYN-PD-045",
+      "latitude_deg": 10,
+      "longitude_east_deg": -87.927208,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1910-06-07T03:55:00+00:00",
+      "id": "SYN-PD-046",
+      "latitude_deg": 25,
+      "longitude_east_deg": 48.27245,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1914-06-23T10:44:00+00:00",
+      "id": "SYN-PD-047",
+      "latitude_deg": 40,
+      "longitude_east_deg": 93.198592,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1939-06-23T08:13:00+00:00",
+      "id": "SYN-PD-048",
+      "latitude_deg": 55,
+      "longitude_east_deg": 144.563906,
+      "month_stratum": 6
+    },
+    {
+      "birth_utc": "1953-07-02T07:32:00+00:00",
+      "id": "SYN-PD-049",
+      "latitude_deg": -55,
+      "longitude_east_deg": -23.497096,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1946-07-11T07:59:00+00:00",
+      "id": "SYN-PD-050",
+      "latitude_deg": -40,
+      "longitude_east_deg": -59.62212,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1939-07-02T19:42:00+00:00",
+      "id": "SYN-PD-051",
+      "latitude_deg": -25,
+      "longitude_east_deg": -43.985899,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1983-07-19T01:42:00+00:00",
+      "id": "SYN-PD-052",
+      "latitude_deg": -10,
+      "longitude_east_deg": 45.721046,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1928-07-10T14:02:00+00:00",
+      "id": "SYN-PD-053",
+      "latitude_deg": 10,
+      "longitude_east_deg": 5.557873,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1992-07-05T06:00:00+00:00",
+      "id": "SYN-PD-054",
+      "latitude_deg": 25,
+      "longitude_east_deg": 28.141144,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1937-07-04T01:44:00+00:00",
+      "id": "SYN-PD-055",
+      "latitude_deg": 40,
+      "longitude_east_deg": 62.035,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1991-07-11T06:33:00+00:00",
+      "id": "SYN-PD-056",
+      "latitude_deg": 55,
+      "longitude_east_deg": -117.93438,
+      "month_stratum": 7
+    },
+    {
+      "birth_utc": "1991-08-24T17:36:00+00:00",
+      "id": "SYN-PD-057",
+      "latitude_deg": -55,
+      "longitude_east_deg": 24.986782,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1949-08-25T11:06:00+00:00",
+      "id": "SYN-PD-058",
+      "latitude_deg": -40,
+      "longitude_east_deg": -139.318516,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1935-08-11T16:20:00+00:00",
+      "id": "SYN-PD-059",
+      "latitude_deg": -25,
+      "longitude_east_deg": -82.743527,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1990-08-07T04:16:00+00:00",
+      "id": "SYN-PD-060",
+      "latitude_deg": -10,
+      "longitude_east_deg": -101.076072,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1973-08-17T13:04:00+00:00",
+      "id": "SYN-PD-061",
+      "latitude_deg": 10,
+      "longitude_east_deg": 92.643223,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1914-08-18T19:34:00+00:00",
+      "id": "SYN-PD-062",
+      "latitude_deg": 25,
+      "longitude_east_deg": -117.031863,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "2006-08-20T05:33:00+00:00",
+      "id": "SYN-PD-063",
+      "latitude_deg": 40,
+      "longitude_east_deg": 45.457622,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1981-08-24T21:16:00+00:00",
+      "id": "SYN-PD-064",
+      "latitude_deg": 55,
+      "longitude_east_deg": 118.325859,
+      "month_stratum": 8
+    },
+    {
+      "birth_utc": "1953-09-25T10:51:00+00:00",
+      "id": "SYN-PD-065",
+      "latitude_deg": -55,
+      "longitude_east_deg": 114.569322,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1935-09-27T06:34:00+00:00",
+      "id": "SYN-PD-066",
+      "latitude_deg": -40,
+      "longitude_east_deg": 55.710641,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1954-09-10T17:29:00+00:00",
+      "id": "SYN-PD-067",
+      "latitude_deg": -25,
+      "longitude_east_deg": -72.327794,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1993-09-09T03:18:00+00:00",
+      "id": "SYN-PD-068",
+      "latitude_deg": -10,
+      "longitude_east_deg": 144.321128,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1943-09-22T04:45:00+00:00",
+      "id": "SYN-PD-069",
+      "latitude_deg": 10,
+      "longitude_east_deg": 3.172387,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "2007-09-18T16:12:00+00:00",
+      "id": "SYN-PD-070",
+      "latitude_deg": 25,
+      "longitude_east_deg": 80.646528,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1929-09-26T09:55:00+00:00",
+      "id": "SYN-PD-071",
+      "latitude_deg": 40,
+      "longitude_east_deg": -55.256235,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "1983-09-10T03:32:00+00:00",
+      "id": "SYN-PD-072",
+      "latitude_deg": 55,
+      "longitude_east_deg": -79.609994,
+      "month_stratum": 9
+    },
+    {
+      "birth_utc": "2006-10-12T19:28:00+00:00",
+      "id": "SYN-PD-073",
+      "latitude_deg": -55,
+      "longitude_east_deg": -10.786145,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1989-10-05T17:02:00+00:00",
+      "id": "SYN-PD-074",
+      "latitude_deg": -40,
+      "longitude_east_deg": -65.859113,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1983-10-20T13:53:00+00:00",
+      "id": "SYN-PD-075",
+      "latitude_deg": -25,
+      "longitude_east_deg": 147.837837,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1927-10-09T20:11:00+00:00",
+      "id": "SYN-PD-076",
+      "latitude_deg": -10,
+      "longitude_east_deg": 102.894551,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1945-10-16T13:41:00+00:00",
+      "id": "SYN-PD-077",
+      "latitude_deg": 10,
+      "longitude_east_deg": -25.096654,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1995-10-06T11:43:00+00:00",
+      "id": "SYN-PD-078",
+      "latitude_deg": 25,
+      "longitude_east_deg": 162.949961,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1970-10-20T21:43:00+00:00",
+      "id": "SYN-PD-079",
+      "latitude_deg": 40,
+      "longitude_east_deg": -85.076889,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1979-10-16T02:12:00+00:00",
+      "id": "SYN-PD-080",
+      "latitude_deg": 55,
+      "longitude_east_deg": -98.54404,
+      "month_stratum": 10
+    },
+    {
+      "birth_utc": "1956-11-02T07:00:00+00:00",
+      "id": "SYN-PD-081",
+      "latitude_deg": -55,
+      "longitude_east_deg": 29.604906,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1981-11-13T20:47:00+00:00",
+      "id": "SYN-PD-082",
+      "latitude_deg": -40,
+      "longitude_east_deg": 96.204855,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1972-11-26T23:31:00+00:00",
+      "id": "SYN-PD-083",
+      "latitude_deg": -25,
+      "longitude_east_deg": 89.028588,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1914-11-15T22:47:00+00:00",
+      "id": "SYN-PD-084",
+      "latitude_deg": -10,
+      "longitude_east_deg": 121.59078,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1941-11-26T05:56:00+00:00",
+      "id": "SYN-PD-085",
+      "latitude_deg": 10,
+      "longitude_east_deg": -81.677018,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1957-11-14T05:59:00+00:00",
+      "id": "SYN-PD-086",
+      "latitude_deg": 25,
+      "longitude_east_deg": -70.429811,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1988-11-12T16:18:00+00:00",
+      "id": "SYN-PD-087",
+      "latitude_deg": 40,
+      "longitude_east_deg": -148.633307,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1964-11-02T05:15:00+00:00",
+      "id": "SYN-PD-088",
+      "latitude_deg": 55,
+      "longitude_east_deg": -44.415669,
+      "month_stratum": 11
+    },
+    {
+      "birth_utc": "1939-12-17T19:34:00+00:00",
+      "id": "SYN-PD-089",
+      "latitude_deg": -55,
+      "longitude_east_deg": -155.793247,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1981-12-20T20:54:00+00:00",
+      "id": "SYN-PD-090",
+      "latitude_deg": -40,
+      "longitude_east_deg": 35.704788,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1971-12-09T14:49:00+00:00",
+      "id": "SYN-PD-091",
+      "latitude_deg": -25,
+      "longitude_east_deg": 37.789755,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1928-12-12T21:46:00+00:00",
+      "id": "SYN-PD-092",
+      "latitude_deg": -10,
+      "longitude_east_deg": 10.95828,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1932-12-07T21:23:00+00:00",
+      "id": "SYN-PD-093",
+      "latitude_deg": 10,
+      "longitude_east_deg": -111.798712,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1945-12-15T09:04:00+00:00",
+      "id": "SYN-PD-094",
+      "latitude_deg": 25,
+      "longitude_east_deg": -71.545092,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1912-12-16T07:17:00+00:00",
+      "id": "SYN-PD-095",
+      "latitude_deg": 40,
+      "longitude_east_deg": 88.131455,
+      "month_stratum": 12
+    },
+    {
+      "birth_utc": "1941-12-05T05:15:00+00:00",
+      "id": "SYN-PD-096",
+      "latitude_deg": 55,
+      "longitude_east_deg": 50.14283,
+      "month_stratum": 12
+    }
+  ]
+}

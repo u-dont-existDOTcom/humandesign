@@ -1,0 +1,82 @@
+{
+  "schema": "LILLY_1647_CONDITION_DIRECTION_ORIGINAL_WITNESS_AUDIT_V1",
+  "status": "DIRECT_VISUAL_CHECK_ORIGINAL_PRINTING_NO_HUMAN_OUTCOMES",
+  "source": {
+    "author": "William Lilly",
+    "title": "Christian Astrology, Book III",
+    "edition": "1647 first printing, Wellcome b30338724",
+    "pages": [
+      509,
+      510,
+      651,
+      652,
+      653,
+      654,
+      655
+    ],
+    "page_canvas_rule": "image b30338724_{printed_page+34:04d}.jp2",
+    "existing_event_pages": [
+      657,
+      658,
+      659,
+      660,
+      668,
+      669,
+      670
+    ]
+  },
+  "anchors": [
+    {
+      "page": 510,
+      "exact_fragment": "both forward and backward, or direct and converse",
+      "topic": "zodiacal aspect rays in a Speculum",
+      "finding": "The expression occurs in an explanation of projecting aspect points ahead and behind signs; it does NOT by itself authenticate the software's shortest-signed-arc filter as a historical time direction algorithm.",
+      "status": "SOURCE_VERIFIED_SCOPE_LIMIT"
+    },
+    {
+      "page": 651,
+      "exact_fragment": "At this day we use no method in Directions but Argolus",
+      "topic": "historical adopted algorithm",
+      "finding": "Lilly points to Argolus as his then-current preferred technique, not an endorsement of every later Placidus/Regiomontanus modern reconstruction. His prose here does not supply a complete executable Argolus algorithm.",
+      "status": "SOURCE_VERIFIED_HISTORICAL_ATTRIBUTION"
+    },
+    {
+      "page": 652,
+      "exact_fragment": "if we faile two or three degrees in the ascendant",
+      "topic": "birth time rectification",
+      "finding": "Lilly says a 2-3 degree angular error moves foretold accidents a similar number of years, motivating a prospective sensitivity test to plausible birth-time errors; not evidence of outcome validity.",
+      "status": "SOURCE_VERIFIED_MOTIVATION"
+    },
+    {
+      "page": 653,
+      "exact_fragment": "but the best Practisers doe it onely according to succession",
+      "topic": "converse limitation",
+      "finding": "In its grammar, this comment refers to direction of the Part of Fortune, not a blanket rule that all angle/planet directions are always direct. Our software 'direct' remains diagnostic.",
+      "status": "SOURCE_VERIFIED_SCOPE_LIMIT"
+    },
+    {
+      "page": 654,
+      "exact_fragment": "when both of them are in their Essentiall Dignities, and in angles",
+      "topic": "strength qualification",
+      "finding": "Lilly conditions full manifestation on strength of BOTH significator and promissor. A bare Jupiter domicile flag alone does not implement his full criterion, and an exact-angle significator's strength needs a separate definition.",
+      "status": "SOURCE_VERIFIED_UNIMPLEMENTED_PREDICATE"
+    },
+    {
+      "page": 655,
+      "exact_fragment": "the effects of the Direction may come to nothing",
+      "topic": "weak radix",
+      "finding": "Lilly explicitly permits null effect if both are weak; a deterministic every-direction event prediction would be stronger than his full text.",
+      "status": "SOURCE_VERIFIED_FAILURE_MODE"
+    },
+    {
+      "page": 655,
+      "exact_fragment": "both the Directions may exercise their effects in the same yeer",
+      "topic": "multiple events and conflict",
+      "finding": "Opposed directions are not necessarily mutually cancelling. If they concern the same topic Lilly recommends profections/revolutions or stronger natal promissor, which are not currently computed by this source lane.",
+      "status": "SOURCE_VERIFIED_UNIMPLEMENTED_ADJUDICATION"
+    }
+  ],
+  "interpretation_policy": "Mark natal strength/dignities/house position and concurrent profections/revolutions unresolved rather than encoding arbitrary favorable assumptions. These do not disable synthetic coverage calculations; they do block any unconditional full-Lilly prediction claim.",
+  "root_owner_goal_state": "OPEN",
+  "human_validation": "NONE"
+}
