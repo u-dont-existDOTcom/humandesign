@@ -1,0 +1,160 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C23_HELIODORUS_COMMENTARY_TRIGON_CANON_V1",
+  "date": "2026-10-24",
+  "owner_anchor": "OPEN: reconstruct ancient Hellenistic astrology source variants faithfully inside the 16-tradition research map, for future independently blinded human testing; source arithmetic is not prediction validation",
+  "source": {
+    "repository": "Biblioteca Medicea Laurenziana, Firenze",
+    "shelfmark": "Plut. 28.14",
+    "dating_from_iiif_catalogue": "1301–1400 CE",
+    "work_catalogue": "Heliodorus astrologus, In Apotelesmatica Pauli Alexandrini, ff. 177–212; composite Byzantine commentary tradition (not proof of individual ancient authorship)",
+    "Biblissima": "https://iiif.biblissima.fr/collections/manifest/e860a89a7860209ea71fb01516747e7543e979d7",
+    "Pinakes": "https://pinakes-dev.irht.cnrs.fr/notices/oeuvre/7468/",
+    "IIIF_manifest": "https://cdm21059.contentdm.oclc.org/iiif/plutei:566076/manifest.json",
+    "manifest_canvas_count": 670,
+    "inspected_segment": "physical folios 177r–212v; IIIF canvas indices 366–437 (72 source-page thumbnails actually fetched and viewed)",
+    "figure_folio": "204v",
+    "figure_canvas_index": 421,
+    "figure_iiif_service": "https://cdm21059.contentdm.oclc.org/iiif/2/plutei:565809",
+    "figure_iiif_photo": "https://cdm21059.contentdm.oclc.org/iiif/2/plutei:565809/full/full/0/default.jpg",
+    "figure_bytes": 741471,
+    "figure_sha256": "52a1b8b4f8d67514c815a56178d54c1d45e03a991a09b48417f599ff3336128e",
+    "figure_dimensions": [
+      2536,
+      2572
+    ],
+    "preceding_folio": "204r, IIIF canvas420, photo service plutei:565808; discussion of triplicity monomoiriai",
+    "preceding_sha256": "c450625b85b0b655999b700b32c03ef590d33585c3f5b5789e4082f1dd8b78d0",
+    "following_folio": "205r, IIIF canvas422, photo service plutei:565810; explanatory Greek text after the grid",
+    "following_sha256": "3b92483a923a7dfa8754ea79d67caf8967ab75dc6e010dac8acc345857474bd5",
+    "first_line_approx_greek": "κανόνιον τριγωνικῶν μονομοιριῶν",
+    "first_line_reading_status": "DIRECT_VISUAL_GREEK_NORMALIZATION_APPROXIMATE_FROM_RED_RUBRIC",
+    "source_class": "SEPARATE_PHYSICAL_FOURTEENTH_CENTURY_COMMENTARY_MANUSCRIPT; not Boer 1962 critical printed edition; not an ancient author autograph",
+    "source_photographs_redistributed": false,
+    "method": "Official IIIF image directly downloaded and enlarged; handwritten marginal ordinal numbers and two within-row graphic assignments manually inspected, without OCR"
+  },
+  "table_geometry": {
+    "four_columns": {
+      "fire": [
+        "Aries",
+        "Leo",
+        "Sagittarius"
+      ],
+      "earth": [
+        "Taurus",
+        "Virgo",
+        "Capricorn"
+      ],
+      "air": [
+        "Gemini",
+        "Libra",
+        "Aquarius"
+      ],
+      "water": [
+        "Cancer",
+        "Scorpio",
+        "Pisces"
+      ]
+    },
+    "ordinal_degrees_each": 30,
+    "paired_planet_assignments_per_degree": 2,
+    "double_line_bands_per_column": 15,
+    "layout_comment": "Two abbreviated planet assignments per degree appear consistently; first slot is provisionally day and second provisionally night, inferred from openings Sun/Jupiter, Venus/Moon, Saturn/Mercury, Venus/Mars and adjacent text, not independently established from a fully collated Greek abbreviation glossary",
+    "greek_source_rubric_sect_certified": false,
+    "entire_30x4x2_cells_read": false,
+    "first_slot_provisionally_read_degrees": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "second_slot_provisionally_read_degrees": [
+      1
+    ],
+    "textual_copy_family_to_Boer_1962_independently_established": false
+  },
+  "source_reading_flags": {
+    "independent_blind_palaeographer_checked": false,
+    "source_reader_prior_model_prediction_patterns_known": true,
+    "source_reading_does_not_guarantee_palaeographic_certainty": true,
+    "comparing_diurnal_sect_is_conditional_on_slot_order": true,
+    "not_an_extant_fourth_century_autograph": true
+  },
+  "first_slot_first_eight_observed_by_trigon": {
+    "fire": [
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Mars",
+      "Sun"
+    ],
+    "earth": [
+      "Venus",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus"
+    ],
+    "air": [
+      "Saturn",
+      "Mercury",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Venus",
+      "Moon",
+      "Saturn"
+    ],
+    "water": [
+      "Venus",
+      "Mars",
+      "Sun",
+      "Jupiter",
+      "Moon",
+      "Saturn",
+      "Mercury",
+      "Venus"
+    ]
+  },
+  "second_slot_degree_one_observed_by_trigon": {
+    "fire": "Jupiter",
+    "earth": "Moon",
+    "air": "Mercury",
+    "water": "Mars"
+  },
+  "confidence": {
+    "first_slot_1_8": "PROVISIONAL_MEDIUM: mapped from repeated glyph shapes with prior sevenfold algorithms already available; nonblinded source transcription",
+    "second_slot_first_degree": "PROVISIONAL_MEDIUM",
+    "degree_9_30": "UNREAD_NO_VALUES_ASSIGNED",
+    "second_slot_degree_2_30": "UNREAD_NO_VALUES_ASSIGNED"
+  },
+  "comparison_intent": {
+    "C04": "Greenbaum corrected daytime 7-planet table as frozen prior",
+    "C05": "Greek narrative no-repeated-planet daytime 7-planet reconstruction frozen prior",
+    "C15": "Previously registered 120-entry Paulus-family candidate manuscript diagram; physically distinct source/family relationship unresolved",
+    "source_scope": "FOUR_TRIGONS × EIGHT_PROVISIONAL_FIRST_SLOT_POSITIONS; do not compute uninspected 9–30 from a hypothetical cycle",
+    "cancer_ordinal_eight": "new manuscript left-slot Venus, C05 narrative Venus, C04 printed Mars, earlier Paulus family Mercury; keep all four object/method labels as separate evidence rather than an algorithm vote"
+  },
+  "unresolved": {
+    "full_240_photo_glyphs_reindependently_read": false,
+    "original_Boer_1958_chapter32_critical_apparatus_read": false,
+    "Boer_1962_printed_commentary_ch34_apparatus_read": false,
+    "nighttime_status_confirmed_in_own_rubric": false,
+    "commentary_ascribed_to_individual_Olympiodorus_certain": false,
+    "previous_P_Oxy4277_monomoiria_C05_matches": 1,
+    "previous_P_Oxy4277_monomoiria_C05_failures": 2,
+    "real_human_predictive_validations": 0,
+    "production_scorer_changed": false,
+    "other_tradition_maps_modified": false,
+    "Gansten_Kindle_extracted": false
+  }
+}
