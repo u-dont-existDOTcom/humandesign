@@ -1,0 +1,185 @@
+{
+  "schema": "ASTRO_PRIMARY_DIRECTION_EVENT_HYPOTHESES_V0",
+  "date": "2026-10-24",
+  "status": "SOURCE_BACKED_INTERPRETATION_CANDIDATES_UNFROZEN",
+  "parent_status": "COMBINED_ASTROLOGY_FORWARD_BLIND_HUMAN_VALIDATION_OPEN",
+  "parent_goal": "Compute historically source-differentiated Western, Hellenistic, Jyotish and other astrology rules; freeze interpretation and timing decisions before any untouched human response/outcome; assess combined forward-blind predictions against independent controls.",
+  "parent_checkpoint": {
+    "branch": "research/primary-direction-method-inventory-20261024",
+    "commit": "f6f922a9449932118c44a2c2c4166a9fcdec73f7",
+    "inventory_size": 12
+  },
+  "source": {
+    "author": "William Lilly",
+    "title": "Christian Astrology, Book III",
+    "edition": "London first edition (1647)",
+    "chapter": "CLVIII-CLX, The Effects of Directions",
+    "witness_repository": "Wellcome Collection",
+    "work_id": "s7z7c46y",
+    "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+    "license": "Public Domain Mark (Wellcome catalogue)",
+    "witness_status": "VISUALLY_INSPECTED_ORIGINAL_PRINT_FACSIMILE",
+    "canvas_zero_index_formula": "printed_page + 33 (confirmed for 657-659 and 668-670)",
+    "images": {
+      "657": {
+        "path": "witness_pages/lilly_1647_printed_657.jpg",
+        "image_id": "b30338724_0691.jp2",
+        "sha256": "f6881d6cae86830547a30dcfc11c5c112ac495b4687e80c97d27134ff28df7ce"
+      },
+      "658": {
+        "path": "witness_pages/lilly_1647_printed_658.jpg",
+        "image_id": "b30338724_0692.jp2",
+        "sha256": "d4311ea62357f482d4956998f5b3933fa32bae9f967a51b44e134c3d9b10de26"
+      },
+      "659": {
+        "path": "witness_pages/lilly_1647_printed_659.jpg",
+        "image_id": "b30338724_0693.jp2",
+        "sha256": "beb6d17d0389027f6f745c16a044c82484414c61701b4803cd89fb8697324ad8"
+      },
+      "668": {
+        "path": "witness_pages/lilly_1647_printed_668.jpg",
+        "image_id": "b30338724_0702.jp2",
+        "sha256": "14430b29bb3ec8a1991c8437a55dd9ad2e0c5fd6d7f311a0d2f821f2d0d893d2"
+      },
+      "669": {
+        "path": "witness_pages/lilly_1647_printed_669.jpg",
+        "image_id": "b30338724_0703.jp2",
+        "sha256": "2d8a481962461191b218c10a129e1713fabbd66257740b31e4da36422719bf9a"
+      },
+      "670": {
+        "path": "witness_pages/lilly_1647_printed_670.jpg",
+        "image_id": "b30338724_0704.jp2",
+        "sha256": "d3b6a798840cd667e2fe070a66af8a816c0834840d46800eb5efe52be3c83b81"
+      }
+    }
+  },
+  "experimental_pre_freeze_defaults_not_lilly_claims": {
+    "diagnostic_key": "ptolemy_one_degree_per_year",
+    "diagnostic_profile": "body_conjunctions",
+    "direction_sense": "software_direct_only_shortest_signed_arc_not_authenticated_Lilly_direction_sense",
+    "allowed_geometry": [
+      "proportional_semi_arc",
+      "placidean_under_pole",
+      "regiomontanian_position_circle"
+    ],
+    "min_age_years": 18,
+    "max_age_years": 65,
+    "half_window_width_years": 0.5,
+    "window_policy": "age years continuous, [max(18, contact_age-0.5),min(65, contact_age+0.5)); year length from existing modern engine, NOT historically established temporal conversion",
+    "applies_only_to": "post-birth diagnostic matching of model contacts; no empirical outcomes scored; no participant records ingested",
+    "note": "No timing key or source author geometry has been selected for a final study. These settings are illustrative pre-freeze decisions, not a human model lock."
+  },
+  "source_to_construct_rules": [
+    {
+      "id": "L1647-MC-JUP-BODY",
+      "target_role": "mc",
+      "promissor": "jupiter",
+      "source_pages": [
+        669,
+        670
+      ],
+      "source_anchor_exact": "gives every one Preferment according to capacity",
+      "source_anchor_page": 670,
+      "source_claim_paraphrase": "MC directed to the body of Jupiter brings role-dependent preferment, office or professional advancement (and other benefits).",
+      "modern_outcome_domain": "occupational_status",
+      "modern_bounded_event": "Documented elevation to a new official, paid, elected, organizational or professional leadership role with changed title or duties within the contact year.",
+      "ascertainment": "Independent appointment, employment, election or professional record dated before any scorer sees the answer. If event type unavailable, report no ascertainment rather than treating it as no event.",
+      "exclude": [
+        "praise without new responsibility",
+        "mere increase in revenue without a role change",
+        "subjective perceived recognition"
+      ],
+      "qualifications": [
+        "Lilly's preferential outcomes differ with pre-existing occupation/social rank; record eligibility before revealing chart.",
+        "Office and trading are source alternatives; this deliberately narrow operational hypothesis is not a literal exhaustive translation."
+      ]
+    },
+    {
+      "id": "L1647-MC-SAT-BODY",
+      "target_role": "mc",
+      "promissor": "saturn",
+      "source_pages": [
+        668
+      ],
+      "source_anchor_exact": "it subverts the Natives honour, his commands",
+      "source_anchor_page": 668,
+      "source_claim_paraphrase": "MC directed to Saturn's body threatens existing office, favor, honor or command, with contextual elaborations.",
+      "modern_outcome_domain": "occupational_status",
+      "modern_bounded_event": "Documented involuntary demotion, dismissal/removal from office, or withdrawal of formal professional or organizational responsibility during the contact year.",
+      "ascertainment": "Independent termination, removal, disciplinary or organizational record; retain eligible active office/employment status before seeing contact years.",
+      "exclude": [
+        "planned contract expiration",
+        "voluntary resignation without adverse removal",
+        "general dissatisfaction"
+      ],
+      "qualifications": [
+        "The negative is conditional on having an office, trust or standing to lose.",
+        "Do not equate this bodily contact with MC to Saturn's square/opposition separately discussed on page 669."
+      ]
+    },
+    {
+      "id": "L1647-ASC-JUP-BODY",
+      "target_role": "asc",
+      "promissor": "jupiter",
+      "source_pages": [
+        657,
+        658
+      ],
+      "source_anchor_exact": "enriched in Fortune by the Gifts or Patronage",
+      "source_anchor_page": 657,
+      "source_claim_paraphrase": "Ascendant directed to Jupiter's body includes gifts or patronage, better fortune and multiple alternative effects dependent on radix context.",
+      "modern_outcome_domain": "nonkin_material_patronage",
+      "modern_bounded_event": "Documented new material grant, scholarship, substantial gifted property or externally sponsored patronage from a non-household/non-kin person or institution during the contact year.",
+      "ascertainment": "Dated grant, gift, property transfer or sponsorship record. Exact qualifying economic significance threshold must be set before any study and adjusted by exposure opportunity, not selected after outcomes.",
+      "exclude": [
+        "ordinary salary for contracted work",
+        "undocumented favorable mood",
+        "small routine social gift"
+      ],
+      "qualifications": [
+        "Derived narrow predicate from one of several historical alternatives, not Lilly's claim of a necessary grant.",
+        "No numerical value threshold chosen yet: not trial-frozen."
+      ]
+    },
+    {
+      "id": "L1647-ASC-MARS-BODY",
+      "target_role": "asc",
+      "promissor": "mars",
+      "source_pages": [
+        659
+      ],
+      "source_anchor_exact": "involved in many Controversies and Law-suits",
+      "source_anchor_page": 659,
+      "source_claim_paraphrase": "Ascendant directed to Mars's body includes anger, serious controversy and lawsuits among many conditional adverse effects.",
+      "modern_outcome_domain": "formal_adversarial_disputes",
+      "modern_bounded_event": "At least one new documented court case, formal dispute claim or formally submitted complaint in which the participant is a named party during the contact year.",
+      "ascertainment": "Independent timestamped filing or official/third-party complaint record, with confidential contents redacted and never committed.",
+      "exclude": [
+        "private verbal disagreement without formal complaint",
+        "predicted crime or medical diagnosis",
+        "general anger or stressful mood"
+      ],
+      "qualifications": [
+        "One observable modern discriminator, not an assertion every Mars contact must produce litigation.",
+        "No unsafe medical, criminal, violent, or death predictions will be issued to participants."
+      ]
+    }
+  ],
+  "nonindependence": {
+    "observed_previous_engine": "Earlier 288/288 exact geometric duplicates for specific relabeled ray constructions are one evidence family, not two.",
+    "current": "Same source-author passages, same participant history, overlapping outcome domains and equal arcs from different geometric methods must not be counted as independent confirmations.",
+    "deduplication": "Collapse equal ages for same source rule and time key across methods to one candidate exposure containing method identifiers; retain distinct non-equal ages as alternative unselected model choices."
+  },
+  "scoring_stage": "NOT_DEFINED_OR_FROZEN",
+  "calibration": "NO_CALIBRATED_PROBABILITIES",
+  "human_validation": "NONE",
+  "study_readiness": "NOT_READY_FOR_UNTOUCHED_HUMAN_TEST",
+  "next_required_stages": [
+    "Authenticate author-specific direction sense and preselect geometry/time-key methods without outcome knowledge, or clearly register modern diagnostic arms as alternatives.",
+    "Complete quantitative qualification and opportunity/exposure definitions, including the external-patronage materiality threshold.",
+    "Freeze model, charts, participant source quality, exact date windows, questionnaire/outcome definitions, exclusions, competitor/control arms, dependence graph and null tests before prospective outcomes.",
+    "Run genuinely untouched human evaluation, report misses, ties, ascertainment gaps, negative controls, and all predeclared arms; do not reuse development cases as validation."
+  ],
+  "person_specific_outcome_records_accessed_during_this_run": false,
+  "blindness_disclosure": "Conversation assistant may have prior user-specific event memories; candidate design is NOT an independent blinded trial even though no event records were consulted in this run. Only previously untouched human participant data can validate."
+}

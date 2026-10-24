@@ -1,0 +1,19 @@
+{
+  "candidate_registry": "LILLY_1647_EVENT_CANDIDATES.json",
+  "input_fixture": "synthetic_2000_timeline.json, no human answers/events",
+  "key": "ptolemy_one_degree_per_year",
+  "no_optimization_undertaken": true,
+  "raw_matching_geometry_records": 0,
+  "schema": "ASTRO_PRIMARY_DIRECTION_UNFROZEN_EVENT_WINDOWS_V0",
+  "source_book": "Lilly Christian Astrology (1647), printed pp.657-659,668-670",
+  "source_rule_count": 4,
+  "status": "DIAGNOSTIC_ONLY_NO_FROZEN_INTERPRETATION_NO_HUMAN_VALIDATION",
+  "unique_contact_exposure_groups": 0,
+  "warnings": [
+    "Do not pool methods; only one exact exposure for same rule/age/key.",
+    "All symbolic ages and date conversions are modern engine diagnostics.",
+    "Body-only subset; direction sense, geometry and key not study-frozen.",
+    "No participant outcome records read and no prediction validity tested."
+  ],
+  "windows": []
+}
