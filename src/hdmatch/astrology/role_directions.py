@@ -40,6 +40,7 @@ from .geometry import (
     normalize,
 )
 from .sky import CLASSICAL_BODIES, DirectionBirthSnapshot
+from .source_witness_scope import placidus_1657_latin_role_assessment
 from .timeline import MODERN_MEAN_TROPICAL_YEAR_DAYS, TimeKey, degrees_per_symbolic_year
 
 
@@ -109,6 +110,12 @@ class RoleTimeline:
             "movement_provenance": {
                 "construction": self.construction.value,
                 "rotation_regime": self.regime.value,
+                "placidus_1657_original_latin_source_scope": (
+                    placidus_1657_latin_role_assessment(
+                        self.construction.value,
+                        self.regime.value,
+                    ).to_dict()
+                ),
                 "method_names": [x.value for x in self.methods],
                 "significator_projection": self.significator_projection.value,
                 "allowed_latitude": (

@@ -1,0 +1,98 @@
+{
+  "schema": "GANSTEN_PLACIDUS_1657_ORIGINAL_LATIN_CRITICAL_AUDIT_V1",
+  "date": "2026-10-24",
+  "root_project_state": "OPEN: historically differentiated calculations and eventual frozen combined forward-blind evaluation",
+  "branch": "research/gansten-placidus-1657-latin-collation-20261024",
+  "parent_commit": "7a6374395dfe1f17d56f153c60cd6d4af1c79d2e",
+  "source": {
+    "title": "Placidus de Titis Tabulae primi mobilis (1657) ORIGINAL LATIN Rome copy",
+    "archive": "https://archive.org/details/bub_gb_3RHgMAUa5fMC",
+    "inspected_photo_printed_pages": [
+      11,
+      12,
+      19
+    ],
+    "inspected_photo_leaf_indices": [
+      30,
+      31,
+      48
+    ],
+    "supporting_ocr_only": true,
+    "whole_book_latin_photographically_verified": false,
+    "independent_1814_Cooper_comparison": true,
+    "original_1657_full_pdf_locally_verified": false,
+    "photo_sha256": {
+      "30": "d5e0381b5ed19830853f69f52685de41441136650bea72d71c5154bae0612dff",
+      "31": "d519f146992134df1a5fff3405279cbf5e9aee619ed2b97bdc3752a13b60e29f",
+      "48": "399d7ef7a8deb3f57416906b7b460265ee839c039d5cb2f537b22069ed0ea82c"
+    },
+    "Lilly_1647_minute_table_complete": false
+  },
+  "historical_confirmations": {
+    "solar_RA_cumulative_day_years": "direct original Latin thesis 65, method-level",
+    "converse_moving_angles": "excluded original Latin thesis 60",
+    "converse_zodiacal_rays": "excluded original Latin theses 61-62",
+    "converse_frame_roles": "first-edition canon printed p19; full algorithm not exhaustively reconstructed",
+    "Brahe_1573_local_midnight_sampling": "still not directly established by inspected Brahe original paragraph"
+  },
+  "assurance": {
+    "tests": "104 passed",
+    "lint": "Ruff all changed Python PASS",
+    "typing": "mypy --follow-imports=silent src/hdmatch/astrology PASS",
+    "prior_solar_114_contacts_numeric_exact": true,
+    "prior_generic_converse_288_contacts_numeric_exact": true,
+    "no_broad_human_ranking_run": true,
+    "no_production_prediction_changes": true
+  },
+  "storage": {
+    "hdd": "/mnt/hdd approximately full, not suitable for new large downloads",
+    "incomplete_pdf": "discarded task-generated partial 16MB file only; verified 3 original source images retained",
+    "intended_owner_packet": "OS NVMe research-artifacts and durable research-checkouts"
+  },
+  "files": {
+    "src/hdmatch/astrology/source_witness_scope.py": {
+      "bytes": 10067,
+      "sha256": "6a710cb3f6a1925dc8fdde7a428fe1fd0d79edaee4ec7bd343cc75ab597fbb77"
+    },
+    "src/hdmatch/astrology/role_directions.py": {
+      "bytes": 18269,
+      "sha256": "a14ef5d44fff88ca9eff38dabd2fb81b954ee8165690ee370792531970d5dea4"
+    },
+    "tests/unit/test_placidus_1657_latin.py": {
+      "bytes": 7659,
+      "sha256": "517fe4c7c743b79d661147a230a86a41b9c85770999110b988df2834690a6a81"
+    },
+    "tests/unit/test_solar_primary_source_scope.py": {
+      "bytes": 7018,
+      "sha256": "8cbb4bfe65205780d2998cb5a6f0dbaf25aba42f222184c57e1ff0ec534f4456"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/ORIGINAL_1657_LATIN_COLLATION.json": {
+      "bytes": 7709,
+      "sha256": "2b3023ad5921590b3df1f19362421277e902c20073f97dc045258b63b278429d"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/SOURCE_ATTESTATION_NUMERIC_PARITY.json": {
+      "bytes": 904,
+      "sha256": "95825802c8d0fe054c3da467210040af00c4ad6c509f9c9b93cee55bc1281597"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/README.md": {
+      "bytes": 5323,
+      "sha256": "80584c46d2ef317bd6cc376813e8706e2cd4b2f4ac566ebdfd6e6a6c46b0e629"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3315,
+      "sha256": "93d84f256f43680209ecb091c564d0f6d8401a859ad7fc173dcae664257a11ed"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/facsimile_pages/placidus1657_leaf_0030.jpg": {
+      "bytes": 500155,
+      "sha256": "d5e0381b5ed19830853f69f52685de41441136650bea72d71c5154bae0612dff"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/facsimile_pages/placidus1657_leaf_0031.jpg": {
+      "bytes": 567387,
+      "sha256": "d519f146992134df1a5fff3405279cbf5e9aee619ed2b97bdc3752a13b60e29f"
+    },
+    "docs/astrology-research-map/gansten-placidus-latin-1657-20261024/facsimile_pages/placidus1657_leaf_0048.jpg": {
+      "bytes": 473868,
+      "sha256": "399d7ef7a8deb3f57416906b7b460265ee839c039d5cb2f537b22069ed0ea82c"
+    }
+  }
+}

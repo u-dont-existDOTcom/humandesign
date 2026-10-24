@@ -28,7 +28,7 @@ from hdmatch.astrology.solar_time_keys import (
 )
 from hdmatch.astrology.source_witness_scope import (
     BRAHE_1573,
-    PLACIDUS_1814,
+    PLACIDUS_1657_LATIN,
     WitnessStatus,
     placidus_1814_role_assessment,
     solar_key_source_assessment,
@@ -82,9 +82,9 @@ def test_brahe_1573_true_nonuniform_day_is_partial_evidence_only() -> None:
     assert "varying" in assessment.evidence
 
 
-def test_placidus_cumulative_day_key_attested_only_via_1814_translation() -> None:
+def test_placidus_cumulative_key_now_attested_in_original_1657_latin() -> None:
     assessment = solar_key_source_assessment("placidus_cumulative_true_solar_ra")
-    assert assessment.source_id == PLACIDUS_1814
+    assert assessment.source_id == PLACIDUS_1657_LATIN
     assert assessment.status is WitnessStatus.COMPATIBLE_SELECTED_RULE
     assert "first" in assessment.evidence and "second" in assessment.evidence
     assert "original" in assessment.limit
@@ -144,7 +144,7 @@ def test_output_solar_key_source_metadata_does_not_change_numeric_arcs() -> None
         assert calculated["coverage"] == frozen["coverage"]
         # Only source-provenance is augmented by this research.
         scope = calculated["solar_time_key"]["primary_source_scope"]
-        assert scope["source_id"] in (BRAHE_1573, PLACIDUS_1814)
+        assert scope["source_id"] in (BRAHE_1573, PLACIDUS_1657_LATIN)
         assert scope["status"] in ("partial_source_support", "compatible_selected_rule")
 
 

@@ -1,27 +1,22 @@
-"""Source-scoped constraints for historical primary-direction interpretations.
+"""Source-scoped primary-direction interpretation, edition separated.
 
-This registry is research EVIDENCE, not a forecast selector, model permission
-system, or modification of any previously calculated geometric arcs.
+Primary inspected witnesses:
+* Brahe De Nova Stella (1573), Dreyer critical Latin transcription; Sun's
+  variable daily motion, but natal local true-midnight endpoints not proved.
+* Placidus Tabulae Primi Mobilis (1657), actual LATIN ORIGINAL PHOTO,
+  BNC Rome copy, Internet Archive item bub_gb_3RHgMAUa5fMC:
+  printed p11 (image leaf30), thesis 58, 60, 61, 62, 65.
+  Printed p19 (image leaf48), directional-converse role canon.
+* John Cooper's edited English Placidus translation (1814),
+  printed pp23-25 (PDF pp40-42), previously independently inspected.
 
-Three different layers are kept apart:
-1. Tycho Brahe, De Nova Stella (1573), Latin text preserved in the critical
-   transcription edited by J.L.E. Dreyer: tekstnet /010/ folio G1r-G1v.
-2. Placidus de Titis, Tabulae primi mobilis (1657): original edition catalogued,
-   but original Latin folios not inspected in this checkpoint.
-3. John Cooper's edited English translation Primum Mobile (1814),
-   printed pp.23-25, PDF pp.40-42 in the Google-digitized edition:
-   https://iapsop.com/ssoc/1814__cooper___primum_mobile.pdf
+The original Latin directly confirms that Placidus's fixed significator
+converse directions EXCLUDE zodiacal rays and directed angles, and that the
+solar daily right-ascension advances are successive-year measures.
+No author-specific interpretation is silently imposed on generic algorithms.
 
-Cooper's 1814 translation says its Placidus thesis 61 excludes zodiacal rays
-in converse, and thesis 60 excludes directing angles in converse. Therefore
-the generic role-reversal + zodiacal-ray algorithm previously implemented is
-NOT a historically source-supported *Placidus 1814* variant. We keep the math
-available for other traditions but must not silently attribute it to Placidus.
-
-Tycho's 1573 text supports variable TRUE daily movement and mapping an
-equatorial arc to a symbolic year; the preserved Latin paragraph does not
-specify the specific local-true-midnight sampling endpoints used in our
-Brahe-labelled 2009-Gansten reconstruction.
+This registry is historical evidence, not a forecast model, a new geometric
+method, or a production validation gate.
 """
 
 from __future__ import annotations
@@ -55,6 +50,7 @@ class HistoricalWitnessAssessment:
 
 BRAHE_1573 = "tycho_brahe_de_nova_stella_1573_latin_critical_transcription"
 PLACIDUS_1814 = "placidus_1657_via_cooper_1814_english_edited_translation"
+PLACIDUS_1657_LATIN = "placidus_tabulae_primi_mobilis_1657_original_latin_photographed"
 
 
 def solar_key_source_assessment(profile: str) -> HistoricalWitnessAssessment:
@@ -77,19 +73,21 @@ def solar_key_source_assessment(profile: str) -> HistoricalWitnessAssessment:
         )
     if profile == "placidus_cumulative_true_solar_ra":
         return HistoricalWitnessAssessment(
-            source_id=PLACIDUS_1814,
+            source_id=PLACIDUS_1657_LATIN,
             status=WitnessStatus.COMPATIBLE_SELECTED_RULE,
             evidence=(
-                "Cooper's edited translation printed pp.23-25, theses 58 "
-                "and 65: the first subsequent solar day governs the first "
-                "year, the second day the second year, etc., and the Sun's "
-                "ascension in the direct sphere measures each interval."
+                "The original Latin first edition, photographed printed p11, "
+                "thesis 65, gives the Sun's first subsequent daily ascension "
+                "in the direct sphere for year one, second day for year two, "
+                "and so on. Thesis 58 relates successive natal days to years. "
+                "The inspected 1814 Cooper edition agrees on these points."
             ),
             limit=(
-                "This is the 1814 English edited translation, not a checked "
-                "Latin 1657 transcription. Exact TT/UT, sidereal and "
-                "calendar conventions of the original historical method "
-                "remain unverified."
+                "Original 1657 Latin printed p11 was directly inspected in "
+                "the Rome copy, not the complete original work. Its wording "
+                "does not specify modern SWIEPH TT/UT, geographic timezone, "
+                "or all fractional-day/calendar conventions. The earlier "
+                "1814 translation remains an independent comparison."
             ),
         )
     raise ValueError(f"unsupported inspected solar timing profile: {profile}")
@@ -113,7 +111,11 @@ def placidus_1814_role_assessment(
             evidence=(
                 "Cooper translation printed p.23, thesis 60, forbids directing angles in converse."
             ),
-            limit="Original 1657 Latin not checked.",
+            limit=(
+                "The 1657 photographed Latin original p11, thesis 60, "
+                "agrees; this assessment remains explicitly tied to "
+                "the separate 1814 English edition."
+            ),
         )
     if regime == "traditional_role_reversed_converse" and construction == "zodiacal_promissor_ray":
         return HistoricalWitnessAssessment(
@@ -126,6 +128,8 @@ def placidus_1814_role_assessment(
             ),
             limit=(
                 "This is Placidus as represented by Cooper's 1814 edition. "
+                "The independently inspected 1657 original Latin printed "
+                "p11, theses 61-62, corroborates the exclusion. "
                 "A generic role-reversed zodiacal ray is still a valid "
                 "mathematical candidate, but must not be called "
                 "'Placidus-compliant' on this witness."
@@ -152,5 +156,70 @@ def placidus_1814_role_assessment(
         limit=(
             "Do not upgrade a broad geometric model to a historically "
             "endorsed Placidus profile without the relevant original canon."
+        ),
+    )
+
+
+def placidus_1657_latin_role_assessment(
+    construction: str, regime: str, *, moving_angle: bool = False
+) -> HistoricalWitnessAssessment:
+    """Appraise one motion construction against the DIRECT Latin 1657 edition.
+
+    Based on photographed 1657 printed p11 (theses 59-65) and p19
+    (direction canon), not only on the edited 1814 English rendering.
+    This does not prohibit mathematically meaningful arms for other authors.
+    """
+    if regime == "traditional_role_reversed_converse" and moving_angle:
+        return HistoricalWitnessAssessment(
+            source_id=PLACIDUS_1657_LATIN,
+            status=WitnessStatus.INCOMPATIBLE_WITNESS,
+            evidence=(
+                "First-edition 1657 Latin printed p11, thesis 60: "
+                "'motu conuerso non possunt dirigi Cardines'."
+            ),
+            limit=(
+                "Applies to Placidus's specific motion rules in his 1657 text, "
+                "not to the general mathematical possibility of moving a natal "
+                "zodiacal degree in other systems."
+            ),
+        )
+    if regime == "traditional_role_reversed_converse" and construction == "zodiacal_promissor_ray":
+        return HistoricalWitnessAssessment(
+            source_id=PLACIDUS_1657_LATIN,
+            status=WitnessStatus.INCOMPATIBLE_WITNESS,
+            evidence=(
+                "First-edition Latin 1657 printed p11, theses 61-62: "
+                "converse permits rays and parallels in mundo, but "
+                "'nullo modo in zodiaco'."
+            ),
+            limit=(
+                "Specific to Placidus 1657. The separately implemented "
+                "generic reverse-role zodiacal ray remains a mathematical "
+                "candidate, not an authenticated Placidus configuration."
+            ),
+        )
+    if regime == "modern_reverse_rotation_diagnostic":
+        return HistoricalWitnessAssessment(
+            source_id=PLACIDUS_1657_LATIN,
+            status=WitnessStatus.NOT_ESTABLISHED,
+            evidence=(
+                "The photographed 1657 first-edition printed p19 describes "
+                "the significator moving toward fixed promissor in converse. "
+                "It does not supply the modern no-role-swap 360-degree "
+                "complement model."
+            ),
+            limit="No inferred universal claim about later or other traditions.",
+        )
+    return HistoricalWitnessAssessment(
+        source_id=PLACIDUS_1657_LATIN,
+        status=WitnessStatus.NOT_ESTABLISHED,
+        evidence=(
+            "Theses 58-65 and the p19 canon were inspected; a complete "
+            "author-specific algorithm for this specific geometry has not "
+            "been fully established from this subset."
+        ),
+        limit=(
+            "Do not present a generic geometry profile as fully authenticated "
+            "Placidus without checking all relevant original canons."
         ),
     )

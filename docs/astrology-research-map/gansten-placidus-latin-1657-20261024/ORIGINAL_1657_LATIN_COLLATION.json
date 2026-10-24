@@ -1,0 +1,159 @@
+{
+  "schema": "PLACIDUS_1657_LATIN_DIRECT_SOURCE_AUDIT_V1",
+  "date": "2026-10-24",
+  "root_owner_objective": "Accurately calculate distinct astrology traditions, then freeze interpretations and evaluate forward-blind predictions jointly against matched controls; do not optimize methods against known life events.",
+  "original": {
+    "author": "Placidus de Titis",
+    "title": "Tabulae primi mobilis cum thesibus ad theoricen & canonibus ad praxim",
+    "publisher": "Paolo Frambotto, Padua",
+    "year": 1657,
+    "physical_copy": "National Central Library of Rome, Google digitization; Internet Archive item bub_gb_3RHgMAUa5fMC",
+    "scanned_catalog": "https://archive.org/details/bub_gb_3RHgMAUa5fMC",
+    "full_text_OCR_url": "https://archive.org/download/bub_gb_3RHgMAUa5fMC/bub_gb_3RHgMAUa5fMC_djvu.txt",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/bub_gb_3RHgMAUa5fMC/manifest.json",
+    "leaf_index_zero_based": [
+      30,
+      31,
+      48
+    ],
+    "printed_pages": [
+      11,
+      12,
+      19
+    ],
+    "image_sha256": {
+      "30": "d5e0381b5ed19830853f69f52685de41441136650bea72d71c5154bae0612dff",
+      "31": "d519f146992134df1a5fff3405279cbf5e9aee619ed2b97bdc3752a13b60e29f",
+      "48": "399d7ef7a8deb3f57416906b7b460265ee839c039d5cb2f537b22069ed0ea82c"
+    },
+    "original_images_read": true,
+    "original_Latin_OCR_is_support_only": true,
+    "full_1657_PDF_available_locally": false,
+    "full_1657_PDF_download_problem": "The Internet Archive/Google full-PDF requests could not be completed; an incomplete generated download was removed from the owner's full HDD. Required primary photos were obtained separately via IIIF.",
+    "original_Latin_not_fully_read": true
+  },
+  "passages": [
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 58,
+      "latin_short": "reverso Sole ad eandem horam aequalem natalis",
+      "normalized_english": "The Sun returns to the same equal natal hour on successive following days; successive days correspond to years.",
+      "finding": "supports postnatal-day year matching; no modern TT/UT or exact continuous fractional-day interpolation specified.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 59,
+      "latin_short": "Duplex est motus Directionis, Directus ... & conversus",
+      "normalized_english": "Distinguishes direct and converse motions; converse is toward preceding places.",
+      "finding": "converse is source-defined motion, not proof of our generic 360-minus-arc model.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 60,
+      "latin_short": "motu converso non possunt dirigi Cardines",
+      "normalized_english": "Angles cannot be directed in converse motion.",
+      "finding": "explicit exclusion of moving natal angles in Placidus 1657.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 61,
+      "latin_short": "motu vero converso radios tantum, & Parallelos in mundo, & nullo modo in zodiaco",
+      "normalized_english": "Under converse, planetary significators receive rays and parallels in mundo, not zodiacal rays.",
+      "finding": "original Latin independently confirms Cooper 1814's restriction.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 62,
+      "latin_short": "in Directione conversa locum non habent radij in zodiaco",
+      "normalized_english": "Reiterates that zodiacal rays have no place in converse.",
+      "finding": "separate confirmation in original Latin.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 11,
+      "image_leaf": 30,
+      "thesis": 65,
+      "latin_short": "ad primum annum post natalem accipimus partem illam aequatoris, quam ascendit Sol in sphaera recta motu primae diei post natalem",
+      "normalized_english": "For first year, take equatorial arc ascended by Sun in first day after birth; second year's equatorial interval comes from second subsequent day, etc.",
+      "finding": "source supports successively accumulated solar right ascension, rather than a universal fixed Naibod constant.",
+      "confidence": "photo_verified"
+    },
+    {
+      "printed_page": 19,
+      "image_leaf": 48,
+      "canon": "Canon de directionibus ad familiaritates in zodiaco",
+      "latin_short": "in motu Directionis converso ... significator manet immobilis sub Primo Mobile, sed movetur motu universali raptus",
+      "normalized_english": "In converse Placidus describes a significator fixed relative to primum mobile, moving with its universal rotation toward fixed promissor in worldly configuration.",
+      "finding": "source-defined role relations need careful reference-frame interpretation; do not automatically equate source text with our generic program's role-swapped geometry without full canon checking.",
+      "confidence": "photo_verified"
+    }
+  ],
+  "comparator": {
+    "edition": "John Cooper edited English Primum Mobile, London 1814",
+    "source": "https://iapsop.com/ssoc/1814__cooper___primum_mobile.pdf",
+    "pages_printed": [
+      23,
+      24,
+      25
+    ],
+    "pdf_pages_one_based": [
+      40,
+      41,
+      42
+    ],
+    "correspondences": [
+      {
+        "original_1657_thesis": 58,
+        "translated_1814_thesis": 58,
+        "assessment": "agrees on successive-day year relation"
+      },
+      {
+        "original_1657_thesis": 60,
+        "translated_1814_thesis": 60,
+        "assessment": "agrees on prohibition of angles in converse"
+      },
+      {
+        "original_1657_thesis": 61,
+        "translated_1814_thesis": 61,
+        "assessment": "agrees on prohibition of zodiacal rays in converse"
+      },
+      {
+        "original_1657_thesis": 62,
+        "translated_1814_thesis": 62,
+        "assessment": "agrees on converse as mundane-only for rays"
+      },
+      {
+        "original_1657_thesis": 65,
+        "translated_1814_thesis": 65,
+        "assessment": "agrees on varying successive-day equatorial solar arc as year measure"
+      }
+    ],
+    "entire_translation_validated": false
+  },
+  "engineering_implications": {
+    "currently_running_solar_key": "placidus_cumulative_true_solar_ra",
+    "source_status": "method-level supported directly by original Latin 1657 thesis 65, not complete historical implementation certification",
+    "unchanged_numeric_contact_ages": true,
+    "generic_converse_zodiacal_ray": "Placidus 1657 INCOMPATIBLE. Remains a generic research candidate, not Placidus rule.",
+    "movable_angular_significator_converse": "Placidus 1657 INCOMPATIBLE.",
+    "modern_reverse_rotation": "not established by this text",
+    "brahe_original_midnight_endpoints": "not resolved by Placidus original; require independent Brahe source",
+    "historical_calendar_and_ephemeris": "not authenticated to 1657 original",
+    "forward_blind_testing": "not started and cannot be inferred from historical text or mathematical parity"
+  },
+  "limitations": {
+    "inspected_scope": "Only original page images leaf30,31,48; 1657 remaining pages NOT exhaustively read.",
+    "transcription_policy": "Short Latin fragments transcribed directly from page photographs and editorial interpretation separated; OCR corroborative but not definitive.",
+    "original_available_pdf": "No complete verified PDF stored yet due HDD full; IIIF images and source-index have stable public links.",
+    "numerics": "No geometry or timing algorithm changed this turn. Any full historical Placidus profile requires further source-specific ray/latitude constraints."
+  }
+}
