@@ -1,0 +1,99 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C21_DIRECT_GREEK_SECT_LIGHT_AND_MONOMOIRIA_V1",
+  "date": "2026-10-24",
+  "main_owner_objective": "OPEN: faithful historical source reading, candidate rules separate, eventual independent blinded real-human evaluation",
+  "source": {
+    "kind": "MODERN_DIGITAL_GREEK_BODY_TRANSCRIPTION_NOT_INDEPENDENT_PHYSICAL_MANUSCRIPT",
+    "title": "Paulus Alexandrinus Eisagogika, Greek text as presented by Eulogikon",
+    "site": "Eulogikon",
+    "html": "https://eulogikon.org/works/paul-alexandria-astrology-sum-aa",
+    "markdown": "https://eulogikon.org/works/paul-alexandria-astrology-sum-aa.md",
+    "markdown_bytes": 181883,
+    "markdown_SHA256": "78b9da9d8fdf9187c969ebb4cd3b46151f9831d8e68d238274962f0e8696a263",
+    "site_metadata_content_hash": "sha256:e8d2406af73b0ab048c54663f266f83e37a27188a560b7a076b7d89c5bc54084",
+    "metadata_content_modified_at": "2026-10-23",
+    "metadata_license": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "html_bytes": 245014,
+    "html_SHA256": "ee00fd3c669cee1484b355b2b2ec04544f69bf159046d6d914fade0e51cd29cc",
+    "modern_editorial_base_verified_as_Boer_1958": false,
+    "primary_papyrological_artifact": false,
+    "source_file_in_git": false,
+    "method": "Direct access and search of complete site-marked-down Greek body; original Greek clauses compared with frozen C04/C05 calculations; not a scanned printed critical apparatus"
+  },
+  "clauses": [
+    {
+      "id": "C21-C5-FRACTION",
+      "chapter": 5,
+      "source_locator": "Greek body §ε; Eulogikon web line 75, markdown marker 18",
+      "short_exact": "καὶ τὰ λεπτὰ ὡς μοῖραν μίαν",
+      "status": "EXACT_DIGITAL_GREEK_WORDING",
+      "meaning": "Count the remaining arcminutes as part of one ordinal degree within the sign-based sevenfold method, not as a zero-based source number.",
+      "computational_boundary": "C04 sign_monomoiria already implements physical completed-degree intervals [n°, (n+1)°); boundary 0°00' -> first ordinal degree, 0°35' still first. Do not describe C18 truncated comparison as universally the written Paulus ch5 method."
+    },
+    {
+      "id": "C21-C32-FACTION",
+      "chapter": 32,
+      "source_locator": "Greek body §λβ; Eulogikon web line 303, markdown marker 86",
+      "short_exact": "τὰς μοίρας τοῦ αἱρετικοῦ φωτὸς",
+      "status": "EXACT_DIGITAL_GREEK_WORDING",
+      "meaning": "Chapter-32 trigonal allotment is formed for the degree of the LIGHT OF SECT (Sun by day; Moon by night), rather than every natal point, Ascendant or planet indiscriminately.",
+      "computational_boundary": "Only a source-aware research wrapper for actual sect luminary is admitted; do not apply C05 function to arbitrary natal points without a separate textual rule."
+    },
+    {
+      "id": "C21-C32-NODUP",
+      "chapter": 32,
+      "source_locator": "Greek body §λβ; Eulogikon web line 303, markdown marker 86",
+      "short_exact": "μὴ διδοὺς ἐκ δευτέρου",
+      "status": "EXACT_DIGITAL_GREEK_WORDING",
+      "meaning": "Avoid a second allotment to an already-used planet until the sequence reaches its source-planet return condition; explains why later duplicate Venus should be skipped in the seven-distinct-planet narrative.",
+      "computational_boundary": "Conflicting manuscript diagram family with duplicate Venus remains literal witnessed evidence, not automatically corrected."
+    },
+    {
+      "id": "C21-C32-DIURNAL-TABLE",
+      "chapter": 32,
+      "source_locator": "Greek body §λβ; Eulogikon web line 304, markdown marker 87",
+      "short_exact": "ἐπὶ τῶν ἡμερινῶν",
+      "status": "EXACT_DIGITAL_GREEK_WORDING",
+      "meaning": "The subjoined canonical table is described as FOR DAYTIME NATIVITIES and the nightly trigon ruler order is reversed, with Jupiter then Sun in the fire trigon.",
+      "computational_boundary": "This line describes the literary table; it does not certify night/day scope of every later manuscript chart until their own rubrics are independently read."
+    }
+  ],
+  "chapter33": {
+    "source_locator": "Greek body §λγ; Eulogikon web lines 305-309, markdown markers 88-91",
+    "meaning": "Discusses reconstructing Ascendant degree using the sect light trigonal monomoiria, and names alternative procedures involving Moon's terms and prenatal syzygy. This is distinct from evaluating a known arbitrary point's monomoiria.",
+    "source_compares_multiple_alternative_procedures": true,
+    "does_not_certify_Ascendant_degree_of_Berlin_21347": true,
+    "does_not_prove_Egyptian_Saturn_term_in_Berlin_ink": true
+  },
+  "missing_digital_table_rows": {
+    "described_by_source": "Embedded textual rendition of the 30×4 canonical trigon chart prints triplicity sign-group headings, but the fetched markdown between canonical-chart heading and night-sect sentence contains no legible per-degree planetary rows.",
+    "absence_scope": "DIGITAL_MARKDOWN_RENDITION_ONLY; no claim original Greek manuscripts or printed Boer table had no cells",
+    "C04_to_C05_printed_disagreements": 34,
+    "codex_photographs_C13_to_C15_match_as_reported": true,
+    "literary_rule_resolves_ancient_archetype": false
+  },
+  "source_model_bindings": {
+    "by_sign_ch5_module": "paulus_bysign_papyrus_c04.py:sign_monomoiria",
+    "by_trigon_ch32_narrative_module": "paulus_trigon_narrative_c05.py:narrative_degree_ruler",
+    "ch32_luminary_scope_to_be_made_explicit": "paulus_c21_luminary_scope.py",
+    "C20_four_Ascendant_candidates_unaltered": [
+      2,
+      9,
+      16,
+      23
+    ],
+    "C05_P_Oxy_4277_historical_matches": 1,
+    "C05_P_Oxy_4277_historical_nonmatches": 2
+  },
+  "admission": {
+    "source_renders_full_Boer_1958_Greek_apparatus": false,
+    "manuscript_family_tree_resolved": false,
+    "C20_source_reconstructed_preferred_Ascendant_certain": false,
+    "repeated_eight_slot_120_cell_chart_can_replace_Greek_prose": false,
+    "no_biography_based_source_selection": true,
+    "human_predictive_validations": 0,
+    "production_scorer_modified": false,
+    "cross_tradition_map_modified": false,
+    "gansten_purchased_ebook_extracted": false
+  }
+}
