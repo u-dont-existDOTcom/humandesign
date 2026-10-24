@@ -1,0 +1,62 @@
+{
+  "schema": "HUMANDESIGN_C18_P_OXY_4277_ORDINAL_PARITY_V1",
+  "date": "2026-10-24",
+  "scope": "historical-documentary source comparisons only, 0 human predictions",
+  "sources": {
+    "Tolsa_2017": "Cristian Tolsa, 'New' Zodiacal Divisions in P.Oxy. LXI 4277, ZPE 203 (2017), pp. 192–198, comparison table p196 and indexing explanation p197",
+    "Tolsa_online": "https://www.scribd.com/document/773639249/New-Zodiacal-Divisions-in-POxy-LXI-4277",
+    "papyrus_original": "Oxford Papyrology official item 21178150; C17 verified both original photos but not re-deciphered these three glyphs",
+    "Paulus_date": "Dorian Greenbaum, Paulus of Alexandria (2019), Eisagogika authored 378 CE",
+    "papyrus_date": "Tolsa 2017 p192, p198: paleographically late 2nd/early 3rd century CE"
+  },
+  "labels": [
+    {
+      "object": "Mercury",
+      "sign": "Capricorn",
+      "degree": 6,
+      "minutes": 22,
+      "reported": "Venus",
+      "Tolsa_Paulus32": "Jupiter",
+      "Tolsa_Olymp34": "Mars",
+      "Tolsa_ValensIV26": "Mercury",
+      "Tolsa_mixed": "Venus"
+    },
+    {
+      "object": "Midheaven",
+      "sign": "Taurus",
+      "degree": 27,
+      "minutes": 8,
+      "reported": "Mercury",
+      "Tolsa_Paulus32": "Jupiter",
+      "Tolsa_Olymp34": "Jupiter",
+      "Tolsa_ValensIV26": "Mars",
+      "Tolsa_mixed": "Jupiter"
+    },
+    {
+      "object": "Lower Midheaven",
+      "sign": "Scorpio",
+      "degree": 27,
+      "minutes": 8,
+      "reported": "Jupiter",
+      "Tolsa_Paulus32": "Mercury",
+      "Tolsa_Olymp34": "Mercury",
+      "Tolsa_ValensIV26": "Saturn",
+      "Tolsa_mixed": "Mercury"
+    }
+  ],
+  "inference_boundaries": {
+    "dated_pre_Paulus_writing": true,
+    "manuscript_cannot_be_copy_of_378_writing_on_accepted_dates": true,
+    "could_be_shared_earlier_tradition": true,
+    "Tolsa_Valens_table_discarded_fractional_degree": true,
+    "C04_C05_bysign_correct_ordinal_1_of_3": true,
+    "C04_C05_bysign_truncated_ordinal_0_of_3": true,
+    "Tolsa_Valens_three_values_equal_C05_truncated_results": true,
+    "do_not_equate_full_Paulus5_and_ValensIV26_methods": true,
+    "do_not_treat_Tolsa_mixed_trial_as_prospective": true,
+    "no_new_primary_ink_decoding": true,
+    "Jones_1999_Greek_apparatus_still_unseen": true,
+    "production_scoring_changed": false,
+    "human_predictive_validations": 0
+  }
+}
