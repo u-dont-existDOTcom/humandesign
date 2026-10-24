@@ -45,7 +45,7 @@ def test_two_first_edition_photo_sources_are_distinct_and_one_is_high_resolution
     provenance = json.loads((DOC / "SOURCE_PROVENANCE.json").read_text())
     sources = provenance["first_edition_witness_A"]
     assert sources["image_resolution"] == "3141×4249"
-    assert sources["printed_page_to_zero_based_canvas"] == {"713": 746, "714": 747, "715": 748}
+    assert sources["printed_page_to_zero_based_canvas"] == {"713": 747, "714": 748, "715": 749}
     for page, digest in sources["source_image_file_SHA256"].items():
         photo = DOC / "facsimile_pages" / f"wellcome_original_1647_printed_{page}.jpg"
         assert photo.stat().st_size > 1_000_000

@@ -8,7 +8,7 @@ Reconstruct distinct historically sourced astrology calculations, freeze their r
 
 ## Two independent 1647 source copies, plus separate modern retype
 
-1. Wellcome Collection, Christian Astrology, 1647, work ID s7z7c46y (https://wellcomecollection.org/works/s7z7c46y), IIIF manifest https://iiif.wellcomecollection.org/presentation/v2/b30338724. Printed pages 713, 714, and 715 correspond to zero-based canvas 746,747,748, each 3141 x 4249 pixels. Original JPEG pages with SHA256 hashes are included in facsimile_pages and SOURCE_PROVENANCE.json.
+1. Wellcome Collection, Christian Astrology, 1647, work ID s7z7c46y (https://wellcomecollection.org/works/s7z7c46y), IIIF manifest https://iiif.wellcomecollection.org/presentation/v2/b30338724. Printed pages 713, 714, and 715 correspond to zero-based canvas 747,748,749 (visually reconfirmed from each scanned printed-page header), each 3141 x 4249 pixels. Original JPEG pages with SHA256 hashes are included in facsimile_pages and SOURCE_PROVENANCE.json.
 2. Independent Internet Archive original 1647 copy, identifier ca-william-lilly, whose printed page photos 713-715 already appear in prior gansten-lilly-original-1647-20261024.
 3. The 2003 WorldAstrology retypesetting, CA-III.pdf, is a THIRD witness and remains unchanged in historical_naibod.py and its earlier CSV. It must not be silently overwritten with the 1647 digits.
 

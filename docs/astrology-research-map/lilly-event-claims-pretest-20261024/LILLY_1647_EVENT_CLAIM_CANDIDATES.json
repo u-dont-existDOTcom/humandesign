@@ -1,0 +1,508 @@
+{
+  "schema": "LILLY_1647_SOURCE_EVENT_CANDIDATES_UNFROZEN_V1",
+  "date": "2026-10-24",
+  "status": "UNFROZEN_SOURCE_CLAIM_REGISTER_NO_PROSPECTIVE_PREDICTIONS",
+  "source_scope": {
+    "author": "William Lilly",
+    "book": "Christian Astrology, first edition 1647, Book III",
+    "photographic_witness": "Wellcome Collection s7z7c46y, high-resolution photographed original printed pp654–684 as referenced per claim",
+    "source_form": "short literal excerpt plus independently written paraphrase",
+    "source_conditions": [
+      {
+        "ref": "Lilly 1647 printed p654, Chapter CLVII",
+        "historical_claim": "Planets have their own general significations, but house placement and natal lordship can change the specific topic.",
+        "requirements_not_yet_fully_implemented": [
+          "natal house rulership",
+          "source-specific allowed significators"
+        ]
+      },
+      {
+        "ref": "Lilly 1647 printed p654, Chapter CLVII",
+        "historical_claim": "Power, weakness, natal essential dignity and angularity affect the magnitude and manifestation of directions.",
+        "requirements_not_yet_fully_implemented": [
+          "essential dignities",
+          "natal angularity and debility",
+          "profections and revolution context where source requires"
+        ]
+      }
+    ],
+    "Lilly_radix_context_not_reconstructed_as_complete_engine": true,
+    "original_1647_photos_sha256": {
+      "654": "1c7366889c7669b1a05970bac529812333ad75e61e1fb1c1c2fc012c5cc159d3",
+      "657": "238d772975b36a9d57085199434bfda910250cf466d6e127538d5287fb51881a",
+      "659": "556ff2d970a59d132e9afcb459cedb37a4882ddf3cecc4cf22976e9f94fd76f5",
+      "661": "407d9b9cf0b9d9c6f20e14fab144a63c8a9dcb5e0eeadff04174b2d644d40d87",
+      "669": "1d2c95ce9025e2a496901d5f58de75453863c09eba5aa7ecad9574d885bc2772",
+      "670": "54ea8ddd29c1fd3f8dc1d0f0f5df787764b453604dfbbf7aaad03a6c5016f2f9",
+      "683": "f6227c352be2b40b71f103af9085fddb83c3bced3da87b801503e40aadbb61fc",
+      "684": "b30411f6c0cbf6ea1aafb67b80d6efd0fec81930cd28182130f90267659cc348"
+    }
+  },
+  "interpretation_frozen": false,
+  "time_key_selected_for_human_test": false,
+  "human_birth_or_event_records_used": false,
+  "actual_prospective_human_outcomes_scored": 0,
+  "standard": {
+    "historical_source_statement": "ATTESSED_CONDITIONAL_CLAIM",
+    "geometric_proxy": "ANALYTIC_IMPLEMENTATION_NOT_HISTORICAL_PARITY",
+    "modern_event_operationalization": "ANALYST_PROPOSAL_NOT_SOURCE",
+    "promisor_house_rulership_essential_dignity": "NOT_FULLY_CALCULATED",
+    "future_window_and_baselines": "NOT_SELECTED"
+  },
+  "interpretation_dependency_groups": {
+    "relationship_union": [
+      "LIL-E03",
+      "LIL-E06",
+      "LIL-E07"
+    ],
+    "career_office": [
+      "LIL-E04",
+      "LIL-E05"
+    ],
+    "institutional_benefit": [
+      "LIL-E01"
+    ],
+    "legal_conflict": [
+      "LIL-E02"
+    ]
+  },
+  "do_not_double_count": "Do not score several alternative outcomes for one contact or correlated marriage claims as independent confirmations.",
+  "entries": [
+    {
+      "claim_id": "LIL-E01",
+      "label": "Ascendant directed to Jupiter's body",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          657
+        ],
+        "zero_based_canvas_indices": [
+          691
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_657.jpg",
+            "sha256": "238d772975b36a9d57085199434bfda910250cf466d6e127538d5287fb51881a"
+          }
+        ],
+        "verbatim_short_original_excerpt": "enriched in Fortune by the Gifts or Patronage",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The direction is associated with gifts or patronage from eminent people and improved public estimation, with other good outcomes.",
+      "historical_conditions": [
+        "Jupiter's natal house and rulership",
+        "source-defined benefic condition"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "jupiter",
+        "natal_significator": "asc",
+        "construction": "bodily_conjunction",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "conjunction"
+        ],
+        "latitude_treatment": "body",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "external_patronage_or_award",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Third-party documented substantial gift, award or formal patronage obtained during a defined reporting period; threshold unresolved.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Eligibility and materiality threshold would need independent definition.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "institutional_benefit",
+        "alternative_outcomes_unresolved": false,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E02",
+      "label": "Ascendant directed to Mars's body",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          659
+        ],
+        "zero_based_canvas_indices": [
+          693
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_659.jpg",
+            "sha256": "556ff2d970a59d132e9afcb459cedb37a4882ddf3cecc4cf22976e9f94fd76f5"
+          }
+        ],
+        "verbatim_short_original_excerpt": "in many Controversies and Law-suits",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The source associates the direction with conflict, controversy, litigation and other often severe alternative misfortunes.",
+      "historical_conditions": [
+        "Mars natal sign, house and condition",
+        "other chart mitigating influences"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "mars",
+        "natal_significator": "asc",
+        "construction": "bodily_conjunction",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "conjunction"
+        ],
+        "latitude_treatment": "body",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "formal_litigation_involvement",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Filed civil suit, criminal prosecution or named party to formal legal proceedings recorded independently. A mere disagreement is not a filing.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Define qualifying participation and jurisdiction consistently beforehand.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "legal_conflict",
+        "alternative_outcomes_unresolved": true,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E03",
+      "label": "Ascendant directed to Venus's body",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          661
+        ],
+        "zero_based_canvas_indices": [
+          695
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_661.jpg",
+            "sha256": "407d9b9cf0b9d9c6f20e14fab144a63c8a9dcb5e0eeadff04174b2d644d40d87"
+          }
+        ],
+        "verbatim_short_original_excerpt": "if age and the condition of his Life permit, he will marry",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The source describes affection and relationships and conditionally mentions marriage when age and circumstances permit.",
+      "historical_conditions": [
+        "age and condition of life",
+        "Venus's natal dignity/rulership"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "venus",
+        "natal_significator": "asc",
+        "construction": "bodily_conjunction",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "conjunction"
+        ],
+        "latitude_treatment": "body",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "civil_marriage_registration",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Dated civil marriage registration, not merely romantic affection or a claimed feeling of relationship significance.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Eligible population and previously married status must be specified.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "relationship_union",
+        "alternative_outcomes_unresolved": true,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E04",
+      "label": "Midheaven directed to hard aspect of Saturn",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          669
+        ],
+        "zero_based_canvas_indices": [
+          703
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_669.jpg",
+            "sha256": "1d2c95ce9025e2a496901d5f58de75453863c09eba5aa7ecad9574d885bc2772"
+          }
+        ],
+        "verbatim_short_original_excerpt": "deprives him of his former Honour, Office, Magistracy, Employment or Reputation",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The source associates hard Saturn directions to MC with losses of office, employment, standing and other difficulties.",
+      "historical_conditions": [
+        "Saturn's natal standing",
+        "person previously holds relevant role",
+        "source-specific hard-aspect ray treatment"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "saturn",
+        "natal_significator": "mc",
+        "construction": "zodiacal_promissor_ray",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "square",
+          "opposition"
+        ],
+        "latitude_treatment": "constructed_ecliptic_beta_zero",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "loss_of_formal_employment_or_held_office",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Dated involuntary removal from a formal employment role or held appointment; reputational feelings are a separate outcome.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Person must hold a defined position at risk before the prospective interval.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "career_office",
+        "alternative_outcomes_unresolved": true,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E05",
+      "label": "Midheaven directed to Jupiter's body",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          669,
+          670
+        ],
+        "zero_based_canvas_indices": [
+          703,
+          704
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_669.jpg",
+            "sha256": "1d2c95ce9025e2a496901d5f58de75453863c09eba5aa7ecad9574d885bc2772"
+          },
+          {
+            "path": "source_page_images/lilly_1647_printed_670.jpg",
+            "sha256": "54ea8ddd29c1fd3f8dc1d0f0f5df787764b453604dfbbf7aaad03a6c5016f2f9"
+          }
+        ],
+        "verbatim_short_original_excerpt": "preferred to Dignity and Honour",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The direction is associated with honor, office or advancement adapted to the person's circumstances and social station.",
+      "historical_conditions": [
+        "Jupiter's natal house/rulership",
+        "source says preferment depends on the person's capacity and situation"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "jupiter",
+        "natal_significator": "mc",
+        "construction": "bodily_conjunction",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "conjunction"
+        ],
+        "latitude_treatment": "body",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "documented_promotion_or_office_appointment",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Formal role promotion, appointment or leadership office entered into an employment or institution record.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Define which appointments count and whether the participant is eligible.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "career_office",
+        "alternative_outcomes_unresolved": false,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E06",
+      "label": "Sun directed to Venus's body",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          683,
+          684
+        ],
+        "zero_based_canvas_indices": [
+          717,
+          718
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_683.jpg",
+            "sha256": "f6227c352be2b40b71f103af9085fddb83c3bced3da87b801503e40aadbb61fc"
+          },
+          {
+            "path": "source_page_images/lilly_1647_printed_684.jpg",
+            "sha256": "b30411f6c0cbf6ea1aafb67b80d6efd0fec81930cd28182130f90267659cc348"
+          }
+        ],
+        "verbatim_short_original_excerpt": "an apt time for Marriage",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The source describes romantic activity and potential marriage, with happiness explicitly conditional on Venus's radix strength.",
+      "historical_conditions": [
+        "radically strong Venus for happy marriage",
+        "source also allows other social and recreational outcomes"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "venus",
+        "natal_significator": "sun",
+        "construction": "bodily_conjunction",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "conjunction"
+        ],
+        "latitude_treatment": "body",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "civil_marriage_registration",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Civil marriage during an independently declared future period.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Specify unmarried/eligible cohort and avoid retrospective alternative outcomes.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "relationship_union",
+        "alternative_outcomes_unresolved": true,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    },
+    {
+      "claim_id": "LIL-E07",
+      "label": "Sun directed to sextile/trine of Venus",
+      "source": {
+        "author": "William Lilly",
+        "book": "Christian Astrology, Book III",
+        "first_edition": 1647,
+        "original_photo_repository": "Wellcome Collection, work s7z7c46y",
+        "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+        "printed_pages": [
+          684
+        ],
+        "zero_based_canvas_indices": [
+          718
+        ],
+        "photos": [
+          {
+            "path": "source_page_images/lilly_1647_printed_684.jpg",
+            "sha256": "b30411f6c0cbf6ea1aafb67b80d6efd0fec81930cd28182130f90267659cc348"
+          }
+        ],
+        "verbatim_short_original_excerpt": "Marriage, where none is before, or the Native to have a Son or Daughter borne",
+        "excerpt_status": "checked_directly_in_1647_photo"
+      },
+      "historical_claim_paraphrase": "The source proposes alternatives of marriage or childbirth depending on circumstances, plus wider beneficial themes.",
+      "historical_conditions": [
+        "Venus's natal condition",
+        "existing marriage/offspring context",
+        "historical signification may concern different persons"
+      ],
+      "astronomical_proxy": {
+        "moving_promissor": "venus",
+        "natal_significator": "sun",
+        "construction": "zodiacal_promissor_ray",
+        "rotation_regime": "direct_primary_motion",
+        "allowed_aspects": [
+          "sextile",
+          "trine"
+        ],
+        "latitude_treatment": "constructed_ecliptic_beta_zero",
+        "matchable_in_existing_role_timeline": true,
+        "claim_of_complete_Lilly_original_1647_geometry": false
+      },
+      "analyst_modern_test_candidate": {
+        "event_code": "marriage_or_birth_ALTERNATIVES_NOT_FROZEN",
+        "operational_definition_PROPOSED_NOT_SOURCE": "Two distinct proposed candidate events: registered marriage or documented birth of a child. NEVER score either-or after outcomes.",
+        "eligibility_PROPOSED_NOT_SOURCE": "Choose one primary outcome or a prospectively frozen joint scoring rule and eligibility criteria without seeing any target responses.",
+        "time_window_status": "NOT_DEFINED",
+        "observation_period_status": "NOT_DEFINED",
+        "base_rate_and_control_group_status": "NOT_DEFINED",
+        "questionnaire_option_status": "NOT_DEFINED"
+      },
+      "multiplicity": {
+        "outcome_dependency_group": "relationship_union",
+        "alternative_outcomes_unresolved": true,
+        "no_multiple_claim_success_credit": true
+      },
+      "status": "SOURCE_ATTEMPTED_UNFROZEN_EVENT_INTERPRETATION",
+      "not_a_prediction": true,
+      "scored_people": 0,
+      "reported_empirical_success": false
+    }
+  ]
+}

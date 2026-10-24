@@ -1,0 +1,115 @@
+{
+  "schema": "LILLY_1647_UNFROZEN_EVENT_CLAIM_SYNTHETIC_COVERAGE_V1",
+  "date": "2026-10-24",
+  "status": "SYNTHETIC_ENGINE_COVERAGE_NOT_EVENT_PREDICTIONS_OR_HUMAN_EVIDENCE",
+  "synthetic_natal": {
+    "utc": "2000-01-01T12:00:00+00:00",
+    "latitude": 45,
+    "longitude_east": 0,
+    "made_up_not_personal": true
+  },
+  "astronomy_provenance": {
+    "verified_Swiss": true,
+    "ephemeris_file_SHA256": {
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    }
+  },
+  "rule_registry_SHA256": "6b8e83e6359d10e22fc1a787937b09d47fcb39b2a21e3b29b9ceee0785d61faf",
+  "engine_profiles": [
+    {
+      "construction": "bodily_conjunction",
+      "geometries": [
+        "proportional_semi_arc",
+        "placidean_under_pole",
+        "regiomontanian_position_circle"
+      ],
+      "evaluated": 168,
+      "contacts_accepted_below_125_arc_degrees": 66
+    },
+    {
+      "construction": "zodiacal_promissor_ray",
+      "geometries": [
+        "proportional_semi_arc",
+        "placidean_under_pole",
+        "regiomontanian_position_circle"
+      ],
+      "evaluated": 1176,
+      "contacts_accepted_below_125_arc_degrees": 409
+    }
+  ],
+  "arc_limit_degrees": 125,
+  "age_time_key_for_human_predictions": "NOT_SELECTED",
+  "model_interpretations_frozen": false,
+  "no_actual_events_or_answers_consulted": true,
+  "no_raw_age_dates_in_this_report": true,
+  "counts_are_not_predictive_accuracy": true,
+  "zero_pattern_counts_do_not_mean_the_claim_was_falsified": true,
+  "matches": {
+    "LIL-E01": {
+      "candidate_outputs_per_geometry": {
+        "placidean_under_pole": 1,
+        "proportional_semi_arc": 1,
+        "regiomontanian_position_circle": 1
+      },
+      "total_geometric_outputs_across_methods": 3,
+      "has_geometric_contact_in_test_window": true,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E02": {
+      "candidate_outputs_per_geometry": {},
+      "total_geometric_outputs_across_methods": 0,
+      "has_geometric_contact_in_test_window": false,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E03": {
+      "candidate_outputs_per_geometry": {},
+      "total_geometric_outputs_across_methods": 0,
+      "has_geometric_contact_in_test_window": false,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E04": {
+      "candidate_outputs_per_geometry": {
+        "placidean_under_pole": 1,
+        "proportional_semi_arc": 1,
+        "regiomontanian_position_circle": 1
+      },
+      "total_geometric_outputs_across_methods": 3,
+      "has_geometric_contact_in_test_window": true,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E05": {
+      "candidate_outputs_per_geometry": {
+        "placidean_under_pole": 1,
+        "proportional_semi_arc": 1,
+        "regiomontanian_position_circle": 1
+      },
+      "total_geometric_outputs_across_methods": 3,
+      "has_geometric_contact_in_test_window": true,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E06": {
+      "candidate_outputs_per_geometry": {},
+      "total_geometric_outputs_across_methods": 0,
+      "has_geometric_contact_in_test_window": false,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    },
+    "LIL-E07": {
+      "candidate_outputs_per_geometry": {
+        "placidean_under_pole": 2,
+        "proportional_semi_arc": 2,
+        "regiomontanian_position_circle": 2
+      },
+      "total_geometric_outputs_across_methods": 6,
+      "has_geometric_contact_in_test_window": true,
+      "different_geometry_labels_NOT_independent_validation": true,
+      "event_occurred_or_ever_asked": null
+    }
+  }
+}

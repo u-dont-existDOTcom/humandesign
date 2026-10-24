@@ -78,7 +78,7 @@ for degree in range(91):
             "source_note": (
                 "Editorial zero-arc identity, not a printed row"
                 if degree == 0
-                else "Source table printed on p713, IIIF canvas 746"
+                else "Source table printed on p713, IIIF canvas 747"
             ),
         }
     )
@@ -117,7 +117,7 @@ for minute in range(61):
                 if minute in MINUTE_LABEL_ABSENT
                 else "Printed value faint in BOTH original copies; 2003 digits NOT authenticated"
                 if minute in MINUTE_PARTIALLY_LEGIBLE
-                else "Source table printed on p714, IIIF canvas 747"
+                else "Source table printed on p714, IIIF canvas 748"
             ),
         }
     )
@@ -180,7 +180,7 @@ provenance = {
         "repository": "Wellcome Collection",
         "work": "https://wellcomecollection.org/works/s7z7c46y",
         "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
-        "printed_page_to_zero_based_canvas": {"713": 746, "714": 747, "715": 748},
+        "printed_page_to_zero_based_canvas": {"713": 747, "714": 748, "715": 749},
         "source_image_file_SHA256": {str(page): SHA[page] for page in SHA},
         "image_resolution": "3141×4249",
         "license": "Public Domain Mark on Wellcome catalogue",

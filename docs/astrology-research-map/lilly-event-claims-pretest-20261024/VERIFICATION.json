@@ -1,0 +1,152 @@
+{
+  "schema": "LILLY_1647_EVENT_SOURCE_HYPOTHESES_AUDIT_V1",
+  "date": "2026-10-24",
+  "branch": "research/lilly-event-claims-source-20261024",
+  "parent_commit": "f6f922a9449932118c44a2c2c4166a9fcdec73f7",
+  "scope": "original-text conditional event interpretations, not predictions",
+  "source": {
+    "original_1647": "William Lilly, Christian Astrology Book III, first edition",
+    "witness": "Wellcome Collection b30338724 printed pp654,657,659,661,669,670,683,684",
+    "source_images": 8,
+    "original_1647_all_relevant_pages_directly_inspected": true,
+    "source_conditions": "natal house/rulership, dignity, strength and eligibility retained",
+    "paid_Kindle_pages_copied": false,
+    "wellcome_zero_based_canvas_map_corrected": {
+      "713": 747,
+      "714": 748,
+      "715": 749
+    },
+    "prior_23_numeric_table_discrepancies_unchanged": true
+  },
+  "outcome_claims": {
+    "number_of_source_conditional_claims": 7,
+    "alternative_marriage_childbirth_outcomes_UNRESOLVED": true,
+    "modern_event_targets": "analyst proposals, not source wordings and not frozen",
+    "real_human_chart_data_used": false,
+    "human_participants_or_outcomes_scored": 0,
+    "no_time_key_chosen_for_prediction": true,
+    "match_is_modern_geometrical_proxy_not_full_Lilly_historic_algorithm": true
+  },
+  "synthetic_diagnostic": {
+    "invented_chart": "2000-01-01 12:00 UTC at 45N 0E",
+    "arc_limit": 125,
+    "candidate_counts_across_three_geometries": {
+      "LIL-E01": 3,
+      "LIL-E02": 0,
+      "LIL-E03": 0,
+      "LIL-E04": 3,
+      "LIL-E05": 3,
+      "LIL-E06": 0,
+      "LIL-E07": 6
+    },
+    "date_of_actual_event_inferred": false,
+    "absence_of_math_contact_is_not_a_prediction_failure": true,
+    "different_methods_NOT_independent_human_confirmation": true
+  },
+  "assurance": {
+    "extended_tests": "140 passed",
+    "ruff": "passed",
+    "mypy": "passed in 13 source files",
+    "no_previous_maths_modified": true,
+    "user_or_third_party_event_histories_consulted": false,
+    "historical_natal_condition_full_implementation": false,
+    "human_predictive_validity": "UNTESTED"
+  },
+  "parent_original_source_locator_manifest": "eedee1db5d5e667cd1335abceb612c8ffb9dfa4f2ebedc61896a8e3c360a4358",
+  "files": {
+    "tests/unit/test_lilly_1647_event_claims.py": {
+      "bytes": 10454,
+      "sha256": "3a79e86b9f9d44ed40c673ead94087ed58e3a279d9a3e63f9d1cf38d7eb05bbd"
+    },
+    "tests/unit/test_lilly_1647_photo.py": {
+      "bytes": 9660,
+      "sha256": "f71b0e8433ff38bab4221e9a6c13b58eb5862cec1ab7a8f08f935b8b5ba3b932"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/generate_source_claims.py": {
+      "bytes": 17533,
+      "sha256": "f8000d23f7cc0552137d6862bf91028ecfcce07161771f36b5075f00307456ef"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/generate_synthetic_coverage.py": {
+      "bytes": 4546,
+      "sha256": "c247dbe956ccc6a26fce2e5c6a5523bb616792631160c925348f18a37c829095"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/LILLY_1647_EVENT_CLAIM_CANDIDATES.json": {
+      "bytes": 21878,
+      "sha256": "6b8e83e6359d10e22fc1a787937b09d47fcb39b2a21e3b29b9ceee0785d61faf"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/LILLY_1647_EVENT_CLAIM_CANDIDATES.csv": {
+      "bytes": 1675,
+      "sha256": "f29c6d56a8e6093436c493f861196be983769290426e9695e8879209e68faf97"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/LILLY_1647_SYNTHETIC_GEOMETRY_COVERAGE.json": {
+      "bytes": 4079,
+      "sha256": "98754ebce0133164581bbbf4d1305d53a499ae1e3fec3fac72a7b6473482a1d1"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/WELLCOME_CANVAS_LOCATION_CORRECTION.md": {
+      "bytes": 1564,
+      "sha256": "f23d7acb8ff9ec855410595242e8b9ab1750ff0dbebf5e219eb929c0a7369fcf"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/README.md": {
+      "bytes": 9271,
+      "sha256": "c99dd3a0bd7bcb05f3a4ce3b2ad3086608fb464c1225c42c2f457c82d5f5e075"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 4183,
+      "sha256": "dc32712bbdeaf8c87328b12be7417e196432d10c31ee2c4a64cf13194dfbd134"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/regenerate_collation.py": {
+      "bytes": 9499,
+      "sha256": "efee63911c9f4f356ed8b90375a245bd99f6193b23e2b9b4b59d71e780145590"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/LILLY_NAIBOD_1647_WELLCOME_VS_2003_BY_ROW.csv": {
+      "bytes": 18020,
+      "sha256": "9ff279fd2b6e3e610e34bf5b3498eab1ffc1d989c8210cd3943afcbd88eedbbd"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/SOURCE_PROVENANCE.json": {
+      "bytes": 2735,
+      "sha256": "300379b3d4f98e08af3b79511c6b62718efac4605b51183ca1f3d325e5d4da7f"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/VERIFICATION.json": {
+      "bytes": 5510,
+      "sha256": "eedee1db5d5e667cd1335abceb612c8ffb9dfa4f2ebedc61896a8e3c360a4358"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/README.md": {
+      "bytes": 5831,
+      "sha256": "4a1a63820e8a90508a3278ba8ea1dfe504df352c1dca936db225ce64a6658db1"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_654.jpg": {
+      "bytes": 798564,
+      "sha256": "1c7366889c7669b1a05970bac529812333ad75e61e1fb1c1c2fc012c5cc159d3"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_657.jpg": {
+      "bytes": 814225,
+      "sha256": "238d772975b36a9d57085199434bfda910250cf466d6e127538d5287fb51881a"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_659.jpg": {
+      "bytes": 848617,
+      "sha256": "556ff2d970a59d132e9afcb459cedb37a4882ddf3cecc4cf22976e9f94fd76f5"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_661.jpg": {
+      "bytes": 829102,
+      "sha256": "407d9b9cf0b9d9c6f20e14fab144a63c8a9dcb5e0eeadff04174b2d644d40d87"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_669.jpg": {
+      "bytes": 822276,
+      "sha256": "1d2c95ce9025e2a496901d5f58de75453863c09eba5aa7ecad9574d885bc2772"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_670.jpg": {
+      "bytes": 793463,
+      "sha256": "54ea8ddd29c1fd3f8dc1d0f0f5df787764b453604dfbbf7aaad03a6c5016f2f9"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_683.jpg": {
+      "bytes": 821691,
+      "sha256": "f6227c352be2b40b71f103af9085fddb83c3bced3da87b801503e40aadbb61fc"
+    },
+    "docs/astrology-research-map/lilly-event-claims-pretest-20261024/source_page_images/lilly_1647_printed_684.jpg": {
+      "bytes": 800711,
+      "sha256": "b30411f6c0cbf6ea1aafb67b80d6efd0fec81930cd28182130f90267659cc348"
+    }
+  },
+  "root_owner_outcome": "OPEN",
+  "next_safe_implementation": "source-specific radix condition computation and independent event meaning selection; no prospective scoring without separate participant authority"
+}
