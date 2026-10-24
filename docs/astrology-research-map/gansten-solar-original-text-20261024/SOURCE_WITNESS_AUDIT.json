@@ -1,0 +1,108 @@
+{
+  "schema": "GANSTEN_SOLAR_PRIMARY_WITNESS_SCOPE_V1",
+  "date": "2026-10-24",
+  "parent_owner_goal": "Accurate, historically differentiated astrology calculations, then freeze and test prospectively alongside other systems on untouched blinded human data. Do not fit timing key to retrospective life events.",
+  "source_evidence_classes": [
+    {
+      "id": "BRAHE_1573",
+      "author": "Tycho Brahe",
+      "work": "De Nova Stella",
+      "original_publication_year": 1573,
+      "examined_witness": "Latin text in critical scholarly transcription (editor J.L.E. Dreyer, 1913) on tekstnet.dk",
+      "direct_text_url": "https://tekstnet.dk/books/brahe-t_de-nova-stella/010/",
+      "passage": "dedicatory meteorological calendar letter, folio G1r to G1v, paragraph on directions",
+      "exact_short_fragments": [
+        "quantus sit motus Solis diurnus",
+        "eorum verus motus et inæqualis"
+      ],
+      "supported": [
+        "Brahe states that natal primary-direction year measures may use the Sun's actual DAILY motion with the corresponding arc of the equator.",
+        "Brahe argues for TRUE/UNEQUAL motion of Sun, Moon or other planets rather than abstract uniform motion.",
+        "In the meteorological/calendar example, Brahe instead uses the Moon's daily motion to define a different equatorial interval for each DAY; this must not be conflated with his natal convention."
+      ],
+      "not_supported_by_this_passage": [
+        "No explicit definition of two enclosing LOCAL TRUE SOLAR MIDNIGHT timestamps appears in the inspected paragraph.",
+        "The precise equatorial epoch/nutation and TT/UT astronomical conventions of our SWIEPH implementation were not available in 1573.",
+        "The original 1573 page photograph was NOT inspected here; the Latin is a later critical transcription."
+      ],
+      "interpretation": "The 'Brahe midnight-to-midnight' 2009 Gansten reconstruction is computationally reproducible, but exact birth-day endpoints are NOT independently established from this 1573 source paragraph.",
+      "source_quality": "first-person contemporary Brahe Latin preserved in modern scholarly transcription; not original facsimile, so passage verified at edition level only"
+    },
+    {
+      "id": "PLACIDUS_COOPER_1814",
+      "author": "Placidus de Titis",
+      "work": "Primum Mobile (Cooper edited English translation)",
+      "work_original_year": 1657,
+      "translation_publication_year": 1814,
+      "examined_witness": "1814 English edition, John Cooper edited/translated from Latin, Google digitization",
+      "source_pdf": "https://iapsop.com/ssoc/1814__cooper___primum_mobile.pdf",
+      "source_pdf_sha256": "48ef8660df31195dd2506964e2748d3005a39d8630abe5b2bc63cde0e6edbfbf",
+      "pdf_pages_1_based": [
+        40,
+        41,
+        42
+      ],
+      "printed_pages": [
+        23,
+        24,
+        25
+      ],
+      "scanned_page_images": {
+        "40": "eeb15f17a3e25fef907809c1aeeaa1793538ab9db42aa14333430484a386f0e1",
+        "41": "d8ef697690564a5b72ef8601b9e67e13cc2520704c0f82fb968be6cbf1a5394a",
+        "42": "d5842adf2aa15b1634a6f102707f36d0e69b557c9950941153b68a23f24949b9"
+      },
+      "inspected_passages": [
+        {
+          "printed_page": 23,
+          "thesis": 58,
+          "supports": "Sun's subsequent daily motion provides an equatorial interval; equal hour of natal instant is mentioned for following days"
+        },
+        {
+          "printed_page": 23,
+          "thesis": 60,
+          "supports": "Angles may be directed in direct primary motion, NOT converse"
+        },
+        {
+          "printed_page": 23,
+          "thesis": 61,
+          "supports": "Converse significators receive rays and parallels IN MUNDO, not zodiacal rays"
+        },
+        {
+          "printed_page": 24,
+          "thesis": 62,
+          "supports": "Explicit further exclusion of zodiacal rays in converse"
+        },
+        {
+          "printed_pages": [
+            24,
+            25
+          ],
+          "thesis": 65,
+          "supports": "For year 1 take Sun's motion of first day after birth; year 2 second day, etc. Sun right ascension in the direct sphere, a variable accumulated time key."
+        }
+      ],
+      "not_supported": [
+        "This is NOT a direct independently inspected transcription of the 1657 Latin original.",
+        "The edited translator's rendering may differ from 1657 Latin wording or later Placidus editions.",
+        "The exact modern SWIEPH geocentric apparent true equator-of-date and TT/UT conventions are numerical reconstruction choices, NOT historically established by this witness.",
+        "Modern 360°-minus-forward-arc converse is not established by these passages."
+      ],
+      "policy_implication": {
+        "placidus_1814_traditional_converse_of_zodiacal_promissor_ray": "INCOMPATIBLE_WITH_TRANSLATED_WITNESS",
+        "placidus_1814_traditional_converse_moving_ASC_MC": "INCOMPATIBLE_WITH_TRANSLATED_WITNESS",
+        "generic_unattributed_traditional_converse_zodiacal_ray": "mathematically implemented but NOT source-authenticated Placidus method",
+        "placidus_1814_true_solar_ra_timing": "SUPPORTED_AT_METHOD_LEVEL_FROM_TRANSLATED_THESIS_65",
+        "different_historical_authors": "must remain separately labeled; this witness is not a universal prohibition on other schools"
+      },
+      "catalog_original_1657": {
+        "source_url": "https://wellcomecollection.org/works/ywm7tane",
+        "original_scan_found": "catalogued online, but relevant original folios NOT read this pass",
+        "full_view_catalog_url": "https://books.google.com/books?id=3RHgMAUa5fMC"
+      }
+    }
+  ],
+  "upstream_historical_source_archive": "$HOME/Documents/books/astro/Placidus_Primum_Mobile_Cooper_1814.pdf (kept outside Git; entire public-domain PDF not duplicated in packet)",
+  "tests_scope": "historical source-label compatibility and exact meta/provenance; numerical geometry outputs must remain unchanged",
+  "root_goal_state": "OPEN; mathematical source evidence improved; no frozen predictions or human accuracy validation."
+}

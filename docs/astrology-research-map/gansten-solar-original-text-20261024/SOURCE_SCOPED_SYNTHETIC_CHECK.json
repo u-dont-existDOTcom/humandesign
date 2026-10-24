@@ -1,0 +1,42 @@
+{
+  "schema": "SOLAR_KEY_PRIMARY_TEXT_SOURCE_SCOPE_REGRESSION_V1",
+  "date": "2026-10-24",
+  "synthetic_natal": "2000-01-01T12:00Z, 45N 0E; not a person's birth data",
+  "historical_witnesses": [
+    "BRAHE_1573",
+    "PLACIDUS_COOPER_1814"
+  ],
+  "before_after_by_key": {
+    "brahe_true_midnight_birth_day": {
+      "source_scope": {
+        "source_id": "tycho_brahe_de_nova_stella_1573_latin_critical_transcription",
+        "status": "partial_source_support",
+        "evidence": "Folio G1r: Brahe distinguishes true and varying planetary daily motion from uniform motion, and states a solar daily motion convention for equatorial year measures.",
+        "limit": "The inspected 1573 passage does NOT specify enclosing local true-solar midnight samples. Those endpoints and modern true-equator RA are a Gansten-informed reconstruction, not a verbatim procedure recovered from 1573."
+      },
+      "contact_count": 126,
+      "original_numeric_contact_SHA256": "605028a08c51a69c6f6dfb5ad18edfc68cd0f6d19f5f8658fff78c85225e2326",
+      "frozen_prior_file_SHA256": "b8108a86055312a722c317382d0803cfe949fe432d75e8e205b8ef5923cbe5c7",
+      "source_metadata_changed_not_numbers": true
+    },
+    "placidus_cumulative_true_solar_ra": {
+      "source_scope": {
+        "source_id": "placidus_1657_via_cooper_1814_english_edited_translation",
+        "status": "compatible_selected_rule",
+        "evidence": "Cooper's edited translation printed pp.23-25, theses 58 and 65: the first subsequent solar day governs the first year, the second day the second year, etc., and the Sun's ascension in the direct sphere measures each interval.",
+        "limit": "This is the 1814 English edited translation, not a checked Latin 1657 transcription. Exact TT/UT, sidereal and calendar conventions of the original historical method remain unverified."
+      },
+      "contact_count": 114,
+      "original_numeric_contact_SHA256": "8295eb03a12c3ca78e76344aa21dedce2a7333b08da0374d5da15b3436813423",
+      "frozen_prior_file_SHA256": "01e2a5e60def560b613bb45f18ad43b75ccd96c8201a01e3ba2f51590ada9308",
+      "source_metadata_changed_not_numbers": true
+    }
+  },
+  "explicit_placidus_converse_zodiacal_prohibition": {
+    "source_id": "placidus_1657_via_cooper_1814_english_edited_translation",
+    "status": "incompatible_witness",
+    "evidence": "Cooper translation printed pp.23-24, theses 61-62, expressly excludes zodiacal rays in converse; only mundane rays/parallels are permitted in that account.",
+    "limit": "This is Placidus as represented by Cooper's 1814 edition. A generic role-reversed zodiacal ray is still a valid mathematical candidate, but must not be called 'Placidus-compliant' on this witness."
+  },
+  "research_state": "source provenance corrected; historical method completeness and empirical validity OPEN"
+}

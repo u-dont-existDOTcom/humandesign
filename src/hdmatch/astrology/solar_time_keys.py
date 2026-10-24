@@ -37,6 +37,7 @@ from hdmatch.chart.ephemeris import (
 )
 
 from .sky import DirectionBirthSnapshot
+from .source_witness_scope import solar_key_source_assessment
 from .timeline import MODERN_MEAN_TROPICAL_YEAR_DAYS
 
 
@@ -81,9 +82,14 @@ class SolarKeyMetadata:
             "sun_ra_coordinate_convention": self.mathematical_scope,
             "symbolic_year_calendar_days": MODERN_MEAN_TROPICAL_YEAR_DAYS,
             "authorities": (
-                "Gansten 2009 Ch.6 pp.73-80 (from purchased-book research audit);"
-                " Brahe 1573 original primary witness not re-read this pass"
+                "Gansten 2009 Ch.6 pp.73-80 from purchased-book audit; "
+                "Brahe De Nova Stella (1573), critical Latin transcription "
+                "folio G1r-G1v inspected; Placidus represented in John Cooper's "
+                "edited English translation Primum Mobile (1814), theses "
+                "58 and 65, printed pp.23-25, inspected. Original 1657 "
+                "Latin and exact historical ephemeris conventions unresolved."
             ),
+            "primary_source_scope": solar_key_source_assessment(self.solar_key.value).to_dict(),
             "not_a_forecast": True,
         }
 

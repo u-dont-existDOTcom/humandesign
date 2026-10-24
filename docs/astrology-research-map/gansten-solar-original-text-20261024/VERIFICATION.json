@@ -1,0 +1,85 @@
+{
+  "schema": "BRAHE_PLACIDUS_PRIMARY_TEXT_SOURCE_SCOPE_V1",
+  "date": "2026-10-24",
+  "research_branch": "research/gansten-solar-primary-source-20261024",
+  "parent_commit": "a53664cff0985d24e85e3dac008411958cd81961",
+  "root_purpose": "historically sourced astrology calculations, freeze rules, later combined forward-blind human test",
+  "primary_witnesses": {
+    "Brahe_1573": "critical scholarly Latin transcription of first-person 1573 text, folio G1r-G1v; 1573 facsimile not inspected",
+    "Placidus_1657": "only 1814 edited English translation pp.23-25 inspected; original Latin catalogued but NOT checked"
+  },
+  "source_status": {
+    "brahe_true_daily_motion": "SUPPORTED",
+    "brahe_enclosing_local_true_midnight_endpoints": "NOT_SUPPORTED_DIRECTLY_BY_INSPECTED_1573_PASSAGE",
+    "placidus_successive_ra_days_for_years": "SUPPORTED_IN_COOPER_1814_TRANSLATION",
+    "placidus_converse_zodiacal_rays": "EXPLICITLY_PROHIBITED_IN_1814_TRANSLATION",
+    "placidus_moving_angles_converse": "EXPLICITLY_PROHIBITED_IN_1814_TRANSLATION",
+    "other_traditions_converse_zodiacal": "NOT_JUDGED_BY_PLACIDUS_WITNESS"
+  },
+  "new_tests": {
+    "exact_command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_solar_primary_source_scope.py tests/unit/test_solar_time_keys.py tests/unit/test_naibod_original_1647.py tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "94 passed",
+    "ruff": "passed",
+    "mypy": "passed in 12 modules",
+    "numeric_source_2000_legacy_brahe_same": true,
+    "numeric_source_2000_legacy_placidus_same": true,
+    "full_PDF_private_on_owner_laptop_not_in_Git": true,
+    "source_page_images": 3,
+    "no_human_event_labels_or_known_birth_data": true
+  },
+  "prior_stable_solar_verification_sha256": "658ef1d348b1c9fd08b9727f161f3e037e35ceab1cfa53717096c18d36a79d08",
+  "book_archived_outside_repo": {
+    "filename": "Placidus_Primum_Mobile_Cooper_1814.pdf",
+    "bytes": 22021886,
+    "sha256": "48ef8660df31195dd2506964e2748d3005a39d8630abe5b2bc63cde0e6edbfbf"
+  },
+  "files": {
+    "src/hdmatch/astrology/source_witness_scope.py": {
+      "bytes": 6861,
+      "sha256": "3b8663f5da2718ff683f674803d46857f0e1bdddb2ef7f95287e31dad121b193"
+    },
+    "src/hdmatch/astrology/solar_time_keys.py": {
+      "bytes": 16658,
+      "sha256": "971afbab5ab1e86a65a58f444c4e27c30dfc973fcec3d579dc59a94647d89ef6"
+    },
+    "tests/unit/test_solar_primary_source_scope.py": {
+      "bytes": 7003,
+      "sha256": "1f943285db2c6a836c75868c893ee45e5d42056ef2df76a32a1ec3c4fb7816f3"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/SOURCE_WITNESS_AUDIT.json": {
+      "bytes": 6105,
+      "sha256": "f0aeb9394d41c99729d3b4e60ecdaa6e2f637c5a73288c59b2c48cfd244b7105"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/SOURCE_SCOPED_SYNTHETIC_CHECK.json": {
+      "bytes": 2824,
+      "sha256": "4d5dd860f4e013be7cabec5755e7a1708cfb3a464ba60a3a67ef8631ea6f58ca"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/regenerate_source_examples.py": {
+      "bytes": 3064,
+      "sha256": "02ff14a39eb12ebf3ffa556e115d733da06810bbfeef087d6a814863276fcc12"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/README.md": {
+      "bytes": 5756,
+      "sha256": "3508745c9acaaef9c3798003acd8a0ce00073a2e7b2a52688a8097bdb58a43ce"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3497,
+      "sha256": "0f17f7cc4b5625ee53357844d91fc17b3ecc4fb87ab17b7734bc6d3f987ab638"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/source_page_images/placidus_1814_pdf_page_40.png": {
+      "bytes": 183629,
+      "sha256": "eeb15f17a3e25fef907809c1aeeaa1793538ab9db42aa14333430484a386f0e1"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/source_page_images/placidus_1814_pdf_page_41.png": {
+      "bytes": 178704,
+      "sha256": "d8ef697690564a5b72ef8601b9e67e13cc2520704c0f82fb968be6cbf1a5394a"
+    },
+    "docs/astrology-research-map/gansten-solar-original-text-20261024/source_page_images/placidus_1814_pdf_page_42.png": {
+      "bytes": 178140,
+      "sha256": "d5842adf2aa15b1634a6f102707f36d0e69b557c9950941153b68a23f24949b9"
+    }
+  },
+  "no_mathematical_method_change": true,
+  "not_production_promoted": true,
+  "human_predictive_validity": "UNTESTED"
+}
