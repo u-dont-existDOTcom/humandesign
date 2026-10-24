@@ -38,3 +38,7 @@ This 2nd-century document directly precedes Paulus's 378 CE treatise and support
 **Verified historical-source regression: 160/160 PASS (exit 0)** in isolated C19 worktree (150 previous + 10 new source-only checks). No human predictive validations. **Human predictive validations: 0.**
 
 One-line restart: C19 Berlin original photo and official source metadata verified, editorial reading Libra Mercury/night + restored Moon monomoiria documented, no degree calculation; read edition/Greek apparatus next.
+
+## C20 conditional-source addendum
+
+Zellmann-Rohrer 2024 p296 supplies the four conjectural completed-degree Libra positions **2, 9, 16 or 23**, all matching Moon monomoiria under the frozen sevenfold by-sign method. Under Egyptian terms these correspond to Saturn/Mercury/Jupiter/Venus, respectively. The scholarly preference **2°35′** is conditional on the Egyptian-term assumption and paleographic/editorial fit; it is NOT a directly recovered exact original degree. The original C19 statement that no unique exact longitude was obtained remains valid. See C20 research report and evidence JSON. Page 296 was inspected through search-indexed text, not a fully rendered PDF.

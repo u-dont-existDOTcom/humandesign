@@ -1,0 +1,98 @@
+{
+  "schema": "HUMANDESIGN_C20_BERLIN_MOON_LIBRA_CANDIDATES_V1",
+  "date": "2026-10-24",
+  "status": "SOURCE_ONLY_EDITORIAL_CONDITIONAL_RECONSTRUCTION",
+  "sources": {
+    "Berlin": "P. Berol. 21347 official original photographic recto, record https://berlpap.smb.museum/04530/ ; direct visual evidence examined in C19",
+    "editor": "Zellmann-Rohrer 2024, Three Deluxe Horoscopes, APF 70/2, p296; exact page text recovered from indexed PDF extracts, not fully rendered PDF or page photograph",
+    "editor_doi": "10.1515/apf-2024-0019",
+    "editor_pdf": "https://refubium.fu-berlin.de/bitstream/handle/fub188/49674/Three%20Deluxe%20Horoscopes_MZR.pdf?isAllowed=y&sequence=1",
+    "primary_terms": "Ptolemy, Tetrabiblos I.20 Egyptian terms Libra row, Loeb English p97, https://penelope.uchicago.edu/thayer/e/roman/texts/ptolemy/tetrabiblos/1b%2A.html",
+    "model": "Frozen C04 by-sign Chaldean monomoiria as historically attested model, not human test"
+  },
+  "editorial_state": {
+    "monomoiria": "Moon",
+    "Moon_name_partly_restored": true,
+    "degree_missing_in_papyrus": true,
+    "possible_completed_degrees": [
+      2,
+      9,
+      16,
+      23
+    ],
+    "preferred_completed_degree": 2,
+    "preferred_example": "Libra 2°35′",
+    "preferred_condition": "assuming Egyptian terms, Saturn first 6°",
+    "preferred_is_conjectural": true,
+    "fully_independent_palaeographic_collation": false
+  },
+  "Egyptian_terms_Libra": {
+    "order": [
+      "Saturn",
+      "Mercury",
+      "Jupiter",
+      "Venus",
+      "Mars"
+    ],
+    "widths": [
+      6,
+      8,
+      7,
+      7,
+      2
+    ],
+    "cumulative_ends": [
+      6,
+      14,
+      21,
+      28,
+      30
+    ]
+  },
+  "candidate_table": [
+    {
+      "completed_degree": 2,
+      "ordinal_degree": 3,
+      "example": "Libra 2°35′",
+      "by_sign_ruler": "Moon",
+      "Egyptian_term": "Saturn",
+      "role": "EDITOR_CONDITIONALLY_FAVORED"
+    },
+    {
+      "completed_degree": 9,
+      "ordinal_degree": 10,
+      "example": "Libra 9°35′",
+      "by_sign_ruler": "Moon",
+      "Egyptian_term": "Mercury",
+      "role": "ALTERNATIVE"
+    },
+    {
+      "completed_degree": 16,
+      "ordinal_degree": 17,
+      "example": "Libra 16°35′",
+      "by_sign_ruler": "Moon",
+      "Egyptian_term": "Jupiter",
+      "role": "ALTERNATIVE"
+    },
+    {
+      "completed_degree": 23,
+      "ordinal_degree": 24,
+      "example": "Libra 23°35′",
+      "by_sign_ruler": "Moon",
+      "Egyptian_term": "Venus",
+      "role": "ALTERNATIVE"
+    }
+  ],
+  "boundaries": {
+    "four_candidates_not_one_by_Moon_alone": true,
+    "assumed_Saturn_Egyptian_term_favors_only_2": true,
+    "source_does_not_independently_confirm_exact_Ascendant_degree": true,
+    "source_does_not_confirm_Saturn_term_via_independent_ink_reading": true,
+    "not_human_predictive_validation": true,
+    "human_predictive_validations": 0,
+    "production_scoring_changed": false,
+    "P_Oxy_4277_historical_agreements": 1,
+    "P_Oxy_4277_historical_disagreements": 2,
+    "gansten_Kindle_not_extracted": true
+  }
+}

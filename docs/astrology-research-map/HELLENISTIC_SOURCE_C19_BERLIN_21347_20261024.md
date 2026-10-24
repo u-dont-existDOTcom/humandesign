@@ -29,3 +29,7 @@ The already-verified Oxford **P.Oxy. LXI 4277** remains a separate document, wit
 ## Evidence level and next source frontier
 
 Record object identification, direct photo inspection, modern editor's conjectural reading and inferred doctrinal comparison **as four different evidential layers**. None is proof that natal astrology predicts human behavior. The next useful source checks are (a) complete legally accessible 2024 Greek edition and red-ink microscopic argument, (b) exact Jones 1999 P.Oxy. 4277 Greek apparatus, (c) Boer 1958 ch32 apparatus / 1962 commentary and Paris Z/Y distinct textual lineages. Preserve all previously unresolved readings and the 16-tradition research map. No Kindle extraction using Work or scoring promotion.
+
+## C20 conditional-source addendum
+
+Zellmann-Rohrer 2024 p296 supplies the four conjectural completed-degree Libra positions **2, 9, 16 or 23**, all matching Moon monomoiria under the frozen sevenfold by-sign method. Under Egyptian terms these correspond to Saturn/Mercury/Jupiter/Venus, respectively. The scholarly preference **2°35′** is conditional on the Egyptian-term assumption and paleographic/editorial fit; it is NOT a directly recovered exact original degree. The original C19 statement that no unique exact longitude was obtained remains valid. See C20 research report and evidence JSON. Page 296 was inspected through search-indexed text, not a fully rendered PDF.
