@@ -1,0 +1,69 @@
+{
+  "schema": "LILLY_1647_INDEPENDENT_WELLCOME_COLLATION_V1",
+  "date": "2026-10-24",
+  "root_project_goal": "Historically source-differentiated astrology calculations, frozen before combined forward-blind human validation; not an empirical claim.",
+  "first_edition_witness_A": {
+    "repository": "Wellcome Collection",
+    "work": "https://wellcomecollection.org/works/s7z7c46y",
+    "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/v2/b30338724",
+    "printed_page_to_zero_based_canvas": {
+      "713": 746,
+      "714": 747,
+      "715": 748
+    },
+    "source_image_file_SHA256": {
+      "713": "cf11fb6cd819549b4f359670a04faded417526ddecf3171ccd7a46f6d68d9776",
+      "714": "bc76d574f3d57bdd76f533dedbdc6d9cf2b6423d5a841adfd849ee77538b92ac",
+      "715": "e333f2442238e68a1c7ebed4fdcf9e43691d3f72ed256d2eca2bfca10458216e"
+    },
+    "image_resolution": "3141×4249",
+    "license": "Public Domain Mark on Wellcome catalogue"
+  },
+  "first_edition_witness_B": {
+    "repository": "Internet Archive ca-william-lilly",
+    "source_file": "../gansten-lilly-original-1647-20261024/ORIGINAL_1647_SOURCE_COMPARISON.json",
+    "printed_pages": [
+      713,
+      714,
+      715
+    ],
+    "independently_compared": true
+  },
+  "modern_comparison_witness": {
+    "edition": "WorldAstrology retypeset Christian Astrology Book III, 2003",
+    "file": "../gansten-lilly-naibod-20261024/LILLY_NAIBOD_2003_RETYPED_LITERAL_CELLS.csv",
+    "retained_unchanged": true
+  },
+  "source_transcription": "William Lilly Christian Astrology first edition 1647, printed pp.713–715; independent Wellcome b30338724 high-resolution colored source and Internet Archive ca-william-lilly 1647 source image; both direct photographs",
+  "degree_rows_original_excluding_zero": 90,
+  "minute_labels_range": [
+    1,
+    60
+  ],
+  "minute_labels_physically_present": 59,
+  "minute_rows_original_photograph_confirmed": 53,
+  "minute_rows_ambiguous": [
+    25,
+    28,
+    39,
+    41,
+    44,
+    48
+  ],
+  "minute_row_missing": [
+    27
+  ],
+  "confirmed_source_differences": {
+    "original_degree_year_vs_retype": 22,
+    "original_minute_day_vs_retype": 1,
+    "total_confirmed_table_cell_differences": 23,
+    "newly_discovered_minute_1": {
+      "original_1647": "5d4h",
+      "2003_retype": "6d4h"
+    }
+  },
+  "uncertainty_policy": "Original faint cells are blank in original 1647 columns. Modern 2003 candidate digits are separate and never auto-filled. Missing minute 27 remains absent, not inferred. Original print anomalies are retained, not silently corrected.",
+  "full_unambiguous_minute_table_authenticated": false,
+  "original_1647_lookup_is_a_complete_historical_timing_key": false,
+  "human_predictive_validity": "UNTESTED"
+}

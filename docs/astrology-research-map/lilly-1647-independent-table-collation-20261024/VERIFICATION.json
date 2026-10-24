@@ -1,0 +1,103 @@
+{
+  "schema": "LILLY_1647_INDEPENDENT_PHOTO_AND_2003_RETYPE_AUDIT_V1",
+  "date": "2026-10-24",
+  "branch": "research/lilly-1647-minute-collation-20261024",
+  "parent_commit": "931784fb7ae691a80eb42a3c2cd0bcbeac942274",
+  "purpose": "accurately sourced competing astrology calculations, frozen before joint forward-blind empirical test",
+  "state": "SUBTASK_COMPLETE_PARENT_OPEN_RESEARCH_ONLY",
+  "independent_sources": [
+    "Wellcome high-resolution first-edition color scan b30338724 printed pp713–715",
+    "Internet Archive ca-william-lilly different 1647 first-edition copy, previously preserved",
+    "WorldAstrology modern 2003 retypeset, comparison only and untouched"
+  ],
+  "new_result": {
+    "first_edition_photo_minute_1": {
+      "days": 5,
+      "hours": 4
+    },
+    "modern_retype_minute_1": {
+      "days": 6,
+      "hours": 4
+    },
+    "verified_degree_year_differences": 22,
+    "verified_minute_day_differences": 1,
+    "verified_numerical_table_cell_differences": 23,
+    "minute_rows_original_photo_read": 53,
+    "minute_rows_faint_original": [
+      25,
+      28,
+      39,
+      41,
+      44,
+      48
+    ],
+    "minute_row_absent": 27,
+    "original_1647_all_degree_day_hour_values_checked": true,
+    "original_1647_full_minute_table_uncertainty_resolved": false,
+    "2003_retype_19degree52prose_22vs1647original20": true
+  },
+  "assurance": {
+    "tests": "122 passed",
+    "test_command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_lilly_1647_photo.py tests/unit/test_placidus_1657_latin.py tests/unit/test_solar_primary_source_scope.py tests/unit/test_solar_time_keys.py tests/unit/test_naibod_original_1647.py tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "ruff": "passed",
+    "mypy": "passed (13 source modules)",
+    "existing_default_time_key_unchanged": true,
+    "old_2003_text_and_partial_original_comparator_unchanged": true,
+    "future_predictive_validity": "untested",
+    "uses_human_personal_birth_data": false
+  },
+  "previous_retype_csv_sha256": "f224fac9fb851d5385ef213fb5ef7a7bbcf8f1430df2f53f9f1bc9fc40a27748",
+  "previous_original_correction_sha256": "afe26c059b8589a8d8ee442f49380c2c538364ecae0b07fed6acacb9fd6d424b",
+  "first_edition_source_images_sha256": {
+    "713": "cf11fb6cd819549b4f359670a04faded417526ddecf3171ccd7a46f6d68d9776",
+    "714": "bc76d574f3d57bdd76f533dedbdc6d9cf2b6423d5a841adfd849ee77538b92ac",
+    "715": "e333f2442238e68a1c7ebed4fdcf9e43691d3f72ed256d2eca2bfca10458216e"
+  },
+  "files": {
+    "src/hdmatch/astrology/lilly_1647_photo.py": {
+      "bytes": 9991,
+      "sha256": "4c01bf4106d4a72cd72c9559d3d1b66ac0782e742ecf948b6fc04f78894faf0d"
+    },
+    "tests/unit/test_lilly_1647_photo.py": {
+      "bytes": 9660,
+      "sha256": "7501c25e123a34d68a3e0b6b041c2b4924709d96cf86cec1f4cdb2b832979738"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/regenerate_collation.py": {
+      "bytes": 9499,
+      "sha256": "9592b840a4ca49a1af36d3b89a9a94d0b73b874165ebc832d3e58398eb58a54f"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/README.md": {
+      "bytes": 5770,
+      "sha256": "04869c5ca83e4e009cef924460c1bb7d48ea581683fe16b97ba8545bf75b77f8"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3345,
+      "sha256": "5c9b3cf1c2e22fa7a1bc57d9f61d5f760cd649d6b9f0423e439246c6b98dc356"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/LILLY_NAIBOD_1647_WELLCOME_VS_2003_BY_ROW.csv": {
+      "bytes": 18020,
+      "sha256": "173a034617b3da4271c139173baa9aa46ad6ea283091fbe2afa65c2da38ff130"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/LILLY_1647_CRITICAL_DIFFERENCES.json": {
+      "bytes": 1006,
+      "sha256": "7641fd587f0c1e41b9ffb78c795ac8b3aef5fdb1bb022dfdaba9ee26d7ec250a"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/SOURCE_PROVENANCE.json": {
+      "bytes": 2735,
+      "sha256": "479a7c9b1fcdbb8bc2b72773a1993b13e8373dd1ba94ddebc293dfa18f16e1b7"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/facsimile_pages/wellcome_original_1647_printed_713.jpg": {
+      "bytes": 1916592,
+      "sha256": "cf11fb6cd819549b4f359670a04faded417526ddecf3171ccd7a46f6d68d9776"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/facsimile_pages/wellcome_original_1647_printed_714.jpg": {
+      "bytes": 1790275,
+      "sha256": "bc76d574f3d57bdd76f533dedbdc6d9cf2b6423d5a841adfd849ee77538b92ac"
+    },
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/facsimile_pages/wellcome_original_1647_printed_715.jpg": {
+      "bytes": 1828721,
+      "sha256": "e333f2442238e68a1c7ebed4fdcf9e43691d3f72ed256d2eca2bfca10458216e"
+    }
+  },
+  "HDD_use": "Store on local NVMe; /mnt/hdd nearly full."
+}
