@@ -1,0 +1,196 @@
+{
+  "schema": "HUMANDESIGN_HELLENISTIC_C22_FULL120_SOURCE_DISAGREEMENT_AUDIT_V1",
+  "date": "2026-10-24",
+  "root_outcome": "OPEN: source-faithful Hellenistic methods in preserved 16-tradition framework, for eventual separately frozen and blinded human validation",
+  "scope": "SOURCE_CRITICISM_ONLY; no natal chart scoring, no human forecasts",
+  "source_groups": {
+    "greenbaum_English_printed": {
+      "work": "Dorian Gieseler Greenbaum, Late Classical Astrology: Paulus Alexandrinus and Olympiodorus with later scholia, 2001",
+      "local_owner_study_pdf": "/home/joel/Documents/books/astro/paulus-alexandrinus-and-olympiodorus-with-scholia-dorian-gieseler-greenbaum_compress.pdf",
+      "local_pdf_sha256": "dffa2a86e2a8c13135b1fc9e68b798224a25464e617fa221a7551b5be08b605a",
+      "pdf_page_count": 93,
+      "last_scanned_leaf": "printed page 77, 'End of Paulus' Introduction'; Olympiodorus commentary and addendum not in this particular extracted file",
+      "inspected_pages": [
+        {
+          "pdf_page": 82,
+          "printed_page": 66,
+          "passage": "chapter 32; translator's notes on doubled Aphrodite and source table errors; Greek Boer text p85 lines8–18",
+          "source_layer": "TRANSLATOR_COMMENTARY_PLUS_ENGLISH_TRANSLATION"
+        },
+        {
+          "pdf_page": 83,
+          "printed_page": 67,
+          "passage": "corrected four-triplicity, thirty-degree D table, with D (day) header; scholion 85 follows",
+          "source_layer": "EDITORIAL_RECONSTRUCTION_PRINTED_TABLE_NOT_ANCIENT_MANUSCRIPT"
+        },
+        {
+          "pdf_page": 84,
+          "printed_page": 68,
+          "passage": "translator note on inconsistent canons and a Mars-first fourth trigon; chapter 33 alternate methods",
+          "source_layer": "TRANSLATOR_COMMENTARY"
+        },
+        {
+          "pdf_page": 85,
+          "printed_page": 69,
+          "passage": "scholion 87 Cancer 8 Venus and printed canon Mars, with translator's direction-specific explanation",
+          "source_layer": "GREEK_SCHOLION_AS_ENGLISH_TRANSLATED_PLUS_EDITOR_NOTES"
+        },
+        {
+          "pdf_page": 86,
+          "printed_page": 70,
+          "passage": "translator footnote corrects Olympiodorus Virgo Moon degree and wrong 22nd-degree ruler (Venus, not Mars)",
+          "source_layer": "TRANSLATOR_COMMENTARY_ON_SCRIBAL_NEGATIVES"
+        }
+      ],
+      "no_publisher_scan_of_Boer_1958_apparatus_in_this_pass": true,
+      "p67_visual_sample_cells": {
+        "fire": [
+          [
+            1,
+            "Sun"
+          ],
+          [
+            7,
+            "Mars"
+          ],
+          [
+            8,
+            "Sun"
+          ],
+          [
+            30,
+            "Jupiter"
+          ]
+        ],
+        "earth": [
+          [
+            1,
+            "Venus"
+          ],
+          [
+            8,
+            "Venus"
+          ],
+          [
+            22,
+            "Venus"
+          ],
+          [
+            30,
+            "Moon"
+          ]
+        ],
+        "air": [
+          [
+            1,
+            "Saturn"
+          ],
+          [
+            8,
+            "Saturn"
+          ],
+          [
+            27,
+            "Venus"
+          ],
+          [
+            30,
+            "Mercury"
+          ]
+        ],
+        "water": [
+          [
+            1,
+            "Mars"
+          ],
+          [
+            8,
+            "Mars"
+          ],
+          [
+            22,
+            "Mars"
+          ],
+          [
+            30,
+            "Sun"
+          ]
+        ]
+      },
+      "photo_redistributed": false
+    },
+    "paulus_modern_Greek": {
+      "source": "https://eulogikon.org/works/paul-alexandria-astrology-sum-aa",
+      "status": "modern digital Greek body, C21 directly read, not actual Boer 1958 printed apparatus",
+      "chap32_no_early_duplicate_greek_attested": true,
+      "ch32_light_of_sect_scope": true,
+      "ch32_day_table_caption": true,
+      "complete_30x4_table_values_in_digital_rendition": false
+    },
+    "physical_manuscript_family": {
+      "source_registries": [
+        "PAULUS_C13_MUNICH_120_POSITION_IMAGE_TRANSCRIPTION_V1.json",
+        "PAULUS_C14_FLORENCE_120_POSITION_ORIGINAL_WITNESS_V1.json",
+        "PAULUS_C15_VATICAN_120_POSITION_SOURCE_WITNESS_V1.json"
+      ],
+      "representative_for_120_position_deterministic_comparison": "Vatican C15 observed 120; same candidate labels as Florence C14, Munich 119 readable",
+      "source_status": "Early-modern physical witnesses; candidate planetary-symbol identifications, not certified ancient autograph",
+      "three_separate_photo_sources_recorded": true,
+      "textual_stemmatic_independence_verified": false,
+      "independent_blinded_paleographic_retranscription_done": false,
+      "same_research_context_and_previous_sequences_were_known_when_later_witnesses_deciphered": true,
+      "note": "Identical 120-entry registries are consistent with common exemplar, observer expectation and unblinded transcription. They are not 120 independent blind confirmations; do not upgrade authenticity automatically."
+    }
+  },
+  "comparison_contract": {
+    "one_representative_per_trigon": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer"
+    ],
+    "ordinal_degrees_each": [
+      1,
+      30
+    ],
+    "denominator": 120,
+    "Greenbaum_D": "frozen C04 sevenfold corrected printed daytime canon",
+    "narrative_D": "frozen C05 sevenfold no-duplicate day narrative interpretation",
+    "narrative_N": "frozen C05 sevenfold no-duplicate night interpretation, comparison diagnostic only",
+    "manuscript": "literal C15 planetary labels, interpreted from same table family as C13/14",
+    "sect_note": "Manuscript own Greek night/day rubric not independently deciphered, so day-vs-night comparisons are exploratory, not source adjudication."
+  },
+  "source_statuses": {
+    "Greek_narrative_vs_Greenbaum_day_differ": 34,
+    "Greek_narrative_vs_Greenbaum_day_same": 86,
+    "first_glance_disputed_cell_results": {
+      "narrative_only": 11,
+      "greenbaum_only": 1,
+      "neither": 22
+    },
+    "full120_fourway_expected": {
+      "both": 12,
+      "narrative_only": 11,
+      "greenbaum_only": 1,
+      "neither": 96
+    },
+    "manuscript_vs_narrative_day_agreements": 23,
+    "manuscript_vs_Greenbaum_day_agreements": 13,
+    "manuscript_vs_narrative_night_agreements": 13,
+    "source_agreement_not_prediction": true,
+    "human_predictive_validations": 0
+  },
+  "unresolved": {
+    "Boer_1958_actual_Greek_ch32_apparatus_visually_inspected": false,
+    "Boer_1962_commentator_Greek_table_visually_inspected": false,
+    "Paris_Z_Y_original_witness_glyphs_collated": false,
+    "P_Oxy_4277_Greek_labels_redeciphered": false,
+    "P_Oxy_4277_Greek_labels_independently_redeciphered": false,
+    "only_three_historical_papyrus_source_calculations_from_C05": true,
+    "unchanged_C05_papyrus_matches": 1,
+    "unchanged_C05_papyrus_failures": 2,
+    "scorer_changed": false,
+    "cross_tradition_map_changed": false,
+    "Gansten_Kindle_ebook_extracted": false
+  }
+}

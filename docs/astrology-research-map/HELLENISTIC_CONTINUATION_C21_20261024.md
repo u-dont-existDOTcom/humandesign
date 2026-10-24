@@ -42,3 +42,7 @@ python3 -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic
 - Pursue other independent documentary original horoscopes with explicit degree and independent planetary label only where a source method can actually be tested without choosing answers after seeing the data.
 
 **One-line resume:** C21 establishes from Greek chapters 5/32/33 that by-sign arcminutes count within the ordinal degree, trigonal monomoiria belongs to the **sect light** and skips prior planet repetition, and Ascendant derivation is a separate set of alternatives. **Online text does not contain the 120-cell printed matrix**, so Greek literary vs physical manuscript grid disagreements remain open. **0 human validations, no production rule.**
+
+## C22 source-reconciliation addendum
+
+The previous 34/120 figure counted differences between two sevenfold daytime methods, not the full difference from the manuscript. A complete C22 candidate table comparison found 12 matches to both, 11 narrative-only, 1 Greenbaum-only and 96 neither, across 120 cells. This is one unblinded manuscript-family transcription rather than human validation. The original C04/C05 rules and C21 source conclusions remain unchanged. See C22 report and continuation.
