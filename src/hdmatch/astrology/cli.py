@@ -28,6 +28,7 @@ from .role_directions import (
     generate_role_timeline,
 )
 from .sky import snapshot_from_swiss_files
+from .solar_time_keys import SolarRAEngine, SolarTimeKey, apply_solar_key
 from .timeline import TimeKey, Timeline, generate_timeline
 
 
@@ -73,6 +74,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--max-age", type=float, default=100.0)
     parser.add_argument(
+        "--solar-time-key",
+        choices=[x.value for x in SolarTimeKey],
+        default=None,
+        help=(
+            "separate Swiss-file true-solar RA timing convention: Brahe "
+            "birth-day rate or Placidean accumulated RA; cannot combine "
+            "with --key, supported for ages <=100"
+        ),
+    )
+    parser.add_argument(
         "--profile",
         choices=["body_conjunctions", "role_variants", *(item.value for item in AspectProfile)],
         default="body_conjunctions",
@@ -109,6 +120,12 @@ def main(argv: list[str] | None = None) -> int:
             ephemeris_directory=args.ephemeris_dir,
         )
         methods = tuple(GeometryMethod) if args.method == "all" else (GeometryMethod(args.method),)
+        if args.solar_time_key is not None:
+            if args.key != TimeKey.PTOLEMY_ONE_EQUINOCTIAL_DEGREE_PER_YEAR.value:
+                raise ValueError("--solar-time-key is incompatible with --key")
+            if not 0 < args.max_age <= 100:
+                raise ValueError("solar timing currently requires --max-age in (0,100]")
+        geometry_max_age = 125.0 if args.solar_time_key else args.max_age
         timeline: Timeline | AspectTimeline | RoleTimeline
         if args.profile != "role_variants" and (
             args.contact_construction != ContactConstruction.BODY_CONJUNCTION.value
@@ -121,7 +138,10 @@ def main(argv: list[str] | None = None) -> int:
                     "bodily conjunction profile does not support significator projection"
                 )
             timeline = generate_timeline(
-                sky, methods=methods, time_key=TimeKey(args.key), max_age_years=args.max_age
+                sky,
+                methods=methods,
+                time_key=TimeKey(args.key),
+                max_age_years=geometry_max_age,
             )
         elif args.profile == "role_variants":
             timeline = generate_role_timeline(
@@ -131,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
                 methods=methods,
                 significator_projection=SignificatorProjection(args.significator_projection),
                 time_key=TimeKey(args.key),
-                max_age_years=args.max_age,
+                max_age_years=geometry_max_age,
             )
         else:
             profile = AspectProfile(args.profile)
@@ -146,11 +166,23 @@ def main(argv: list[str] | None = None) -> int:
                 methods=selected_methods,
                 significator_projection=SignificatorProjection(args.significator_projection),
                 time_key=TimeKey(args.key),
-                max_age_years=args.max_age,
+                max_age_years=geometry_max_age,
             )
     except (ValueError, RuntimeError, OverflowError) as exc:
         parser.exit(status=2, message=f"primary-direction calculation failed: {exc}\n")
-    json_text = json.dumps(timeline.to_dict(), ensure_ascii=False, indent=2) + "\n"
+    try:
+        output = timeline.to_dict()
+        if args.solar_time_key is not None:
+            solar = SolarRAEngine(sky, args.ephemeris_dir)
+            output = apply_solar_key(
+                output,
+                solar,
+                SolarTimeKey(args.solar_time_key),
+                requested_max_age=args.max_age,
+            )
+    except (ValueError, RuntimeError, OverflowError) as exc:
+        parser.exit(status=2, message=f"solar time key failed: {exc}\n")
+    json_text = json.dumps(output, ensure_ascii=False, indent=2) + "\n"
     if args.output == "-":
         sys.stdout.write(json_text)
     else:
@@ -159,7 +191,9 @@ def main(argv: list[str] | None = None) -> int:
             parser.exit(2, message=f"refusing to overwrite output file: {path}\n")
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json_text, encoding="utf-8")
-        print(f"saved {len(timeline.directions)} research-only contacts to {path}")
+        written = output["directions"]
+        assert isinstance(written, list)
+        print(f"saved {len(written)} research-only contacts to {path}")
     return 0
 
 

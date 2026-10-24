@@ -1,0 +1,100 @@
+{
+  "schema": "BRAHE_PLACIDUS_SOLAR_RA_TIMEKEY_RESEARCH_V1",
+  "date": "2026-10-24",
+  "branch": "research/gansten-solar-brahe-placidus-20261024",
+  "parent_commit": "832747511befe6646a5ad39d779f59bd1a333a27",
+  "parent_goal": "blind forward comparison of frozen astrology methods, not hindsight fit",
+  "state": "SOLAR_ENGINEERING_COMPLETE_ORIGINAL_HISTORICAL_SOURCES_UNVERIFIED_EMPIRICAL_OPEN",
+  "source_basis": {
+    "reader": "Prior purchased Gansten Primary Directions audit",
+    "locator": "Ch.6 pp.73-80; Brahe reference De Stella Nova (1573) pending original verification",
+    "public_discussion": "https://mail.skyscript.co.uk/forums/viewtopic.php?t=4872",
+    "first_edition_brahe_1573_verified": false,
+    "placidus_original_verified": false,
+    "original_lilly_1647_tables_unchanged": true,
+    "first_edition_lilly_manifest_sha256": "796a2462ea50df3352d261bd3d0acc0d7d83f2b55d27d2feaa684c50a82f1369"
+  },
+  "astronomy": {
+    "input": "geocentric apparent true RA of date from Swiss Ephemeris, UT",
+    "mode": "SWIEPH+EQUATORIAL returned flags checked on each sample",
+    "file_sha256": {
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    },
+    "lower_meridian_transit_accuracy": "<=0.02 seconds vs independent SWISS rise_trans on 6 synthetic midnights",
+    "true_solar_day": "Sun H=180° at birth longitude; no UTC-midnight substitute",
+    "date_model": "365.2422 modern days per symbolic year, not historical anniversary",
+    "no_silent_Moshier": true
+  },
+  "correctness": {
+    "test_command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_solar_time_keys.py tests/unit/test_naibod_original_1647.py tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "test_result": "85 passed",
+    "ruff": "passed",
+    "mypy": "passed in 11 source files",
+    "independent_lower_transit": "6 samples within 0.02s",
+    "placidus_inverse": "10 selected + 45 randomly seeded age inversions",
+    "no_regression_original_default": "frozen original JSON exact equality",
+    "all_profiles": "body, zodiacal rays, mundane, role variants",
+    "rekey_preserves_geometry": true,
+    "geometric_oversample_arc_deg": 125,
+    "supported_solar_age_window": "(0,100] symbolic years"
+  },
+  "figures": {
+    "seasonal_chart_count": 3,
+    "sample_arc_count": 5,
+    "timing_profile_count": 4,
+    "comparison_rows": 60,
+    "january_75deg_brahe_age_years": 67.88940975723719,
+    "january_75deg_placidus_age_years": 74.73733693762915
+  },
+  "new_example_counts": {
+    "synthetic_2000_brahe_birth_day.json": 126,
+    "synthetic_2000_placidus_true_ra.json": 114
+  },
+  "previous_frozen_baseline_sha256": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52",
+  "files": {
+    "src/hdmatch/astrology/solar_time_keys.py": {
+      "bytes": 16200,
+      "sha256": "42b2b066f616628c0eaf0c611065fa2187e245e5425a897856a74dd382a04636"
+    },
+    "src/hdmatch/astrology/cli.py": {
+      "bytes": 7879,
+      "sha256": "9cd0426e0c7a31dd98973d716dcb2fd4b0330e759023b5c6ea5ede61d07c6222"
+    },
+    "tests/unit/test_solar_time_keys.py": {
+      "bytes": 13246,
+      "sha256": "6af85ed32b1bb0f724b9d48db8f03e687887a85acf26906e535281231479a0f6"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/README.md": {
+      "bytes": 6116,
+      "sha256": "a7d9762a702ea8195d63810db0f9c13ee285bd7d3b50a273e24d081f0adeb05c"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 2841,
+      "sha256": "d03d3ef576a46557e46c8aea126e170d1900d6eebaeea7f8c91f8601dca4c4c8"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/SOLAR_KEY_3_CHART_SENSITIVITY.csv": {
+      "bytes": 14609,
+      "sha256": "11264aec41977fe4642114127e3e5d4caaed9bc593149b5c67765c1f95a35094"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/COMPARISON_METADATA.json": {
+      "bytes": 1464,
+      "sha256": "06fcb1bfb55962296baeef2bea7d40e7d47239a56d57dcb34a2cafde176b646f"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/regenerate_solar_examples.py": {
+      "bytes": 4094,
+      "sha256": "bd72c6ef2617efcc025de942c569811be4ce7b4013a4142eb8d7544ec3d7d392"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/examples/synthetic_2000_brahe_birth_day.json": {
+      "bytes": 51305,
+      "sha256": "b8108a86055312a722c317382d0803cfe949fe432d75e8e205b8ef5923cbe5c7"
+    },
+    "docs/astrology-research-map/gansten-solar-time-keys-20261024/examples/synthetic_2000_placidus_true_ra.json": {
+      "bytes": 47196,
+      "sha256": "01e2a5e60def560b613bb45f18ad43b75ccd96c8201a01e3ba2f51590ada9308"
+    }
+  },
+  "no_human_birth_data": true,
+  "not_production_promoted": true,
+  "no_empirical_forecast_validation": true
+}

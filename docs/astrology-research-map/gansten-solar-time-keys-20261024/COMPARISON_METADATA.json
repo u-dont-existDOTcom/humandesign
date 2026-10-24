@@ -1,0 +1,49 @@
+{
+  "status": "MATHEMATICAL_RESEARCH_TEST_NOT_HISTORICAL_PROOF",
+  "case_count": 3,
+  "compared_arcs": [
+    1,
+    25,
+    50,
+    75,
+    90
+  ],
+  "profiles": [
+    "brahe_true_midnight_birth_day",
+    "placidus_cumulative_true_solar_ra"
+  ],
+  "strict_ephemeris": "SWIEPH returned flags+verified file path+file SHA",
+  "rows": 60,
+  "rates": {
+    "synthetic_2000_january": [
+      {
+        "birth_utc": "2000-01-01T12:00:00+00:00",
+        "latitude_north_deg": 45.0,
+        "longitude_east_deg": 0.0,
+        "birth_day_solar_rate_deg": 1.1047378415601088,
+        "true_midnight_start_utc": "2000-01-01T00:03:02.892441+00:00",
+        "true_midnight_end_utc": "2000-01-02T00:03:31.395693+00:00"
+      }
+    ],
+    "synthetic_2000_july": [
+      {
+        "birth_utc": "2000-07-01T18:00:00+00:00",
+        "latitude_north_deg": -34.0,
+        "longitude_east_deg": -70.0,
+        "birth_day_solar_rate_deg": 1.033765162683892,
+        "true_midnight_start_utc": "2000-07-01T04:43:50.108659+00:00",
+        "true_midnight_end_utc": "2000-07-02T04:44:01.614637+00:00"
+      }
+    ],
+    "synthetic_2026_march": [
+      {
+        "birth_utc": "2026-03-19T06:00:00+00:00",
+        "latitude_north_deg": 45.0,
+        "longitude_east_deg": 24.0,
+        "birth_day_solar_rate_deg": 0.9124556223482045,
+        "true_midnight_start_utc": "2026-03-18T22:31:53.587477+00:00",
+        "true_midnight_end_utc": "2026-03-19T22:31:36.078621+00:00"
+      }
+    ]
+  }
+}
