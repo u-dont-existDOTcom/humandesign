@@ -1,0 +1,78 @@
+{
+  "schema": "ASTRO_PRIMARY_DIRECTION_TIMELINE_ENGINEERING_V1",
+  "date": "2026-10-24",
+  "status": "ENGINEERING_PARITY_TESTED_CONJUNCTION_ONLY_NOT_PREDICTIVE",
+  "base_commit": "03911f914daceeb76ffc4dce3c9259b7fb252762",
+  "branch": "research/gansten-primary-direction-timeline-20261024",
+  "date_domain": "1800-2399",
+  "latitude_domain": "-66..66",
+  "contact_domain": "seven classical bodies to other bodies and ASC/MC: bodily conjunction only",
+  "source_ephemeris_mode": "verified SWIEPH (not Moshier)",
+  "swiss_files_sha256": {
+    "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+  },
+  "astronomy_library_version": "2.10.03",
+  "geometry_comparisons": "500 seeded random prior-reference cases, 22 frozen adverse Morinus samples, 3 Gansten sample arcs",
+  "tests": {
+    "command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=/home/joel/.local/share/hdmatch/ephemeris/1800-2399 /home/joel/humandesign/.venv/bin/python -m pytest -q tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "22 passed",
+    "lint": "ruff check src/hdmatch/astrology tests/unit/test_primary_directions.py: passed",
+    "types": "mypy --follow-imports=silent src/hdmatch/astrology: success"
+  },
+  "examples": {
+    "synthetic_2000_contacts": 114,
+    "synthetic_2026_contacts": 146,
+    "under_pole_2026_sun_to_moon": {
+      "method": "placidean_under_pole",
+      "time_key": "ptolemy_one_degree_per_year",
+      "promissor": "sun",
+      "significator": "moon",
+      "contact": "body_conjunction",
+      "direction": "direct",
+      "arc_degrees": 0.618803403374443,
+      "symbolic_age_years": 0.618803403374443,
+      "model_date_utc": "2026-10-31T06:18:53.258340+00:00"
+    }
+  },
+  "files": {
+    "src/hdmatch/astrology/__init__.py": {
+      "bytes": 83,
+      "sha256": "f06e3ca299e50f21e73846f85cf0d2f7c9684b32e0ef517d58f6a6f051bd0d0e"
+    },
+    "src/hdmatch/astrology/geometry.py": {
+      "bytes": 8616,
+      "sha256": "4dee65e51c8e9c7b4419d9f459bf770dc2674703096a0765af0fd97129a9066e"
+    },
+    "src/hdmatch/astrology/sky.py": {
+      "bytes": 7575,
+      "sha256": "9a72404eab2dcda5a8862859606c3515d3527ad07c33ef9c746d603e7a7887ad"
+    },
+    "src/hdmatch/astrology/timeline.py": {
+      "bytes": 7522,
+      "sha256": "1908f0564fcfa89ea214fab43c9e65eeabea49c991f00479908cbca6595f13bf"
+    },
+    "src/hdmatch/astrology/cli.py": {
+      "bytes": 3318,
+      "sha256": "a2a91722253f2df0dcf7029b1fb512cf79d4ab54e3075f0d627e1c6fc02e80c8"
+    },
+    "tests/unit/test_primary_directions.py": {
+      "bytes": 10883,
+      "sha256": "488b7e7e6d08a9a7bdf269b33e58d4118d118a41b6345cbc42e32a57d5d0c7fd"
+    },
+    "docs/astrology-research-map/gansten-primary-timeline-20261024/README.md": {
+      "bytes": 6232,
+      "sha256": "04e809deec0b54a2e3fe170b415f1caa8bc896e49b36f6f609f2b48cd6d5435b"
+    },
+    "docs/astrology-research-map/gansten-primary-timeline-20261024/examples/synthetic_2000_timeline.json": {
+      "bytes": 44945,
+      "sha256": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52"
+    },
+    "docs/astrology-research-map/gansten-primary-timeline-20261024/examples/synthetic_2026_zero_crossing_timeline.json": {
+      "bytes": 56989,
+      "sha256": "6a89c89ea7863bc57d3bb99466237e356b468553fdd458c1137935722354113b"
+    }
+  },
+  "no_human_subjects": true,
+  "not_production_promoted": true
+}
