@@ -18,7 +18,7 @@
 4. Drafted outcome coding, exclusions, opportunity qualifiers and independent ascertainment forms. Explicitly distinguish quote versus interpretation.
 5. Added a pure, research-only exposure projector with exact-geometry equivalence collapse. It will refuse other profiles/keys and does not read actual life events or evaluate truth.
 6. Diagnostic synthetic fixture dated 2000 had **zero adult-age direct exposures** among these four very narrow contacts; preserved as an honest coverage finding, not a reason to change the rules after seeing humans.
-7. Suite: **129 passed** with official Swiss ephemeris files, focused Ruff check and mypy pass. Pre-existing original Lilly table anomalies remain unchanged.
+7. Suite: **130 passed** with official Swiss ephemeris files, focused Ruff check and mypy pass. Pre-existing original Lilly table anomalies remain unchanged.
 
 ## Uncertainty and honest limits
 
@@ -63,3 +63,9 @@ export HDMATCH_PRIMARY_DIR_EPHE_DIR="$HOME/.local/share/hdmatch/ephemeris/1800-2
 ```
 
 No mass re-transcription of the six unreadable 1647 numerical minute rows without a materially new witness.
+
+## Same-turn next research action completed (2026-10-24)
+
+The planned bounded zodiacal-aspect coverage comparison was also executed, rather than deferred. Original 1647 witness p.660 now joins the original pp.657–659 and 668–670; all seven scans are archived. With the already verified Swiss-file zodiacal promissor-ray engine and **one synthetic chart only**, four source-backed aspect families yielded 12 geometric labels collapsing to **four** age windows at approximately 24.2610, 32.3875, 47.0697 and 48.7924 years. The earlier four bodily-only rules yielded **zero** adult-age direct windows on that same chart. These are coverage diagnostics, not past-event matches. Jupiter's favorable MC aspects explicitly require natal strength and must not be scored without a separately frozen dignity criterion. The new generator and source limitations are preserved in `build_aspect_source_coverage.py` and `ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json`.
+
+**Updated next priority:** specify bounded historical direction-sense/planet-strength and event-threshold rules and compare existing source-backed aspect alternatives against broader **synthetic-only** birth distributions for sample-size planning; choose one or more independently justified methods before any human outcomes. The cross-tradition empirical root outcome remains open.

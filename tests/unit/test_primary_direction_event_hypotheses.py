@@ -186,3 +186,34 @@ def test_preexisting_synthetic_no_adult_direct_exposures_remains_zero() -> None:
     assert out["raw_matching_geometry_records"] == 0
     assert out["windows"] == []
     assert out["status"].startswith("DIAGNOSTIC_ONLY")
+
+
+def test_synthetic_zodiacal_aspect_coverage_and_condition_preservation() -> None:
+    import importlib.util
+
+    generator = DOC / "build_aspect_source_coverage.py"
+    spec = importlib.util.spec_from_file_location("aspect_source_coverage", generator)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    report = json.loads((DOC / "ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json").read_text())
+    assert module.build() == report
+    assert report["human_outcome_information_used"] is False
+    assert report["study_ready"] is False
+    assert report["raw_records_in_full_aspect_timeline"] == 683
+    assert report["total_raw_selected_method_records"] == 12
+    assert report["total_unique_exposure_groups"] == 4
+    assert all(len(x["synthetic_contact_groups"]) == 1 for x in report["families"])
+    assert all(
+        len(group["methods"]) == 3 and group["independent_evidence_count"] == 1
+        for row in report["families"]
+        for group in row["synthetic_contact_groups"]
+    )
+    flagged = {x["id"]: x for x in report["families"]}
+    assert flagged["L1647-MC-JUP-SOFT"]["status"].startswith("CONDITIONAL_NOT_ELIGIBLE")
+    assert "STRONG IN RADIX" in flagged["L1647-MC-JUP-SOFT"]["condition_unresolved"]
+    assert flagged["L1647-ASC-MARS-HARD"]["status"].startswith("EXPLORATORY_")
+    witness = DOC / "witness_pages/lilly_1647_printed_660.jpg"
+    assert hashlib.sha256(witness.read_bytes()).hexdigest() == (
+        "146cbdcff8a47561be0556a897768d03431df62ec21e645519e01dd464e972b7"
+    )

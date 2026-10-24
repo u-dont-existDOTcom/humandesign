@@ -21,6 +21,7 @@ RELATIVE_PATHS = (
         if p.is_file() and p.name != "VERIFICATION.json"
     ]
     + [str(p.relative_to(ROOT)) for p in sorted((HERE / "witness_pages").glob("*.jpg"))]
+    + [str(p.relative_to(ROOT)) for p in sorted((HERE / "synthetic_examples").glob("*.json"))]
 )
 
 
@@ -38,7 +39,7 @@ def build() -> dict[str, object]:
         "upstream_branch": "research/primary-direction-method-inventory-20261024",
         "no_real_human_answers": True,
         "predictive_accuracy": "UNTESTED",
-        "tests": "129 passed with official Swiss files on Zorin, focused Ruff and mypy pass",
+        "tests": "130 passed with official Swiss files on Zorin, focused Ruff and mypy pass",
         "synthetic_2000_adult_direct_exposures": 0,
         "files": digests,
     }

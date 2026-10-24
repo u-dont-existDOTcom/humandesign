@@ -4,9 +4,13 @@
       "bytes": 44945,
       "sha256": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52"
     },
+    "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json": {
+      "bytes": 4942,
+      "sha256": "dc219e072bd03835c3e6527a41a70680bd24197d1e0840a6250495f33e4ae11d"
+    },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/CONTINUATION_CHECKPOINT.md": {
-      "bytes": 5508,
-      "sha256": "3d65304ed611d42a9c681c76aed1cb91b4c232f2006713df25f78911074cd839"
+      "bytes": 6844,
+      "sha256": "eaf2c2eb7940a697f5eb9e95b4fcb45265120231d92d3e3068bf02ddac8df3cf"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/LILLY_1647_EVENT_CANDIDATES.json": {
       "bytes": 10630,
@@ -17,16 +21,24 @@
       "sha256": "ac53bb510ea2904f6d2c2350a363f13bc4dfceb03cfb18939f94ea9f47676cae"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/README.md": {
-      "bytes": 8284,
-      "sha256": "a8c894f10b19bde1f242362e51436b369b6a890aa6cc85c57566099c9a4a8020"
+      "bytes": 10288,
+      "sha256": "f2292a8a61784fdbee0c7821b5a448ec8e2084c429d02bc53a7084a75ed49c1d"
+    },
+    "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/build_aspect_source_coverage.py": {
+      "bytes": 6072,
+      "sha256": "0cd1454335cb8aaede889ed047aa6dbe143af6a0eb3e594807c4b7720b4ccb7c"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/build_preview.py": {
       "bytes": 1352,
       "sha256": "eae79e21244b7d720904ca201c3dc18c09b6595272f236f8525402b723a980f1"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/build_verification.py": {
-      "bytes": 1786,
-      "sha256": "9f55c9b7f29e5c7c74a7bda7e26d7095007c0cb64ffe80d79e9ee6f8991a789b"
+      "bytes": 1881,
+      "sha256": "e9340d19449ea0a845a81837c8fd0442332c43dab0e7ef65e9339bd7218c51ad"
+    },
+    "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/synthetic_examples/synthetic_2000_zodiacal_rays.json": {
+      "bytes": 496791,
+      "sha256": "fc8bca74ed77ade882a2954e6eb12895a23de22e75c94807162ef2290eb8cbf1"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/witness_pages/lilly_1647_printed_657.jpg": {
       "bytes": 965605,
@@ -39,6 +51,10 @@
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/witness_pages/lilly_1647_printed_659.jpg": {
       "bytes": 1002979,
       "sha256": "beb6d17d0389027f6f745c16a044c82484414c61701b4803cd89fb8697324ad8"
+    },
+    "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/witness_pages/lilly_1647_printed_660.jpg": {
+      "bytes": 939068,
+      "sha256": "146cbdcff8a47561be0556a897768d03431df62ec21e645519e01dd464e972b7"
     },
     "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/witness_pages/lilly_1647_printed_668.jpg": {
       "bytes": 925873,
@@ -57,8 +73,8 @@
       "sha256": "6b1e46990517526aecd8d0e130c32b1eca4782d4565e02fcf44747d69badef5c"
     },
     "tests/unit/test_primary_direction_event_hypotheses.py": {
-      "bytes": 7871,
-      "sha256": "b84e272e690cc02a0dcd1b6496028888bac7563b715c42e4dfffda66caaa134c"
+      "bytes": 9467,
+      "sha256": "ff560a4dce0aaa87c130171d5a53443bff9d089bb171242e6fa1776f117ddf6c"
     }
   },
   "no_real_human_answers": true,
@@ -66,6 +82,6 @@
   "schema": "PRIMARY_DIRECTION_EVENT_CANDIDATE_VERIFICATION_V0",
   "source_witness": "Wellcome first-edition Lilly (1647) facsimile",
   "synthetic_2000_adult_direct_exposures": 0,
-  "tests": "129 passed with official Swiss files on Zorin, focused Ruff and mypy pass",
+  "tests": "130 passed with official Swiss files on Zorin, focused Ruff and mypy pass",
   "upstream_branch": "research/primary-direction-method-inventory-20261024"
 }

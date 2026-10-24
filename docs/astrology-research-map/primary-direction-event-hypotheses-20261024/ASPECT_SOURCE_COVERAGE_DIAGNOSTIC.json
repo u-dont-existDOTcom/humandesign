@@ -1,0 +1,140 @@
+{
+  "schema": "ASTRO_LILLY_FIRST_EDITION_ASPECT_COVERAGE_V0",
+  "status": "SYNTHETIC_COVERAGE_ONLY_NO_FROZEN_PREDICTIONS_NO_HUMAN_VALIDATION",
+  "source": "Lilly original 1647 first edition pp.658,669,670,660",
+  "source_reading": "visually verified facsimiles; source statements and inferred events kept distinct",
+  "geometry_scope": "zodiacal promissor rays beta=0, retain bodily angles, software direct sense",
+  "note": "One selected synthetic chart, not a representative incidence or empirical performance estimate; three identical geometric outputs count once.",
+  "human_outcome_information_used": false,
+  "input_sha256": "fc8bca74ed77ade882a2954e6eb12895a23de22e75c94807162ef2290eb8cbf1",
+  "raw_records_in_full_aspect_timeline": 683,
+  "families": [
+    {
+      "id": "L1647-MC-SAT-HARD",
+      "promissor": "saturn",
+      "significator": "mc",
+      "aspects": [
+        "square",
+        "opposition"
+      ],
+      "source_pages": [
+        669
+      ],
+      "exact_source_excerpt": "deprives him of his former Honour, Office, Magistracy, Employment or Reputation",
+      "candidate_event": "formal loss of occupational office or status",
+      "condition_unresolved": "must independently establish prior relevant office",
+      "status": "DIRECT_SOURCE_MEANING_MODERN_EVENT_PREDICATE_UNFROZEN",
+      "matched_raw_method_records": 3,
+      "unique_synthetic_contact_exposures": 1,
+      "synthetic_contact_groups": [
+        {
+          "aspect": "square",
+          "branch": "negative_offset",
+          "symbolic_age_years": 32.38754641253263,
+          "methods": [
+            "placidean_under_pole",
+            "proportional_semi_arc",
+            "regiomontanian_position_circle"
+          ],
+          "independent_evidence_count": 1
+        }
+      ]
+    },
+    {
+      "id": "L1647-MC-JUP-SOFT",
+      "promissor": "jupiter",
+      "significator": "mc",
+      "aspects": [
+        "sextile",
+        "trine"
+      ],
+      "source_pages": [
+        670
+      ],
+      "exact_source_excerpt": "it elevates him even from the Dunghil",
+      "candidate_event": "formal office/promotion, similar to MC-Jupiter body",
+      "condition_unresolved": "SOURCE EXPRESSLY REQUIRES JUPITER STRONG IN RADIX; natal-strength algorithm not frozen",
+      "status": "CONDITIONAL_NOT_ELIGIBLE_FOR_HUMAN_SCORING",
+      "matched_raw_method_records": 3,
+      "unique_synthetic_contact_exposures": 1,
+      "synthetic_contact_groups": [
+        {
+          "aspect": "sextile",
+          "branch": "negative_offset",
+          "symbolic_age_years": 47.06966085980645,
+          "methods": [
+            "placidean_under_pole",
+            "proportional_semi_arc",
+            "regiomontanian_position_circle"
+          ],
+          "independent_evidence_count": 1
+        }
+      ]
+    },
+    {
+      "id": "L1647-ASC-JUP-SOFT",
+      "promissor": "jupiter",
+      "significator": "asc",
+      "aspects": [
+        "sextile",
+        "trine"
+      ],
+      "source_pages": [
+        658
+      ],
+      "exact_source_excerpt": "it produces an augmentation of Fortune",
+      "candidate_event": "external material patronage or substantial benefit",
+      "condition_unresolved": "historical alternatives broad; external-benefit threshold still unfrozen",
+      "status": "SOURCE_ANCHORED_BUT_MODERN_THRESHOLD_UNRESOLVED",
+      "matched_raw_method_records": 3,
+      "unique_synthetic_contact_exposures": 1,
+      "synthetic_contact_groups": [
+        {
+          "aspect": "sextile",
+          "branch": "positive_offset",
+          "symbolic_age_years": 48.79238426454238,
+          "methods": [
+            "placidean_under_pole",
+            "proportional_semi_arc",
+            "regiomontanian_position_circle"
+          ],
+          "independent_evidence_count": 1
+        }
+      ]
+    },
+    {
+      "id": "L1647-ASC-MARS-HARD",
+      "promissor": "mars",
+      "significator": "asc",
+      "aspects": [
+        "square",
+        "opposition"
+      ],
+      "source_pages": [
+        660
+      ],
+      "exact_source_excerpt": "it stirs up many Enemies, many Accusations",
+      "candidate_event": "formal adverse accusation/complaint, not all private disagreement",
+      "condition_unresolved": "historical claim has many alternative effects; formal filing is derived and not assured",
+      "status": "EXPLORATORY_MODERN_CONSTRUCT_NOT_READY",
+      "matched_raw_method_records": 3,
+      "unique_synthetic_contact_exposures": 1,
+      "synthetic_contact_groups": [
+        {
+          "aspect": "square",
+          "branch": "positive_offset",
+          "symbolic_age_years": 24.26104190933458,
+          "methods": [
+            "placidean_under_pole",
+            "proportional_semi_arc",
+            "regiomontanian_position_circle"
+          ],
+          "independent_evidence_count": 1
+        }
+      ]
+    }
+  ],
+  "total_raw_selected_method_records": 12,
+  "total_unique_exposure_groups": 4,
+  "study_ready": false
+}

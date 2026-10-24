@@ -64,3 +64,13 @@ The preview uses ONLY the repository's published synthetic 2000 timeline. It nev
 ## Next research question
 
 Before a prediction freeze, examine source-backed *aspect* versions and the exact original direction sense; then select a priori method arms and event thresholds, and design an adequately powered untouched cohort test across the complete astrology-tradition comparison. The 1647 source passages do not by themselves establish an advantage over chance.
+
+## Continued source audit: aspect contacts on the same synthetic chart
+
+A second, expressly separate source-and-coverage step recovered four more *aspect* passages: MC square/opposition Saturn (p.669; loss of office), MC sextile/trine Jupiter (p.670; preferment **only with strong natal Jupiter**), Ascendant sextile/trine Jupiter (p.658; increased fortune), and Ascendant square/opposition Mars (p.660; enemies/accusations as one of multiple alternatives). The new original page 660 photograph, with SHA-256, is saved with the prior primary scans.
+
+The implemented zodiacal-promissor-ray profile generated **683 synthetic contacts** for the independent 2000-01-01 sample. Within an adult 18–65 software-direct range, these four named aspect groups produced **12 raw geometry records but only four unique age contacts** (one in each source family). All three mathematical geometry labels agreed exactly on each of those contacts, so *four*, not *twelve*, is the meaningful synthetic exposure count. The four original bodily-only rules gave zero such adult direct exposures in this one synthetic chart. These are **not population coverage estimates**, nor empirical predictive hits. More candidate aspect branches also increase multiple-testing risk.
+
+Not all four aspect labels constitute score-ready predictions. The Jupiter/MC soft-aspect passage explicitly conditions the result on Jupiter's natal strength, which the experiment has not preregistered how to calculate. The Jupiter/ASC material-benefit threshold is unresolved, and Mars/ASC's formal-complaint interpretation is narrower than Lilly's very broad alternatives. **No human outcome scoring is permitted by these coverage diagnostics.**
+
+The full evidence, exact original-source excerpts, conditional statuses and synthetic age windows are in `ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json`. Regenerate without private or paid sources using `build_aspect_source_coverage.py` and the saved `synthetic_examples/synthetic_2000_zodiacal_rays.json`.
