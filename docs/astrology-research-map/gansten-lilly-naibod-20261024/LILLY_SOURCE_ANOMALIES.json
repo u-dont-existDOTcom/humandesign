@@ -1,0 +1,74 @@
+[
+  {
+    "id": "degree_69_to_90",
+    "description": "At 69°, degree-table DAYS resets from 364 to 4, but printed YEARS remains 69 rather than carrying one additional year; subsequent rows through 90° may be one year short if read as written.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      713
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "degree_80_hour_24",
+    "description": "80° has printed HR=24, not a normalized 0h with one extra day.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      713
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "minute_8",
+    "description": "8' has 44d10h, between 7'=43d6h and 9'=55d14h; 49d10h might be expected, but is NOT substituted.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      714
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "minute_27_missing",
+    "description": "The printed minute table skips the label 27'.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      714
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "minute_28_to_30",
+    "description": "Printed 28',29',30' values form the numerical sequence expected for 27',28',29'. The label 27' is absent; no row silently shifted.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      714
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "minute_44",
+    "description": "44' prints 271d8h; adjacent rows suggest an unusual hour value.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      714
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "minute_60",
+    "description": "60' prints 374d14h; it cannot be equated to one degree's printed 1y5d8h (370d8h with 365-day years).",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      714
+    ],
+    "authenticated_1647_original": "not_checked"
+  },
+  {
+    "id": "example_19_52",
+    "description": "Printed p.715 computes 19y422d21h, then subtracts 365 days but states 22y57d21h; the stated intermediate arithmetic yields 20y57d21h, a discrepancy of two years.",
+    "transcription_status": "visually_seen_in_2003_retypesetting",
+    "source_printed_pages": [
+      715
+    ],
+    "authenticated_1647_original": "not_checked"
+  }
+]

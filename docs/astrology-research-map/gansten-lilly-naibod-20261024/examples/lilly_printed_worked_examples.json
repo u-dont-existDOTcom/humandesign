@@ -1,0 +1,38 @@
+[
+  {
+    "arc_degrees": 11,
+    "arc_minutes": 55,
+    "literal_degree_years": 11,
+    "literal_degree_days": 58,
+    "literal_degree_hours": 21,
+    "literal_minute_days": 339,
+    "literal_minute_hours": 17,
+    "resulting_years": 12,
+    "resulting_days": 33,
+    "resulting_hours": 14,
+    "warnings": [],
+    "witness": "WorldAstrology retypeset Christian Astrology Book III (copyright 2003), printed pp. 713–715, PDF pages 226–228, not independently verified against the original 1647 page images",
+    "algorithm": "literal sum + normalize by 24h/day and 365d/year",
+    "not_continuous_key": true,
+    "retypeset_original_not_independently_checked": true
+  },
+  {
+    "arc_degrees": 19,
+    "arc_minutes": 52,
+    "literal_degree_years": 19,
+    "literal_degree_days": 101,
+    "literal_degree_hours": 17,
+    "literal_minute_days": 321,
+    "literal_minute_hours": 4,
+    "resulting_years": 20,
+    "resulting_days": 57,
+    "resulting_hours": 21,
+    "warnings": [
+      "Printed p.715 computes 19y422d21h, then subtracts 365 days but states 22y57d21h; the stated intermediate arithmetic yields 20y57d21h, a discrepancy of two years."
+    ],
+    "witness": "WorldAstrology retypeset Christian Astrology Book III (copyright 2003), printed pp. 713–715, PDF pages 226–228, not independently verified against the original 1647 page images",
+    "algorithm": "literal sum + normalize by 24h/day and 365d/year",
+    "not_continuous_key": true,
+    "retypeset_original_not_independently_checked": true
+  }
+]

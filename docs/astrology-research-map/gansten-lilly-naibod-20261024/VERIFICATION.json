@@ -1,0 +1,122 @@
+{
+  "schema": "GANSTEN_LILLY_NAIBOD_WITNESS_RESEARCH_V1",
+  "date": "2026-10-24",
+  "branch": "research/gansten-lilly-naibod-time-keys-20261024",
+  "parent_commit": "6b0aa6f9f04ee82e1f172c0d898d99d83308a809",
+  "state": "ENGINEERING_SOURCE_AUDIT_NOT_HISTORICAL_ORIGINAL_VERIFIED_NOT_PREDICTIVE",
+  "source": {
+    "work_title": "William Lilly, Christian Astrology Book III",
+    "edition": "WorldAstrology 2003 modern retypesetting of early text",
+    "download_url": "https://www.worldastrology.net/wp-content/uploads/2008/12/CA-III.pdf",
+    "printed_pages": [
+      713,
+      714,
+      715
+    ],
+    "pdf_zero_based_pages": [
+      226,
+      227,
+      228
+    ],
+    "original_1647_print_images_verified": false,
+    "derived_book_audit_file_sha256": "426a85ee3f0b63a4b2934786f716922c86fbc6947372c891f6fad3c8b15b1afc"
+  },
+  "digitization": {
+    "rows": 152,
+    "minute27_present": false,
+    "degree_labels_including_zero": 91,
+    "minute_labels_including_zero_and_missing": 61,
+    "source_anomaly_records": 8,
+    "literal_lookup_scope": "integer D 0..90, integer M 0..59 except missing M27",
+    "literal_table_used_as_time_key": false,
+    "first_printed_example_output": "12 years 33 days 14 hours (agrees)",
+    "second_printed_example_arithmetic": "20 years 57 days 21 hours (contradicts retypeset prose 22 years)"
+  },
+  "continuous_keys_added": [
+    "naibod_59m08s_fixed_diagnostic",
+    "naibod_exact_360_over_365_25_diagnostic"
+  ],
+  "continuity": {
+    "previous_conjunction_baseline_sha256": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52",
+    "original_default_modes_unchanged": true
+  },
+  "tests": {
+    "cmd": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "61 passed",
+    "lint": "ruff check src/hdmatch/astrology tests/unit/test_historical_naibod.py and regenerate_lilly_records.py: PASS",
+    "types": "mypy --follow-imports=silent src/hdmatch/astrology: PASS (9 files)"
+  },
+  "ephemeris_sha256_outside_repository": {
+    "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+  },
+  "new_example_counts": {
+    "synthetic_2000_naibod_59m08s_rate.json": {
+      "evaluated_method_pair_combinations": 168,
+      "accepted_records": 114,
+      "unavailable": {},
+      "outside_age_window": 54,
+      "max_symbolic_age_years": 100.0
+    },
+    "synthetic_2000_naibod_rational_365_25.json": {
+      "evaluated_method_pair_combinations": 168,
+      "accepted_records": 114,
+      "unavailable": {},
+      "outside_age_window": 54,
+      "max_symbolic_age_years": 100.0
+    }
+  },
+  "files": {
+    "src/hdmatch/astrology/historical_naibod.py": {
+      "bytes": 9441,
+      "sha256": "873b1f1be898052171324f1b9f9acc5f5942a0207cc6db42b6cb57815a03c16c"
+    },
+    "src/hdmatch/astrology/timeline.py": {
+      "bytes": 8156,
+      "sha256": "5d855c9178535255b7e07145147002cc8296fe2f1779a1c71e2489a344d72d00"
+    },
+    "tests/unit/test_historical_naibod.py": {
+      "bytes": 9540,
+      "sha256": "3a751e9809398ac63e800d6af36bf0b856316a19b972f2d321e3fadecd4c1806"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/README.md": {
+      "bytes": 7007,
+      "sha256": "039c8a6c39e56ed67945e8fce1926b924af87ac09e00376906856bd18deaac9c"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3091,
+      "sha256": "f6c5a10fdb42a4e0fdf28d48c5e99c4273ff69addc24a95bcfd81b6401b3bf36"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/LILLY_NAIBOD_2003_RETYPED_LITERAL_CELLS.csv": {
+      "bytes": 8043,
+      "sha256": "f224fac9fb851d5385ef213fb5ef7a7bbcf8f1430df2f53f9f1bc9fc40a27748"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/LILLY_SOURCE_ANOMALIES.json": {
+      "bytes": 2626,
+      "sha256": "3ec7e070551804383d7e14cd46867a9553d7f63ff1adb105b7f438ea2e811986"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/regenerate_lilly_records.py": {
+      "bytes": 4706,
+      "sha256": "0464e0747c9be9654803b1a9d77f4d7d8f0b299aa55ca4afcb797c04725920cf"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/examples/75_degree_key_sensitivity.json": {
+      "bytes": 1082,
+      "sha256": "f3e62cf36ef96b808d9ee144a2ab889835cdffea12bfd16bfdb9380e21cd61d0"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/examples/lilly_printed_worked_examples.json": {
+      "bytes": 1520,
+      "sha256": "b5036a9591d57a923c6e603f531548767cc111a916902cec00e13b4022b1940b"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/examples/synthetic_2000_naibod_59m08s_rate.json": {
+      "bytes": 45291,
+      "sha256": "c1cbfc2254124be9b64c7ce569f9bbde09a794fffffbac14669bd2d4ed99140f"
+    },
+    "docs/astrology-research-map/gansten-lilly-naibod-20261024/examples/synthetic_2000_naibod_rational_365_25.json": {
+      "bytes": 46318,
+      "sha256": "1afa1d50f5b0e6ba9df4fc945da844e60921e83e92a31996e7c7c916fb4ab07b"
+    }
+  },
+  "no_ephemeris_files_embedded": true,
+  "no_human_birth_data": true,
+  "not_in_production": true
+}

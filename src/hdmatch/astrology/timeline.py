@@ -22,6 +22,8 @@ METHODS = tuple(GeometryMethod)
 class TimeKey(StrEnum):
     PTOLEMY_ONE_EQUINOCTIAL_DEGREE_PER_YEAR = "ptolemy_one_degree_per_year"
     MODERN_MEAN_SOLAR_DIAGNOSTIC = "modern_mean_solar_diagnostic"
+    NAIBOD_59M08S_FIXED_DIAGNOSTIC = "naibod_59m08s_fixed_diagnostic"
+    NAIBOD_EXACT_360_OVER_365_25_DIAGNOSTIC = "naibod_exact_360_over_365_25_diagnostic"
 
 
 def degrees_per_symbolic_year(key: TimeKey) -> float:
@@ -32,6 +34,14 @@ def degrees_per_symbolic_year(key: TimeKey) -> float:
         # Contemporary rational mean-solar scaling, *not* the original
         # Lilly Naibod printed table nor Cardan/Brahe historical time key.
         return 360.0 / MODERN_MEAN_TROPICAL_YEAR_DAYS
+    if key is TimeKey.NAIBOD_59M08S_FIXED_DIAGNOSTIC:
+        # Exactly 0°59'08" as a stated annual rate, not a reconstruction of
+        # the 1647 Lilly table's printed per-degree/per-minute D/H cells.
+        return (59 * 60 + 8) / 3600
+    if key is TimeKey.NAIBOD_EXACT_360_OVER_365_25_DIAGNOSTIC:
+        # Exact mean-solar rational reference, separate from 365.2422 and
+        # from the displayed 59'08" rounded angular-seconds constant.
+        return 360 / 365.25
     raise AssertionError("unknown key")
 
 
