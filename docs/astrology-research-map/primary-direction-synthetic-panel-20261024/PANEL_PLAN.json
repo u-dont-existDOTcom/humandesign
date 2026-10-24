@@ -1,0 +1,90 @@
+{
+  "schema": "ASTRO_PRIMARY_DIRECTIONS_SYNTHETIC_PANEL_PRECOMMIT_V1",
+  "status": "PLAN_FROZEN_BEFORE_ASTRO_CALCULATIONS",
+  "upstream_commit": "945ecf1d0f488bc59e0f1ea5899534e72d85324b",
+  "root_goal": "Source-distinct astrology rules ultimately compared by untouched forward-blind human evidence and controls; this is only a synthetic Western-lane coverage exercise.",
+  "n_cases": 96,
+  "seed": 20261024,
+  "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "latitudes": [
+    -55,
+    -40,
+    -25,
+    -10,
+    10,
+    25,
+    40,
+    55
+  ],
+  "years": [
+    1910,
+    2010
+  ],
+  "days": [
+    2,
+    27
+  ],
+  "utc_hours": [
+    0,
+    23
+  ],
+  "utc_minutes": [
+    0,
+    59
+  ],
+  "longitude_east_range": [
+    -170,
+    170
+  ],
+  "geometry": "proportional_semi_arc",
+  "parity_check_n": 12,
+  "profiles": [
+    "body_conjunctions",
+    "zodiacal_promissor_rays"
+  ],
+  "direction": "software direct shortest signed arc (NOT authenticated Lilly)",
+  "time_key": "ptolemy_one_degree_per_year (diagnostic)",
+  "age_half_open": [
+    18,
+    65
+  ],
+  "age_window_half_width_years": 0.5,
+  "ray_latitude": 0,
+  "ray_aspects": [
+    "sextile",
+    "square",
+    "trine",
+    "opposition"
+  ],
+  "rules": "4 previous bodily + 4 previous aspect meanings, unchanged",
+  "birth_time_sensitivity": {
+    "seed": 20261025,
+    "random_sample_n": 24,
+    "offsets_minutes": [
+      -15,
+      -5,
+      5,
+      15
+    ],
+    "event_alignment_tolerance_years": [
+      0.5,
+      1
+    ]
+  },
+  "external_event_evidence_supplied": false,
+  "no_human_outcomes": true,
+  "study_frozen": false
+}
