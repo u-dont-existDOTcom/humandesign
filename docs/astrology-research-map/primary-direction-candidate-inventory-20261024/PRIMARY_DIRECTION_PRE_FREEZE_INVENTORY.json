@@ -1,0 +1,248 @@
+{
+  "schema": "ASTRO_PRIMARY_DIRECTION_PRE_FREEZE_INVENTORY_V1",
+  "date": "2026-10-24",
+  "status": "UNFROZEN_RESEARCH_NOT_PREDICTION_VALIDATION",
+  "owner_goal": "accurate separate astrology calculations, freeze interpretations before prospectively scored blinded human responses, compare jointly to matched alternatives without hindsight fitting",
+  "original_Lilly_1647_faint_minutes": [
+    25,
+    28,
+    39,
+    41,
+    44,
+    48
+  ],
+  "original_Lilly_1647_absent_minute_label": [
+    27
+  ],
+  "source_Witness_Placidus_converse_zodiacal": {
+    "source_id": "placidus_tabulae_primi_mobilis_1657_original_latin_photographed",
+    "status": "incompatible_witness",
+    "evidence": "First-edition Latin 1657 printed p11, theses 61-62: converse permits rays and parallels in mundo, but 'nullo modo in zodiaco'.",
+    "limit": "Specific to Placidus 1657. The separately implemented generic reverse-role zodiacal ray remains a mathematical candidate, not an authenticated Placidus configuration."
+  },
+  "double_count_warning": {
+    "ids": [
+      "PD07",
+      "PD08"
+    ],
+    "earlier_frozen_math_scope": "288/288 bodily, unprojected, seven-classical-planet contacts share identical arcs after planet role label exchange",
+    "number_of_independent_physical_rotations": "count once for identical arc",
+    "source_interpretations_not_assumed_identical": true
+  },
+  "missing_before_prospective_scored_claims": [
+    "Historically attributed event/behavior mapping and exact prediction window",
+    "A method-choice freeze independent of known human outcomes",
+    "Separate consent and prospective blinding/model-control evidence"
+  ],
+  "never_infer": [
+    "historical source support or synthetic parity proves human predictive power",
+    "a generic role-reversed zodiacal ray is authentic Placidus 1657",
+    "literal 1647 Naibod table can time arbitrary fractional arcs without added rules",
+    "two labels for the same geometric rotation are two independent confirmations"
+  ],
+  "not_new_mandatory_source_gate": true,
+  "human_prediction_mapping_frozen": false,
+  "all_source_engineering_only": true,
+  "arms": [
+    {
+      "id": "PD01",
+      "title": "Bodily contacts, one degree/year",
+      "cli_flags": [
+        "--profile",
+        "body_conjunctions",
+        "--key",
+        "ptolemy_one_degree_per_year"
+      ],
+      "source_evidence": "Gansten source audit: conventional one-degree symbolic year",
+      "source_support": "not_fully_attributed",
+      "limitations": "Full source-defined event interpretations have not been frozen.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD02",
+      "title": "Bodily contacts, Placidus variable solar RA",
+      "cli_flags": [
+        "--profile",
+        "body_conjunctions",
+        "--solar-time-key",
+        "placidus_cumulative_true_solar_ra"
+      ],
+      "source_evidence": "Placidus 1657 original Latin thesis 65 supports successive solar RA daily advances",
+      "source_support": "compatible_selected_rule",
+      "limitations": "Timing principle sourced; entire historic geometry/TT/UT conventions and event meanings not fully certified.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD03",
+      "title": "Bodily contacts, Brahe natal birth-day RA",
+      "cli_flags": [
+        "--profile",
+        "body_conjunctions",
+        "--solar-time-key",
+        "brahe_true_midnight_birth_day"
+      ],
+      "source_evidence": "Brahe 1573 contemporary Latin via critical scholarly transcription, varying real solar motion",
+      "source_support": "partial_source_support",
+      "limitations": "Specific local true-midnight samples are later Gansten-informed reconstruction, not proved in inspected 1573 passage.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD04",
+      "title": "Direct zero-latitude zodiacal promissor rays",
+      "cli_flags": [
+        "--profile",
+        "zodiacal_promissor_rays",
+        "--method",
+        "proportional_semi_arc"
+      ],
+      "source_evidence": "Gansten purchased-book technical audit Ch.5 and Ch.8",
+      "source_support": "not_fully_attributed",
+      "limitations": "Does not implement all Bianchini/Morin latitude or source-defined event meanings.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD05",
+      "title": "Mundane normalized proportional semi-arc aspects",
+      "cli_flags": [
+        "--profile",
+        "mundane_proportional_semi_arc"
+      ],
+      "source_evidence": "Independent semi-arc phase mathematical reconstruction",
+      "source_support": "analytic_reconstruction",
+      "limitations": "Not a historically certified complete Placidus or Regiomontanian mundane-ray algorithm.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD06",
+      "title": "Generic bodily traditional converse",
+      "cli_flags": [
+        "--profile",
+        "role_variants",
+        "--contact-construction",
+        "bodily_conjunction",
+        "--rotation-regime",
+        "traditional_role_reversed_converse"
+      ],
+      "source_evidence": "Gansten converse audit; Placidus 1657 allows non-angle converse body roles",
+      "source_support": "not_fully_attributed",
+      "limitations": "Do not move Ascendant/Midheaven; author-specific geometry and interpretation remain open.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD07",
+      "title": "Generic role-reversed zodiacal promissor rays",
+      "cli_flags": [
+        "--profile",
+        "role_variants",
+        "--contact-construction",
+        "zodiacal_promissor_ray",
+        "--rotation-regime",
+        "traditional_role_reversed_converse"
+      ],
+      "source_evidence": "Math candidate, but Placidus 1657 expressly excludes zodiacal rays in converse",
+      "source_support": "incompatible_as_placidus_1657",
+      "limitations": "NOT historically attributable to Placidus. Same arcs as PD08 under swapped names for bodily/unprojected seven-planet comparison.",
+      "geometric_duplicate_group": "fixed_ray_swapped_roles",
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD08",
+      "title": "Direct significator-owned zero-latitude zodiacal aspects",
+      "cli_flags": [
+        "--profile",
+        "role_variants",
+        "--contact-construction",
+        "zodiacal_significator_aspect",
+        "--rotation-regime",
+        "direct_primary_motion"
+      ],
+      "source_evidence": "Experimental construction preserving disputed source definitions",
+      "source_support": "experimental",
+      "limitations": "Same 288 bodily/unprojected arcs as PD07 after swapping promissor/significator labels; not independent predictive evidence.",
+      "geometric_duplicate_group": "fixed_ray_swapped_roles",
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD09",
+      "title": "Modern reverse-rotation complementary arc",
+      "cli_flags": [
+        "--profile",
+        "role_variants",
+        "--contact-construction",
+        "bodily_conjunction",
+        "--rotation-regime",
+        "modern_reverse_rotation_diagnostic"
+      ],
+      "source_evidence": "Contemporary mathematical diagnostic, not Placidus original converse",
+      "source_support": "modern_diagnostic",
+      "limitations": "Not interchangeable with moving the significator in traditional converse.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD10",
+      "title": "Naibod fixed 59′08″ annual-rate diagnostic",
+      "cli_flags": [
+        "--profile",
+        "body_conjunctions",
+        "--key",
+        "naibod_59m08s_fixed_diagnostic"
+      ],
+      "source_evidence": "Modern explicit fixed angular-rate model",
+      "source_support": "continuous_diagnostic",
+      "limitations": "Not the original Lilly printed lookup nor exact 360/365.25 rational rate.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD11",
+      "title": "Original Lilly 1647 literal table diagnostic",
+      "cli_flags": null,
+      "source_evidence": "Two independently photographed original Lilly 1647 copies",
+      "source_support": "incomplete_original_table",
+      "limitations": "Not continuous; minute 27 absent, six faint minutes; fractional seconds not printed.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    },
+    {
+      "id": "PD12",
+      "title": "Modern Lilly 2003 retyped literal diagnostic",
+      "cli_flags": null,
+      "source_evidence": "Separate WorldAstrology 2003 Lilly retypesetting",
+      "source_support": "modern_witness_only",
+      "limitations": "Differs from original on 22 degree-year rows plus minute-one day; final 19°52′ prose differs.",
+      "geometric_duplicate_group": null,
+      "interpretation_frozen": false,
+      "real_human_prediction_validated": false,
+      "human_study_admitted_by_this_inventory": false
+    }
+  ]
+}

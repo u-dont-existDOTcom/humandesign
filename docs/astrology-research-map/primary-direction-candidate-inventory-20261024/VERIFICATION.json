@@ -1,0 +1,64 @@
+{
+  "schema": "PRIMARY_DIRECTION_PRE_FREEZE_INVENTORY_VERIFICATION_V1",
+  "date": "2026-10-24",
+  "branch": "research/primary-direction-method-inventory-20261024",
+  "parent_commit": "46e73635e9cb79ba9630978e656d065662989069",
+  "state": "BOUNDED_RESEARCH_INVENTORY_COMPLETE_PARENT_EMPIRICAL_GOAL_OPEN",
+  "source": "previously inspected original 1647 Lilly, original 1657 Placidus, Brahe 1573 critical text and Gansten book audit",
+  "result": {
+    "method_families": 12,
+    "method_families_with_cli_flags": 10,
+    "literal_witness_diagnostics_without_timeline_cli": 2,
+    "historical_placidus_converse_zodiacal_incompatible": true,
+    "duplicate_geom_group": [
+      "PD07",
+      "PD08"
+    ],
+    "unresolved_original_1647_minute_rows": [
+      25,
+      28,
+      39,
+      41,
+      44,
+      48
+    ],
+    "Lilly_minute_27_absent": true,
+    "no_human_scoring_or_predictive_validation": true,
+    "interpretation_rules_frozen": false
+  },
+  "tests": {
+    "command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_primary_direction_inventory.py tests/unit/test_lilly_1647_photo.py tests/unit/test_placidus_1657_latin.py tests/unit/test_solar_primary_source_scope.py tests/unit/test_solar_time_keys.py tests/unit/test_naibod_original_1647.py tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "130 passed",
+    "ruff": "passed",
+    "mypy": "passed in 13 source files"
+  },
+  "all_source_engineering_only": true,
+  "no_user_birth_data_used": true,
+  "no_new_mandatory_gate": true,
+  "files": {
+    "docs/astrology-research-map/primary-direction-candidate-inventory-20261024/generate_inventory.py": {
+      "bytes": 10776,
+      "sha256": "d41a62bc4a6de5f6cfc77adaf3a65dc7b6f4feabeda9bd03b2cb51f29d474bb7"
+    },
+    "docs/astrology-research-map/primary-direction-candidate-inventory-20261024/PRIMARY_DIRECTION_PRE_FREEZE_INVENTORY.json": {
+      "bytes": 10330,
+      "sha256": "fa67cca512c97fdf2926126007622822f34d0fb2af5161753e09a46c4463c2f0"
+    },
+    "docs/astrology-research-map/primary-direction-candidate-inventory-20261024/PRIMARY_DIRECTION_PRE_FREEZE_INVENTORY.csv": {
+      "bytes": 3995,
+      "sha256": "8ef03920d8b9d2de750386028c4cd1197cd60bf4bc2b393fe9e7f1e83eebcedb"
+    },
+    "docs/astrology-research-map/primary-direction-candidate-inventory-20261024/README.md": {
+      "bytes": 5790,
+      "sha256": "c094004f8b0fb6c280e4ea1d60494544b5115ca04b41abb02d10ba6af8453619"
+    },
+    "docs/astrology-research-map/primary-direction-candidate-inventory-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3305,
+      "sha256": "fc818ce04d527c5d0a0fdb9b10411d04789894ea9666c765316525875e971a16"
+    },
+    "tests/unit/test_primary_direction_inventory.py": {
+      "bytes": 4891,
+      "sha256": "268ff2c8121c8ec4f7b3989b3ddd0f2d8f499462ecfcfd8535db6dfcdde6cc06"
+    }
+  }
+}
