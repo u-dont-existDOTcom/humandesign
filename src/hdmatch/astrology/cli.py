@@ -21,6 +21,12 @@ from .aspect_timeline import (
     generate_aspect_timeline,
 )
 from .geometry import GeometryMethod
+from .role_directions import (
+    ContactConstruction,
+    RoleTimeline,
+    RotationRegime,
+    generate_role_timeline,
+)
 from .sky import snapshot_from_swiss_files
 from .timeline import TimeKey, Timeline, generate_timeline
 
@@ -68,7 +74,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-age", type=float, default=100.0)
     parser.add_argument(
         "--profile",
-        choices=["body_conjunctions", *(item.value for item in AspectProfile)],
+        choices=["body_conjunctions", "role_variants", *(item.value for item in AspectProfile)],
         default="body_conjunctions",
         help=(
             "bodily conjunctions (legacy default), zodiacal promissor rays, "
@@ -81,6 +87,18 @@ def main(argv: list[str] | None = None) -> int:
         default=SignificatorProjection.RETAIN_BODILY.value,
         help="project the fixed planetary significator to beta=0 only for zodiacal ray profile",
     )
+    parser.add_argument(
+        "--contact-construction",
+        choices=[x.value for x in ContactConstruction],
+        default=ContactConstruction.BODY_CONJUNCTION.value,
+        help="only applies to --profile role_variants",
+    )
+    parser.add_argument(
+        "--rotation-regime",
+        choices=[x.value for x in RotationRegime],
+        default=RotationRegime.DIRECT_PRIMARY_MOTION.value,
+        help="historically separated motion/role algorithms, only for role_variants",
+    )
     parser.add_argument("--output", default="-", help="JSON output path or '-' for stdout")
     args = parser.parse_args(argv)
     try:
@@ -91,7 +109,12 @@ def main(argv: list[str] | None = None) -> int:
             ephemeris_directory=args.ephemeris_dir,
         )
         methods = tuple(GeometryMethod) if args.method == "all" else (GeometryMethod(args.method),)
-        timeline: Timeline | AspectTimeline
+        timeline: Timeline | AspectTimeline | RoleTimeline
+        if args.profile != "role_variants" and (
+            args.contact_construction != ContactConstruction.BODY_CONJUNCTION.value
+            or args.rotation_regime != RotationRegime.DIRECT_PRIMARY_MOTION.value
+        ):
+            raise ValueError("role/motion flags require --profile role_variants")
         if args.profile == "body_conjunctions":
             if args.significator_projection != SignificatorProjection.RETAIN_BODILY.value:
                 raise ValueError(
@@ -99,6 +122,16 @@ def main(argv: list[str] | None = None) -> int:
                 )
             timeline = generate_timeline(
                 sky, methods=methods, time_key=TimeKey(args.key), max_age_years=args.max_age
+            )
+        elif args.profile == "role_variants":
+            timeline = generate_role_timeline(
+                sky,
+                construction=ContactConstruction(args.contact_construction),
+                regime=RotationRegime(args.rotation_regime),
+                methods=methods,
+                significator_projection=SignificatorProjection(args.significator_projection),
+                time_key=TimeKey(args.key),
+                max_age_years=args.max_age,
             )
         else:
             profile = AspectProfile(args.profile)

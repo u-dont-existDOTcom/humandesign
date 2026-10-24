@@ -1,0 +1,103 @@
+{
+  "schema": "GANSTEN_PRIMARY_DIRECTION_ROLE_RECONSTRUCTION_V1",
+  "date": "2026-10-24",
+  "branch": "research/gansten-direction-roles-20261024",
+  "parent_branch": "research/gansten-primary-directions-aspects-20261024",
+  "parent_commit": "c9fe776b5dcdae8b8113a8d87a526b553a4d41d0",
+  "scope": "three movement regimes, 3 geometric constructions, no empirical predictions",
+  "historical_source": {
+    "basis": "prior independently reviewed purchased Gansten audit, not fresh original text inspection",
+    "audit_file_sha256": "426a85ee3f0b63a4b2934786f716922c86fbc6947372c891f6fad3c8b15b1afc",
+    "locator": "Gansten 2009 Ch.1 pp.5-7, Ch.5 pp.65-71, Ch.8 pp.88-101",
+    "unresolved_original_witnesses": true
+  },
+  "ephemeris": {
+    "mode": "verified SWIEPH, no silent Moshier fallback",
+    "official_file_sha256": {
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+    },
+    "files_redistributed": false
+  },
+  "tested_matrix": {
+    "command": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=/home/joel/.local/share/hdmatch/ephemeris/1800-2399 /home/joel/humandesign/.venv/bin/python -m pytest -q tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "result": "48 passed",
+    "independent_reference": "350 deterministic reference geometries, >500 successful comparisons of distinct Cartesian/phase source reference",
+    "dedup_regression": "288/288 traditional converse promissor-ray arcs match direct significator-aspect arcs under P-S label exchange when bodily/unprojected",
+    "old_default_frozen": "unchanged via exact JSON equality test",
+    "ruff": "pass",
+    "mypy": "success for 8 source files"
+  },
+  "frozen_baselines_sha256": {
+    "previous_zodiacal_promissor_ray_output": "fc8bca74ed77ade882a2954e6eb12895a23de22e75c94807162ef2290eb8cbf1",
+    "previous_bodily_conjunction_output": "170c5920257f1138f85dc93cd5a258b7160fb6fc68836e6d5c4aa3b5ecdd8c52"
+  },
+  "new_example_counts": {
+    "synthetic_2000_bodily_converse": {
+      "construction": "bodily_conjunction",
+      "regime": "traditional_role_reversed_converse",
+      "evaluated": 126,
+      "accepted": 36
+    },
+    "synthetic_2000_modern_reverse_ray": {
+      "construction": "zodiacal_promissor_ray",
+      "regime": "modern_reverse_rotation_diagnostic",
+      "evaluated": 1176,
+      "accepted": 364
+    },
+    "synthetic_2000_significator_aspects_direct": {
+      "construction": "zodiacal_significator_aspect",
+      "regime": "direct_primary_motion",
+      "evaluated": 882,
+      "accepted": 288
+    },
+    "synthetic_2000_traditional_ray_converse": {
+      "construction": "zodiacal_promissor_ray",
+      "regime": "traditional_role_reversed_converse",
+      "evaluated": 882,
+      "accepted": 288
+    }
+  },
+  "not_full_historical_package": true,
+  "new_time_keys": "NONE, literal historical Naibod tables remain unverified",
+  "not_production_promoted": true,
+  "used_personal_birth_data": false,
+  "files": {
+    "src/hdmatch/astrology/role_directions.py": {
+      "bytes": 17936,
+      "sha256": "e962543e469ee37b8bbf510afec34c292281c6e1ce4dc45438799d751f80fe09"
+    },
+    "src/hdmatch/astrology/cli.py": {
+      "bytes": 6440,
+      "sha256": "82922d22042dc9bd943ebb05ab127420fd65c2f5fa783eccd5ecde444f8a2052"
+    },
+    "tests/unit/test_primary_direction_roles.py": {
+      "bytes": 15190,
+      "sha256": "5c23a197058bb3292d79297ad0dd11d97ad9ae06d87ed92010864d02c97655bf"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/README.md": {
+      "bytes": 7478,
+      "sha256": "e27939b02edf7d70556efa1373f5fb1e5a87748c43c571bf26cc9a3a55c7ce5c"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3496,
+      "sha256": "02c43b76d204eac388ac95cf2fad424c1d468197558d60f62164cd3112988d2f"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/examples/synthetic_2000_bodily_converse.json": {
+      "bytes": 32869,
+      "sha256": "48269fba86124bec5ad4933350203df4b1fbfe1b3de3976e2afab549ae903f36"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/examples/synthetic_2000_modern_reverse_ray.json": {
+      "bytes": 323197,
+      "sha256": "b0d3d0c925e700dda67698dee4ff9a82cc4b85ec969ceedd22bb742bb6f54eb3"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/examples/synthetic_2000_significator_aspects_direct.json": {
+      "bytes": 262256,
+      "sha256": "aa867f848fa8226b21fb70d690dc2a8ee57de21b199c4215097916bda8b3e43e"
+    },
+    "docs/astrology-research-map/gansten-role-variants-20261024/examples/synthetic_2000_traditional_ray_converse.json": {
+      "bytes": 256506,
+      "sha256": "710bf421157d2cff65c126c441953c0ba887790bcd7c84dd8a7154653745d4ae"
+    }
+  }
+}
