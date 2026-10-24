@@ -1,0 +1,114 @@
+{
+  "schema": "LILLY_NAIBOD_1647_VS_2003_PHOTOGRAPHIC_COLLATION_V1",
+  "dated": "2026-10-24",
+  "original_1647_read": true,
+  "original_1647_full_table_diplomatic_collation": false,
+  "original_source": {
+    "title": "William Lilly, Christian Astrology (London: Thomas Brudenell, 1647)",
+    "wikimedia_file_page": "https://commons.wikimedia.org/wiki/File:Christian_Astrology_%28IA_ca-william-lilly%29.pdf",
+    "source_identifier": "Internet Archive ca-william-lilly; first-edition scan",
+    "source_first_edition_printed_pages": [
+      713,
+      714,
+      715
+    ],
+    "pdf_page_numbers_1_based": [
+      735,
+      736,
+      737
+    ],
+    "license": "Public Domain Mark 1.0, as described on Wikimedia Commons",
+    "file_images": {
+      "713": {
+        "file": "facsimile_pages/lilly_1647_printed_713.jpg",
+        "sha256": "76238c150badd04d7b9ef0ff44258efe0b615afe1b9b30eef6bdabb45383ee67",
+        "observed": "Degree conversion table: original YEARS column explicitly carries from 68y 364d0h at 68° to 70y 4d3h at 69°. Rows 69–90 increment original printed years by one over their degree label."
+      },
+      "714": {
+        "file": "facsimile_pages/lilly_1647_printed_714.jpg",
+        "sha256": "18fc0f3275ef425275b0858cb3390cc1b8a8380f001a97bef27c755acaba7029",
+        "observed": "Minute conversion table: 27′ label omitted between 26′ and 28′; 8′ printed 44d 10h; 60′ printed 374d 14h. The 11°55′ worked example begins on this page."
+      },
+      "715": {
+        "file": "facsimile_pages/lilly_1647_printed_715.jpg",
+        "sha256": "5f7686e75bb89acf4f6ae04c2332dbb968ed4585086cd6403c432f8a03a96fb1",
+        "observed": "Worked examples conclude 12y33d14h for 11°55′ and twenty years 57 days 21 hours for 19°52′."
+      }
+    }
+  },
+  "modern_2003_witness": {
+    "label": "WorldAstrology retypeset Lilly Christian Astrology Book III (2003)",
+    "source_pdf": "https://www.worldastrology.net/wp-content/uploads/2008/12/CA-III.pdf",
+    "printed_pages": [
+      713,
+      714,
+      715
+    ],
+    "zero_based_pdf_pages": [
+      226,
+      227,
+      228
+    ],
+    "full_csv": "../gansten-lilly-naibod-20261024/LILLY_NAIBOD_2003_RETYPED_LITERAL_CELLS.csv",
+    "warning": "Retypeset source preserved separately; not silently corrected."
+  },
+  "source_first_edition_printed_pages": [
+    713,
+    714,
+    715
+  ],
+  "pdf_page_numbers_1_based": [
+    735,
+    736,
+    737
+  ],
+  "discrepancies": {
+    "year_69": {
+      "raw_arc": "69°00′",
+      "1647_years": 70,
+      "1647_days": 4,
+      "1647_hours": 3,
+      "2003_years": 69,
+      "2003_days": 4,
+      "2003_hours": 3,
+      "type": "year-carry differs; original 1647 explicit carry removes 2003 retype's artificial one-year error."
+    },
+    "degree_years_69_to_90": {
+      "original_col": "original column displays Years=Degrees+1 at degrees 69–90",
+      "retype_col": "retype displays Years=Degrees at degrees 69–90",
+      "distinct_rows": 22,
+      "note": "Day/hour columns are reused from 2003, with spot-checks on 1647 page; not a full independent cell-level collation."
+    },
+    "worked_19_52": {
+      "arc": "19°52′",
+      "1647_final_years": 20,
+      "1647_final_days": 57,
+      "1647_final_hours": 21,
+      "2003_retype_final_years": 22,
+      "computed_intermediate": "19 years + 422 days + 21 hours = 20 years + 57 days + 21 hours (365-day year).",
+      "type": "2003 retype conclusion error, not a verified original Lilly error."
+    }
+  },
+  "shared_or_partially_checked_anomalies": {
+    "minute27": "Row label 27' absent in both 1647 photograph and 2003 retype.",
+    "minute8": "44d 10h at 8' visible in original, not just the 2003 witness; suspicious relative to adjacent values; not corrected.",
+    "minute60": "374d 14h printed at 60′ on original image, inconsistent with 1° row (1y5d8h using 365-day year).",
+    "degree80_hour24": "Original photo visually reads the unusual 24h value at 80°, matching retype; held as raw.",
+    "minute44": "2003 value 271d8h; digit detail in first-edition photo is faint; requires higher resolution before asserting exact match."
+  },
+  "calculation_scope": {
+    "calculator": "naibod_original_1647.py",
+    "original_years_69_to_90_verified": true,
+    "degree_day_hour_components_from": "2003 retype, spot-checked only",
+    "minute_components_from": "2003 retype, spot-checked only",
+    "missing_minute27": "fail closed",
+    "continuous_time_key_provided": false,
+    "first_edition_certified_full_table": false,
+    "empirical_predictive_validity": false
+  },
+  "remaining": {
+    "full_collation": "Independently inspect EVERY original degree/minute day+hour cell against 2003 retyping at higher resolution, especially faint columns.",
+    "additional_scans": "Compare a second independently held 1647 copy if warranted; distinguish source original printing from digital image artifacts.",
+    "timing": "Other time keys require independent historical computational specification and original witness."
+  }
+}

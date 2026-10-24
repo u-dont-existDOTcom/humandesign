@@ -1,0 +1,96 @@
+{
+  "schema": "LILLY_1647_ORIGINAL_CRITICAL_WITNESS_AUDIT_V1",
+  "date_utc": "2026-10-24",
+  "branch": "research/gansten-lilly-original-1647-correction-20261024",
+  "parent_commit": "7ef4816ad71bd10da8ce3848135ca06a9a8e85b8",
+  "state": "SOURCE_RECONCILIATION_DONE_MATHEMATICAL_CONVENTIONS_SEPARATE_NO_PREDICTIVE_VALIDATION",
+  "original_source": {
+    "year": "1647",
+    "file_catalogue": "https://commons.wikimedia.org/wiki/File:Christian_Astrology_%28IA_ca-william-lilly%29.pdf",
+    "printed_pages": [
+      713,
+      714,
+      715
+    ],
+    "pdf_page_numbers_1_based": [
+      735,
+      736,
+      737
+    ],
+    "image_sha256": {
+      "713": "76238c150badd04d7b9ef0ff44258efe0b615afe1b9b30eef6bdabb45383ee67",
+      "714": "18fc0f3275ef425275b0858cb3390cc1b8a8380f001a97bef27c755acaba7029",
+      "715": "5f7686e75bb89acf4f6ae04c2332dbb968ed4585086cd6403c432f8a03a96fb1"
+    },
+    "license": "Public Domain Mark 1.0, as described on Wikimedia Commons",
+    "source_photographs_recovered": true,
+    "complete_day_hour_cell_collation": false
+  },
+  "compare_to_2003": {
+    "modern_source": "https://www.worldastrology.net/wp-content/uploads/2008/12/CA-III.pdf",
+    "year_column_rows_compared": 90,
+    "year_column_differences": 22,
+    "degree69_original_years": 70,
+    "degree69_retyped_years": 69,
+    "worked19_52_original_final_years": 20,
+    "worked19_52_modern_retype_prose_years": 22,
+    "modern_witness_not_modified": true,
+    "previous_2003_manifest_sha256": "9a75844e843c0b2d043433b2e53b157a364003e0c18bf9c177e84b3c8d54c5ec",
+    "source_day_hour_reuse_labeled": true
+  },
+  "assurance": {
+    "regression_test_cmd": "PYTHONPATH=src HDMATCH_PRIMARY_DIR_EPHE_DIR=$HOME/.local/share/hdmatch/ephemeris/1800-2399 python -m pytest -q tests/unit/test_naibod_original_1647.py tests/unit/test_historical_naibod.py tests/unit/test_primary_direction_roles.py tests/unit/test_primary_direction_aspects.py tests/unit/test_primary_directions.py tests/unit/test_astronomy_reference.py tests/unit/test_relationship_western_rrf.py",
+    "regression_result": "73 passed",
+    "lint": "ruff check new code and tests: pass",
+    "mypy": "mypy --follow-imports=silent src/hdmatch/astrology: pass",
+    "no_production_prediction_engine_change": true,
+    "no_personal_birth_data": true,
+    "not_full_1647_source_transcription": true
+  },
+  "files": {
+    "src/hdmatch/astrology/naibod_original_1647.py": {
+      "bytes": 5891,
+      "sha256": "7dc65189495436bc60300746c2af4b51537e53f8bd50d2ff5a05c9afe3a6cc86"
+    },
+    "tests/unit/test_naibod_original_1647.py": {
+      "bytes": 7175,
+      "sha256": "07e063c99c0fd752555090972bb3767146e4a32857753392db87d9a7ce47b04b"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/README.md": {
+      "bytes": 4955,
+      "sha256": "4fa1cc5e4f63f15ceeaad5bffa727d99ca5c4a97ad5b4098fbfd4511cd3459aa"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 3193,
+      "sha256": "a91a0d513e5705f5f82abe4bc47a9f50503ff9c684da251d88175dac77f61f79"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/ORIGINAL_1647_SOURCE_COMPARISON.json": {
+      "bytes": 5022,
+      "sha256": "afe26c059b8589a8d8ee442f49380c2c538364ecae0b07fed6acacb9fd6d424b"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/YEAR_COLUMN_1647_VS_2003.csv": {
+      "bytes": 3082,
+      "sha256": "7e4d49b45ae2e9b1801db14f7133224cdaa7068b6ea23898dd62034c29bdb495"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/SELECTED_EXAMPLE_COMPARISONS.json": {
+      "bytes": 2582,
+      "sha256": "e9ae3a3de664a4d1dde8490e43f1dd0c3caaf22941f72424ea1f27897c1287bc"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/regenerate_source_comparison.py": {
+      "bytes": 3524,
+      "sha256": "dfa317fa5bd1f10ccda2af5fdaee69f4cc614e3254be26c91ec914282a7aaee9"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/facsimile_pages/lilly_1647_printed_713.jpg": {
+      "bytes": 322424,
+      "sha256": "76238c150badd04d7b9ef0ff44258efe0b615afe1b9b30eef6bdabb45383ee67"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/facsimile_pages/lilly_1647_printed_714.jpg": {
+      "bytes": 311777,
+      "sha256": "18fc0f3275ef425275b0858cb3390cc1b8a8380f001a97bef27c755acaba7029"
+    },
+    "docs/astrology-research-map/gansten-lilly-original-1647-20261024/facsimile_pages/lilly_1647_printed_715.jpg": {
+      "bytes": 265209,
+      "sha256": "5f7686e75bb89acf4f6ae04c2332dbb968ed4585086cd6403c432f8a03a96fb1"
+    }
+  }
+}
