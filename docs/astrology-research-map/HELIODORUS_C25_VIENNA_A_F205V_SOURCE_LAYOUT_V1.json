@@ -1,0 +1,151 @@
+{
+  "schema": "HUMANDESIGN_C25_VIENNA_VINDOBONENSIS_A_TABULAR_STRUCTURE_V1",
+  "researched_date": "2026-10-24",
+  "scientific_role": "SOURCE_IDENTIFICATION_AND_LAYOUT_CRITICISM_NO_HUMAN_ASTROLOGICAL_VALIDATION",
+  "primary_original_manuscript": {
+    "repository": "Österreichische Nationalbibliothek, Wien",
+    "shelfmark": "Cod. phil. gr. 115 (Vindobonensis philosophicus Graecus 115)",
+    "catalogue_heading": "Collectio astrologica",
+    "public_catalogue": "https://onb.digital/result/1182CE33",
+    "public_iiif_manifest": "https://api.onb.ac.at/iiif/presentation/v3/manifest/1182CE33",
+    "manifest_canvas_count": 468,
+    "located_folio": "205v",
+    "located_canvas_index_zero_based": 417,
+    "located_canvas_number_in_viewer": 418,
+    "public_iiif_photo_service": "https://api.onb.ac.at/iiif/image/v3/1182CE33/uk4nGb4uCinwsqiR",
+    "studied_resized_original_photo": "https://api.onb.ac.at/iiif/image/v3/1182CE33/uk4nGb4uCinwsqiR/full/2600,/0/default.jpg",
+    "source_full_photographic_dimensions": [
+      4192,
+      6562
+    ],
+    "actual_study_image_dimensions": [
+      2600,
+      4070
+    ],
+    "study_image_bytes": 1533303,
+    "study_image_sha256": "6b6e01af7442746186c8b7fef15d0687d53d982681ccebeb4106dc9fdde15748",
+    "study_image_is_resized_not_entire_original_bytes": true,
+    "page_before": {
+      "folio": "205r",
+      "canvas_index_zero_based": 416,
+      "study_image_1600px_sha256": "8ea3ea5fa15fc5a091c52a4e2a1b8fc3baeb5656fe2237b37b190ceb63f3a41a"
+    },
+    "page_after": {
+      "folio": "206r",
+      "canvas_index_zero_based": 418,
+      "study_image_1600px_sha256": "e05a9738bb9cc2f1cc523a16a41639cfa5844d0bba6e96641557843668a5d130"
+    },
+    "scan_range": {
+      "canvas_indices_zero_based_start": 325,
+      "canvas_indices_zero_based_end": 449,
+      "total_canvas_images_fetched_as_thumbnails": 125,
+      "download_failures": 0,
+      "contact_sheets_visually_examined": 6,
+      "commentary_folio_span_from_manuscript_catalogue": "162r–218v"
+    },
+    "photos_in_repository": false
+  },
+  "date_and_genealogy_uncertainty": {
+    "ONB_iiif_catalogue_dating": "1200",
+    "ONB_iiif_catalogue_explanatory_note": "Date catalogued with reference to a note about a solar eclipse in 1241; does not straightforwardly prove codex copied in exactly 1200",
+    "Pinakes_catalogue_estimate": "twelfth century (1111–1169 approximately), discrepant with ONB record and 1241 eclipse note",
+    "other_scholarly_date_range": "1169–1241 reported in manuscript-research discussion",
+    "date_disagreement_resolved": false,
+    "do_not_silently_choose_earliest": true,
+    "context": "This older witness is distinct from fourteenth-century Florence Plut. 28.14 f204v and may supply Boer's principal text for the commentary; physical/editorial genealogy not proven from table alone."
+  },
+  "textual_work_attribution": {
+    "Pinakes_record": "https://pinakes-dev.irht.cnrs.fr/notices/cote/71229/",
+    "Pinakes_commentary_span": "folios 162r–218v (attributed In Paulum Alexandrinum commentarium)",
+    "Boer_editorial_edition": "Ae. Boer, Heliodori ut dicitur in Paulum Alexandrinum commentarium, Teubner 1962",
+    "contemporary_review": "Charles Mugler, Revue des Études Grecques 76 (1963) p294",
+    "review_URL": "https://www.persee.fr/doc/reg_0035-2039_1963_num_76_359_3742_t1_0294_0000_2",
+    "review_abstracted_conclusion": "Boer selected older Vienna A as principal witness but substituted later 14th-century Byzantine text for the opening part on Paulus chapters 1–8 absent in the old tradition",
+    "another_review": "Alphonse Dain, Revue des Études Grecques 1963? bibliographic review catalog available; its independent recensio judgment remains editorial",
+    "commentary_author_Heliodorus_personally_proven": false,
+    "Boer_1962_actual_Greek_edition_pages_seen": false
+  },
+  "table_literal_visual_observations": {
+    "actual_red_ink_table_visible_on_original": true,
+    "four_sign_grouped_triplicity_columns_provisional": true,
+    "another_adjacent_Aries_marked_section_visible": true,
+    "auxiliary_Aries_section_function_known": false,
+    "body_red_and_brown_ink_mixed": true,
+    "numbered_rows_per_group_provisionally": 15,
+    "two_numbered_degree_subcolumns_per_row_provisional": true,
+    "degree_number_columns_clearly_separate_from_planet_glyphs": true,
+    "observed_degree_pair_examples_provisional": [
+      {
+        "row": 1,
+        "left_number": 1,
+        "right_number": 16,
+        "status": "IMAGE_ORDINAL_VISUAL_PROVISIONAL"
+      },
+      {
+        "row": 2,
+        "left_number": 2,
+        "right_number": 17,
+        "status": "IMAGE_ORDINAL_VISUAL_PROVISIONAL"
+      },
+      {
+        "row": 3,
+        "left_number": 3,
+        "right_number": 18,
+        "status": "IMAGE_ORDINAL_VISUAL_PROVISIONAL"
+      },
+      {
+        "row": 14,
+        "left_number": 14,
+        "right_number": 29,
+        "status": "IMAGE_ORDINAL_VISUAL_PROVISIONAL"
+      },
+      {
+        "row": 15,
+        "left_number": 15,
+        "right_number": 30,
+        "status": "IMAGE_ORDINAL_VISUAL_PROVISIONAL"
+      }
+    ],
+    "layout_hypothesis": "The paired values on the older Vienna A table are degree ordinals 1–15 alongside 16–30, not two unnamed day/night ruler slots at the same ordinal degree.",
+    "layout_certainty": "MEDIUM: red Greek number columns visible and full-page review, no independent expert reading or detailed authorial surrounding prose collated",
+    "planetary_glyphs_at_degree_level_independently_read": 0,
+    "claim_that_it_matches_Florence_240_planet_labels": false,
+    "claim_that_old_ms_depicts_day_and_night": false,
+    "surrounding_Greek_explanatory_text_fully_collated": false,
+    "day_night_rubric_independently_deciphered": false,
+    "independent_blinded_paleographer_used": false,
+    "same_subject_as_Florence_mononomoiria_chart_certified_from_own_Greek": false,
+    "Vienna_table_exact_Greek_heading_read": false,
+    "tentative_15_plus_15_layout_not_planetary_rules": true
+  },
+  "comparison_controls": {
+    "Florence_source": "Plut. 28.14 f204v C24: 4 triplicities, 30 numbered degree rows each, 2 paired planet signs per degree; 240 source candidate labels, nonblind.",
+    "Vienna_source": "Vindobonensis A phil gr 115 f205v: four apparent grouped sign columns, and source numerals apparently numbered 1–15 and 16–30 side-by-side, plus uncertain adjacent Aries-marked column.",
+    "not_assume_same_table_layout": true,
+    "not_combine_unread_Vienna_values_with_Florence_C24": true,
+    "C24_source_math_as_previously_stored": {
+      "first_slot_C05_day_agree": 104,
+      "first_slot_C04_Greenbaum_day_agree": 102,
+      "second_slot_pair_swap": 120,
+      "second_slot_C05_night_agree": 48
+    },
+    "earlier_C22_Paulus_family_not_overwritten": true,
+    "earlier_C05_P_Oxy4277_comparisons_unchanged": {
+      "matches": 1,
+      "mismatches": 2
+    }
+  },
+  "remainder": {
+    "read_actual_Greek_rubric_for_Vienna_layout": true,
+    "retranscribe_folio_205v_red_Greek_degree_numbers_independently": true,
+    "check_Boer_1962_printed_chapter_and_manuscript_sigla": true,
+    "compare_direct_planetary_glyphs_after_confirming_layout": true,
+    "clarify_Aries_marginal_panel": true,
+    "resolve_manuscript_dates_with_codicological_sources": true,
+    "zero_human_predictive_validations": 0,
+    "production_rule_promoted": false,
+    "other_tradition_research_map_changed": false,
+    "Gansten_purchased_Kindle_edition_extracted": false,
+    "prove_table_subject_before_comparing_glyphs": true
+  }
+}
