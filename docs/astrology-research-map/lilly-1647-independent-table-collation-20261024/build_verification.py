@@ -6,7 +6,6 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-import subprocess
 from pathlib import Path
 
 from hdmatch.astrology.historical_naibod import (
@@ -26,8 +25,10 @@ from hdmatch.astrology.lilly_1647_photo import (
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
-parent = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
-assert parent == "931784fb7ae691a80eb42a3c2cd0bcbeac942274"
+# Pin the historical parent as provenance. The script must remain replayable
+# from the subsequently committed research branch and its shallow clone,
+# where git HEAD no longer equals the original parent revision.
+parent = "931784fb7ae691a80eb42a3c2cd0bcbeac942274"
 
 provenance = json.loads((HERE / "SOURCE_PROVENANCE.json").read_text())
 with (HERE / "LILLY_NAIBOD_1647_WELLCOME_VS_2003_BY_ROW.csv").open(
@@ -82,6 +83,7 @@ files = [
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/regenerate_collation.py",
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/README.md",
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/CONTINUATION_CHECKPOINT.md",
+    "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/RESEARCH_DECISION_AND_RESUME_LOG.md",
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/LILLY_NAIBOD_1647_WELLCOME_VS_2003_BY_ROW.csv",
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/LILLY_1647_CRITICAL_DIFFERENCES.json",
     "docs/astrology-research-map/lilly-1647-independent-table-collation-20261024/SOURCE_PROVENANCE.json",
@@ -89,7 +91,7 @@ files = [
 files.extend(
     str(path.relative_to(ROOT)) for path in sorted((HERE / "facsimile_pages").glob("*.jpg"))
 )
-assert len(files) == 11
+assert len(files) == 12
 assert all((ROOT / name).is_file() for name in files)
 
 manifest = {
