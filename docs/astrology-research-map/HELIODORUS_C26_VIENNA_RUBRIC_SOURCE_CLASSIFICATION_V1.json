@@ -1,0 +1,75 @@
+{
+  "schema": "HUMANDESIGN_C26_VIENNA_RUBRIC_SOURCE_CLASSIFICATION_V1",
+  "research_date": "2026-10-24",
+  "purpose": "CLASSIFY_GREEK_SOURCE_SECTION_NOT_VALIDATE_ASTROLOGY",
+  "prior_branch_commit": "5fe7868ad491b9bee7a3bb1625795fc566146b14",
+  "new_original_observation": {
+    "library": "Österreichische Nationalbibliothek",
+    "codex": "Cod. phil. gr. 115 (Vindobonensis A)",
+    "folio": "205r",
+    "canvas_index_zero_based": 416,
+    "canvas_number_in_viewer": 417,
+    "original_manifest": "https://api.onb.ac.at/iiif/presentation/v3/manifest/1182CE33",
+    "red_rubric_position": "bottom of f205r, directly preceding table on f205v",
+    "original_study_thumbnail_local_sha256": "8ea3ea5fa15fc5a091c52a4e2a1b8fc3baeb5656fe2237b37b190ceb63f3a41a",
+    "photo_hash_applies_to": "1600-pixel-wide downloaded study derivative; not the 4192x6562 full-size original",
+    "reading_type": "single-reader_nonblind_visual_normalization",
+    "provisional_normalized_Greek": "Κανόνιον τριγωνομοιριῶν",
+    "literal_Greek_letters_verified_by_independent_paleographer": false,
+    "literal_abbreviations_fully_expanded_and_checked": false,
+    "sense": "Canon/table concerning monomoiriai of the triplicities",
+    "confidence_topic": "medium-high (red heading, adjacency, commentary context)",
+    "confidence_exact_spelling": "moderate, specialist collation outstanding",
+    "adjacent_folio": "205v",
+    "adjacent_table_original_study_image_sha256": "6b6e01af7442746186c8b7fef15d0687d53d982681ccebeb4106dc9fdde15748",
+    "adjacent_table_15_plus_15_layout_provisional": true
+  },
+  "separate_Florence_witness": {
+    "library": "Biblioteca Medicea Laurenziana",
+    "codex": "Plut. 28.14",
+    "folio": "204v",
+    "source_section": "red rubric with canon of triplicity monomoiriai",
+    "two_planet_positions_per_same_ordinal_degree": true,
+    "planet_values_provisional_model_aware": 240,
+    "same_manuscript_as_Vienna": false
+  },
+  "interpretive_boundary": {
+    "class_of_section_is_probably_shared": "TRIPLICITY_MONOMOIRIAI",
+    "exact_rules_identical": false,
+    "Vienna_205v_actual_degree_planet_assignments_fully_collated": false,
+    "Vienna_known_planet_assignments": 0,
+    "Vienna_1_15_and_16_30_are_day_night_slots_proved": false,
+    "Florence_2_slots_day_night_identified": false,
+    "same_exact_30_degree_matrix_proved": false,
+    "Boer_1962_critical_apparatus_opened": false,
+    "independent_blind_paleography_completed": false,
+    "new_prod_scorer_rules": 0,
+    "prospective_blinded_human_validations": 0
+  },
+  "published_secondary_context": {
+    "Charles_Mugler_1963": "https://www.persee.fr/doc/reg_0035-2039_1963_num_76_359_3742_t1_0294_0000_2",
+    "Alphonse_Dain_1963": "https://www.persee.fr/doc/bude_0004-5527_1963_num_1_2_4035_t1_0254_0000_1",
+    "two_commentary_recensional_families_reported": true,
+    "Vienna_A_old_anonymous_forty_chapter_tradition_in_Dain_review": true,
+    "Boer_actual_critical_figures_uninspected": true
+  },
+  "earlier_discrepancies_preserved": {
+    "C24_Florence_first_vs_C05_day": 104,
+    "C24_Florence_first_vs_C04_editor_D": 102,
+    "C24_Florence_second_pair_adjacent_match": 120,
+    "C24_Florence_second_vs_C05_night": 48,
+    "C22_Paulus_family_first_matching_neither_day_candidate": 96,
+    "P_Oxy_4277_three_published_positions_matches": 1,
+    "P_Oxy_4277_three_published_positions_mismatches": 2,
+    "Hephaistio_epitome_IV37_literal_40_derived_140_main_150_kept_distinct": true
+  },
+  "next_source_operations": [
+    "transcribe exact f205r contextual Greek lines and f205v column headings/abreviations with photo-literal uncertainty",
+    "read 1962 Boer Greek diagram and apparatus, sigla, witness dependence",
+    "independently collate early and late Vienna planet glyphs per actual ordinal after verifying column segmentation",
+    "independent reviewer without C04/C05 predicted glyph arrays",
+    "compare against Florence and later recension without cross-inference"
+  ],
+  "source_images_committed": false,
+  "main_objective_status": "OPEN"
+}
