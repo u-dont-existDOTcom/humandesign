@@ -1,0 +1,59 @@
+{
+  "schema": "LILLY_1647_RECEPTION_AND_ANGLE_ARC_PRECOMMIT_V1",
+  "date": "2026-10-25",
+  "owner_root_outcome": "OPEN — source-authentic multi-tradition astrology and frozen forward-blind human predictive validation against controls",
+  "parent_commit": "3037bf2b780615b947739f49243d4d247436cfcb",
+  "selected_inputs": {
+    "planet_rows": 672,
+    "source_contact_rows": 216,
+    "chart_count": 96,
+    "source_parent": "docs/astrology-research-map/primary-direction-essential-dignity-20261025",
+    "match_requirement": "Unmodified prior synthetic chart IDs, sect, planetary sign and documented term/face rulers"
+  },
+  "source": {
+    "first_edition": "William Lilly Christian Astrology 1647, Wellcome b30338724",
+    "pages": [
+      112,
+      115,
+      510,
+      511,
+      515,
+      517
+    ],
+    "secondary_independent_study": "Rumen Kolev (1998), William Lilly and His Method of Primary Directions, based on Regulus 1985 transcription; retrospective mathematical historical analysis, NOT a prospective empirical predictor",
+    "domicile_reception": "p112 reciprocal occupation of the OTHER planet's zodiac sign of domicile, not occupation of mundane houses",
+    "exaltation_reception": "p112 permits any dignity; p115 gives reception by exaltation as alternative +4",
+    "same_mode_reception": [
+      "domicile",
+      "exaltation",
+      "triplicity",
+      "term",
+      "face"
+    ],
+    "mixed_mode": "record separately but do not score as authorially uniform without more source evidence",
+    "score_interpretation": "p115 +5 or +4 are alternatives to own-house/exaltation rather than additive to same essential factor; omit reception-score aggregation",
+    "source_angle_examples": "MC original p515 RA promissor minus RA MC; ASC original p517 oblique ascension promissor minus base Asc oblique ascension",
+    "confirmed_lilly_direct_scope": "these specific advancing ascensional coordinate examples, not a global no-converse rule or full Argolus method"
+  },
+  "fields": [
+    "all unordered mutual planet pairs per chart, each reciprocal dignity mode, mixed-only flag",
+    "Jupiter involvement in prior 47 favorable MC-Jupiter contacts, by reception mode without threshold",
+    "MC and Asc original numeric worked examples",
+    "all full natal strength judgments NULL"
+  ],
+  "expected_output_files": [
+    "RECEPTION_RELATIONS.json",
+    "RECEPTION_SYNTHETIC_SUMMARY.json",
+    "RECEPTION_MC_JUPITER_CROSSWALK.json",
+    "SOURCE_ANGULAR_ARITHMETIC.json"
+  ],
+  "prohibited": [
+    "no human natal or event data",
+    "do not alter previous 96-chart or 216-contact outputs",
+    "no retrospective event fit",
+    "no combined ordinal score or cutpoint",
+    "no treating positive geometric arc as authenticated all-Argolus direction",
+    "no cross-mode mutual reception automatically authorial"
+  ],
+  "objective_status": "ROOT_OPEN_SOURCE_ENGINEERING_ONLY"
+}
