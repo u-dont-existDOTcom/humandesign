@@ -1,0 +1,81 @@
+{
+  "schema": "HUMANDESIGN_C30_DOROTHEUS_EXPEDITION_DEVELOPMENT_STUDY_DESIGN_V1",
+  "date": "2026-10-25",
+  "status": "UNREGISTERED_STUDY_DESIGN_DRAFT_NOT_A_HUMAN_PREDICTION_FREEZE",
+  "owner_outcome": "test source-faithful Hellenistic life-event rules as part of wider 16-tradition prospective blind matching research",
+  "source_candidate": "HELLENISTIC_C30_DOROTHEUS_EXPEDITION_SOURCE_V1.json",
+  "prediction_equation": "Lot = mod(Ascendant + mod(Moon-Saturn,360),360)",
+  "precondition": [
+    "Aries",
+    "Scorpio",
+    "Capricorn",
+    "Aquarius"
+  ],
+  "ancient_one_way_assertion": "If the Lot falls in specified signs, a man will take part in military campaigns",
+  "explicitly_not_asserted": "If Lot is outside these signs, he will never take part in military campaigns",
+  "human_outcome_variable": {
+    "name": "participated_in_warlike_military_campaign_by_observation_cutoff",
+    "potential_measure": "Military service member formally deployed as part of organized armed conflict campaign, not simply peacetime training or conscription",
+    "operational_yes": "Verified organized-conflict military deployment documented by participant record or standard corroboration procedure fixed before predictions",
+    "operational_no": "Individual screened on full same observation window with no qualifying combat-theater operational deployment and adequate follow-up",
+    "unknown": "Missing service records, insufficient date/geography, unclear role or event classification",
+    "civilian_war_travel": "not automatically positive",
+    "peacetime_military_service": "not automatically positive",
+    "conscription_without_conflict": "not automatically positive",
+    "birth_age_window": "Development proposal: age 18 until cohort observation cutoff, with >=50 years of age recommended for opportunity time; exact cutoffs must be fixed before real recruitment",
+    "equivalence_to_ancient_term": "PARTIAL_MODERN_PROXY; not a claim that present deployments equal ancient campaigns",
+    "further_secondary_endpoint": "direct combat participation, only if separately preregistered"
+  },
+  "historical_sex_scope": {
+    "wording": "κεῖνος ἀνήρ (that man) in transmitted verse",
+    "source_faithful_primary_population": "adult men",
+    "diversity_note": "Any other-sex generalization requires separately frozen arm rather than assuming the ancient source covers everyone"
+  },
+  "cohort_proposal": {
+    "eligibility": "Adults with independent DOB/time/place and full observation window; recruit without knowing Lot exposure or military service history",
+    "independent_ascendant": "Compute geographic Ascendant from independently validated time, birthplace, calendar, timezone, ephemeris, zodiac/obliquity convention",
+    "provenance_lock": "Lock astronomical engine version, ephemeris hashes, tropical-vs-sidereal convention, ayanamsa where relevant, coordinates/time uncertainty and source version before exposure mapping",
+    "stable_classification": "Require certified exposure stability across full declared birth-time and ephemeris uncertainty; sampled points alone never certify stability",
+    "strata": "Birth decade, early-adult country/conscription policy, war/armed-conflict opportunity; define purely from pre-outcome official historic data",
+    "recruitment_prohibition": "Do not recruit only soldiers or only known combatants, or use known owner/third-party biographies as blind cases",
+    "sample_size": "Not fixed: estimate from independently sourced event prevalence and specify power/precision prior to preregistration, not after results"
+  },
+  "outcome_measurement": {
+    "concealment": "Person answering and adjudicator do not see birth-derived Lot placement, candidate predicted outcome or alternative versions",
+    "answer_freeze": "Timestamp/hash complete human survey answers and support records before chart-exposure release",
+    "options": [
+      "yes_confirmed",
+      "no_with_adequate_observation",
+      "unknown_or_not_documented"
+    ],
+    "unscored_unknown": true,
+    "independent_verification": "Adjudicate deployment documents where feasible without access to chart or anticipated answer",
+    "participant_protection": "Consent and data minimization; no disclosure of military service details to other participants"
+  },
+  "primary_test_proposed": {
+    "statistic": "Risk difference in qualifying campaign proportion, indicated vs non-indicated",
+    "alternate_literal_audit": "Report all indicated people without observed campaign before cutoff explicitly, not discard as not-self or reclassify",
+    "associated_null": "No enrichment: identical outcome probability conditional on fixed strata",
+    "primary_direction": "indicated > not-indicated",
+    "method": "Precommitted conditional outcome permutation across charts within matched conflict-opportunity cohorts; if exchangeability not credible, report descriptive only",
+    "baseline": "Within-stratum nonastrological prevalence model using cohort/sex/geography/opportunity variables; report improvement over that strong control, not just unadjusted enrichment",
+    "multiplicity": "Exactly one primary test of this locked candidate; revisions or additional signs create new development versions and require separate untouched cohort",
+    "expected_uniform_indication_fraction": "4/12 = 1/3 under an independent uniform Lot-sign null, not claimed true prevalence or evidence",
+    "no_claim_if_events_missing": true,
+    "significance": "No p-value or NNT fabricated before actual participants; threshold to be fixed before preregistration",
+    "adverse_stake": "Do not use astrology to determine eligibility for military, safety, employment, military operations or trauma judgments"
+  },
+  "other_models": {
+    "source_options": "C29 monomoiria 360/120 source matrix kept separate; no conflation with lot of expedition",
+    "alternative_Taurus_context": "Following modern Greek digital passage has Taurus campaign account; invalidates an exclusive outside-sign denial, not the one-way source",
+    "no_tuning_on_owner_history": true
+  },
+  "status_checks": {
+    "applicant_enrollment_started": false,
+    "outcome_records_loaded": false,
+    "predictions_precommitted_for_actual_people": false,
+    "blinded_human_validations": 0,
+    "production_rules_changed": false,
+    "phase": "TEXTUAL_CANDIDATE_AND_SYNTHETIC_ARITHMETIC"
+  }
+}

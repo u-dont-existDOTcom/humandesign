@@ -1,0 +1,101 @@
+{
+  "schema": "HUMANDESIGN_C30_DOROTHEUS_EXPEDITION_SOURCE_EVIDENCE_V1",
+  "created_date": "2026-10-25",
+  "main_owner_outcome": {
+    "status": "OPEN",
+    "verbatim_recent_instruction": "continue",
+    "normalized_goal": "Preserve source-faithful multi-tradition astrology algorithms and eventually freeze/source-blind falsifiable real-person predictions with controls before observing untouched consenting human outcomes",
+    "current_contribution": "First executable Hellenistic text-defined natal placement to claimed observable life-course event",
+    "not_substitutable_by": "manuscript source consistency or synthetic arithmetic tests"
+  },
+  "witness": {
+    "ancient_author_attribution": "Dorotheus of Sidon, Greek verse as quoted by Hephaistio of Thebes",
+    "locus": "Hephaistio, Apotelesmatics Book II chapter 19, immediately before chapter 20 on slaves",
+    "greek_online": "https://eulogikon.org/works/dorotheus-sidon-hephaestion-fragments-oho-aa.md",
+    "greek_format": "MODERN_EULOGIKON_GREEK_DIGITIZATION_NOT_CRITICAL_FACSIMILE",
+    "greek_download_bytes": 17560,
+    "greek_source_sha256": "4a24067e680e385ea527e7aa36d5b5dcf44cbee075f9dac62f2d731cf08564e6",
+    "greek_marker": "2d.1",
+    "local_study_pdf_title": "Robert Schmidt, Hephaistio of Thebes, Apotelesmatics Book II (1998)",
+    "english_printed_page": 68,
+    "english_pdf_page_one_based": 40,
+    "local_owner_pdf_sha256": "e1f11be1a21924345770d2a31766caa0e15a53274403c360057a3c4bc5221073",
+    "source_scan_rendered_and_visually_read": true,
+    "separate_printed_English_note": "Schmidt fn177 says this Dorothean profession fragment is not found in the Arabic Dorotheus version",
+    "original_pingree_Greek_critical_apparatus_inspected": false,
+    "other_manuscripts_verified_for_this_rule": 0
+  },
+  "greek_source_anchors": {
+    "arithmetic_phrase": "πρῶτα μὲν ἐκ Φαίνοντος ἀρίθμεε μέχρι Σελήνης",
+    "ascendant_phrase": "ἐξ ὥρης δὲ μεταῦθις",
+    "sign_phrase": "Σκορπίον ... Ἀρνειοῖο ... Αἰγοκέρωτα καὶ Ὑδροχόον",
+    "purported_outcome": "στρατίῃσιν ἔνεσται κεῖνος ἀνήρ",
+    "source_translation": "Count the arc from Saturn to the Moon and project it from the Ascendant; a lot in Mars' or Saturn's zodiac signs indicates a man participating in military campaigns",
+    "direct_source_characterization": "ONE_WAY_CONDITIONAL_NEITHER_EXCLUSIVE_NOR_CAUSALLY_PROVEN",
+    "source_scope": "the verse calls the subject a man; not a generalized modern prediction of everyone",
+    "war_glory_and_spoils_clause_requires_additional_Mars_angle_light_configuration": true,
+    "no_night_reversal_written_in_this_fragment": true
+  },
+  "mathematical_interpretation": {
+    "lot_formula": "(Ascendant + ((Moon - Saturn) mod 360)) mod 360",
+    "longitude_frame": "ecliptic zodiac Aries=0; tropical convention candidate for reproducibility, not independently established by this particular verse",
+    "enumerated_signs": [
+      "Aries",
+      "Scorpio",
+      "Capricorn",
+      "Aquarius"
+    ],
+    "full_signs_12": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
+    ],
+    "indicated_sign_span_degrees": 120,
+    "total_zodiac_degrees": 360,
+    "exposed_fraction_under_uniform_lot_null": "1/3",
+    "ordinal_degree_policy": "lower inclusive [0,30) for Aries, etc; exact 30-degree boundaries",
+    "false_condition_means": "NO_AFFIRMATIVE_SOURCE_STATEMENT_NOT_NO_CAMPAIGN_PREDICTION",
+    "chart_source_required": "independent verified astronomical longitudes with precommitted zodiac/epoch/Ascendant model",
+    "sect_reversal_applied": false,
+    "own_birth_or_known_life_data_used": false
+  },
+  "separate_following_greek_passage": {
+    "online_digitized_marker": "2d,1.1",
+    "references_lot_in": "Taurus",
+    "source_apparent_example": "Lot in Taurus 23rd degree, Jupiter trine, accompanying riders into a campaign",
+    "not_in_checked_Schmidt_excerpt": true,
+    "independent_manuscript_glyph_authentication": false,
+    "status": "CONTEXTUAL_ALTERNATIVE_NOT_A_BINARY_CONVERSE_RULE",
+    "does_not_change_four_sign_positive_conditional": true,
+    "cautions": "The digital companion paragraph is not independently established as an original Dorothean verse; never use as proof outside four signs predicts no campaigning"
+  },
+  "other_inspected_rule_candidates": [
+    {
+      "work": "Hephaistio II.22 children",
+      "reason_not_selected": "No-child OR child-loss disjunction; competing lots and 6th/12th scope would require multiple separate outcomes and unresolved formulas"
+    },
+    {
+      "work": "Valens Anthologies II.39 children",
+      "reason_not_selected": "Multiple aspect and childgiver dependencies, less bounded than the explicit expedition lot"
+    }
+  ],
+  "development_status": {
+    "reproducible_formula_implemented": true,
+    "zodiac_indicator_implemented": true,
+    "user_life_events_tested": false,
+    "consenting_people_tested": 0,
+    "source_predictions_on_humans_frozen": false,
+    "production_rules_promoted": 0,
+    "empirical_accuracy_achieved": false,
+    "note": "Selection was text-first; owner known biography must never be used as test or tune target"
+  }
+}
