@@ -167,11 +167,25 @@ def build() -> dict[str, Any]:
         "n_prior_planet_rows": 672,
         "n_prior_source_rule_contacts": 216,
         "n_unordered_reception_pairs": count_pairs,
+        "n_same_mode_reception_pairs": count_pairs - mixed_only,
+        "interpretation": (
+            "Includes mixed-only reciprocal hosting, NOT all source-certified reception"
+        ),
         "n_charts_without_any_reciprocal_reception": n_none,
+        "n_charts_with_same_mode_reception": sum(
+            any(not x.mixed_only for x in pairs) for pairs in reception_by_chart.values()
+        ),
         "same_dignity_mode_pair_counts": dict(sorted(same_modes.items())),
         "mixed_only_pairs_not_history_scored": mixed_only,
         "mc_jupiter_favorable_prior_contacts": 47,
         "mc_jupiter_mutual_mode_contact_counts": mode_counts,
+        "mc_jupiter_contacts_with_any_same_mode": sum(
+            bool(row["source_reciprocal_same_modes"]) for row in linked
+        ),
+        "mc_jupiter_contacts_with_dom_or_exaltation_reception": sum(
+            row["has_source_domicile_reception"] or row["has_source_exaltation_reception"]
+            for row in linked
+        ),
         "mc_jupiter_contacts_full_strength_certified": 0,
         "mc_jupiter_interpretation_frozen": False,
         "full_lilly_radix_strength_verdicts": 0,

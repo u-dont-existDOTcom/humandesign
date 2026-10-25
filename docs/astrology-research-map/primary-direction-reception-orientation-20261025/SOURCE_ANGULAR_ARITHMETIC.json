@@ -1,0 +1,44 @@
+{
+  "examples": {
+    "p515_mercury_terms": {
+      "axis": "mc_right_ascension",
+      "forward_source_arc_degrees": 7.416666666666686,
+      "original_printed_page": 515,
+      "promissor_coordinate_deg": 229.58333333333334,
+      "semantic_status": "SOURCE_ASCENDING_COORDINATE_ARITHMETIC_ONLY",
+      "significator_coordinate_deg": 222.16666666666666
+    },
+    "p515_venus_terms": {
+      "axis": "mc_right_ascension",
+      "forward_source_arc_degrees": 0.35000000000002274,
+      "original_printed_page": 515,
+      "promissor_coordinate_deg": 222.51666666666668,
+      "semantic_status": "SOURCE_ASCENDING_COORDINATE_ARITHMETIC_ONLY",
+      "significator_coordinate_deg": 222.16666666666666
+    },
+    "p517_first_oblique": {
+      "axis": "asc_oblique_ascension",
+      "forward_source_arc_degrees": 1.3999999999999773,
+      "original_printed_page": 517,
+      "promissor_coordinate_deg": 313.56666666666666,
+      "semantic_status": "SOURCE_ASCENDING_COORDINATE_ARITHMETIC_ONLY",
+      "significator_coordinate_deg": 312.1666666666667
+    },
+    "p517_last_oblique": {
+      "axis": "asc_oblique_ascension",
+      "forward_source_arc_degrees": 19.866666666666674,
+      "original_printed_page": 517,
+      "promissor_coordinate_deg": 332.03333333333336,
+      "semantic_status": "SOURCE_ASCENDING_COORDINATE_ARITHMETIC_ONLY",
+      "significator_coordinate_deg": 312.1666666666667
+    }
+  },
+  "historical_scope_warning": "not a complete source authentication of converse directions, Argolus geometry, planetary latitude or universal time key",
+  "p515_internal_print_discrepancy": {
+    "intermediate_arc": "7 degrees 45 minutes",
+    "operand_subtraction_and_final_worked_result": "7 degrees 25 minutes",
+    "status": "BOTH_PRIMARY_PRINTED_READINGS_PRESERVED"
+  },
+  "schema": "ORIGINAL_1647_ANGULAR_COORDINATE_ARITHMETIC_V1",
+  "scope": "p515 MC right ascension and p517 ASC oblique ascension"
+}
