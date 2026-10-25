@@ -66,3 +66,5 @@ At original pp.654–655 the effects of a direction depend on BOTH natal signifi
 The correct next study-design step is not to label high partial scores as confirmed predictions. Source-defined reception/accidental and direction-orientation variants must first be completed or declared unresolved, then outcomes, opportunity denominators, birth-time uncertainty intervals, competing astrology rulebooks and null controls must be frozen. Only genuinely untouched human observations can test predictive validity. This research subtask contributes source features, *not* a substitute finish line.
 
 The 96-chart panel is nonrepresentative and already a DEVELOPMENT engineering dataset. Do not adjust the score or cutoff to make known cases look better, and do not reinterpret negative/missing indicators as support.
+
+The project-level next empirical test options and unresolved acceptance conditions are detailed in `NEXT_EMPIRICAL_GATE.md`. It is an open study-design handoff, not a preregistered or completed human trial.
