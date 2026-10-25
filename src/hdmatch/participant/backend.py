@@ -30,8 +30,8 @@ from hdmatch.search import (
 from .models import (
     PredictionDimension,
     PredictionFreeze,
-    RankScope,
     RankingSnapshot,
+    RankScope,
     ResolvedBirth,
     SessionMode,
 )
@@ -97,6 +97,16 @@ class AstroHDParticipantBackend:
             question_id
             for mapping in self.model.library.frozen_mappings
             for question_id in mapping.question_ids
+        )
+
+    @property
+    def mapped_scoreable_question_ids(self) -> frozenset[str]:
+        """Frozen mapped interview questions, excluding separately phased validation tasks."""
+
+        return frozenset(
+            question_id
+            for question_id in self.scoreable_question_ids
+            if self.question_bank.by_id(question_id).phase != "validation"
         )
 
     def build_prediction_freeze(
@@ -206,7 +216,9 @@ class AstroHDParticipantBackend:
         )
         if actual_date is None:
             raise RuntimeError("true local birth date is outside its declared candidate universe")
-        top_state_ties = sum(math.isclose(item.rank, ranked_states[0].rank) for item in ranked_states)
+        top_state_ties = sum(
+            math.isclose(item.rank, ranked_states[0].rank) for item in ranked_states
+        )
         top_date_score = ranked_dates[0].date_score
         top_date_ties = sum(
             math.isclose(
@@ -431,9 +443,7 @@ class AstroHDParticipantBackend:
                 )
                 for state in states
             }
-        by_signature: dict[
-            tuple[str, str, str, str, tuple[str, ...]], ScoredState
-        ] = {}
+        by_signature: dict[tuple[str, str, str, str, tuple[str, ...]], ScoredState] = {}
         result: dict[str, ScoredState] = {}
         for state in states:
             signature = self.model.scoring_signature(state.chart_features)
@@ -480,9 +490,7 @@ class AstroHDParticipantBackend:
             timezone_name=freeze.birth.iana_timezone,
         )
         if observed != freeze.candidate_universe_sha256:
-            raise RuntimeError(
-                "candidate universe changed after the pre-answer prediction freeze"
-            )
+            raise RuntimeError("candidate universe changed after the pre-answer prediction freeze")
         if len(states) != freeze.candidate_universe_state_count:
             raise RuntimeError("candidate universe state count changed after freeze")
         if states[0].start_utc != freeze.candidate_universe_utc_start:
@@ -495,12 +503,13 @@ class AstroHDParticipantBackend:
         states: Sequence[CandidateState],
         scores: dict[str, ScoredState],
     ) -> tuple[_RankedState, ...]:
-        """Rank by evidence score; duration only gives deterministic display order.
+        """Rank by dependency-controlled evidence and deterministic display order.
 
-        State duration must never turn an evidence-equivalent set into distinct
-        scientific ranks.  In particular, with zero behavioral evidence every
-        candidate state receives the same midrank and the top tie count equals the
-        full universe.
+        Scientific rank uses net rubric bits, meaningful contradictions, and detailed
+        support.  Core fit remains descriptive and does not split scientific ties.
+        Duration and start time only give deterministic order inside a scientific tie.
+        In particular, with zero behavioral evidence every candidate state receives
+        the same midrank and the top tie count equals the full universe.
         """
 
         ordered = sorted(
@@ -509,7 +518,6 @@ class AstroHDParticipantBackend:
                 -scores[state.state_id].net_rubric_bits,
                 scores[state.state_id].meaningful_contradictions,
                 -scores[state.state_id].detailed_support,
-                -scores[state.state_id].core_fit,
                 -(state.end_utc - state.start_utc).total_seconds(),
                 state.start_utc,
             ),
@@ -520,14 +528,11 @@ class AstroHDParticipantBackend:
             state = ordered[position]
             key = _evidence_tie_key(scores[state.state_id])
             end = position + 1
-            while end < len(ordered) and _evidence_tie_key(
-                scores[ordered[end].state_id]
-            ) == key:
+            while end < len(ordered) and _evidence_tie_key(scores[ordered[end].state_id]) == key:
                 end += 1
             midrank = (position + 1 + end) / 2.0
             result.extend(
-                _RankedState(item, scores[item.state_id], midrank)
-                for item in ordered[position:end]
+                _RankedState(item, scores[item.state_id], midrank) for item in ordered[position:end]
             )
             position = end
         return tuple(result)
@@ -604,7 +609,6 @@ def _evidence_tie_key(score: ScoredState) -> tuple[float | int, ...]:
         round(score.net_rubric_bits, 12),
         score.meaningful_contradictions,
         round(score.detailed_support, 12),
-        round(score.core_fit, 12),
     )
 
 
@@ -624,7 +628,4 @@ def _likelihood_row(
     if len(unique) == 1:
         return {unique[0]: 1.0}
     mismatch = (1.0 - match_probability) / (len(unique) - 1)
-    return {
-        token: match_probability if token == expected else mismatch
-        for token in unique
-    }
+    return {token: match_probability if token == expected else mismatch for token in unique}

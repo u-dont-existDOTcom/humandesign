@@ -1,0 +1,1071 @@
+{
+  "comparators": {
+    "equal_evidence_core_fit_difference": {
+      "current": {
+        "ordered_state_ids": [
+          "HIGH",
+          "LOW"
+        ],
+        "scientific_rank_by_state_id": {
+          "HIGH": 1.0,
+          "LOW": 2.0
+        }
+      },
+      "helper_outputs": {
+        "current_top_net_margin": 0.0,
+        "percentile_by_comparator_and_state": {
+          "current": {
+            "HIGH": 100.0,
+            "LOW": 50.0
+          },
+          "rank_group_without_core_fit": {
+            "HIGH": 75.0,
+            "LOW": 75.0
+          },
+          "rank_order_without_core_fit": {
+            "HIGH": 75.0,
+            "LOW": 75.0
+          }
+        },
+        "top_state_tie_count_by_comparator": {
+          "current": 1,
+          "rank_group_without_core_fit": 2,
+          "rank_order_without_core_fit": 2
+        }
+      },
+      "rank_group_without_core_fit": {
+        "ordered_state_ids": [
+          "HIGH",
+          "LOW"
+        ],
+        "scientific_rank_by_state_id": {
+          "HIGH": 1.5,
+          "LOW": 1.5
+        }
+      },
+      "rank_order_without_core_fit": {
+        "ordered_state_ids": [
+          "LOW",
+          "HIGH"
+        ],
+        "scientific_rank_by_state_id": {
+          "HIGH": 1.5,
+          "LOW": 1.5
+        }
+      },
+      "scores": {
+        "HIGH": {
+          "contradiction_rubric_bits": 0.0,
+          "core_fit": 78.57142857142857,
+          "detailed_support": 50.0,
+          "evidence_rubric_bits": 1.0,
+          "meaningful_contradictions": 0,
+          "net_rubric_bits": 1.0,
+          "state_id": "HIGH"
+        },
+        "LOW": {
+          "contradiction_rubric_bits": 0.0,
+          "core_fit": 66.66666666666667,
+          "detailed_support": 50.0,
+          "evidence_rubric_bits": 1.0,
+          "meaningful_contradictions": 0,
+          "net_rubric_bits": 1.0,
+          "state_id": "LOW"
+        }
+      },
+      "state_start_order": [
+        "LOW",
+        "HIGH"
+      ]
+    },
+    "non_tie_controls": [
+      {
+        "control_id": "different_net_rubric_bits",
+        "current": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_group_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_order_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "scores": {
+          "OTHER": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 100.0,
+            "detailed_support": 50.0,
+            "evidence_rubric_bits": 1.0,
+            "meaningful_contradictions": 0,
+            "net_rubric_bits": 1.0,
+            "state_id": "OTHER"
+          },
+          "PREFERRED": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 0.0,
+            "detailed_support": 50.0,
+            "evidence_rubric_bits": 2.0,
+            "meaningful_contradictions": 0,
+            "net_rubric_bits": 2.0,
+            "state_id": "PREFERRED"
+          }
+        }
+      },
+      {
+        "control_id": "different_meaningful_contradictions",
+        "current": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_group_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_order_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "scores": {
+          "OTHER": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 100.0,
+            "detailed_support": 50.0,
+            "evidence_rubric_bits": 1.0,
+            "meaningful_contradictions": 1,
+            "net_rubric_bits": 1.0,
+            "state_id": "OTHER"
+          },
+          "PREFERRED": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 0.0,
+            "detailed_support": 50.0,
+            "evidence_rubric_bits": 1.0,
+            "meaningful_contradictions": 0,
+            "net_rubric_bits": 1.0,
+            "state_id": "PREFERRED"
+          }
+        }
+      },
+      {
+        "control_id": "different_detailed_support",
+        "current": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_group_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "rank_order_without_core_fit": {
+          "ordered_state_ids": [
+            "PREFERRED",
+            "OTHER"
+          ],
+          "scientific_rank_by_state_id": {
+            "OTHER": 2.0,
+            "PREFERRED": 1.0
+          }
+        },
+        "scores": {
+          "OTHER": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 100.0,
+            "detailed_support": 50.0,
+            "evidence_rubric_bits": 1.0,
+            "meaningful_contradictions": 0,
+            "net_rubric_bits": 1.0,
+            "state_id": "OTHER"
+          },
+          "PREFERRED": {
+            "contradiction_rubric_bits": 0.0,
+            "core_fit": 0.0,
+            "detailed_support": 60.0,
+            "evidence_rubric_bits": 1.0,
+            "meaningful_contradictions": 0,
+            "net_rubric_bits": 1.0,
+            "state_id": "PREFERRED"
+          }
+        }
+      }
+    ]
+  },
+  "input_scope": "synthetic_candidate_and_scored_state_records_only",
+  "ordered_sequence_consumers": [
+    {
+      "function": "AstroHDParticipantBackend.rank",
+      "line": 199,
+      "operation": "iterate_ranked_states",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend.rank",
+      "line": 220,
+      "operation": "iterate_ranked_states_and_index_first_rank",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend.rank",
+      "line": 232,
+      "operation": "pass_ranked_states_to_top_net_margin",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend.discrimination",
+      "line": 287,
+      "operation": "iterate_ranked_and_index_first_rank",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend.discrimination",
+      "line": 288,
+      "operation": "pass_ranked_to_top_net_margin",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend._top_net_margin",
+      "line": 544,
+      "operation": "index_first_ranked_state",
+      "path": "src/hdmatch/participant/backend.py"
+    },
+    {
+      "function": "AstroHDParticipantBackend._top_net_margin",
+      "line": 545,
+      "operation": "iterate_ranked_tail_slice",
+      "path": "src/hdmatch/participant/backend.py"
+    }
+  ],
+  "schema_version": "astrohd-rank-tiebreak-downstream-audit-v1",
+  "source_file_hashes": [
+    {
+      "path": "src/hdmatch/__init__.py",
+      "sha256": "e83f8b93ccb97e94a3293da0f8745d7f4111f5c6f2012b0fe85279321c523439"
+    },
+    {
+      "path": "src/hdmatch/api/__init__.py",
+      "sha256": "b39420eabdc7b38e6f3924e02de6780b333196646fb99ceee19bf91a04b3bfed"
+    },
+    {
+      "path": "src/hdmatch/api/app.py",
+      "sha256": "14c80cd70e57117eeaa5aa417c7c7bac3786d6e67c1ed55ac6c5d4de0fbf078a"
+    },
+    {
+      "path": "src/hdmatch/api/errors.py",
+      "sha256": "6d142217b72ac13d7af096ec739fefa20f0725acef0083cc5ec2e5cef38e282d"
+    },
+    {
+      "path": "src/hdmatch/api/models.py",
+      "sha256": "b7018172d64eafe9f966f3f8a16037530ef66957bb0875dc9a09936c363444bc"
+    },
+    {
+      "path": "src/hdmatch/api/natal_pilot_app.py",
+      "sha256": "461b936254fabcd1c9a90717fc6155e2aef970a49f564dd1331ca47182ad70d8"
+    },
+    {
+      "path": "src/hdmatch/api/natal_pilot_ui.py",
+      "sha256": "a2cfbc931e279ed0dacd5b9242f3d67b21deef8e8d79bc089302d85aaabb02b0"
+    },
+    {
+      "path": "src/hdmatch/api/participant.py",
+      "sha256": "7418453a7139dc43c4990cae4bca667f9dec2343a96116cf7918003a596e66df"
+    },
+    {
+      "path": "src/hdmatch/api/participant_app.py",
+      "sha256": "6e525bded684a79041d24654b6f7167b29b685bb172df6b82f810e85c2d4d013"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_adaptive_app.py",
+      "sha256": "b6ba2e4fcea20f2d691c290de62b797967af8ee084974e760b09f2c21847bd7b"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_adaptive_ui.py",
+      "sha256": "69e5ab6454b3f57710f9db2b9e82f964bbe1a05955f67a87df61ff68b6adad2f"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_email_recovery.py",
+      "sha256": "494efee44f86ecad84a90a720689a411e15f79e859b843b9ffb163ac1db0a029"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_full_study_app.py",
+      "sha256": "535ce023d20371f4c209383ff626f916c99648f9848c7731f2bd6e9bef5502bb"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_launch_app.py",
+      "sha256": "a509a8e7074da888834fa155b9a3ea821f43c7222ab3da750e26c235dc971719"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_launch_ui.py",
+      "sha256": "89889040fa97a91a57414c4dc692f4dde8fa9c5b6530bd346ae28773cfb9cf14"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_openai_app.py",
+      "sha256": "64458413448e7a834f49e8ed258edd05e0c34cb52a61a4b597eea3df5d7b38f8"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_openai_ui.py",
+      "sha256": "04a5634befb1f3f0562f008405742a2d9cb8892f92c234abb2d2e58ffe3d8320"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_public_app.py",
+      "sha256": "dbe7e7758579bad40c2a3ea7a03e019997cda95fbff4a2ffa8eec45481826295"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_study_app.py",
+      "sha256": "c61c9e3d8deb61db50eada5ee9d2804b33eb45c59099a504e72812c07d8a471a"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_study_ui.py",
+      "sha256": "66666d19dbda5bb58a8aceecbfc35b241ee31aa6092e4c59a65092cfc1a86937"
+    },
+    {
+      "path": "src/hdmatch/api/relationship_study_ui_enhanced.py",
+      "sha256": "a05f6024b54292672c718a08a9eecb4b4211b668d822727ab843873919f56915"
+    },
+    {
+      "path": "src/hdmatch/api/serialization.py",
+      "sha256": "8e5dc6967adf98ee859a2c72fb8678f0c27d9b6692999648c0f2bfc785703a20"
+    },
+    {
+      "path": "src/hdmatch/api/unresolved.py",
+      "sha256": "2a3a6ee891d0baed62c383eaadf0adec8b7e617e9c14310a5b4ca27bbb634051"
+    },
+    {
+      "path": "src/hdmatch/chart/__init__.py",
+      "sha256": "0f379f6de289270cc15eaf6128b518e00b493abe915358ef7c6311fc18840e2f"
+    },
+    {
+      "path": "src/hdmatch/chart/astronomy_reference.py",
+      "sha256": "faf8b51eef0b09bd45832c93061d3a5fb0855906dc965d2e1ac09627bbe1ae16"
+    },
+    {
+      "path": "src/hdmatch/chart/bodygraph.py",
+      "sha256": "5bda8c935e7d58521929acb8f8528e87b958a7b92fc171bc11ac3ff8372b960b"
+    },
+    {
+      "path": "src/hdmatch/chart/boundaries.py",
+      "sha256": "771b97b53f698a1e32d1e2cc6267bbb0d2a73f7f95984510c9fb935e890bb45f"
+    },
+    {
+      "path": "src/hdmatch/chart/calculator.py",
+      "sha256": "95fb546ac52f5135a653d97e2ca63cc8270e1ec395a5ba95d71b9f3f34b09140"
+    },
+    {
+      "path": "src/hdmatch/chart/design_moment.py",
+      "sha256": "cdfecd8cc3cf81003c025df9428d194b68255112a90ab9d5524750b1d368f774"
+    },
+    {
+      "path": "src/hdmatch/chart/ephemeris.py",
+      "sha256": "5ec918b559fe5bbb2598e9f9c91ff8dfda805dc31a2731aa812f80ede7f3fd01"
+    },
+    {
+      "path": "src/hdmatch/chart/ephemeris_audit.py",
+      "sha256": "8b187e6cb286e1670b4c68db1d9d09120965a497a07cbb0a93c43214e307091d"
+    },
+    {
+      "path": "src/hdmatch/chart/jpl_ephemeris.py",
+      "sha256": "458c32a29dd3b31679073606c3e5a76986647a00f25e5653483557ad982efb75"
+    },
+    {
+      "path": "src/hdmatch/chart/progressions.py",
+      "sha256": "0cbd082d5153b782d605229109b347dd12586029d51554e3a5fe06bd87714577"
+    },
+    {
+      "path": "src/hdmatch/chart/rave_mandala.py",
+      "sha256": "2617ae4cb0fb32fb7468b76f71946a91f152254cf4a82f749e3d089e155b6638"
+    },
+    {
+      "path": "src/hdmatch/chart/timezone.py",
+      "sha256": "02682c775c0014816380b10b13115443db67f16abd6326166467742e6cbb8a51"
+    },
+    {
+      "path": "src/hdmatch/chart/validation.py",
+      "sha256": "357056a5b7211b683e1ced120ea07ab0ca223c558ada003d53f3e53706c011b1"
+    },
+    {
+      "path": "src/hdmatch/cli.py",
+      "sha256": "4d40eec8ea24d179c757c5407be1428e06e1cd6efb668d52c4bc29b26ec55db0"
+    },
+    {
+      "path": "src/hdmatch/config.py",
+      "sha256": "2bf9b5f220d1878bb10a36914d57b08b28729419b6597798edb6bd8bad1154ad"
+    },
+    {
+      "path": "src/hdmatch/evaluation/__init__.py",
+      "sha256": "8cf0bc366be959a248f5ff8a8d31f7e87f1d0c6fcab398b965dd6fe119b43ebb"
+    },
+    {
+      "path": "src/hdmatch/evaluation/ablation.py",
+      "sha256": "2fe5f973749c5b1ff5accc1ef64fc1a830940521c58e2c39d9969b25023c3360"
+    },
+    {
+      "path": "src/hdmatch/evaluation/classifier_reliability.py",
+      "sha256": "25ca063732577feaf9dd116316dfe893c377a139f91aa571fc6d188ebded9c7e"
+    },
+    {
+      "path": "src/hdmatch/evaluation/discrimination.py",
+      "sha256": "89c54c6312725f6b1838a146cd6d0e4238693f07c4eff7685282ee97e2e369db"
+    },
+    {
+      "path": "src/hdmatch/evaluation/failures.py",
+      "sha256": "8863964e3bfaf7abe30d312b0a2b8e6e8ce8dcfca79e311087fbdcb7f058d563"
+    },
+    {
+      "path": "src/hdmatch/evaluation/feature_capacity.py",
+      "sha256": "075773e46e766068816defb920d6816e0a843670891168f6a221e921f9d14399"
+    },
+    {
+      "path": "src/hdmatch/evaluation/holistic_profile_information.py",
+      "sha256": "9b6f6cda0973f6e973965863c1657c3179e5bfcf258fbc2cd1207c421e1d03fd"
+    },
+    {
+      "path": "src/hdmatch/evaluation/leakage.py",
+      "sha256": "1e358c814de097172a5c2d70e9d8a5c1cc0093b5c85a6707561e6737ea31de1c"
+    },
+    {
+      "path": "src/hdmatch/evaluation/metrics.py",
+      "sha256": "6424c1fc834484b96486e3e0c7f493a5c0a40558f885a44927bf2aa4f38b5532"
+    },
+    {
+      "path": "src/hdmatch/evaluation/permutation.py",
+      "sha256": "f9168d83e6f714e22b3f51f259b19bfe06c476fc6a5cf0dacbf9f202c5b8d691"
+    },
+    {
+      "path": "src/hdmatch/evaluation/redundancy.py",
+      "sha256": "4bf33904b5d95f7e4d0bedc6dff8d5dba484b6fe67a99b35a23b2b8c7f14601a"
+    },
+    {
+      "path": "src/hdmatch/evaluation/report.py",
+      "sha256": "145effa49cdbef73e162766597bd685ecbc8301446580bfd378c4257b921ab77"
+    },
+    {
+      "path": "src/hdmatch/evaluation/residual_feature_capacity.py",
+      "sha256": "b066a2ec04a34ca653a74cf1b0b910ba9ee17683e19920a680b434bb66f1cf90"
+    },
+    {
+      "path": "src/hdmatch/evaluation/robustness.py",
+      "sha256": "979271549f8b07b0a3d81d6a21a0cb56cfa5ba88e93c262257b8693b06b7a467"
+    },
+    {
+      "path": "src/hdmatch/evaluation/survey_v2_capacity.py",
+      "sha256": "5602bfe5fe06d098af6880b44a302db2b55a614a0ef4a4c3c95a230d22c66772"
+    },
+    {
+      "path": "src/hdmatch/evaluation/survey_v2_completion.py",
+      "sha256": "bda26e69aa31aa12b99ba403d17b2dac83e478c2d5aa26ebef4471bd80a61dac"
+    },
+    {
+      "path": "src/hdmatch/evaluation/survey_v2_noise.py",
+      "sha256": "03f49fea027d2a7f2b5c0685e2fde716e31a179566ce3ec28deedf8c56b84257"
+    },
+    {
+      "path": "src/hdmatch/evaluation/survey_v2_noise_indexed.py",
+      "sha256": "40a300eea35abd53ccd31ea1706e70013986920eca33311a1003b35ddf365e9a"
+    },
+    {
+      "path": "src/hdmatch/evaluation/survey_v2_recoverability.py",
+      "sha256": "5ee60f4fe94d2105f06221c6bd6fc03d5e8960903ce398bc453864c349bcf709"
+    },
+    {
+      "path": "src/hdmatch/evaluation/theory_language_exposure.py",
+      "sha256": "8c0fd852005c0176c40c839a8ff82e7dbb432439fe59d6d027d1da785898e8d3"
+    },
+    {
+      "path": "src/hdmatch/experiments/__init__.py",
+      "sha256": "7c092b69628c45e7e98060a1e877dc1e399a05ac86e019627041d452e9bc05d0"
+    },
+    {
+      "path": "src/hdmatch/experiments/canonical.py",
+      "sha256": "ce703009c9ba07019ff679e79af9ce2e05e8ea6751228cd42167fe0335b1a794"
+    },
+    {
+      "path": "src/hdmatch/experiments/freeze.py",
+      "sha256": "a268a1fdce8ed0804b1a19a2d89069c67dec55c87418b94f5285ecff08870011"
+    },
+    {
+      "path": "src/hdmatch/experiments/manifest.py",
+      "sha256": "fac9106c7047c06114c25660cc85b881788758a09c36bd4d81ad8a6a18e3ec88"
+    },
+    {
+      "path": "src/hdmatch/experiments/reveal.py",
+      "sha256": "f7ccd4903949b4832b7cd56e48cd621374d09128210cc6c5ed91d2120149d328"
+    },
+    {
+      "path": "src/hdmatch/human/__init__.py",
+      "sha256": "56433b192bd74b08a345a020409c86c21e44d427d5fe99bff24daf3e7c646a1d"
+    },
+    {
+      "path": "src/hdmatch/human/baselines.py",
+      "sha256": "d8c39486ebd843a1539f1ce504cf90fd4aab9be90e51241d2a9ca7c65b7c4261"
+    },
+    {
+      "path": "src/hdmatch/human/dataset.py",
+      "sha256": "9e4f2c65fb18127f4f174f94ac52a6748661d853a5046f704fae4a94d72a7173"
+    },
+    {
+      "path": "src/hdmatch/human/empirical.py",
+      "sha256": "e24bac7f60e21483a9befeff34e4a5949f3f0a9486717390326bcce4deaa61a1"
+    },
+    {
+      "path": "src/hdmatch/human/splits.py",
+      "sha256": "eee563731222a2f1962e457e8ce01c0b28f14c0149589278ea98c79fe299e736"
+    },
+    {
+      "path": "src/hdmatch/model/__init__.py",
+      "sha256": "b7800aab1ec11798986fc7d9a46fcbe9aab43fb85032048a7e5ef6bce5468a3b"
+    },
+    {
+      "path": "src/hdmatch/model/compiler.py",
+      "sha256": "8940b7d8490c405efa2d7bf762009c83340e2f2a53ba5bb12b85b48063070be1"
+    },
+    {
+      "path": "src/hdmatch/model/dependencies.py",
+      "sha256": "a49672a0edbca3ecbd121d563f7f7758b521a3cdf317c058b42ad9f137504a7d"
+    },
+    {
+      "path": "src/hdmatch/model/evidence_registry.py",
+      "sha256": "5b616d16b13b74446203fedafc1a84095e8d9436d018ecc89afe9553bbd68e23"
+    },
+    {
+      "path": "src/hdmatch/model/mapping_library.py",
+      "sha256": "b93a14632ce6f6783767cb1e8cd46cb1371e6286be41124c62f5abe652dee6bd"
+    },
+    {
+      "path": "src/hdmatch/model/observations.py",
+      "sha256": "dd5c2c4de29dbb8fd9ddba75a436a55e2fc30611dd820cd2cdc0743da97eebef"
+    },
+    {
+      "path": "src/hdmatch/model/reliability.py",
+      "sha256": "cf70bd4053c5c85b219e26f7076f728c9f4bc13a9b3bef2b23ef12c6ca48bf91"
+    },
+    {
+      "path": "src/hdmatch/model/rich_mapping_library.py",
+      "sha256": "e6d7bbb3b73fd864980ea9eb12f10a0544127b5bdb6704a08fd1f4f29f6f0770"
+    },
+    {
+      "path": "src/hdmatch/model/rich_predicate.py",
+      "sha256": "a08f896b0ef1e27c6cc2f9e8e0133417b3290ea963c3bb18e6bf05909e1644f5"
+    },
+    {
+      "path": "src/hdmatch/model/symbolic_score.py",
+      "sha256": "fd1f216c2579aab0ba9aef74249fa5804cb7433b7eb13f452dfe1381b09f0aaa"
+    },
+    {
+      "path": "src/hdmatch/participant/__init__.py",
+      "sha256": "9041562351773ac6d186b32bf1f9d446ca3c24775ce3ae41f91c1455ebdb4bd7"
+    },
+    {
+      "path": "src/hdmatch/participant/backend.py",
+      "sha256": "80ad02402ec0ea3a094bcd2977e9843c68d296b198bcfc7e836ef71043313198"
+    },
+    {
+      "path": "src/hdmatch/participant/century_backend.py",
+      "sha256": "5bf49fd72374352a7cc64210ffede18e041aa5081732fcccf6d29ce299469f46"
+    },
+    {
+      "path": "src/hdmatch/participant/models.py",
+      "sha256": "a330d9c119b2ad3e5235601c4e87813be8a3ac1f87568a4b579be419181d661e"
+    },
+    {
+      "path": "src/hdmatch/participant/service.py",
+      "sha256": "cbec5178028ef6677628ad6d4b9765d02e2a3e615859edf0b9818e1cff05f621"
+    },
+    {
+      "path": "src/hdmatch/participant/store.py",
+      "sha256": "52d3b0afe6eef5259a2455450f51003c50c0648e9ef0c37dac540adc915f5949"
+    },
+    {
+      "path": "src/hdmatch/questionnaire/__init__.py",
+      "sha256": "63e77625abb2adacc8d563d8332f61fd18616ad5499320942753796fabf7b84e"
+    },
+    {
+      "path": "src/hdmatch/questionnaire/bank.py",
+      "sha256": "9ddfbc192620f2c181b11b44d08561c8e14fc6204f91918d6f002b22e92f5703"
+    },
+    {
+      "path": "src/hdmatch/questionnaire/response.py",
+      "sha256": "b604be9d2e4c412efa24a04a6854d42d04b48e5e663fffa183c24d29eaaad6f9"
+    },
+    {
+      "path": "src/hdmatch/relationship/__init__.py",
+      "sha256": "96e0055a785d0055ac21c4e9bc328ea1cc4614248bab9dc4d79cbcc26199a08d"
+    },
+    {
+      "path": "src/hdmatch/relationship/analysis.py",
+      "sha256": "c666372aac9de490f716913229535f6d6e78f6a1b31a4200510890d9a1f8fa3a"
+    },
+    {
+      "path": "src/hdmatch/relationship/answer_audit.py",
+      "sha256": "e3aa2af60e8a57a8d014f35a1619fc8db58727437f352d568d8d9435d1ae3e12"
+    },
+    {
+      "path": "src/hdmatch/relationship/astro_rrf.py",
+      "sha256": "67d907878cb8e326976b2b726c8e99507eeabc8173e504840daa455da8e6e31b"
+    },
+    {
+      "path": "src/hdmatch/relationship/learning.py",
+      "sha256": "3fea2307cb58762b37a495a2cac4846dc3def2c5a8ffd75abf2808aa9d432eb4"
+    },
+    {
+      "path": "src/hdmatch/relationship/llm_audit.py",
+      "sha256": "a3bc09c7dd435d68d22a4ca215da6045b42104258914908e96a2d09d7884cf66"
+    },
+    {
+      "path": "src/hdmatch/relationship/phenotype.py",
+      "sha256": "577369b996a2d72c8e49a8feee827088744bc8ac8e213d3dba8896d037412625"
+    },
+    {
+      "path": "src/hdmatch/relationship/phenotype_classifier.py",
+      "sha256": "2e4ad4f3292b2d9fedf7c141004f878dc586b1c602dd95f361f2b0768d4a57e0"
+    },
+    {
+      "path": "src/hdmatch/relationship/place_resolution.py",
+      "sha256": "bf020e552299036ef11f749eb2700c7dfb825545d8b5c6da59eb2bd0089c62ba"
+    },
+    {
+      "path": "src/hdmatch/relationship/questionnaire.py",
+      "sha256": "d4b241d40108bdb4d11790e478413c83eab3002dccb2b7d5d706bcca6f66e558"
+    },
+    {
+      "path": "src/hdmatch/relationship/reveal.py",
+      "sha256": "8404ba60fc9fc3a75ffcef27016a6809b61952c5d11a4411a8e49e65ee6a1703"
+    },
+    {
+      "path": "src/hdmatch/relationship/study.py",
+      "sha256": "6587ee801163e9d566e27b1456cd55e1527391f339b2171fb392c6ccdd636cc9"
+    },
+    {
+      "path": "src/hdmatch/relationship/study_prediction.py",
+      "sha256": "94e1b178c0dc6ed6d0eb425c851fb9908f961be774785681e5edf3cd2d3cdd5f"
+    },
+    {
+      "path": "src/hdmatch/relationship/uncertain_time.py",
+      "sha256": "edd9c4058b368e3fc36b048e4a8247a71773f15b31d44b86c59486b98b6c6154"
+    },
+    {
+      "path": "src/hdmatch/relationship/western.py",
+      "sha256": "11f121791a297b6685e683807b184cc8ec73016ed8b732642eba72508cae1d32"
+    },
+    {
+      "path": "src/hdmatch/runtime/__init__.py",
+      "sha256": "1a4d68cbce0a59c0b400dbeb2c9074f4b3f3629589cbcc5ed9738a8f5951723e"
+    },
+    {
+      "path": "src/hdmatch/runtime/century_cache.py",
+      "sha256": "17dcd8c5fcb0d2194d01d974aef98da00ea007e99e79ac02cf8791f4facb321e"
+    },
+    {
+      "path": "src/hdmatch/runtime/chart_adapter.py",
+      "sha256": "e50a29f8ab4654b558a52638a2b5e2530e1fc106eed27f45da2f2e2c633503d0"
+    },
+    {
+      "path": "src/hdmatch/runtime/recovery.py",
+      "sha256": "aa5473f06396842685f007f2ffc1d019139b706bf505f31481fc82d867239bf7"
+    },
+    {
+      "path": "src/hdmatch/runtime/symbolic_adapter.py",
+      "sha256": "a481eb1d862868a29549c5ecc2ca53527f267685d14aed823c26c567e2d34a08"
+    },
+    {
+      "path": "src/hdmatch/runtime/universe_cache.py",
+      "sha256": "be72fbec85ce46ac47c78a815e8200ace2a656fd1a128246655e650df3dfa2f2"
+    },
+    {
+      "path": "src/hdmatch/schemas/__init__.py",
+      "sha256": "d7759a8cd5666e55a074bfbe9fc1c1135a16c67c56e479a39ad6c2d02ee99f79"
+    },
+    {
+      "path": "src/hdmatch/schemas/core.py",
+      "sha256": "e2c5a866bca25db25002a8bcd5acfc8607e257d8e852f343185f977d23f65c40"
+    },
+    {
+      "path": "src/hdmatch/search/__init__.py",
+      "sha256": "4743b700a12f28cbbb3e76af19875e0f43f8aab27ee7eee54fdc81df37b3ea97"
+    },
+    {
+      "path": "src/hdmatch/search/adaptive.py",
+      "sha256": "7523d955b6ba84136df65bdf49e661ec012eb881533c992dc89f328b4f6f9fd3"
+    },
+    {
+      "path": "src/hdmatch/search/candidate_universe.py",
+      "sha256": "cd17874e2e9f4e320ef3b1138caea3f8c3ebb16a8a227c81971b1965e18f4d70"
+    },
+    {
+      "path": "src/hdmatch/search/date_aggregator.py",
+      "sha256": "d358c0914f84d341b69ced1771c5d26a9818837ed24ae45c9808920e08c8a3ce"
+    },
+    {
+      "path": "src/hdmatch/synthetic/__init__.py",
+      "sha256": "1e1a3c9bea05a96023e68c78812da89faa58defaa2de21ef33a1ab5d63f7dfb6"
+    },
+    {
+      "path": "src/hdmatch/synthetic/generator.py",
+      "sha256": "54e9dd5d854bf1a3f1d419b648be67a920cbcb1025b4318de6dbf1dbb2a5902b"
+    },
+    {
+      "path": "src/hdmatch/synthetic/noise.py",
+      "sha256": "c41627566a20e5b72804f60e24e38058fb964df1815e726c66ff6f319fd57528"
+    },
+    {
+      "path": "src/hdmatch/synthetic/sealing.py",
+      "sha256": "12fe3a6d978c7b33e33a3eb1f02c126abea1bfb418e19bb51d218cfc5a0b0e82"
+    },
+    {
+      "path": "src/hdmatch/util/__init__.py",
+      "sha256": "244ed87625a5ae98ea2e491a18ba5542702e0f5e8013d87db218890d5996ed13"
+    },
+    {
+      "path": "src/hdmatch/util/canonical.py",
+      "sha256": "576465fe9d6f737dfe83697914fe7d58a19c57c7ebfd90afee64e9af632c09d1"
+    }
+  ],
+  "source_locations": [
+    {
+      "enclosing_function_or_method": "<module>",
+      "line": 237,
+      "path": "src/hdmatch/api/natal_pilot_ui.py",
+      "source_excerpt": "const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "<module>",
+      "line": 237,
+      "path": "src/hdmatch/api/natal_pilot_ui.py",
+      "source_excerpt": "const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_percentile",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "<module>",
+      "line": 237,
+      "path": "src/hdmatch/api/natal_pilot_ui.py",
+      "source_excerpt": "const rank=payload.confirmatory_ranking;const list=document.getElementById('ranking');list.textContent='';addRow(list,'True date rank',rank.true_date_rank+' of '+rank.candidate_date_count);addRow(list,'True state rank',rank.true_state_rank+' of '+rank.candidate_state_count);addRow(list,'Date percentile',rank.true_date_percentile);addRow(list,'State percentile',rank.true_state_percentile);addRow(list,'Top state ties',rank.top_state_tie_count);addRow(list,'Scientific status',rank.scientific_status);",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "DiscriminationDiagnostics",
+      "line": 51,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "top_state_tie_count: int",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "_RankedState",
+      "line": 62,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "class _RankedState:",
+      "syntactic_use_category": "class_definition",
+      "token": "_RankedState",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 195,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "ranked_states = self._rank_states(states, scores)",
+      "syntactic_use_category": "rank_sequence_assignment",
+      "token": "_rank_states",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 220,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "math.isclose(item.rank, ranked_states[0].rank) for item in ranked_states",
+      "syntactic_use_category": "rank_attribute_read",
+      "token": ".rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 232,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "margin = self._top_net_margin(ranked_states)",
+      "syntactic_use_category": "function_call_or_reference",
+      "token": "_top_net_margin",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 258,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "true_state_rank=actual.rank,",
+      "syntactic_use_category": "rank_attribute_read",
+      "token": ".rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 258,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "true_state_rank=actual.rank,",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 259,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "true_state_percentile=_percentile(actual.rank, len(ranked_states)),",
+      "syntactic_use_category": "rank_attribute_read",
+      "token": ".rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 259,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "true_state_percentile=_percentile(actual.rank, len(ranked_states)),",
+      "syntactic_use_category": "function_call_or_reference",
+      "token": "percentile",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 259,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "true_state_percentile=_percentile(actual.rank, len(ranked_states)),",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_percentile",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.rank",
+      "line": 262,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "top_state_tie_count=top_state_ties,",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.discrimination",
+      "line": 284,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "ranked = self._rank_states(states, scores)",
+      "syntactic_use_category": "rank_sequence_assignment",
+      "token": "_rank_states",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.discrimination",
+      "line": 287,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "top_state_tie_count=sum(math.isclose(item.rank, ranked[0].rank) for item in ranked),",
+      "syntactic_use_category": "rank_attribute_read",
+      "token": ".rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.discrimination",
+      "line": 287,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "top_state_tie_count=sum(math.isclose(item.rank, ranked[0].rank) for item in ranked),",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend.discrimination",
+      "line": 288,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "top_margin_rubric_bits=self._top_net_margin(ranked),",
+      "syntactic_use_category": "function_call_or_reference",
+      "token": "_top_net_margin",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 501,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "def _rank_states(",
+      "syntactic_use_category": "function_definition",
+      "token": "_rank_states",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 505,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": ") -> tuple[_RankedState, ...]:",
+      "syntactic_use_category": "type_reference",
+      "token": "_RankedState",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 525,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "result: list[_RankedState] = []",
+      "syntactic_use_category": "type_reference",
+      "token": "_RankedState",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 529,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "key = _evidence_tie_key(scores[state.state_id])",
+      "syntactic_use_category": "function_call_or_reference",
+      "token": "_evidence_tie_key",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 531,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "while end < len(ordered) and _evidence_tie_key(scores[ordered[end].state_id]) == key:",
+      "syntactic_use_category": "function_call_or_reference",
+      "token": "_evidence_tie_key",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._rank_states",
+      "line": 535,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "_RankedState(item, scores[item.state_id], midrank) for item in ordered[position:end]",
+      "syntactic_use_category": "constructor_call",
+      "token": "_RankedState",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._top_net_margin",
+      "line": 541,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "def _top_net_margin(ranked: Sequence[_RankedState]) -> float:",
+      "syntactic_use_category": "function_definition",
+      "token": "_RankedState",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "AstroHDParticipantBackend._top_net_margin",
+      "line": 541,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "def _top_net_margin(ranked: Sequence[_RankedState]) -> float:",
+      "syntactic_use_category": "function_definition",
+      "token": "_top_net_margin",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "_evidence_tie_key",
+      "line": 607,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "def _evidence_tie_key(score: ScoredState) -> tuple[float | int, ...]:",
+      "syntactic_use_category": "function_definition",
+      "token": "_evidence_tie_key",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "_percentile",
+      "line": 616,
+      "path": "src/hdmatch/participant/backend.py",
+      "source_excerpt": "def _percentile(rank: float, total: int) -> float:",
+      "syntactic_use_category": "function_definition",
+      "token": "percentile",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "RankingSnapshot",
+      "line": 424,
+      "path": "src/hdmatch/participant/models.py",
+      "source_excerpt": "true_state_rank: float = Field(ge=1.0)",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_rank",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "RankingSnapshot",
+      "line": 425,
+      "path": "src/hdmatch/participant/models.py",
+      "source_excerpt": "true_state_percentile: float = Field(ge=0.0, le=100.0)",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "true_state_percentile",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "RankingSnapshot",
+      "line": 428,
+      "path": "src/hdmatch/participant/models.py",
+      "source_excerpt": "top_state_tie_count: int = Field(ge=1)",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "PublicProgress",
+      "line": 462,
+      "path": "src/hdmatch/participant/models.py",
+      "source_excerpt": "top_state_tie_count: int | None = Field(default=None, ge=1)",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    },
+    {
+      "enclosing_function_or_method": "ParticipantSessionService.public_progress",
+      "line": 267,
+      "path": "src/hdmatch/participant/service.py",
+      "source_excerpt": "top_state_tie_count=diagnostics.top_state_tie_count,",
+      "syntactic_use_category": "connected_rank_summary_field",
+      "token": "top_state_tie_count",
+      "traceability": "traceable"
+    }
+  ],
+  "status": "mechanical_downstream_audit_no_runtime_effect"
+}

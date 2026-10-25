@@ -37,9 +37,7 @@ def _state(
         end_utc=end,
         chart_features_hash=f"{gate:064x}"[-64:],
         chart_features=features,
-        local_date_overlaps=(
-            LocalDateOverlap(date=start.date(), seconds=float(duration_seconds)),
-        ),
+        local_date_overlaps=(LocalDateOverlap(date=start.date(), seconds=float(duration_seconds)),),
     )
 
 
@@ -52,6 +50,25 @@ def _zero_score(state_id: str) -> ScoredState:
         detailed_support=0.0,
         core_fit=0.0,
         meaningful_contradictions=0,
+    )
+
+
+def _score(
+    state_id: str,
+    *,
+    net: float = 1.0,
+    meaningful_contradictions: int = 0,
+    detailed_support: float = 50.0,
+    core_fit: float = 50.0,
+) -> ScoredState:
+    return ScoredState(
+        state_id=state_id,
+        net_rubric_bits=net,
+        evidence_rubric_bits=max(net, 0.0),
+        contradiction_rubric_bits=max(-net, 0.0),
+        detailed_support=detailed_support,
+        core_fit=core_fit,
+        meaningful_contradictions=meaningful_contradictions,
     )
 
 
@@ -68,6 +85,61 @@ def test_zero_evidence_state_rank_is_not_broken_by_interval_duration() -> None:
     ranked = backend._rank_states(states, scores)
 
     assert {item.rank for item in ranked} == {2.0}
+
+
+def test_core_fit_does_not_split_or_order_an_evidence_tie() -> None:
+    start = datetime(2000, 1, 1, tzinfo=UTC)
+    states = (
+        _state("LOW", start=start, duration_seconds=60, gate=1),
+        _state("HIGH", start=start + timedelta(seconds=60), duration_seconds=60, gate=2),
+    )
+    scores = {
+        "LOW": _score("LOW", core_fit=66.66666666666667),
+        "HIGH": _score("HIGH", core_fit=78.57142857142857),
+    }
+    backend = object.__new__(AstroHDParticipantBackend)
+
+    ranked = backend._rank_states(states, scores)
+
+    assert [item.state.state_id for item in ranked] == ["LOW", "HIGH"]
+    assert {item.state.state_id: item.rank for item in ranked} == {"LOW": 1.5, "HIGH": 1.5}
+    assert backend._top_net_margin(ranked) == 0.0
+
+
+def test_core_fit_cannot_override_authorized_ranking_fields() -> None:
+    start = datetime(2001, 1, 1, tzinfo=UTC)
+    states = (
+        _state("OTHER", start=start, duration_seconds=60, gate=1),
+        _state(
+            "PREFERRED",
+            start=start + timedelta(seconds=60),
+            duration_seconds=60,
+            gate=2,
+        ),
+    )
+    controls = (
+        (
+            _score("PREFERRED", net=2.0, core_fit=0.0),
+            _score("OTHER", net=1.0, core_fit=100.0),
+        ),
+        (
+            _score("PREFERRED", meaningful_contradictions=0, core_fit=0.0),
+            _score("OTHER", meaningful_contradictions=1, core_fit=100.0),
+        ),
+        (
+            _score("PREFERRED", detailed_support=60.0, core_fit=0.0),
+            _score("OTHER", detailed_support=50.0, core_fit=100.0),
+        ),
+    )
+    backend = object.__new__(AstroHDParticipantBackend)
+
+    for preferred, other in controls:
+        ranked = backend._rank_states(
+            states,
+            {"PREFERRED": preferred, "OTHER": other},
+        )
+        assert [item.state.state_id for item in ranked] == ["PREFERRED", "OTHER"]
+        assert [item.rank for item in ranked] == [1.0, 2.0]
 
 
 class _CountingModel:

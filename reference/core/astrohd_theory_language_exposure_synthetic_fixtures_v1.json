@@ -1,0 +1,219 @@
+{
+  "schema_version": "astrohd-theory-language-exposure-synthetic-fixtures-v1",
+  "status": "synthetic_only_no_participant_data",
+  "codebook_path": "reference/core/astrohd_theory_language_codebook_v1.template.json",
+  "cases": [
+    {
+      "case_id": "participant_spontaneous_theoryterm",
+      "transcript": [
+        {
+          "turn_id": "TURN-spontaneous-1",
+          "speaker": "participant",
+          "text": "My answer includes THEORYTERM_ALPHA.",
+          "response_language": "x-synthetic"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": true,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_THEORYTERM_ALPHA",
+            "lexical_specificity": "theory_specific",
+            "provenance": "participant_spontaneous",
+            "stance": "stance_unknown"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "interviewer_first_same_term",
+      "transcript": [
+        {
+          "turn_id": "TURN-interviewer-first-1",
+          "speaker": "interviewer",
+          "text": "Consider THEORYTERM_ALPHA for this synthetic fixture.",
+          "response_language": "x-synthetic"
+        },
+        {
+          "turn_id": "TURN-interviewer-first-2",
+          "speaker": "participant",
+          "text": "I am repeating theoryterm_alpha.",
+          "response_language": "x-synthetic"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": false,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_THEORYTERM_ALPHA",
+            "lexical_specificity": "theory_specific",
+            "provenance": "participant_after_interviewer_same_term",
+            "stance": "stance_unknown"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ordinary_language_excluded",
+      "transcript": [
+        {
+          "turn_id": "TURN-ordinary-1",
+          "speaker": "participant",
+          "text": "The response contains COMMONWORD_GAMMA.",
+          "response_language": "x-synthetic"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": false,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_COMMONWORD_GAMMA",
+            "lexical_specificity": "ordinary_language_excluded",
+            "provenance": "participant_spontaneous",
+            "stance": "stance_unknown"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "context_dependent_remains_context_dependent",
+      "transcript": [
+        {
+          "turn_id": "TURN-context-1",
+          "speaker": "participant",
+          "text": "The response contains CONTEXTTERM_DELTA.",
+          "response_language": "x-synthetic"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": false,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_CONTEXTTERM_DELTA",
+            "lexical_specificity": "context_dependent",
+            "provenance": "participant_spontaneous",
+            "stance": "stance_unknown"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "quoted_term_with_explicit_stance",
+      "transcript": [
+        {
+          "turn_id": "TURN-quoted-1",
+          "speaker": "participant",
+          "text": "A source used the phrase THEORY PHRASE BETA.",
+          "response_language": "x-synthetic",
+          "stance_annotation": "neutral_or_quoted",
+          "provenance_annotation": "quoted_or_reported_source"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": true,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_THEORY_PHRASE_BETA",
+            "lexical_specificity": "theory_specific",
+            "provenance": "quoted_or_reported_source",
+            "stance": "neutral_or_quoted"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "rejected_term_with_explicit_stance",
+      "transcript": [
+        {
+          "turn_id": "TURN-rejected-1",
+          "speaker": "participant",
+          "text": "I reject THEORYTERM_ALPHA.",
+          "response_language": "x-synthetic",
+          "stance_annotation": "rejected"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": true,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_THEORYTERM_ALPHA",
+            "lexical_specificity": "theory_specific",
+            "provenance": "participant_spontaneous",
+            "stance": "rejected"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "supplied_language_has_no_codebook",
+      "transcript": [
+        {
+          "turn_id": "TURN-unsupported-1",
+          "speaker": "participant",
+          "text": "THEORYTERM_ALPHA",
+          "response_language": "x-unsupported"
+        }
+      ],
+      "expected": {
+        "language_assessability": "not_assessable",
+        "theory_specific_exposure_evidence_present": false,
+        "occurrences": []
+      }
+    },
+    {
+      "case_id": "response_language_metadata_absent",
+      "transcript": [
+        {
+          "turn_id": "TURN-language-unknown-1",
+          "speaker": "participant",
+          "text": "THEORYTERM_ALPHA",
+          "response_language": null
+        }
+      ],
+      "expected": {
+        "language_assessability": "language_unknown",
+        "theory_specific_exposure_evidence_present": false,
+        "occurrences": []
+      }
+    },
+    {
+      "case_id": "hidden_chart_isolation",
+      "synthetic_hidden_chart_payloads": [
+        {
+          "hidden_chart_id": "SYNTHETIC-HIDDEN-CHART-A",
+          "synthetic_class": "ALPHA"
+        },
+        {
+          "hidden_chart_id": "SYNTHETIC-HIDDEN-CHART-B",
+          "synthetic_class": "BETA"
+        }
+      ],
+      "transcript": [
+        {
+          "turn_id": "TURN-chart-isolation-1",
+          "speaker": "participant",
+          "text": "THEORYTERM_ALPHA",
+          "response_language": "x-synthetic"
+        }
+      ],
+      "expected": {
+        "language_assessability": "assessable",
+        "theory_specific_exposure_evidence_present": true,
+        "occurrences": [
+          {
+            "entry_id": "SYNTHETIC_THEORYTERM_ALPHA",
+            "lexical_specificity": "theory_specific",
+            "provenance": "participant_spontaneous",
+            "stance": "stance_unknown"
+          }
+        ]
+      }
+    }
+  ]
+}

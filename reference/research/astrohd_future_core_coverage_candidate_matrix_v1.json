@@ -1,0 +1,100 @@
+{
+  "schema_version": "astrohd-future-core-coverage-candidate-matrix-v1",
+  "status": "draft_research_candidates_not_owner_policy_not_scoring_authority",
+  "targets": [
+    {
+      "current_frozen_path": "absent",
+      "disposition": "existing_probe_is_partial_because_it_measures_initiation_outcome_not_informing_before_action",
+      "existing_candidate_question_ids": [
+        "S01"
+      ],
+      "future_action_class": "extra_high_pro_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "runtime_authorized": false,
+      "target_id": "type_strategy.manifestor"
+    },
+    {
+      "current_frozen_path": "absent",
+      "disposition": "no_direct_existing_full_lunar_cycle_strategy_probe_identified",
+      "existing_direct_full_lunar_cycle_probe_ids": [],
+      "future_action_class": "extra_high_pro_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "runtime_authorized": false,
+      "target_id": "type_strategy.reflector"
+    },
+    {
+      "current_frozen_path": "absent",
+      "disposition": "strong_reuse_candidate_but_self_heard_speech_is_not_unique_to_this_authority",
+      "existing_candidate_question_ids": [
+        "D01",
+        "D04"
+      ],
+      "future_action_class": "source_backed_mapping_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "relevant_existing_d01_token": "hearing_your_own_words_reveal_the_answer",
+      "runtime_authorized": false,
+      "target_id": "authority.self_projected"
+    },
+    {
+      "current_frozen_path": "absent",
+      "disposition": "strong_existing_probe_reuse_candidate",
+      "existing_candidate_question_ids": [
+        "D01",
+        "D05"
+      ],
+      "future_action_class": "source_backed_mapping_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "relevant_existing_d01_token": "clarity_from_being_in_the_right_place_or_with_the_right_listener",
+      "runtime_authorized": false,
+      "target_id": "authority.mental_environmental"
+    },
+    {
+      "current_frozen_path": "absent",
+      "disposition": "existing_material_is_partial_and_overlaps_other_verbal_authorities",
+      "existing_candidate_question_ids": [
+        "D04",
+        "D06"
+      ],
+      "future_action_class": "extra_high_pro_discrimination_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "runtime_authorized": false,
+      "target_id": "authority.ego_manifested"
+    },
+    {
+      "current_frozen_path": "absent",
+      "disposition": "existing_material_is_partial_and_does_not_by_itself_establish_an_authority_mapping",
+      "existing_candidate_question_ids": [
+        "D06",
+        "S04"
+      ],
+      "future_action_class": "extra_high_pro_discrimination_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "runtime_authorized": false,
+      "target_id": "authority.ego_projected"
+    },
+    {
+      "current_frozen_path": "absent",
+      "dependency_note": "future_lunar_authority_and_reflector_strategy_evidence_must_not_be_double_counted",
+      "disposition": "no_direct_existing_full_lunar_cycle_authority_probe_identified",
+      "existing_direct_full_lunar_cycle_probe_ids": [],
+      "future_action_class": "extra_high_pro_design_required",
+      "mapping_authorized": false,
+      "owner_policy": false,
+      "question_change_authorized": false,
+      "runtime_authorized": false,
+      "target_id": "authority.lunar"
+    }
+  ]
+}

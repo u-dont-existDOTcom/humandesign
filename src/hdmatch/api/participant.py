@@ -12,16 +12,20 @@ from hdmatch.chart.timezone import TimezoneResolutionError
 from hdmatch.participant.backend import FrozenRuntimeMismatchError, UnsupportedRankScopeError
 from hdmatch.participant.models import (
     BirthIntake,
-    ConfirmatoryLock,
     EvidenceInput,
-    EvidenceRecord,
     FinalParticipantReport,
     NextInterviewQuestion,
+    PublicConfirmatoryLock,
+    PublicEvidenceRecord,
     PublicProgress,
     RevealReport,
     SessionRecord,
 )
-from hdmatch.participant.service import ParticipantSessionService, ParticipantStateError
+from hdmatch.participant.service import (
+    ParticipantProtocolError,
+    ParticipantSessionService,
+    ParticipantStateError,
+)
 from hdmatch.participant.store import SessionStorageError
 
 T = TypeVar("T")
@@ -32,6 +36,8 @@ def _execute(operation: Callable[[], T]) -> T:
         return operation()
     except SessionStorageError as exc:
         raise ApiProblem(404, "PARTICIPANT_SESSION_NOT_FOUND", str(exc)) from exc
+    except ParticipantProtocolError as exc:
+        raise ApiProblem(409, exc.code, str(exc)) from exc
     except ParticipantStateError as exc:
         raise ApiProblem(409, "PARTICIPANT_PHASE_CONFLICT", str(exc)) from exc
     except UnsupportedRankScopeError as exc:
@@ -51,6 +57,7 @@ def register_participant_routes(
     include_session_creation: bool = True,
     include_result_routes: bool = True,
     authorize_session: Callable[[str, str | None], None] | None = None,
+    require_mapped_question_quality: bool = False,
 ) -> None:
     """Register only participant-safe orchestration routes."""
 
@@ -103,7 +110,7 @@ def register_participant_routes(
 
     @service.post(
         "/v1/participant-sessions/{session_id}/evidence",
-        response_model=EvidenceRecord,
+        response_model=PublicEvidenceRecord,
         responses=ERROR_RESPONSES,
         operation_id="appendParticipantEvidence",
     )
@@ -114,13 +121,14 @@ def register_participant_routes(
             str | None,
             Header(alias="X-AstroHD-Session-Token"),
         ] = None,
-    ) -> EvidenceRecord:
+    ) -> PublicEvidenceRecord:
         require_access(session_id, session_token)
-        return _execute(lambda: sessions.append_evidence(session_id, request))
+        record = _execute(lambda: sessions.append_evidence(session_id, request))
+        return record.public_view()
 
     @service.post(
         "/v1/participant-sessions/{session_id}/lock",
-        response_model=ConfirmatoryLock,
+        response_model=PublicConfirmatoryLock,
         responses=ERROR_RESPONSES,
         operation_id="lockParticipantConfirmatoryEvidence",
     )
@@ -130,9 +138,15 @@ def register_participant_routes(
             str | None,
             Header(alias="X-AstroHD-Session-Token"),
         ] = None,
-    ) -> ConfirmatoryLock:
+    ) -> PublicConfirmatoryLock:
         require_access(session_id, session_token)
-        return _execute(lambda: sessions.lock_confirmatory(session_id))
+        lock = _execute(
+            lambda: sessions.lock_confirmatory(
+                session_id,
+                require_mapped_question_quality=require_mapped_question_quality,
+            )
+        )
+        return lock.public_view()
 
     if include_result_routes:
 

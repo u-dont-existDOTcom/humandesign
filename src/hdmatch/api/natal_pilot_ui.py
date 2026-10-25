@@ -50,9 +50,15 @@ _HTML = r"""<!doctype html>
 </head>
 <body>
 <main>
-  <p class="eyebrow">First test · one person</p>
-  <h1>Test AstroHD before relationship matching</h1>
-  <p class="lede">This starts with your natal chart alone. The system freezes its current trait and behavior predictions before a neutral GPT interviewer asks about you.</p>
+  <p class="eyebrow">AstroHD research · first blinded test</p>
+  <h1>Can astrology and Human Design work better together?</h1>
+  <p class="lede">This is this project's first real blinded test of astrology and Human Design, and an attempt to learn whether a combined AstroHD system can make useful personality predictions. It starts with one person's natal chart before testing relationships between two people.</p>
+  <p>The project began with a chance finding: for its creator, Joel, the two systems together appeared to describe his personality surprisingly well—but only after every inaccuracy was investigated instead of explained away. That process showed how complicated the combined system is to interpret, and how much harder it is to describe a real personality with enough nuance to test it fairly.</p>
+  <p>The astrology and Human Design studies this project is comparing against generally use much simpler personality measures than the detailed claims AstroHD makes. This study therefore needs concrete examples across different domains, life stages, contexts, and counterexamples. A quick or superficial interview cannot tell a wrong prediction from an incomplete description.</p>
+  <div class="callout">
+    <strong>Please do not take this interview in a rush</strong>
+    <p>Detailed, candid answers—including contradictions and places where a pattern does not fit—are the data. The interviewer should pause when an answer is too broad, incomplete, inconsistent, random, or unclear. If enough usable evidence cannot be obtained, the session will not produce a scientific result.</p>
+  </div>
   <div class="callout">
     <strong>What you will see afterward</strong>
     <p>The reveal shows the exact prediction-versus-answer comparisons and your true birth state/date rank within the declared candidate set. It may show support, contradiction, partial support, or insufficient evidence.</p>
@@ -63,9 +69,9 @@ _HTML = r"""<!doctype html>
     <fieldset>
       <legend>Create the sealed natal session</legend>
 
-      <label for="pilotCode">Owner pilot access code</label>
+      <label for="pilotCode">One-time owner-test invitation code</label>
       <input id="pilotCode" name="pilotCode" type="password" autocomplete="off" required>
-      <p class="note">The code is sent only in the request header, is never stored in plain text, and can create one session.</p>
+      <p class="note">This code exists because the first release is restricted to Joel's owner test, not open public recruitment. It authorizes one new session, is sent only in a request header, and is never stored in plain text.</p>
 
       <label for="birthDate">Local birth date</label>
       <input id="birthDate" name="birthDate" type="date" autocomplete="bday" required>
@@ -85,15 +91,19 @@ _HTML = r"""<!doctype html>
       <div id="placeResults" class="results" aria-live="polite"></div>
       <p id="placeChosen" class="chosen"></p>
 
-      <label for="fold">Repeated clock time, only if the page reports an ambiguity</label>
-      <select id="fold" name="fold">
-        <option value="">Not known / not ambiguous</option>
-        <option value="0">First occurrence</option>
-        <option value="1">Second occurrence</option>
-      </select>
+      <div id="foldPanel" class="hidden">
+        <label for="fold">Which occurrence of this clock time is on the birth record?</label>
+        <select id="fold" name="fold">
+          <option value="">Choose one</option>
+          <option value="0">Earlier occurrence, before the clock was moved back</option>
+          <option value="1">Later occurrence, after the clock was moved back</option>
+        </select>
+        <p class="note">This appears only in the rare case when daylight-saving clocks made the same local time happen twice. If the record does not distinguish them, this exact-time pilot cannot safely choose one for you.</p>
+      </div>
 
       <label class="check"><input id="storageConsent" type="checkbox" required><span>I consent to private storage of my exact birth data and interview evidence for this owner pilot.</span></label>
       <label class="check"><input id="openAIConsent" type="checkbox" required><span>I consent to my questionnaire answers and the birth-redacted prediction comparison being processed by OpenAI in the private AstroHD interviewer. My exact birth record and raw chart stay on this trusted site.</span></label>
+      <label class="check"><input id="effortAcknowledgment" type="checkbox" required><span>I understand this is not a quick quiz. I can take the time to give candid details, examples, exceptions, and corrections; an incomplete interview will not produce a scientific result.</span></label>
       <label class="check"><input id="developmentConsent" type="checkbox"><span>I also permit this case to be considered for a future deidentified development dataset. This is optional and does not automatically update the current model.</span></label>
 
       <button id="submitButton" type="submit">Freeze predictions and create my session</button>
@@ -108,6 +118,7 @@ const statusBox=document.getElementById('status');
 const submitButton=document.getElementById('submitButton');
 const placeResults=document.getElementById('placeResults');
 const placeChosen=document.getElementById('placeChosen');
+const foldPanel=document.getElementById('foldPanel');
 let placeCandidates=[];
 let selectedPlace=null;
 
@@ -123,16 +134,24 @@ function apiErrorMessage(problem,fallback){
 function showStatus(message,isError=false){statusBox.classList.remove('hidden','error');if(isError)statusBox.classList.add('error');statusBox.textContent=message}
 function readTwoDigit(id,max,label,optional=false){const text=document.getElementById(id).value.trim();if(optional&&!text)return 0;if(!/^\d{1,2}$/.test(text))throw new Error('Enter '+label+' as a number.');const value=Number(text);if(value>max)throw new Error('Enter '+label+' from 00 to '+String(max).padStart(2,'0')+'.');return value}
 function localDateTime(){const date=document.getElementById('birthDate').value;if(!date)throw new Error('Enter your local birth date.');const hour=readTwoDigit('birthHour',23,'birth hour');const minute=readTwoDigit('birthMinute',59,'birth minute');const second=readTwoDigit('birthSecond',59,'birth second',true);return date+'T'+String(hour).padStart(2,'0')+':'+String(minute).padStart(2,'0')+':'+String(second).padStart(2,'0')}
+async function copyText(value){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);return}const area=document.createElement('textarea');area.value=value;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();const copied=document.execCommand('copy');area.remove();if(!copied)throw new Error('Copy was blocked by the browser.')}
+function showCredentialCopyFailure(target,error){target.classList.add('error');const detail=error instanceof Error?error.message:'Copy was blocked.';target.textContent=detail+' Your credentials are still shown above; select and copy both manually.'}
 function showSession(sessionId,sessionToken){
   submitButton.disabled=true;submitButton.textContent='Session created';
   statusBox.classList.remove('hidden','error');statusBox.textContent='';
   const heading=document.createElement('strong');heading.textContent='Your sealed session is ready.';
   const sessionLabel=document.createElement('p');sessionLabel.textContent='Session ID';
   const sessionCode=document.createElement('code');sessionCode.textContent=sessionId;
+  const sessionHelp=document.createElement('p');sessionHelp.className='note';sessionHelp.textContent='This identifies which sealed prediction belongs to your interview. It contains no birth data.';
   const tokenLabel=document.createElement('p');tokenLabel.textContent='Private session token';
   const tokenCode=document.createElement('code');tokenCode.textContent=sessionToken;
-  const note=document.createElement('p');note.textContent='Copy both values into the interviewer. Do not paste your birth data or chart. The token is shown once and is stored here only as a SHA-256 digest.';
-  statusBox.append(heading,sessionLabel,sessionCode,tokenLabel,tokenCode,note);
+  const tokenHelp=document.createElement('p');tokenHelp.className='note';tokenHelp.textContent='This proves you are allowed to use that session. It is shown once; only its one-way SHA-256 digest is stored.';
+  const credentials='AstroHD session ID: '+sessionId+'\nPrivate session token: '+sessionToken;
+  const copyMessage=document.createElement('p');copyMessage.id='copyCredentialsMessage';copyMessage.className='note';copyMessage.setAttribute('aria-live','polite');
+  const copyButton=document.createElement('button');copyButton.id='copyCredentials';copyButton.type='button';copyButton.className='secondary';copyButton.textContent='Copy both credentials';copyButton.addEventListener('click',async()=>{copyMessage.classList.remove('error');copyMessage.textContent='';try{await copyText(credentials);copyButton.textContent='Both credentials copied';copyMessage.textContent='Keep the copied block private.'}catch(error){showCredentialCopyFailure(copyMessage,error)}});
+  const note=document.createElement('p');note.textContent='Paste the copied two-line block into the AstroHD interviewer. Do not paste your birth data or chart.';
+  const linkNote=document.createElement('p');linkNote.className='note';linkNote.textContent='There is deliberately no credential-bearing magic link: URLs can leak through history, logs, screenshots, or forwarding. The separate interviewer link contains no private token.';
+  statusBox.append(heading,sessionLabel,sessionCode,sessionHelp,tokenLabel,tokenCode,tokenHelp,copyButton,copyMessage,note,linkNote);
   if(interviewerUrl){const link=document.createElement('a');link.className='button';link.href=interviewerUrl;link.target='_blank';link.rel='noopener';link.textContent='Open the AstroHD interviewer';statusBox.append(link)}
   else{const pending=document.createElement('p');pending.className='note';pending.textContent='The interviewer link is not configured yet. Keep this code private.';statusBox.append(pending)}
   const result=document.createElement('a');result.className='button';result.href='./result';result.textContent='Open trusted result page after the interview';statusBox.append(result)
@@ -147,16 +166,18 @@ form.addEventListener('submit',async event=>{
   event.preventDefault();
   if(!document.getElementById('storageConsent').checked)return showStatus('Private-storage consent is required for this pilot.',true);
   if(!document.getElementById('openAIConsent').checked)return showStatus('Consent to the birth-redacted OpenAI interview is required.',true);
+  if(!document.getElementById('effortAcknowledgment').checked)return showStatus('Confirm that you can take the time needed for a complete, candid interview.',true);
   if(!selectedPlace)return showStatus('Search for and select your birthplace.',true);
   const pilotCode=document.getElementById('pilotCode').value;
   if(!pilotCode)return showStatus('Enter the owner pilot access code.',true);
   let local_datetime;try{local_datetime=localDateTime()}catch(error){return showStatus(error instanceof Error?error.message:'Check the birth time.',true)}
   const foldValue=document.getElementById('fold').value;
+  if(!foldPanel.classList.contains('hidden')&&foldValue==='')return showStatus('Choose the earlier or later occurrence shown on the birth record.',true);
   const body={local_datetime,birthplace:selectedPlace.display_name,iana_timezone:selectedPlace.iana_timezone,fold:foldValue===''?null:Number(foldValue),mode:'scientific_blind',ranking_scope:'known_birth_month'};
   submitButton.disabled=true;submitButton.textContent='Loading and freezing predictions…';showStatus('Creating the session from the verified candidate cache before any answer is accepted. This normally takes only a few seconds.');
   try{
     const response=await fetch('./v1/participant-sessions',{method:'POST',headers:{'content-type':'application/json','x-astrohd-pilot-token':pilotCode,'x-astrohd-storage-consent':'yes','x-astrohd-openai-consent':'yes','x-astrohd-development-consent':document.getElementById('developmentConsent').checked?'yes':'no'},body:JSON.stringify(body)});
-    const payload=await response.json();if(!response.ok)throw new Error(apiErrorMessage(payload,'Could not create the natal session.'));
+    const payload=await response.json();if(!response.ok){const message=apiErrorMessage(payload,'Could not create the natal session.');if(message.toLowerCase().includes('ambiguous')){foldPanel.classList.remove('hidden');throw new Error('This local clock time happened twice when clocks moved backward. Choose the earlier or later occurrence shown on the birth record, then submit again.')}throw new Error(message)};
     document.getElementById('pilotCode').value='';showSession(payload.session_id,payload.session_token)
   }catch(error){showStatus(error instanceof Error?error.message:'Could not create the natal session.',true);submitButton.disabled=false;submitButton.textContent='Freeze predictions and create my session'}
 });

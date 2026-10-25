@@ -13,16 +13,19 @@ from hdmatch.schemas import BehavioralResponse
 
 from .backend import DiscriminationDiagnostics, SelectedQuestion
 from .models import (
+    NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
     BirthIntake,
     ConfirmatoryLock,
     EvidenceInput,
     EvidenceRecord,
     ExploratoryRankingReport,
     FinalParticipantReport,
+    FrozenDimensionBinding,
     NextInterviewQuestion,
     ParticipantModelReceipt,
     PredictionComparison,
     PredictionFreeze,
+    PredictionFreezeRef,
     PublicProgress,
     RankingSnapshot,
     RankScope,
@@ -31,6 +34,7 @@ from .models import (
     SessionMode,
     SessionPhase,
     SessionRecord,
+    StoredEvidenceInput,
 )
 from .store import ParticipantSessionStore
 
@@ -38,6 +42,9 @@ from .store import ParticipantSessionStore
 class ParticipantBackend(Protocol):
     @property
     def scoreable_question_ids(self) -> frozenset[str]: ...
+
+    @property
+    def mapped_scoreable_question_ids(self) -> frozenset[str]: ...
 
     def build_prediction_freeze(
         self,
@@ -78,6 +85,14 @@ class ParticipantBackend(Protocol):
 
 class ParticipantStateError(RuntimeError):
     """Raised when an operation is invalid in the current session phase."""
+
+
+class ParticipantProtocolError(ParticipantStateError):
+    """Fail-closed protocol error with a stable API-facing code."""
+
+    def __init__(self, code: str, message: str) -> None:
+        super().__init__(message)
+        self.code = code
 
 
 class ParticipantSessionService:
@@ -159,15 +174,59 @@ class ParticipantSessionService:
             )
         else:
             raise ParticipantStateError("finalized sessions cannot accept more evidence")
+        resolved_evidence = self._resolve_evidence(session_id, evidence)
         record = EvidenceRecord(
             evidence_id="EV-" + secrets.token_hex(12).upper(),
             session_id=session_id,
             phase=evidence_phase,  # type: ignore[arg-type]
             created_at_utc=datetime.now(UTC),
-            evidence=evidence,
+            evidence=resolved_evidence,
         )
         self.store.append_evidence(record)
         return record
+
+    def _resolve_evidence(
+        self,
+        session_id: str,
+        evidence: EvidenceInput,
+    ) -> StoredEvidenceInput:
+        """Bind client evidence to exactly one immutable server-side dimension."""
+
+        values = evidence.model_dump(mode="python")
+        if not evidence.domain.natal_ranking_eligible or evidence.question_id is None:
+            return StoredEvidenceInput(**values)
+
+        freeze = self.store.load_freeze(session_id)
+        self.backend.assert_freeze_compatible(freeze)
+        matches = [
+            (index, dimension)
+            for index, dimension in enumerate(freeze.dimensions)
+            if dimension.question_id == evidence.question_id
+        ]
+        if not matches:
+            raise ParticipantProtocolError(
+                "FROZEN_QUESTION_BINDING_MISSING",
+                f"question_id {evidence.question_id!r} is absent from the session freeze",
+            )
+        if len(matches) > 1:
+            raise ParticipantProtocolError(
+                "FROZEN_QUESTION_BINDING_AMBIGUOUS",
+                f"question_id {evidence.question_id!r} has multiple frozen dimensions",
+            )
+
+        dimension_index, dimension = matches[0]
+        session = self.store.load_session(session_id)
+        binding = FrozenDimensionBinding(
+            question_id=evidence.question_id,
+            resolved_cluster_id=dimension.cluster_id,
+            freeze_ref=PredictionFreezeRef(
+                session_id=session_id,
+                freeze_sha256=session.prediction_freeze_sha256,
+            ),
+            dimension_index=dimension_index,
+            resolved_at_utc=datetime.now(UTC),
+        )
+        return StoredEvidenceInput(**values, frozen_dimension_binding=binding)
 
     def public_progress(self, session_id: str) -> PublicProgress:
         current = self.phase(session_id)
@@ -184,16 +243,26 @@ class ParticipantSessionService:
         )
         freeze = self.store.load_freeze(session_id)
         diagnostics = self.backend.discrimination(freeze=freeze, responses=responses)
-        total_scoreable = len(self.backend.scoreable_question_ids)
-        coverage = len(scoreable_ids) / total_scoreable if total_scoreable else 0.0
+        mapped_scoreable_ids = self.backend.mapped_scoreable_question_ids
+        total_mapped = len(mapped_scoreable_ids)
+        mapped_coverage = (
+            len(scoreable_ids & mapped_scoreable_ids) / total_mapped if total_mapped else 0.0
+        )
+        adequately_assessed_ids = (
+            self._latest_adequately_assessed_question_ids(confirmatory) & mapped_scoreable_ids
+        )
+        unassessed_count = max(0, total_mapped - len(adequately_assessed_ids))
         return PublicProgress(
             session_id=session_id,
             phase=current,
             confirmatory_observation_count=len(confirmatory),
             scoreable_observation_count=len(scoreable_ids),
             non_natal_observation_count=non_natal,
-            scoreable_question_count=total_scoreable,
-            scoreable_coverage=coverage,
+            mapped_scoreable_question_count=total_mapped,
+            mapped_scoreable_coverage=mapped_coverage,
+            adequately_assessed_mapped_question_count=len(adequately_assessed_ids),
+            unassessed_mapped_question_count=unassessed_count,
+            mapped_question_quality_gate_passed=total_mapped > 0 and unassessed_count == 0,
             candidate_state_count=diagnostics.candidate_state_count,
             top_state_tie_count=diagnostics.top_state_tie_count,
             top_margin_rubric_bits=diagnostics.top_margin_rubric_bits,
@@ -225,6 +294,10 @@ class ParticipantSessionService:
                 response_format=(
                     "Open narrative; concrete patterns are more useful than isolated events."
                 ),
+                minimum_evidence=(
+                    "Cover recurring patterns across the named domains with concrete examples, "
+                    "exceptions or counterexamples, and childhood-to-adult continuity or change."
+                ),
                 followups=(
                     "Which of those patterns was already visible in childhood?",
                     "Where does the pattern reliably fail or reverse?",
@@ -232,7 +305,12 @@ class ParticipantSessionService:
                 ),
             )
         responses = self._latest_scoreable_responses(records)
-        answered = frozenset(response.question_id for response in responses)
+        noninterview_question_ids = (
+            self.backend.scoreable_question_ids - self.backend.mapped_scoreable_question_ids
+        )
+        answered = (
+            self._latest_adequately_assessed_question_ids(records) | noninterview_question_ids
+        )
         selected = self.backend.select_question(
             freeze=freeze,
             responses=responses,
@@ -243,11 +321,15 @@ class ParticipantSessionService:
                 session_id=session_id,
                 question_id=None,
                 prompt=(
-                    "The frozen scoreable dimensions are covered. Ask about any remaining "
+                    "No further mapped question was selected. Ask about any remaining "
                     "important contradiction, context dependence, childhood-to-adult change, "
                     "or weakly evidenced part of the holistic profile before locking it."
                 ),
                 response_format="Open narrative.",
+                minimum_evidence=(
+                    "Resolve every consequential contradiction or explicitly leave the affected "
+                    "dimension insufficient; confirm the final profile summary before lock."
+                ),
                 followups=(
                     "What would make your current description misleading?",
                     "What is the strongest counterexample?",
@@ -259,12 +341,18 @@ class ParticipantSessionService:
             question_id=question.id,
             prompt=question.prompt,
             response_format=question.response_format,
+            minimum_evidence=question.minimum_evidence,
             followups=question.followups,
             expected_information_gain=selected.utility.expected_information_gain,
             adjusted_utility=selected.utility.adjusted_utility,
         )
 
-    def lock_confirmatory(self, session_id: str) -> ConfirmatoryLock:
+    def lock_confirmatory(
+        self,
+        session_id: str,
+        *,
+        require_mapped_question_quality: bool = False,
+    ) -> ConfirmatoryLock:
         existing = self.store.load_confirmatory_lock(session_id)
         if existing is not None:
             if self.store.load_confirmatory_ranking(session_id) is None:
@@ -277,6 +365,18 @@ class ParticipantSessionService:
             for record in self.store.load_evidence(session_id)
             if record.phase == "confirmatory_blind"
         )
+        assessed = self._latest_adequately_assessed_question_ids(records)
+        mapped_question_ids = self.backend.mapped_scoreable_question_ids
+        if require_mapped_question_quality:
+            missing = sorted(mapped_question_ids - assessed)
+            if missing:
+                preview = ", ".join(missing[:12])
+                suffix = "" if len(missing) <= 12 else f" and {len(missing) - 12} more"
+                raise ParticipantStateError(
+                    "confirmatory quality gate not met: "
+                    f"{len(missing)} frozen mapped questions still need adequate, "
+                    f"consistency-checked evidence ({preview}{suffix})"
+                )
         responses = self._latest_scoreable_responses(records)
         if not responses:
             raise ParticipantStateError(
@@ -292,6 +392,10 @@ class ParticipantSessionService:
             excluded_non_natal_evidence_count=sum(
                 not record.evidence.domain.natal_ranking_eligible for record in records
             ),
+            evidence_quality_contract_version=NATAL_EVIDENCE_QUALITY_CONTRACT_VERSION,
+            adequately_assessed_mapped_question_count=len(assessed & mapped_question_ids),
+            mapped_scoreable_question_count=len(mapped_question_ids),
+            mapped_question_quality_gate_enforced=require_mapped_question_quality,
         )
         ranking = self._calculate_ranking(
             session_id,
@@ -438,7 +542,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -449,6 +553,25 @@ class ParticipantSessionService:
             else:
                 by_question[question_id] = response
         return tuple(by_question[key] for key in sorted(by_question))
+
+    def _latest_adequately_assessed_question_ids(
+        self,
+        records: Sequence[EvidenceRecord],
+    ) -> frozenset[str]:
+        latest: dict[str, bool] = {}
+        for record in records:
+            evidence = record.evidence
+            question_id = evidence.question_id
+            if (
+                not evidence.domain.natal_ranking_eligible
+                or question_id is None
+                or question_id not in self.backend.scoreable_question_ids
+            ):
+                continue
+            latest[question_id] = (
+                evidence.minimum_evidence_passed and evidence.consistency_status.adequate
+            )
+        return frozenset(question_id for question_id, passed in latest.items() if passed)
 
     def _apply_posthoc_overrides(
         self,
@@ -462,7 +585,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()
@@ -485,7 +608,7 @@ class ParticipantSessionService:
             if (
                 not evidence.domain.natal_ranking_eligible
                 or question_id is None
-                or question_id not in self.backend.scoreable_question_ids
+                or question_id not in self.backend.mapped_scoreable_question_ids
             ):
                 continue
             response = evidence.scoring_response()
