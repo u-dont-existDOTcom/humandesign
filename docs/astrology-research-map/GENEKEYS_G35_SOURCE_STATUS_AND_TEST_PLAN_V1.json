@@ -1,0 +1,168 @@
+{
+  "schema": "HUMANDESIGN_G35_GENEKEYS_SOURCE_AND_TEST_STATUS_V1",
+  "date": "2026-10-25",
+  "original_owner_goal": "Continue source-based multi-tradition astrology research and eventually blind-test falsifiable, pre-frozen birth-chart interpretations on consenting untouched humans.",
+  "root_owner_goal_status": "OPEN",
+  "current_scope": "Answer Gene Keys inclusion and source-map reusable existing Swiss/HD geometry without manufacturing interpretive prediction rules.",
+  "classification": {
+    "gene_keys_developer": "Richard Rudd",
+    "type": "Modern independent contemplative interpretive synthesis drawing on Human Design/Rave 64-gate/I Ching natal astronomical inputs",
+    "is_GeneKeys_equivalent_to_HumanDesign": false,
+    "has_broadly_same_geometric_birth_chart_inputs": true,
+    "should_be_separate_predictive_evidence_vote_in_an_astrological_ensemble": false,
+    "independent_ephemeris_natal_variables_added_to_full_HD_chart": 0,
+    "meaningful_distinctive_component": "Shadow/Gift/Siddhi contemplative spectrum and Golden Path spheres/sequences",
+    "not_a_verified_genetic_or_neurobiological_mechanism": true,
+    "no_extra_17th_independent_astronomy_tradition_claim": true
+  },
+  "source_checks": [
+    {
+      "tier": "official_publisher",
+      "title": "How to Read Your Profile",
+      "url": "https://genekeys.com/how-to-read-your-profile/",
+      "verified_claim": "11 standard Golden Path spheres; key number 1..64; Shadow Gift Siddhi; contemplative rather than fixed trait profile"
+    },
+    {
+      "tier": "official_publisher",
+      "title": "Astrology & the Gene Keys",
+      "url": "https://genekeys.com/resource/astrology/",
+      "verified_claim": "64 equal 5.625 degree hexagrams, six equal 0.9375 degree lines, tropical zodiac, 88-day approximate prose, solar pulse dates, 14 planet sphere correlations"
+    },
+    {
+      "tier": "official_publisher",
+      "title": "Planet-to-sphere reference",
+      "url": "https://genekeys.com/docs/what-planets-does-each-sphere-of-the-golden-path-profile-correlate-to/",
+      "verified_claim": "Exact 11 natal/design planetary correlations, with Creativity/Relating/Stability listed separately as later spheres"
+    },
+    {
+      "tier": "official_publisher",
+      "title": "What is pre-natal / design and why 88 degrees?",
+      "url": "https://genekeys.com/docs/whats-a-pre-natal-design-unconscious-planet-why-88-degrees/",
+      "verified_claim": "Headline says 88 degrees while explanation says roughly 88 days; no direct official downloadable ephemeris/profile reference parity established"
+    },
+    {
+      "tier": "official_publisher",
+      "title": "Gene Keys audios and Golden Path",
+      "url": "https://genekeys.com/audios-more-information/",
+      "verified_claim": "Activation 4, Venus 6, Pearl 4 sphere references, 11 nonduplicated core positions"
+    },
+    {
+      "tier": "incumbent_project",
+      "title": "Existing Humandesign Rave Mandala",
+      "repo_path": "src/hdmatch/chart/rave_mandala.py",
+      "verified_claim": "64-gate order and start302 tropical wheel; full gate/line map reused, not copied anew"
+    },
+    {
+      "tier": "incumbent_project",
+      "title": "Existing HD birth/Design chart calculator",
+      "repo_path": "src/hdmatch/chart/calculator.py",
+      "verified_claim": "strict Swiss-file natal and exact prenatal 88 degree solar-arc chart (HD candidate, not certified Gene Keys official chart)"
+    }
+  ],
+  "astronomical_research_status": {
+    "first_core_spheres": 11,
+    "optional_additional_spheres": 3,
+    "core_activation_sequence_spheres": 4,
+    "venus_sequence_sphere_references": 6,
+    "pearl_sequence_sphere_references": 4,
+    "unique_core_spheres_after_sequence_overlap": 11,
+    "source_wheel_gate_equal_degrees": 5.625,
+    "source_wheel_line_equal_degrees": 0.9375,
+    "wheel_programming_partner_pairs": 32,
+    "natal_sun_earth_and_design_sun_earth_redundant_pair_constraints": 2,
+    "default_chart_source": "Existing HD calc from strict SwissEphemerisProvider; existing 88° design solar arc",
+    "official_88_day_vs_88_degree_wording_ambiguity_exposed": true,
+    "HD_88_degree_official_gene_keys_parity_verified": false,
+    "six_synthetic_utc_charts_computed": true,
+    "synthetic_HD_design_minus_naive_88_calendar_day_offsets_days": [
+      0.736,
+      0.9751,
+      -2.7553,
+      -3.5639,
+      0.1905,
+      -1.1455
+    ],
+    "synthetic_8_design_planet_gene_key_differences": [
+      1,
+      1,
+      4,
+      4,
+      1,
+      1
+    ],
+    "synthetic_8_design_planet_line_differences": [
+      4,
+      5,
+      7,
+      4,
+      3,
+      5
+    ],
+    "official_sun_pulse_source_cases_that_match_mandala": [
+      {
+        "date": "2020-01-06 12:00 UTC",
+        "GK": 54,
+        "line": 1
+      },
+      {
+        "date": "2026-10-15 12:00 UTC",
+        "GK": 32
+      },
+      {
+        "date": "2026-10-20 12:00 UTC",
+        "GK": 50
+      },
+      {
+        "date": "2026-10-26 12:00 UTC",
+        "GK": 28
+      }
+    ],
+    "exact_official_hologenetic_profile_goldenset_for_given_birth_utc": false,
+    "missing_goldenset_not_substituted_by_code_replay": true,
+    "C34_synthetic_marriage_data_not_reused_to_score_GeneKeys": true
+  },
+  "source_scope_and_copyright": {
+    "Richard_Rudd_full_64_explanatory_essays_copied": false,
+    "full_GeneKeys_book_locally_verified": false,
+    "Shadow_Gift_Siddhi_labels_exist_as_official_contemplative_levels": true,
+    "validated_behavioral_directional_rubric_from_primary_text": false,
+    "no_mystical_genetic_frequency_claim_treated_as_empirically_measured": true,
+    "individually_personalized_predictions_generated": false
+  },
+  "two_distinct_research_questions": [
+    {
+      "id": "G35_A_BLINDED_BIRTH_CHART_PREDICTION",
+      "hypothesis": "Prespecified Gene Keys Shadow/Gift/Siddhi or sequence interpretations predict concealed, behavior-first outcomes beyond nonastrology baselines and predeclared HD interpretation controls",
+      "scientific_role": "ASTROLOGY_PROFILE_INCREMENTAL_CLAIM",
+      "input": "same source chart geometry as HD (not an independent observational feature); independent interpretation/measurement rubric must be frozen",
+      "strong_baseline": "same participant data, full existing HD gate/line chart, matched chart decoys, birth-time quality and seasonality",
+      "operationally_frozen_GeneKeys_feature_to_human_outcome_mapping": false,
+      "untouched_humans_enrolled": 0,
+      "interpretation_source_license_and_claim_scope_pending": true,
+      "must_not_count_GeneKeys_same_gate_as_additional_independent_vote": true
+    },
+    {
+      "id": "G35_B_RANDOMIZED_CONTEMPLATION_EFFECT",
+      "hypothesis": "Gene Keys contemplation exercises produce greater preregistered improvement than an attention-matched generic journaling or contemplative control",
+      "scientific_role": "INTERVENTION_EFFICACY_NOT_NATAL_CHART_PREDICTION",
+      "input": "source-respectful non-coercive practices and participant allocation",
+      "strong_baseline": "time- and expectancy-matched reflection, blinded outcome adjudication where feasible",
+      "health_or_biological_frequency_promises": false,
+      "actual_intervention_or_randomization_started": false,
+      "finding_cannot_validate_birth_chart_calculation": true
+    }
+  ],
+  "administrative_boundary": {
+    "code_location": "docs/astrology-research-map/genekeys_g35_source_crosswalk.py",
+    "temporary_synthetic_correlation_output": "GENEKEYS_G35_SYNTHETIC_SPHERE_CROSSWALK_V1.json",
+    "existing_active_exclusive_task": "participant-session-v1",
+    "active_task_modified": false,
+    "production_chart_or_scorer_modified": false,
+    "personal_user_or_absent_third_party_charts_computed": false,
+    "real_participant_predictions_or_answers_collected": 0,
+    "systematic_GeneKeys_outcome_accuracy_estimated": false,
+    "independent_verified_gene_keys_vs_HumanDesign_profile_parity_tests_remaining": true,
+    "full_64_GeneKeys_source_interpretation_reading_remaining": true,
+    "root_scientific_goal_status": "OPEN"
+  }
+}
