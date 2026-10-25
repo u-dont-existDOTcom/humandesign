@@ -1,0 +1,41 @@
+# C33 — Hellenistic continuation after military-outcome feasibility assessment
+
+**25 October 2026. Original outcome OPEN:** preserve historically source-defined astrology candidates among 16 traditions, derive specific chart→person hypotheses without learning hidden answers, and prospectively test on untouched consenting participants with frozen predictions, baseline controls and explicit negatives. **Zero human predictive validations.** Historical source tests and synthetic birth-date engineering are not astrology efficacy.
+
+## Bootstrap and branch isolation
+
+Read live default `u-dont-existDOTcom/universal-dev-architecture/AGENTS.md` and `LESSON-INDEX.md`, live `humandesign/AGENTS.md`, this C33 handoff, [C33 report](HELLENISTIC_SOURCE_C33_REAL_HUMAN_TEST_FEASIBILITY_20261025.md), [Greek and feasibility registry](HELLENISTIC_C33_MARRIAGE_RULE_AND_FEASIBILITY_V1.json) and [unregistered study design](HELLENISTIC_C33_BLINDED_MARRIAGE_COUNT_STUDY_DRAFT_V1.json).
+
+Accepted C32 parent research commit `090f2dd84b8464cc6412a14f581d28650382a68c`; isolated new branch `research/astro-hellenistic-c33-outcome-feasibility-20261025` and worktree `/home/joel/development-worktrees/humandesign/astro-hellenistic-c33-outcome-20261025`. All new files live under `docs/astrology-research-map/`. The separate root `tasks/ACTIVE-TASK.json` exclusive owner task `participant-session-v1`, production scorer and other historical/Chinese/Jyotish branches are **not modified**. Never consume the owner's known natal/relationship biographies as a blind person. No secret API, paid archival requests or user military/marriage record retrieval authorized here.
+
+## Actual research advance: source claim with a common outcome, no Ascendant needed
+
+1. C30 Dorotheus Lot-of-Expedition source remains valid as a documentary claim, and C32 independent IAU angles and observed IERS data remain intact (329 inherited source tests). **NARA's official description** says full U.S. service records are publicly opened **62 years after separation**, and **detailed battles/engagement participation is NOT contained in those files**. Source https://www.archives.gov/veterans/military-service-records/about-service-records . No representative, untouched cohort with both verified birth times and campaign involvement has been identified, so do not pretend the archive solves the outcome collection problem.
+2. Directly read **Ptolemy `Tetrabiblos` IV.5.2 and 4.5.4 original Greek** in Boll/Boer text https://beta.perseus.tufts.edu/urn:cts:greekLit:tlg0363.tlg007.1st1K-grc1:4.5/ , cross-checked Robbins Loeb 1940 English https://penelope.uchicago.edu/thayer/e/roman/texts/ptolemy/tetrabiblos/4b*.html and independent modern Greek Eulogikon markdown SHA256 `7d337a6314d3a68cca0bd310355e4737b393180e1b287415ee6eddfe34b9f630`. In the ancient text, **men→Moon** and **women→Sun** in a **bicorporeal** sign are one *disjunct* associated with **multiple marriages**; Ptolemy I.11 names the four signs **Gemini, Virgo, Sagittarius, Pisces**. Do NOT infer a participant's sex or force those ancient binary social categories into modern identities. Full text additionally describes **multiform signs, one/multiple planetary applications and other marriage conditions** that may overlap/conflict. Implemented ONLY the positive bicorporeal-sign subclause, not the entire original reading; **nonpositive lunar sign NEVER means exactly one marriage**.
+3. [C33 research-only sign classifier](hellenistic_c33_ptolemy_marriage_count.py) calls the existing strict `SwissEphemerisProvider` for Moon or Sun, maps exact 30° tropical sign bins, and tests a full uncertain UTC birth-time interval with the existing upstream nominal maximal speed bound (Moon 16°/day; Sun 1.1°/day). The bound is upstream-declared but **NOT independently proven across all possible study-era dates**. Output remains **conditional, never a real human prediction** until the bound/timezone source is certified. No angles/houses required; this independent source lane avoids C30's angle bottleneck.
+4. [Full 2020 synthetic UTC-day receipt](HELLENISTIC_C33_UTC_2020_SYNTHETIC_CLASSIFIER_V1.json) has **366 anonymous date windows**, with **55 sign-positive stable, 186 sign-nonpositive stable, 125 unresolved**, i.e. **241/366 (65.8%)** conditionally classifiable without an exact minute at the *chosen declared bound*. UTC days are not real local birth calendars; this is not an estimate of feasible participants. Among the stable days only **55/241 (22.8%)** are positive. Keep that post-filter shift distinct from one-third unfiltered sign coverage.
+5. [Power what-if worksheet](HELLENISTIC_C33_HYPOTHETICAL_POWER_V1.json): arbitrary 1% vs 2% combat-campaign incidence with q=1/3 needs ~4,975 total under naive independent two-proportion approximation; arbitrary 15% vs 25% remarriage incidence needs ~548 if q=1/3, ~677 under the particular synthetic q=55/241. **NONE are measured prevalence, registered effect sizes or firm cohort-size requirements.** Recruiting only ever-married or known-deployed people biases the test.
+6. US Census ACS B12505 measures population **number of times married**, URL https://data.census.gov/table/ACSDT1Y2024.B12505 and SIPP report details marital history, but these public aggregate data do **not** include identifiable birth time/longitude for chart testing. Need a new **consenting** genuinely untouched source population if a test is authorized.
+
+## What to do next, without more manuscript collection
+
+The most useful Hellenistic follow-up is to develop a **small private participant intake and pre-answer freeze** for the *source-limited* Ptolemy male-Moon bicorporeal subrule, using a self-reported or verified count of **legally recognized marriages by age 50** (the 50 cutoff is *analyst chosen*, not in Greek), with separate declared customary/religious union outcome definitions. Recruit irrespective of marriage history, keep participants and adjudicators blind to chart implications, capture independent birth/zone precision and observational age, and freeze the exact source, chart engine, cohort exposure, question wording and nonastrology null before revealing any answers. Compare indicated and nonindicated *without calling the latter predicted one marriage*. Use country/decade/season/marriage-law baselines, not known-birth-profile feedback. The historical female-Sun branch is a separate secondary test and almost fully confounded with birth season. **No enrollment was started and no answer or prediction has been frozen on real people.**
+
+Implementation is **research only**; the full `participant-session-v1` existing live worker/branch is not a target, and no human health, sexuality, relationship advice or status judgment follows from this source. The broad sixteen-tradition project is not finished. If the actual cohort cannot be collected with consent, stop claiming a human test was performed; preserve C33 and select a better verified data source/outcome without post-hoc source-rule alteration.
+
+## Verifiable commands
+
+From C33 worktree with existing verified `pyswisseph` in `/home/joel/humandesign/.venv`:
+
+```bash
+PYTHONPATH=src /home/joel/humandesign/.venv/bin/python -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic_c33_*.py' -v
+PYTHONPATH=src /home/joel/humandesign/.venv/bin/python -m unittest discover -s docs/astrology-research-map -p 'test_hellenistic_*.py'
+PYTHONPATH=src /home/joel/humandesign/.venv/bin/python docs/astrology-research-map/hellenistic_c33_feasibility_synthetic.py --ephemeris-dir /home/joel/humandesign/data/ephemeris --out /tmp/c33-replay.json
+```
+
+C33 focused tests **18 passed at the last observed run**; full-source total and final publication commit must be added only after exact verification.
+
+
+## Verified checkpoint status
+
+**18/18 C33 focused** and **347/347 cumulative Hellenistic source/engineering** unit tests passed, exit0, with complete C32 optional ERFA/IERS source inputs (not skipped). The 366-row synthetic date-window dataset and assumed-event-rate worksheets both reproduced byte-for-byte. This is a completed source/feasibility subtask, NOT completion of empirical real-human astrology testing. The existing `participant-session-v1` exclusive active task remains unrelated and unmodified.

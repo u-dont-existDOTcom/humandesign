@@ -1,0 +1,44 @@
+{
+  "human_predictions_tested": 0,
+  "ignores_ascertainment_bias_clustering_and_birth_data_exclusion": true,
+  "method": "normal-approximation unequal-allocation difference-in-proportions",
+  "nominal_power": 0.8,
+  "not_a_real_study_sample_size_commitment": true,
+  "scenario_rows": [
+    {
+      "assumed_exposed_event_risk": 0.02,
+      "assumed_unexposed_event_risk": 0.01,
+      "candidate": "C30_DOROTHEUS_CAMPAIGN",
+      "estimated_total_N_unadjusted": 4975,
+      "exposed_fraction_assumed": 0.3333333333333333,
+      "id": "WAR_LOW_HYPOTHETICAL"
+    },
+    {
+      "assumed_exposed_event_risk": 0.045,
+      "assumed_unexposed_event_risk": 0.03,
+      "candidate": "C30_DOROTHEUS_CAMPAIGN",
+      "estimated_total_N_unadjusted": 5513,
+      "exposed_fraction_assumed": 0.3333333333333333,
+      "id": "WAR_MODERATE_HYPOTHETICAL"
+    },
+    {
+      "assumed_exposed_event_risk": 0.25,
+      "assumed_unexposed_event_risk": 0.15,
+      "candidate": "C33_PTOLEMY_MORE_THAN_ONE",
+      "estimated_total_N_unadjusted": 548,
+      "exposed_fraction_assumed": 0.3333333333333333,
+      "id": "MARRIAGE_LARGE_HYPOTHETICAL"
+    },
+    {
+      "assumed_exposed_event_risk": 0.25,
+      "assumed_unexposed_event_risk": 0.2,
+      "candidate": "C33_PTOLEMY_MORE_THAN_ONE",
+      "estimated_total_N_unadjusted": 2435,
+      "exposed_fraction_assumed": 0.3333333333333333,
+      "id": "MARRIAGE_SMALL_HYPOTHETICAL"
+    }
+  ],
+  "schema": "HUMANDESIGN_C33_HYPOTHETICAL_POWER_SCENARIOS_V1",
+  "status": "SCENARIO_ASSUMPTIONS_NOT_MEASURED_BASE_RATES",
+  "two_sided_alpha": 0.05
+}

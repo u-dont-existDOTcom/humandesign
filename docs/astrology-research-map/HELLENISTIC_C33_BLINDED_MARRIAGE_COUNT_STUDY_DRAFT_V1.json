@@ -1,0 +1,113 @@
+{
+  "schema": "HUMANDESIGN_C33_MARRIAGE_COUNT_BLIND_STUDY_DRAFT_V1",
+  "date": "2026-10-25",
+  "state": "DEVELOPMENT_DESIGN_ONLY_NOT_REGISTERED_NOT_STARTED",
+  "original_owner_objective": "test source-attested historical astrology claims on truly untouched consenting people, frozen before answers, with matched chart decoys and nonastrology baselines",
+  "historical_source_key": "PTOLEMY_TETRABIBLOS_IV_5",
+  "strict_scope": "SIGN_ONLY_SUBRULE_FROM_OR_PHRASE__NOT_COMPLETE_PTOLEMAIC_ASTROLOGY",
+  "primary_branch": "men_moon_BICORPOREAL_SIGN",
+  "secondary_branch": "women_sun_BICORPOREAL_SIGN_SEASONAL_CONFOUNDING",
+  "historical_condition": [
+    "Gemini",
+    "Virgo",
+    "Sagittarius",
+    "Pisces"
+  ],
+  "historical_predicted_consequence": "more than one marriage, in original Greek",
+  "modern_primary_outcome": {
+    "endpoint": "two or more separately constituted legally recognized marriages by attained age 50",
+    "date_cutoff_age": 50,
+    "cutoff_is_analyst_choice_not_in_Greek": true,
+    "include_never_married_in_denominator": true,
+    "do_not_condition_enrollment_on_ever_married": true,
+    "objective_to_blind_analyst": true,
+    "source_difference": "Lawful cohabitation in Roman-Egyptian context is not automatically identical to modern registered marriage",
+    "marriages_vs_long_term_partnerships": "never silently equated",
+    "customary_religious_polygamous_union_handling": "Separate predeclared cultural subgroups and sensitivity outcomes; no post-hoc selection to rescue misses",
+    "no_marriage_censored_vs_true_zero": "observational age window and missing responses tracked",
+    "partial_birth_time": "Allowed only if source body sign/positive-condition stable across the fully verified plausible UTC interval under certified speed enclosure; else abstain",
+    "self_report_reliability": "Capture first/second event years where feasible, voluntary documents if available, preserve participant privacy",
+    "source_binary_gender_limit": "Use chosen historical-text cohort under consent; do not infer or classify unconsenting or nonbinary identities and do not extrapolate Ptolemy's binary prescriptions",
+    "unadministered_question_draft": "By your 50th birthday, how many separate legally recognized marriages had you entered? 0 / 1 / 2 / 3 or more / Unsure / Prefer not to answer",
+    "question_not_frozen_or_fielded": true
+  },
+  "minimum_input_requirements": [
+    "pseudonymous participant ID",
+    "independent actual or documented birth date; birthplace region/time zone source",
+    "exact time if documented OR independently proven stable source-sign interval over all plausible birth times",
+    "participant consent and historical source branch choice without forcing a binary category",
+    "observational age/country/sex-history stratum and marriage-count answer collected only AFTER predictions frozen"
+  ],
+  "freeze_before_any_outcome": [
+    "source edition and translated literal outcome",
+    "explicit positive-only sign subrule and overlapping Ptolemaic alternative conflict labels",
+    "tropical equinox-of-date convention and strict Swiss .se1 file hashes and returned calculation flags",
+    "input-tuple quality, uncertainty and IANA timezone dataset version",
+    "for date-only participants, independently certified maximum Moon or Sun motion over full input interval; else abstain",
+    "participant pseudonyms, candidate universe, births, eligibility, exposed/nonexposed, all errors and abstentions",
+    "primary outcome definition including by-age 50 and selected historical legal culture scope",
+    "matching controls, question wording, distribution and participant age/region/calendar-decade strata",
+    "null and effect parameter, blinded scoring code, holdout person split and nonastrological baseline",
+    "prediction export SHA256 and timestamp before a respondent sees the marriage-history question"
+  ],
+  "primary_statistic": "precommitted one-directional event enrichment P(>=2 marriages by age50 | source-positive sign) - P(>=2 | other signs) within matched cohort strata",
+  "source_uses_nonpositive_as_control_not_a_literal_one_marriage_prediction": true,
+  "possible_conflicts": "Single-figure or single-applying-planet clauses and multiform/multiple-application clauses remain unimplemented; sign-only subrule is an exploratory partial interpretation with predeclared textual limitations",
+  "no_sun_month_natal_increment_claim": true,
+  "seasonal_confounding_control": "For Sun secondary arm, natal zodiac sign is a deterministic season-of-birth proxy. Report vs birth-month-only predictors; do not claim incremental information simply because a seasonal difference appears",
+  "confounders_beyond_birth_chart": [
+    "country/state and legal/customary marriage practice",
+    "age and birth decade",
+    "sex-specific historical source restriction",
+    "socioeconomic and education self-report if consensually collected",
+    "calendar birth season or birth-month baseline",
+    "religion and other sensitive covariates NOT collected without separate informed consent/necessity"
+  ],
+  "sample_feasibility": {
+    "public_population_count_exists": "U.S. Census ACS B12505 number of times married",
+    "public_source": "https://data.census.gov/table/ACSDT1Y2024.B12505",
+    "public_aggregate_does_not_supply_natal_chart_inputs": true,
+    "no_matching_birthdate_time_individual_public_data_found": true,
+    "synthetic_2020_UTC_date_window_stable_fraction": "241/366, conditional on unverified speed bound",
+    "synthetic_date_window_positive_among_resolved_fraction": "55/241 (not expected true-cohort exposure proportion)",
+    "nominal_assumption_rates_not_empirical": [
+      {
+        "p0": 0.15,
+        "p1": 0.25,
+        "exposure_fraction": "1/3",
+        "N_total_normal_approx": 548
+      },
+      {
+        "p0": 0.15,
+        "p1": 0.25,
+        "exposure_fraction": "55/241 synthetic illustration",
+        "N_total_normal_approx": 677
+      },
+      {
+        "p0": 0.2,
+        "p1": 0.25,
+        "exposure_fraction": "1/3",
+        "N_total_normal_approx": 2435
+      },
+      {
+        "p0": 0.2,
+        "p1": 0.25,
+        "exposure_fraction": "55/241 synthetic illustration",
+        "N_total_normal_approx": 3049
+      }
+    ],
+    "no_power_guarantee_or_N_gate_added": true
+  },
+  "execution_status": {
+    "private_birth_intake_program_launched": false,
+    "actual_cohort_consented": false,
+    "questions_administered": false,
+    "participant_birthdata_unseen_by_this_task": true,
+    "predictions_frozen_for_real_people": false,
+    "response_records_loaded": false,
+    "blinded_human_performance_observed": false,
+    "score_or_effect_size_estimated": false,
+    "source_rule_production_promoted": false,
+    "current_parent_goal": "OPEN"
+  }
+}

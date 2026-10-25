@@ -1,0 +1,101 @@
+{
+  "schema": "HUMANDESIGN_C33_PTOLEMY_MARRIAGE_COUNT_AND_FEASIBILITY_V1",
+  "authored_date": "2026-10-25",
+  "owner_goal": {
+    "status": "OPEN",
+    "purpose": "Historical source-faithful astrology as one part of 16 traditions followed by frozen prospective blind person-level outcome tests with decoys and nonastrology controls",
+    "unvalidated_human_count": 0,
+    "production_scorer_changes": 0
+  },
+  "source": {
+    "original_attribution": "Claudius Ptolemaeus Tetrabiblos",
+    "edition": "F. Boll / E. Boer, Greek Tetrabiblos IV.5, Perseus edition text",
+    "original_greek_url": "https://beta.perseus.tufts.edu/urn:cts:greekLit:tlg0363.tlg007.1st1K-grc1:4.5/",
+    "verses": [
+      "4.5 section 2",
+      "4.5 section 4"
+    ],
+    "minimal_greek_anchors": [
+      "ἐπὶ μὲν τῶν ἀνδρῶν ἀφορᾶν δεῖ τὴν σελήνην",
+      "ἐν δισώμῳ ἢ καὶ πολυμόρφῳ",
+      "πολυγάμους",
+      "ἐπὶ δὲ τῶν γυναικῶν ἀφορᾶν δεῖ τὸν ἥλιον"
+    ],
+    "greek_edition_secondary_corroboration": "https://eulogikon.org/works/ptolemy-alexandria-tetrabiblos-phs-ai",
+    "greek_full_modern_Eulogikon_markdown_sha256": "7d337a6314d3a68cca0bd310355e4737b393180e1b287415ee6eddfe34b9f630",
+    "greek_full_markdown_bytes": 484328,
+    "English_1940_Loeb_Robbins": "https://penelope.uchicago.edu/thayer/e/roman/texts/ptolemy/tetrabiblos/4b*.html",
+    "Ptolemy_I_11_bicorporeal_source": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/1b*.html",
+    "historical_gender_binaries_scope": "Men->Moon; women->Sun, as worded in transmitted text; categories not inferred for actual participants",
+    "source_qualifications": [
+      "The Moon in bicorporeal OR multiform sign OR applying to multiple planets in same sign is translated as multiple marriages; the source also has separate monomorphic-or-single-application one-marriage clauses",
+      "The Sun's corresponding passage uses bicorporeal/multiform signs or configuration with several oriental planets",
+      "Multiple disjunctive clauses may overlap and even produce contradictory outputs if naively executed independently",
+      "A single positive bicorporeal-sign subrule is not an exclusive natal or personality prediction",
+      "The ancient Greek speaks of lawful cohabitation/marriage in its own historical conditions, not modern legal marriage certificates or a specific age cutoff"
+    ],
+    "sign_set_from_Ptolemy_I_11": [
+      "Gemini",
+      "Virgo",
+      "Sagittarius",
+      "Pisces"
+    ],
+    "unimplemented_source_families": [
+      "multiform signs not identical to Ptolemy 4 bicorporeal",
+      "application to one/multiple planets",
+      "Sun application to oriental planets",
+      "marriage frequency and timing other clauses"
+    ],
+    "source_photo_critical_manuscript_checked": false,
+    "owner_existing_relationship_history_not_used_for_selection_scoring_or_validation": true
+  },
+  "research_classifier": {
+    "source_bicorporality_positive_outcome": ">1 lawful marriage, no specific cutoff in the source",
+    "source_negative_branch": "NO_ASSERTION_FROM_THIS_SUBRULE; never predict exactly one marriage merely because Moon/Sun outside four signs",
+    "primary_technical_branch": "men_moon",
+    "secondary_technical_branch": "women_sun",
+    "moon_uses_tropical_longitude_0_360": "tropical convention consistent with prior project source-lane; explicit choice rather than tested against results",
+    "implements_original_planetary_application_conditions": false,
+    "annual_sample_2020_calendar_synthetic_only": true,
+    "source_declared_Moon_max_speed_deg_day": 16,
+    "full_historical_speed_bound_independently_certified": false,
+    "birth_window_interval_can_conditionally_classify_without_exact_minute": true,
+    "timezone_birthplace_verification_still_needed": true,
+    "outside_window_sign_outcome_abstains": true,
+    "true_human_prediction_frozen": false
+  },
+  "outcome_human_study_DRAFT": {
+    "main_candidate": "C33_PTOLEMY_MEN_MOON_IN_BICORPOREAL_SIGN",
+    "primary_endpoint_PROPOSED": "Two or more distinct legally or legally equivalent recognized unions by attained age 50",
+    "non_astrological_comparator": "Cohort/region/law/sex group/education/age-aware risk model, optionally full birth-month seasonality; choose before seeing chart-associated responses",
+    "cohort_selection": "Recruit adults independently of marriage history, natal placements and belief in astrology; age >=50 proposed analytic maturity cutoff, not ancient source stipulation",
+    "source_gender_scope": "Ptolemy's male-text arm primary; Sun female-text arm secondary, not mechanically generalized to modern identity categories without participant choice/approval",
+    "outcome_sensitivity": "Legal civil marriage count vs customary/religious legal equivalents vs cohabitation must remain separate registered sensitivity definitions",
+    "potential_censoring": "Death, incomplete marriage records and age at observation must be addressed",
+    "unknown_information": "No records, ambiguous customary union definition, insufficient source birth window - UNRESOLVED not positive",
+    "enrollment_started": false,
+    "any_real_participant_outcome_loaded": false,
+    "consent_approvals_received": false,
+    "true_chart_predictions_frozen": false,
+    "any_empirical_astrology_performance_claim": false,
+    "no_high_stakes_relationship_inference": true
+  },
+  "practical_feasibility": {
+    "military_rule": "C30_DOROTHEUS_LOT_OF_EXPEDITION",
+    "NARA_62year_public_rule": "https://www.archives.gov/veterans/military-service-records",
+    "NARA_battles_engagements_not_in_OMPF": "https://www.archives.gov/veterans/military-service-records/about-service-records",
+    "veteran_deployment_not_inferred_from_discharge_file": true,
+    "matched_untouched_source_cohort_with_verified_military_campaign_and_birth_time_currently_available": false,
+    "marriage_register_evidence": "https://data.census.gov/table/ACSDT1Y2024.B12505",
+    "U_S_Census_2021_report": "https://www.census.gov/newsroom/press-releases/2021/marriages-and-divorces.html",
+    "marriage_outcome_population_reported_and_observable": true,
+    "SIPP_detailed_marriage_history_reference": "https://www.census.gov/library/publications/2021/demo/p70-167.html",
+    "census_does_NOT_include_usable_public_individual_birth_times_in_these_tabulations": true,
+    "no_shared_public_record_linkage_established": true,
+    "candidate_order_for_next_untouched_human_pilot": [
+      "C33_MARRIAGE_COUNT_SOURCE_SUBRULE",
+      "C30_DOROTHEUS_CAMPAIGN_DEVELOPMENT_ONLY"
+    ],
+    "direct_consequence": "Marriage-count outcome is feasible via consenting individual response/records, whereas open historical military files generally cannot verify battle participation and often lack birth time. Neither currently has an actual consenting blinded cohort."
+  }
+}
