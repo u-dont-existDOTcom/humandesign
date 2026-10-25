@@ -1,0 +1,75 @@
+{
+  "schema": "WESTERN_PRIVATE_NATAL_BRIDGE_METHOD_SCOPE_V0",
+  "date": "2026-10-25",
+  "owner_root_goal": "OPEN: source-differentiated historically auditable astrology across traditions, ultimately blind predictive comparison against genuinely untouched human data and matched/null controls",
+  "stage": "ENGINEERING_SYNTHETIC_ONLY_NOT_LIVE_TRIAL_OR_PREDICTION_FREEZE",
+  "parent_commit": "c228948bcac71c9f275b3e3e057b190ea1891d55",
+  "diagnostic": {
+    "not_authentic_full_lilly_or_argoli": true,
+    "geometry": "regiomontanian_position_circle",
+    "time_key": "ptolemy_one_degree_per_year",
+    "direction": "software_shortest_signed_direct",
+    "ray_aspects": [
+      "sextile",
+      "square",
+      "trine",
+      "opposition"
+    ],
+    "ray_latitude": 0,
+    "symbolic_age_half_open": [
+      18,
+      65
+    ],
+    "all_source_rule_families_kept": 8,
+    "two_tentative_occupational_endpoints": [
+      "L1647-MC-JUP-BODY",
+      "L1647-MC-SAT-BODY"
+    ],
+    "remaining_six_source_families": "explicitly unresolved/no scoreable timing window",
+    "branch_difference": "Original 96 synthetic sample 0.4233% occupancy used proportional semi-arc, not this Regiomontanian adapter; DO NOT transfer its incidence to the new method"
+  },
+  "ephemeris": {
+    "files": {
+      "sepl_18.se1": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+      "semo_18.se1": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+    },
+    "requested_mode": "SWIEPH",
+    "must_verify_returned_mode": true,
+    "geographic_east_positive": true,
+    "birth_input_is_explicit_utc": true,
+    "local_timezone_dst_resolution": "CALLER_RESPONSIBILITY_NOT_IMPLEMENTED"
+  },
+  "privacy": {
+    "real_natal_input_used": false,
+    "input_interface": "private JSON file outside repository, chmod 0600, no symlink",
+    "key_interface": "external random >=32 byte HMAC secret file chmod 0600, never Git",
+    "digest": "HMAC-SHA256 on normalized birth input and on full sampled natal feature vectors; unkeyed SHA-256 of low entropy birth input is prohibited",
+    "output": "sanitized receipt to external write-once chmod 0600 JSON file, reject write into repository",
+    "all_human_birth_fields_in_output": false,
+    "synthetic_tests_have_only_fictional_birth_data": true,
+    "human_model_study_stage": "NOT_REGISTERED_NOT_ENROLLED",
+    "historical_prediction_accuracy": "UNTESTED"
+  },
+  "birth_time_uncertainty": {
+    "integer_minute_range_supported": [
+      0,
+      15
+    ],
+    "all_symmetric_offsets_mandatory": true,
+    "sampling_grid": "one-minute discrete, not a mathematically rigorous continuous bound",
+    "unresolved_if_source_not_ready_or_disappears_at_any_sample": true,
+    "no_best_birth_minute_allowed": true,
+    "symbolic_window_half_width_years": 0.5,
+    "historical_time_key_verified": false
+  },
+  "missing_before_real_testing": [
+    "Independent birth-time certification and local timezone/DST normalization",
+    "Consent and legal privacy/storage policy",
+    "External write-once evidence plus timestamp for actual prediction freeze",
+    "Separate assessor-coded occupational opportunity and dated outcome records",
+    "Predeclared event-domain eligibility and primary scalar score/matched controls",
+    "Prospective or genuinely untouched cohort split",
+    "Other astrology arms source-mapped and independently frozen"
+  ],
+  "human_predictive_accuracy": "UNTESTED"
+}
