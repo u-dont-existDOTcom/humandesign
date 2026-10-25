@@ -1,0 +1,184 @@
+{
+  "schema": "ARGOLI_1610_1667_ALIGNED_DIRECTION_EXAMPLES_V1",
+  "date": "2026-10-25",
+  "owner_root_goal": "OPEN: historically differentiated astrology models and prospective blinded human predictive validity compared against controls. Here: source arithmetic only.",
+  "source_hierarchy": {
+    "edition_1610": {
+      "author": "Andrea Argoli",
+      "title": "Tabulae primi mobilis",
+      "place": "Rome",
+      "year": 1610,
+      "holding": "Augsburg, Staats- und Stadtbibliothek; digitized by Bayerische Staatsbibliothek",
+      "bsb_id": "bsb11218073",
+      "full_iiif_manifest": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb11218073/manifest",
+      "full_iiif_manifest_sha256": "059bf74a74e89fa423987304001979761e0b7274df220ac1ad1524e954225fc7",
+      "source_rights": "https://rightsstatements.org/vocab/NoC-NC/1.0/",
+      "pages": [
+        {
+          "printed": 39,
+          "iiif_leaf": 51,
+          "chapter": "XIII",
+          "file": "aligned_witness_pages/Argoli_1610_scan_0051.jpg",
+          "sha256": "45912c1a80c4b7d67ee827fc3e780f96cfd5410dfedb2c601244b394f37d7ff8"
+        },
+        {
+          "printed": 40,
+          "iiif_leaf": 52,
+          "chapter": "XIII",
+          "file": "aligned_witness_pages/Argoli_1610_scan_0052.jpg",
+          "sha256": "cd5830b21d7ac1dce865bb3ba5a148bfde97235398b32b2cfc7001114d3e2a08"
+        },
+        {
+          "printed": 41,
+          "iiif_leaf": 53,
+          "chapter": "XIII",
+          "file": "aligned_witness_pages/Argoli_1610_scan_0053.jpg",
+          "sha256": "51ea1959dfce334bb0ef4353dc1844dd340cefff64a77bf960b49e1c86bc1fa2"
+        }
+      ]
+    },
+    "edition_1667": {
+      "author": "Andrea Argoli",
+      "title": "Primi mobilis tabulae",
+      "place": "Padua",
+      "year": 1667,
+      "original_witness": "Internet Archive primimobilistab00argogoog, Michigan digitization of preliminary 107-leaf excerpt, not the full printed book",
+      "parent_original_pdf": "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_volume/Andrea_Argoli_Primi_Mobilis_Tabulae_1667_original_partial_volume.pdf",
+      "parent_original_pdf_sha256": "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d",
+      "pages": [
+        {
+          "printed": 29,
+          "pdf_leaf": 42,
+          "chapter": "XV",
+          "file": "aligned_witness_pages/Argoli_1667_scan_0042.jpg",
+          "sha256": "bad9997b406a9ed45599f186f0d83bd38300a3ebf5659d27d84e39444e7a1021"
+        },
+        {
+          "printed": 30,
+          "pdf_leaf": 43,
+          "chapter": "XV",
+          "file": "aligned_witness_pages/Argoli_1667_scan_0043.jpg",
+          "sha256": "2bff7a1d884c08db1509832650fe10471e0b6305f29c72949330231e3896186a"
+        }
+      ]
+    },
+    "additional_1667_table_volume": {
+      "independent_source": "University of Turin original via Internet Archive bub_gb_065WxfytjWIC",
+      "physical_pdf_leaves": 1036,
+      "pdf_sha256": "2eacb5bb7f5b28f99dfea3d60c8728ddb467a33c53aebfbeb149606b8e4e87fc",
+      "local_file": "~/.local/share/hdmatch/research-artifacts/argoli-full-editions-20261025/Argoli_1667_Turin_Full_Volume_Archive_bub_gb_065WxfytjWIC.pdf",
+      "source_url": "https://archive.org/download/bub_gb_065WxfytjWIC/bub_gb_065WxfytjWIC.pdf",
+      "observed_extent": "Contains extensive tabula positionum and ascensionum obliquarum leaves in reverse printed-page order; first sampled leaves are tables, not the p.29–30 prose; not an independent check of the printed 45°22′ error."
+    }
+  },
+  "chapter_alignment": {
+    "source_1610": "printed p.39 CAPUT XIII / De directione significatorum extra angulos in parte caeli ascendente",
+    "source_1667": "printed p.29 CAP XV / De directione significatorum extra angulos in parte caeli ascendente",
+    "status": "MATCHED_CHAPTER_BY_HEADING_PROCEDURE_AND_IDENTICAL_SAMPLES_DESPITE_RENUMBERING",
+    "limitation": "Identical passages do not prove all formulae, term tables, direction timing, or editions equivalent."
+  },
+  "worked_examples": [
+    {
+      "id": "FORTUNE_TO_OPPOSITION_SUN",
+      "description": "Part of Fortune directed to a solar opposition using oblique ascensions at the same fictitious pole",
+      "source_1610_page": 39,
+      "source_1667_page": 29,
+      "first_operand_deg_min": [
+        162,
+        50
+      ],
+      "second_operand_deg_min": [
+        125,
+        11
+      ],
+      "printed_1610_deg_min": [
+        37,
+        39
+      ],
+      "printed_1667_deg_min": [
+        37,
+        39
+      ],
+      "arithmetically_computed_deg_min": [
+        37,
+        39
+      ],
+      "comparison": "EXACT_AGREEMENT"
+    },
+    {
+      "id": "SATURN_POSITION_POLE",
+      "description": "Subdegree interpolation yields Saturn position pole; separate intermediate check, not event timing",
+      "source_1610_page": 41,
+      "source_1667_page": 30,
+      "first_operand_deg_min_sec": [
+        14,
+        20,
+        0
+      ],
+      "subtrahend_deg_min_sec": [
+        0,
+        5,
+        30
+      ],
+      "printed_1610_deg_min_sec": [
+        14,
+        14,
+        30
+      ],
+      "printed_1667_deg_min_sec": [
+        14,
+        14,
+        30
+      ],
+      "arithmetically_computed_deg_min_sec": [
+        14,
+        14,
+        30
+      ],
+      "comparison": "EXACT_AGREEMENT"
+    },
+    {
+      "id": "SATURN_TO_OPPOSITION_SUN",
+      "description": "Directional arc from printed pair of oblique ascensions",
+      "source_1610_page": 41,
+      "source_1667_page": 30,
+      "first_operand_deg_min": [
+        163,
+        17
+      ],
+      "second_operand_deg_min": [
+        119,
+        55
+      ],
+      "printed_1610_deg_min": [
+        43,
+        22
+      ],
+      "printed_1667_deg_min": [
+        45,
+        22
+      ],
+      "arithmetically_computed_deg_min": [
+        43,
+        22
+      ],
+      "printed_1667_error_in_arc_minutes": 120,
+      "comparison": "PRINTED_1667_RESULT_DISAGREES_WITH_BOTH_OPERANDS_AND_1610_BY_2_DEGREES",
+      "source_certainty": "Both readings visually examined in two facsimiles; only the Michigan 1667 prose copy was inspected for this printed result. A second 1667 original prose copy is required to determine copy-specific versus edition-wide misprint."
+    }
+  ],
+  "historical_method_status": "EXACT_LOCAL_TEXT_AND_ARITHMETIC_PARITY_FOR_SOME_WORKED_EXAMPLES; COMPLETE_1610_OR_1667_METHOD_UNRESOLVED",
+  "edition_1644": {
+    "status": "LOCATED_ONLY_PRIMARY_METHOD_PAGES_NOT_VIEWED",
+    "known_ids": [
+      "55A7UHqfQi4C",
+      "KW9-ZybQ8eMC",
+      "bpt6k511622",
+      "bpt6k51163d"
+    ],
+    "access": "Google Books returned HTTP 429; Gallica IIIF 403 from authorized remote; no unsupported comparison"
+  },
+  "empirical_human_predictive_accuracy": "UNTESTED",
+  "no_private_natal_data_used": true,
+  "do_not_merge_with_human_validation": true
+}
