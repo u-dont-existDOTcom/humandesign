@@ -1,0 +1,120 @@
+{
+  "body": {
+    "actual_human_predictions": 0,
+    "any_source_effect_measured_in_real_population": false,
+    "birth_sign_condition_indeterminate": 125,
+    "cohort_size": 366,
+    "freeze_sha256": "d6405eca803e5fdb6d990266e0290d1de9ba980cee996886654f9257c3c49216",
+    "matched_month_strata": [
+      {
+        "scored": 20,
+        "source_comparator_count": 16,
+        "source_comparator_mock_risk": 0.0625,
+        "source_positive_count": 4,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-01"
+      },
+      {
+        "scored": 19,
+        "source_comparator_count": 16,
+        "source_comparator_mock_risk": 0.25,
+        "source_positive_count": 3,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-02"
+      },
+      {
+        "scored": 20,
+        "source_comparator_count": 14,
+        "source_comparator_mock_risk": 0.0,
+        "source_positive_count": 6,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-03"
+      },
+      {
+        "scored": 22,
+        "source_comparator_count": 17,
+        "source_comparator_mock_risk": 0.17647058823529413,
+        "source_positive_count": 5,
+        "source_positive_mock_risk": 0.2,
+        "stratum": "2020-04"
+      },
+      {
+        "scored": 19,
+        "source_comparator_count": 14,
+        "source_comparator_mock_risk": 0.5714285714285714,
+        "source_positive_count": 5,
+        "source_positive_mock_risk": 0.2,
+        "stratum": "2020-05"
+      },
+      {
+        "scored": 21,
+        "source_comparator_count": 17,
+        "source_comparator_mock_risk": 0.17647058823529413,
+        "source_positive_count": 4,
+        "source_positive_mock_risk": 0.25,
+        "stratum": "2020-06"
+      },
+      {
+        "scored": 20,
+        "source_comparator_count": 14,
+        "source_comparator_mock_risk": 0.14285714285714285,
+        "source_positive_count": 6,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-07"
+      },
+      {
+        "scored": 21,
+        "source_comparator_count": 17,
+        "source_comparator_mock_risk": 0.29411764705882354,
+        "source_positive_count": 4,
+        "source_positive_mock_risk": 0.25,
+        "stratum": "2020-08"
+      },
+      {
+        "scored": 18,
+        "source_comparator_count": 13,
+        "source_comparator_mock_risk": 0.07692307692307693,
+        "source_positive_count": 5,
+        "source_positive_mock_risk": 0.2,
+        "stratum": "2020-09"
+      },
+      {
+        "scored": 22,
+        "source_comparator_count": 18,
+        "source_comparator_mock_risk": 0.2222222222222222,
+        "source_positive_count": 4,
+        "source_positive_mock_risk": 0.25,
+        "stratum": "2020-10"
+      },
+      {
+        "scored": 20,
+        "source_comparator_count": 15,
+        "source_comparator_mock_risk": 0.0,
+        "source_positive_count": 5,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-11"
+      },
+      {
+        "scored": 19,
+        "source_comparator_count": 15,
+        "source_comparator_mock_risk": 0.13333333333333333,
+        "source_positive_count": 4,
+        "source_positive_mock_risk": 0.0,
+        "stratum": "2020-12"
+      }
+    ],
+    "mock_response_sha256": "50c6e11d6548f997626ae4713fbf805fad62a4a8ed801eb0882264bdabee8ac1",
+    "month_stratified_one_sided_permutation_p_MOCK_ONLY": 0.862,
+    "month_stratified_risk_difference_mock": -0.06010717511815876,
+    "no_modifications_to_production_or_participant_session": true,
+    "no_trusted_external_preregistration_timestamp": true,
+    "not_a_human_astrology_validation": true,
+    "predeclared_permutations": 1999,
+    "response_unknowns": 0,
+    "schema": "C34_SYNTHETIC_STATISTICAL_REHEARSAL_V1",
+    "scored_conditional_known": 241,
+    "source_pre_answer_freeze_preceded_mock_outcome_generation": true,
+    "synthetic_only": true
+  },
+  "sha256": "5d161fd4f580f7f87ce01eedf3e9a0222af947828897b3945913953602b60e54"
+}

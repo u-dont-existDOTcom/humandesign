@@ -1,0 +1,74 @@
+{
+  "schema": "HUMANDESIGN_C34_HUMAN_MARRIAGE_STUDY_ADMISSION_V1",
+  "generated_date": "2026-10-25",
+  "root_original_goal": "prospective independent empirical validation of source-defined astrology across 16 traditions, using untouched consenting participants, fixed chart and baseline predictions, decoy controls, and explicit misses",
+  "root_status": "OPEN",
+  "C34_status": "SYNTHETIC_DRY_RUN_COMPLETED_NO_HUMAN_DATA",
+  "all_study_status_flags": {
+    "real_recruitment_authorized": false,
+    "real_participant_consent_obtained": false,
+    "any_real_birth_tuples_received": false,
+    "any_real_marriage_history_responses_received": false,
+    "original_Ptolemy_complete_rules_implemented": false,
+    "historical_sign_only_development_candidate_only": true,
+    "chart_source_manifest_Swiss_file_hashes_retained": true,
+    "full_historical_birth_interval_motion_bound_certified": false,
+    "time_zone_and_birth_input_provenance_per_person_certified": false,
+    "independent_real_age_50_observability_proved": false,
+    "outcome_definition_and_cultural_marriage_law_approved": false,
+    "real_untouched_person_cohort_generated": false,
+    "live_predictions_timestamped_in_external_immutable_store": false,
+    "live_concealed_questionnaire_administered": false,
+    "human_research_ethics_and_data_handling_reviewed": false,
+    "predeclared_nonastrology_controls_and_sample_plan_approved": false,
+    "real_human_predictive_validations": 0,
+    "production_model_promotions": 0
+  },
+  "minimum_future_owner_decision": {
+    "description": "Whether to initiate a separate, consented marital-history study outside the active trait-interview task, after recruiting an eligible cohort and finalizing a private data-custody plan",
+    "currently_required_in_this_synthetic_turn": false,
+    "no_default_authority_to_contact_people": true,
+    "no_use_of_user_existing_relationship_histories_for_blind_validation": true,
+    "no_unapproved_mailing_or_surveys": true,
+    "no_public_repo_storage_of_real_birth_or_marital_data": true
+  },
+  "scientific_pre_answer_gates": {
+    "source_claim_scope": "single moon bicorporeal-sign positive disjunct from Ptolemy IV.5 male-text branch; nonpositive is no literal negative",
+    "modern_primary_endpoint": "number of independently recognized marriages by analyst-chosen age50",
+    "endpoint_customary_legal_cultural_translations_predeclared": false,
+    "primary_association_model": "one-sided risk difference with strong cohort, region, birth-decade and birth-season controls; statistical hypothesis is analyst inference",
+    "baseline_strata": "available geographic marriage-law and calendar cohort data; gender scope supplied consensually, not inferred",
+    "immutable_artifacts": [
+      "signed source + model and source-code hash",
+      "ephemeris provenance and exact returned SWIEPH file flags",
+      "input UTC intervals and birth-time source quality",
+      "full cohort including excluded unknowns",
+      "predefined question and privacy/consent protocol",
+      "analyst inference and statistical test/hash",
+      "frozen predictions and decoys before outcomes",
+      "outcomes frozen separately before reveal"
+    ],
+    "publication_and_reporting_policy": "report every abstention, attrition, failure, partial identification and outcome discrepancy; no retrospective chart tuning or source revision within test cohort"
+  },
+  "synthetic_output": {
+    "synthetic_frozen_cohort_size": 366,
+    "source_positive_windows": 55,
+    "source_control_windows": 186,
+    "source_unknown_windows": 125,
+    "mock_score_risk_difference": -0.06010717511815876,
+    "mock_score_one_sided_permutation_p": 0.862,
+    "claim": "These are software rehearsal numbers only, NOT evidence about humans or astrology",
+    "synthetic_pre_answer_packet_sha256": "d6405eca803e5fdb6d990266e0290d1de9ba980cee996886654f9257c3c49216",
+    "synthetic_mock_response_sha256": "50c6e11d6548f997626ae4713fbf805fad62a4a8ed801eb0882264bdabee8ac1",
+    "synthetic_score_sha256": "5d161fd4f580f7f87ce01eedf3e9a0222af947828897b3945913953602b60e54"
+  },
+  "residual_limits": [
+    "C33 16°/day historical lunar speed bound must not be assumed independently proved by 2020 synthetic tests",
+    "A one-year synthetic UTC calendar is not 366 real eligible participants age >=50",
+    "Mock outcome generator is public deterministic, not a hidden real answer key",
+    "C34 freezes C33 source bytes and analysis fields but not external timestamp, full compiled scorer or actual participant eligibility",
+    "Ptolemy also describes competing multiform-sign and applying-planet clauses, not integrated here",
+    "Birth month adjustment alone cannot establish independence from culture, birth decade and marriage-law confounders",
+    "No true natal prediction of any specific person was generated"
+  ]
+}

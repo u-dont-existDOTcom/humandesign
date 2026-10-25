@@ -1,0 +1,3884 @@
+{
+  "body": {
+    "analysis_contract": {
+      "analyst_inference_not_literal_Ptolemy": "compare positive source sign vs all other stable signs",
+      "minimum_exposure_and_control_per_stratum": 1,
+      "no_source_sign_from_birth_time_indeterminate": true,
+      "no_unblinded_revision_after_any_outcome": true,
+      "null": "exchangeability of binary outcomes within fixed month strata",
+      "permutation_count": 1999,
+      "permutation_seed": 20261025,
+      "primary": "one-sided within-birth-month stratified risk difference",
+      "unknowns": "remove from scored denominator, retain count"
+    },
+    "ancient_positive_clause": "multiple marriages when bicorporeal",
+    "cohort_size": 366,
+    "frozen_cohort": [
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-001",
+        "synthetic_utc_calendar_day": "2020-01-01"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-002",
+        "synthetic_utc_calendar_day": "2020-01-02"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-003",
+        "synthetic_utc_calendar_day": "2020-01-03"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-004",
+        "synthetic_utc_calendar_day": "2020-01-04"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-005",
+        "synthetic_utc_calendar_day": "2020-01-05"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-006",
+        "synthetic_utc_calendar_day": "2020-01-06"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-007",
+        "synthetic_utc_calendar_day": "2020-01-07"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-008",
+        "synthetic_utc_calendar_day": "2020-01-08"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-009",
+        "synthetic_utc_calendar_day": "2020-01-09"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-010",
+        "synthetic_utc_calendar_day": "2020-01-10"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-011",
+        "synthetic_utc_calendar_day": "2020-01-11"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-012",
+        "synthetic_utc_calendar_day": "2020-01-12"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-013",
+        "synthetic_utc_calendar_day": "2020-01-13"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-014",
+        "synthetic_utc_calendar_day": "2020-01-14"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-015",
+        "synthetic_utc_calendar_day": "2020-01-15"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-016",
+        "synthetic_utc_calendar_day": "2020-01-16"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-017",
+        "synthetic_utc_calendar_day": "2020-01-17"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-018",
+        "synthetic_utc_calendar_day": "2020-01-18"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-019",
+        "synthetic_utc_calendar_day": "2020-01-19"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-020",
+        "synthetic_utc_calendar_day": "2020-01-20"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-021",
+        "synthetic_utc_calendar_day": "2020-01-21"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-022",
+        "synthetic_utc_calendar_day": "2020-01-22"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-023",
+        "synthetic_utc_calendar_day": "2020-01-23"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-024",
+        "synthetic_utc_calendar_day": "2020-01-24"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-025",
+        "synthetic_utc_calendar_day": "2020-01-25"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-026",
+        "synthetic_utc_calendar_day": "2020-01-26"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-027",
+        "synthetic_utc_calendar_day": "2020-01-27"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-028",
+        "synthetic_utc_calendar_day": "2020-01-28"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-029",
+        "synthetic_utc_calendar_day": "2020-01-29"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-030",
+        "synthetic_utc_calendar_day": "2020-01-30"
+      },
+      {
+        "birth_month_stratum": "2020-01",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-031",
+        "synthetic_utc_calendar_day": "2020-01-31"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-032",
+        "synthetic_utc_calendar_day": "2020-02-01"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-033",
+        "synthetic_utc_calendar_day": "2020-02-02"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-034",
+        "synthetic_utc_calendar_day": "2020-02-03"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-035",
+        "synthetic_utc_calendar_day": "2020-02-04"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-036",
+        "synthetic_utc_calendar_day": "2020-02-05"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-037",
+        "synthetic_utc_calendar_day": "2020-02-06"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-038",
+        "synthetic_utc_calendar_day": "2020-02-07"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-039",
+        "synthetic_utc_calendar_day": "2020-02-08"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-040",
+        "synthetic_utc_calendar_day": "2020-02-09"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-041",
+        "synthetic_utc_calendar_day": "2020-02-10"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-042",
+        "synthetic_utc_calendar_day": "2020-02-11"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-043",
+        "synthetic_utc_calendar_day": "2020-02-12"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-044",
+        "synthetic_utc_calendar_day": "2020-02-13"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-045",
+        "synthetic_utc_calendar_day": "2020-02-14"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-046",
+        "synthetic_utc_calendar_day": "2020-02-15"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-047",
+        "synthetic_utc_calendar_day": "2020-02-16"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-048",
+        "synthetic_utc_calendar_day": "2020-02-17"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-049",
+        "synthetic_utc_calendar_day": "2020-02-18"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-050",
+        "synthetic_utc_calendar_day": "2020-02-19"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-051",
+        "synthetic_utc_calendar_day": "2020-02-20"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-052",
+        "synthetic_utc_calendar_day": "2020-02-21"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-053",
+        "synthetic_utc_calendar_day": "2020-02-22"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-054",
+        "synthetic_utc_calendar_day": "2020-02-23"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-055",
+        "synthetic_utc_calendar_day": "2020-02-24"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-056",
+        "synthetic_utc_calendar_day": "2020-02-25"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-057",
+        "synthetic_utc_calendar_day": "2020-02-26"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-058",
+        "synthetic_utc_calendar_day": "2020-02-27"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-059",
+        "synthetic_utc_calendar_day": "2020-02-28"
+      },
+      {
+        "birth_month_stratum": "2020-02",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-060",
+        "synthetic_utc_calendar_day": "2020-02-29"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-061",
+        "synthetic_utc_calendar_day": "2020-03-01"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-062",
+        "synthetic_utc_calendar_day": "2020-03-02"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-063",
+        "synthetic_utc_calendar_day": "2020-03-03"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-064",
+        "synthetic_utc_calendar_day": "2020-03-04"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-065",
+        "synthetic_utc_calendar_day": "2020-03-05"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-066",
+        "synthetic_utc_calendar_day": "2020-03-06"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-067",
+        "synthetic_utc_calendar_day": "2020-03-07"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-068",
+        "synthetic_utc_calendar_day": "2020-03-08"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-069",
+        "synthetic_utc_calendar_day": "2020-03-09"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-070",
+        "synthetic_utc_calendar_day": "2020-03-10"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-071",
+        "synthetic_utc_calendar_day": "2020-03-11"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-072",
+        "synthetic_utc_calendar_day": "2020-03-12"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-073",
+        "synthetic_utc_calendar_day": "2020-03-13"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-074",
+        "synthetic_utc_calendar_day": "2020-03-14"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-075",
+        "synthetic_utc_calendar_day": "2020-03-15"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-076",
+        "synthetic_utc_calendar_day": "2020-03-16"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-077",
+        "synthetic_utc_calendar_day": "2020-03-17"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-078",
+        "synthetic_utc_calendar_day": "2020-03-18"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-079",
+        "synthetic_utc_calendar_day": "2020-03-19"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-080",
+        "synthetic_utc_calendar_day": "2020-03-20"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-081",
+        "synthetic_utc_calendar_day": "2020-03-21"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-082",
+        "synthetic_utc_calendar_day": "2020-03-22"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-083",
+        "synthetic_utc_calendar_day": "2020-03-23"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-084",
+        "synthetic_utc_calendar_day": "2020-03-24"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-085",
+        "synthetic_utc_calendar_day": "2020-03-25"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-086",
+        "synthetic_utc_calendar_day": "2020-03-26"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-087",
+        "synthetic_utc_calendar_day": "2020-03-27"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-088",
+        "synthetic_utc_calendar_day": "2020-03-28"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-089",
+        "synthetic_utc_calendar_day": "2020-03-29"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-090",
+        "synthetic_utc_calendar_day": "2020-03-30"
+      },
+      {
+        "birth_month_stratum": "2020-03",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-091",
+        "synthetic_utc_calendar_day": "2020-03-31"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-092",
+        "synthetic_utc_calendar_day": "2020-04-01"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-093",
+        "synthetic_utc_calendar_day": "2020-04-02"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-094",
+        "synthetic_utc_calendar_day": "2020-04-03"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-095",
+        "synthetic_utc_calendar_day": "2020-04-04"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-096",
+        "synthetic_utc_calendar_day": "2020-04-05"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-097",
+        "synthetic_utc_calendar_day": "2020-04-06"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-098",
+        "synthetic_utc_calendar_day": "2020-04-07"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-099",
+        "synthetic_utc_calendar_day": "2020-04-08"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-100",
+        "synthetic_utc_calendar_day": "2020-04-09"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-101",
+        "synthetic_utc_calendar_day": "2020-04-10"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-102",
+        "synthetic_utc_calendar_day": "2020-04-11"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-103",
+        "synthetic_utc_calendar_day": "2020-04-12"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-104",
+        "synthetic_utc_calendar_day": "2020-04-13"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-105",
+        "synthetic_utc_calendar_day": "2020-04-14"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-106",
+        "synthetic_utc_calendar_day": "2020-04-15"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-107",
+        "synthetic_utc_calendar_day": "2020-04-16"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-108",
+        "synthetic_utc_calendar_day": "2020-04-17"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-109",
+        "synthetic_utc_calendar_day": "2020-04-18"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-110",
+        "synthetic_utc_calendar_day": "2020-04-19"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-111",
+        "synthetic_utc_calendar_day": "2020-04-20"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-112",
+        "synthetic_utc_calendar_day": "2020-04-21"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-113",
+        "synthetic_utc_calendar_day": "2020-04-22"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-114",
+        "synthetic_utc_calendar_day": "2020-04-23"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-115",
+        "synthetic_utc_calendar_day": "2020-04-24"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-116",
+        "synthetic_utc_calendar_day": "2020-04-25"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-117",
+        "synthetic_utc_calendar_day": "2020-04-26"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-118",
+        "synthetic_utc_calendar_day": "2020-04-27"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-119",
+        "synthetic_utc_calendar_day": "2020-04-28"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-120",
+        "synthetic_utc_calendar_day": "2020-04-29"
+      },
+      {
+        "birth_month_stratum": "2020-04",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-121",
+        "synthetic_utc_calendar_day": "2020-04-30"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-122",
+        "synthetic_utc_calendar_day": "2020-05-01"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-123",
+        "synthetic_utc_calendar_day": "2020-05-02"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-124",
+        "synthetic_utc_calendar_day": "2020-05-03"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-125",
+        "synthetic_utc_calendar_day": "2020-05-04"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-126",
+        "synthetic_utc_calendar_day": "2020-05-05"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-127",
+        "synthetic_utc_calendar_day": "2020-05-06"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-128",
+        "synthetic_utc_calendar_day": "2020-05-07"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-129",
+        "synthetic_utc_calendar_day": "2020-05-08"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-130",
+        "synthetic_utc_calendar_day": "2020-05-09"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-131",
+        "synthetic_utc_calendar_day": "2020-05-10"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-132",
+        "synthetic_utc_calendar_day": "2020-05-11"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-133",
+        "synthetic_utc_calendar_day": "2020-05-12"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-134",
+        "synthetic_utc_calendar_day": "2020-05-13"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-135",
+        "synthetic_utc_calendar_day": "2020-05-14"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-136",
+        "synthetic_utc_calendar_day": "2020-05-15"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-137",
+        "synthetic_utc_calendar_day": "2020-05-16"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-138",
+        "synthetic_utc_calendar_day": "2020-05-17"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-139",
+        "synthetic_utc_calendar_day": "2020-05-18"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-140",
+        "synthetic_utc_calendar_day": "2020-05-19"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-141",
+        "synthetic_utc_calendar_day": "2020-05-20"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-142",
+        "synthetic_utc_calendar_day": "2020-05-21"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-143",
+        "synthetic_utc_calendar_day": "2020-05-22"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-144",
+        "synthetic_utc_calendar_day": "2020-05-23"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-145",
+        "synthetic_utc_calendar_day": "2020-05-24"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-146",
+        "synthetic_utc_calendar_day": "2020-05-25"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-147",
+        "synthetic_utc_calendar_day": "2020-05-26"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-148",
+        "synthetic_utc_calendar_day": "2020-05-27"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-149",
+        "synthetic_utc_calendar_day": "2020-05-28"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-150",
+        "synthetic_utc_calendar_day": "2020-05-29"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-151",
+        "synthetic_utc_calendar_day": "2020-05-30"
+      },
+      {
+        "birth_month_stratum": "2020-05",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-152",
+        "synthetic_utc_calendar_day": "2020-05-31"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-153",
+        "synthetic_utc_calendar_day": "2020-06-01"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-154",
+        "synthetic_utc_calendar_day": "2020-06-02"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-155",
+        "synthetic_utc_calendar_day": "2020-06-03"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-156",
+        "synthetic_utc_calendar_day": "2020-06-04"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-157",
+        "synthetic_utc_calendar_day": "2020-06-05"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-158",
+        "synthetic_utc_calendar_day": "2020-06-06"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-159",
+        "synthetic_utc_calendar_day": "2020-06-07"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-160",
+        "synthetic_utc_calendar_day": "2020-06-08"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-161",
+        "synthetic_utc_calendar_day": "2020-06-09"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-162",
+        "synthetic_utc_calendar_day": "2020-06-10"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-163",
+        "synthetic_utc_calendar_day": "2020-06-11"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-164",
+        "synthetic_utc_calendar_day": "2020-06-12"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-165",
+        "synthetic_utc_calendar_day": "2020-06-13"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-166",
+        "synthetic_utc_calendar_day": "2020-06-14"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-167",
+        "synthetic_utc_calendar_day": "2020-06-15"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-168",
+        "synthetic_utc_calendar_day": "2020-06-16"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-169",
+        "synthetic_utc_calendar_day": "2020-06-17"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-170",
+        "synthetic_utc_calendar_day": "2020-06-18"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-171",
+        "synthetic_utc_calendar_day": "2020-06-19"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-172",
+        "synthetic_utc_calendar_day": "2020-06-20"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-173",
+        "synthetic_utc_calendar_day": "2020-06-21"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-174",
+        "synthetic_utc_calendar_day": "2020-06-22"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-175",
+        "synthetic_utc_calendar_day": "2020-06-23"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-176",
+        "synthetic_utc_calendar_day": "2020-06-24"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-177",
+        "synthetic_utc_calendar_day": "2020-06-25"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-178",
+        "synthetic_utc_calendar_day": "2020-06-26"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-179",
+        "synthetic_utc_calendar_day": "2020-06-27"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-180",
+        "synthetic_utc_calendar_day": "2020-06-28"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-181",
+        "synthetic_utc_calendar_day": "2020-06-29"
+      },
+      {
+        "birth_month_stratum": "2020-06",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-182",
+        "synthetic_utc_calendar_day": "2020-06-30"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-183",
+        "synthetic_utc_calendar_day": "2020-07-01"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-184",
+        "synthetic_utc_calendar_day": "2020-07-02"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-185",
+        "synthetic_utc_calendar_day": "2020-07-03"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-186",
+        "synthetic_utc_calendar_day": "2020-07-04"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-187",
+        "synthetic_utc_calendar_day": "2020-07-05"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-188",
+        "synthetic_utc_calendar_day": "2020-07-06"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-189",
+        "synthetic_utc_calendar_day": "2020-07-07"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-190",
+        "synthetic_utc_calendar_day": "2020-07-08"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-191",
+        "synthetic_utc_calendar_day": "2020-07-09"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-192",
+        "synthetic_utc_calendar_day": "2020-07-10"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-193",
+        "synthetic_utc_calendar_day": "2020-07-11"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-194",
+        "synthetic_utc_calendar_day": "2020-07-12"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-195",
+        "synthetic_utc_calendar_day": "2020-07-13"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-196",
+        "synthetic_utc_calendar_day": "2020-07-14"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-197",
+        "synthetic_utc_calendar_day": "2020-07-15"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-198",
+        "synthetic_utc_calendar_day": "2020-07-16"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-199",
+        "synthetic_utc_calendar_day": "2020-07-17"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-200",
+        "synthetic_utc_calendar_day": "2020-07-18"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-201",
+        "synthetic_utc_calendar_day": "2020-07-19"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-202",
+        "synthetic_utc_calendar_day": "2020-07-20"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-203",
+        "synthetic_utc_calendar_day": "2020-07-21"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-204",
+        "synthetic_utc_calendar_day": "2020-07-22"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-205",
+        "synthetic_utc_calendar_day": "2020-07-23"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-206",
+        "synthetic_utc_calendar_day": "2020-07-24"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-207",
+        "synthetic_utc_calendar_day": "2020-07-25"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-208",
+        "synthetic_utc_calendar_day": "2020-07-26"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-209",
+        "synthetic_utc_calendar_day": "2020-07-27"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-210",
+        "synthetic_utc_calendar_day": "2020-07-28"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-211",
+        "synthetic_utc_calendar_day": "2020-07-29"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-212",
+        "synthetic_utc_calendar_day": "2020-07-30"
+      },
+      {
+        "birth_month_stratum": "2020-07",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-213",
+        "synthetic_utc_calendar_day": "2020-07-31"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-214",
+        "synthetic_utc_calendar_day": "2020-08-01"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-215",
+        "synthetic_utc_calendar_day": "2020-08-02"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-216",
+        "synthetic_utc_calendar_day": "2020-08-03"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-217",
+        "synthetic_utc_calendar_day": "2020-08-04"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-218",
+        "synthetic_utc_calendar_day": "2020-08-05"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-219",
+        "synthetic_utc_calendar_day": "2020-08-06"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-220",
+        "synthetic_utc_calendar_day": "2020-08-07"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-221",
+        "synthetic_utc_calendar_day": "2020-08-08"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-222",
+        "synthetic_utc_calendar_day": "2020-08-09"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-223",
+        "synthetic_utc_calendar_day": "2020-08-10"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-224",
+        "synthetic_utc_calendar_day": "2020-08-11"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-225",
+        "synthetic_utc_calendar_day": "2020-08-12"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-226",
+        "synthetic_utc_calendar_day": "2020-08-13"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-227",
+        "synthetic_utc_calendar_day": "2020-08-14"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-228",
+        "synthetic_utc_calendar_day": "2020-08-15"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-229",
+        "synthetic_utc_calendar_day": "2020-08-16"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-230",
+        "synthetic_utc_calendar_day": "2020-08-17"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-231",
+        "synthetic_utc_calendar_day": "2020-08-18"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-232",
+        "synthetic_utc_calendar_day": "2020-08-19"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-233",
+        "synthetic_utc_calendar_day": "2020-08-20"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-234",
+        "synthetic_utc_calendar_day": "2020-08-21"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-235",
+        "synthetic_utc_calendar_day": "2020-08-22"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-236",
+        "synthetic_utc_calendar_day": "2020-08-23"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-237",
+        "synthetic_utc_calendar_day": "2020-08-24"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-238",
+        "synthetic_utc_calendar_day": "2020-08-25"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-239",
+        "synthetic_utc_calendar_day": "2020-08-26"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-240",
+        "synthetic_utc_calendar_day": "2020-08-27"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-241",
+        "synthetic_utc_calendar_day": "2020-08-28"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-242",
+        "synthetic_utc_calendar_day": "2020-08-29"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-243",
+        "synthetic_utc_calendar_day": "2020-08-30"
+      },
+      {
+        "birth_month_stratum": "2020-08",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-244",
+        "synthetic_utc_calendar_day": "2020-08-31"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-245",
+        "synthetic_utc_calendar_day": "2020-09-01"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-246",
+        "synthetic_utc_calendar_day": "2020-09-02"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-247",
+        "synthetic_utc_calendar_day": "2020-09-03"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-248",
+        "synthetic_utc_calendar_day": "2020-09-04"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-249",
+        "synthetic_utc_calendar_day": "2020-09-05"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-250",
+        "synthetic_utc_calendar_day": "2020-09-06"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-251",
+        "synthetic_utc_calendar_day": "2020-09-07"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-252",
+        "synthetic_utc_calendar_day": "2020-09-08"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-253",
+        "synthetic_utc_calendar_day": "2020-09-09"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-254",
+        "synthetic_utc_calendar_day": "2020-09-10"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-255",
+        "synthetic_utc_calendar_day": "2020-09-11"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-256",
+        "synthetic_utc_calendar_day": "2020-09-12"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-257",
+        "synthetic_utc_calendar_day": "2020-09-13"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-258",
+        "synthetic_utc_calendar_day": "2020-09-14"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-259",
+        "synthetic_utc_calendar_day": "2020-09-15"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-260",
+        "synthetic_utc_calendar_day": "2020-09-16"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-261",
+        "synthetic_utc_calendar_day": "2020-09-17"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-262",
+        "synthetic_utc_calendar_day": "2020-09-18"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-263",
+        "synthetic_utc_calendar_day": "2020-09-19"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-264",
+        "synthetic_utc_calendar_day": "2020-09-20"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-265",
+        "synthetic_utc_calendar_day": "2020-09-21"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-266",
+        "synthetic_utc_calendar_day": "2020-09-22"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-267",
+        "synthetic_utc_calendar_day": "2020-09-23"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-268",
+        "synthetic_utc_calendar_day": "2020-09-24"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-269",
+        "synthetic_utc_calendar_day": "2020-09-25"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-270",
+        "synthetic_utc_calendar_day": "2020-09-26"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-271",
+        "synthetic_utc_calendar_day": "2020-09-27"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-272",
+        "synthetic_utc_calendar_day": "2020-09-28"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-273",
+        "synthetic_utc_calendar_day": "2020-09-29"
+      },
+      {
+        "birth_month_stratum": "2020-09",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-274",
+        "synthetic_utc_calendar_day": "2020-09-30"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-275",
+        "synthetic_utc_calendar_day": "2020-10-01"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-276",
+        "synthetic_utc_calendar_day": "2020-10-02"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-277",
+        "synthetic_utc_calendar_day": "2020-10-03"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-278",
+        "synthetic_utc_calendar_day": "2020-10-04"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-279",
+        "synthetic_utc_calendar_day": "2020-10-05"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-280",
+        "synthetic_utc_calendar_day": "2020-10-06"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-281",
+        "synthetic_utc_calendar_day": "2020-10-07"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-282",
+        "synthetic_utc_calendar_day": "2020-10-08"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-283",
+        "synthetic_utc_calendar_day": "2020-10-09"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-284",
+        "synthetic_utc_calendar_day": "2020-10-10"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-285",
+        "synthetic_utc_calendar_day": "2020-10-11"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-286",
+        "synthetic_utc_calendar_day": "2020-10-12"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-287",
+        "synthetic_utc_calendar_day": "2020-10-13"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-288",
+        "synthetic_utc_calendar_day": "2020-10-14"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-289",
+        "synthetic_utc_calendar_day": "2020-10-15"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-290",
+        "synthetic_utc_calendar_day": "2020-10-16"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-291",
+        "synthetic_utc_calendar_day": "2020-10-17"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-292",
+        "synthetic_utc_calendar_day": "2020-10-18"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-293",
+        "synthetic_utc_calendar_day": "2020-10-19"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-294",
+        "synthetic_utc_calendar_day": "2020-10-20"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-295",
+        "synthetic_utc_calendar_day": "2020-10-21"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-296",
+        "synthetic_utc_calendar_day": "2020-10-22"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-297",
+        "synthetic_utc_calendar_day": "2020-10-23"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-298",
+        "synthetic_utc_calendar_day": "2020-10-24"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-299",
+        "synthetic_utc_calendar_day": "2020-10-25"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-300",
+        "synthetic_utc_calendar_day": "2020-10-26"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-301",
+        "synthetic_utc_calendar_day": "2020-10-27"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-302",
+        "synthetic_utc_calendar_day": "2020-10-28"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-303",
+        "synthetic_utc_calendar_day": "2020-10-29"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-304",
+        "synthetic_utc_calendar_day": "2020-10-30"
+      },
+      {
+        "birth_month_stratum": "2020-10",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-305",
+        "synthetic_utc_calendar_day": "2020-10-31"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-306",
+        "synthetic_utc_calendar_day": "2020-11-01"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-307",
+        "synthetic_utc_calendar_day": "2020-11-02"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-308",
+        "synthetic_utc_calendar_day": "2020-11-03"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-309",
+        "synthetic_utc_calendar_day": "2020-11-04"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-310",
+        "synthetic_utc_calendar_day": "2020-11-05"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-311",
+        "synthetic_utc_calendar_day": "2020-11-06"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-312",
+        "synthetic_utc_calendar_day": "2020-11-07"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-313",
+        "synthetic_utc_calendar_day": "2020-11-08"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-314",
+        "synthetic_utc_calendar_day": "2020-11-09"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-315",
+        "synthetic_utc_calendar_day": "2020-11-10"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-316",
+        "synthetic_utc_calendar_day": "2020-11-11"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-317",
+        "synthetic_utc_calendar_day": "2020-11-12"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-318",
+        "synthetic_utc_calendar_day": "2020-11-13"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-319",
+        "synthetic_utc_calendar_day": "2020-11-14"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-320",
+        "synthetic_utc_calendar_day": "2020-11-15"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-321",
+        "synthetic_utc_calendar_day": "2020-11-16"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-322",
+        "synthetic_utc_calendar_day": "2020-11-17"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-323",
+        "synthetic_utc_calendar_day": "2020-11-18"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-324",
+        "synthetic_utc_calendar_day": "2020-11-19"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-325",
+        "synthetic_utc_calendar_day": "2020-11-20"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-326",
+        "synthetic_utc_calendar_day": "2020-11-21"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-327",
+        "synthetic_utc_calendar_day": "2020-11-22"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-328",
+        "synthetic_utc_calendar_day": "2020-11-23"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-329",
+        "synthetic_utc_calendar_day": "2020-11-24"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-330",
+        "synthetic_utc_calendar_day": "2020-11-25"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-331",
+        "synthetic_utc_calendar_day": "2020-11-26"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-332",
+        "synthetic_utc_calendar_day": "2020-11-27"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-333",
+        "synthetic_utc_calendar_day": "2020-11-28"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-334",
+        "synthetic_utc_calendar_day": "2020-11-29"
+      },
+      {
+        "birth_month_stratum": "2020-11",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-335",
+        "synthetic_utc_calendar_day": "2020-11-30"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-336",
+        "synthetic_utc_calendar_day": "2020-12-01"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-337",
+        "synthetic_utc_calendar_day": "2020-12-02"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-338",
+        "synthetic_utc_calendar_day": "2020-12-03"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-339",
+        "synthetic_utc_calendar_day": "2020-12-04"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-340",
+        "synthetic_utc_calendar_day": "2020-12-05"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Leo",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-341",
+        "synthetic_utc_calendar_day": "2020-12-06"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Virgo"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-342",
+        "synthetic_utc_calendar_day": "2020-12-07"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-343",
+        "synthetic_utc_calendar_day": "2020-12-08"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Libra",
+          "Virgo"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-344",
+        "synthetic_utc_calendar_day": "2020-12-09"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-345",
+        "synthetic_utc_calendar_day": "2020-12-10"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Libra",
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-346",
+        "synthetic_utc_calendar_day": "2020-12-11"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Scorpio"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-347",
+        "synthetic_utc_calendar_day": "2020-12-12"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Sagittarius",
+          "Scorpio"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-348",
+        "synthetic_utc_calendar_day": "2020-12-13"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Sagittarius"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-349",
+        "synthetic_utc_calendar_day": "2020-12-14"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Capricorn",
+          "Sagittarius"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-350",
+        "synthetic_utc_calendar_day": "2020-12-15"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-351",
+        "synthetic_utc_calendar_day": "2020-12-16"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius",
+          "Capricorn"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-352",
+        "synthetic_utc_calendar_day": "2020-12-17"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aquarius"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-353",
+        "synthetic_utc_calendar_day": "2020-12-18"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aquarius",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-354",
+        "synthetic_utc_calendar_day": "2020-12-19"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Pisces"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-355",
+        "synthetic_utc_calendar_day": "2020-12-20"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Aries",
+          "Pisces"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-356",
+        "synthetic_utc_calendar_day": "2020-12-21"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-357",
+        "synthetic_utc_calendar_day": "2020-12-22"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-358",
+        "synthetic_utc_calendar_day": "2020-12-23"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Aries",
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-359",
+        "synthetic_utc_calendar_day": "2020-12-24"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Taurus"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-360",
+        "synthetic_utc_calendar_day": "2020-12-25"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-361",
+        "synthetic_utc_calendar_day": "2020-12-26"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Gemini",
+          "Taurus"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-362",
+        "synthetic_utc_calendar_day": "2020-12-27"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": true,
+        "possible_source_signs": [
+          "Gemini"
+        ],
+        "source_class": "MANY_INDICATED_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-363",
+        "synthetic_utc_calendar_day": "2020-12-28"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": null,
+        "possible_source_signs": [
+          "Cancer",
+          "Gemini"
+        ],
+        "source_class": "TIME_INDETERMINATE",
+        "synthetic_id": "MOCK-C34-364",
+        "synthetic_utc_calendar_day": "2020-12-29"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-365",
+        "synthetic_utc_calendar_day": "2020-12-30"
+      },
+      {
+        "birth_month_stratum": "2020-12",
+        "indicated_source_subclause": false,
+        "possible_source_signs": [
+          "Cancer",
+          "Leo"
+        ],
+        "source_class": "NO_INDICATION_CONDITIONALLY",
+        "synthetic_id": "MOCK-C34-366",
+        "synthetic_utc_calendar_day": "2020-12-31"
+      }
+    ],
+    "modern_endpoint_analyst_choice_not_in_Greek": "two_or_more_lawful_marriages_by_attained_age_50",
+    "nonpositive_sign_is_not_a_source_prediction_of_one_marriage": true,
+    "participant_set_sha256": "b1ebce60e483babb2e6bff7ec3bd1c2291c620d0b77cceabd288554f05ba68c1",
+    "real_human_outcomes_available": false,
+    "real_person_births_used": false,
+    "rehearsal_not_a_trusted_timestamped_preregistration": true,
+    "research_only_sign_method_speed_bound_unverified": true,
+    "schema": "C34_SYNTHETIC_PREANSWER_PREDICTIONS_V1",
+    "source_case": "PTOLEMY_IV_5_MEN_MOON_BICORPOREAL_SUBCLAUSE_ONLY",
+    "source_commit": "ef8b143a9e30545118db72479a5cf3974f8b3c08",
+    "source_snapshot_sha256": "4e9f8a27fa1c284ab9b9b6a24cdc0834c5e3bacc757c8435c921fdc42c2c45d4",
+    "synthetic_only": true,
+    "unadministered_concealed_question": "By your 50th birthday, how many distinct legally recognized marriages had you entered? 0 / 1 / 2 / 3 or more / Unsure / Prefer not to answer"
+  },
+  "sha256": "d6405eca803e5fdb6d990266e0290d1de9ba980cee996886654f9257c3c49216"
+}
