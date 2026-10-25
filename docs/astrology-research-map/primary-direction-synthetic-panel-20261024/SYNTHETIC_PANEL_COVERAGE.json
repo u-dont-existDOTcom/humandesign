@@ -1,0 +1,44 @@
+{
+  "angle_geometry_parity": {
+    "charts_checked": 12,
+    "groups_checked": 30,
+    "max_spread_years": 8.526512829121202e-14,
+    "mismatches": []
+  },
+  "contact_coverage": {
+    "aspect_exposure_total": 169,
+    "body_exposure_total": 47,
+    "candidate_rule_count": 8,
+    "max_exposures": 4,
+    "mean_exposures_per_synthetic_chart": 2.25,
+    "mean_union_window_years_per_chart": 2.179468,
+    "median_exposures": 2.0,
+    "min_exposures": 0,
+    "n_charts": 96,
+    "rule_exposure_count": {
+      "L1647-ASC-JUP-BODY": 12,
+      "L1647-ASC-JUP-SOFT": 51,
+      "L1647-ASC-MARS-BODY": 15,
+      "L1647-ASC-MARS-HARD": 34,
+      "L1647-MC-JUP-BODY": 9,
+      "L1647-MC-JUP-SOFT": 47,
+      "L1647-MC-SAT-BODY": 11,
+      "L1647-MC-SAT-HARD": 37
+    },
+    "total_exposures": 216,
+    "zero_any_chart_count": 1,
+    "zero_aspect_chart_count": 5,
+    "zero_body_chart_count": 56
+  },
+  "direction": "software-direct shortest signed arc (not historical Lilly)",
+  "frozen_plan_sha256": "948a1289b5f891c7f7870632ad116fb16ea6409d1bed575483c07c9901fbc0d0",
+  "geometry": "proportional_semi_arc",
+  "no_human_natal_or_event_records": true,
+  "observational_outcome_scoring": "NOT_PERFORMED",
+  "parent_astrology_validation_goal": "OPEN",
+  "representative_population_sample": false,
+  "sampling": "12 birth months x 8 latitude strata; years/clock/longitude seeded",
+  "schema": "ASTRO_PRIMARY_DIRECTION_SYNTHETIC_96_CHART_COVERAGE_V1",
+  "status": "ENGINEERING_COVERAGE_ONLY_NOT_VALIDATED_PREDICTIONS",
+  "time_key": "ptolemy_one_degree_per_year"
+}

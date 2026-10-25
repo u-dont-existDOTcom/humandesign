@@ -12,12 +12,15 @@ import statistics
 from collections import Counter
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from typing import Any, cast
 
 from hdmatch.astrology.aspect_points import RayAspect
 from hdmatch.astrology.aspect_timeline import AspectProfile, generate_aspect_timeline
 from hdmatch.astrology.geometry import GeometryMethod
-from hdmatch.astrology.sky import snapshot_from_swiss_files
+from hdmatch.astrology.sky import DirectionBirthSnapshot, snapshot_from_swiss_files
 from hdmatch.astrology.timeline import TimeKey, generate_timeline
+
+JSON = dict[str, Any]
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -35,19 +38,19 @@ def canonical(data: object) -> str:
     return json.dumps(data, indent=2, ensure_ascii=False, sort_keys=True) + "\n"
 
 
-def load_plan() -> dict:
+def load_plan() -> JSON:
     raw = (HERE / "PANEL_PLAN.json").read_bytes()
     if hashlib.sha256(raw).hexdigest() != PLAN_SHA256:
         raise ValueError("panel plan changed after source-side precommit")
-    spec = json.loads(raw)
+    spec = cast(JSON, json.loads(raw))
     if spec["n_cases"] != 96:
         raise ValueError("wrong synthetic panel count")
     return spec
 
 
-def build_inputs(spec: dict) -> dict:
+def build_inputs(spec: JSON) -> JSON:
     rng = random.Random(spec["seed"])
-    cases = []
+    cases: list[JSON] = []
     for month in spec["months"]:
         for lat in spec["latitudes"]:
             dt = datetime(
@@ -85,9 +88,9 @@ def build_inputs(spec: dict) -> dict:
     }
 
 
-def verified_inputs(spec: dict) -> dict:
+def verified_inputs(spec: JSON) -> JSON:
     declared = build_inputs(spec)
-    actual = json.loads((HERE / "SYNTHETIC_PANEL_INPUTS.json").read_text())
+    actual = cast(JSON, json.loads((HERE / "SYNTHETIC_PANEL_INPUTS.json").read_text()))
     if actual != declared:
         raise ValueError("synthetic birth cases changed after selection")
     return actual
@@ -100,7 +103,7 @@ def check_ephemeris(root: Path) -> None:
             raise ValueError(f"verified Swiss ephemeris file unavailable/mismatch: {name}")
 
 
-def source_rules() -> tuple[list[dict], list[dict]]:
+def source_rules() -> tuple[list[JSON], list[JSON]]:
     bodily = json.loads((PREVIOUS / "LILLY_1647_EVENT_CANDIDATES.json").read_text())
     aspects = json.loads((PREVIOUS / "ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json").read_text())
     body_rules = bodily["source_to_construct_rules"]
@@ -110,7 +113,7 @@ def source_rules() -> tuple[list[dict], list[dict]]:
     return body_rules, aspect_rules
 
 
-def natal(case: dict, ephe: Path):
+def natal(case: JSON, ephe: Path) -> DirectionBirthSnapshot:
     instant = datetime.fromisoformat(case["birth_utc"])
     result = snapshot_from_swiss_files(
         instant,
@@ -123,7 +126,9 @@ def natal(case: dict, ephe: Path):
     return result
 
 
-def exposure_records(sky, body_rules: list[dict], aspect_rules: list[dict]) -> list[dict]:
+def exposure_records(
+    sky: DirectionBirthSnapshot, body_rules: list[JSON], aspect_rules: list[JSON]
+) -> list[JSON]:
     body = generate_timeline(sky, methods=METHOD, time_key=KEY, max_age_years=65)
     rays = generate_aspect_timeline(
         sky,
@@ -148,17 +153,17 @@ def exposure_records(sky, body_rules: list[dict], aspect_rules: list[dict]) -> l
                         "age": round(rec.symbolic_age_years, 9),
                     }
                 )
-    for rec in rays.directions:
-        rule = aspect_mapping.get((rec.promissor, rec.significator))
-        if rule and rec.ray_aspect in rule["aspects"] and rec.direction == "direct":  # noqa: SIM102
-            if 18 <= rec.symbolic_age_years < 65:
+    for ray_rec in rays.directions:
+        rule = aspect_mapping.get((ray_rec.promissor, ray_rec.significator))
+        if rule and ray_rec.ray_aspect in rule["aspects"] and ray_rec.direction == "direct":  # noqa: SIM102
+            if 18 <= ray_rec.symbolic_age_years < 65:
                 rid = rule["id"]
                 found.append(
                     {
-                        "key": f"{rid}/{rec.ray_aspect}/{rec.ray_offset_branch}",
+                        "key": f"{rid}/{ray_rec.ray_aspect}/{ray_rec.ray_offset_branch}",
                         "rule_id": rid,
                         "kind": "aspect",
-                        "age": round(rec.symbolic_age_years, 9),
+                        "age": round(ray_rec.symbolic_age_years, 9),
                     }
                 )
     if len({item["key"] for item in found}) != len(found):
@@ -166,11 +171,11 @@ def exposure_records(sky, body_rules: list[dict], aspect_rules: list[dict]) -> l
     return sorted(found, key=lambda x: (x["rule_id"], x["key"]))
 
 
-def union_span(exposures: list[dict], half_window: float) -> float:
+def union_span(exposures: list[JSON], half_window: float) -> float:
     segments = sorted(
         (max(18.0, r["age"] - half_window), min(65.0, r["age"] + half_window)) for r in exposures
     )
-    merged = []
+    merged: list[list[float]] = []
     for low, high in segments:
         if not merged or low > merged[-1][1]:
             merged.append([low, high])
@@ -180,9 +185,9 @@ def union_span(exposures: list[dict], half_window: float) -> float:
 
 
 def summarize(
-    cases: list[dict], exposure_by_id: dict, source_ids: list[str], half: float
-) -> tuple[dict, list[dict]]:
-    counts = Counter()
+    cases: list[JSON], exposure_by_id: JSON, source_ids: list[str], half: float
+) -> tuple[JSON, list[JSON]]:
+    counts: Counter[str] = Counter()
     rows = []
     for case in cases:
         contacts = exposure_by_id[case["id"]]
@@ -223,7 +228,9 @@ def summarize(
     return summary, rows
 
 
-def check_angle_geometry_parity(sky, body_rules: list[dict], aspect_rules: list[dict]) -> dict:
+def check_angle_geometry_parity(
+    sky: DirectionBirthSnapshot, body_rules: list[JSON], aspect_rules: list[JSON]
+) -> JSON:
     all_methods = tuple(GeometryMethod)
     timeline = generate_timeline(sky, methods=all_methods, time_key=KEY, max_age_years=65)
     rays = generate_aspect_timeline(
@@ -235,20 +242,20 @@ def check_angle_geometry_parity(sky, body_rules: list[dict], aspect_rules: list[
     )
     bpairs = {(r["promissor"], r["target_role"]) for r in body_rules}
     apairs = {(r["promissor"], r["significator"]): set(r["aspects"]) for r in aspect_rules}
-    groups: dict[tuple, list[tuple[str, float]]] = {}
+    groups: dict[tuple[str, ...], list[tuple[str, float]]] = {}
     for r in timeline.directions:
         if (r.promissor, r.significator) in bpairs and r.direction == "direct":  # noqa: SIM102
             if 18 <= r.symbolic_age_years < 65:
-                key = ("body", r.promissor, r.significator)
-                groups.setdefault(key, []).append((r.method, r.symbolic_age_years))
-    for r in rays.directions:
+                body_key = ("body", r.promissor, r.significator)
+                groups.setdefault(body_key, []).append((r.method, r.symbolic_age_years))
+    for ray in rays.directions:
         if (
-            r.ray_aspect in apairs.get((r.promissor, r.significator), set())
-            and r.direction == "direct"
-            and 18 <= r.symbolic_age_years < 65
+            ray.ray_aspect in apairs.get((ray.promissor, ray.significator), set())
+            and ray.direction == "direct"
+            and 18 <= ray.symbolic_age_years < 65
         ):
-            key = (r.ray_aspect, r.ray_offset_branch, r.promissor, r.significator)
-            groups.setdefault(key, []).append((r.method, r.symbolic_age_years))
+            ray_key = (ray.ray_aspect, ray.ray_offset_branch, ray.promissor, ray.significator)
+            groups.setdefault(ray_key, []).append((ray.method, ray.symbolic_age_years))
     failures = []
     max_spread = 0.0
     for key, variants in sorted(groups.items()):
@@ -266,13 +273,13 @@ def check_angle_geometry_parity(sky, body_rules: list[dict], aspect_rules: list[
 
 
 def birth_time_stress(
-    inputs: dict,
-    base: dict,
+    inputs: JSON,
+    base: JSON,
     ephe: Path,
-    body_rules: list[dict],
-    aspect_rules: list[dict],
-    spec: dict,
-) -> dict:
+    body_rules: list[JSON],
+    aspect_rules: list[JSON],
+    spec: JSON,
+) -> JSON:
     case_by_id = {x["id"]: x for x in inputs["synthetic_cases"]}
     offsets = spec["birth_time_sensitivity"]["offsets_minutes"]
     results = []
@@ -334,11 +341,11 @@ def birth_time_stress(
     }
 
 
-def run_panel(spec: dict, frozen: dict, ephe: Path) -> dict:
+def run_panel(spec: JSON, frozen: JSON, ephe: Path) -> JSON:
     check_ephemeris(ephe)
     body_rules, aspect_rules = source_rules()
     sources = [r["id"] for r in body_rules + aspect_rules]
-    exposures: dict[str, list[dict]] = {}
+    exposures: dict[str, list[JSON]] = {}
     parity_checked = 0
     parity_groups = 0
     parity_failures = []
