@@ -1,0 +1,150 @@
+{
+  "all_cases_constructed_from_researcher_answer_key_not_real_raters": true,
+  "cases": {
+    "all_line_1": {
+      "conditional_accuracy": 0.16666666666666666,
+      "correct": 24,
+      "coverage_adjusted_accuracy": 0.16666666666666666,
+      "inter_rater_pairs": 15,
+      "per_source_line": {
+        "1": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "2": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 24
+        },
+        "3": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 24
+        },
+        "4": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 24
+        },
+        "5": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 24
+        },
+        "6": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 24
+        }
+      },
+      "responses": 144,
+      "reviewer_packets": 6,
+      "unknown": 0
+    },
+    "all_unclear": {
+      "conditional_accuracy": null,
+      "correct": 0,
+      "coverage_adjusted_accuracy": 0.0,
+      "inter_rater_pairs": 15,
+      "per_source_line": {
+        "1": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        },
+        "2": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        },
+        "3": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        },
+        "4": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        },
+        "5": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        },
+        "6": {
+          "correct": 0,
+          "n": 24,
+          "unsure": 24,
+          "wrong": 0
+        }
+      },
+      "responses": 144,
+      "reviewer_packets": 6,
+      "unknown": 144
+    },
+    "perfect": {
+      "conditional_accuracy": 1.0,
+      "correct": 144,
+      "coverage_adjusted_accuracy": 1.0,
+      "inter_rater_pairs": 15,
+      "per_source_line": {
+        "1": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "2": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "3": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "4": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "5": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        },
+        "6": {
+          "correct": 24,
+          "n": 24,
+          "unsure": 0,
+          "wrong": 0
+        }
+      },
+      "responses": 144,
+      "reviewer_packets": 6,
+      "unknown": 0
+    }
+  },
+  "human_astrology_predicted_outcomes": 0,
+  "independent_raters_tested": 0,
+  "researcher_key_sha256": "a8321ed8a7919fa5dd93fdfa7f45d4f91a2c7d7fb731c7c4a3f646d9243728a9",
+  "schema": "G39_FULLY_SYNTHETIC_GRADER_CONTROLS_V1"
+}

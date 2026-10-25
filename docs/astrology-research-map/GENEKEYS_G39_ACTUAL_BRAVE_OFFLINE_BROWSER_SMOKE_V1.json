@@ -1,0 +1,49 @@
+{
+  "actual_brave_exported_synthetic_ratings_total": 48,
+  "actual_browser_fake_correct_source_style_classifications": 8,
+  "fake_browser_mean_naturalness": 3.0,
+  "fake_browser_mean_perceived_pressure": 2.0,
+  "fully_offline_no_web_upload": true,
+  "human_birth_chart_or_GeneKeys_outcomes": 0,
+  "independent_user_raters_recruited": 0,
+  "local_anonymous_browser_export_actually_clicked": true,
+  "real_style_perception_unmeasured": true,
+  "schema": "G39_ACTUAL_OFFLINE_BRAVE_UI_TEST_FIXTURES_V2",
+  "source_truth_not_embedded_in_packet_HTML": true,
+  "two_browser_tested_packets": [
+    {
+      "browser_name": "Brave Chromium",
+      "browser_version": "Chrome/156.0.8078.48",
+      "completed_items": 24,
+      "embedded_remote_dependencies": 0,
+      "export_response_sha256": "4fe72ad2973b8a7c3e13964b51063b1d561755375682251eeaafc68a0cd3abb9",
+      "exported_JSON_contains_no_personal_details": true,
+      "exported_JSON_valid": true,
+      "independent_human_raters_tested": 0,
+      "initial_incomplete_form_blocked": true,
+      "page_errors_count": 0,
+      "production_modified": false,
+      "rater_packet": "R01",
+      "schema": "G39_OFFLINE_BRAVE_UI_SMOKE_V1",
+      "simulated_clicks_only": true,
+      "source_html_sha256": "eb9d13144f6c3f579a8228f89c1ea8a51a968a18c39cc51abdfcc69a17f4c322"
+    },
+    {
+      "browser_name": "Brave Chromium",
+      "browser_version": "Chrome/156.0.8078.48",
+      "completed_items": 24,
+      "embedded_remote_dependencies": 0,
+      "export_response_sha256": "63b3bd5b1ccc7b6fe34b7fc26eaa9f3cc1ea57abf9fa3438924832cffb8c2727",
+      "exported_JSON_contains_no_personal_details": true,
+      "exported_JSON_valid": true,
+      "independent_human_raters_tested": 0,
+      "initial_incomplete_form_blocked": true,
+      "page_errors_count": 0,
+      "production_modified": false,
+      "rater_packet": "R04",
+      "schema": "G39_OFFLINE_BRAVE_UI_SMOKE_V1",
+      "simulated_clicks_only": true,
+      "source_html_sha256": "31b6eb88b7ed55c03877ae3318119a59ae3c71aafc33e0f3c917c832212bc763"
+    }
+  ]
+}
