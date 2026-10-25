@@ -1,0 +1,73 @@
+{
+  "schema": "LILLY_1647_PARTIAL_STRENGTH_PRECOMMIT_V1",
+  "date": "2026-10-25",
+  "owner_root_goal": "OPEN: source-differentiated Western/Hellenistic/Jyotish/Chinese/other astrology, frozen to test untouched human predictions against independent controls. This is only synthetic Western method specification.",
+  "stage": "HISTORICAL_SOURCE_AND_SYNTHETIC_FEATURE_AUDIT_NOT_STUDY_FREEZE",
+  "input_cohort": {
+    "branch": "research/primary-direction-synthetic-panel-20261024",
+    "commit": "97104a3513eb278e50ea05a22626b00b6f83d1d2",
+    "n": 96,
+    "verified_plan_sha256": "948a1289b5f891c7f7870632ad116fb16ea6409d1bed575483c07c9901fbc0d0",
+    "reuse_existing_exposure_count": 216,
+    "untouched_human": false
+  },
+  "historical": {
+    "witness": "Wellcome Collection b30338724 original first edition William Lilly Christian Astrology 1647",
+    "pages": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      115,
+      654,
+      655,
+      670
+    ],
+    "new_original_page_images": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      115
+    ],
+    "method": "literal printed Lilly p104 sign/term/face rows with p115 numeric points; no Ptolemaic edition substitution",
+    "mutual_receptions": "unimplemented",
+    "accidental_strength_other_than_house": "unimplemented",
+    "radix_aspect_context": "unimplemented",
+    "Argolus_full_directions": "unimplemented"
+  },
+  "fixed_fields": [
+    "7 classical planet essential component labels",
+    "5 positive table factors: domicile exaltation sect-dependent triplicity term face",
+    "3 negative factors: detriment fall peregrine",
+    "source-visible partial numeric sum",
+    "geometric Sun daylight/not-daylight sect convention",
+    "Swiss Placidus house number and p115 house-only score",
+    "angle significator full-strength UNRESOLVED",
+    "47 already frozen Jupiter Midheaven favorable aspect candidate count must not become a source-strength prediction"
+  ],
+  "no_new_rules_or_tuning": true,
+  "aggregation": {
+    "planet_rows": 672,
+    "exposure_rows": 216,
+    "distributions": [
+      "essential components by seven classical planets",
+      "partial numeric point sum with no strong threshold",
+      "Jupiter MC favorable-aspect promissor dignity distribution",
+      "house number/partial house score by planet",
+      "sect day/night count",
+      "number of full_Lilly_natal_strength verdicts: zero"
+    ]
+  },
+  "prohibition": [
+    "No human event records",
+    "No chart-specific birth-time rectification",
+    "No fabricated 'strong Jupiter' cutoff or retrospective fit",
+    "No merge of other traditions' incompatible dignity systems",
+    "No report of human validation",
+    "No claim that mutual reception, retrograde, combustion, other accidental conditions were scored"
+  ],
+  "root_goal_state": "OPEN"
+}
