@@ -1,0 +1,100 @@
+{
+  "schema": "HUMANDESIGN_G38_SIX_LINE_EQUAL_FACT_PREFERENCE_STIMULUS_BANK_V1",
+  "created_date": "2026-10-25",
+  "synthetic_development_only": true,
+  "publisher_source": "https://genekeys.com/how-to-read-your-profile/",
+  "source_original_line_registry": "GENEKEYS_G37_SIX_LINE_SOURCE_TESTABILITY_V1.json",
+  "source_registry_sha256": "2e53d6013037aeb40884df1da96390a27b7fbeb15828bb0a84342ddabd660b82",
+  "analyst_authored_six_style_proxies_not_original_Rudd_messages": true,
+  "style_map": {
+    "1": {
+      "source_phrase": "Full Information and Heartfelt Directness",
+      "construct": "detailed_open_info",
+      "intro": "Here is the complete background, explained clearly and directly, including the schedule, location, registration cutoff and whether attending is required: ",
+      "outro": "These details are all stated explicitly so you can evaluate the option with the full context."
+    },
+    "2": {
+      "source_phrase": "High Frequency with No Agenda",
+      "construct": "warm_open_invitation",
+      "intro": "A friendly invitation, with nothing expected of you: ",
+      "outro": " I hope it feels welcoming, whatever you choose."
+    },
+    "3": {
+      "source_phrase": "Absolutely no pressure",
+      "construct": "autonomy_no_pressure",
+      "intro": "There is no pressure or expectation to join: ",
+      "outro": " You are entirely free to decline, without any explanation."
+    },
+    "4": {
+      "source_phrase": "Integrity, Honesty, Softness & Romance",
+      "construct": "honest_gentle_nonromantic",
+      "intro": "I wanted to share this gently and sincerely: ",
+      "outro": " Your comfort matters, and I will respect whichever option feels right."
+    },
+    "5": {
+      "source_phrase": "Simple & Practical Solutions",
+      "construct": "concise_next_step",
+      "intro": "Practical summary: ",
+      "outro": "To attend, register by the stated cutoff."
+    },
+    "6": {
+      "source_phrase": "Patience",
+      "construct": "unhurried_pacing",
+      "intro": "Consider this at your own pace: ",
+      "outro": " There is time to think it through before registration closes."
+    }
+  },
+  "source_literal_to_experiment_divergences": [
+    "Line1 full information is not made more factually complete than the others; its extra framing is a proxy for directness not an independently manipulation-checked experience of full information",
+    "Line2 high frequency has no measured physical frequency; replaced with warmth and absence of agenda, an analyst operationalization",
+    "Line3 absolute absence of pressure is a subjective state; stimulus only uses explicitly non-coercive wording",
+    "Line4 romance is excluded for neutral unsolicited communication, so this line is an incomplete source proxy, not the full literal Rudd prescription",
+    "Line5 simple practicality may have universal appeal; all variants contain same actual registration information",
+    "Line6 patience overlaps with Line3 no-pressure, introducing predictable multicollinearity that cannot be wished away"
+  ],
+  "scenarios": [
+    {
+      "id": "map",
+      "scenario": "fictional_mapmaking_workshop",
+      "facts": [
+        "The mapmaking workshop is on Friday at 3:00 PM in Room B.",
+        "Registration closes Thursday at 5:00 PM.",
+        "Participation is optional."
+      ]
+    },
+    {
+      "id": "drawing",
+      "scenario": "fictional_beginner_drawing_session",
+      "facts": [
+        "The beginner drawing session is on Monday at 10:00 AM in Studio C.",
+        "Registration closes Sunday at 5:00 PM.",
+        "Participation is optional."
+      ]
+    },
+    {
+      "id": "garden",
+      "scenario": "fictional_community_gardening_meeting",
+      "facts": [
+        "The gardening meeting is on Saturday at 9:00 AM at the community center.",
+        "Registration closes Friday at 5:00 PM.",
+        "Participation is optional."
+      ]
+    },
+    {
+      "id": "history",
+      "scenario": "fictional_local_history_talk",
+      "facts": [
+        "The local history talk is on Tuesday at 6:00 PM in Hall A.",
+        "Registration closes Monday at 5:00 PM.",
+        "Participation is optional."
+      ]
+    }
+  ],
+  "research_protocol_status": "UNREVIEWED_STIMULUS_DEV_NOT_CONSENTED_HUMAN_QUESTIONNAIRE",
+  "independent_manipulation_checks_performed": false,
+  "readability_content_equivalence_peer_review_performed": false,
+  "wording_balance_checked_automatically_only": true,
+  "actual_people_shown_messages": 0,
+  "stimulus_development_length_fix_before_publication": true,
+  "prepublication_synthetic_v1_candidate_sources_replaced_after_mock_dryrun": true
+}
