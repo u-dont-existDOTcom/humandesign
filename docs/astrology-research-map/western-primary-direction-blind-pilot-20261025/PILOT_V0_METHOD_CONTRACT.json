@@ -1,0 +1,86 @@
+{
+  "schema": "WESTERN_MODERN_PRIMARY_DIRECTION_BLIND_PILOT_DESIGN_V0",
+  "date": "2026-10-25",
+  "overall_owner_outcome": {
+    "status": "OPEN",
+    "goal": "Historically differentiated source-backed astrology methods across Western/Hellenistic/Jyotish/Chinese/HD, with independently frozen interpretations and forward-blind human validation against matched controls."
+  },
+  "task": {
+    "purpose": "Deliver a bounded research-only modern Western timing/score scaffolding and quantify 96 known synthetic cases, without recruiting or reading human outcomes.",
+    "branch": "research/western-primary-direction-blind-pilot-20261025",
+    "relation": "CONTRIBUTES_BUT_NOT_A_MANDATORY_HISTORICAL_PRECONDITION"
+  },
+  "prior_inputs": {
+    "root_source_1647": "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/LILLY_1647_EVENT_CANDIDATES.json",
+    "aspects": "docs/astrology-research-map/primary-direction-event-hypotheses-20261024/ASPECT_SOURCE_COVERAGE_DIAGNOSTIC.json",
+    "synthetic_96": "docs/astrology-research-map/primary-direction-synthetic-panel-20261024",
+    "original_model_date": "2026-10-24",
+    "synthetic_overlap_status": "DEVELOPMENT_ALREADY_READ"
+  },
+  "all_eight_source_candidates": [
+    "L1647-MC-JUP-BODY",
+    "L1647-MC-SAT-BODY",
+    "L1647-ASC-JUP-BODY",
+    "L1647-ASC-MARS-BODY",
+    "L1647-MC-JUP-SOFT",
+    "L1647-MC-SAT-HARD",
+    "L1647-ASC-JUP-SOFT",
+    "L1647-ASC-MARS-HARD"
+  ],
+  "tentative_primary_modern_behavioral_or_event_targets": [
+    {
+      "id": "L1647-MC-JUP-BODY",
+      "domain": "documented_formal_role_gain",
+      "meaning": "Dated grant of new appointment/title with responsibility; context eligibility and actual records independently coded, not a claim Lilly unconditionally predicted this outcome."
+    },
+    {
+      "id": "L1647-MC-SAT-BODY",
+      "domain": "documented_involuntary_role_loss",
+      "meaning": "Dated termination/demotion/removal of responsibility; independent employment/office eligibility required."
+    }
+  ],
+  "inactive_or_secondary_6": "Retained exactly as source candidates in code, not silently deleted. They require additional objective thresholds, source conditions, or independent domain definition before any prospective scoring.",
+  "modern_time_convention": {
+    "status": "EXPLORATORY_NOT_ACTUAL_TRIAL_FROZEN",
+    "symbolic_time_key": "one arc degree per symbolic age year (diagnostic, not exact Lilly/Argoli)",
+    "candidate_geometry": "separate existing Cartesian Regiomontanian arm; do not compare as independent from new trigonometric parity formula",
+    "directness": "modern software-direct variant; historical exact role/time conventions unresolved",
+    "contact_window": "±0.5 symbolic age year (earlier 2026-10-24 developmental choice, NOT historically prescribed)",
+    "allowed_observation_age_years": "[18,65) for inherited engineering sample; human cohort age interval must be preregistered based on outcome observability",
+    "uncertainty": "For known discrete one-minute offsets, produce union envelope and flag absent contact. Never choose favorable minute. Continuous birth-time uncertainty remains unresolved; grid is NOT guaranteed continuous bound.",
+    "caution": "At ±5 minutes the previous 24 synthetic cases showed about 1.25 symbolic-year shifts each way; broader windows require exposure-matched nulls."
+  },
+  "scoring_controls": {
+    "status": "FRAMEWORK_ONLY_NO_REAL_SCORING",
+    "prediction_receipt": "Pseudonymous, SHA-256 committed inputs/features/method/rules/controls and all eight source statuses before outcomes. Generated receipt in code does not attest storage/freeze timestamp itself.",
+    "exposure": "Merge intersecting prediction windows and intersect with independently coded occupational eligibility AND outcome ascertainment. No subjective role status entered by chart analyst.",
+    "null": "One-to-one N×N participant-by-chart label permutation; enumerate n≤8, fixed-seed Monte Carlo n≥9; compare assigned score. Exchangeability and matching need human-cohort-specific preregistration.",
+    "timing_hazard": "Event hazard over age/time need not be uniform; mere contact occupancy or within-person shifted-year controls are insufficient to infer predictive validity.",
+    "independence": "Do not double count same coordinate contact by alternative geometry/method labels; keep occupation domains separate; protect cohort holdout and source knowledge",
+    "outcome_evaluation": "NOT IMPLEMENTED or started; live scored events require independent assessors, consent/privacy and frozen denominator/analysis protocol."
+  },
+  "development_only_expected": {
+    "original_synthetic_case_count": 96,
+    "all_source_rule_contact_count": 216,
+    "two_tentative_occupational_contact_count": 20,
+    "observed_occupancy_fraction_per_full_96x47_age_panel": 0.004232710829565605,
+    "this_is_human_population_prevalence": false,
+    "real_event_rate_measured": false,
+    "sample_size_sufficiency": "UNKNOWN"
+  },
+  "not_ready": {
+    "source_conditional_weak_jupiter_status": "Full historical planetary AND angle natal strength is not reconstructed; no retroactive threshold.",
+    "exact_argoli_1610_and_1644_status": "1610 local direct/converse arithmetic partly verified; 1644 corresponding pages unread; full historical model not asserted.",
+    "birth_input_processing": "Time zone/historical DST normalization and verified Swiss returned flags not yet wired into THIS pilot facade; reuse existing verified engine in eventual study.",
+    "real_human_status": "NO PARTICIPANTS, NO OUTCOMES, NO REVEAL, NO HUMAN MODEL FREEZE",
+    "all_study_predictions": "UNTESTED"
+  },
+  "post_protocol_steps": [
+    "Source-owner consensus on the concrete endpoint and professional eligibility/ascertainment coding, without viewing holdout outcomes.",
+    "Power/feasibility assessment using independently measured background event rates and age/year/occupation distribution, not synthetic occupancy as event rates.",
+    "Link official ephemeris chart engine with minute-grid uncertainty and create pre-outcome sealed prediction packets in a permissioned private store.",
+    "Conduct forward-blind cohort chart-label/decoy comparisons; freeze the full N×N score matrix policy, permutation strata and primary statistic before outcome access.",
+    "Use untouched participants, independent date/eligibility ascertainment, report negative hits and misses; keep other astrology traditions as separately frozen arms."
+  ],
+  "human_predictive_accuracy": "UNTESTED"
+}
