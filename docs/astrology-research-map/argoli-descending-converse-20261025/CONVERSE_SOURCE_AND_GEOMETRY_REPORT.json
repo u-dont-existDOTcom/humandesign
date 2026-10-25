@@ -1,0 +1,75 @@
+{
+  "caution": "Role swapping implements a modern Regiomontanian geometry interpretation of 1610 p47; not a complete author-certified method",
+  "development": {
+    "claims": "SOURCE_MOTIVATED_MATHEMATICAL_DIAGNOSTIC_NOT_ASTROLOGY_VALIDATION",
+    "maximum_absolute_difference_deg": 63.05098033063757,
+    "median_absolute_difference_deg": 2.9878013469703006,
+    "method": "regiomontanian_position_circle",
+    "minimum_absolute_difference_deg": 0.00014091926533410515,
+    "n": 500,
+    "n_disagree_over_five_degrees": 198,
+    "n_disagree_over_one_degree": 355,
+    "panel": "EXPLORATORY_DEVELOPMENT",
+    "seed": 20261025
+  },
+  "human_data_seen": false,
+  "later_1667_converse_chapter_presence": "UNKNOWN_OUTSIDE_ALIGNED_SEQUENCE",
+  "mathematical_holdout": {
+    "claims": "SOURCE_MOTIVATED_MATHEMATICAL_DIAGNOSTIC_NOT_ASTROLOGY_VALIDATION",
+    "maximum_absolute_difference_deg": 70.67499017858955,
+    "median_absolute_difference_deg": 2.99190717607037,
+    "method": "regiomontanian_position_circle",
+    "minimum_absolute_difference_deg": 0.0015489853164467604,
+    "n": 400,
+    "n_disagree_over_five_degrees": 148,
+    "n_disagree_over_one_degree": 277,
+    "panel": "AFTER_PRECOMMIT_MATH_HOLDOUT",
+    "seed": 20261029
+  },
+  "predictive_accuracy": "UNTESTED",
+  "schema": "ARGOLI_1610_DESCENDING_CONVERSE_GEOMETRY_V1",
+  "source_1667_comparison": "Michigan original printed p31–33",
+  "source_exact_complete_1610_Argoli": "NOT_AUTHENTICATED",
+  "source_numeric_concordance": {
+    "arithmetically_correct_and_printed_1667_arc": [
+      46,
+      58
+    ],
+    "correct_subtrahend_both_prose_and_1610": [
+      160,
+      3
+    ],
+    "four_matched_worked_direction_arcs": {
+      "SUN_TO_JUPITER_SEXTILE_ALTERNATE_ASCENSION": [
+        46,
+        58
+      ],
+      "SUN_TO_JUPITER_SEXTILE_DESCENSION": [
+        46,
+        58
+      ],
+      "SUN_TO_MARS_SEXTILE_ALTERNATE_ASCENSION": [
+        41,
+        17
+      ],
+      "SUN_TO_MARS_SEXTILE_DESCENSION": [
+        41,
+        17
+      ]
+    },
+    "full_historical_converse_validity": "UNRESOLVED",
+    "human_outcomes_evaluated": false,
+    "printed_1667_table_subtrahend": [
+      106,
+      3
+    ],
+    "schema": "ARGOLI_1610_1667_SOURCE_NUMERIC_RECONCILIATION_V1",
+    "source_1644_status": "UNREAD_429_OR_403",
+    "wrong_operand_computed_arc": [
+      100,
+      58
+    ],
+    "wrong_operand_difference_degrees": 54
+  },
+  "source_original_first_edition_1610": "BSB, printed p43–47"
+}

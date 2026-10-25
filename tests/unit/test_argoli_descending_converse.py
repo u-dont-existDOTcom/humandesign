@@ -141,3 +141,38 @@ def test_new_holdout_400_only_after_precommit() -> None:
     assert report["source_exact_complete_1610_Argoli"] == "NOT_AUTHENTICATED"
     build = module().build()[0]
     assert build == report
+
+
+def test_complete_math_panel_replay_bitwise_identical() -> None:
+    result = json.loads((W / "REPLAY_VERIFICATION.json").read_text())
+    code = importlib.util.spec_from_file_location(
+        "argoli_converse_replay", W / "verify_converse_replay.py"
+    )
+    assert code is not None and code.loader is not None
+    helper = importlib.util.module_from_spec(code)
+    code.loader.exec_module(helper)
+    assert helper.replay() == result
+    assert result["status"] == "TWO_OF_TWO_OUTPUT_FILES_BITWISE_IDENTICAL"
+    assert result["fixed_source_and_math_precommit"] == ("b7eb138099aba840edd4dc748241ad41a5d8dec8")
+    assert result["holdout_over_one_degree"] == 277
+    assert result["holdout_over_five_degrees"] == 148
+    assert result["human_predictive_accuracy"] == "UNTESTED"
+
+
+def test_sha256_verification_covers_all_original_images_and_converse_code() -> None:
+    saved = json.loads((W / "VERIFICATION.json").read_text())
+    source = importlib.util.spec_from_file_location(
+        "argoli_descending_integrity", W / "build_source_verification.py"
+    )
+    assert source is not None and source.loader is not None
+    helper = importlib.util.module_from_spec(source)
+    source.loader.exec_module(helper)
+    assert helper.manifest() == saved
+    assert saved["original_1644_printing_compared"] is False
+    assert saved["source_witness_images"] == 10
+    assert saved["derived_detail_crops_not_independent_evidence"] == 1
+    assert saved["all_human_predictive_accuracy"] == "UNTESTED"
+    for rel, meta in saved["file_sha256"].items():
+        content = (ROOT / rel).read_bytes()
+        assert hashlib.sha256(content).hexdigest() == meta["sha256"]
+        assert len(content) == meta["bytes"]

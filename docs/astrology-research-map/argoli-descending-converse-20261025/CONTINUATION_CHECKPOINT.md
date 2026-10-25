@@ -21,3 +21,25 @@ The source record includes a separate **400-coordinate seed 20261029** mathemati
 1644 original method passage is still UNREAD (Gallica/Google 403/429); original 1667 prose errors lack a separate copy. 1610 source equation direction is NOT proof that simple actor-swapped current Regiomontanian geometry captures the full original algorithm with all pole/latitude/time-key/natal-strength conditions. The contemporary role-swapped research arm, if eventually used in humans, requires its own explicit prospective independent register; human predictive validity remains UNTESTED. Do not substitute more source digitization for the owner's broader forward-blind cross-tradition comparison indefinitely.
 
 **Recovery next step:** inspect the Git worktree status and `SOURCE_METHOD_ALIGNMENT.json` first; do not restart the previously verified 96 synthetic natal chart panel, 800 Regiomontanian parity holdout, or 1610/1667 ascending chapter text audit.
+
+
+## Completed after method precommit — verified second-stage results
+
+The original-source/method/holdout-specification commit **b7eb138099aba840edd4dc748241ad41a5d8dec8** was pushed to the isolated `humandesign` research branch before running the new 400-case seed `20261029`.
+
+The first executable holdout run produced **277/400** role-swapped vs naive-reversed arcs with discrepancy greater than 1°, **148/400** greater than 5°, median **2.99190717607037°**, maximum **70.67499017858955°**. The prior seed `20261025` exploratory development (500 cases) was reproduced with its previously observed >1° count 355, >5° count 198, median **2.9878013469703006°**, maximum **63.05098033063757°**. Both result files have been reproduced byte-for-byte by a completely separate replay invocation; no source rules or coordinates were changed after observing the holdout.
+
+Source-backed 1610 **converse role/position-circle distinction** is verified; the generic math actor swap is still only `SOURCE_MOTIVATED_RESEARCH_VARIANT_NOT_COMPLETE_ARGOLI`. Full historic direction conditions/time keys, second 1667 prose printing, and 1644 original method chapter remain unresolved. The original 1610–1667 descending example/printing-error status is unchanged. No human participant data, controlled comparisons, or predicted events were scored.
+
+**Next after this turn:** read `REPLAY_VERIFICATION.json`, `VERIFICATION.json`, `CONVERSE_SOURCE_AND_GEOMETRY_REPORT.json` and confirm final GitHub commit. Do not rerun the 900 synthetic coordinates unless a specific changed algorithm demands it. Then, to advance the owner's OPEN project objective, design a minimal **separately identified modern** pilot with frozen birth-time uncertainty, event definitions, exposure-year matched negative controls and genuinely untouched participant data, while historical 1644 access research may continue independently. Do not invent a historical completeness prerequisite to block that potential pilot.
+
+Rebuild only focused historical tests via `PYTHONPATH=src $HOME/humandesign/.venv/bin/python -m pytest -q tests/unit/test_argoli_descending_converse.py`. Source worktree `~/.local/share/hdmatch/research-checkouts/argoli-descending-20261025`; owner handoff in `~/Téléchargements/gansten-astro/`.
+
+
+## Verified full-suite milestone and handoff contract
+
+The inherited Western source and math regression suite completed with **206 passed** using the official Swiss Ephemeris files, in the isolated new worktree. New focused source/converse/replay/integrity tests completed **11 passed**. The four updated/new Python components pass Ruff lint and the four analysis modules pass mypy with `MYPYPATH=src`.
+
+The first code+images+planned holdout branch commit is **b7eb138099aba840edd4dc748241ad41a5d8dec8** and was pushed before any case from new seed `20261029` was computed. Actual measured holdout: 277/400 >1°, 148/400 >5°, median 2.99190717607037° and max 70.67499017858955°. The unheld earlier 500 exploratory data yielded 355/500 >1° and 198/500 >5°. All 900 rows and the summary JSON were reproduced *byte-for-byte*, verified by `verify_converse_replay.py`. All original 10 primary photo pages + one non-independent crop are checked by `build_source_verification.py`.
+
+**Stop admission:** the local historical/geometry bounded subtask is now technically verified, but the owner’s overall human forward-blind multi-tradition outcome remains OPEN. An authorized next safe action is to build a separate modern prospective pilot specification from source-qualified event predicates, with uncertainty propagation and matched time/chart controls, while continuing any missing historical witnesses independently. This is proposed optional experimental scope, **not** a new mandatory requirement for all other astrology research. Never claim performance in real people until genuinely untouched outcomes are observed and evaluated.

@@ -1,0 +1,19 @@
+{
+  "contract_sha256": "8a7eef2db86350fec36f707f75048aafa21bca7f3d708e54b34c1494ef8d9fb0",
+  "development_cases": 500,
+  "fixed_source_and_math_precommit": "b7eb138099aba840edd4dc748241ad41a5d8dec8",
+  "full_historical_argoli_converse_authenticated": false,
+  "generator_sha256": "0fd004494157ca04be697055f391127f90d9583577bb757c0d40d4d1cd48a9aa",
+  "holdout_maximum_degree_difference": 70.67499017858955,
+  "holdout_median_degree_difference": 2.99190717607037,
+  "holdout_over_five_degrees": 148,
+  "holdout_over_one_degree": 277,
+  "human_predictive_accuracy": "UNTESTED",
+  "output_sha256": {
+    "CONVERSE_SOURCE_AND_GEOMETRY_REPORT.json": "5e944896aa658477f05d7bca7d802c6380add6df42e03a8f7d0cc4dab0f0eadf",
+    "CONVERSE_SYNTHETIC_COORDINATE_CASES.csv": "3949ba115a5a1d042cb5fe463c93fa0367681ef9bea93a2e6fb577b8f90f728d"
+  },
+  "schema": "ARGOLI_1610_CONVERSE_REPLAY_V1",
+  "status": "TWO_OF_TWO_OUTPUT_FILES_BITWISE_IDENTICAL",
+  "subsequent_mathematical_holdout_cases": 400
+}

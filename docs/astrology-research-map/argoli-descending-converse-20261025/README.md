@@ -57,3 +57,21 @@ A separate seed-20261029 **400-case synthetic coordinate panel** was fixed in th
 ## Next source and empirical frontier
 
 The **1644 Argoli method chapter is still not accessible** through the attempted Gallica (403) or Google Books (429) routes, despite bibliographic evidence of multiple copies. The later 1667 provenance issue also needs a second independently photographed prose copy. A fuller source-authenticated direction rule must address latitude, promissor/angle roles, true 1610/1644/1667 variants, time key, and both parties' radix strength. No known participant or owner's personal life history can qualify as untouched human validation. The optional **separately labeled modern diagnostic** pilot can be pre-registered with an exact age-window and birth-time-uncertainty protocol without pretending this historical-source work is a mandatory precondition.
+
+
+## Executed post-commit mathematical holdout (not human astrology validation)
+
+The entire original source contract, source images, generator, and tests were committed and published as `b7eb138099aba840edd4dc748241ad41a5d8dec8` **before** the first execution of the 400 synthetic coordinate cases with seed `20261029`.
+
+| Measured distance: role-swapped Regiomontanian vs `360° − direct` | Earlier development (500) | Separately fixed mathematical holdout (400) |
+| --- | ---: | ---: |
+| Number differing by more than 1° | 355 | **277** |
+| Number differing by more than 5° | 198 | **148** |
+| Median absolute difference | 2.987801° | **2.991907°** |
+| Maximum difference | 63.050980° | **70.674990°** |
+
+The 500-case seed `20261025` was **already viewed before any preregistration** and is correctly labeled DEVELOPMENT. The additional seed `20261029` was fixed without prior examination. A separate verifier recomputed all **900** synthetic geometries and checked both the summary JSON and complete CSV **byte-for-byte**. The exact numeric outcome and replay are in `CONVERSE_SOURCE_AND_GEOMETRY_REPORT.json`, `CONVERSE_SYNTHETIC_COORDINATE_CASES.csv`, and `REPLAY_VERIFICATION.json`.
+
+This demonstrates **non-equivalence of two modern mathematical constructions** over the declared synthetic domain, consistent with a source-motivated reading of the 1610 converse chapter. It does not validate `source_motivated_converse_comparison` as the entire historical converse recipe or imply any superior forecast accuracy. In particular, a change of which actor supplies the position circle may require historical restrictions on lot/retrograde status and proper motion not represented by the generic two-planet geometry.
+
+For recovery and future testing, `build_source_verification.py` preserves checksums of all original sources, the derived zoom (clearly not an independent witness), both output artifacts and Python tests, excluding its own manifest to avoid recursion. The full cross-tradition human evaluation remains **OPEN** and **UNTESTED**.
