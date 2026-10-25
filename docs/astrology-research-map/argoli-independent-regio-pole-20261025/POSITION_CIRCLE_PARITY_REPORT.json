@@ -1,0 +1,79 @@
+{
+  "contract_sha256": "67fc70c7d7e0ea339e5b8ce7a4dba95e0944e6f241f25548a9075f07f61dd5c0",
+  "date": "2026-10-25",
+  "development_1200_seed2004": {
+    "cases_exceeding_1e_minus_8_deg": 0,
+    "max_circular_arc_error_degrees": 1.1368683772161603e-13,
+    "note": "Development seed was examined in scratch BEFORE precommit; not an untouched validation set.",
+    "quadrant_counts": {
+      "east_above": 309,
+      "east_below": 295,
+      "west_above": 291,
+      "west_below": 305
+    },
+    "seed": 2004,
+    "statistical_or_human_accuracy": "NOT_MEASURED",
+    "synthetic_coordinate_cases": 1200
+  },
+  "history": {
+    "1610_exact_algorithm_authenticated": false,
+    "1667_original_family_illustrated": true,
+    "human_accuracy": "UNTESTED",
+    "modern_formula_is_kolev_secondary": true,
+    "source_1610_later_1667_table_variant_reconciled": false,
+    "source_family": "Regiomontanian fictitious pole/position circles"
+  },
+  "human_birth_or_event_records_read": false,
+  "new_fixed_800_seed20261026": {
+    "cases_exceeding_1e_minus_8_deg": 0,
+    "max_circular_arc_error_degrees": 1.1368683772161603e-13,
+    "note": "New 800 synthetic coordinate cases first executed after protocol/code/tests published; independent geometric arithmetic only.",
+    "quadrant_counts": {
+      "east_above": 185,
+      "east_below": 226,
+      "west_above": 208,
+      "west_below": 181
+    },
+    "seed": 20261026,
+    "statistical_or_human_accuracy": "NOT_MEASURED",
+    "synthetic_coordinate_cases": 800
+  },
+  "owner_root_combined_forward_blind_validation": "OPEN",
+  "published_worked_example": {
+    "absolute_error_from_published_rounded_arc_degrees": 0.0001095067042200526,
+    "independent_under_pole": {
+      "forward_arc_deg": 56.61516250670422,
+      "horizon_ascensional_coordinate_deg": 183.9711079766816,
+      "meridian_distance_deg": 143.99373,
+      "method_provenance": "KOLEV_SECONDARY_RECONSTRUCTION_NOT_EXACT_1610_ARGOLI",
+      "promissor_ascensional_coordinate_deg": 240.58627048338582,
+      "promissor_ascensional_difference_deg": -20.543729516614178,
+      "quadrant": "west_above",
+      "ramc_under_pole_deg": 273.9711079766816,
+      "sign_above_horizon": true,
+      "significator_ascensional_difference_deg": -2.1961920233184298,
+      "significator_pole_deg": 39.375742231182016,
+      "west_of_meridian": true,
+      "zenith_distance_deg": 52.594752600472525
+    },
+    "input": {
+      "latitude_deg": 53,
+      "promissor_RA": 261.13,
+      "promissor_dec": -23.151,
+      "ramc_deg": 222.17357,
+      "significator_RA": 186.1673,
+      "significator_dec": -2.6734
+    },
+    "other_method_arcs": {
+      "placidean_under_pole": 62.76435915356109,
+      "proportional_semi_arc": 62.04313286280774,
+      "regiomontanian_position_circle": 56.61516250670425
+    },
+    "published_kolev_arc_degrees": 56.615053,
+    "regio_vector_equivalence_error_degrees": 2.842170943040401e-14,
+    "rounding_tolerance_degrees": 0.00025
+  },
+  "recomputed_full_astrology_chart_or_events": false,
+  "schema": "ARGOLI_1667_KOLEV_REGIO_INDEPENDENT_MATH_PARITY_V1",
+  "status": "TWO_MATHEMATICAL_PARITY_PANELS_NOT_HUMAN_ASTROLOGY_VALIDATION"
+}

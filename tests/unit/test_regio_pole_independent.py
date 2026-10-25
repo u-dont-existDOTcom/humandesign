@@ -182,3 +182,52 @@ def test_source_hierarchy_and_mathematical_holdout_frozen() -> None:
         "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d"
     )
     assert len(list((directory / "primary_1667_pages").glob("*.png"))) == 3
+
+
+def test_saved_1200_plus_800_parity_results_and_replay() -> None:
+    import importlib.util
+    import json
+    from pathlib import Path
+
+    directory = (
+        Path(__file__).resolve().parents[2]
+        / "docs/astrology-research-map/argoli-independent-regio-pole-20261025"
+    )
+    values = json.loads((directory / "POSITION_CIRCLE_PARITY_REPORT.json").read_text())
+    assert values["human_birth_or_event_records_read"] is False
+    assert values["history"]["1610_exact_algorithm_authenticated"] is False
+    assert values["development_1200_seed2004"]["synthetic_coordinate_cases"] == 1200
+    assert values["new_fixed_800_seed20261026"]["synthetic_coordinate_cases"] == 800
+    assert values["development_1200_seed2004"]["cases_exceeding_1e_minus_8_deg"] == 0
+    assert values["new_fixed_800_seed20261026"]["cases_exceeding_1e_minus_8_deg"] == 0
+    assert values["owner_root_combined_forward_blind_validation"] == "OPEN"
+    spec = importlib.util.spec_from_file_location(
+        "regio_holdout_source_integrity", directory / "verify_regio_parity.py"
+    )
+    assert spec and spec.loader
+    helper = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(helper)
+    assert helper.replay()["status"] == "TWO_OF_TWO_PANELS_BITWISE_REPRODUCIBLE"
+
+
+def test_historical_source_hash_manifest_and_full_1667_volume() -> None:
+    import hashlib
+    import importlib.util
+    import json
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    directory = root / "docs/astrology-research-map/argoli-independent-regio-pole-20261025"
+    spec = importlib.util.spec_from_file_location(
+        "regio_hash_manifest", directory / "verify_regio_parity.py"
+    )
+    assert spec and spec.loader
+    helper = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(helper)
+    saved = json.loads((directory / "VERIFICATION.json").read_text())
+    assert helper.manifest() == saved
+    assert saved["human_predictive_accuracy"] == "UNTESTED"
+    assert saved["replay"]["n_later_precommitted_holdout_geometries"] == 800
+    for relative, data in saved["file_hashes"].items():
+        source = root / relative
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == data["sha256"]

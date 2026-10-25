@@ -1,0 +1,73 @@
+{
+  "file_hashes": {
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 4634,
+      "sha256": "557b4b1aa531d18c2a5543af3c5297face03d7101e578e478a573038bffda029"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/POSITION_CIRCLE_PARITY_REPORT.json": {
+      "bytes": 3154,
+      "sha256": "5e607ab4d295c0726c66695de96eea501ede963b15a8533ad32aa8c56292a422"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/PRIMARY_SOURCE_SCOPE.md": {
+      "bytes": 3528,
+      "sha256": "cae39d68e25490bdfb9b139bd917b0f308db3dc55b7847b56c0a71a55fd15106"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/README.md": {
+      "bytes": 6020,
+      "sha256": "6efe2cc0b2fe5542d10033ba660084999be38eeaea99643099b2ca2029d8638d"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/REGIO_INDEPENDENT_PARITY_PRECOMMIT.json": {
+      "bytes": 4165,
+      "sha256": "67fc70c7d7e0ea339e5b8ce7a4dba95e0944e6f241f25548a9075f07f61dd5c0"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/build_regio_parity.py": {
+      "bytes": 7593,
+      "sha256": "9bb2c38f877a9281e255d046d789f299c26764481ce78c0a3a0866f75d65d11c"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_pages/Argoli_1667_pdfpage_014_source.png": {
+      "bytes": 399095,
+      "sha256": "3e571f8fb47d4f1fe10bc24d0d6b128de0c75ee89e3c54db742892a1620fb657"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_pages/Argoli_1667_pdfpage_018_source.png": {
+      "bytes": 330435,
+      "sha256": "96944dce8564bf6417288be83e4fac7902a59a1c8eea940793012318d3e24f5d"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_pages/Argoli_1667_pdfpage_034_source.png": {
+      "bytes": 397031,
+      "sha256": "b997537bda87a723c35b20677802c91d1e2c9f32cf9ad03de34c60fcea1ed0f0"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_volume/Andrea_Argoli_Primi_Mobilis_Tabulae_1667_original_partial_volume.pdf": {
+      "bytes": 7378695,
+      "sha256": "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d"
+    },
+    "docs/astrology-research-map/argoli-independent-regio-pole-20261025/verify_regio_parity.py": {
+      "bytes": 4049,
+      "sha256": "54393fa79369b773c1f3c4c8d515c72a745772f472219a901ab9e62c45b4e4c5"
+    },
+    "src/hdmatch/astrology/regio_pole_independent.py": {
+      "bytes": 5435,
+      "sha256": "55b53c97cf5a1fa82fec274c8be9332d61d7d3c3e4b0d474e187a04f6e882b0e"
+    },
+    "tests/unit/test_regio_pole_independent.py": {
+      "bytes": 9808,
+      "sha256": "9073f6931e0a8f6313bec091e7760087058b93274137d594767819972f1ac44d"
+    }
+  },
+  "historical_exactness": "PARTIAL_FAMILY_ONLY_1610_NOT_ESTABLISHED",
+  "human_predictive_accuracy": "UNTESTED",
+  "replay": {
+    "contract_sha256": "67fc70c7d7e0ea339e5b8ce7a4dba95e0944e6f241f25548a9075f07f61dd5c0",
+    "exact_1610_Argoli_authentication": false,
+    "human_prediction_validation": "UNTESTED",
+    "initial_source_method_commit": "3e6b17ece6936b5d413787ba8be54414e8fc0145",
+    "max_angular_error_degrees": 1.1368683772161603e-13,
+    "n_development_geometries": 1200,
+    "n_later_precommitted_holdout_geometries": 800,
+    "report_sha256": "5e607ab4d295c0726c66695de96eea501ede963b15a8533ad32aa8c56292a422",
+    "schema": "ARGOLI_REGIO_MATH_INDEPENDENT_REPLAY_V1",
+    "script_sha256": "9bb2c38f877a9281e255d046d789f299c26764481ce78c0a3a0866f75d65d11c",
+    "source_pdf_sha256": "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d",
+    "status": "TWO_OF_TWO_PANELS_BITWISE_REPRODUCIBLE"
+  },
+  "schema": "ARGOLI_INDEPENDENT_MATH_SOURCE_INTEGRITY_V1"
+}
