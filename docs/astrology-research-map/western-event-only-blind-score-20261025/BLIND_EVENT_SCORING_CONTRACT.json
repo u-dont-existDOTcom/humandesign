@@ -1,0 +1,64 @@
+{
+  "schema": "WESTERN_LILLY_MODERN_EVENT_ONLY_BLIND_SCORE_ENGINEERING_V0",
+  "date": "2026-10-25",
+  "root_goal": {
+    "status": "OPEN",
+    "description": "Historically distinct astrology rule models across Western/Hellenistic/Jyotish/Chinese/Human Design prospectively frozen and independently evaluated on genuinely untouched humans vs controls."
+  },
+  "this_turn": {
+    "status": "SOFTWARE_ENGINEERING_AND_PUBLIC_DATA_FEASIBILITY_NO_REAL_OUTCOMES",
+    "parent": "research/western-private-natal-bridge-20261025 @ 418ccde1a32c5ad9b59ad60264a64e7ab516ef20",
+    "proposal_origin": "ASSISTANT_INFERENCE_NOT_MANDATORY_GATE",
+    "scope": "Small reversible event-only score and data-source discovery; not an authorized new requirement on other research."
+  },
+  "hypothesis": {
+    "name": "Modern diagnostic primary directions, NOT complete historical Lilly/Argoli",
+    "two_domains": [
+      "documented_formal_role_gain",
+      "documented_involuntary_role_loss"
+    ],
+    "source_rules": [
+      "L1647-MC-JUP-BODY",
+      "L1647-MC-SAT-BODY"
+    ],
+    "excluded_six_source_candidates": "preserved but not eligible for event scoring; source/radix and endpoint unresolved",
+    "metric": "mean across independently documented positive event age intervals of fraction of each event interval covered by candidate chart windows",
+    "date_precision": "day/month/year intervals, always coded before chart reveal; uniform-within-reported-event-interval is a tentative researcher-inferred convention",
+    "likelihood": "not calibrated, not a proper scoring rule; no implied population probabilities",
+    "overlapping_contacts": "use union of all windows for a domain, event credited at most 1",
+    "missing_events": "no event record means UNKNOWN, not negative event or no-event true negative",
+    "scoring_domain": "adult age interval [18,65); exclude out-of-domain ages and explicitly report",
+    "primary_null": "one-to-one N×N event-case vs chart permutation under predeclared exchangeability/matching strata; no true-chart labels until matrix frozen",
+    "incomplete_cohort": "report eventless cases and do not produce a pseudocomplete N×N matrix",
+    "chart_acceptance": "only private Regiomontanian pilot receipt with keyed HMAC, pinned Swiss-file hashes/returned SWIEPH, unchanged source rule registry and declared modern method, not full historical conditions",
+    "real_study_state": "NOT_FROZEN_OR_REGISTERED; external timestamps, enrollment, outcome assessor, source checks, matching must be independently proven"
+  },
+  "public_data_source_candidate": {
+    "source": "Astrodienst Astro-Databank c_sample.zip",
+    "publisher_uri": "https://www.astro.com/adbexport/",
+    "sample_uri": "https://www.astro.com/adbexport/c_sample.zip",
+    "release_description": "current readme dated 2026-10-07 describes 5866 names starting C, 3692 AA-rated, revision Feb 2026, c_sample dated July 28 2026",
+    "source_format": "ADB export XML 260911; record IDs, AA ratings and event categories with many events year-only",
+    "permission_boundary": "free downloadable sample for developing tools and research as published. Broader data exports require paid subscription since September 2026; not purchased, authenticated, downloaded or inferred. Do not mirror raw people records to Git.",
+    "retrieval_attempts": [
+      "remote requests status 200/Content-Length 2,752,783 but body failed read timeout after 60 seconds, 0 bytes saved",
+      "curl HTTPS HTTP/1.1 returned unable to connect to astro.com/www on authorized Zorin host",
+      "web read/search verified official directory but binary endpoint inaccessible through that route"
+    ],
+    "binary_acquired": false,
+    "first_raw_individual_event_read": false,
+    "cohort_inclusion_if_accessible": "All available public AA-rated birth records, verified birth-time/source quality and normalized UTC within pinned Swiss 1800-2399 coverage. No post-outcome filtering. Independently declare any profession/age strata before decoding events.",
+    "holdout_routing": "Freeze birth-only chart roster and each candidate chart prediction for every selected participant in a private sealed store before any event nodes are opened; isolate developer vs final participants by PERSON; outcome coder blind to chart.",
+    "selection_bias": "Surname-initial C and famous/public figures not population representative. Many individuals have no event records. Cannot infer absence from missing events.",
+    "external_research_status": "CONSIDER_FOR_RETROSPECTIVE_OUTCOME_BLIND_EXPLORATION_NOT_PROSPECTIVE_NEW_EVENT_EVIDENCE"
+  },
+  "critical_unfinished_human_study_gates": [
+    "Authorized access to actual source birth data and later separately decoded event records",
+    "Independent classification of dated formal role gains/losses and event precision using documentary evidence; blind to predictions",
+    "Evidence of birth-time validity/UTC normalization, geographic positions and eligibility across observational lifespan",
+    "Frozen participant selection and forecast commitments before event reveal",
+    "Matching strata, sampling eligibility, time-varying occupational hazard, baseline null and primary statistic predeclaration",
+    "Untouched prospective or genuinely sequestered retrospective holdout plus external audit and consent/privacy"
+  ],
+  "human_predictive_accuracy": "UNTESTED"
+}

@@ -1,0 +1,52 @@
+{
+  "actual_participants_or_events": 0,
+  "astro_databank_free_sample": "DISCOVERED_BINARY_NOT_DOWNLOADED",
+  "file_sha256": {
+    "docs/astrology-research-map/western-event-only-blind-score-20261025/BLIND_EVENT_SCORING_CONTRACT.json": {
+      "bytes": 5371,
+      "sha256": "12c40951ba076f8d406d84831e917e4d024dc3295af5b2f27fb8cb2e1f72ecfd"
+    },
+    "docs/astrology-research-map/western-event-only-blind-score-20261025/CONTINUATION_CHECKPOINT.md": {
+      "bytes": 7770,
+      "sha256": "18d440745f029c864d263adaf1d40fe424a911f6be9013862a929bf36dadb96d"
+    },
+    "docs/astrology-research-map/western-event-only-blind-score-20261025/README.md": {
+      "bytes": 8294,
+      "sha256": "5bef0870705dc6cfa32f7b660f79f3e99235ff16ab532ff64605112592a11620"
+    },
+    "docs/astrology-research-map/western-event-only-blind-score-20261025/build_verification.py": {
+      "bytes": 2850,
+      "sha256": "d3293817140baab3d26c69e0baaa402471c82e52767d8649130952d04683f47f"
+    },
+    "docs/astrology-research-map/western-primary-direction-blind-pilot-20261025/PILOT_V0_METHOD_CONTRACT.json": {
+      "bytes": 6531,
+      "sha256": "b79afd913b0b86cec0a6afc699ad876061c867d0c68c9c766d323dd2d7478bca"
+    },
+    "docs/astrology-research-map/western-private-natal-bridge-20261025/METHOD_SCOPE.json": {
+      "bytes": 3430,
+      "sha256": "8b0b6abf0b0516285479b94a56c11cb0e267ded5eb5294a72f5c3c1756051c5f"
+    },
+    "src/hdmatch/astrology/western_birth_only_cohort.py": {
+      "bytes": 4414,
+      "sha256": "2b5dae67b9805452615265012ac15cdc929996228a239c45b5349f88a8f120af"
+    },
+    "src/hdmatch/astrology/western_event_only_scoring.py": {
+      "bytes": 13342,
+      "sha256": "f517e1d600606fca9ade0d4ff86aa1f81b584b0aba7d7fac791239ef71e19809"
+    },
+    "tests/unit/test_western_birth_only_cohort.py": {
+      "bytes": 3215,
+      "sha256": "973b55465174e328737b2a793e3158d1d255d4f34d1b5fac563caecb12fceb82"
+    },
+    "tests/unit/test_western_event_only_scoring.py": {
+      "bytes": 10694,
+      "sha256": "fe2a02decfa201b8a79ec2e04c54c3e39246fae93c68738318ab02dd9fa1094d"
+    }
+  },
+  "human_predictive_validity": "UNTESTED",
+  "population_generalizability": "NOT_ESTABLISHED",
+  "read_any_real_event_nodes": false,
+  "root_owner_multi_tradition_result": "OPEN",
+  "schema": "WESTERN_EVENT_ONLY_OUTCOME_BLIND_SCORER_VERIFICATION_V0",
+  "statistical_result": "SYNTHETIC_UNIT_TESTS_ONLY"
+}
