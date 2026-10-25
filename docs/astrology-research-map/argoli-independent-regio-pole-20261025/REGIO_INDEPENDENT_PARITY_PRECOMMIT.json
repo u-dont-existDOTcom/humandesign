@@ -1,0 +1,110 @@
+{
+  "schema": "ARGOLI_1667_KOLEV_2004_REGIO_GEOMETRY_PARITY_PRECOMMIT_V1",
+  "date": "2026-10-25",
+  "owner_root_outcome": {
+    "status": "OPEN",
+    "goal": "Historically source-correct, differentiated astrology techniques across traditions with chart-derived outcome predictions frozen before controlled, genuinely untouched forward-blind human evidence.",
+    "contribution": "Verify an independent Regiomontanian mathematical reconstruction and original source context; not a prediction model freeze."
+  },
+  "parent_commit": "574686c2da5d325591ff97406fe29bff8c802b4b",
+  "task_kind": "REVERSIBLE_BOUNDED_ENGINEERING_EXPERIMENT",
+  "source_references": [
+    {
+      "author": "Andrea Argoli",
+      "title": "Primi mobilis tabulae",
+      "edition": "1667 Padua scanned partial volume, 107pp Internet Archive PDF",
+      "identifier": "primimobilistab00argogoog",
+      "pdf_sha256": "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d",
+      "primary_scan_images": [
+        "primary_1667_pages/Argoli_1667_pdfpage_014_source.png",
+        "primary_1667_pages/Argoli_1667_pdfpage_018_source.png",
+        "primary_1667_pages/Argoli_1667_pdfpage_034_source.png"
+      ],
+      "scope": "Later 1667 edition affirms Regiomontanus rational way, position circles, oblique/rect ascension/polar declinations; DOES NOT prove exact identity of 1610 or 1644 text."
+    },
+    {
+      "author": "Andrea Argoli",
+      "title": "Tabulae primi mobilis",
+      "edition": "1610 Rome",
+      "identifier": "Google Books -zhmAAAAcAAJ",
+      "scope": "Digitized full view located, detailed page-to-page collation with 1667 remains open."
+    },
+    {
+      "author": "Rumen Kolev",
+      "title": "William Lilly and the Algorithm for His Primary Directions",
+      "edition": "modern mathematical research, circa 2000s",
+      "source_url": "https://www.babylonianastrology.com/downloads/Lilly2.pdf",
+      "pages_used": [
+        12,
+        13,
+        14,
+        15,
+        19
+      ],
+      "scope": "Secondary derivation with exact worked numerical example, not original 17th-century text; third-party article is linked, not redistributed."
+    }
+  ],
+  "lilly_example": {
+    "latitude_north_deg": 53,
+    "ramc_deg": 222.17357,
+    "significator": "Sun",
+    "sig_ra_deg": 186.1673,
+    "sig_dec_deg": -2.6734,
+    "promissor": "Jupiter",
+    "prom_ra_deg": 261.13,
+    "prom_dec_deg": -23.151,
+    "reference_zenith_distance_deg": 52.595667,
+    "reference_pole_deg": 39.375951,
+    "reference_ramc_under_pole_deg": 273.9711,
+    "reference_arc_deg": 56.615053,
+    "rounding_tolerance_deg": 0.00025
+  },
+  "sample": {
+    "seed": 2004,
+    "count": 1200,
+    "development_seed_already_run_in_exploratory_scratch_before_protocol_commit": true,
+    "do_not_count_development_run_as_independent_holdout": true,
+    "new_unseen_mathematical_holdout": {
+      "seed": 20261026,
+      "count": 800,
+      "selection_fixed_before_first_holdout_execution": true,
+      "different_from_all_previously_tested_cases": true
+    },
+    "latitude_range": [
+      -55,
+      55
+    ],
+    "ramc_range": [
+      0,
+      360
+    ],
+    "significator_ra_range": [
+      0,
+      360
+    ],
+    "significator_dec_range": [
+      -25,
+      25
+    ],
+    "promissor_ra_range": [
+      0,
+      360
+    ],
+    "promissor_dec_range": [
+      -25,
+      25
+    ],
+    "expected_reference_parity_tolerance_deg": 1e-8,
+    "compared_to_existing_method": "regiomontanian_position_circle",
+    "compare_other_methods": "proportional_semi_arc and placidean_under_pole for published worked case only; keep nonidentical methods separate",
+    "generate_only_synthetic_equatorial_coordinates": true
+  },
+  "claims": {
+    "historical_exactness": "NOT_AUTHENTICATED_FOR_1610_ARGOLI",
+    "source_regio_family": "DIRECT_PRIMARY_1667_TEXT_PLUS_SECONDARY_MATH",
+    "software_engine_production_change": false,
+    "human_outcomes_seen": false,
+    "human_predictive_accuracy": "UNTESTED"
+  },
+  "next_after_source_math": "Preserve table variant/role uncertainty; build independently frozen modern pilot controls if applicable; do not treat matching math as astrology validation."
+}
