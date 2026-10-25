@@ -13,6 +13,7 @@ import json
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 from hdmatch.astrology.lilly_essential_dignity import (
     CLASSICAL,
@@ -36,7 +37,7 @@ def canonical(data: object) -> str:
     return json.dumps(data, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
 
 
-def verify_inputs(ephe: Path) -> tuple[dict, dict]:
+def verify_inputs(ephe: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     contract = json.loads((HERE / "DIGNITY_PRE_FREEZE_CONTRACT.json").read_text())
     if contract["schema"] != "LILLY_1647_PARTIAL_STRENGTH_PRECOMMIT_V1":
         raise ValueError("changed historical feature contract")
@@ -77,7 +78,7 @@ SOURCE_RULE_PROMISSOR = {
 }
 
 
-def compute(ephe: Path) -> dict:
+def compute(ephe: Path) -> dict[str, Any]:
     table_integrity()
     panel, contacts = verify_inputs(ephe)
     planet_rows = []
@@ -194,7 +195,7 @@ def compute(ephe: Path) -> dict:
     return {"summary": summary, "planet_rows": planet_rows, "contact_rows": linked}
 
 
-def write_results(result: dict) -> None:
+def write_results(result: dict[str, Any]) -> None:
     files = [
         HERE / "PARTIAL_DIGNITIES_SUMMARY.json",
         HERE / "PARTIAL_DIGNITIES_PLANET_ROWS.csv",

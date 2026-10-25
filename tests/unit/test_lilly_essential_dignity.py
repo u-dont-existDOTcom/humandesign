@@ -213,3 +213,65 @@ def test_swiss_placidus_house_position_opt_in() -> None:
     assert swiss_placidus_house(natal, "mercury")[0] == 9
     with pytest.raises(ValueError):
         swiss_placidus_house(natal, "mc")
+
+
+def test_first_edition_term_rows_disambiguate_late_zodiac_signs() -> None:
+    # Literal Lilly 1647 p.104. These rows are especially easy to confuse
+    # with competing bound tables bearing a "Ptolemaic" title.
+    for sign, boundaries_and_rulers in (
+        (6, [(6, "saturn"), (11, "venus"), (19, "jupiter"), (24, "mercury"), (30, "mars")]),
+        (9, [(6, "venus"), (12, "mercury"), (19, "jupiter"), (25, "mars"), (30, "saturn")]),
+        (10, [(6, "saturn"), (12, "mercury"), (20, "venus"), (25, "jupiter"), (30, "mars")]),
+    ):
+        assert list(TERMS[sign]) == boundaries_and_rulers
+
+
+def test_frozen_cohort_only_exposes_partial_strength_not_strong_verdicts() -> None:
+    import csv
+    import json
+    from collections import Counter
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    docs = root / "docs/astrology-research-map/primary-direction-essential-dignity-20261025"
+    summary = json.loads((docs / "PARTIAL_DIGNITIES_SUMMARY.json").read_text())
+    contacts = json.loads((docs / "PARTIAL_DIGNITIES_CONTACT_CROSSWALK.json").read_text())
+    with (docs / "PARTIAL_DIGNITIES_PLANET_ROWS.csv").open(newline="") as f:
+        rows = list(csv.DictReader(f))
+    assert len(rows) == 672 == summary["n_planet_rows"]
+    assert len(contacts) == 216 == summary["n_source_rule_contact_rows"]
+    assert Counter(row["chart_id"] for row in rows) == {
+        chart: 7 for chart in {row["chart_id"] for row in rows}
+    }
+    assert len({row["chart_id"] for row in rows}) == 96
+    assert all(not row["full_natal_strength"] for row in rows)
+    assert all(c["full_source_judgment"] == "UNRESOLVED_NEVER_SCORED" for c in contacts)
+    assert summary["full_radix_strength_verdicts"] == 0
+    assert summary["predictive_accuracy"] == "UNTESTED"
+    assert summary["jupiter_mc_favorable_aspect"]["exposure_count"] == 47
+    assert summary["jupiter_mc_favorable_aspect"]["full_strong_jupiter_verdict_count"] == 0
+
+
+def test_original_image_and_partial_score_provenance_manifest() -> None:
+    import hashlib
+    import importlib.util
+    import json
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    docs = root / "docs/astrology-research-map/primary-direction-essential-dignity-20261025"
+    filename = docs / "build_verification.py"
+    spec = importlib.util.spec_from_file_location("first_edition_dignity_manifest", filename)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    original = json.loads((docs / "VERIFICATION.json").read_text())
+    assert module.make_manifest() == original
+    assert original["human_predictive_accuracy"] == "UNTESTED"
+    assert original["full_historical_natal_strength"] == "UNRESOLVED"
+    assert original["n_synthetic_charts"] == 96
+    assert original["n_planet_rows"] == 672
+    assert original["n_contact_rows"] == 216
+    for relative_path, data in original["files"].items():
+        contents = (root / relative_path).read_bytes()
+        assert hashlib.sha256(contents).hexdigest() == data["sha256"]
