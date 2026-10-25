@@ -1,0 +1,101 @@
+{
+  "schema": "ARGOLI_EDITION_WITNESS_AND_PARTIAL_VOLUME_AUDIT_V1",
+  "date": "2026-10-25",
+  "owner_root_goal": {
+    "state": "OPEN",
+    "description": "Historically source-accurate multiple astrology traditions and forward-blind controlled empirical predictions; source digitization is a supporting research lane."
+  },
+  "parent": {
+    "branch": "research/argoli-regio-pole-parity-20261025",
+    "commit": "0941879aa08f9159490c114978410847d541807f",
+    "previous_handoff_name": "Primary_Directions_Argoli_Regiomontanian_Independent_20261025.zip"
+  },
+  "edition_1610": {
+    "printing": "Romae, Guglielmo Facciotti (1610)",
+    "print_page_checked": 3,
+    "source_kind": "Google Books full-view publicly accessible original page image",
+    "distinct_digital_volumes": [
+      {
+        "volume_id": "R92lDeOw8X0C",
+        "library": "Biblioteca Alessandrina, Rome, per Google Books catalog",
+        "relative_path": "1610_witness_printed_p3/Argoli1610_R92lDeOw8X0C_PA3_page_image.jpg",
+        "sha256": "8f1f602a8f8e20f0e90182ba5eccac4532edb0c15a810c779f5a676a4d583308",
+        "source_url": "https://books.google.com/books?id=R92lDeOw8X0C&pg=PA3"
+      },
+      {
+        "volume_id": "7utl-3EFz1UC",
+        "library": "Biblioteca Nazionale Centrale di Firenze, per Google Books catalog",
+        "relative_path": "1610_witness_printed_p3/Argoli1610_7utl-3EFz1UC_PA3_page_image.jpg",
+        "sha256": "59efd559c77b6f74546dc1b3a9669efdcb5a3a891801f83d3e73c5bcafcf4de9",
+        "source_url": "https://books.google.com/books?id=7utl-3EFz1UC&pg=PA3"
+      },
+      {
+        "volume_id": "-zhmAAAAcAAJ",
+        "library": "Third Google Books digital witness; holding institution not verified here",
+        "relative_path": "1610_witness_printed_p3/Argoli1610_-zhmAAAAcAAJ_PA3_page_image.jpg",
+        "sha256": "692b1c0514bb1391df68c7e010fd93c016114363e1f11a0f5e9d16b1d3ef9276",
+        "source_url": "https://books.google.com/books?id=-zhmAAAAcAAJ&pg=PA3"
+      }
+    ],
+    "verified_visual_statement": "All three independently imaged originals show same opening and ending sequence on printed p.3; typographic/scan surface differs. This verifies this printed page only, NOT the full 1610 original direction tables.",
+    "brief_exact_source_phrase": "non ab omnibus; sed ab expertis tantummodo",
+    "status": "ONE_PAGE_THREE_WITNESSES_VISUALLY_COMPARED",
+    "whole_book_original_scanned": false,
+    "full_pdf_download_attempt": "Google Books PDF endpoints began returning HTTP 429 / Google sorry; original printed p12-p55 not downloaded or read in this stage"
+  },
+  "edition_1644": {
+    "metadata": "Primi mobilis tabulae, typis P. Frambotti, Padua 1644; multi-part/two-volume astronomical tables",
+    "listed_public_witnesses": [
+      "https://gallica.bnf.fr/ark:/12148/bpt6k511622",
+      "https://gallica.bnf.fr/ark:/12148/bpt6k51163d"
+    ],
+    "access_result": "Gallica IIIF manifest request returned HTTP 403 from checked remote machine; no page-level comparisons done",
+    "status": "LOCATED_ONLY_NO_PRIMARY_PAGE_COLLATION",
+    "full_edition_verified": false
+  },
+  "edition_1667": {
+    "printing": "Primi mobilis tabulae, typis P. Frambotti, Padua 1667",
+    "parent_pdf_relative_path": "docs/astrology-research-map/argoli-independent-regio-pole-20261025/primary_1667_volume/Andrea_Argoli_Primi_Mobilis_Tabulae_1667_original_partial_volume.pdf",
+    "parent_pdf_sha256": "b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d",
+    "pdf_physical_pages": 107,
+    "terminal_leaves": [
+      {
+        "pdf_page": 105,
+        "printed_page": 94,
+        "relative_path": "1667_terminal_pages/Argoli1667_last_pdfpage_105.png",
+        "sha256": "de626475e01636624dde757035243a340de7de8ceaecc518e06ba7df52cefa58"
+      },
+      {
+        "pdf_page": 106,
+        "printed_page": 95,
+        "relative_path": "1667_terminal_pages/Argoli1667_last_pdfpage_106.png",
+        "sha256": "b2933b02a411339e41493aee163a8b7185a315e7e4864f3696ee21ff496367bb"
+      },
+      {
+        "pdf_page": 107,
+        "printed_page": null,
+        "description": "binding back cover / nontext leaf",
+        "relative_path": "1667_terminal_pages/Argoli1667_last_pdfpage_107.png",
+        "sha256": "b71695bc25e267b9cff9cac6f4d4452a375676f00653db03c0d9d23d903e0980"
+      }
+    ],
+    "partial_extent": "Original text only through printed p.95, then back cover; not complete first-volume table sequence",
+    "bibliographic_expected_extent": "Separate edition bibliographic listings and 1644/1667 antiquarian descriptions report volume I with approximately 757 printed pages (plus front matter); do not equate 107 image leaves to an edition's complete physical volume",
+    "status": "FIRST_95_PRINTED_PAGES_AND_COVERS_VERIFIED_SCAN_PARTIAL",
+    "revision_from_previous_summary": "Earlier chat referred to recovered complete original 1667 volume (107 pages), which is false; the PDF is a scanned excerpt/partial volume. Its pages p.3,p.7,p.23 still support the narrow historical family observation, but cannot establish unseen later text or tables."
+  },
+  "unaligned_same_page_comparison": {
+    "status": "PAGE_NUMBER_ONLY_NOT_ALIGNED_TEXTUAL_COLLATION",
+    "statement": "1610 printed p.3 is discourse on celestial influences/meteorology; 1667 printed p.3 discusses rival direction methods/Regiomontanus. Since editions have different introductions/pagination, this does not prove insertion, deletion, or doctrinal change. Search for homologous passages/chapters before comparing rules.",
+    "human_read_images_only": true
+  },
+  "negative_results": [
+    "Google Books image endpoints were initially accessible for the 1610 printed p.3, then began returning HTTP 429 during later pages; do not repeat a tight high-volume loop.",
+    "1610 downloadable PDF blocked with HTTP 429; no full-text source collation performed.",
+    "1644 Gallica IIIF at bpt6k511622 returned HTTP 403 from the authorized remote; browser/other institutional access remains an alternative, not completed.",
+    "1667 archived PDF last leaf is back cover and immediately preceding leaf is printed p.95, so edition-wide and table-wide completeness cannot be asserted."
+  ],
+  "research_disposition": "Correct source extent immediately; keep code/math parity from prior branch as engineering evidence without authenticating missing 1610/1644 or later 1667 tables; full cross-tradition human validation remains OPEN.",
+  "human_outcomes_seen": false,
+  "human_predictive_validity": "UNTESTED"
+}

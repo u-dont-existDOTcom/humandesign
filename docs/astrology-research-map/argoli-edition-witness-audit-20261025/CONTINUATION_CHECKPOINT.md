@@ -1,0 +1,21 @@
+# Argoli edition collation — durable continuation
+
+**Date:** 2026-10-25. **Task:** argoli-edition-witness-audit-20261025. **Branch:** `research/argoli-edition-witness-20261025`. **Inherited checkpoint:** Regiomontanian independent arithmetic branch `research/argoli-regio-pole-parity-20261025` at `0941879aa08f9159490c114978410847d541807f`.
+
+**Original owner outcome OPEN:** obtain historically differentiated, faithfully sourced astrology methods (Western, Hellenistic, Jyotish, Chinese and other traditions), freeze actual chart-derived predictions before genuinely untouched prospective human outcomes, and compare with matched decoys/controls. This turn recovers book evidence and corrects source-extent scope; no new human predictions were tested.
+
+## Verified this turn
+
+- The 1667 Argoli PDF in the parent branch, SHA-256 `b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d`, is **only a 107-leaf excerpt**, not the complete physical printing. Its physical PDF leaves 105 and 106 are printed pp.94 and 95. Physical leaf 107 is the binding back cover. All three original renderings are preserved with hashes, and `pdfinfo` checks the exact 107-leaf source. Catalogues describe later portions/tables beyond p.95. Therefore earlier owner-facing 'complete original 107-page scanned volume' was incorrect; parent README, primary-source scope note and continuation checkpoint have been amended on this branch. Earlier mathematic Regiomontanian parity stays intact; missing later source/table pages may not be silently claimed.
+- Obtained original printed p.3 images from **three distinct digitized copies** of the **1610 Rome printing** (Google Books IDs `R92lDeOw8X0C`, `7utl-3EFz1UC`, `-zhmAAAAcAAJ`). All were read visually and show the same text on that page; exact returned image bytes and SHA-256s are preserved. No OCR asserted as independent evidence. Their scan differences are not textual disagreement.
+- Original 1610 printed p.3 and original 1667 printed p.3 have visibly different **nonaligned** subject text. This is a *page-number comparison only*: it does **not** yet imply edits to the same chapter, doctrinal changes or changes in the computational rules.
+- The accessible 1610 Google Books image links began returning **HTTP 429** after the first-page retrieval; the full original PDF endpoints also 429. The 1644 Gallica records were located but their original IIIF manifests returned **403** from the authorized remote. No full edition comparison was performed. Do not rerun dozens of blocked requests; find a genuinely distinct authorized library source or viewer.
+- `ARGOLI_EDITION_AUDIT.json` and `SOURCE_COVERAGE.csv` distinguish physical evidence read, bibliographic listings, machine access failures and the historical inference not licensed by them. `build_verification.py` regenerates the complete SHA-256 artifact manifest and validates parent PDF byte identity/physical leaf count. `tests/unit/test_argoli_edition_extent.py` prevents regression into a 'full scanned volume' claim.
+
+## Next safe research task, not another unaligned page comparison
+
+Locate and independently read homologous **Regiomontanus position-circle, oblique-ascension and pole table passages** in the 1610 (not merely same printed page number) and 1644 original printings. Once the actual corresponding passage is located, transcribe only verifiable primary-source numeric rows with page-images and test differences against the exact original p.7 and p.23 passages of 1667. If access remains unavailable, preserve `UNRESOLVED` and advance separately named modern models to proper *prospective blind* protocol design. Do not declare the 1610/1644/1667 complete historical method equivalent from the numerical parity of the independent modern Regiomontanian algorithms.
+
+**Source-engineering status:** useful and verifiable. **Complete historical edition collation:** OPEN. **Human predictive accuracy:** UNTESTED. **Root owner objective:** OPEN.
+
+On the Zorin laptop the live source checkout is `~/.local/share/hdmatch/research-checkouts/argoli-edition-witness-20261025`, and the local original parent PDF remains available through the repository paths described in the audit. A ZIP containing the source evidence and handoff is delivered to `~/Téléchargements/gansten-astro/` after final tests.

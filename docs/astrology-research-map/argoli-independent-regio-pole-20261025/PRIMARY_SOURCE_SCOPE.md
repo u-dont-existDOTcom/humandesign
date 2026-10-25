@@ -4,7 +4,7 @@ Research date: 2026-10-25. The owner's overarching astrology objective remains *
 
 ## Physical primary source
 
-Andrea Argoli, *Primi mobilis tabulae*, a public-domain later edition (1667, Padua), digitized from an Internet Archive/Google Books original; PDF identifier `primimobilistab00argogoog`. A 107-page partial volume is preserved byte-for-byte in `primary_1667_volume/`. Its SHA-256 is `b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d`. Three rendered plates have independent hashes under `primary_1667_pages/`.
+Andrea Argoli, *Primi mobilis tabulae*, a public-domain later edition (1667, Padua), digitized from an Internet Archive/Google Books original; PDF identifier `primimobilistab00argogoog`. A 107-image excerpt, ending at original printed p.95 before the binding back cover, is preserved byte-for-byte in `primary_1667_volume/`. Its SHA-256 is `b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d`. Three rendered plates have independent hashes under `primary_1667_pages/`.
 
 - Original printed p.3 (PDF physical page 14): Argoli discusses the 'rational' method of Johann Regiomontanus, position circles, oblique/rect ascensions and polar latitudes. That establishes the historical *family* of methods he is discussing.
 - Original printed p.7 (PDF physical page 18): original tables of rectangular and oblique ascensions, position-circle/pole-elevation computation. This source supports a table-based pole framework.

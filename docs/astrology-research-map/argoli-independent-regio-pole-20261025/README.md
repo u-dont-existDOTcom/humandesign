@@ -4,7 +4,7 @@
 
 ## Historical source hierarchy
 
-The digitized **1667 Argoli** *Primi mobilis tabulae* original volume (`primimobilistab00argogoog`, 107-page partial Google/Internet Archive scan, SHA-256 `b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d`) is preserved in `primary_1667_volume/`; three original plates are rendered in `primary_1667_pages/`.
+The digitized **1667 Argoli** *Primi mobilis tabulae* original volume (`primimobilistab00argogoog`, 107-leaf excerpt, stopping at original printed p.95, from Google/Internet Archive, SHA-256 `b3f93054d64c3ca4318ffaec84e8b7161cdc79d6474bb300efd10787b743df1d`) is preserved in `primary_1667_volume/`; three original plates are rendered in `primary_1667_pages/`.
 
 The printed original Argoli pages **3, 7, 23** show references to Regiomontanus's rational construction, tables of rectangular/oblique ascension, position circles and pole-elevation interpolation. This supports attribution to a **family of methods**. **Do not silently call this the original 1610 Argoli text:** the 1610 original scan is located in Google Books (ID `-zhmAAAAcAAJ`); copies of 1644 in Gallica are known but have not been exhaustively collated against the *later* 1667 printing.
 

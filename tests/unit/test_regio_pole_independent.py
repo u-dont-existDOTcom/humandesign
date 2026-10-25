@@ -210,7 +210,7 @@ def test_saved_1200_plus_800_parity_results_and_replay() -> None:
     assert helper.replay()["status"] == "TWO_OF_TWO_PANELS_BITWISE_REPRODUCIBLE"
 
 
-def test_historical_source_hash_manifest_and_full_1667_volume() -> None:
+def test_historical_source_hash_manifest_and_partial_1667_excerpt() -> None:
     import hashlib
     import importlib.util
     import json
