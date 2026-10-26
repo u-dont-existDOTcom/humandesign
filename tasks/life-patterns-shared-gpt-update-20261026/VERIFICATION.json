@@ -1,0 +1,32 @@
+{
+  "status": "PASS_PACKAGE_INTEGRITY_AND_CONTRACT_CHECKS",
+  "package_path": "reference/custom_gpt/releases/Life-Patterns-GPT-Shared-Evidence-2026-10-26.zip",
+  "package_sha256": "95c2d75d25db191a1a46bf7d3061188d9a6459e376481b33d7e86f68d4a111c3",
+  "package_bytes": 81420,
+  "instructions_sha256": "d413593f936f8b50eb4978e7b817b9828938906c5260c49ab65929db0469f6c1",
+  "instructions_crlf_characters": 7948,
+  "source_baseline_sha256": "46e92c0de657df1374aab843df92305533e9bcada68f6b11564eda64fb00204f",
+  "preservation": {
+    "tendency_first_question_objects_unchanged": 25,
+    "cf003_question_objects_unchanged": 3,
+    "experience_question_objects_unchanged": 8,
+    "legacy_bank_bytes_unchanged": true,
+    "unchanged_knowledge_files": 9,
+    "action_schema_unchanged": true,
+    "runtime_question_policy_unchanged": true
+  },
+  "independent_review": {
+    "reviewer": "/root/gpt_contract_audit",
+    "result": "PASS_NO_CONCRETE_MUST_FIX_FINDINGS",
+    "scope": "Full semantic comparison to owner-pasted baseline and eight scenario inspections; not a deployed participant test or scientific validation.",
+    "instructions_sha256": "d413593f936f8b50eb4978e7b817b9828938906c5260c49ab65929db0469f6c1",
+    "capture_guide_sha256": "585ea9c214251992f964189ce0fc54cdb55d1aa04d21df63b4a8a90b8bcee73b",
+    "tendency_guide_sha256": "9a49d0e00e8748398285f7e65485eda4f3bf5852cac3b461744c669ca494f9a9"
+  },
+  "public_service_schema_match": true,
+  "authenticated_cli_result": "NO_OUTPUT_FROM_DEVICE_TRANSPORT; OWNER_REPORTS_LOGIN_SUCCEEDED",
+  "worker_heartbeat_verified": false,
+  "private_gpt_installed": false,
+  "runtime_changes": false,
+  "human_predictive_validation": false
+}
