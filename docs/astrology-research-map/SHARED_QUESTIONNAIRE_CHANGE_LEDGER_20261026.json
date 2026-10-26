@@ -1,0 +1,1210 @@
+{
+  "schema": "HUMANDESIGN_SHARED_QUESTIONNAIRE_REVIEW_V1",
+  "as_of": "2026-10-26",
+  "status": "THEORY_EXPOSED_GAP_AUDIT_AND_FIELD_LEVEL_PROPOSAL_NOT_A_RUNTIME_INSTRUMENT",
+  "owner_goal": "Assess questionnaire changes for expanded astrology systems while Railway access is unresolved. Preserve one shared questionnaire.",
+  "parent_human_predictive_validation": "OPEN_UNCHANGED",
+  "review_scope": {
+    "v3_topics_reviewed": 23,
+    "v3_conditional_probes_preserved": 7,
+    "specific_existing_claim_candidates_reviewed": 14,
+    "exhaustive_all_source_annotations_audit": false,
+    "new_participant_wording_authored": false,
+    "new_mandatory_questions": 0,
+    "new_active_optional_questions": 0,
+    "live_deployment": false,
+    "scoring_changes": false,
+    "private_responses_accessed": false,
+    "real_people_tested": 0
+  },
+  "baseline": {
+    "integration_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+    "v3_source_commit": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+    "v3_source_path": "tasks/life-patterns-external-questionnaire-merge-20261021/LIFE-PATTERNS-ADAPTIVE-SURVEY-v3-CANDIDATE.json",
+    "v3_source_sha256": "fec3d0d18b9463d29842e65c4759fd7ed900a019889531896f89c1b3764e0084",
+    "source_question_object_hash_algorithm": "SHA256(JSON sort_keys=true separators=comma-colon ensure_ascii=false UTF8)",
+    "source_question_object_hashes": {
+      "DREAM": "c16c785e12bc2007968d8bb3ed76efae91a111e25384ef328bbeb60b77c3a761",
+      "BELIEF": "e45bee8c83184c265726849afafd2aaa952b4c940592015f1c371e3a596dd0ff",
+      "BELIEF_CHANGE": "1aac42ab759ae5769d411e9fc457d4687f9159afe8ad710e8e7d1c80f04b944d",
+      "RENUNCIATION": "31d98e0aa91450f56dc994472c72b5d7138d1e1232669a3a4ec30a75c5636a27",
+      "ART": "83ff074a8e4e569022afa67df594984aabbb8357c1141a68aa83224cd0cdda43",
+      "MYSTERY": "665eab3cc0052089a7b4995d45dc9275038a1644d909c6f8cbdeffb29bb6b47f",
+      "TIMELINE": "cd303cdd192637c5f704513dfdbb56eb253d5f93ec57f277559b3d0ac6c58eda",
+      "VOCATION": "e4b6ecd90b005ea701940a3e810066f86e59f4b55efb3311efde132b42b42250",
+      "HOME": "f2687c1cf6b47a55a266216d50f186c8758a970b628de2748f6bce5d16cef5cd",
+      "KINSHIP": "21c4cdf79cffaa836de9da1efedc17e6c42158cb4711e81845b98c48cb269b09",
+      "BONDS": "97c1bf16802e7cd697fd1b0de18581dedf3363de4e9d5df84a542db4721ed456",
+      "TRAVEL": "5c9751385ef404f2e587706e00bc9333a20b0c5e750791fd9ee953082baafdf6",
+      "STATUS": "b4d988b42b06dee0b63192ebad2a25f29823ef2b346d7aa8f9fc7a0f81c4ae36",
+      "RESOURCES": "95c1d11d3acd96475c334135a61cb1c40a7f19ea74baa18dc2345cce3c1153aa",
+      "PARENTING": "88fc82f96d29d3d9bde39e021f7b93f83785439b906a0394f88b46ebcdcf2e3a",
+      "PLAY": "6235fa66078c6418ee34ec9437b8d02511bc63be5e85dc5d6e0481ebb05560a0",
+      "LEARNING_HISTORY": "dba8e54a9f40a2d8e64b615325bcd180660d124fcebfbf0ef1577663e84326ff",
+      "ANGER_REPAIR": "1187ac00ecca94b690185141c2df8dc6e3d6ffa4d8ad7c127def1aabacc104df",
+      "RECIPROCITY": "9c19575d8789fcf4fbdff15abf768e09d6f4ba6b7832e0ef83618bf36d1dbb8c",
+      "CONTENTMENT": "124caabc5ae3ed9048656ec1f751f6c2598099ceec7d6907a10885f5c34a621a",
+      "UPBRINGING": "7f0b7154682fa2b9530cc0f785f0491156283d4e633ab08e4ec0874294eabfae",
+      "PRIVACY": "b5d9fe73e66c88dab32d13a7cf5364e9b9a2d4dd26e8aa87d14bd98a437d30de",
+      "SENSORY_ENJOYMENT": "1d24660322d8846d9e6d78cf302872418a85115687f1bb343e8ed4c2d4213a2c",
+      "EP-EVIDENCE-REASON": "d2f4a54990505bc8cc2a066d03137c6574724ac6869e9f50ec80f4b61100552a",
+      "EP-INDEPENDENT-FEEDBACK": "c8c240b23903a52822c2b0603f221b973538000f955ab703b58c98d28d6c7341",
+      "EP-CHOSEN-REFLECTION": "4d3877bed2b2294e386dcf2af34285394474e55badd2d300345c088e08cb2ea7",
+      "EP-GROUP-DEPARTURE": "54061342bcbfa0dc5dfa64d48c6807ad84c2cd4b056baaf985db16b9361042f5",
+      "EP-LEADERSHIP-HISTORY": "1a7b7c5eef63e8c498fdf1d4bf8760356e1fae7a8584b80308449b49a991b1fd",
+      "EP-PARTNER-PRIORITIES": "09e3e598461ccfd22bc60668d2221eccff41092a06c5408e539cb653205e660b",
+      "EP-PROJECT-FOLLOWTHROUGH": "89c40fdf8a9036344738275741bf431621866a11c6fe42be8b76218aaea865e4"
+    },
+    "v3_is_live": false,
+    "v3_is_confirmatory_frozen": false,
+    "v3_preservation_verified_by_parsed_object_equality": true
+  },
+  "other_instruments": {
+    "tendency_first": {
+      "source_commit": "7de212f027e14c198fb58dc91d11df3068d58e56",
+      "question_count": 25,
+      "legacy_routes_retired": 30,
+      "required_quota": false
+    },
+    "experience_meaning": {
+      "source_commit": "7de212f027e14c198fb58dc91d11df3068d58e56",
+      "item_count": 8,
+      "excluded_from_primary_and_cf003": true
+    },
+    "historical_v7": "PRESERVED_NOT_A_MANDATORY_79_ITEM_QUOTA",
+    "hd_v2": "REFERENCE_BANK_NOT_ADDITIONAL_REQUIRED_SECTION",
+    "cf003": "SEPARATE_SECONDARY_DEVELOPMENT_MODULE",
+    "tn001": "SEPARATE_FROZEN_PRIMARY_STUDY_NOT_MODIFIED"
+  },
+  "burden_policy": {
+    "preserve_original_limits": true,
+    "max_base_optional_topics_per_session": 5,
+    "max_additional_conditional_probes_per_session": 2,
+    "new_conditional_replacements_share_same_allowance": true,
+    "one_question_at_a_time": true,
+    "reuse_same_construct_timeframe_dimension_answer": true,
+    "do_not_reopen_skips_under_new_ids": true,
+    "overall_review_remaining_count_unknown_until_ready": true,
+    "do_not_replace_full_interview_completion_policy_with_supplement_cap": true
+  },
+  "question_review": [
+    {
+      "question_id": "DREAM",
+      "source_question_sha256": "c16c785e12bc2007968d8bb3ed76efae91a111e25384ef328bbeb60b77c3a761",
+      "existing_dimensions": [
+        "recall_frequency",
+        "vividness_when_remembered_optional",
+        "usual_emotional_tone_optional",
+        "meaning_assigned_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "BELIEF",
+      "source_question_sha256": "e45bee8c83184c265726849afafd2aaa952b4c940592015f1c371e3a596dd0ff",
+      "existing_dimensions": [
+        "actual_current_practice_type_optional",
+        "practice_frequency_optional",
+        "current_self_description_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Practice and convictions do not establish a community ceremonial role or spiritual attainment.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "BELIEF_CHANGE",
+      "source_question_sha256": "1aac42ab759ae5769d411e9fc457d4687f9159afe8ad710e8e7d1c80f04b944d",
+      "existing_dimensions": [
+        "change_pattern",
+        "approximate_age_period_optional",
+        "self_reported_change_domains_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Reported worldview transition does not prove the cause or an external event.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "RENUNCIATION",
+      "source_question_sha256": "31d98e0aa91450f56dc994472c72b5d7138d1e1232669a3a4ec30a75c5636a27",
+      "existing_dimensions": [
+        "applicability",
+        "chosen_commitment_vs_external_constraint_optional",
+        "approximate_age_period_optional",
+        "duration_optional",
+        "formal_initiation_optional",
+        "later_return_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Voluntary withdrawal is not involuntary exclusion, unemployment or a proven spiritual state.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "ART",
+      "source_question_sha256": "83ff074a8e4e569022afa67df594984aabbb8357c1141a68aa83224cd0cdda43",
+      "existing_dimensions": [
+        "creative_production_frequency",
+        "aesthetic_appreciation_frequency",
+        "example_domain_optional",
+        "creative_achievement_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Production and appreciation already separated. Neither automatically proves a skilled physical-making role or independent creative performance.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "MYSTERY",
+      "source_question_sha256": "665eab3cc0052089a7b4995d45dc9275038a1644d909c6f8cbdeffb29bb6b47f",
+      "existing_dimensions": [
+        "actual_activities_frequency",
+        "subject_area_tags_optional",
+        "evidence_evaluation_style_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "TIMELINE",
+      "source_question_sha256": "cd303cdd192637c5f704513dfdbb56eb253d5f93ec57f277559b3d0ac6c58eda",
+      "existing_dimensions": [
+        "event_description_optional",
+        "approximate_age_or_year_optional",
+        "external_event_vs_inner_change_optional",
+        "life_domain_optional",
+        "confidence_in_date_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Selected up-to-three turning points are not a complete event inventory. Preserve date intervals, precision, source quality, coverage and missingness if timing is tested.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "VOCATION",
+      "source_question_sha256": "e4b6ecd90b005ea701940a3e810066f86e59f4b55efb3311efde132b42b42250",
+      "existing_dimensions": [
+        "actual_role_history_optional",
+        "felt_vocation_separate_optional",
+        "approximate_transitions_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Task/role evidence can be reused; voluntary versus involuntary transitions, dates and documentation may be absent.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "HOME",
+      "source_question_sha256": "f2687c1cf6b47a55a266216d50f186c8758a970b628de2748f6bce5d16cef5cd",
+      "existing_dimensions": [
+        "belonging_context_optional",
+        "period_changes_optional",
+        "kinship_vs_place_distinction_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "KINSHIP",
+      "source_question_sha256": "21c4cdf79cffaa836de9da1efedc17e6c42158cb4711e81845b98c48cb269b09",
+      "existing_dimensions": [
+        "applicability",
+        "actual_relational_role_optional",
+        "change_over_time_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Reported relatives roles do not establish relative count, biological relationship, their private traits or events.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "BONDS",
+      "source_question_sha256": "97c1bf16802e7cd697fd1b0de18581dedf3363de4e9d5df84a542db4721ed456",
+      "existing_dimensions": [
+        "friendship_stability_optional",
+        "romantic_history_optional",
+        "approximate_phase_change_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Friendships and partnerships do not alone establish legally/culturally specified marriage count or timing; retain historical definition and age-window caveats.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "TRAVEL",
+      "source_question_sha256": "5c9751385ef404f2e587706e00bc9333a20b0c5e750791fd9ee953082baafdf6",
+      "existing_dimensions": [
+        "actual_vs_desired_travel_optional",
+        "duration_or_phase_optional",
+        "felt_impact_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Actual versus desired travel already separated. Add event precision only if a defined travel-timing outcome is selected.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "STATUS",
+      "source_question_sha256": "b4d988b42b06dee0b63192ebad2a25f29823ef2b346d7aa8f9fc7a0f81c4ae36",
+      "existing_dimensions": [
+        "actual_roles_optional",
+        "historical_changes_optional",
+        "desire_for_recognition_separately_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Separate formal role gain/loss from informal influence and desire for recognition; use only the existing event contract when activated.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "RESOURCES",
+      "source_question_sha256": "95c1d11d3acd96475c334135a61cb1c40a7f19ea74baa18dc2345cce3c1153aa",
+      "existing_dimensions": [
+        "overall_life_course_pattern_optional",
+        "approximate_phase_optional",
+        "objective_vs_subjective_security_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Reported trajectory is not exact income, wealth level, status or a dated financial event. Do not force amounts.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "PARENTING",
+      "source_question_sha256": "88fc82f96d29d3d9bde39e021f7b93f83785439b906a0394f88b46ebcdcf2e3a",
+      "existing_dimensions": [
+        "role_applicability",
+        "role_centrality_optional",
+        "phase_changes_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Caregiving is not childbirth count/date or biological parenthood. No new fertility/longevity question admitted.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "PLAY",
+      "source_question_sha256": "6235fa66078c6418ee34ec9437b8d02511bc63be5e85dc5d6e0481ebb05560a0",
+      "existing_dimensions": [
+        "frequency_optional",
+        "typical_context_optional",
+        "social_vs_solitary_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "LEARNING_HISTORY",
+      "source_question_sha256": "dba8e54a9f40a2d8e64b615325bcd180660d124fcebfbf0ef1577663e84326ff",
+      "existing_dimensions": [
+        "actual_sustained_learning_topics_optional",
+        "formal_vs_self_directed_vs_practical_optional",
+        "period_and_depth_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Learning is not teaching; substantial learning does not by itself establish occupation or skilled output.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "ANGER_REPAIR",
+      "source_question_sha256": "1187ac00ecca94b690185141c2df8dc6e3d6ffa4d8ad7c127def1aabacc104df",
+      "existing_dimensions": [
+        "typical_duration_and_variability",
+        "time_to_resume_normal_contact_optional",
+        "forgiveness_vs_trust_vs_reconciliation_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Managing personal anger or conflict does not establish mediating other peoples disputes.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "RECIPROCITY",
+      "source_question_sha256": "9c19575d8789fcf4fbdff15abf768e09d6f4ba6b7832e0ef83618bf36d1dbb8c",
+      "existing_dimensions": [
+        "giving_frequency",
+        "receiving_frequency",
+        "practical_vs_emotional_optional",
+        "conditions_that_change_the_balance_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Helping and receiving help are already distinct; broad self-report is not a calibrated generosity score.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "CONTENTMENT",
+      "source_question_sha256": "124caabc5ae3ed9048656ec1f751f6c2598099ceec7d6907a10885f5c34a621a",
+      "existing_dimensions": [
+        "frequency_of_contentment",
+        "frequency_of_desire_for_change",
+        "context_or_time_changes_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "UPBRINGING",
+      "source_question_sha256": "7f0b7154682fa2b9530cc0f785f0491156283d4e633ab08e4ec0874294eabfae",
+      "existing_dimensions": [
+        "stable_vs_changed_vs_unknown_or_decline",
+        "approximate_period_optional",
+        "impact_on_later_life_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "PRIVACY",
+      "source_question_sha256": "b5d9fe73e66c88dab32d13a7cf5364e9b9a2d4dd26e8aa87d14bd98a437d30de",
+      "existing_dimensions": [
+        "typical_disclosure_range",
+        "relationship_context_optional",
+        "actual_sharing_vs_desire_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    },
+    {
+      "question_id": "SENSORY_ENJOYMENT",
+      "source_question_sha256": "1d24660322d8846d9e6d78cf302872418a85115687f1bb343e8ed4c2d4213a2c",
+      "existing_dimensions": [
+        "domain_specific_enjoyment_optional",
+        "frequency_and_usual_intensity_optional",
+        "nature_vs_art_vs_food_optional"
+      ],
+      "existing_response_states": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "disposition": "PRESERVE_EXACT_OBJECT",
+      "measurement_limit": "Retain the existing construct, recall period, optionality and context; do not broaden it to a new source prediction without a specific mapping.",
+      "new_question_admitted": false
+    }
+  ],
+  "specific_claim_review": [
+    {
+      "claim_id": "MAYA-YUC-CHUWEN-CRAFT",
+      "source_claim_id": "MAYA-YUC-B07-CHUWEN-ARTISAN-UNFROZEN-01",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_artifact": "MAYA_B07_CHUWEN_ARTISAN_SOURCE_TO_OBSERVABLE_TRACE.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "source_readiness": "SOURCE_ONLY_PRIMARY_CANDIDATE_NOT_FROZEN",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "CRAFT_SKILLED_WORK",
+          "construct": "Actual skill-based physical object-making, trade, apprenticed or paid/unpaid craft",
+          "existing_question_ids": [
+            "VOCATION",
+            "LEARNING_HISTORY",
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "PROXY_ONLY",
+          "conditional_question_id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+          "shared_answer_key": "SHARED-WORK-AND-MAKING",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-YUC-MEN-WEAVING",
+      "source_claim_id": "MAYA-YUC-MEN-WEAVING",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_artifact": "MAYA_B07_YUCATEC_ARTISAN_WITNESS_VARIANTS.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "source_readiness": "EXPLORATORY_TEXT_VARIANTS_WEAKER",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "CRAFT_SKILLED_WORK",
+          "construct": "Actual skill-based physical object-making, trade, apprenticed or paid/unpaid craft",
+          "existing_question_ids": [
+            "VOCATION",
+            "LEARNING_HISTORY",
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "PROXY_ONLY",
+          "conditional_question_id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+          "shared_answer_key": "SHARED-WORK-AND-MAKING",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-YUC-KABAN-WOODWORK",
+      "source_claim_id": "MAYA-YUC-KABAN-WOODWORK",
+      "system_id": "MAYA-YUCATEC-COLONIAL-NATAL",
+      "source_artifact": "MAYA_B07_YUCATEC_ARTISAN_WITNESS_VARIANTS.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "VOCATION",
+        "LEARNING_HISTORY",
+        "ART"
+      ],
+      "observable_ids": [
+        "CRAFT_SKILLED_WORK"
+      ],
+      "source_readiness": "EXPLORATORY_SINGLE_LONG_KAUA_VARIANT",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "CRAFT_SKILLED_WORK",
+          "construct": "Actual skill-based physical object-making, trade, apprenticed or paid/unpaid craft",
+          "existing_question_ids": [
+            "VOCATION",
+            "LEARNING_HISTORY",
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "PROXY_ONLY",
+          "conditional_question_id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+          "shared_answer_key": "SHARED-WORK-AND-MAKING",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-MOMO-NOJ-INNOVATION",
+      "source_claim_id": "MAYA-MOMO-NOJ-INNOVATION",
+      "system_id": "MAYA-HIGHLAND-MOMOSTENANGO-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "ART",
+        "TF1-G01"
+      ],
+      "observable_ids": [
+        "CREATIVE_PRODUCTION",
+        "PROBLEM_SOLVING_THOUGHT"
+      ],
+      "source_readiness": "SOURCE_ONLY_UNFROZEN_OUTCOME_CONTENT_GAP",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "CREATIVE_PRODUCTION",
+          "construct": "Actual creative work versus passive aesthetic enjoyment",
+          "existing_question_ids": [
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_PROXY",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-CREATIVE-PRODUCTION",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        },
+        {
+          "id": "PROBLEM_SOLVING_THOUGHT",
+          "construct": "Lived response to contradictory/problematic facts vs historical innovation",
+          "existing_question_ids": [
+            "TF1-G01",
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "WEAK_PROXY_CONSTRUCT_MISMATCH",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-PROBLEM-SOLVING",
+          "questionnaire_instrument_status": "TENDENCY_FIRST_AND_V3_CANDIDATE_NOT_VALIDATED"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-NOJ-PRUDENCE",
+      "source_claim_id": "MAYA-ZUNIL-NOJ-PRUDENCE",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "TF1-G01"
+      ],
+      "observable_ids": [
+        "PROBLEM_SOLVING_THOUGHT"
+      ],
+      "source_readiness": "SOURCE_ONLY_SOURCE_DOMAIN_DISAGREES_WITH_MOMOSTENANGO",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "PROBLEM_SOLVING_THOUGHT",
+          "construct": "Lived response to contradictory/problematic facts vs historical innovation",
+          "existing_question_ids": [
+            "TF1-G01",
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "WEAK_PROXY_CONSTRUCT_MISMATCH",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-PROBLEM-SOLVING",
+          "questionnaire_instrument_status": "TENDENCY_FIRST_AND_V3_CANDIDATE_NOT_VALIDATED"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-IMOX-CREATIVITY",
+      "source_claim_id": "MAYA-ZUNIL-IMOX-CREATIVITY",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "ART"
+      ],
+      "observable_ids": [
+        "CREATIVE_PRODUCTION"
+      ],
+      "source_readiness": "SOURCE_ONLY_NO_PEOPLE_VALIDATED",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "CREATIVE_PRODUCTION",
+          "construct": "Actual creative work versus passive aesthetic enjoyment",
+          "existing_question_ids": [
+            "ART"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_PROXY",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-CREATIVE-PRODUCTION",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-E-TRAVEL",
+      "source_claim_id": "MAYA-ZUNIL-E-TRAVEL",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "TRAVEL"
+      ],
+      "observable_ids": [
+        "ACTUAL_TRAVEL_HISTORY"
+      ],
+      "source_readiness": "SOURCE_ONLY_ACTUAL_TRAVEL_HISTORY_IS_PARTIAL_PROXY",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "ACTUAL_TRAVEL_HISTORY",
+          "construct": "Actual relocation, long-range travel and cultural encounters versus desire for travel",
+          "existing_question_ids": [
+            "TRAVEL"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "PARTIAL_HISTORY_PROXY",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-ACTUAL-TRAVEL",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-E-GENEROSITY",
+      "source_claim_id": "MAYA-ZUNIL-E-GENEROSITY",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "RECIPROCITY"
+      ],
+      "observable_ids": [
+        "HELPING_GENEROSITY"
+      ],
+      "source_readiness": "SOURCE_ONLY_BROAD_PROSOCIAL_PROXY",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "HELPING_GENEROSITY",
+          "construct": "Practical giving/helping relative to capacity and receiving support",
+          "existing_question_ids": [
+            "RECIPROCITY"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_PROSOCIAL_PROXY",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-HELP-GIVE-RECEIVE",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-MOMO-E-RITUAL-VOCATION",
+      "source_claim_id": "MAYA-MOMO-E-RITUAL-VOCATION",
+      "system_id": "MAYA-HIGHLAND-MOMOSTENANGO-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "VOCATION",
+        "BELIEF"
+      ],
+      "observable_ids": [
+        "RITUAL_VOCATION"
+      ],
+      "source_readiness": "SOURCE_ONLY_HISTORICAL_GENDERED_ROLE_CONTEXT_NOT_PRIMARY",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "RITUAL_VOCATION",
+          "construct": "Religious/ceremonial role or vocation distinct from belief/practice",
+          "existing_question_ids": [
+            "VOCATION",
+            "BELIEF"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_HISTORICAL_PROXY",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-SPIRITUAL-ROLE",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-TOJ-MEDIATION",
+      "source_claim_id": "MAYA-ZUNIL-TOJ-MEDIATION",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "BONDS",
+        "ANGER_REPAIR"
+      ],
+      "observable_ids": [
+        "RELATIONSHIP_MEDIATION"
+      ],
+      "source_readiness": "SOURCE_ONLY_COMMUNITY_CONFLICT_WITH_MOMOSTENANGO_MEDICAL_STIGMA_QUARANTINED",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "RELATIONSHIP_MEDIATION",
+          "construct": "Conflict repair/helping/mediation as historical source role",
+          "existing_question_ids": [
+            "BONDS",
+            "ANGER_REPAIR"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_PROXY_NOT_MEDIATION",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-CONFLICT-REPAIR",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "MAYA-ZUNIL-BATZ-TEACHING",
+      "source_claim_id": "MAYA-ZUNIL-BATZ-TEACHING",
+      "system_id": "MAYA-HIGHLAND-ZUNIL-KICHE",
+      "source_artifact": "MAYA_MOMOSTENANGO_ZUNIL_NATAL_DOMAIN_CROSSWALK_V1.json",
+      "source_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+      "question_ids": [
+        "LEARNING_HISTORY",
+        "VOCATION"
+      ],
+      "observable_ids": [
+        "TEACHING_ROLE"
+      ],
+      "source_readiness": "SOURCE_ONLY_LEARNING_IS_NOT_DIRECT_TEACHING",
+      "measurement_link": "PARTIAL_PROXY",
+      "measurement_notes": [
+        {
+          "id": "TEACHING_ROLE",
+          "construct": "Actual teaching roles not merely own education or learning",
+          "existing_question_ids": [
+            "LEARNING_HISTORY",
+            "VOCATION"
+          ],
+          "direct_measure_exists": false,
+          "existing_question_coverage": "BROAD_PROXY_NOT_DIRECT_TEACHING",
+          "conditional_question_id": null,
+          "shared_answer_key": "SHARED-TEACHING-WORK",
+          "questionnaire_instrument_status": "V3_RESEARCH_CANDIDATE_NOT_LIVE"
+        }
+      ],
+      "disposition": "REUSE_EXISTING_ANSWER_IF_SUFFICIENT_ELSE_RETAIN_GAP",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "L1647-MC-JUP-BODY",
+      "system_id": "WESTERN_MODERN_DIAGNOSTIC_PRIMARY_DIRECTIONS",
+      "source_artifact": "docs/astrology-research-map/western-event-only-blind-score-20261025/BLIND_EVENT_SCORING_CONTRACT.json",
+      "source_commit": "a206838686e956d21d3d6a64629c022916dd2a4b",
+      "question_ids": [
+        "STATUS",
+        "VOCATION",
+        "EP-LEADERSHIP-HISTORY"
+      ],
+      "observable": "documented_formal_role_gain",
+      "measurement_link": "PARTIAL_PROXY",
+      "missing_dimensions": [
+        "formal_event_definition",
+        "event_date_interval",
+        "date_precision",
+        "voluntary_source_quality",
+        "observation_coverage"
+      ],
+      "existing_scorer": "POSITIVE_EVENTS_ONLY; no event record is UNKNOWN",
+      "disposition": "CONDITIONAL_EVENT_CAPTURE_IF_SELECTED",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "L1647-MC-SAT-BODY",
+      "system_id": "WESTERN_MODERN_DIAGNOSTIC_PRIMARY_DIRECTIONS",
+      "source_artifact": "docs/astrology-research-map/western-event-only-blind-score-20261025/BLIND_EVENT_SCORING_CONTRACT.json",
+      "source_commit": "a206838686e956d21d3d6a64629c022916dd2a4b",
+      "question_ids": [
+        "STATUS",
+        "VOCATION",
+        "TIMELINE"
+      ],
+      "observable": "documented_involuntary_role_loss",
+      "measurement_link": "PARTIAL_PROXY",
+      "missing_dimensions": [
+        "involuntary_vs_voluntary",
+        "formal_event_definition",
+        "event_date_interval",
+        "date_precision",
+        "voluntary_source_quality",
+        "observation_coverage"
+      ],
+      "existing_scorer": "POSITIVE_EVENTS_ONLY; no event record is UNKNOWN",
+      "disposition": "CONDITIONAL_EVENT_CAPTURE_IF_SELECTED",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    },
+    {
+      "claim_id": "PTOLEMY_IV_5_C33_SIGN_ONLY_SUBRULE",
+      "system_id": "HELLENISTIC_PTOLEMY_PARTIAL_SUBRULE",
+      "source_artifact": "docs/astrology-research-map/HELLENISTIC_C33_BLINDED_MARRIAGE_COUNT_STUDY_DRAFT_V1.json",
+      "source_commit": "ef8b143a9e30545118db72479a5cf3974f8b3c08",
+      "question_ids": [
+        "BONDS"
+      ],
+      "observable": "two_or_more_separately_constituted_legally_recognized_marriages_by_age_50",
+      "measurement_link": "PARTIAL_PROXY",
+      "missing_dimensions": [
+        "marriage_count",
+        "predeclared_legal_cultural_definition",
+        "attained_age_and_observation_window"
+      ],
+      "source_cautions": [
+        "Age50 is analyst choice, not Greek text.",
+        "Nonpositive sign is comparison group, not literal single-marriage prediction.",
+        "Full Ptolemaic alternative clauses remain unresolved.",
+        "Source historical gender branches and cultural scope require explicit consented protocol; do not infer identities."
+      ],
+      "disposition": "KEEP_UNFROZEN_DRAFT_CONDITIONAL_OUTCOME",
+      "new_question_admitted": false,
+      "confirmatory_mapping_promoted": false
+    }
+  ],
+  "existing_nonactive_craft_candidate": {
+    "id": "SHARED-PHYSICAL-MAKING-CONTEXT-v1",
+    "origin": "PREEXISTING_MAYA_INTEGRATION",
+    "newly_authored_here": false,
+    "active": false,
+    "must_share_conditional_probe_cap_if_later_admitted": true,
+    "chart_triggered_selection_forbidden": true
+  },
+  "field_level_proposals": [
+    {
+      "id": "DELTA-INTAKE",
+      "action": "REUSE_EXISTING_TEMPLATE_FIELDS_AND_VERIFY_SELECTED_UI_API_STORAGE_ROUTE",
+      "existing_fields": [
+        "time_source",
+        "stated_uncertainty_seconds",
+        "birthplace_city",
+        "birthplace_country",
+        "iana_timezone_if_known",
+        "research_use"
+      ],
+      "extend_metadata": "prior familiarity and known personal interpretation for each actually tested system",
+      "production_wiring": "UNVERIFIED; only legacy reference HTML compared with template",
+      "new_personality_questions": 0
+    },
+    {
+      "id": "DELTA-EVENT",
+      "action": "STRUCTURED_CAPTURE_ONLY_WHEN_SELECTED_EXISTING_EVENT_HYPOTHESIS_NEEDS_IT",
+      "existing_topics": [
+        "TIMELINE",
+        "STATUS",
+        "VOCATION",
+        "BONDS",
+        "TRAVEL"
+      ],
+      "already_present": [
+        "approximate_age_or_year_optional",
+        "confidence_in_date_optional",
+        "external_event_vs_inner_change_optional"
+      ],
+      "proposed_capture_fields": [
+        "reported_date_or_range",
+        "date_precision",
+        "date_source_quality",
+        "event_category_under_frozen_contract",
+        "observation_window",
+        "selected_events_vs_complete_coverage",
+        "reported_present_vs_explicit_absent_vs_unknown_vs_declined_vs_future_pending"
+      ],
+      "no_false_precision": true,
+      "no_absence_from_omission": true,
+      "current_positive_event_scorer_unchanged": true
+    },
+    {
+      "id": "DELTA-MAPPING",
+      "action": "USE_EXISTING_CLAIM_TRACE_SCHEMA_AND_VERSIONED_SHARED_ANSWERS",
+      "new_runtime_schema": false,
+      "direct_vs_proxy_vs_missing_separate": true,
+      "model_calculation_readiness_separate": true,
+      "combined_model_allowed_if_predeclared": true,
+      "one_answer_not_multiple_independent_successes": true
+    },
+    {
+      "id": "DELTA-FLOW",
+      "action": "PRESERVE_EXISTING_OPTIONALITY_AND_TRUTHFUL_PROGRESS",
+      "new_lifetime_question_cap": false,
+      "no_auto_restart_of_completed_interview": true
+    },
+    {
+      "id": "DELTA-NEUTRALITY",
+      "action": "SUBSTANTIVE_WORDING_OR_CODING_REPAIR_REQUIRES_EXISTING_THEORY_BLIND_AUTHORITY_ROUTE",
+      "this_audit_role": "THEORY_EXPOSED_AUDITOR",
+      "new_neutral_authority_claim": false
+    }
+  ],
+  "system_level_dispositions": [
+    {
+      "system": "Human Design",
+      "disposition": "REUSE_EXISTING_FORWARD_BLIND_PIPELINE; preserve frozen scoring versions"
+    },
+    {
+      "system": "Western/Hellenistic natal",
+      "disposition": "MAP_SOURCE_SPECIFIC_CLAIMS_TO_EXISTING_OBSERVABLES; preserve schools and source conditions"
+    },
+    {
+      "system": "Primary directions and other event timing",
+      "disposition": "SEPARATE_EVENT_OUTCOME_CLASS; two retrieved Western endpoints only"
+    },
+    {
+      "system": "Jyotish",
+      "disposition": "MAP_SOURCE_VARIANTS_SEPARATELY; no new questions from book count"
+    },
+    {
+      "system": "BaZi / Zi Wei",
+      "disposition": "REUSE_ROLE_FAMILY_RESOURCE_TRAVEL_DOMAINS_WHERE_EXACT; source count is not engine readiness"
+    },
+    {
+      "system": "Tibetan",
+      "disposition": "SEPARATE_NATAL_OBSERVABLES_FROM_CALENDAR_RITUAL_DIVINATION"
+    },
+    {
+      "system": "Maya",
+      "disposition": "REUSE_EXISTING_11_CLAIM_SHARED_SURVEY_BRIDGE; no standalone study"
+    },
+    {
+      "system": "Gene Keys",
+      "disposition": "NO_RESTART_OF_RETIRED_MESSAGE_STYLE_QUESTIONNAIRE; unresolved profile parity remains separate"
+    }
+  ],
+  "not_admitted_by_this_review": [
+    "new_cohort_recruitment",
+    "participant_contact",
+    "production_deployment",
+    "private_GPT_edit",
+    "rewrite_of_frozen_HD_V43",
+    "retrospective_relabeling_as_untouched",
+    "synthetic_GeneKeys_questionnaire",
+    "mandatory_full_corpus_completion_gate"
+  ],
+  "next_boundary": "Review is a concrete proposal. Implement only justified metadata/wording through existing routes, then freeze selected source models and measurement before new scored answers."
+}

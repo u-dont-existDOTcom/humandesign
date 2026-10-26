@@ -1,0 +1,32 @@
+{
+  "schema": "SHARED_QUESTIONNAIRE_REVIEW_VERIFICATION_V1",
+  "as_of": "2026-10-26",
+  "status": "PASS_DOCUMENTATION_SCOPE_ONLY",
+  "source_sha256": "fec3d0d18b9463d29842e65c4759fd7ed900a019889531896f89c1b3764e0084",
+  "original_topic_objects_equal": 23,
+  "original_conditional_objects_equal": 7,
+  "canonical_object_hashes_verified": 30,
+  "specific_claim_ids_unique_and_question_refs_resolve": 14,
+  "topic_review_ids_complete": 23,
+  "preserved_per_sitting_optional_topic_limit": 5,
+  "preserved_per_sitting_conditional_probe_limit": 2,
+  "new_required_or_active_optional_questions": 0,
+  "new_human_results": 0,
+  "independent_review": {
+    "reviewer": "/root/questionnaire_audit",
+    "result": "PASS_NO_MUST_FIX_FINDINGS",
+    "scope": "Questionnaire/version/measurement/burden review; excludes later Railway appendix and exhaustive historical-source verification.",
+    "human_or_cross_model_validation": false
+  },
+  "artifacts_sha256": {
+    "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_REVIEW_20261026.md": "f9d52b3c212a1ddb4190c86ada5965d77ab44d125e1857fa6c75bd0080567cbd",
+    "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_LEDGER_20261026.json": "51fa8bb1eee013334383e68dd6176c209684a984a85e65a8b19a8feda7afc90e"
+  },
+  "limits": [
+    "No production or private GPT verification.",
+    "Current Railway whoami attempt returned no result.",
+    "No complete audit of every historical source annotation.",
+    "No psychometric or predictive validation."
+  ],
+  "repository_publication": "Recorded separately after commit and remote readback."
+}
