@@ -1,0 +1,38 @@
+{
+  "schema": "SHARED_QUESTIONNAIRE_REVIEW_PUBLICATION_V1",
+  "as_of": "2026-10-26",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "branch": "research/multisystem-questionnaire-review-20261026",
+  "source_base_commit": "b0c24930cc2c4b5b8ae8f792e061fd51dd8eac7e",
+  "review_commit": "7780f930fc8b8c8f6f44ae88eedd57030a4bd7be",
+  "review_tree": "dbe90fa490b0f27225f00c5c71efec3ee4caab89",
+  "local_and_remote_review_trees_equal": true,
+  "authenticated_save_route": "GitHub connector Git data API; shell push lacked a configured credential.",
+  "remote_branch_head_readback": "7780f930fc8b8c8f6f44ae88eedd57030a4bd7be",
+  "exact_content_readback": [
+    {
+      "path": "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_LEDGER_20261026.json",
+      "blob_sha": "4dab3a99b972152cd20bb2580ef52580cc9b1dec",
+      "exact_utf8_equal": true,
+      "display_url": "https://github.com/u-dont-existDOTcom/humandesign/blob/7780f930fc8b8c8f6f44ae88eedd57030a4bd7be/docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_LEDGER_20261026.json"
+    },
+    {
+      "path": "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_REVIEW_20261026.md",
+      "blob_sha": "53ebba977450ed9e90e328453dad3a8eb3b48740",
+      "exact_utf8_equal": true,
+      "display_url": "https://github.com/u-dont-existDOTcom/humandesign/blob/7780f930fc8b8c8f6f44ae88eedd57030a4bd7be/docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_REVIEW_20261026.md"
+    }
+  ],
+  "review_changed_paths": [
+    "docs/astrology-research-map/README.md",
+    "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_LEDGER_20261026.json",
+    "docs/astrology-research-map/SHARED_QUESTIONNAIRE_CHANGE_REVIEW_20261026.md",
+    "docs/suggested-fixes-ledger.md",
+    "state/tasks/task-0d47e8a982011dda577ff91ee359852fb7e0475133e1580e64df052fdeb8fb3e.md",
+    "tasks/multisystem-questionnaire-review-20261026/STATE.md",
+    "tasks/multisystem-questionnaire-review-20261026/VERIFICATION.json"
+  ],
+  "external_effect": "Isolated documentation review branch only; no merge, deployment, participant-data access or outbound messages.",
+  "validation": "See VERIFICATION.json; no software changes or full application suite.",
+  "completion": "Requested review complete. Hosting authorization and scientific validation remain separate open outcomes."
+}
