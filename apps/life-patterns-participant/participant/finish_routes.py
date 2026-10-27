@@ -23,6 +23,14 @@ from .finish_portal import (
     FinishSessions,
     cf003_secondary,
     frozen_primary,
+    reviewed_source,
+)
+from .shared_evidence import (
+    public_instrument as shared_instrument,
+)
+from .shared_evidence import (
+    source_catalog,
+    validate_shared_evidence_record,
 )
 from .store import Conflict, Store, canonical, digest
 
@@ -57,6 +65,7 @@ class FinishSubmit(SourceBody):
     answers: list[FinalAnswer] = Field(min_length=3, max_length=3)
     metadata: FinishMetadata
     experience_record: dict | None = None  # Separate optional unscored post-review evidence
+    shared_evidence_record: dict | None = None
 
 
 class PortalBatchAnswer(SourceBody):
@@ -261,6 +270,8 @@ def mount_finish_routes(
                 "clarification_count": len(review.get("clarification_history") or []),
                 "cf003_questions": questions,
                 "experience_instrument": public_instrument(),
+                "shared_evidence_instrument": shared_instrument(),
+                "shared_evidence_sources": source_catalog(reviewed_source(review)),
                 "csrf_token": token,
                 "submission": None,
             }
@@ -368,6 +379,14 @@ def mount_finish_routes(
         )
         if experience is not None and experience["collection_mode"] != "railway_finish":
             raise ValueError("Railway experience answers must name the Railway channel.")
+        shared = (
+            validate_shared_evidence_record(
+                body.shared_evidence_record, primary_record=primary, cf003_record=secondary,
+                experience_record=experience,
+            ) if body.shared_evidence_record is not None else None
+        )
+        if shared is not None and shared["collection_mode"] != "railway_finish":
+            raise ValueError("Railway shared evidence must name the Railway channel.")
         submitted = gpt_submission_type(
             research_use_consented=True,
             review_id=session.review_id,
@@ -383,6 +402,8 @@ def mount_finish_routes(
         }
         if experience is not None:
             content["experience_record"] = experience
+        if shared is not None:
+            content["shared_evidence_record"] = shared
         submission_hash = digest(canonical(content))
         payload = {
             "schema": "life-patterns-gpt-submission-v1",
@@ -402,6 +423,9 @@ def mount_finish_routes(
         if experience is not None:
             payload["experience_record"] = experience
             payload["experience_record_sha256"] = digest(canonical(experience))
+        if shared is not None:
+            payload["shared_evidence_record"] = shared
+            payload["shared_evidence_record_sha256"] = digest(canonical(shared))
         submission_id, stored, duplicate = store.create_gpt_submission(
             payload,
             submission_hash,
@@ -420,6 +444,10 @@ def mount_finish_routes(
                     {"experience_record_sha256": stored["experience_record_sha256"]}
                     if experience is not None
                     else {}
+                ),
+                **(
+                    {"shared_evidence_record_sha256": stored["shared_evidence_record_sha256"]}
+                    if shared is not None else {}
                 ),
                 "duplicate": duplicate,
             }

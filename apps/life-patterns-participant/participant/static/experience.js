@@ -126,7 +126,7 @@
     if (c.topicToggle && !c.topicToggle.checked) {
       return {question_id:item.id,state:"NOT_ASKED"};
     }
-    const note = c.note.value.trim();
+    const note = c.note.value;
     const answer = {question_id:item.id,state:"NOT_ASKED"};
     if (item.mode === "dual_meaning") {
       const personal = c.personal.value || "not_answered";
@@ -152,7 +152,7 @@
         }
       }
     }
-    if (note && answer.state !== "NOT_ASKED") answer.note = note;
+    if (note.trim() && answer.state !== "NOT_ASKED") answer.note = note;
     return answer;
   }
 
@@ -178,5 +178,18 @@
       responses
     };
   }
-  window.LifePatternsExperience = {setup,collect};
+  function sourceCatalog() {
+    if (!bank || !el("experience-opt-in").checked) return [];
+    return bank.items.map(responseFor).flatMap((response, index) => {
+      if (!["ANSWERED", "NEVER", "UNKNOWN"].includes(response.state) ||
+          !response.note || !response.note.trim()) return [];
+      const item = bank.items.find(item => item.id === response.question_id);
+      return [{
+        source_ref: "/experience/responses/" + index + "/note",
+        question_text: item.question,
+        answer_text: response.note,
+      }];
+    });
+  }
+  window.LifePatternsExperience = {setup,collect,sourceCatalog};
 })();

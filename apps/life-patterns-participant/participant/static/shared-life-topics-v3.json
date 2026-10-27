@@ -1,0 +1,833 @@
+{
+  "schema": "life-patterns-shared-evidence-instrument-v1",
+  "version": "shared-life-topics-v3-20261026",
+  "status": "development_optional_unscored",
+  "consent_rule": "Additional questions are separate, explicitly optional and unscored. Do not silently treat them as completed or required in the current interview.",
+  "max_base_optional_topics_per_session": 5,
+  "max_additional_conditional_probes_per_session": 2,
+  "decline_all_allowed": true,
+  "evidence_state_codes": [
+    "ANSWERED",
+    "CONTEXT_DEPENDENT",
+    "NO_OPPORTUNITIES",
+    "NEVER",
+    "NOT_APPLICABLE",
+    "UNCERTAIN",
+    "SKIPPED",
+    "ALREADY_COVERED",
+    "NOT_ASKED",
+    "FUTURE_PENDING"
+  ],
+  "questions": [
+    {
+      "id": "DREAM",
+      "label": "Dreaming and what dreams mean to you",
+      "question": "In a typical recent month, how often do you remember dreams after waking up, if ever?",
+      "optional_followup": "If you remember them, do particular subjects recur, or do dreams ever influence how you think or act while awake? You can say no or skip.",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "BELIEF",
+      "label": "Worldview and regular spiritual/religious practice",
+      "question": "What, if anything, plays a regular part in your life: religious observance, meditation or other spiritual practice, philosophical reflection, a secular worldview, or none of these?",
+      "optional_followup": "Do these activities reflect deep personal conviction, routine, community belonging, curiosity, or something else?",
+      "conditional_new_probe_ids": [
+        "EP-CHOSEN-REFLECTION"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "BELIEF_CHANGE",
+      "label": "Important changes in your beliefs or convictions",
+      "question": "Have your most important beliefs or convictions stayed broadly stable, shifted gradually, changed suddenly, or changed several times across your life?",
+      "optional_followup": "If something changed, what would you consider the most significant shift and roughly when?",
+      "conditional_new_probe_ids": [
+        "EP-GROUP-DEPARTURE"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "RENUNCIATION",
+      "label": "Deliberate renunciation, retreat or initiation",
+      "question": "Have there been any significant periods in your life when you deliberately stepped back from worldly goals, possessions, status or ordinary social roles, whether through spiritual/religious commitment, simplicity, retreat or something else?",
+      "optional_followup": "If so, was this a formal commitment or more a personal way of living, and did it last or later change?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "ART",
+      "label": "Making things creatively versus appreciating beauty",
+      "question": "Over the past year, how often have you actively made, written, designed, performed or invented something for its own sake? Separately, how often have art, music, beauty or aesthetics been important experiences for you?",
+      "optional_followup": "If they differ, what do you create yourself and what do you mostly appreciate or enjoy?",
+      "conditional_new_probe_ids": [
+        "EP-INDEPENDENT-FEEDBACK"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "MYSTERY",
+      "label": "Interest in hidden, philosophical or unusual questions",
+      "question": "How often, if at all, do you actively explore unresolved philosophical questions, hidden or mysterious subjects, divination, scientific puzzles, or other ways of investigating what you do not yet understand?",
+      "optional_followup": "When you encounter an unusual claim, what tends to convince you it is true or mistaken?",
+      "conditional_new_probe_ids": [
+        "EP-EVIDENCE-REASON"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "TIMELINE",
+      "label": "Actual turning points and life phases",
+      "question": "If you look across your life, what are up to three changes or turning points that most clearly divide it into a before and after? You may say none or decline.",
+      "optional_followup": "For each event you choose, was the change mostly in external circumstances, your understanding/identity, or both?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "VOCATION",
+      "label": "Actual work, calling and long-running roles",
+      "question": "What kinds of work or contribution have actually occupied the most of your life so far? Has there been one lasting vocation, several distinct phases, or no clear occupation or calling?",
+      "optional_followup": "If an occupation or calling has changed, what changed and around what period?",
+      "conditional_new_probe_ids": [
+        "EP-INDEPENDENT-FEEDBACK",
+        "EP-LEADERSHIP-HISTORY",
+        "EP-PROJECT-FOLLOWTHROUGH"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "HOME",
+      "label": "Home, family roots and belonging",
+      "question": "Where, with whom, or in what situations have you felt most at home or a sense of belonging, if anywhere? Has that changed over your life?",
+      "optional_followup": "Do family relationships, chosen community, or places themselves play the biggest role, if any?",
+      "conditional_new_probe_ids": [
+        "EP-CHOSEN-REFLECTION",
+        "EP-GROUP-DEPARTURE"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "KINSHIP",
+      "label": "Actual sibling and extended-family roles",
+      "question": "Without naming anyone, what role—if any—have siblings or extended relatives played in your life, and how has that changed?",
+      "optional_followup": "Would you say these ties have been central, occasional, absent, or too variable to summarize?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "BONDS",
+      "label": "Actual long-term friendship and partnership patterns",
+      "question": "Looking at your actual close bonds over time, have long friendships or partnerships tended to last, change, end and begin again, or follow different patterns?",
+      "optional_followup": "Would an answer about friendship be different from one about romantic partnership?",
+      "conditional_new_probe_ids": [
+        "EP-GROUP-DEPARTURE",
+        "EP-PARTNER-PRIORITIES"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "TRAVEL",
+      "label": "Living elsewhere and encounters with different cultures",
+      "question": "How much have actual travel, relocation, languages or living among different cultures shaped your life, if at all?",
+      "optional_followup": "Has this been recurring over many years or concentrated in one period?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "STATUS",
+      "label": "Changes in public responsibility or recognition",
+      "question": "Have public responsibilities, influence or recognition actually been a major or changing part of your life, or mostly not?",
+      "optional_followup": "Is that different from how much you personally care about recognition?",
+      "conditional_new_probe_ids": [
+        "EP-LEADERSHIP-HISTORY"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "RESOURCES",
+      "label": "Broad material circumstances over time",
+      "question": "Without giving amounts, have your material circumstances generally been stable, improving, worsening, cyclical, or too varied to summarize?",
+      "optional_followup": "Do financial security and material possessions matter to you in the same way, or differently?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "PARENTING",
+      "label": "Caregiving and parenting when applicable",
+      "question": "Has caring for children or other dependents been part of your actual life? If so, how central has it been and has your role changed?",
+      "optional_followup": "If care matters to you, is it a chosen role, a practical obligation, or both?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "PLAY",
+      "label": "Playfulness and spontaneous enjoyment",
+      "question": "During ordinary life over the past year, how often have you been playful, amused, silly, or spontaneously drawn into enjoyment, if at all?",
+      "optional_followup": "Does playfulness usually arise with other people, on your own, or in both settings?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "LEARNING_HISTORY",
+      "label": "Education Learning History",
+      "question": "Across your life, what subjects, skills or crafts have you actually spent substantial time studying or learning, if any? Was this mainly formal education, self-directed study or hands-on experience?",
+      "optional_followup": "Which subjects have stayed important over years, and which were brief interests?",
+      "conditional_new_probe_ids": [
+        "EP-PROJECT-FOLLOWTHROUGH"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "ANGER_REPAIR",
+      "label": "Grievance Duration Repair",
+      "question": "When something genuinely upsets or angers you, how long does that feeling usually matter to you: briefly, hours, days, much longer, rarely, or very differently depending on the situation?",
+      "optional_followup": "If a relationship continues, can you forgive or reconnect before the feeling has fully gone, or does it tend to work differently?",
+      "conditional_new_probe_ids": [
+        "EP-EVIDENCE-REASON"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "RECIPROCITY",
+      "label": "Giving Receiving Help",
+      "question": "In your actual close relationships or communities, how often do you meaningfully help others, and separately how often do you seek or accept help yourself?",
+      "optional_followup": "Does giving come more easily than accepting support, or is it the other way around? Both or neither are valid.",
+      "conditional_new_probe_ids": [
+        "EP-LEADERSHIP-HISTORY"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "CONTENTMENT",
+      "label": "Contentment Satisfaction",
+      "question": "When your basic situation is acceptable, how often do you feel genuinely content with things as they are? Separately, how much do you feel drawn to improve, change or pursue something else?",
+      "optional_followup": "Can you feel content and still strongly motivated to grow, or do those experiences usually pull in different directions?",
+      "conditional_new_probe_ids": [
+        "EP-CHOSEN-REFLECTION",
+        "EP-PROJECT-FOLLOWTHROUGH"
+      ],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "UPBRINGING",
+      "label": "Formative Caregiving Arrangements",
+      "question": "If you want to describe it, did you grow up mainly with one stable set of caregivers or did your living or caregiving arrangements change significantly?",
+      "optional_followup": "If something changed, was it an important turning point for you, or simply a normal part of your childhood?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "PRIVACY",
+      "label": "Privacy Self Disclosure",
+      "question": "In everyday relationships, how much of your inner thoughts, feelings and personal life do you generally share, and how much do you prefer to keep private?",
+      "optional_followup": "Does this depend strongly on trust, subject or the other person's response?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    },
+    {
+      "id": "SENSORY_ENJOYMENT",
+      "label": "Everyday Sensory Pleasure",
+      "question": "What everyday things bring you noticeable pleasure through the senses—such as food, music, scent, warmth, colors, textures or being in natural places—if any?",
+      "optional_followup": "Do you regularly seek these experiences out, or mostly notice them when they happen?",
+      "conditional_new_probe_ids": [],
+      "eligibility": "Only ask if topic is selected, applicable and not already adequately answered in earlier source. One source question cannot count twice.",
+      "followup_gate": "A needed distinction is still unresolved and useful.",
+      "response_state_options": [
+        "ANSWERED",
+        "CONTEXT_DEPENDENT",
+        "NO_OPPORTUNITIES",
+        "NEVER",
+        "NOT_APPLICABLE",
+        "UNCERTAIN",
+        "SKIPPED",
+        "ALREADY_COVERED",
+        "NOT_ASKED"
+      ],
+      "answer_capture": {
+        "first_person": true,
+        "usually_frequency_if_tendency": true,
+        "opportunity_count_only_if_known": true,
+        "conditions_and_exceptions": "optional_when_decision_relevant",
+        "date_or_age_approximate": "optional_for_actual_life_events_only",
+        "typical_and_peak_intensity_separate": true,
+        "actual_behavior_and_preference_separate": true,
+        "ability_and_opportunity_separate": true,
+        "activity_and_compensation_separate": true
+      }
+    }
+  ],
+  "optional_microprobes": [
+    {
+      "id": "EP-EVIDENCE-REASON",
+      "question": "When you disagree with someone about a question of fact, how do you usually make your case—by checking reasons or evidence, appealing to expertise or authority, using experience, or something else?",
+      "followup": "What circumstances change that response? If disagreements are rare, say so; examples and precise counts are optional.",
+      "related_topics": [
+        "MYSTERY",
+        "ANGER_REPAIR"
+      ]
+    },
+    {
+      "id": "EP-INDEPENDENT-FEEDBACK",
+      "question": "Have two or more people independently remarked on a repeated way you work or interact—whether a strength or difficulty? If so, what did they actually notice?",
+      "followup": "Does their description fit your experience, and when does it or doesn't it?",
+      "related_topics": [
+        "VOCATION",
+        "ART"
+      ]
+    },
+    {
+      "id": "EP-CHOSEN-REFLECTION",
+      "question": "How much time do you normally choose to spend alone for contemplation, studying, or an activity you enjoy? Is it a need, preference, opportunity, or a mixture?",
+      "followup": "How does that differ from being alone because you have to work or lack company? Has it changed over time?",
+      "related_topics": [
+        "BELIEF",
+        "HOME",
+        "CONTENTMENT"
+      ]
+    },
+    {
+      "id": "EP-GROUP-DEPARTURE",
+      "question": "Have you voluntarily stepped away from a group or community you had belonged to for a long time? You can say none, don't know or prefer not to discuss.",
+      "followup": "If so, was the main change in your interests, values, circumstances, or the group itself? Roughly when?",
+      "related_topics": [
+        "BELIEF_CHANGE",
+        "HOME",
+        "BONDS"
+      ]
+    },
+    {
+      "id": "EP-LEADERSHIP-HISTORY",
+      "question": "Across groups you've actually taken part in, how often have you coordinated other people's work? Separately, how often do you prefer that role?",
+      "followup": "Were the responsibilities formal, informal, paid, unpaid or mixed? Do opportunities depend on the group's needs?",
+      "related_topics": [
+        "STATUS",
+        "VOCATION",
+        "RECIPROCITY"
+      ]
+    },
+    {
+      "id": "EP-PARTNER-PRIORITIES",
+      "question": "What qualities matter most to you in a long-term partner? Choose your own qualities, and rank them only if doing so helps; ties are fine.",
+      "followup": "Does your answer change for different kinds of relationships or at different stages of life? You can leave the order open.",
+      "related_topics": [
+        "BONDS"
+      ]
+    },
+    {
+      "id": "EP-PROJECT-FOLLOWTHROUGH",
+      "question": "When you choose a substantial personal project, what usually happens over time: completion, deliberate change of aim, pausing, or abandoning it? How common is each across the projects you've had?",
+      "followup": "What tends to decide whether you continue—meaning, novelty, slow progress, available energy, other duties or something else?",
+      "related_topics": [
+        "VOCATION",
+        "CONTENTMENT",
+        "LEARNING_HISTORY"
+      ]
+    }
+  ]
+}

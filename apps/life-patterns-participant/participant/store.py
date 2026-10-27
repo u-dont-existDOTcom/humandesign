@@ -274,6 +274,13 @@ class Store:
             db.commit()
         return submission_id, payload, False
 
+    def gpt_review_finalized(self, review_id: str) -> bool:
+        """Read finalization without exposing any participant payload."""
+        with self.connection() as db:
+            return db.execute(
+                "SELECT 1 FROM gpt_review_finalizations WHERE review_id=?", (review_id,)
+            ).fetchone() is not None
+
     def gpt_submission_overview(self) -> list[dict]:
         with self.connection() as db:
             rows = db.execute(

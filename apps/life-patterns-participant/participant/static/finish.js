@@ -91,7 +91,10 @@
       ["", "Choose one"], ["yes", "Yes"], ["no", "No"],
       ["unsure", "Not sure"], ["prefer_not_to_say", "Prefer not to say"]
     ];
-    find("finish-form").querySelectorAll("select").forEach(select => {
+    find("finish-form").querySelectorAll(
+      'select[name="rising_sign_previously_known"], select[name="previous_natal_chart_reading"], ' +
+      'select[name="target_information_exposure"]'
+    ).forEach(select => {
       select.replaceChildren();
       for (const pair of values) {
         const option = document.createElement("option");
@@ -102,6 +105,7 @@
     });
   }
   function showDone(receipt) {
+    if (window.LifePatternsSharedEvidence) window.LifePatternsSharedEvidence.markStored();
     clearTimeout(timer);
     alertMessage("");
     showPanel("done");
@@ -200,6 +204,23 @@
         showFinalQuestions(data.cf003_questions);
         if (window.LifePatternsExperience) {
           window.LifePatternsExperience.setup(data.experience_instrument);
+        }
+        if (window.LifePatternsSharedEvidence) {
+          window.LifePatternsSharedEvidence.setup(
+            data.shared_evidence_instrument, data.shared_evidence_sources, () => {
+              const sources = cf003Questions.map((item, index) => ({
+                source_ref: "/cf003/turns/" + index + "/answer_text",
+                question_text: item.question,
+                answer_text: find("finish-form").elements.namedItem(item.question_id).value,
+              }));
+              if (sources.some(source => !source.answer_text.trim())) {
+                throw new Error("Complete the three final questions before starting optional life topics. You may decline the optional section.");
+              }
+              const experienceSources = window.LifePatternsExperience
+                ? window.LifePatternsExperience.sourceCatalog() : [];
+              return [...sources, ...experienceSources];
+            }
+          );
         }
         showPanel("review");
       }
@@ -313,9 +334,9 @@
     const form = new FormData(event.target);
     const answers = cf003Questions.map(item => ({
       question_id: item.question_id,
-      answer_text: String(form.get(item.question_id) || "").trim()
+      answer_text: String(form.get(item.question_id) || "")
     }));
-    if (answers.some(item => !item.answer_text)) {
+    if (answers.some(item => !item.answer_text.trim())) {
       alertMessage("Answer all three questions; being unsure is a valid answer.");
       return;
     }
@@ -328,9 +349,12 @@
     try {
       const experience = window.LifePatternsExperience
         ? window.LifePatternsExperience.collect() : null;
+      const shared = window.LifePatternsSharedEvidence
+        ? window.LifePatternsSharedEvidence.collect() : null;
       showDone(await api("/api/finish/submit", {
         confirmed_review: true, submit_to_research: true, answers, metadata,
-        ...(experience ? {experience_record: experience} : {})
+        ...(experience ? {experience_record: experience} : {}),
+        ...(shared ? {shared_evidence_record: shared} : {})
       }));
     } catch (err) {
       alertMessage(err.message || "Final storage failed; your earlier answers remain saved.");

@@ -20,6 +20,10 @@ SAFE_FIELDS = frozenset(
         "cf003_record",
         "primary_record_json",
         "cf003_record_json",
+        "experience_record",
+        "experience_record_json",
+        "shared_evidence_record",
+        "shared_evidence_record_json",
         "answer_text",
         "clarification_id",
         "operation_id",
@@ -80,7 +84,10 @@ def safe_validation_diagnostic(errors: list[dict[str, Any]]) -> dict[str, Any]:
         if code not in HINTS:
             code = "invalid_field"
         json_record_transport = any(
-            part in {"primary_record_json", "cf003_record_json"} for part in path
+            part in {
+                "primary_record_json", "cf003_record_json", "experience_record_json",
+                "shared_evidence_record_json",
+            } for part in path
         )
         hint = HINTS.get(code, "Check this field against the published schema.")
         if json_record_transport:

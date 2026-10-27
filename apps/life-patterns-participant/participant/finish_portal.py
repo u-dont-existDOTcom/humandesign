@@ -179,13 +179,18 @@ class FinishSessions:
                 "independent_review_completed": True,
                 "primary_record_sha256": saved["primary_record_sha256"],
                 "cf003_record_sha256": saved["cf003_record_sha256"],
+                **{
+                    key: saved[key] for key in (
+                        "experience_record_sha256", "shared_evidence_record_sha256"
+                    ) if key in saved
+                },
                 "duplicate": True,
             }
         return None
 
 
-def frozen_primary(job: dict, *, confirmed_at: str) -> dict:
-    """Rebuild exact reviewed behavior only; no independent coding or relabeling."""
+def reviewed_source(job: dict) -> dict:
+    """Copy reviewed source for reuse without asserting participant confirmation."""
     if job.get("status") != "ready":
         raise Conflict("Independent review has not completed.")
     candidate = job.get("candidate_record")
@@ -216,6 +221,12 @@ def frozen_primary(job: dict, *, confirmed_at: str) -> dict:
                 "process_feedback": [],
             }
         )
+    return primary
+
+
+def frozen_primary(job: dict, *, confirmed_at: str) -> dict:
+    """Rebuild exact reviewed behavior only; no independent coding or relabeling."""
+    primary = reviewed_source(job)
     primary["participant_review"] = {
         **(primary.get("participant_review") or {}),
         "summary_shown": True,
