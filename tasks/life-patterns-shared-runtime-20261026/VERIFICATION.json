@@ -1,0 +1,60 @@
+{
+  "schema": "life-patterns-shared-runtime-verification-v1",
+  "date": "2026-10-26",
+  "status": "PASS",
+  "synthetic_only": true,
+  "private_participant_records_accessed": false,
+  "service_and_intake_tests": {
+    "command": "PYTHONPATH=apps/life-patterns-participant:src python -m pytest apps/life-patterns-participant/tests tests/unit/test_shared_intake_metadata.py -q",
+    "passed": 379,
+    "failed": 0,
+    "warnings": 2,
+    "duration_seconds": 31.48,
+    "warnings_meaning": "Existing TestClient/httpx and AnyIO deprecation warnings"
+  },
+  "browser_pilot": "BROWSER-PILOT.json",
+  "browser_status": "PASS",
+  "browser_errors": 0,
+  "external_browser_requests": 0,
+  "lint": {
+    "status": "PASS",
+    "scope": "Changed participant Python files and new intake module/CLI/tests",
+    "flags": "--ignore E501,I001, matching repository CI policy",
+    "new_line_E501_findings_fixed": 2,
+    "old_formatting_findings_not_expanded_into_scope": 33
+  },
+  "javascript_syntax": "PASS: experience.js, finish.js and shared-evidence.js",
+  "typing": {
+    "status": "PASS",
+    "scope": "src/hdmatch/participant/shared_intake_metadata.py",
+    "configuration": "mypy.ini strict=True Python3.11",
+    "mypy": "1.20.2",
+    "command": "python -m mypy --config-file mypy.ini --follow-imports=silent src/hdmatch/participant/shared_intake_metadata.py"
+  },
+  "independent_engineering_review": "PASS after legacy response shape, draft repair, source reuse and unfinished independent draft fixes",
+  "package": {
+    "status": "PASS",
+    "package": "reference/custom_gpt/releases/Life-Patterns-GPT-Shared-Topics-v1.10-2026-10-26.zip",
+    "sha256": "5479b69b935ca602455b98722c79a98d92fa42f88339e946e34d22166b82cef0",
+    "bytes": 91659,
+    "instructions_sha256": "25ae7f8b57b574482b61e003cd67de92a6f551c03f7ead0a150759bf5031c977",
+    "instructions_strict_characters": 7982,
+    "knowledge_files": 13,
+    "ten_previous_knowledge_files_byte_identical": true,
+    "handoff_previous_content_preserved": true,
+    "archive_round_trip": true,
+    "editor_or_deployment_verified": false
+  },
+  "unchanged_authority": {
+    "main_tendency_policy": "tendency-first-v1-20261006",
+    "sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+    "main_questions_added": 0,
+    "independent_review_worker_changed": false,
+    "CF003_questions_changed": false
+  },
+  "limits": [
+    "Synthetic software checks do not establish human predictive validity or actual participant blinding.",
+    "No live independent reviewer job was submitted during release verification.",
+    "Already finalized reviews accept exact retries only; no later-addendum endpoint was added."
+  ]
+}

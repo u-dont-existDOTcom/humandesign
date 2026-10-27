@@ -200,7 +200,7 @@ def test_wrong_collection_channel_rejected_before_storage(experience_flow):
 def test_action_v19_retains_old_required_fields_and_adds_optional_json(experience_flow):
     _, _, _, client = experience_flow
     action = json.loads(client.get("/action-openapi.yaml").text)
-    assert action["info"]["version"] == "1.9.0"
+    assert action["info"]["version"] == "1.10.0"
     props = action["components"]["schemas"]["Submission"]
     assert props["required"] == [
         "research_use_consented",

@@ -31,6 +31,7 @@ from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
 from .experience import validate_experience_record
 from .fast_review import PROTOCOL, source_revision
 from .review_timing import review_guidance
+from .shared_evidence import validate_shared_evidence_record
 from .store import Conflict, Missing, Store, canonical, digest
 from .validation_diagnostics import safe_validation_diagnostic
 
@@ -214,6 +215,8 @@ class GptSubmission(Body):
     # Additive post-review research; never part of primary/CF003 or chart scoring.
     experience_record: dict | None = None
     experience_record_json: str | None = Field(default=None, min_length=2, max_length=50_000)
+    shared_evidence_record: dict | None = None
+    shared_evidence_record_json: str | None = Field(default=None, min_length=2, max_length=250_000)
 
 
 class GptReviewedSubmission(GptSubmission):
@@ -533,7 +536,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             raise ValueError("Independent review needs at least one behavioral answer.")
         reject_target_fields(record)
 
-    def review_public(payload):
+    def review_public(payload, *, include_shared_evidence=False):
         clarification = with_participant_purpose(payload.get("pending_clarification"))
         raw_clarifications = payload.get("pending_clarifications") or []
         clarifications = [with_participant_purpose(item) for item in raw_clarifications]
@@ -551,6 +554,11 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
                 clarifications if status == "clarification_needed" and clarifications else None
             ),
             "final_review_completed": status == "ready",
+            **({
+                "shared_evidence_available": (
+                    status == "ready" and not store.gpt_review_finalized(payload["review_id"])
+                )
+            } if include_shared_evidence else {}),
 
             "clarification": clarification
             if payload.get("status") == "clarification_needed"
@@ -862,6 +870,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "review_worker_configured": bool(settings.review_worker_token),
             "persistence": "encrypted_sqlite",
             "instrument_version": version,
+            "shared_evidence_available": True,
+            "shared_evidence_status": "optional_development_not_scored",
         }
 
     @app.get("/")
@@ -878,11 +888,14 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.get("/action-openapi.yaml")
     def action_openapi():
-        return FileResponse(STATIC / "action-openapi-v1.9.yaml", media_type="application/yaml")
+        return FileResponse(STATIC / "action-openapi-v1.10.yaml", media_type="application/yaml")
 
     @app.get("/assets/{name}")
     def assets(name: str):
-        if name not in {"app.js", "style.css", "admin.js", "finish.js", "finish.css", "experience.js"}:
+        if name not in {
+            "app.js", "style.css", "admin.js", "finish.js", "finish.css", "experience.js",
+            "shared-evidence.js",
+        }:
             raise HTTPException(404)
         return FileResponse(STATIC / name)
 
@@ -998,9 +1011,11 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         return review_public(view)
 
     @app.get("/api/gpt/reviews/{review_id}")
-    def gpt_review_status(request: Request, review_id: str):
+    def gpt_review_status(request: Request, review_id: str, include_shared_evidence: bool = False):
         gpt_submitter(request)
-        return review_public(store.gpt_review_read(review_id))
+        return review_public(
+            store.gpt_review_read(review_id), include_shared_evidence=include_shared_evidence
+        )
 
     @app.post("/api/gpt/reviews/{review_id}/clarifications")
     def gpt_review_answer(request: Request, review_id: str, body: GptReviewAnswer):
@@ -1164,6 +1179,28 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
                 raise ValueError("The GPT experience record must name the GPT channel.")
             if body.review_id is None:
                 raise ValueError("Optional experience evidence requires an independently ready review.")
+        shared = None
+        if body.shared_evidence_record is not None or body.shared_evidence_record_json is not None:
+            parsed = (
+                strict_json(body.shared_evidence_record_json)
+                if body.shared_evidence_record_json is not None else None
+            )
+            if (
+                parsed is not None and body.shared_evidence_record is not None
+                and canonical(parsed) != canonical(body.shared_evidence_record)
+            ):
+                raise ValueError("Shared evidence object and JSON string must match.")
+            source = (
+                body.shared_evidence_record if body.shared_evidence_record is not None else parsed
+            )
+            shared = validate_shared_evidence_record(
+                source, primary_record=primary, cf003_record=secondary,
+                experience_record=experience,
+            )
+            if shared["collection_mode"] != "gpt_optional":
+                raise ValueError("The GPT shared addendum must name the GPT channel.")
+            if body.review_id is None:
+                raise ValueError("Optional shared evidence requires an independently ready review.")
         content = {
             "review_id": body.review_id,
             "primary_record": primary,
@@ -1171,6 +1208,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         }
         if experience is not None:
             content["experience_record"] = experience
+        if shared is not None:
+            content["shared_evidence_record"] = shared
         submission_sha256 = digest(canonical(content))
         payload = {
             "schema": "life-patterns-gpt-submission-v1",
@@ -1196,6 +1235,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         if experience is not None:
             payload["experience_record"] = experience
             payload["experience_record_sha256"] = digest(canonical(experience))
+        if shared is not None:
+            payload["shared_evidence_record"] = shared
+            payload["shared_evidence_record_sha256"] = digest(canonical(shared))
         submission_id, stored, duplicate = store.create_gpt_submission(payload, submission_sha256)
         return {
             "schema": "life-patterns-gpt-submission-receipt-v1",
@@ -1208,6 +1250,10 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             **(
                 {"experience_record_sha256": stored["experience_record_sha256"]}
                 if experience is not None else {}
+            ),
+            **(
+                {"shared_evidence_record_sha256": stored["shared_evidence_record_sha256"]}
+                if shared is not None else {}
             ),
             "stored_encrypted": True,
             "independent_review_completed": body.review_id is not None,
@@ -1305,6 +1351,23 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             headers={
                 "Cache-Control": "private, no-store",
                 "Content-Disposition": 'attachment; filename="life-patterns-experience-addendum-v2.json"',
+            },
+        )
+
+    @app.get("/api/admin/gpt-submissions/{submission_id}/shared-evidence")
+    def gpt_submission_shared_evidence(request: Request, submission_id: str):
+        admin(request)
+        payload = store.gpt_submission_read(submission_id)
+        if "shared_evidence_record" not in payload:
+            raise HTTPException(404, "This submission has no optional shared evidence addendum.")
+        return Response(
+            canonical(payload["shared_evidence_record"]),
+            media_type="application/json",
+            headers={
+                "Cache-Control": "private, no-store",
+                "Content-Disposition": (
+                    'attachment; filename="life-patterns-shared-evidence-addendum-v1.json"'
+                ),
             },
         )
 

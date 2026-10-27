@@ -7,6 +7,7 @@
 <title>Continue your Life Patterns review</title>
 <link rel="stylesheet" href="/assets/finish.css">
 <script src="/assets/experience.js" defer></script>
+<script src="/assets/shared-evidence.js" defer></script>
 <script src="/assets/finish.js" defer></script>
 </head>
 <body>
@@ -99,9 +100,71 @@
         <div id="experience-additional-items"></div>
       </div>
     </fieldset>
+    <fieldset id="shared-optional" hidden>
+      <legend>Optional: more about your life</legend>
+      <p>Choose a few topics that interest you. These development questions are stored separately from your reviewed interview and are not scored. You may decline the whole section, skip questions or reuse an earlier answer.</p>
+      <label class="checkline">
+        <input type="checkbox" id="shared-opt-in">
+        <span>I separately agree to include optional life-topic answers in this research.</span>
+      </label>
+      <div id="shared-controls" hidden>
+        <p id="shared-message" role="alert" hidden></p>
+        <div id="shared-selection">
+          <p id="shared-selection-count"></p>
+          <div id="shared-topic-options"></div>
+          <button id="shared-start" type="button" class="secondary" disabled>Start chosen topics</button>
+        </div>
+        <div id="shared-question" hidden>
+          <h3 id="shared-question-title"></h3>
+          <p id="shared-question-text"></p>
+          <label>Your response
+            <select id="shared-state"></select>
+          </label>
+          <label id="shared-answer-label">Your own words or conditions
+            <textarea id="shared-answer" rows="5" maxlength="20000"></textarea>
+          </label>
+          <div id="shared-source-label" hidden>
+            <label>Earlier answer <select id="shared-source"></select></label>
+            <blockquote id="shared-source-quote"></blockquote>
+            <label>Exact relevant excerpt (you may shorten it)
+              <textarea id="shared-source-excerpt" rows="4" maxlength="20000"></textarea>
+            </label>
+          </div>
+          <label>Feedback about the question (optional)
+            <textarea id="shared-feedback" rows="2" maxlength="4000"></textarea>
+          </label>
+          <div class="actions">
+            <button id="shared-next" type="button">Save this response</button>
+            <button id="shared-stop" type="button" class="secondary">Skip this question and end this sitting</button>
+            <button id="shared-cancel-edit" type="button" class="secondary" hidden>Cancel edit</button>
+          </div>
+        </div>
+        <p id="shared-progress" class="subtle" aria-live="polite"></p>
+        <div id="shared-complete" hidden>
+          <p>You can use Submit and finish below. No further topic or detail is required.</p>
+          <details>
+            <summary>Review or edit these optional drafts</summary>
+            <p>These drafts remain editable until final submission. Your already reviewed primary interview stays frozen. If you edit a source used by a later answer, check that later reference too.</p>
+            <div id="shared-draft-answers"></div>
+          </details>
+          <details id="shared-details">
+            <summary>I want to clarify an unresolved detail</summary>
+            <label>Optional detail <select id="shared-detail-options"></select></label>
+            <label>What remains unclear in your answer?
+              <textarea id="shared-detail-reason" rows="2" maxlength="1000"></textarea>
+            </label>
+            <button id="shared-detail-start" type="button" class="secondary">Open this optional detail</button>
+          </details>
+          <div class="actions">
+            <button id="shared-download" type="button" class="secondary">Download these optional answers</button>
+            <button id="shared-more" type="button" class="secondary">Choose another optional sitting</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
     <label class="checkline">
       <input type="checkbox" id="final-consent" required>
-      <span>I want to submit my confirmed original record, three final answers, and any separately opted-in experience answers to the study's encrypted storage.</span>
+      <span>I want to submit my confirmed original record, three final answers, and any separately opted-in additional answers to the study's encrypted storage.</span>
     </label>
     <div class="actions">
       <button type="button" id="back-button" class="secondary">Back to review</button>

@@ -1,0 +1,15 @@
+{
+  "schema": "shared-evidence-browser-pilot-v1",
+  "synthetic_only": true,
+  "checks": [
+    "Decline-all preserves ordinary final submission",
+    "Five-topic limit, exact whitespace/date capture and earlier shared-answer reuse",
+    "Justified probe, voluntary second sitting, skip feedback and 375px layout",
+    "Real final storage and reload receipt",
+    "Stale source rejected without data loss; draft reference repaired and submitted",
+    "Separately consented experience note reused with exact whitespace in both stored addenda"
+  ],
+  "errors": [],
+  "external_requests": [],
+  "status": "PASS"
+}

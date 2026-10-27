@@ -1,0 +1,244 @@
+{
+  "schema": "life-patterns-shared-evidence-projection-provenance-v1",
+  "source_commit": "7971b3c1564d9c38bce17abe4c4575affcba2c76",
+  "source_path": "tasks/life-patterns-external-questionnaire-merge-20261021/LIFE-PATTERNS-ADAPTIVE-SURVEY-v3-CANDIDATE.json",
+  "source_sha256": "fec3d0d18b9463d29842e65c4759fd7ed900a019889531896f89c1b3764e0084",
+  "projection_sha256": "64fd68cdd4053b19f0148f441e8894190d8b70dc2330eb1bb64a0ba9e2b47fcd",
+  "projection_version": "shared-life-topics-v3-20261026",
+  "source_status": "DEVELOPMENT_OPT_IN_NO_LIVE_OR_CHART_SCORING",
+  "participant_wording_changed": false,
+  "topic_whitelist": [
+    "id",
+    "label",
+    "question",
+    "optional_followup",
+    "conditional_new_probe_ids",
+    "eligibility",
+    "followup_gate",
+    "response_state_options",
+    "answer_capture"
+  ],
+  "probe_whitelist": [
+    "id",
+    "question",
+    "followup",
+    "related_topics"
+  ],
+  "objects": [
+    {
+      "id": "DREAM",
+      "kind": "topic",
+      "source_object_sha256": "c16c785e12bc2007968d8bb3ed76efae91a111e25384ef328bbeb60b77c3a761",
+      "question_sha256": "92a4f121dac893c142db6cf61e3a633e6a6b5d215544897b129b2c26208f3bda",
+      "followup_sha256": "42e4dcf7de7515755f08bdbb43659aa66fb4d38ca0a0609a58a6c76f4eaaaa23"
+    },
+    {
+      "id": "BELIEF",
+      "kind": "topic",
+      "source_object_sha256": "e45bee8c83184c265726849afafd2aaa952b4c940592015f1c371e3a596dd0ff",
+      "question_sha256": "939bffd7614bc52fcda59788d17b25749d5aef020cb94bec3687214262355c42",
+      "followup_sha256": "0537762bb2be8b34e9a9067e2ca07906cb7782601f3a7b0ef32c9e07d09b36a6"
+    },
+    {
+      "id": "BELIEF_CHANGE",
+      "kind": "topic",
+      "source_object_sha256": "1aac42ab759ae5769d411e9fc457d4687f9159afe8ad710e8e7d1c80f04b944d",
+      "question_sha256": "f9607f2a7f2fb8aa42201f50934c6912e5dfefc9e756d9f4578f518c66bd1e18",
+      "followup_sha256": "f2b850f18804e72031ae6b87cf6f85ecb61dea0f1ebb2a5025e38379c73308e4"
+    },
+    {
+      "id": "RENUNCIATION",
+      "kind": "topic",
+      "source_object_sha256": "31d98e0aa91450f56dc994472c72b5d7138d1e1232669a3a4ec30a75c5636a27",
+      "question_sha256": "5a78d335ac067cf4830dc9e3d2200a1197b36cbd78b290248f6e872d5084d8f5",
+      "followup_sha256": "24d3673010fb620a5fff8e08af804b463b222edf788dde7d5fcc543a028c9093"
+    },
+    {
+      "id": "ART",
+      "kind": "topic",
+      "source_object_sha256": "83ff074a8e4e569022afa67df594984aabbb8357c1141a68aa83224cd0cdda43",
+      "question_sha256": "566c801166f249aafda3d16052286ba0f1e8c335b08729277fce26d56e2a979c",
+      "followup_sha256": "a70e4adbe16b0028228e9b7859a5572c17dacd17c43c5c932fd6e288a0a4bd80"
+    },
+    {
+      "id": "MYSTERY",
+      "kind": "topic",
+      "source_object_sha256": "665eab3cc0052089a7b4995d45dc9275038a1644d909c6f8cbdeffb29bb6b47f",
+      "question_sha256": "e40e07b8ae61d083f5382a8f0535dafd45b6d9e551279e6ffdb123174cf1fe5d",
+      "followup_sha256": "c3c5131d8c2ddb8e42b49f712eda5c64f58f7e434535dc7d04ca796ac6ebb301"
+    },
+    {
+      "id": "TIMELINE",
+      "kind": "topic",
+      "source_object_sha256": "cd303cdd192637c5f704513dfdbb56eb253d5f93ec57f277559b3d0ac6c58eda",
+      "question_sha256": "2bf1c97540af484a745c88f6c0a243b54413b63f9c6a60537cbf3286fc1d24aa",
+      "followup_sha256": "f87966ccca717997bd0aecc94b60ea73ae149a3503d9ed3bc7dd57c621df237e"
+    },
+    {
+      "id": "VOCATION",
+      "kind": "topic",
+      "source_object_sha256": "e4b6ecd90b005ea701940a3e810066f86e59f4b55efb3311efde132b42b42250",
+      "question_sha256": "aa70b57934f994772042f496c638e7c54ec317ae6d1dca2c23315953d0c7abc9",
+      "followup_sha256": "cd1064bbd8bc9646aa89834f5882761aedcf6fe851f52028d0a86c578f5def4f"
+    },
+    {
+      "id": "HOME",
+      "kind": "topic",
+      "source_object_sha256": "f2687c1cf6b47a55a266216d50f186c8758a970b628de2748f6bce5d16cef5cd",
+      "question_sha256": "490a1df209878fa2273752754624cbf3912b550f384d207531f84cca6f50817f",
+      "followup_sha256": "2365bf9e495a20503f5c20543e1d17e8518f6af1c1e3948a86ad04820ef77b93"
+    },
+    {
+      "id": "KINSHIP",
+      "kind": "topic",
+      "source_object_sha256": "21c4cdf79cffaa836de9da1efedc17e6c42158cb4711e81845b98c48cb269b09",
+      "question_sha256": "91f4b735465391476e2e28079609d23acd49a8c3daa4b5bbb08500909b8b86d5",
+      "followup_sha256": "0cc750412ef299afda47583a04487492e9155ef9c1d6df49a33049bd48134e6f"
+    },
+    {
+      "id": "BONDS",
+      "kind": "topic",
+      "source_object_sha256": "97c1bf16802e7cd697fd1b0de18581dedf3363de4e9d5df84a542db4721ed456",
+      "question_sha256": "357c90f2fe23347bed8eecb9bfa9b5a3acc3e0be7e801b14920c589d2ee195d3",
+      "followup_sha256": "f59a988209fc5978e12a3a4a3ed70d175ca43e10c980286203d75e25f1aec959"
+    },
+    {
+      "id": "TRAVEL",
+      "kind": "topic",
+      "source_object_sha256": "5c9751385ef404f2e587706e00bc9333a20b0c5e750791fd9ee953082baafdf6",
+      "question_sha256": "523ded7df230fc4f805464700b7946e9fc16a57fd8813a7a52d17b2b35e0277c",
+      "followup_sha256": "6387d2124edb88bd2fa16916e64eeacdf40a3b011f982c50e3c0b30d072b2cbe"
+    },
+    {
+      "id": "STATUS",
+      "kind": "topic",
+      "source_object_sha256": "b4d988b42b06dee0b63192ebad2a25f29823ef2b346d7aa8f9fc7a0f81c4ae36",
+      "question_sha256": "7bdd840901fdbdb7cee493376abcda73ad4cd04d09204b9210c2aa8056ed8b8d",
+      "followup_sha256": "cd829b3ca64876c404f96b4b63378f0028b8647d8bbb9a9ee78f7d0e5bba3991"
+    },
+    {
+      "id": "RESOURCES",
+      "kind": "topic",
+      "source_object_sha256": "95c1d11d3acd96475c334135a61cb1c40a7f19ea74baa18dc2345cce3c1153aa",
+      "question_sha256": "d70c7052a0eb093d2fbaa2fc7a113fc73823918d667279f7850d03bc7019c8d3",
+      "followup_sha256": "bc18571c5d0aac2d339aa569f24c60d1e77643c12dbc2cc93fbaa9fcadbe5284"
+    },
+    {
+      "id": "PARENTING",
+      "kind": "topic",
+      "source_object_sha256": "88fc82f96d29d3d9bde39e021f7b93f83785439b906a0394f88b46ebcdcf2e3a",
+      "question_sha256": "5b5b693c09a4aa588b11afe0aca488026698ea1e6c0dbec0d52f74795bc91683",
+      "followup_sha256": "1e00f9384ca4932361b7d7a8b5efc0e584a712e72bb38901b7fe11f8b7990684"
+    },
+    {
+      "id": "PLAY",
+      "kind": "topic",
+      "source_object_sha256": "6235fa66078c6418ee34ec9437b8d02511bc63be5e85dc5d6e0481ebb05560a0",
+      "question_sha256": "c0ea0ff3e7abb34db7a652544921ee05e0c8d79efe1f27f2f45f3e10bf12565a",
+      "followup_sha256": "3684ec426d165961920f4fbc8c70f4d92d6d7978bc735ae9a001732688b489c8"
+    },
+    {
+      "id": "LEARNING_HISTORY",
+      "kind": "topic",
+      "source_object_sha256": "dba8e54a9f40a2d8e64b615325bcd180660d124fcebfbf0ef1577663e84326ff",
+      "question_sha256": "8d304aebb25a25aff5f1dda9a4b7383cda56f364e67c8af2a258d4f3428685d8",
+      "followup_sha256": "c8b15ac106703b559edc9163cef08d8ef2092b994d3ee1ddfa3dafce4a3b2a34"
+    },
+    {
+      "id": "ANGER_REPAIR",
+      "kind": "topic",
+      "source_object_sha256": "1187ac00ecca94b690185141c2df8dc6e3d6ffa4d8ad7c127def1aabacc104df",
+      "question_sha256": "bb375dd3a493beb173ae2a3e6cd71b394b950aa262f3428e3e5de3e73a814e02",
+      "followup_sha256": "12e2c5ca7f77f71f65e0124e1d7dd7e3c2034803059f64a06fb6396900ed8b03"
+    },
+    {
+      "id": "RECIPROCITY",
+      "kind": "topic",
+      "source_object_sha256": "9c19575d8789fcf4fbdff15abf768e09d6f4ba6b7832e0ef83618bf36d1dbb8c",
+      "question_sha256": "4d975b97de9afd3e591465ad9c832fcb8f789bd1abb2d5da217da7b2101c06ee",
+      "followup_sha256": "8037a36310865f256c263328ad21515aa87ce7b49db08996e404f5ff02fd7f54"
+    },
+    {
+      "id": "CONTENTMENT",
+      "kind": "topic",
+      "source_object_sha256": "124caabc5ae3ed9048656ec1f751f6c2598099ceec7d6907a10885f5c34a621a",
+      "question_sha256": "e40eb57e0ea2a9a49b1a38041fab3f884d629c8feb141edb9b0c703f1df636a9",
+      "followup_sha256": "d15bd584d71a0f52c8bcbe048009434a465ac14aa6877db2e26175792338e583"
+    },
+    {
+      "id": "UPBRINGING",
+      "kind": "topic",
+      "source_object_sha256": "7f0b7154682fa2b9530cc0f785f0491156283d4e633ab08e4ec0874294eabfae",
+      "question_sha256": "d0e1491ed337f307ef29cb2d15c9d2eab3879cff390c299d2a3a19dff333e972",
+      "followup_sha256": "0778fff2271b3ba9c2b12617edf93b1f92cd036bb1bfa1d9ec2f1285aaf5d4ca"
+    },
+    {
+      "id": "PRIVACY",
+      "kind": "topic",
+      "source_object_sha256": "b5d9fe73e66c88dab32d13a7cf5364e9b9a2d4dd26e8aa87d14bd98a437d30de",
+      "question_sha256": "d76470955ea428896b34cdddce2d6e8249119d4a50308d78b2ecb7a9fbb743da",
+      "followup_sha256": "6b54c66b4fb58208a45f24c76f61ab6020c1b478cabef08d09dde636898f0548"
+    },
+    {
+      "id": "SENSORY_ENJOYMENT",
+      "kind": "topic",
+      "source_object_sha256": "1d24660322d8846d9e6d78cf302872418a85115687f1bb343e8ed4c2d4213a2c",
+      "question_sha256": "3fed5af9d07dff020a03270a825824fab9c615ac53bdf326fb6cd870ce8533e7",
+      "followup_sha256": "7120f6132ee44bf57f86ce256d057ca72230f0f3a30e1a7da7f66b04d647a60e"
+    },
+    {
+      "id": "EP-EVIDENCE-REASON",
+      "kind": "probe",
+      "source_object_sha256": "d2f4a54990505bc8cc2a066d03137c6574724ac6869e9f50ec80f4b61100552a",
+      "question_sha256": "9983deb89d13804e0cf4a4ebe399b673480b6cf75fe95e5959e90dede6ee9b02",
+      "followup_sha256": "eabb24b0ae5d261d945c49c1f732c2b7d05e8bb633cfa3db1bd1e1ebc850f006"
+    },
+    {
+      "id": "EP-INDEPENDENT-FEEDBACK",
+      "kind": "probe",
+      "source_object_sha256": "c8c240b23903a52822c2b0603f221b973538000f955ab703b58c98d28d6c7341",
+      "question_sha256": "e86f05c73e00f5d852943c99a95650418a9cc46cbf7aab06f7dff26ec7fced01",
+      "followup_sha256": "709ffb04a55805fdf5b64c02624ff9bc6e5f7b884dee0760ab3b81471f34321c"
+    },
+    {
+      "id": "EP-CHOSEN-REFLECTION",
+      "kind": "probe",
+      "source_object_sha256": "4d3877bed2b2294e386dcf2af34285394474e55badd2d300345c088e08cb2ea7",
+      "question_sha256": "97ee79bc5500bd3d2c57e5359736550942eabc93dc044cb1a495cf2e122fcd51",
+      "followup_sha256": "419c9b29e832b3cc957d5c8e8d0c27d5230e51e4632d46b14e5572accc7455cc"
+    },
+    {
+      "id": "EP-GROUP-DEPARTURE",
+      "kind": "probe",
+      "source_object_sha256": "54061342bcbfa0dc5dfa64d48c6807ad84c2cd4b056baaf985db16b9361042f5",
+      "question_sha256": "1aeb0f56021821859d8bca5851eb27e34986341a4669f9c838af6daa643aa245",
+      "followup_sha256": "75234d268c8945cf70abae32613efc271ae5ab66da644d06f2c9473426d1cf05"
+    },
+    {
+      "id": "EP-LEADERSHIP-HISTORY",
+      "kind": "probe",
+      "source_object_sha256": "1a7b7c5eef63e8c498fdf1d4bf8760356e1fae7a8584b80308449b49a991b1fd",
+      "question_sha256": "415b13c8e64dca571c3e242f2100bbeb55e2f90ca2683d9fa8bf9a7589aa5ab3",
+      "followup_sha256": "1dded0546d9bf3702f1406b262dd8939502d565d207f735d2757e7650b244971"
+    },
+    {
+      "id": "EP-PARTNER-PRIORITIES",
+      "kind": "probe",
+      "source_object_sha256": "09e3e598461ccfd22bc60668d2221eccff41092a06c5408e539cb653205e660b",
+      "question_sha256": "5f3e1b69948e0286e74228439598034f8546338bc43eb3c35e2ab2397edf962f",
+      "followup_sha256": "f8415af12ee1f700c4ec2853d86233c44cfe365e9abae81f70c82e881c5fc358"
+    },
+    {
+      "id": "EP-PROJECT-FOLLOWTHROUGH",
+      "kind": "probe",
+      "source_object_sha256": "89c40fdf8a9036344738275741bf431621866a11c6fe42be8b76218aaea865e4",
+      "question_sha256": "d74129d1d53226e93af967b331b3f0102b112752ae1acdaf05bb0f9cc80921bc",
+      "followup_sha256": "864654a81af8c86ced303235feedd8e403dd66c668ecb66ee2eb8f6ba5e555a9"
+    }
+  ],
+  "limits": [
+    "Projection is an engineering preservation check, not neutral measurement validation.",
+    "Source mappings and object hashes are researcher-side provenance, never interview input.",
+    "The existing optional development candidate remains unscored."
+  ]
+}
