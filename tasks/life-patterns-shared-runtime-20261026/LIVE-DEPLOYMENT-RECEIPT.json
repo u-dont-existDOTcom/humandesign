@@ -1,0 +1,42 @@
+{
+  "schema": "life-patterns-shared-runtime-deployment-receipt-v1",
+  "status": "NOT_DEPLOYED_OPERATION_INTERRUPTED",
+  "last_readback_date": "2026-10-27",
+  "authentication": "MCP account/service reads succeeded",
+  "project_id": "97658d58-84ab-40c8-ab1d-1be06600c4b5",
+  "service_id": "30746eb8-07c9-42e7-8825-152124b9337d",
+  "environment_id": "b9916074-da51-46a1-8d7d-fd618b3c3d2a",
+  "environment_count": 1,
+  "requested_commit": "9cf9527075a39b3f30e9bbb698cf5e56740bbe96",
+  "live_commit": "7de212f027e14c198fb58dc91d11df3068d58e56",
+  "live_branch": "deploy/life-patterns-experience-v19-20261018",
+  "latest_deployment_id": "316b66c9-2141-43e3-ba88-d3242c26811a",
+  "latest_deployment_status": "SUCCESS",
+  "new_deployment_observed": false,
+  "pending_staged_changes": null,
+  "persistent_volume": {
+    "id": "928957b0-0128-4900-86f2-205d3b7f69d7",
+    "mount_path": "/data",
+    "replicas": 1
+  },
+  "operation_result": "Source-change calls were interrupted without a receipt; subsequent configuration and deployment-list reads still show the old pinned source. Further mutation retries stopped. No authentication failure or automatic-approval rejection was returned.",
+  "public_readback": {
+    "origin": "https://life-patterns-participant-production.up.railway.app",
+    "requests": {
+      "/healthz": {
+        "status": 200,
+        "sha256": "7319324865d57e919c6cef55e68f264758ba4dff14c2dfe48ae2e3908a45257c",
+        "health_status": "ok",
+        "shared_evidence_available": false
+      },
+      "/action-openapi.yaml": {
+        "status": 200,
+        "sha256": "246c92cc288d14f5b9435bac8af899b273a7c08e035877d35b295c5071fdadee",
+        "action_version": "1.9.0"
+      }
+    },
+    "private_data_accessed": false
+  },
+  "private_participant_records_accessed": false,
+  "remaining_step": "Complete one authorized source change to the prepared commit on the existing service, then verify terminal SUCCESS and exact live Action1.10/assets. Only then install the cumulative private GPT configuration."
+}

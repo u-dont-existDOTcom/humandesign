@@ -56,5 +56,11 @@
     "Synthetic software checks do not establish human predictive validity or actual participant blinding.",
     "No live independent reviewer job was submitted during release verification.",
     "Already finalized reviews accept exact retries only; no later-addendum endpoint was added."
-  ]
+  ],
+  "github_ci": {
+    "source_commit": "16c565b5fadf4ae94643179ca897bc36eb4bda7e",
+    "push_and_pull_request_verify": "PASS",
+    "push_and_pull_request_survey_browser": "PASS",
+    "canonical_merge": "de03e30f8a71a802580589866e9d228917400e8a"
+  }
 }

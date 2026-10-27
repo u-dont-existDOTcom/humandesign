@@ -1,0 +1,22 @@
+{
+  "schema": "life-patterns-shared-runtime-publication-v1",
+  "status": "MERGED_SOURCE_DEPLOYMENT_PREPARED",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "pull_request": 138,
+  "pull_request_url": "https://github.com/u-dont-existDOTcom/humandesign/pull/138",
+  "source_commit": "16c565b5fadf4ae94643179ca897bc36eb4bda7e",
+  "canonical_merge_commit": "de03e30f8a71a802580589866e9d228917400e8a",
+  "canonical_branch": "research/life-patterns-guided-eight-assessment-20261015",
+  "canonical_tree": "57fed4dbb5ee94ca3c285b30dc26bee0178fc383",
+  "exact_reviewed_file_blobs_verified": 41,
+  "ci": {
+    "verify": "success",
+    "survey-browser": "success",
+    "push_and_pull_request_runs_both_passed": true
+  },
+  "deployment_branch": "deploy/life-patterns-shared-topics-v110-20261027",
+  "deployment_commit": "9cf9527075a39b3f30e9bbb698cf5e56740bbe96",
+  "deployment_tree": "a950fffd33231b0186cbe3557bc17f13afc3c37a",
+  "deployment_only_difference_from_merged_source": "railway.json uses the known participant Dockerfile configuration from7de212f",
+  "package_sha256": "5479b69b935ca602455b98722c79a98d92fa42f88339e946e34d22166b82cef0"
+}

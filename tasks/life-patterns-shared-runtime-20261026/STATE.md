@@ -8,7 +8,7 @@ The owner supplied the current GPT Instructions, reported successful Railway CLI
 
 ## Current state
 
-**Implementation, independent engineering review, package verification and synthetic execution are complete. Source publication and existing-service release are in progress.** Continue through release verification; this checkpoint does not admit stopping while those steps remain executable. Read the latest PUBLICATION.json and LIVE-DEPLOYMENT-RECEIPT.json when present before resuming.
+**Implementation, independent engineering review, package verification, synthetic execution, GitHub CI and canonical merge are complete. Deployment is blocked at the source-change operation; the live service remains Action 1.9.** Read PUBLICATION.json and LIVE-DEPLOYMENT-RECEIPT.json before any retry. The prepared cumulative GPT1.10 package has not been installed in the private editor.
 
 - Existing exact 23 topics and seven conditional probes are available as a separately consented, unscored development supplement.
 - Participants select at most five topics and two justified probes per voluntary sitting. Adequate prior sources may be referenced from primary, CF003, earlier original shared responses and separately consented Experience & Meaning notes. Structured-only coverage is not reasked or converted into invented text.
@@ -43,6 +43,10 @@ Canonical `railway.json` belongs to the relationship application. Publish and me
 
 Software checks are not human measurement validation, chart scoring, pristine-cohort evidence or a live review-worker heartbeat. The supplement remains development/unscored. Existing primary ingestion may flag numeric date plus clock cooccurrence; that old guard was not silently reinterpreted or changed. Already finalized records accept exact retries only. Later additions require a distinct explicit version/storage path.
 
-## Next executable step
+## Publication and admitted boundary
 
-Publish the reviewed scope onto canonical participant source, retain the separate participant deployment configuration, deploy only the existing participant service, verify live behavior, update this checkpoint and deliver the cumulative GPT package. The owner's private editor installation is the remaining human-only boundary after release; no account reset or secret rotation is needed.
+PR [#138](https://github.com/u-dont-existDOTcom/humandesign/pull/138) merged at `de03e30f8a71a802580589866e9d228917400e8a`. Both push and PR CI passed unit/integration tests, lint, full typing and the root browser workflow. All 41 published files match the reviewed source. The isolated deploy branch `deploy/life-patterns-shared-topics-v110-20261027` points to `9cf9527075a39b3f30e9bbb698cf5e56740bbe96`; only the known participant root Railway configuration differs from merged source.
+
+Two source-change invocation attempts were interrupted without a deployment receipt. Subsequent read-only Railway configuration, deployment-list and public HTTP checks show the old `7de212f...` source, original successful deployment and Action `1.9.0`; no new deployment is observed. Authentication reads work. No returned error establishes an account-reset requirement, invalid credentials or an automatic-approval rejection. Further mutation retries stopped after the repeated interruption. This is an external execution boundary, not completion of the rollout or a reason to repeat software tests.
+
+Next: complete the one source change in DEPLOY-EXISTING-SERVICE.md, verify terminal success and the public Action1.10/assets, then apply the cumulative package to the same private GPT. Preserve the current installed GPT until that backend verification. No new service, token or account reset is required by the prepared change. The questionnaire and intake deliverables are complete; live activation remains open. Do not start an interview or read respondent records to diagnose deployment access.
