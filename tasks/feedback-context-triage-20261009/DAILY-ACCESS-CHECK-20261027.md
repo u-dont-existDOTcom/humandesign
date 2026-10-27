@@ -1,0 +1,20 @@
+# Life Patterns researcher question-feedback audit — 2026-10-27 UTC
+
+## Authenticated production readback: PASS; no new actionable item
+- The connected Railway integration listed the `humandesign-relationship` project and confirmed `life-patterns-participant` live on deployment `316b66c9-2141-43e3-ba88-d3242c26811a` (deployed 2026-10-18), based on `deploy/life-patterns-experience-v19-20261018` source commit `7de212f027e14c198fb58dc91d11df3068d58e56`.
+- The owner-authorized laptop Railway CLI `railway whoami` succeeded on this run (prior 2026-10-26 runs were unauthorized). The established local read-only researcher launcher ran against the production authenticated `/api/admin/question-feedback` endpoint using the already configured credential route; returned `PASS: feedback_count=8; report_saved=True; key_exposed=False`. Its private 0600 HTML report was refreshed at 2026-10-27 08:38:57 UTC. Neither secret nor raw respondent answer was printed or committed.
+- Local report SHA-256 `e12574c5a177d9f25d858e285d0344f00ee292ea7197c14212183d879733fe59` **exactly matches** the authenticated 2026-10-19 report and archived 2026-10-09 report. The item-level read also confirmed all eight identifiers persist with status `new`. Thus this is an independently authenticated unchanged queue, not a stale-report assumption.
+- Live issues: M11 (1), VERIFY (2), B0 (3), ROMANCE-FADE/unmapped (2). These overlapping development annotations are not evidence of independent population validation.
+
+## Question-bank and disposition assessment
+- Compared against the accepted `tendency-first-v1-20261006` bank, the versioned `tendency-first-v2-development.json` draft and its `QUESTION-REVISION-CROSSWALK.md`, the question-feedback release gate and earlier audit/dispositions. TF1 v1 already retires legacy M11 and B0 from **new** elicitation; it does not rewrite historical interviews. TF1 v2 remains a **development** proposal with nine wording revisions and three proposed retirements; none activated.
+- M11: a possible discriminative-value failure of a fairness vignette; already bypassed in accepted new elicitation. Not independently validated as a latent-trait discriminator. Hold any TF1-M11 wording replacement for blind cognitive/psychometric comparison.
+- VERIFY: asks for an individual's unilateral choice where their genuine response is group consensus; real answerability/presupposition concern, but no evidence authorizing a construct change. Retain collaborative mode; seek only any material missing distinction.
+- B0: re-asking the whole vignette to clarify mood is an actual redundant interaction. The accepted TF1 v1 removes the old B0 scenario from prospective elicitation. For already answered historical or in-progress sessions do not replay or rewrite; narrowly clarify only when necessary. No additional new-bank change is needed today.
+- ROMANCE-FADE/unmapped: an apparent repeated optional item, but missing intervening assistant turns prevent chronological proof. Prospective retirement remains conditional on construct-coverage review, not an automatic wording fix.
+- No new defect, distinct respondent evidence, disposition change, or unambiguous additional prospective repair requiring a commit was found. All eight records remain `new` in the live researcher queue; no statuses were changed merely to hide pending scientific decisions.
+
+## Decision communication, privacy and continuation
+- Gmail confirmed the anonymized decision email to the owner was sent on 2026-10-23 (four route groups and recommended defaults). A fresh search found no owner reply. No duplicate decision email was sent.
+- No source words, private answers, credential values, participant identifiers, frozen versions, blinded keys, answered review states or active interview were published or modified. No runtime question bank, feedback disposition, or deployment was changed.
+- Continue this DAILY workflow: re-authenticate and compare the next live queue to the same accepted version/disposition baseline. Only the owner may pause or stop it. Access recovery in this run removes the prior live-read blocker, not the unresolved scientific/product decision gate.
