@@ -1,0 +1,47 @@
+{
+  "schema": "life-patterns-shared-topics-live-recovery-v1",
+  "date_utc": "2026-10-29",
+  "status": "LIVE_VERIFIED_PRIVATE_GPT_NOT_YET_APPLIED",
+  "source_commit": "9cf9527075a39b3f30e9bbb698cf5e56740bbe96",
+  "deployment_status": "SUCCESS",
+  "deployment_utc": "2026-10-29T12:54:01Z",
+  "existing_service_reused": true,
+  "existing_volume_preserved": true,
+  "public_health": {
+    "http": 200,
+    "status": "ok",
+    "shared_evidence_available": true,
+    "question_policy_sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611"
+  },
+  "live_schema": {
+    "http": 200,
+    "version": "1.10.0",
+    "matches_zip_exact_bytes": true,
+    "sha256": "9974b9da93f22bf8ec1005aecea301e32951c847319314c29fbe1b9c892babb6"
+  },
+  "public_asset_routes_http200": [
+    "/assets/shared-evidence.js",
+    "/assets/experience.js",
+    "/assets/finish.js",
+    "/finish"
+  ],
+  "assets_cache_control": "no-store",
+  "owner_local_delivery": {
+    "gpt_zip_delivered": true,
+    "gpt_zip_sha256": "5479b69b935ca602455b98722c79a98d92fa42f88339e946e34d22166b82cef0",
+    "gpt_zip_bytes": 91659,
+    "whatsapp_followup_sheet_delivered": true,
+    "whatsapp_sheet_sha256": "4b58d00553b5a7ff93cd108b51aa9a07772efc3535582262cd552c1358758a75",
+    "followup_topics": 20,
+    "optional_sittings": 4,
+    "maximum_topics_per_sitting": 5
+  },
+  "prior_interview_disposition": "edited_source_only; consent not attested; no reply imported; not presumed chart-blind",
+  "public_participant_identity_or_answers_committed": false,
+  "live_flags_observed": {
+    "participant_enabled": false,
+    "gpt_submission_enabled": true
+  },
+  "pending": "Update original private GPT using cumulative package; no automated private-editor verification",
+  "historical_failure": "LIVE-DEPLOYMENT-RECEIPT.json reflects 2026-10-27 failure and is superseded for current status"
+}
