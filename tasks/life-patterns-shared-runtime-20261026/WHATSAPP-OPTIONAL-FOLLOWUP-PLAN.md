@@ -28,3 +28,7 @@ After an existing GPT/Railway final submission, the current backend permits exac
 ## Admission
 
 These are unscored development responses. The optional questionnaire can improve factual coverage but does not create independent predictive validation of any astrological or Human Design system.
+
+## Separate experience & meaning v2 (only after its own admission gate)
+
+The same ZIP includes `knowledge/experience-meaning-v2.json`. Once the original primary review and freeze plus CF003 are complete, the participant may opt separately into core `EM01`, `EM03`, `EM04`, `EM08`; then voluntarily select any of `EM02`, `EM05`, `EM06`, `EM07`. These are not part of the 20 shared-topic items or primary scoring. Keep common frequency and typical-versus-peak intensity separate; do not infer supernatural causation from sensed guidance or coincidence reports. If the post-review gate is not satisfied, a WhatsApp reply is source-only development material, not a formal submitted addendum.
