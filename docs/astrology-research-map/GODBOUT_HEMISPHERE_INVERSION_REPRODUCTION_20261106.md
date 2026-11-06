@@ -1,0 +1,59 @@
+# Godbout–Brun Southern Hemisphere zodiac inversion: independent-reproduction implications
+
+**Audit date:** 2026-11-06  
+**Status:** Reproduced *as-supplied data analysis*; preliminary hypothesis for external testing, **not** validated astrology or a production chart-rule change.  
+**Research lane:** Cross-hemisphere falsification / competing zodiac specifications; separate from Human Design's forward-blind and reverse-matching validation claims.
+
+## Private-source boundary and provenance
+
+This note summarizes derived analytical results from eight research attachments supplied by Vincent Godbout on 2026-11-03, an accompanying October annotated errata, and the privately retained independent reproduction package. **Do not commit the original DOCX/XLSX files, named person-level audit, private correspondence, generated biography/ASTRO vectors, or complete replication archive to this public repository.** They remain in the owner's private research files. The archive reports Python 3.12.14, numpy 2.3.5, scipy 1.17.0, matplotlib 3.10.8, openpyxl 3.1.5, deterministic seeds and independent source verification. The person-level CSV accompanying this owner review is byte-identical to the CSV inside the archive. This note is a research handoff, not an assertion that private material may be redistributed.
+
+Private attachment fingerprints for later exact-source reconciliation, without publishing source bytes:
+- Reproduction ZIP SHA-256: `3333a510347054d9fa9d0384c1a0e6a31beb34add7b5d02cceb0190d1fa9a7f4`
+- Person-level CSV SHA-256: `e4462a8f3ef4efa68f22bb6637d2009ca0450ecc369cf3be8aab2db25ba3d825`
+
+Public article: Vincent Godbout & Hubert Brun, *Should the Tropical Zodiac Signs Be Inverted to Their Opposites in the Southern Hemisphere?*, *Correlation* 38(1), 39–56 (2025); publisher abstract: https://correlationjournal.com/should-the-tropical-zodiac-signs-be-inverted-to-their-opposites-in-the-southern-hemisphere/.
+
+## Computational findings that survived
+
+- Independently reconstructed all **41,940 trait-match cells**, **282 original global scores** and **141 paired classifications**, agreeing with the supplied data to floating-point precision. The exact scoring equivalent is case-insensitive literal-word matching of the approximately 150 biographical terms to each weighted astrological keyword vector, summed and divided by the number of ASTRO keyword-score rows. This independently *reconstructs the exports*, not the underlying Mastro engine.
+- **North (n=73):** standard zodiac wins 47, inversion 26 (inversion 35.62%). **South (n=68):** inversion wins 48, standard 20 (inversion 70.59%). Difference = **34.97 percentage points**. Two-sided two-proportion z p = **0.0000325028**; two-sided Fisher exact p = **0.0000449041**. The author's p ≈ 0.0000163 is **one-sided**, not a conventional two-sided p.
+- More demanding **within-hemisphere identity-permutation control**: pair each biography with randomly assigned chart pairs *within its hemisphere*, carrying the ordinary and 180° charts together. One million permutations (seed 20261106) yield **10** contrasts at least as extreme in the predicted direction; plus-one upper-tail p ≈ **0.000011** (two-sided centered p ≈ 0.000020). Null mean inversion-win-rate contrast ≈ **0.0523**, rather than zero. This controls generic within-hemisphere keyword and chart-length frequencies but **assumes biographies are exchangeable among identities under the conditional null**.
+- **Continuous mean-score contrast:** observed South−North difference in (inverted−standard) = **0.02587**; permuted null mean **0.01426**, one-sided p ≈ **0.1002** (two-sided ≈ 0.201). **Expected-hemisphere chart mean-score fit:** observed **0.27088**, null **0.26299**, upper-tail p ≈ **0.0272** (two-sided ≈ 0.0533). These are weaker than the binary finding. Keep them distinct rather than using the smallest p to represent everything.
+- Exploratory alternate denominator/score schemes retain a weaker binary contrast: **45/68 versus 30/73** (raw matched sums; Fisher two-sided p≈.00399), and **44/68 versus 28/73** (fraction of chart weights; p≈.00236). Whitespace trimming and original BIO-word differences do not change the published 48/26 classifications.
+- Cross-person discrimination is **not strong** with this pipeline: treating each biography's *hemisphere-expected* chart as the target among all distinct charts from that hemisphere, the real chart ranks #1 for **1/73 northern biographies and 0/68 southern biographies**. Chance would produce about one top-one match per hemisphere. This is a *different, more demanding task* from the paper's paired-orientation forced choice, not a direct refutation of that choice.
+- The as-supplied Southern latitude subset has **67**, not 68, people; Pearson r = **−0.05394**, two-sided p ≈ **.665**. Correcting obvious birthplace errors and adding the missing person in sensitivity checks leaves it nonsignificant. It is not a direct equatorial-boundary experiment.
+
+## Limitations and non-equivalent interpretations
+
+1. Source cohort assembly differs: 73 mostly earlier Le Monde cases vs 68 convenience Southern public figures, not randomized or matched by occupation, fame, country, sex, year, language or birth-season. Conditional permutation cannot prove away identity-dependent confounders.
+2. Each approximately 150-word BIO list was elicited about a **named** public figure from ChatGPT, not independently measured with a blind behavioral instrument. Celebrity knowledge and possible zodiac-data leakage are uncontrolled possibilities, not proven causes.
+3. The study reports choosing the final proportions test after examining alternatives because it produced the strongest significance. The complete history of analysis/search/sample/scorer choices is unavailable; no trustworthy global familywise correction can be reconstructed.
+4. Mastro's original astronomical inputs/version, rule/keyword corpus and independent planet/chart parity are not fully established from the eight attachments. The reconstructed literal-match arithmetic does not validate the truth or sensitivity of the Mastro adjectives.
+5. Secondary spreadsheet problems include the Northern continuous mean-test referencing **41 of 73** differences but dividing by sqrt(73), mistaken population standard-deviation/df use, reversed ASTRO sheet titles, and a missing latitude case. These do not overturn the paired binary counts.
+6. The 180° setting flips zodiac-sign labels while preserving planetary aspects/midpoints in the described software procedure. The result does not isolate seasonal illumination, natal biology or traditional-sign theory as its cause. Nor does a tropical-sign-label swap justify silently flipping Human Design gates, sidereal Jyotish signs, Hellenistic terms or historical timing mechanics.
+
+## Research use: four competing explanations
+
+- **H1 sign-rule signal:** sign-dependent Mastro mappings carry a real independently replicable biography/behavior link and the Southern 180° specification improves it.
+- **H2 season/light/context signal:** calendar season, perinatal photoperiod, location/climate, relocation or other environmental/demographic factors explain an effect, independent of astrological sign semantics.
+- **H3 text/identity signal:** celebrity identity, public reputation, language, profession, model training contamination, birth-sign knowledge or corpus differences explain the observed pair contrast.
+- **H4 scoring/pipeline signal:** unequal chart-list lengths/weights, lexical corpus properties, forced-choice/sign statistic, calibration or retrospective analysis choices amplify a contrast.
+
+Tests that distinguish them must be specified *before* opening the untouched outcome data.
+
+## Proposed priority experiment (new people, untouched test)
+
+1. Recover original source metadata and confirm what can be reproduced: exact DOB/time/place and quality, Mastro build/rule weights and full chart settings, LLM version/generation procedure, intended exclusion criteria, and full scoring formula. Keep supplied identities/exports private.
+2. **Freeze** software versions, all astrological rules, extraction pipeline, primary endpoint, null definition, tie policy, nuisance covariates and the planned group comparisons before using a new cohort. The original 141-person sample and all analyses here remain **development / hypothesis-generating**.
+3. Use genuinely independent personality/behavior measurements collected and frozen **without identities, birthdays, hemisphere labels or charts shown to raters/model**, ideally repeated observer-supported reports. Contrast Mastro-matched outputs against demographic/occupation/season-only models. Separate subjective chart-resonance ratings from measured prediction.
+4. Include North/South participants matched on age, occupation, language, country/region, birthplace record reliability, and birth-season strata. Intentionally sample near the equator; where feasible, examine birthplace vs early-life residence/latitude and actual photoperiod as distinct predictors.
+5. Score each birth chart in **standard, 180°-inverted, and preregistered sham-rotation** versions (e.g., 90° and other nonseasonal offsets), plus independently assigned wrong-person charts. Holding the biography fixed while swapping chart labels makes specificity visible; random chart-label permutations are primary group nulls when appropriate.
+6. Report both **paired forced-choice inversion advantage** and **N×N true-person chart rank / discrimination** (and continuous score magnitudes/proper scoring where valid), preserving all negative and tied results. Pick one prespecified *primary* endpoint and correct or label remaining comparisons accordingly. Report North/South effects separately rather than inferring a Southern effect solely from a group contrast.
+7. Treat any promising replication as **one supported empirical effect in this exact keyword pipeline** until other scoring systems independently reproduce it. Do not retrofit natal Human Design, Gene Keys, Jyotish, Hellenistic primary directions or client outputs. A design feature or 180° model arm may be exploratory only.
+
+## Immediate project decision
+
+**No change** to canonical AstroHD/Human Design decoder, accepted mappings, client interpretations, any published model, or existing untouched validation pools. Add the Southern inversion idea as a *predeclared candidate-ablation/negative-control lane* in a future conventional astrology validation project. Reuse the audit's automated person-level comparison and conditional shuffling pattern, but do not reuse celebrity descriptions as an untouched validation cohort. Preserve the full original computations privately and request clarification from Vincent respectfully without assuming misconduct.
+
+**Next collaboration question:** Can Godbout supply or identify source birth inputs, exact Mastro build/settings and keyword corpus, LLM generation metadata/logs and any contemporaneously fixed analysis plan, and would he support a preregistered blind replication using new people?
