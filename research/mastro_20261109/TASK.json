@@ -1,0 +1,26 @@
+{
+  "task_id": "mastro-blind-comparison-20261109",
+  "status": "OPEN",
+  "required_branch": "research/mastro-blind-comparison-20261109",
+  "owner_outcome": "Verify promised Godbout experiments, inspect and configure Wine Mastro, implement and run reproducible blinded comparative test without inspecting untouched outcomes.",
+  "remaining": [
+    "obtain original study build and birth metadata for engine parity",
+    "finalize and independently register new-cohort protocol and baselines",
+    "obtain untouched independent human measurements",
+    "establish external custodian and actual scorer-access isolation",
+    "execute real frozen blinded comparison"
+  ],
+  "restrictions": [
+    "No public private correspondence, original attachments, identities, birth inputs, or full keyword corpus",
+    "No touching existing project checkpoints",
+    "No answer-key access before matrix freeze",
+    "No synthetic results claimed as human evidence"
+  ],
+  "suspended_sources": [
+    "unrelated global participant pilot",
+    "historical roadmaps",
+    "other research lanes"
+  ],
+  "supporting_execution": "engineering_implementation_and_live_export_complete_parent_open",
+  "foreground_automation": "disabled_after_owner_correction"
+}

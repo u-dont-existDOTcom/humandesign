@@ -1,0 +1,35 @@
+{
+  "mastro_version": "7.8.0",
+  "mastro_executable_sha256": "b31ec31f7d0f9e8f79dbd8bcde92e4e3aface6d015641cfe04b91e75e577eadc",
+  "swedll32_sha256": "16c3dc1c2529152928a5fd77dde6b55f0e6773e6a03cf86937d365b06602aa5d",
+  "installed_manual_sha256": "54bfb87ab702799a21a70561058a2fd580c7b86e8bd3f4f80b4903e9f4289c54",
+  "current_location_role": "temporary_test_default_not_owner_residence",
+  "test_default": {
+    "city": "Greenwich, London City of, United Kingdom",
+    "latitude_dms": "51 N 28:44",
+    "longitude_dms": "000 W 00:38",
+    "standard_utc_offset": 0
+  },
+  "remote_connectivity": {
+    "local_terminal": "verified_same_linux_laptop_and_running_Mastro_process",
+    "desktop_commander": "verified_remote_terminal_hostname_repository_presence_and_Mastro_PID",
+    "wine_ui_text_controls": "verified_set_search_select_and_readback",
+    "visual_capture": "verified_private_Xvfb_screenshot; original_Wayland_capture_unavailable",
+    "background_mastro": "verified_running_on_private_authenticated_display_and_separate_Wine_prefix"
+  },
+  "manual_capabilities": {
+    "keyword_tree_csv": "documented_installed_manual_page_63",
+    "animation_batch_keyword_export": "live_verified_3_charts_585_keyword_rows",
+    "positions_batch_export": "table_generation_verified; clipboard_copy_produced_no_text; no_documented_raw_batch_export_established",
+    "cli_api": "not_established",
+    "positions_batch_generation": "live_verified_three_midnight_UTC_geocentric_tropical_rows_in_Ephemeris_table"
+  },
+  "original_build_parity": "not_established_missing_original_build_and_birth_files",
+  "helper_incident": {
+    "cause": "Early-closed output pipe reproducibly caused two helper dialogs; later console-encoding change coincided with a further helper exception (exact exception not recovered).",
+    "impact": "helper_process_dialogs_only_Mastro_not_terminated",
+    "repair": "Top-level exception capture, complete output draining, bounded window-text reads, nonzero failure status, automatic error-window checks, and all further execution isolated on background display.",
+    "screen_report_dependency": "replaced_with_programmatic_modal_error_detection"
+  },
+  "foreground_ui_mutation": "disabled_by_helper_guard_after_owner_interference_correction"
+}
