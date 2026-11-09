@@ -16,7 +16,7 @@ Task: `mastro-blind-comparison-20261109` — **OPEN**. This is a separate astrol
 
 ## Remaining outcome gap
 
-No new-person scientific blinded comparative test has run. Missing: the original study executable and birth metadata/settings for original-engine parity; a finalized independently registered new-cohort protocol; untouched independent human measurements; and an external custodian with actual scorer-access separation. Config declarations and hashes alone cannot establish those controls. No real new-human outcomes were opened or modified. No message was sent to Vincent.
+No new-person scientific blinded comparative test has run. Missing: the original study executable and birth metadata/settings for original-engine parity; a finalized independently registered new-cohort protocol; untouched independent human measurements; and an external custodian with actual scorer-access separation. Config declarations and hashes alone cannot establish those controls. No real new-human outcomes were opened or modified. The initial engineering pass sent no message. On 2026-11-09, the owner explicitly authorized a follow-up email; it was sent and read back from Gmail's Sent mail in the existing conversation.
 
 The Ephemeris table generated three tropical/geocentric midnight-UTC rows; clipboard copy produced no text, so raw numerical export is not established. Complete standard/inversion setting parity, original-build equivalence, demographic/season baselines and causal seasonal interpretation are not established by the keyword-export smoke. These remain separate obligations. Do not retune accepted Human Design mappings from this work.
 
@@ -24,9 +24,13 @@ The Ephemeris table generated three tropical/geocentric midnight-UTC rows; clipb
 
 1. Read `PROTOCOL.md`, `TASK.json` and `results/runtime-receipt.json`, then verify the task branch and current files.
 2. Recover the private background-session/runtime locator from the local Mastro research handoff; never restart on the normal desktop. Reuse the existing background prefix rather than creating another copy. The owner's original foreground Mastro is a separate process/prefix.
-3. Obtain Vincent's original executable/birth files through an authorized private transfer (sending a request needs explicit owner instruction). Hash and compare original/current engine outputs on fixed chart inputs without opening any new-human outcomes.
+3. The owner-authorized source-recovery request was sent on 2026-11-09. Await Vincent's original executable/birth files/settings through private transfer; do not send a duplicate request. Once available, hash and compare original/current engine outputs on fixed chart inputs without opening any new-human outcomes.
 4. Finalize/register the draft new-human protocol and establish genuine custody/isolation before collecting or scoring untouched measurements. Run the complete frozen harness only then. Report all failures and ties.
 
 Tests: `python3 -m unittest discover -s research/mastro_20261109/tests -v`.
 
 Resume line: Continue Mastro research from this checkpoint; keep all UI on the private background display and preserve the original/new-human evidence separation.
+
+## Source-recovery request sent — 2026-11-09
+
+At the owner's explicit instruction, replied in the existing email conversation to confirm that v7.8.0 runs under Wine and request the exact executable used in the study, original birth-data files with any source-quality/uncertain-time notes, and saved preferences or equivalent settings. The settings request covers the exact 180-degree inversion, houses, included planets/points/midpoints, aspects/orbs, keyword language, analysis weights/scoring and export options, including custom changes. Gmail returned a Sent receipt and the sent message was independently read back. Exact correspondence and message identifiers remain private. Scientific status and untouched-outcome boundaries are unchanged; receipt of the requested files is still pending.

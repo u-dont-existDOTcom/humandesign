@@ -4,7 +4,7 @@ Status: **engineering implementation; new-human protocol is a draft, not a compl
 
 ## What the correspondence commits to
 
-The 2026-11-08 sent reply commits to installing the current Mastro version, notifying Vincent when running, obtaining the exact older study executable and original birth files, and discussing a preregistered blinded follow-up. The 2026-11-06/07 exchange distinguishes the already reproduced historical arithmetic from that new test. The original two-proportion test was, according to Vincent's clarification, selected at the outset. Do not describe test shopping as established fact. No email is sent by this task.
+The 2026-11-08 sent reply commits to installing the current Mastro version, notifying Vincent when running, obtaining the exact older study executable and original birth files, and discussing a preregistered blinded follow-up. The 2026-11-06/07 exchange distinguishes the already reproduced historical arithmetic from that new test. The original two-proportion test was, according to Vincent's clarification, selected at the outset. Do not describe test shopping as established fact. The initial installation/engineering pass sent no email. An explicitly owner-authorized source-recovery follow-up was sent on 2026-11-09; its status is recorded in `STATE.md`.
 
 The public predecessor note is preserved in `PRIOR-STUDY.md`; canonical predecessor source commit is `111f7943ac8a73abe9273cff8c08f8b7cff1d080`, branch `research/godbout-hemisphere-inversion-20261106`. The original 141 identities, descriptions, outcomes and all their reanalyses are development evidence. They cannot become an untouched cohort by renaming or shuffling them.
 
